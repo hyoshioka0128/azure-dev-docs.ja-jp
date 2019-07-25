@@ -1,0 +1,65 @@
+- name: .NET 開発者向けの Azure
+  href: index.yml
+  items:
+    - name: .NET クイック スタート
+      expanded: true
+      items:
+        - name: Web Apps
+          href: /azure/app-service-web/app-service-web-get-started-dotnet?toc=/azure/dotnet/toc.json&bc=/azure/dotnet/breadcrumb/toc.json
+        - name: サーバーレスな Functions
+          href: /azure/azure-functions/functions-create-your-first-function-visual-studio?toc=/azure/dotnet/toc.json&bc=/azure/dotnet/breadcrumb/toc.json
+        - name: SQL Database
+          href: /azure/sql-database/sql-database-connect-query-dotnet?toc=/azure/dotnet/toc.json&bc=/azure/dotnet/breadcrumb/toc.json
+        - name: Cosmos DB
+          href: /azure/cosmos-db/create-sql-api-dotnet?toc=/azure/dotnet/toc.json&bc=/azure/dotnet/breadcrumb/toc.json
+        - name: Service Fabric
+          href: /azure/service-fabric/service-fabric-quickstart-dotnet?toc=/azure/dotnet/toc.json&bc=/azure/dotnet/breadcrumb/toc.json
+        - name: BLOB ストレージ
+          href: /azure/storage/blobs/storage-quickstart-blobs-dotnet?toc=/azure/dotnet/toc.json&bc=/azure/dotnet/breadcrumb/toc.json
+    - name: Azure の概要
+      href: dotnet-sdk-azure-get-started.md
+    - name: 方法
+      expanded: true
+      items:
+        - name: 認証
+          href: dotnet-sdk-azure-authenticate.md
+        - name: 移行
+          items:
+            - name: 適切な Azure ホスティング オプションの選択
+              href: dotnet-howto-choose-migration.md
+            - name: .NET Web アプリまたはサービスを Azure App Service に移行する
+              href: dotnet-howto-migrate-app-service.md
+            - name: ASP.NET アプリを Azure VM に移行する
+              href: dotnet-howto-migrate-to-vm.md
+            - name: SQL Server データベースを Azure に移行する
+              href: dotnet-howto-migrate-sql.md
+        - name: デプロイ
+          items:
+            - name: Visual Studio でのデプロイ
+              href: dotnet-quickstart-vs.md
+            - name: コマンド ライン ツールでのデプロイ
+              href: dotnet-quickstart-xplat.md
+    - name: ツール
+      href: dotnet-tools.md
+    - name: .NET チュートリアル
+      items:
+        - name: 概要
+          href: dotnet-tutorials.md
+        - name: Azure SQL Database を使用して ASP.NET Web アプリを作成する
+          href: /azure/app-service-web/app-service-web-tutorial-dotnet-sqldatabase?toc=/azure/dotnet/toc.json&bc=/azure/dotnet/breadcrumb/toc.json
+        - name: Cosmos DB を使用して ASP.NET Web アプリを作成する
+          href: /azure/documentdb/documentdb-dotnet-application?toc=/azure/dotnet/toc.json&bc=/azure/dotnet/breadcrumb/toc.json
+        - name: Web API を作成してデプロイする
+          href: /azure/app-service-api/app-service-api-dotnet-get-started?toc=/azure/dotnet/toc.json&bc=/azure/dotnet/breadcrumb/toc.json
+        - name: Kubernetes と Windows コンテナーの概要
+          href: /azure/container-service/container-service-kubernetes-windows-walkthrough?toc=/azure/dotnet/toc.json&bc=/azure/dotnet/breadcrumb/toc.json
+        - name: SQL Database に接続してクエリを実行する
+          href: /azure/sql-database/sql-database-connect-query-dotnet?toc=/azure/dotnet/toc.json&bc=/azure/dotnet/breadcrumb/toc.json
+        - name: PostgreSQL に接続してクエリを実行する
+          href: /azure/postgresql/connect-csharp?toc=/azure/dotnet/toc.json&bc=/azure/dotnet/breadcrumb/toc.json
+        - name: Cosmos DB SQL API を使ってみる
+          href: /azure/cosmos-db/sql-api-get-started?toc=/azure/dotnet/toc.json&bc=/azure/dotnet/breadcrumb/toc.json
+    - name: .NET コード サンプル
+      href: dotnet-samples.md
+    - name: リファレンス
+      href: /dotnet/api/?view=azure-dotnet

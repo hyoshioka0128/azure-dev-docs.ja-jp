@@ -1,0 +1,37 @@
+items:
+  - name: Azure SDK for Go
+    href: index.yml
+  - name: 概要
+    items:
+      - name: インストール
+        href: azure-sdk-go-install.md
+      - name: ツール
+        href: azure-sdk-go-tools.md
+      - name: Authentication
+        href: azure-sdk-go-authorization.md
+  - name: Go SDK のクイック スタート
+    items:
+      - name: 仮想マシンとリソース テンプレート
+        href: azure-sdk-go-qs-vm.md
+      - name: Azure Blob Storage
+        href: /azure/storage/blobs/storage-quickstart-blobs-go?toc=/azure/go/toc.json&bc=/azure/go/breadcrumb/toc.json
+      - name: Azure Database for PostgreSQL
+        href: /azure/postgresql/connect-go?toc=/azure/go/toc.json&bc=/azure/go/breadcrumb/toc.json
+      - name: Azure Database for MySQL
+        href: /azure/mysql/connect-go?toc=/azure/go/toc.json&bc=/azure/go/breadcrumb/toc.json
+      - name: Azure SQL Database
+        href: /azure/sql-database/sql-database-connect-query-go?toc=/azure/go/toc.json&bc=/azure/go/breadcrumb/toc.json
+  - name: Go のコード サンプル
+    items:
+      - name: 認証と Active Directory
+        href: azure-sdk-go-auth-aad-samples.md
+      - name: Containers
+        href: azure-sdk-go-containers-samples.md
+      - name: コンピューティングとネットワーク
+        href: azure-sdk-go-compute-networking-samples.md
+      - name: Azure SQL Database
+        href: azure-sdk-go-sql-database-samples.md
+      - name: Go のすべてのサンプル
+        href: 'http://github.com/azure-samples/azure-sdk-for-go-samples'
+  - name: API リファレンス
+    href: 'https://godoc.org/github.com/Azure/azure-sdk-for-go'

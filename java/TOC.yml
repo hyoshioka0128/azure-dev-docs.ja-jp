@@ -1,0 +1,165 @@
+- name: Java 開発者向けの Azure
+  href: index.yml
+  items:
+    - name: 作業の開始
+      href: java-sdk-azure-get-started.md
+    - name: クイック スタート
+      items:
+        - name: Web アプリのデプロイ
+          items:
+            - name: Windows および Eclipse
+              href: /azure/app-service-web/app-service-web-get-started-java?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
+            - name: Linux および Tomcat
+              href: /azure/app-service/containers/quickstart-java?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
+            - name: Linux および Java SE
+              href: spring-framework/deploy-spring-boot-java-app-with-maven-plugin.md?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
+        - name: Web アプリの監視
+          href: /azure/application-insights/app-insights-java-quick-start?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
+        - name: Azure DevOps Projects
+          href: /azure/devops-project/azure-devops-project-java?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
+        - name: サーバーレス関数
+          href: /azure/azure-functions/functions-create-first-java-maven?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
+        - name: データベース
+          items:
+            - name: SQL Database
+              href: /azure/sql-database/sql-database-connect-query-java?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
+            - name: MySQL
+              href: /azure/mysql/connect-java?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
+            - name: PostgreSQL
+              href: /azure/postgresql/connect-java?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
+            - name: Cosmos DB
+              items:
+                - name: SQL API
+                  href: /azure/cosmos-db/create-sql-api-java?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
+                - name: テーブル API
+                  href: /azure/cosmos-db/create-table-java?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
+                - name: Graph API
+                  href: /azure/cosmos-db/create-graph-java?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
+                - name: Cassandra API
+                  href: /azure/cosmos-db/create-cassandra-java?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
+                - name: MongoDB API
+                  href: /azure/cosmos-db/create-mongodb-java?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
+        - name: Storage BLOB
+          href: /azure/storage/blobs/storage-quickstart-blobs-java-v10?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
+        - name: Redis Cache
+          href: /azure/redis-cache/cache-java-get-started?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
+        - name: Service Fabric
+          items:
+            - name: Spring Boot のデプロイ
+              href: /azure/service-fabric/service-fabric-quickstart-java-spring-boot?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
+            - name: Reliable Services のデプロイ
+              href: /azure/service-fabric/service-fabric-quickstart-java-reliable-services?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
+        - name: メッセージング アプリケーション
+          items:
+            - name: Service Bus メッセージング
+              items:
+                - name: キューの使用
+                  href: /azure/service-bus-messaging/service-bus-java-how-to-use-queues?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
+                - name: トピックとサブスクリプションの使用
+                  href: /azure/service-bus-messaging/service-bus-java-how-to-use-topics-subscriptions?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
+                - name: JMS と AMQP
+                  href: /azure/service-bus-messaging/service-bus-java-how-to-use-jms-api-amqp?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
+            - name: Event Hubs
+              items:
+                - name: イベントの送信
+                  href: /azure/event-hubs/event-hubs-java-get-started-send?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
+                - name: イベントの受信
+                  href: /azure/event-hubs/event-hubs-java-get-started-receive-eph?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
+        - name: IoT Hub
+          items:
+            - name: テレメトリを送信する
+              href: /azure/iot-hub/quickstart-send-telemetry-java?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
+            - name: デバイスの制御
+              href: /azure/iot-hub/quickstart-control-device-java?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
+        - name: Azure Search
+          href: /azure/search/search-get-started-java?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
+        - name: Cognitive Services
+          items:
+            - name: Computer Vision
+              href: /azure/cognitive-services/Computer-vision/Quickstarts/java-analyze?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
+            - name: Text Analytics
+              href: /azure/cognitive-services/Text-Analytics/quickstarts/java?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
+            - name: Bing Web Search
+              href: /azure/cognitive-services/bing-web-search/quickstarts/java?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
+            - name: Bing Image Search
+              href: /azure/cognitive-services/bing-image-search/quickstarts/java?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
+    - name: フレームワークとプラットフォーム
+      expanded: true
+      items:
+        - name: Spring Framework と Spring Boot
+          href: /azure/java/spring-framework/index
+        - name: Eclipse MicroProfile
+          href: /azure/java/microprofile/index
+    - name: 開発者ツール
+      expanded: true
+      items:
+        - name: 概要
+          href: java-azure-tools.md
+        - name: Java の長期サポート
+          href: jdk/index.md
+          items:
+            - name: Java JDK のインストール
+              href: jdk/java-jdk-install.md
+            - name: Azure の Java Docker イメージ
+              href: jdk/java-jdk-docker-images.md
+            - name: Java Flight Recorder と Mission Control
+              href: jdk/java-jdk-flight-recorder-and-mission-control.md
+        - name: Visual Studio Code
+          href: 'https://code.visualstudio.com/docs/languages/java'
+        - name: IntelliJ IDEA
+          href: intellij/azure-toolkit-for-intellij.md
+        - name: Eclipse
+          href: eclipse/azure-toolkit-for-eclipse.md
+        - name: Maven プラグイン
+          href: /java/api/overview/azure/maven/README.md
+          items:
+            - name: Azure App Service Web Apps
+              href: /java/api/overview/azure/maven/azure-webapp-maven-plugin/README.md
+            - name: Azure Functions
+              href: /java/api/overview/azure/maven/azure-functions-maven-plugin/README.md
+        - name: Jenkins での CI/CD
+          href: /azure/jenkins/
+        - name: Azure Pipelines
+          href: /azure/devops/java/
+    - name: 概念
+      items:
+        - name: パターンとベスト プラクティス
+          href: java-sdk-azure-concepts.md
+    - name: チュートリアル
+      items:
+        - name: Service Fabric でマイクロサービスをデプロイする
+          href: /azure/service-fabric/service-fabric-tutorial-create-java-app?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
+        - name: MySQL を使用した App Service での Spring Boot
+          href: /azure/app-service-web/app-service-web-tutorial-java-mysql?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
+        - name: App Service への Jenkins CI/CD
+          href: /azure/jenkins/java-deploy-webapp-tutorial?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
+        - name: Maven で App Service にデプロイする
+          href: spring-framework/deploy-spring-boot-java-app-with-maven-plugin.md?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
+        - name: App Service にコンテナーをデプロイする
+          href: spring-framework/deploy-containerized-spring-boot-java-app-with-maven-plugin.md?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
+        - name: Azure Container Registry から App Service にデプロイする
+          href: spring-framework/deploy-spring-boot-java-app-from-container-registry-using-maven-plugin.md?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
+    - name: ハウツー記事
+      items:
+        - name: ルート証明書を追加する
+          href: java-sdk-add-certificate-ca-store.md
+        - name: 認証
+          href: java-sdk-azure-authenticate.md
+    - name: コード サンプル
+      items:
+        - name: Service Fabric
+          href: 'https://azure.microsoft.com/resources/samples/service-fabric-java-getting-started/'
+        - name: 仮想マシン
+          href: java-sdk-azure-virtual-machine-samples.md
+        - name: Web Apps
+          href: java-sdk-azure-web-apps-samples.md
+        - name: SQL Database
+          href: java-sdk-azure-sql-database-samples.md
+        - name: セキュリティ
+          href: java-sdk-azure-security-samples.md
+        - name: Containers
+          href: java-sdk-azure-containers-samples.md
+        - name: すべての Java サンプル
+          href: 'https://azure.microsoft.com/resources/samples/?platform=java'
+    - name: リファレンス
+      href: /java/api/?view=azure-java

@@ -1,0 +1,114 @@
+- name: JavaScript および Node.js 開発者向けの Azure
+  href: index.yml
+  items:
+    - name: クイック スタート
+      expanded: true
+      items:
+        - name: アプリ ホスティング
+          items:
+            - name: 静的なサイト
+              href: 'https://code.visualstudio.com/tutorials/static-website/getting-started'
+            - name: Web アプリと API
+              href: 'https://code.visualstudio.com/tutorials/app-service-extension/getting-started'
+            - name: サーバーレス
+              href: 'https://code.visualstudio.com/tutorials/functions-extension/getting-started'
+            - name: Docker
+              href: 'https://code.visualstudio.com/tutorials/docker-extension/getting-started'
+            - name: Kubernetes
+              href: /azure/aks/kubernetes-walkthrough?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
+            - name: Linux VM
+              href: /azure/virtual-machines/linux/quick-create-cli?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
+        - name: DevOps (CI/CD)
+          items:
+            - name: Azure DevOps
+              href: /azure/devops-project/azure-devops-project-nodejs?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
+            - name: GitHub のアクション
+              href: 'https://css-tricks.com/introducing-github-actions/'
+            - name: 継続的インテグレーション
+              href: /azure/devops-project/azure-devops-project-nodejs?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
+        - name: デバッグと診断
+          items:
+            - name: Azure App Service 用のリモート デバッグ
+              href: 'https://code.visualstudio.com/docs/azure/remote-debugging'
+            - name: Azure App Service 用の VS Code でのログ ポイント
+              href: 'https://code.visualstudio.com/blogs/2018/07/12/introducing-logpoints-and-auto-attach'
+            - name: VS Code でローカルの Node.js アプリをデバッグする
+              href: 'https://code.visualstudio.com/docs/nodejs/nodejs-debugging'
+        - name: ツールと拡張機能
+          href: node-azure-tools.md
+        - name: データの保存
+          items:
+            - name: BLOB ストレージ
+              href: /azure/storage/blobs/storage-quickstart-blobs-nodejs?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
+            - name: SQL Database
+              href: /azure/sql-database/sql-database-connect-query-nodejs?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
+            - name: Cosmos DB
+              href: /azure/cosmos-db/create-mongodb-nodejs?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
+            - name: Redis Cache
+              href: /azure/redis-cache/cache-nodejs-get-started?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
+            - name: PostgreSQL
+              href: /azure/postgresql/connect-nodejs?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
+            - name: MySQL
+              href: /azure/mysql/connect-nodejs?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
+        - name: セキュリティと認証
+          items:
+            - name: Azure Active Directory
+              href: /azure/active-directory/develop/active-directory-devquickstarts-webapi-nodejs?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
+            - name: Azure AD B2C
+              href: /azure/active-directory-b2c/active-directory-b2c-devquickstarts-web-node?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
+            - name: Key Vault
+              href: /azure/key-vault/quick-create-cli?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
+        - name: 監視およびログ記録
+          items:
+            - name: Application Insights
+              href: /azure/application-insights/app-insights-nodejs-quick-start?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
+            - name: Log Analytics
+              href: /azure/log-analytics/log-analytics-quick-collect-linux-computer?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
+            - name: Azure Monitor
+              href: /azure/monitoring-and-diagnostics?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
+        - name: メッセージングと統合
+          items:
+            - name: Event Grid
+              href: /azure/event-grid/custom-event-quickstart?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
+            - name: Service Bus
+              href: /azure/service-bus-messaging/service-bus-nodejs-how-to-use-queues?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
+            - name: ストレージ
+              href: /azure/storage/queues/storage-nodejs-how-to-use-queues?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
+        - name: IoT
+          items:
+            - name: IoT Hub
+              href: /azure/iot-hub/iot-hub-node-node-getstarted?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
+            - name: ビッグ データ ストリーミング
+              href: /azure/iot-hub/iot-hub-node-node-getstarted?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
+        - name: Cognitive Services
+          items:
+            - name: Text Analytics
+              href: /azure/cognitive-services/text-analytics/quickstarts/nodejs?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
+            - name: Computer Vision
+              href: /azure/cognitive-services/Computer-vision/Quickstarts/node-analyze?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
+            - name: 音声認識
+              href: /azure/cognitive-services/speech-service/get-started?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
+    - name: ハウツー ガイド
+      items:
+        - name: Visual Studio Code でのデプロイ
+          href: node-howto-e2e.md
+        - name: REST API の作成
+          href: /azure/app-service/app-service-web-tutorial-rest-api?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
+    - name: サンプル
+      items:
+        - name: Compute
+          href: node-samples-services-compute.md
+        - name: データベース
+          href: node-samples-services-database.md
+        - name: Storage
+          href: node-samples-services-storage.md
+        - name: メッセージング + IoT
+          href: node-samples-services-iot.md
+        - name: Web + モバイル
+          href: node-samples-services-web-and-mobile.md
+        - name: セキュリティ + ID
+          href: node-samples-services-security-and-identity.md
+        - name: 課金
+          href: node-samples-services-billing.md
+    - name: リファレンス
+      href: /javascript/api/?view=azure-node-latest

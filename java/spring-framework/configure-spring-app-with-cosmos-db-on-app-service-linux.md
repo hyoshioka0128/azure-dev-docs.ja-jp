@@ -3,17 +3,18 @@ title: App Service on Linux で Spring と Cosmos DB を使用する方法
 description: この記事では、Azure App Service on Linux で Java Web アプリを構築、構成、デプロイ、トラブルシューティング、およびスケーリングするプロセスを、順を追って説明します。
 documentationcenter: java
 author: bmitchell287
-ms.author: brendm; joshuapa
+ms.author: brendm
+ms.reviewer: joshuapa
 ms.date: 4/24/2019
 ms.devlang: java
 ms.service: app-service, cosmos-db
 ms.topic: article
-ms.openlocfilehash: 16cbcfa99400d56692679d2ccd0ad6b962af7fb9
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.openlocfilehash: e7360067deaa9d038440978892f093dfb28db499
+ms.sourcegitcommit: f799dd4590dc5a5e646d7d50c9604a9975dadeb1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68284813"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68691159"
 ---
 # <a name="how-to-use-spring-and-cosmos-db-with-app-service-on-linux"></a>App Service on Linux で Spring と Cosmos DB を使用する方法
 
@@ -37,7 +38,7 @@ ms.locfileid: "68284813"
 - [Maven 3](http://maven.apache.org/)
 
 ## <a name="clone-the-sample-java-web-app-repository"></a>サンプル Java Web アプリ リポジトリを複製する
-この演習では、[Spring Boot](https://spring.io/projects/spring-boot)、[Cosmos DB 用の Spring Data](https://docs.microsoft.com/azure/java/spring-framework/configure-spring-boot-starter-java-app-with-cosmos-db?view=azure-java-stable)、および [Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/sql-api-introduction) を使用して構築された Java アプリケーションである Spring Todo アプリを使用します。
+この演習では、[Spring Boot](https://spring.io/projects/spring-boot)、[Cosmos DB 用の Spring Data](https://docs.microsoft.com/azure/java/spring-framework/configure-spring-boot-starter-java-app-with-cosmos-db)、および [Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/sql-api-introduction) を使用して構築された Java アプリケーションである Spring Todo アプリを使用します。
 1. Spring Todo アプリを複製し、 **.prep** フォルダーの内容をコピーしてプロジェクトを初期化します。
 
     bash の場合:

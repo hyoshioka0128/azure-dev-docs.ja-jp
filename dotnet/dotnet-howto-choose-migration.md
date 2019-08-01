@@ -1,15 +1,16 @@
 ---
 title: 適切な Azure ホスティング オプションの選択
 description: ASP.NET Web アプリケーションに適した Azure への移行パスについて説明します。
-author: CESARDELATORRE
+author: cesardelatorre
 ms.author: cesardl
 ms.date: 11/15/2017
-ms.openlocfilehash: 32c2c1afd5983b3eb514cb47bd089959fb8c7b09
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.topic: conceptual
+ms.openlocfilehash: cc9c8080a8e6596fd14759967a43792523ea5a86
+ms.sourcegitcommit: f799dd4590dc5a5e646d7d50c9604a9975dadeb1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68280223"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68691207"
 ---
 # <a name="choose-the-right-azure-hosting-option"></a>適切な Azure ホスティング オプションの選択 
 

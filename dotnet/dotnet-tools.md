@@ -3,12 +3,13 @@ title: Azure .NET および .NET Core 開発者向けツール
 description: Windows、Linux、Mac 環境から Azure .NET ライブラリを使い始めるためのツールを入手します。
 ms.date: 08/11/2018
 ms.custom: azure-dotnet-devcenter, azure-dotnet-devcenter-authored, azure-dotnet-devcenter-conceptual, vs-azure
-ms.openlocfilehash: e9921ae1c8e64426bdefdbcf201708d9195a6a51
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.topic: conceptual
+ms.openlocfilehash: 5f28c6e9cff45db78cfea845ee28180b27028037
+ms.sourcegitcommit: f799dd4590dc5a5e646d7d50c9604a9975dadeb1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68280593"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68691356"
 ---
 # <a name="tools-for-net-and-net-core-azure-developers"></a>.NET および .NET Core Azure 開発者向けツール
 

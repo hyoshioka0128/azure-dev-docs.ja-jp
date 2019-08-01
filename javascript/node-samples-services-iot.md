@@ -1,19 +1,19 @@
 ---
 title: Node.js を使用した Azure メッセージングと IoT のサンプル コード
 description: Node.js で Azure メッセージングと IoT を使用する方法を示すサンプル コード
-author: KarlErickson
+author: karlerickson
 manager: douge
 ms.devlang: nodejs
 ms.topic: article
 ms.service: azure-nodejs
 ms.date: 06/17/2017
 ms.author: karler
-ms.openlocfilehash: 96e2cbfeb960b34404e35401655fdc0f5f19e314
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.openlocfilehash: 26948fde3f585c1f02fe38347902722c248b0e8b
+ms.sourcegitcommit: f799dd4590dc5a5e646d7d50c9604a9975dadeb1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68284993"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68690926"
 ---
 # <a name="sample-code-for-using-azure-messaging-and-iot-with-nodejs"></a>Node.js で Azure メッセージングと IoT を使用するためのサンプル コード
 

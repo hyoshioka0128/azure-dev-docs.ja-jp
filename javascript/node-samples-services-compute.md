@@ -1,19 +1,19 @@
 ---
 title: Node.js の Azure コンピューティング サンプル コード
 description: Node.js で Azure コンピューティングの機能を追加する方法を示したサンプル コード。
-author: KarlErickson
+author: karlerickson
 manager: douge
 ms.devlang: nodejs
 ms.topic: article
 ms.service: azure-nodejs
 ms.date: 06/17/2017
 ms.author: karler
-ms.openlocfilehash: 4e36905a681b3b25cdd7afcb80cadbe5aa2e1aef
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.openlocfilehash: 0a9126f35624121fd48dd6b8d3a29a2764faf17d
+ms.sourcegitcommit: f799dd4590dc5a5e646d7d50c9604a9975dadeb1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68285503"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68690976"
 ---
 # <a name="azure-compute-with-nodejs-code-samples"></a>Node.js を使用した Azure コンピューティングのサンプル コード
 

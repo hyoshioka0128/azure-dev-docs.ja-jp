@@ -2,7 +2,7 @@
 title: Azure の JavaScript 開発者向けツール | Microsoft Docs
 description: Azure での JavaScript 開発用の各ツールをインストールします。
 services: multiple
-author: KarlErickson
+author: karlerickson
 manager: douge
 ms.service: azure-nodejs
 ms.tgt_pltfrm: na
@@ -10,12 +10,12 @@ ms.devlang: nodejs
 ms.topic: article
 ms.date: 11/07/2017
 ms.author: karler
-ms.openlocfilehash: c73de9d8602e001cb512381ef45b0fda78d18573
-ms.sourcegitcommit: 4cc7f5e1e4601065bfcb4c2eeb7d47ad0bec61f8
+ms.openlocfilehash: 801b4ee3b56a04ed9b9bfd0e234bca3ae9d316fd
+ms.sourcegitcommit: f799dd4590dc5a5e646d7d50c9604a9975dadeb1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68430677"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68691137"
 ---
 # <a name="azure-tools-for-javascript-developers"></a>JavaScript 開発者向け Azure ツール
 Azure での JavaScript アプリの開発には、次のツールが推奨されます。

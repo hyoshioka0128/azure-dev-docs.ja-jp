@@ -23,27 +23,27 @@ sections:
           - href: /azure/app-service/containers/quickstart-java?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
             html: <p>最初の Web アプリを Azure にデプロイする</p>
             image:
-              src: 'https://docs.microsoft.com/media/common/i_get-started.svg'
+              src: /media/common/i_get-started.svg
             title: 作業の開始
-          - href: 'https://docs.microsoft.com/java/azure/spring-framework/'
+          - href: /azure/java/spring-framework/
             html: <p>Spring Boot と Azure サービス</p>
             image:
-              src: 'https://docs.microsoft.com/java/docs-ref-conceptual/media/spring.svg'
+              src: /java/media/spring.svg
             title: Azure の Spring
           - href: java-azure-tools.md
             html: <p>ツールと IDE</p>
             image:
-              src: 'https://docs.microsoft.com/media/common/i_download-install.svg'
+              src: /media/common/i_download-install.svg
             title: IntelliJ、Maven、Eclipse、および VS Code プラグイン
           - href: jdk/index.md
             html: <p>サポート対象 JDK</p>
             image:
-              src: 'https://docs.microsoft.com/media/common/i_download-install.svg'
+              src: /media/common/i_download-install.svg
             title: サポート対象 JDK
           - href: /java/api/?view=azure-java
             html: <p>API リファレンス</p>
             image:
-              src: 'https://docs.microsoft.com/media/common/i_api-reference.svg'
+              src: /media/common/i_api-reference.svg
             title: Java 用の Azure SDK
   - title: ファースト ステップ ガイド
     items:
@@ -53,29 +53,29 @@ sections:
         columns: 3
         items:
           - image:
-              src: 'https://docs.microsoft.com/java/docs-ref-conceptual/media/spring.svg'
+              src: /java/media/spring.svg
             title: Maven での Spring Boot アプリのデプロイ
-            href: 'https://docs.microsoft.com/java/azure/spring-framework/deploy-spring-boot-java-app-with-maven-plugin'
+            href: /azure/java/spring-framework/deploy-spring-boot-java-app-with-maven-plugin
           - image:
-              src: 'https://docs.microsoft.com/azure/media/index/storage.svg'
+              src: /azure/media/index/storage.svg
             title: Storage からの BLOB のアップデートとダウンロード
             href: /azure/storage/blobs/storage-quickstart-blobs-java-v10?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
           - image:
-              src: 'https://docs.microsoft.com/azure/media/index/azurefunctions.svg'
+              src: /azure/media/index/azurefunctions.svg
             title: Java のサーバーレス関数を作成する
             href: /azure/azure-functions/functions-create-first-java-maven?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
           - image:
-              src: 'https://docs.microsoft.com/javascript/azure/media/k8s_logo.svg'
+              src: /javascript/azure/media/k8s_logo.svg
             title: Kubernetes へのデプロイ
-            href: /azure/container-service/kubernetes/container-service-deploy-spring-boot-app-on-kubernetes?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
+            href: /azure/java/spring-framework/deploy-spring-boot-java-app-on-kubernetes
           - image:
-              src: 'https://docs.microsoft.com/azure/media/index/fabric.svg'
+              src: /azure/media/index/fabric.svg
             title: Service Fabric を使ったマイクロサービス
             href: /azure/service-fabric/service-fabric-quickstart-java-spring-boot?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
           - image:
-              src: 'https://docs.microsoft.com/java/docs-ref-conceptual/media/jenkins_logo.svg'
+              src: /java/media/jenkins_logo.svg
             title: Jenkins® での App Service への CI/CD
-            href: /azure/jenkins/java-deploy-webapp-tutorial?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
+            href: /azure/jenkins/tutorial-jenkins-deploy-web-app-azure-app-service&bc=/azure/java/breadcrumb/toc.json
   - title: サンプル
     items:
       - type: list

@@ -1,6 +1,6 @@
 ---
-title: Azure Web Apps 用の Maven プラグインを使用して、コンテナー化された Spring Boot アプリを Azure にデプロイする方法
-description: Azure Web Apps 用の Maven プラグインを使用して、Spring Boot アプリを Azure にデプロイする方法について説明します。
+title: Azure Web Apps 用の Maven を使用して、Spring Boot アプリを Azure にデプロイする
+description: Azure Web Apps 用の Maven プラグインを使って、Spring Boot アプリを Azure にデプロイする方法について説明します。
 services: app-service
 documentationcenter: java
 author: bmitchell287
@@ -14,12 +14,13 @@ ms.service: app-service
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
-ms.openlocfilehash: 476aeefb7806c67eacecbbd9b3f8ee51ea211ce6
-ms.sourcegitcommit: 4cc7f5e1e4601065bfcb4c2eeb7d47ad0bec61f8
+ms.custom: seo-java-july2019
+ms.openlocfilehash: a953289bcab2f00a06d6139620ce93013326da5b
+ms.sourcegitcommit: f799dd4590dc5a5e646d7d50c9604a9975dadeb1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68430920"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68691707"
 ---
 # <a name="how-to-use-the-maven-plugin-for-azure-web-apps-to-deploy-a-containerized-spring-boot-app-to-azure"></a>Azure Web Apps 用の Maven プラグインを使用して、コンテナー化された Spring Boot アプリを Azure にデプロイする方法
 

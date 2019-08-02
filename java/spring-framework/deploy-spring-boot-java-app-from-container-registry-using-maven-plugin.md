@@ -1,5 +1,5 @@
 ---
-title: Azure Web Apps 用の Maven プラグインを使用して Azure Container Registry の Spring Boot アプリを Azure App Service にデプロイする方法
+title: Maven を使用して Azure Container Registry の Spring Boot アプリをデプロイする
 description: このチュートリアルでは、Maven プラグインを使用して Azure Container Registry の Spring Boot アプリケーションを Azure App Service にデプロイする方法について順を追って説明します。
 services: container-registry
 documentationcenter: java
@@ -14,12 +14,13 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
-ms.openlocfilehash: de13a8fa8c75bf237539565dd166f03c18991701
-ms.sourcegitcommit: 4cc7f5e1e4601065bfcb4c2eeb7d47ad0bec61f8
+ms.custom: seo-java-july2019
+ms.openlocfilehash: c2622da604e31b5cf2a2f1e7b3344b21338aa56d
+ms.sourcegitcommit: f799dd4590dc5a5e646d7d50c9604a9975dadeb1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68430947"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68691124"
 ---
 # <a name="how-to-use-the-maven-plugin-for-azure-web-apps-to-deploy-a-spring-boot-app-in-azure-container-registry-to-azure-app-service"></a>Azure Web Apps 用の Maven プラグインを使用して Azure Container Registry の Spring Boot アプリを Azure App Service にデプロイする方法
 

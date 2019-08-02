@@ -15,12 +15,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: na
 ms.custom: mvc
-ms.openlocfilehash: f7bb539e59b8d9d6afcf736560348748d311b49a
-ms.sourcegitcommit: 4cc7f5e1e4601065bfcb4c2eeb7d47ad0bec61f8
+ms.openlocfilehash: 3363e1a4600328e012b99bd940cf88bb47e2ee57
+ms.sourcegitcommit: f799dd4590dc5a5e646d7d50c9604a9975dadeb1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68430935"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68691715"
 ---
 # <a name="deploy-a-spring-boot-application-on-a-kubernetes-cluster-in-the-azure-kubernetes-service"></a>Azure Kubernetes Service で Spring Boot アプリケーションを Kubernetes クラスターにデプロイする
 
@@ -253,7 +253,7 @@ ms.locfileid: "68430935"
    az aks browse --resource-group=wingtiptoys-kubernetes --name=wingtiptoys-akscluster
    ```
 
-1. Kubernetes 構成 Web サイトがブラウザーで開いたら、**コンテナー化されたアプリをデプロイする**ためのリンクをクリックします。
+1. Kubernetes 構成 Web サイトがブラウザーで開いたら、**コンテナー化されたアプリをデプロイする**ためのリンクを選択します。
 
    ![Kubernetes 構成 Web サイト][KB01]
 
@@ -272,7 +272,7 @@ ms.locfileid: "68430935"
    ![Kubernetes 構成 Web サイト][KB02]
 
 
-1. **[Deploy]\(デプロイ)** をクリックしてコンテナーをデプロイします。
+1. **[Deploy]\(デプロイ)** を選択してコンテナーをデプロイします。
 
    ![Kubernetes デプロイ][KB05]
 
@@ -280,7 +280,7 @@ ms.locfileid: "68430935"
 
    ![Kubernetes サービス][KB06]
 
-1. **[External endpoints]\(外部エンドポイント)\\** のリンクをクリックすると、Spring Boot アプリケーションが Azure で実行されていることを確認できます。
+1. **[External endpoints]\(外部エンドポイント)\\** のリンクを選択すると、Spring Boot アプリケーションが Azure で実行されていることを確認できます。
 
    ![Kubernetes サービス][KB07]
 

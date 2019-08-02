@@ -1,5 +1,5 @@
 ---
-title: Maven と Azure を使用して Spring Boot JAR ファイルのアプリをクラウドにデプロイする
+title: Maven を使用して Spring Boot JAR ファイルのアプリを Azure にデプロイする
 description: Linux 用の Azure Web Apps の Maven プラグインを使って、Spring Boot アプリをクラウドにデプロイする方法について説明します。
 services: app-service
 documentationcenter: java
@@ -11,12 +11,13 @@ ms.date: 12/19/2018
 ms.devlang: java
 ms.service: app-service
 ms.topic: article
-ms.openlocfilehash: 83bc65357f14b17ad60d0eb15adaac328dbc0386
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.custom: seo-java-july2019
+ms.openlocfilehash: e4aec4beb141025d49afbe200a090a40e327a12c
+ms.sourcegitcommit: f799dd4590dc5a5e646d7d50c9604a9975dadeb1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68281463"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68691095"
 ---
 # <a name="deploy-a-spring-boot-jar-file-web-app-to-azure-app-service-on-linux"></a>Spring Boot JAR ファイルの Web アプリを Linux 用の Azure App Service にデプロイする
 
@@ -201,6 +202,14 @@ Web アプリのデプロイが完了すると、[Azure portal] で Web アプ�
    ![Web アプリの URL の決定][AP02]
 
 前と同じ cURL コマンドを使用して、`localhost` ではなくポータルからご自身の Web アプリ URL を使って、デプロイが適切に行われたことを確認します。 次のメッセージが表示されます。**Greetings from Spring Boot!** 
+
+## <a name="clean-up-resources"></a>リソースのクリーンアップ
+Azure リソースが不要になったら、リソース グループを削除して、デプロイしたリソースをクリーンアップします。
+
+- Azure portal で、左側のメニューから [リソース グループ] を選択します。
+- **[名前でフィルター]** フィールドに **gs-spring-boot-** と入力します。このチュートリアルで作成したリソース グループにはこのプレフィックスが付いています。
+- このチュートリアルで作成したリソース グループを選択します。
+- トップ メニューから [リソース グループの削除] を選択します。
 
 ## <a name="next-steps"></a>次の手順
 

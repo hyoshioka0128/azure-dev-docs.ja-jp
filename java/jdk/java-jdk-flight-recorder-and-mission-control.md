@@ -1,5 +1,5 @@
 ---
-title: Java Flight Recorder と Mission Control
+title: Java Flight Recorder と Mission Control を使用したデータのレビュー
 description: Java Flight Recorder と Mission Control を使用してアプリ データを収集およびレビューするためのガイダンス。
 author: bmitchell287
 manager: douge
@@ -7,13 +7,14 @@ ms.author: brendm
 ms.date: 04/09/2019
 ms.devlang: java
 ms.topic: conceptual
-ms.service: Azure
-ms.openlocfilehash: 29f144a17a1a45dc535961f97a4b0acdffd43d77
-ms.sourcegitcommit: 4cc7f5e1e4601065bfcb4c2eeb7d47ad0bec61f8
+ms.service: azure
+ms.custom: seo-java-july2019
+ms.openlocfilehash: 4e0ae7b66d625ea6aeeb5a7e40b9015e9ce59429
+ms.sourcegitcommit: f799dd4590dc5a5e646d7d50c9604a9975dadeb1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68431068"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68691774"
 ---
 # <a name="using-java-flight-recorder-jfr-and-mission-control"></a>Java Flight Recorder (JFR) および Mission Control の使用
 
@@ -94,7 +95,7 @@ Zulu Mission Control をインストールし、Java 仮想マシン (JVM) に�
         * 2 行目に、JDK インストールへのパスを記述します。 (例えば、`C:\Program Files\Java\jdk1.8.0_212\bin\javaw.exe`)。
 
 7.  アプリケーションを実行している JVM を見つけます
-    1.  Zulu Mission Control ウィンドウの左上のウィンドウで、 **[JVM Browser]\(JVM ブラウザー\)** というラベルのタブをクリックします。
+    1.  Zulu Mission Control ウィンドウの左上のウィンドウで、 **[JVM Browser]\(JVM ブラウザー\)** というラベルのタブを選択します。
     2.  左上で、自分のアプリケーションを実行している JVM インスタンスのリスト アイテムを選択して展開します。
 
     > [!div class="mx-imgBorder"]
@@ -102,8 +103,8 @@ Zulu Mission Control をインストールし、Java 仮想マシン (JVM) に�
 
 
 8.  Flight Recording を開始します (必要な場合)
-    1.  Flight Recorder に「No Recordings」と表示されている場合、[JVM Browser]\(JVM ブラウザー\) タブの Flight Recorder の行を右クリックし、 **[Start Flight Recording...]\(Flight Recording の開始...\)** を選択して開始します。
-    2.  固定期間の記録または継続的な記録のいずれかと、プロファイル構成 (詳細) または継続構成 (低オーバーヘッド) のいずれかを選択してから、 **[Finish]\(終了\)** をクリックします。
+    1.  Flight Recorder に「No Recordings」と表示されている場合、[JVM Browser]\(JVM ブラウザー\) タブの Flight Recorder の行を右クリックし、 **[Start Flight Recording]\(Flight Recording の開始\)** を選択して開始します。
+    2.  固定期間の記録または継続的な記録のいずれかと、プロファイル構成 (詳細) または継続構成 (低オーバーヘッド) のいずれかを選択してから、 **[Finish]\(終了\)** を選択します。
 
     > [!div class="mx-imgBorder"]
     ![Flight Recording の開始](../media/jdk/azul-jfr-3.png)

@@ -10,20 +10,20 @@ ms.assetid: ''
 ms.author: ruyakubu
 ms.date: 09/14/2018
 ms.devlang: Java
-ms.service: Azure DevOps
+ms.service: devops
 ms.tgt_pltfrm: multiple
 ms.topic: tutorial
 ms.workload: web
-ms.openlocfilehash: 8ba4a880cb69948d396c3c81f2ddeafd54d68eb2
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.openlocfilehash: 28a21bf0e1b4cb09ed4dc5e9f80f292c52eab103
+ms.sourcegitcommit: f799dd4590dc5a5e646d7d50c9604a9975dadeb1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68284103"
+ms.lasthandoff: 07/31/2019
+ms.locfileid: "68691773"
 ---
 # <a name="cicd-for-microprofile-applications-using-azure-devops"></a>Azure DevOps を使用した MicroProfile アプリケーションの CI/CD
 
-このチュートリアルでは、Java EE 開発者が、Azure DevOps (公式には VSTS として知られています) を使用して、[MicroProfile](http://microprofile.io) アプリケーションを Azure Web App for Containers にデプロイするための CI/CD リリース サイクルを簡単に設定する方法について説明します。  この例では、[Payara Micro](https://www.payara.fish/payara_micro) を基本イメージとして使用する MicroProfile アプリケーションを使用します。   
+このチュートリアルでは、Java EE 開発者が、Azure Pipelines (公式には VSTS として知られています) を使用して、[MicroProfile](http://microprofile.io) アプリケーションを Azure Web App for Containers にデプロイするための CI/CD リリース サイクルを簡単に設定する方法について説明します。  この例では、[Payara Micro](https://www.payara.fish/payara_micro) を基本イメージとして使用する MicroProfile アプリケーションを使用します。   
 
 ```Dockerfile
 FROM payara/micro:5.182

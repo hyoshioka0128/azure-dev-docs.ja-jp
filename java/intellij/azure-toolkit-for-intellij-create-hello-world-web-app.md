@@ -40,7 +40,7 @@ ms.locfileid: "68691601"
 
 ## <a name="installation-and-sign-in"></a>インストールとサインイン
 
-1. IntelliJ IDEA の [設定/環境設定] ダイアログ (Ctrl+Alt+S) で、 **[プラグイン]** を選択します。 次に、 **[Marketplace]** で **[Azure Toolkit for IntelliJ]** を見つけ、 **[インストール]** をクリックします。 インストール後、 **[再起動]** をクリックしてプラグインをアクティブにします。 
+1. IntelliJ IDEA の [設定/環境設定] ダイアログ (Ctrl+Alt+S) で、 **[プラグイン]** を選択します。 次に、**Marketplace** で **Azure Toolkit for IntelliJ** を見つけ、 **[インストール]** をクリックします。 インストール後、 **[再起動]** をクリックしてプラグインをアクティブにします。 
 
    ![Marketplace の Azure Toolkit for IntelliJ プラグイン][marketplace]
 

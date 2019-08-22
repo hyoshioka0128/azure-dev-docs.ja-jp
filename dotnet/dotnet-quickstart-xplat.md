@@ -2,13 +2,15 @@
 title: コマンド ラインと .NET Core を使用した Azure へのデプロイ
 description: この記事では、コマンドライン ツールを使用して Azure App Service に ASP.NET Core アプリケーションをデプロイする方法について説明します。
 ms.date: 06/20/2017
+author: CamSoper
+ms.author: casoper
 ms.topic: quickstart
-ms.openlocfilehash: a9fcb465cf84ef3996cb072baf55a9a3eb23907a
-ms.sourcegitcommit: f799dd4590dc5a5e646d7d50c9604a9975dadeb1
+ms.openlocfilehash: 1c2f9ae75d26238514b525c7730dbcbbf49820b5
+ms.sourcegitcommit: 4eee7d9a484e35eb695248c011a63b27603d354b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68691325"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69633114"
 ---
 # <a name="deploy-to-azure-from-the-command-line-with-net-core"></a>コマンド ラインと .NET Core を使用した Azure へのデプロイ
 

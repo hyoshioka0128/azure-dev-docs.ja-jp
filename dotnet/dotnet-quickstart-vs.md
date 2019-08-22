@@ -2,13 +2,15 @@
 title: Visual Studio から Azure へのデプロイ
 description: このチュートリアルでは、Visual Studio と .NET を使用して、Microsoft Azure アプリケーションをビルドし、デプロイする手順について説明します。
 ms.date: 06/20/2017
+author: CamSoper
+ms.author: casoper
 ms.topic: quickstart
-ms.openlocfilehash: 60dbdedca91c972b68298ad94b5a8b373a37c561
-ms.sourcegitcommit: f799dd4590dc5a5e646d7d50c9604a9975dadeb1
+ms.openlocfilehash: 8211d1473c7ee658701f25da1313934b41eddc86
+ms.sourcegitcommit: 4eee7d9a484e35eb695248c011a63b27603d354b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68691238"
+ms.lasthandoff: 08/20/2019
+ms.locfileid: "69633134"
 ---
 # <a name="deploy-to-azure-from-visual-studio"></a>Visual Studio から Azure へのデプロイ
 

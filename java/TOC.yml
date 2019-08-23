@@ -129,6 +129,10 @@
           href: /azure/service-fabric/service-fabric-tutorial-create-java-app?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
         - name: Cosmos DB を使用した App Service での Spring Boot
           href: /azure/app-service/containers/tutorial-java-spring-cosmosdb?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
+        - name: App Service への Azure Pipelines の CI/CD
+          href: /azure/devops/pipelines/languages/java-webapp?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
+        - name: Azure Functions への Azure Pipelines の CI/CD
+          href: /azure/devops/pipelines/languages/java-function?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
         - name: App Service への Jenkins CI/CD
           href: /azure/jenkins/tutorial-jenkins-deploy-web-app-azure-app-service?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
         - name: Maven で App Service にデプロイする

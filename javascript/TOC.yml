@@ -88,8 +88,22 @@
               href: /azure/cognitive-services/speech-service/get-started?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
     - name: ハウツー ガイド
       items:
-        - name: Visual Studio Code でのデプロイ
+        - name: VS Code を使用したエンド ツー エンドの Node.js
           href: node-howto-e2e.md
+        - name: Web アプリをデプロイする
+          href: node-howto-deploy-web-app.md
+        - name: コンテナーをデプロイする
+          href: node-howto-deploy-containers.md
+        - name: 継続的デリバリーを通じてデプロイする
+          href: /azure/devops/pipelines/languages/javascript?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
+        - name: データベースとの統合
+          href: node-howto-integrate-databases.md
+        - name: サーバーレス コードを記述する
+          href: node-howto-write-serverless-code.md
+        - name: 静的な (JAMstack) サイトを作成する
+          href: node-howto-create-static-site-jamstack.md
+        - name: 監視の自動化
+          href: /azure/azure-monitor/learn/nodejs-quick-start?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
         - name: REST API の作成
           href: /azure/app-service/app-service-web-tutorial-rest-api?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
     - name: サンプル

@@ -7,12 +7,12 @@ manager: carmonm
 ms.date: 04/11/2019
 ms.topic: conceptual
 ms.devlang: python
-ms.openlocfilehash: e25a6849bd2392253ece66ba46e682cf63417886
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.openlocfilehash: c114fa9aa360f58f5688f8b70685402ba0c12db7
+ms.sourcegitcommit: f519a1ee8017850b2fa37049af3bac1ea5ca5516
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68284863"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69889723"
 ---
 # <a name="authenticate-with-the-azure-management-libraries-for-python"></a>Python 用 Azure 管理ライブラリを使用した認証
 
@@ -52,7 +52,8 @@ credentials = ServicePrincipalCredentials(
 )
 ```
 
-> [注!] いずれかの Azure ソブリン クラウドに接続するには、`cloud_environment` パラメーターを使用します。
+> [!NOTE]
+> いずれかの Azure ソブリン クラウドに接続するには、`cloud_environment` パラメーターを使用します。
 >
 > ```python
 > from azure.common.credentials import ServicePrincipalCredentials
@@ -116,7 +117,8 @@ subscription_id = '33333333-3333-3333-3333-333333333333'
 client = ComputeManagementClient(credentials, subscription_id)
 ```
 
-> [注!] Azure ソブリン クラウドを使用する場合は、管理クライアントを作成するときに (`msrestazure.azure_cloud` の定数を通じて) 適切なベース URL も指定する必要があります。 たとえば、Azure China Cloud の場合は、次のようにします。
+> [!NOTE]
+> Azure ソブリン クラウドを使用する場合は、管理クライアントを作成するときに (`msrestazure.azure_cloud` の定数を通じて) 適切なベース URL も指定する必要があります。 たとえば、Azure China Cloud の場合は、次のようにします。
 > ```python
 > client = ComputeManagementClient(credentials, subscription_id,
 >     base_url=AZURE_CHINA_CLOUD.endpoints.resource_manager)

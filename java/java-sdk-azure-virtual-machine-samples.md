@@ -10,14 +10,15 @@ ms.topic: article
 ms.devlang: java
 ms.service: multiple
 ms.assetid: 1eeb166f-8253-4fde-82d2-43997fda7819
-ms.openlocfilehash: a61e0b29b33c45c9b01bccdcc2ae3f2d2af94e93
-ms.sourcegitcommit: f799dd4590dc5a5e646d7d50c9604a9975dadeb1
+ms.custom: ''
+ms.openlocfilehash: 63df8214b38390448b4e37b446bde887acd0ba3a
+ms.sourcegitcommit: f519a1ee8017850b2fa37049af3bac1ea5ca5516
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68691875"
+ms.lasthandoff: 08/21/2019
+ms.locfileid: "69889910"
 ---
-# <a name="azure-management-libraries-for-java-samples-for-virtual-machines"></a>Azure Management Libraries for Java の仮想マシン用サンプル
+# <a name="azure-management-libraries-for-java---virtual-machine-samples"></a>Azure Management Libraries for Java - 仮想マシン サンプル
 
 次の表は、Azure 仮想マシンの作成と構成を行う目的で利用できる Java ソースへのリンク集です。
 

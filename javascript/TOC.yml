@@ -31,13 +31,11 @@
             - name: Log Analytics と Azure Monitor
               href: /azure/azure-monitor/learn/quick-collect-linux-computer?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
             - name: GitHub のアクション
-              href: 'https://css-tricks.com/introducing-github-actions/'
+              href: 'https://azure.microsoft.com/resources/videos/azure-friday-deploy-to-azure-using-github-actions'
         - name: デバッグと診断
           items:
             - name: Azure App Service 用のリモート デバッグ
               href: 'https://code.visualstudio.com/docs/azure/remote-debugging'
-            - name: Azure App Service 用の VS Code でのログ ポイント
-              href: 'https://code.visualstudio.com/blogs/2018/07/12/introducing-logpoints-and-auto-attach'
             - name: VS Code でローカルの Node.js アプリをデバッグする
               href: 'https://code.visualstudio.com/docs/nodejs/nodejs-debugging'
         - name: ツールと拡張機能

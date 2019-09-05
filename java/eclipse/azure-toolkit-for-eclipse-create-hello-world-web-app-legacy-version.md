@@ -1,5 +1,5 @@
 ---
-title: ''
+title: Eclipse 用のレガシ ツールキットを使用して Azure 用の Hello World Web アプリを作成する
 description: このチュートリアルでは、Azure Toolkit for Eclipse バージョン 3.0.6 以前を使用して、Azure 用の Hello World Web アプリを作成する方法について説明します。
 services: app-service
 documentationcenter: java
@@ -14,12 +14,12 @@ ms.service: app-service
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
-ms.openlocfilehash: 35133c9161e06699f72c5de604215bc655d69dcb
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.openlocfilehash: 1284988d452832d8f8ed7faf692f56dc667c9118
+ms.sourcegitcommit: 9cd460ee16b637e701aa30078932878c0d0a7945
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68429496"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70181018"
 ---
 # <a name="create-a-hello-world-web-app-for-azure-using-the-legacy-toolkit-for-eclipse"></a>Eclipse 用のレガシ ツールキットを使用して Azure 用の Hello World Web アプリを作成する
 

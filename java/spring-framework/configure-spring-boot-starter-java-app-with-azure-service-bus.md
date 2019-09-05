@@ -8,12 +8,12 @@ ms.date: 08/21/2019
 ms.devlang: java
 ms.service: azure-java
 ms.topic: article
-ms.openlocfilehash: f41486c7063a6b0fa26ca4055d5f10e625676e8a
-ms.sourcegitcommit: f519a1ee8017850b2fa37049af3bac1ea5ca5516
+ms.openlocfilehash: 58d8dd00deeb90b1a1b8935bcbbab471255328d4
+ms.sourcegitcommit: 9cd460ee16b637e701aa30078932878c0d0a7945
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69892376"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70181990"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-service-bus-jms"></a>Azure Service Bus JMS 用の Spring Boot スターターの使用方法
 
@@ -24,9 +24,6 @@ Azure には、[Azure Service Bus](https://docs.microsoft.com/azure/service-bus-
 Azure Service Bus JMS 用の Spring Boot スターターを使用すると、Spring と Service Bus を統合することができます。
 
 この記事では、Azure Service Bus JMS 用の Spring Boot スターターを使用して、Service Bus の `queues` および `topics` との間でメッセージを送受信する方法について説明します。
-
-> [!NOTE]
-> 現在、この記事では、`SNAPSHOT` バージョンのスターターを使用しています。
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -66,28 +63,11 @@ Azure Service Bus JMS 用の Spring Boot スターターを使用すると、Spr
     <dependency>
         <groupId>com.microsoft.azure</groupId>
         <artifactId>azure-servicebus-jms-spring-boot-starter</artifactId>
-        <version>2.1.7-SNAPSHOT</version>
+        <version>2.1.7</version>
     </dependency>
     ```
 
-    ![pom.xml ファイルに dependency セクションを追加します。](./media/configure-spring-boot-starter-java-app-with-azure-service-bus/add-dependency-section.png)
-
-1. SNAPSHOT バージョンを使用するための [Maven repositories](https://maven.apache.org/settings.html#Repositories) 構成を追加します。
-
-    ```xml
-    <repositories>
-        <repository>
-            <id>nexus-snapshots</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
-            <snapshots>
-            <enabled>true</enabled>
-            <updatePolicy>always</updatePolicy>
-            </snapshots>
-        </repository>
-    </repositories>
-    ```
-
-    ![pom.xml ファイルに repository セクションを追加します。](./media/configure-spring-boot-starter-java-app-with-azure-service-bus/add-repository-section.png)
+    ![pom.xml ファイルに dependency セクションを追加します。](./media/configure-spring-boot-starter-java-app-with-azure-service-bus/add-dependency-section-new.png)
 
 1. *pom.xml* ファイルを保存して閉じます。
 
@@ -121,7 +101,7 @@ Azure Service Bus JMS 用の Spring Boot スターターを使用すると、Spr
     | `spring.jms.servicebus.connection-string` | Azure portal の自分の Service Bus 名前空間で取得した接続文字列を指定します。 |
     | `spring.jms.servicebus.idle-timeout`      | アイドル タイムアウトをミリ秒単位で指定します。 このチュートリアルで推奨される値は 1800000 です。   |
 
-3. *application.properties* ファイルを保存して閉じます。
+1. *application.properties* ファイルを保存して閉じます。
 
 ### <a name="use-service-bus-topic"></a>Service Bus トピックを使用する
 
@@ -353,7 +333,7 @@ Azure Service Bus JMS 用の Spring Boot スターターを使用すると、Spr
     mvn clean spring-boot:run
     ```
 
-3. 自分のアプリケーションが実行されたら、*curl* を使用してアプリケーションをテストできます。
+1. 自分のアプリケーションが実行されたら、*curl* を使用してアプリケーションをテストできます。
 
     ```shell
     curl -X POST localhost:8080/messages?message=hello

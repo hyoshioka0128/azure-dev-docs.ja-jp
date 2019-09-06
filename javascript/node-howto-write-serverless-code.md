@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: azure-nodejs
 ms.date: 08/19/2019
 ms.author: kraigb
-ms.openlocfilehash: 0917da975f29d392944ba2351e894de640182eb9
-ms.sourcegitcommit: f519a1ee8017850b2fa37049af3bac1ea5ca5516
+ms.openlocfilehash: a5ed7d5d99009593845966969217f8a5081da4c4
+ms.sourcegitcommit: 9cd460ee16b637e701aa30078932878c0d0a7945
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69892496"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70181949"
 ---
 # <a name="how-to-write-serverless-nodejs-code-on-azure"></a>Azure でサーバーレス Node.js コードを書く方法
 
@@ -40,12 +40,14 @@ ms.locfileid: "69892496"
 - さまざまなトリガーを使用してサーバーレス コードを実行する方法について:
 
   - [タイマーでコードを実行する](/azure/azure-functions/functions-create-scheduled-function)
-  - [Azure Blob Storage にファイルがアップロードされたりファイルが更新されたときにコードを実行する](/azure/storage/blobs/storage-upload-process-images?tabs=nodejsv10)
+  - [Azure BLOB ストレージにファイルがアップロードされたりファイルが更新されたときにコードを実行する](/azure/storage/blobs/storage-upload-process-images?tabs=nodejsv10)
   - [Azure Queue storage にメッセージが書き込まれたときにコードを実行する](/azure/azure-functions/functions-create-storage-queue-triggered-function)
 
 - [Azure Functions と Azure Cosmos DB を使用して非構造化データを格納する](/azure/azure-functions/functions-integrate-store-unstructured-data-cosmosdb.md?tabs=javascript)。 その他のデータベースについては、[Azure のデータベースを Node.js コードに統合する方法](node-howto-integrate-databases.md)に関するページを参照してください。
 
-- 「[Azure Functions をローカルでコーディングしてテストする](/azure/azure-functions/functions-develop-local)」、「[Azure Functions のコードをテストするための戦略](/azure/azure-functions/functions-test-a-function)」、「[エラー処理](/azure/azure-functions/functions-bindings-error-pages)」
+- [Azure Functions をローカルでコーディングしてテストする](/azure/azure-functions/functions-develop-local)
+
+- [Azure Functions のコードをテストするための戦略](/azure/azure-functions/functions-test-a-function)と[エラー処理](/azure/azure-functions/functions-bindings-error-pages)
 
 - [Azure Active Directory による認証の構成](/azure/app-service/configure-authentication-provider-aad.md?toc=%2fazure%2fazure-functions%2ftoc.json)
 

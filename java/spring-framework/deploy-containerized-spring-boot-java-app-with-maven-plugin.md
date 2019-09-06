@@ -14,15 +14,15 @@ ms.service: app-service
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
-ms.custom: seo-java-july2019
-ms.openlocfilehash: 1bfe42d6778b08919d8ae118fcf6dfcbab7c118c
-ms.sourcegitcommit: 4eee7d9a484e35eb695248c011a63b27603d354b
+ms.custom: seo-java-july2019, seo-java-august2019
+ms.openlocfilehash: c678377505b1916a552090a7dfbf5e9bb86da7c5
+ms.sourcegitcommit: 9cd460ee16b637e701aa30078932878c0d0a7945
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69635101"
+ms.lasthandoff: 08/30/2019
+ms.locfileid: "70181959"
 ---
-# <a name="how-to-use-the-maven-plugin-for-azure-web-apps-to-deploy-a-containerized-spring-boot-app-to-azure"></a>Azure Web Apps 用の Maven プラグインを使用して、コンテナー化された Spring Boot アプリを Azure にデプロイする方法
+# <a name="use-maven-for-azure-web-apps-to-deploy-a-containerized-spring-boot-app-to-azure"></a>Azure Web Apps 用の Maven を使用して、コンテナー化された Spring Boot アプリを Azure にデプロイする
 
 この記事では、[Azure Web Apps 用の Maven プラグイン](https://github.com/Microsoft/azure-maven-plugins/tree/master/azure-webapp-maven-plugin)を使用して、Docker コンテナーの Spring Boot サンプル アプリケーションを Azure App Services にデプロイする方法について説明します。
 

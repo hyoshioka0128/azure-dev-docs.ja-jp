@@ -8,17 +8,17 @@ ms.date: 04/09/2019
 ms.devlang: java
 ms.topic: conceptual
 ms.service: azure
-ms.custom: seo-java-august2019
-ms.openlocfilehash: b91da6ad547743a31967838786a52ce4303fff1e
-ms.sourcegitcommit: 9cd460ee16b637e701aa30078932878c0d0a7945
+ms.custom: seo-java-august2019, seo-java-september2019
+ms.openlocfilehash: 618766a6aafbafea3036b9c4abff51bd069e2786
+ms.sourcegitcommit: cf5881235569c754c829a8f819642a6f5aed30be
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70181938"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70904881"
 ---
 # <a name="use-docker-with-a-java-development-kit-jdk-for-azure"></a>Docker を Azure 用 Java Development Kit (JDK) と共に使用する 
 
-Java 7、8、11 用のビルド済み Docker イメージは [Docker Hub](https://hub.docker.com/_/microsoft-java-se) から利用できます。
+この記事では、Docker を Azure 用 Java Development Kit (JDK) と共に使用する方法について説明します。 Java 7、8、11 用のビルド済み Docker イメージは [Docker Hub](https://hub.docker.com/_/microsoft-java-se) から利用できます。
 
 複数のベース OS イメージ上の Zulu JDK、JRE、および JRE ヘッドレス用の認定済み Docker コンテナー イメージを Docker Hub で利用できます。
 

@@ -10,18 +10,19 @@ ms.topic: article
 ms.devlang: java
 ms.service: multiple
 ms.assetid: 10f457e3-578b-4655-8cd1-51339226ee7d
-ms.openlocfilehash: 80281765b53951aad39e0c5be94011411520e282
-ms.sourcegitcommit: f799dd4590dc5a5e646d7d50c9604a9975dadeb1
+ms.custom: seo-java-september2019
+ms.openlocfilehash: 1c147b4b478898fe0610abd09998b2972724f086
+ms.sourcegitcommit: cf5881235569c754c829a8f819642a6f5aed30be
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68691949"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70904910"
 ---
 # <a name="authenticate-with-the-azure-libraries-for-java"></a>Java 用 Azure ライブラリを使った認証 
 
 ## <a name="connect-to-services-with-connection-strings"></a>接続文字列を使ってサービスに接続する
 
-ほとんどの Azure サービス ライブラリでは、接続文字列またはセキュリティ キーが認証に使用されます。 たとえば SQL Database では、JDBC 接続文字列にユーザー名とパスワードの情報が格納されます。
+この記事では、Java 用 Azure ライブラリを使用して認証する方法について説明します。 ほとんどの Azure サービス ライブラリでは、接続文字列またはセキュリティ キーが認証に使用されます。 たとえば SQL Database では、JDBC 接続文字列にユーザー名とパスワードの情報が格納されます。
 
 ```java
 String url = "jdbc:sqlserver://myazuredb.database.windows.net:1433;" + 

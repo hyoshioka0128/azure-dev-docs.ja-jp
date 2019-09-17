@@ -1,5 +1,5 @@
 ---
-title: Node.js Azure で静的サイトを作成する
+title: Node.js、API、マークアップを使用して Azure 上で静的サイトを構築する
 description: Azure を使用して JAMstack アプリ (JavaScript、API、Markup) を作成する方法
 author: kraigb
 manager: barbkess
@@ -8,12 +8,13 @@ ms.topic: article
 ms.service: azure-nodejs
 ms.date: 08/20/2019
 ms.author: kraigb
-ms.openlocfilehash: ed0e922c2d18a35b12c09533fcf1444487d0e95c
-ms.sourcegitcommit: f519a1ee8017850b2fa37049af3bac1ea5ca5516
+ms.custom: seo-javascript-september2019
+ms.openlocfilehash: dc1d376be0f57d7d79a7a67d43dca49c30163c90
+ms.sourcegitcommit: 52fa18873a6a8dc7f28c063cca0175bae2720b2a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69892456"
+ms.lasthandoff: 09/09/2019
+ms.locfileid: "70808467"
 ---
 # <a name="how-to-build-jamstack-static-site-web-apps-with-azure"></a>Azure で JAMstack (静的サイト) Web アプリを作成する方法
 
@@ -43,7 +44,7 @@ Azure で静的 (JAMstack) サイトを実装するには、さまざまなツ�
   - 必要に応じてその関数を変更したり、他の関数をプロジェクトに追加したりしたうえで、それらを再び Azure にデプロイしてパブリックに公開することができます。
   - サーバーレス開発に関するその他のリソースについては、「[Azure でサーバーレス Node.js コードを作成する方法](node-howto-write-serverless-code.md)」を参照してください。
 
-- **Azure Storage へのフロントエンドのデプロイ**: 自分の API が完成したら、任意のフレームワークを使用して、それらの API を使用するためのフロントエンド コードを書くことができます。 準備が整ったら、「[チュートリアル: Blob Storage で静的な Web サイトをホストする](/azure/storage/blobs/storage-blob-static-website-host)」の記事に従って、それらのファイルを Azure にアップロードし、静的 Web サイトのホスティングを作動させます。
+- **Azure Storage へのフロントエンドのデプロイ**: 自分の API が完成したら、任意のフレームワークを使用して、それらの API を使用するためのフロントエンド コードを書くことができます。 準備ができたら、記事「[チュートリアル:Blob Storage で静的な Web サイトをホストする](/azure/storage/blobs/storage-blob-static-website-host)」に従って、それらのファイルを Azure にアップロードし、静的な Web サイトのホスティングを有効にします。
 
 - **リバース プロキシの作成**: リバース プロキシ (「[Azure Functions プロキシの操作](/azure/azure-functions/functions-proxies)」を参照) を使用すると、特定の要求をさまざまな URL に簡単に誘導できます。 このケースでは、自分のフロントエンド ファイルの要求を、それらのファイルがデプロイされている Azure Storage の URL に、また、API 要求を Azure Functions の URL に誘導する必要があります。
 

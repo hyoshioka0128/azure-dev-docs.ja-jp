@@ -60,11 +60,59 @@
           href: /azure/event-grid/custom-event-quickstart?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
         - name: Queue Storage
           href: /azure/storage/queues/storage-python-how-to-use-queue-storage?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+- name: チュートリアル
+  items:
+    - name: VS Code で App Service にデプロイする
+      items:
+        - name: 概要と前提条件
+          href: tutorial-deploy-app-service-on-linux-01.md
+        - name: アプリケーションの準備
+          href: tutorial-deploy-app-service-on-linux-02.md
+        - name: App Service の作成
+          href: tutorial-deploy-app-service-on-linux-03.md
+        - name: スタートアップ ファイルの構成
+          href: tutorial-deploy-app-service-on-linux-04.md
+        - name: アプリケーションのデプロイ
+          href: tutorial-deploy-app-service-on-linux-05.md
+        - name: ログのストリーミング
+          href: tutorial-deploy-app-service-on-linux-06.md
+        - name: リソースのクリーンアップ
+          href: tutorial-deploy-app-service-on-linux-07.md
+    - name: VS Code を使用したコンテナーのデプロイ
+      items:
+        - name: 概要と前提条件
+          href: tutorial-deploy-containers-01.md
+        - name: コンテナー イメージをデプロイする
+          href: tutorial-deploy-containers-02.md
+        - name: 変更を加えて再デプロイする
+          href: tutorial-deploy-containers-03.md
+        - name: ログのストリーミング
+          href: tutorial-deploy-containers-04.md
+        - name: リソースのクリーンアップ
+          href: tutorial-deploy-containers-05.md
+    - name: VS Code で Azure Functions をデプロイする
+      items:
+        - name: 概要と前提条件
+          href: tutorial-vs-code-serverless-python-01.md
+        - name: Python 関数を作成する
+          href: tutorial-vs-code-serverless-python-02.md
+        - name: コード ファイルを調べる
+          href: tutorial-vs-code-serverless-python-03.md
+        - name: ローカル デバッグ
+          href: tutorial-vs-code-serverless-python-04.md
+        - name: Deploy to Azure (Azure へのデプロイ)
+          href: tutorial-vs-code-serverless-python-05.md
+        - name: 2 つ目の関数を追加する
+          href: tutorial-vs-code-serverless-python-06.md
+        - name: ストレージ バインディングを追加する
+          href: tutorial-vs-code-serverless-python-07.md
+        - name: リソースのクリーンアップ
+          href: tutorial-vs-code-serverless-python-08.md
 - name: ハウツー ガイド
   items:
     - name: SDK のインストール
       href: python-sdk-azure-install.md
-    - name: Authentication
+    - name: 認証
       href: python-sdk-azure-authenticate.md
     - name: 操作の構成
       href: python-sdk-azure-operation-config.md

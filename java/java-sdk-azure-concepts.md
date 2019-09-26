@@ -10,13 +10,13 @@ ms.topic: article
 ms.devlang: java
 ms.service: multiple
 ms.assetid: f452468b-7aae-4944-abad-0b1aaf19170d
-ms.custom: seo-java-july2019
-ms.openlocfilehash: dc7819f46725203c18c0bc50fe45135d61b4870e
-ms.sourcegitcommit: f799dd4590dc5a5e646d7d50c9604a9975dadeb1
+ms.custom: seo-java-july2019, seo-java-september2019
+ms.openlocfilehash: dfa3681cd1e6ac193a48d7e60ce8507af49c4776
+ms.sourcegitcommit: 50fbde9a640468147953d62f7ae0fca4685ed5e6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68691936"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71225273"
 ---
 # <a name="patterns-and-best-practices-for-development-with-the-azure-libraries-for-java"></a>Java 用 Azure ライブラリを使用した開発のパターンとベスト プラクティス 
 
@@ -35,7 +35,7 @@ StorageAccount storage = azure.storageAccounts().define(storageAccountName)
 
 メソッド チェーンを記述する過程で、次に呼び出すメソッドの候補が、流暢な対話形式で IDE に表示されます。   
 
-![IntelliJ の fluent チェーンによるコマンド補完を示す GIF](media/intelliJFluent.gif)
+![IntelliJ の fluent チェーンによるコマンド補完を示す GIF](media/intellij-fluent-method-chain.gif)
 
 定義しようとする Azure リソースに合ったメソッドを、IDE に表示される候補の中から選んでつなげていきます。 必要なメソッドがチェーンに欠落している場合、その部分がエラーとして IDE によって強調表示されます。
 

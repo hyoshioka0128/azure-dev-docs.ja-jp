@@ -1,254 +1,88 @@
-### YamlMime:YamlDocument
-documentType: LandingData
-title: JavaScript および Node.js クラウド開発者向けの Azure
+### YamlMime:Landing
+title: Azure SDK for JavaScript のドキュメント
+summary: >
+  JavaScript および Node.js 用の Azure SDK の概要、使用を開始するための方法、開発者向け機能について説明します。 アプリケーション ホスティング、DevOps タスク、永続的なストレージとデータベース、モノのインターネット (IoT) デバイスの操作など、便利な Azure 機能を使ってみましょう。
 metadata:
   title: JavaScript と Node.js 開発者向けの Azure - チュートリアル、ツール、SDK リファレンス
-  description: JavaScript および Node.js 開発者向けに作成されたチュートリアル、モジュール、ツールを使用して、Azure でアプリの開発を開始しましょう。
-  keywords: Azure、JavaScript、Node.js、SDK、API、NPM
-  author: kraigb
-  ms.author: kraigb
-  manager: douge
-  ms.date: 07/01/2019
+  description: ブラウザーまたは Node.js で Azure SDK for JavaScript を使用したアプリの開発を開始しましょう。
+  author: sptramer
+  ms.author: sttramer
+  ms.date: 09/15/2019
   ms.topic: landing-page
-  featureFlags:
-    - clicktale
-  ms.technology: azure
-  ms.devlang: nodejs
-  ms.service: multiple
-sections:
-  - items:
-      - type: list
-        style: cards
-        className: cardsM
-        columns: 3
-        items:
-          - href: 'https://aka.ms/try-azure-node'
-            html: <p>Azure App Service 上で無料のサンドボックス環境に初めてのアプリをでデプロイする</p>
-            image:
-              src: /media/common/i_get-started.svg
-            title: 初めての Node.js サンプル アプリをデプロイする
-  - title: アプリに適したスケーラブルなホスティングの選択
-    items:
-      - type: list
-        style: cards
-        className: cardsM
-        columns: 3
-        items:
-          - title: 静的な Web Apps、SPA、およびプログレッシブ Web アプリ
-            html: <p>React、Angular、Vue などのフレームワークでビルドされた静的なアプリを Azure Storage にデプロイする</p>
-            href: 'https://code.visualstudio.com/tutorials/static-website/getting-started'
-            image:
-              src: /media/logos/logo_React.svg
-          - title: フルスタックの Node.js を利用した Web Apps と API
-            html: <p>Express などのフレームワークでビルドされたフルスタックの node.js web アプリと API を Azure App Service でデプロイする</p>
-            href: 'https://code.visualstudio.com/tutorials/app-service-extension/getting-started'
-            image:
-              src: /media/logos/logo_vs-code.svg
-          - title: Docker によるコンテナー化されたアプリとマイクロサービス
-            html: <p>Docker コンテナーを使用してコンテナー化されたアプリとマイクロサービスを Azure App Service 上にデプロイする</p>
-            href: 'https://code.visualstudio.com/tutorials/docker-extension/getting-started'
-            image:
-              src: /azure/docker/media/docker.png
-          - title: サーバーレス アプリと API
-            href: 'https://code.visualstudio.com/tutorials/functions-extension/getting-started'
-            html: <p>JavaScript で記述されたサーバーレス アプリと API を Azure Functions にデプロイする</p>
-            image:
-              src: /azure/media/index/azurefunctions.svg
-  - title: Azure SDK for Node.js
-    items:
-      - type: list
-        style: cards
-        className: cardsM
-        columns: 3
-        items:
-          - href: /javascript/api/overview/azure/
-            html: <p>Azure SDK に関する完全なリファレンス ドキュメント</p>
-            image:
-              src: /media/common/i_api-reference.svg
-            title: リファレンス
-          - href: 'https://azure.microsoft.com/en-us/resources/samples/?sort=0&platform=nodejs'
-            html: <p>Azure SDK のサンプル GitHub リポジトリ</p>
-            image:
-              src: /media/common/i_code-samples.svg
-            title: SDK のサンプル
-  - title: 継続的デプロイと DevOps
-    items:
-      - type: list
-        style: cards
-        className: cardsM
-        columns: 3
-        items:
-          - title: Azure DevOps Projects
-            href: /azure/devops-project/azure-devops-project-nodejs?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
-            html: <p>Azure DevOps プロジェクトからアプリをビルドしてデプロイします</p>
-            image:
-              src: /media/logos/logo_vs-team-services.svg
-          - title: GitHub のアクション
-            href: 'https://azure.microsoft.com/resources/videos/azure-friday-deploy-to-azure-using-github-actions'
-            html: <p>GitHub のアクションからアプリをビルドして Azure にデプロイします</p>
-            image:
-              src: /media/logos/logo_octokitty.svg
-          - title: 継続的インテグレーション
-            href: /vsts/build-release/apps/cd/azure/azure-devops-project-nodejs?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
-            html: <p>Jenkins、CircleCI、または Travis を追加してビルドを管理します</p>
-            image:
-              src: /media/common/i_scrum.svg
-  - title: デバッグおよび診断ツールを使用したバグの発見と修正
-    items:
-      - type: list
-        style: cards
-        className: cardsM
-        columns: 3
-        items:
-          - title: Azure App Service 用のリモート デバッグ
-            href: 'https://code.visualstudio.com/docs/azure/remote-debugging'
-            html: <p>Azure App Service 上でテストまたは実稼働アプリにデバッガーをアタッチします</p>
-            image:
-              src: /media/common/i_debug.svg
-          - title: Azure App Service 用の VS Code でのログ ポイント
-            href: 'https://code.visualstudio.com/blogs/2018/07/12/introducing-logpoints-and-auto-attach'
-            html: <p>VS Code から再デプロイすることなく、ログ ステートメントを Azure App Service アプリに追加します</p>
-            image:
-              src: /media/common/i_tools.svg
-          - title: VS Code でローカルの Node.js アプリをデバッグする
-            href: 'https://code.visualstudio.com/docs/nodejs/nodejs-debugging'
-            html: <p>実行中のプロセスにデバッガーを自動的にアタッチします</p>
-            image:
-              src: /media/logos/logo_vs-code.svg
-  - title: ツールと拡張機能
-    items:
-      - type: list
-        style: cards
-        className: cardsM
-        columns: 3
-        items:
-          - href: 'https://code.visualstudio.com/docs/azure/extensions'
-            html: <p>拡張機能を介して Visual Studio Code から直接 Azure を使用します</p>
-            image:
-              src: /media/logos/logo_vs-code.svg
-            title: Visual Studio Code
-          - href: /cli/azure
-            html: <p>コマンド ラインから Azure リソースを管理</p>
-            image:
-              src: /azure/media/index/azure_dev-7.svg
-            title: Azure CLI 2.0
-  - title: ファイルまたはデータベースでのデータの保管と管理
-    items:
-      - type: list
-        style: cards
-        className: cardsM
-        columns: 3
-        items:
-          - image:
-              src: /azure/media/index/Storage.svg
-            title: File Storage
-            html: <p>ファイルをクラウド ストレージに安全に格納します</p>
-            href: /azure/storage/blobs/storage-quickstart-blobs-nodejs?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
-          - href: /azure/cosmos-db/create-mongodb-nodejs?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
-            title: MongoDB
-            html: <p>アプリで MongoDB と CosmosDB を使用します</p>
-            image:
-              src: /azure/media/index/cosmosdb.svg
-          - image:
-              src: /azure/media/index/RedisCache.svg
-            title: Redis Cache
-            html: <p>Redis インメモリ データ ストアにデータを読み書きします</p>
-            href: /azure/redis-cache/cache-nodejs-get-started?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
-          - image:
-              src: /azure/media/index/PostgreSQL.svg
-            title: PostgreSQL
-            html: <p>クラウド Postgres データベースを作成して管理します</p>
-            href: /azure/postgresql/connect-nodejs?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
-          - image:
-              src: /azure/media/index/MySQL.SVG
-            title: MySQL
-            html: <p>クラウド MySQL データベースを作成して管理します</p>
-            href: /azure/mysql/connect-nodejs?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
-          - image:
-              src: /azure/media/index/SQLDatabase.svg
-            title: Azure SQL Database
-            html: <p>クラウド SQL データベースを作成して管理します</p>
-            href: /azure/sql-database/sql-database-connect-query-nodejs?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
-  - title: 認証と承認によるアプリとリソースの保護
-    items:
-      - type: list
-        style: cards
-        className: cardsM
-        columns: 3
-        items:
-          - href: /azure/active-directory/develop/quickstart-v1-nodejs-webapi?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
-            html: <p>Passport 戦略を使用してユーザーを認証します</p>
-            image:
-              src: /azure/media/index/ActiveDirectory.svg
-            title: Active Directory
-          - href: /azure/key-vault/quick-create-cli?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
-            html: <p>API キーとシークレットをお使いのアプリに安全に格納します</p>
-            image:
-              src: /azure/media/index/KeyVault.svg
-            title: Key Vault
-          - href: /azure/active-directory-b2c/active-directory-b2c-tutorials-spa?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
-            html: <p>Passport と Azure AD を使用して、Facebook、Twitter、または GitHub に Web アプリへのサインインを追加します</p>
-            image:
-              src: /azure/media/index/ActiveDirectory.svg
-            title: Active Directory B2C
-  - title: リソースの正常性の監視とアプリの問題の検出
-    items:
-      - type: list
-        style: cards
-        className: cardsM
-        columns: 3
-        items:
-          - href: /azure/azure-monitor/learn/nodejs-quick-start?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
-            html: <p>要求を監視し、アプリケーションのエラーを特定します</p>
-            image:
-              src: /azure/media/index/ApplicationInsights.svg
-            title: Application Insights
-          - href: /azure/azure-monitor/learn/quick-collect-linux-computer?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
-            html: <p>1 つの場所で、環境に関するデータを確認します</p>
-            image:
-              src: /azure/media/index/operationsmanagementsuite.svg
-            title: Log Analytics
-          - href: /azure/azure-monitor/?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
-            html: <p>詳細なパフォーマンス データと使用率データを取得します</p>
-            image:
-              src: /azure/media/index/AzureMonitoring.svg
-            title: Azure Monitor
-  - title: メッセージングによるデバイスとアプリの管理と接続
-    items:
-      - type: list
-        style: cards
-        className: cardsM
-        columns: 3
-        items:
-          - href: /azure/event-grid/custom-event-quickstart?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
-            html: <p>HTTP ベースのイベント配信を使用してポーリングを排除します</p>
-            image:
-              src: /azure/media/index/azure_event_grid.svg
-            title: Event Grid
-          - href: /azure/service-bus-messaging/service-bus-nodejs-how-to-use-queues?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
-            html: <p>サービス間で信頼性の高いメッセージングを利用します</p>
-            image:
-              src: /azure/media/index/IOT_edge_50.svg
-            title: Service Bus
-          - href: /azure/storage/queues/storage-nodejs-how-to-use-queues?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
-            html: <p>拡張性の高いメッセージングにキューを使用します</p>
-            image:
-              src: /media/common/i_sharepoint-list.svg
-            title: ストレージ
-  - title: IoT
-    items:
-      - type: list
-        style: cards
-        className: cardsM
-        columns: 3
-        items:
-          - href: /azure/iot-hub/quickstart-control-device-node?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
-            html: <p>何千ものデバイスを IoT Hub で管理します</p>
-            image:
-              src: /azure/media/index/IOT_edge_50.svg
-            title: IoT デバイスの接続と管理
-          - href: /azure/iot-hub/quickstart-send-telemetry-node?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
-            html: <p>イベント ハブを使用して何十億ものデータ ポイントを収集します</p>
-            image:
-              src: /azure/media/index/EventHubs.svg
-            title: ビッグ データ ストリーミング
+  ms.openlocfilehash: 0133931c0d9ac6e1dfc9e3faa1f14933f885e0af
+  ms.sourcegitcommit: 4a95777874ae3a3c760365148de868f937fdfd2e
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/18/2019
+  ms.locfileid: "71094812"
+landingContent:
+- title: Azure SDK for JavaScript を使ってみる
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Node.js のサンプルを Azure App Service にすばやくデプロイする
+      url: https://aka.ms/try-azure-node
+    - text: 使用可能なすべての Azure SDK for JavaScript サンプルを参照する
+      url: /resources/samples/?sort=0&platform=nodejs
+- title: Azure でのアプリケーションのホスト
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Azure App Service について
+      url: /azure/app-service/overview
+  - linkListType: architecture
+    links:
+    - text: 自分に合ったホスティング オプションを見つける
+      url: /azure/architecture/guide/technology-choices/compute-decision-tree
+  - linkListType: quickstart
+    links:
+    - text: Visual Studio Code から静的な Web アプリケーションをデプロイする
+      url: https://code.visualstudio.com/tutorials/static-website/getting-started
+    - text: Visual Studio Code からフルスタックの Node.js アプリケーションをデプロイする
+      url: https://code.visualstudio.com/tutorials/app-service-extension/getting-started
+    - text: Visual Studio Code からコンテナー化されたアプリケーションをデプロイする
+      url: https://code.visualstudio.com/tutorials/docker-extension/getting-started
+    - text: Visual Studio Code から Azure Functions を使用してサーバーレス アプリケーションをデプロイする
+      url: https://code.visualstudio.com/tutorials/functions-extension/getting-started
+- title: Azure を使用したアプリケーションのビルド、デプロイ、監視
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Azure Monitor とは
+      url: /azure/azure-monitor/overview?toc=%2Fazure%2Fjavascript%2Ftoc.json&bc=%2Fazure%2Fjavascript%2Fbreadcrumb%2Ftoc.json
+  - linkListType: quickstart
+    links:
+    - text: Azure Pipelines で Node.js アプリケーションの CI/CD を設定する
+      url: /azure/devops-project/azure-devops-project-nodejs?toc=%2Fazure%2Fjavascript%2Ftoc.json&bc=%2Fazure%2Fjavascript%2Fbreadcrumb%2Ftoc.json
+    - text: デプロイされたアプリケーションを Azure Monitor を使用して監視する
+      url: /azure/azure-monitor/learn/nodejs-quick-start?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
+- title: メッセージング サービスを使用したアプリケーションとデバイスの接続
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Azure Service Bus キューを使用してメッセージを渡す
+      url: /azure/service-bus-messaging/service-bus-nodejs-how-to-use-queues?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
+    - text: Azure Storage キューを使用してメッセージを渡す
+      url: /azure/storage/queues/storage-nodejs-how-to-use-queues?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
+- title: Azure でのストレージ ソリューションとデータベース ソリューション
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Azure Storage で BLOB を操作する
+      url: /azure/storage/blobs/storage-quickstart-blobs-nodejs?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
+    - text: Azure CosmosDB を使用するために MongoDB アプリケーションを移行する
+      url: /azure/cosmos-db/create-mongodb-nodejs?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
+- title: モノのインターネット (IoT) デバイスの操作
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Azure IoT Hub を使用してデバイスを管理する
+      url: /azure/iot-hub/quickstart-control-device-node?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
+    - text: Azure Event Hub を使用してデバイスからデータを処理する
+      url: /azure/iot-hub/quickstart-send-telemetry-node?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
+- title: Azure SDK for JavaScript のリファレンス
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: Azure SDK for JavaScript API のリファレンス
+      url: /javascript/api/overview/azure/

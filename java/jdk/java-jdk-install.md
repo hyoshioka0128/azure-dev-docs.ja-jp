@@ -8,16 +8,16 @@ ms.date: 04/19/2019
 ms.devlang: java
 ms.topic: conceptual
 ms.service: azure
-ms.openlocfilehash: 58fb77c44c290ad86f64a6f71b1e750e364363a6
-ms.sourcegitcommit: f799dd4590dc5a5e646d7d50c9604a9975dadeb1
+ms.openlocfilehash: 7d3d2af845ba2d8d1ba16b6dcd34b21c0853633f
+ms.sourcegitcommit: 4a95777874ae3a3c760365148de868f937fdfd2e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68691725"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71094875"
 ---
 # <a name="install-the-jdk-for-azure-and-azure-stack"></a>Azure 用の JDK および Azure Stack をインストールする
 
-OpenJDK の Azul Zulu Enterprise ビルドは、Microsoft および Azul Systems でサポートされる、Azure と Azure Stack 用の OpenJDK の無料でマルチプラット フォーム対応の実稼働可能なディストリビューションです。 これらには、Java SE アプリケーションを構築および実行するためのすべてのコンポーネントが含まれています。
+Azul Zulu for Azure - Enterprise Edition JDK ビルドは、Microsoft および Azul Systems によってサポートされる、無料でマルチプラットフォーム対応かつ実稼働可能な、Azure と Azure Stack 用の OpenJDK のディストリビューションです。 これらには、Java SE アプリケーションを構築および実行するためのすべてのコンポーネントが含まれています。
 
 [クライアント OS ごとに複数のダウンロード パッケージ タイプがサポート](https://www.azul.com/downloads/azure-only/zulu/)されています。 Azure Marketplace ギャラリーから、次のプラットフォーム用の仮想マシン イメージを入手することもできます。
 
@@ -33,13 +33,13 @@ OpenJDK の Azul Zulu Enterprise ビルドは、Microsoft および Azul Systems
 >
 >  Java 11 パッケージも [Azul の Azure ダウンロードページ](https://www.azul.com/downloads/azure-only/zulu/)で提供されています。
 
-## <a name="download-and-install-the-azul-zulu-jdks-for-windows"></a>Windows 用の Azul Zulu JDK をダウンロードしてインストールする 
+## <a name="download-and-install-the-azul-zulu-for-azure---enterprise-edition-jdk-builds-for-windows"></a>Windows 用の Azul Zulu for Azure - Enterprise Edition JDK ビルドをダウンロードしてインストールする 
 
 1. お使いのクライアント上の場所 (`C:\Users\<your_login>\Downloads` など) に [64 ビット Azul Zulu JDK 8 を MSI としてダウンロード](https://repos.azul.com/azure-only/zulu/packages/zulu-11/11.0.3/zulu-11-azure-jdk_11.31.11-11.0.3-win_x64.msi)します。 (.ZIP パッケージも [Azul の Azure ダウンロード ページ](https://www.azul.com/downloads/azure-only/zulu/)で提供されています。)
 
 2. そのディレクトリに移動し、ダウンロードした MSI ファイルをダブルクリックしてインストールを開始します。
 
-## <a name="download-and-install-the-azul-zulu-jdks-for-mac"></a>Mac 用の Azul Zulu JDK をダウンロードしてインストールする 
+## <a name="download-and-install-the-azul-zulu-for-azure---enterprise-edition-jdk-builds-for-mac"></a>Mac 用の Azul Zulu for Azure - Enterprise Edition JDK ビルドをダウンロードしてインストールする 
 
 これらの手順では、ZIP ファイルを Mac にダウンロードします。 DMG バージョンも利用できます。
 
@@ -51,7 +51,7 @@ OpenJDK の Azul Zulu Enterprise ビルドは、Microsoft および Azul Systems
 unzip <name_of_zulu_package>.zip
 ```
 
-## <a name="download-and-install-the-azul-zulu-jdks-for-alpine-linux"></a>Alpine Linux 用の Azul Zulu JDK をダウンロードしてインストールする
+## <a name="download-and-install-the-azul-zulu-for-azure---enterprise-edition-jdk-builds-for-alpine-linux"></a>Alpine Linux 用の Azul Zulu for Azure - Enterprise Edition JDK ビルドをダウンロードしてインストールする
 
 1. お使いのクライアント上の場所 (`/usr/lib/jvm` など) に [64 ビット Azul Zulu JDK 8 を TAR ファイルとしてダウンロード](https://repos.azul.com/azure-only/zulu/packages/zulu-11/11.0.3/zulu-11-azure-jdk_11.31.11-11.0.3-linux_x64.tar.gz)します。 (.RPM と .DEB パッケージも [Azul の Azure ダウンロード ページ](https://www.azul.com/downloads/azure-only/zulu/)で提供されています。)
 
@@ -76,7 +76,7 @@ OpenJDK 64-Bit Server VM (Zulu 8.38.0.13-macosx)-Microsoft-Azure-restricted (bui
 
 ```
 
-## <a name="download-and-install-the-azul-zulu-jdks-from-a-yum-repository"></a>Yum リポジトリから Azul Zulu JDK をダウンロードしてインストールする
+## <a name="download-and-install-the-azul-zulu-for-azure---enterprise-edition-jdks-from-a-yum-repository"></a>Azul Zulu for Azure - Enterprise Edition JDK ビルドを Yum リポジトリからダウンロードしてインストールする
 
 Azul Zulu JDK は、Azul によって [Yum リポジトリ](https://repos.azul.com/azure-only/zulu-azure.repo)で提供されています。
 

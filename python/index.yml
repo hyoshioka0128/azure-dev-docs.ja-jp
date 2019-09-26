@@ -1,190 +1,99 @@
-### YamlMime:YamlDocument
-documentType: LandingData
-title: Python クラウド開発者向けの Azure
+### YamlMime:Landing
+title: Azure SDK for Python のドキュメント
+summary: >
+  Azure SDK for Python の概要、使用を開始するための方法、開発者向け機能について説明します。 アプリケーション ホスティング、mySQL や PostgreSQL のようなオープンソース データベースのサポート、機械学習やその他のアプリケーションのビッグ データの操作など、便利な Azure 機能を使ってみましょう。
 metadata:
-  title: Python 開発者向けの Azure - チュートリアル、API リファレンス
-  description: 次のクイック スタート、チュートリアル、および API リファレンスを使用して、Azure での Python について説明します。
-  keywords: 'Azure, Python, SDK, API'
+  title: Python 開発者向けの Azure
+  description: 以下の開発者リソースを使用して、Azure SDK for Python を使用した開発を開始しましょう。
   author: sptramer
   ms.author: sttramer
-  manager: carmonm
-  ms.date: 06/27/2019
+  ms.date: 09/10/2019
   ms.topic: landing-page
-  ms.prod: azure
-  ms.devlang: python
-sections:
-  - title: すぐに開始
-    items:
-      - type: list
-        style: cards
-        className: cardsM
-        columns: 3
-        items:
-          - href: /azure/app-service/containers/quickstart-python?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-            image:
-              src: 'https://docs.microsoft.com/azure/media/index/app-service-web.svg'
-            title: Azure で Python Web アプリを構築およびデプロイする。
-          - image:
-              src: 'https://docs.microsoft.com/azure/media/index/AzureFunctions.svg'
-            title: Visual Studio Code を使って Azure Functions でサーバーレスの Python アプリを作成してデプロイする。
-            href: 'https://code.visualstudio.com/docs/python/tutorial-azure-functions'
-          - image:
-              src: 'https://docs.microsoft.com/azure/python/media/AzureNotebooks.png'
-            title: Jupyter ノートブックで Azure Machine Learning の作業を開始する。
-            href: /azure/notebooks/use-machine-learning-services-jupyter-notebooks?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-          - image:
-              src: 'https://docs.microsoft.com/azure/devops/_img/index/devopsiconpipelines96.svg'
-            title: Azure Pipelines で Python アプリを構築およびデプロイする
-            href: /azure/devops/pipelines/languages/python-webapp?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-          - href: /azure/cosmos-db/create-sql-api-python?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-            image:
-              src: 'https://docs.microsoft.com/azure/media/index/cosmosdb.svg'
-            title: Visual Studio Code を使用して、Azure のグローバルにレプリケートされたデータベースでデータの作成とクエリを行う。
-          - image:
-              src: 'https://docs.microsoft.com/azure/media/index/Storage.svg'
-            title: Azure でデータを安全に保存および取得する。
-            href: /azure/storage/blobs/storage-quickstart-blobs-python?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-  - title: アプリ ホスティング
-    items:
-      - type: list
-        style: cards
-        className: cardsM
-        columns: 3
-        items:
-          - image:
-              src: 'https://docs.microsoft.com/azure/media/index/app-service-web.svg'
-            title: Azure Web Apps
-            html: Linux 上で Python Web アプリを構築、デプロイ、スケーリングする。
-            href: /azure/app-service/containers/quickstart-python?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-          - image:
-              src: 'https://docs.microsoft.com/media/logos/logo_kubernetes.svg'
-            title: Azure Kubernetes Service
-            html: Kubernetes によるオーケストレーションで、コンテナー化されたアプリをデプロイおよび管理する。
-            href: /azure/aks/kubernetes-walkthrough?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-          - image:
-              src: 'https://docs.microsoft.com/azure/virtual-machines/media/index/virtual-machines.svg'
-            title: Virtual Machines
-            html: Linux または Windows Server の VM を使用して、コードを大規模に実行する。
-            href: /azure/virtual-machines/linux/quick-create-cli?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-          - image:
-              src: 'https://docs.microsoft.com/azure/media/index/AzureFunctions.svg'
-            title: Azure Functions
-            html: サーバーレス関数として Python コードを実行する。
-            href: /azure/azure-functions/functions-create-first-function-python?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-  - title: データ サイエンス、AI、および機械学習
-    items:
-      - type: list
-        style: cards
-        className: cardsM
-        columns: 3
-        items:
-          - image:
-              src: 'https://docs.microsoft.com/azure/media/index/MachineLearning.svg'
-            title: Azure Machine Learning
-            html: データの準備とトレーニング、および機械学習モデルのデプロイ用の Azure サービスを見つける。
-            href: /azure/machine-learning/service?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-          - image:
-              src: 'https://docs.microsoft.com/azure/python/media/AzureNotebooks.png'
-            title: Azure Notebooks
-            html: フルマネージド Jupyter Notebook を使用して、Python データ サイエンス実験を実行する。
-            href: 'https://notebooks.azure.com/'
-          - image:
-              src: 'https://docs.microsoft.com/azure/virtual-machines/media/index/virtual-machines.svg'
-            title: データ サイエンス用の仮想マシン
-            html: データ サイエンス用の一般的なツールが事前インストールされた仮想マシンを素早く作成する。
-            href: /azure/machine-learning/data-science-virtual-machine/dsvm-ubuntu-intro?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-          - image:
-              src: 'https://docs.microsoft.com/azure/hdinsight/media/index/spark_r.svg'
-            title: 分散データ処理
-            html: Azure HDInsight でマネージド Hadoop/Spark クラスターを使用して大規模なデータ処理ワークロードに対応する。
-            href: /azure/hdinsight/hadoop/apache-hadoop-linux-create-cluster-get-started-portal?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-          - image:
-              src: 'https://docs.microsoft.com/azure/media/index/i_azure-cognitive-services-color.svg'
-            title: Cognitive Services
-            html: Computer Vision、テキスト分析、音声認識などの Azure サービスを使用して、アプリケーションを構築する。
-            href: /azure/cognitive-services?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-  - title: データ ソリューション
-    items:
-      - type: list
-        style: cards
-        className: cardsM
-        columns: 3
-        items:
-          - image:
-              src: 'https://docs.microsoft.com/azure/media/index/Storage.svg'
-            title: Storage
-            html: スケーラブルな高可用性クラウド ストレージを使用したファイルの安全な保存
-            href: /azure/storage/blobs/storage-quickstart-blobs-python?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-          - image:
-              src: 'https://docs.microsoft.com/azure/media/index/cosmosdb.svg'
-            title: Cosmos DB
-            html: スケーラブルなグローバル分散マルチモデル NoSQL データベースへデータを保存する。
-            href: /azure/cosmos-db/create-sql-api-python?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-          - image:
-              src: 'https://docs.microsoft.com/azure/media/index/RedisCache.svg'
-            title: Redis Cache
-            html: Python から Azure Redis Cache へのデータの読み取りと書き込みを行う。
-            href: /azure/redis-cache/cache-python-get-started?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-          - image:
-              src: 'https://docs.microsoft.com/azure/media/index/PostgreSQL.svg'
-            title: Azure Database for PostgreSQL
-            html: Azure 上に PostgreSQL インスタンスを作成し、Python を使用して接続する。
-            href: /azure/postgresql/quickstart-create-server-database-portal?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-          - image:
-              src: 'https://docs.microsoft.com/azure/media/index/MySQL.SVG'
-            title: Azure Database for MySQL
-            html: Azure 上に MySQL インスタンスを作成し、Python を使用して接続する。
-            href: /azure/mysql/quickstart-create-mysql-server-database-using-azure-portal?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-          - image:
-              src: 'https://docs.microsoft.com/azure/media/index/SQLDatabase.svg'
-            title: SQL Database
-            html: Azure でマネージド SQL Server を設定する。
-            href: /azure/sql-database/sql-database-connect-query-python?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-          - image:
-              src: 'https://docs.microsoft.com/azure/media/index/EventHubs.svg'
-            title: Event Hubs
-            html: シンプルで安全かつスケーラブルなリアルタイムのデータ インジェストを使用したデータの分析情報の解明
-            href: /azure/event-hubs/event-hubs-python?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-          - image:
-              src: 'https://docs.microsoft.com/azure/media/index/ServiceBus.svg'
-            title: Service Bus
-            html: FIFO キューまたはトピック サブスクリプションを使用して、クラウドでメッセージを送信する。
-            href: /azure/service-bus-messaging?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-  - title: セキュリティと統合
-    items:
-      - type: list
-        style: cards
-        className: cardsM
-        columns: 3
-        items:
-          - image:
-              src: 'https://docs.microsoft.com/azure/media/index/KeyVault.svg'
-            title: Key Vault
-            html: クラウド アプリおよびサービスが使用する暗号化キーとシークレットを保護する。
-            href: /python/api/overview/azure/key-vault
-  - title: Azure 開発における Python 用のツール
-    items:
-      - type: list
-        style: cards
-        className: cardsM
-        columns: 3
-        items:
-          - href: /python/api?view=azure-python
-            image:
-              src: 'http://docs.microsoft.com/media/common/i_api-reference.svg'
-            title: Azure SDK for Python API のリファレンス
-          - href: 'https://code.visualstudio.com/docs/python/python-tutorial'
-            html: Python アプリを開発し、Visual Studio Code を使用して Azure にデプロイする。
-            image:
-              src: 'https://docs.microsoft.com/media/logos/logo_vs-code.svg'
-            title: Visual Studio Code
-          - href: /cli/azure?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-            html: コマンド ラインから Azure リソースを管理する。
-            image:
-              src: 'https://docs.microsoft.com/azure/media/index/azure_dev-7.svg'
-            title: Azure CLI
-          - href: /windows/wsl/install-win10?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-            html: さまざまなディストリビューションを使用して、Linux アプリケーションを Windows 10 上でネイティブに実行する。
-            image:
-              src: 'https://docs.microsoft.com/media/logos/logo_linux-color.svg'
-            title: Windows Subsystem for Linux
+  ms.collection: collection
+  ms.openlocfilehash: a753597a65f959e638a4aa72b99327ea1f635aee
+  ms.sourcegitcommit: 4a95777874ae3a3c760365148de868f937fdfd2e
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/18/2019
+  ms.locfileid: "71094810"
+landingContent:
+- title: Azure SDK for Python を使ってみる
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Azure SDK for Python について
+      url: python-sdk-azure-overview.md
+  - linkListType: download
+    links:
+    - text: SDK のインストール
+      url: python-sdk-azure-install.md
+    - text: Azure Notebooks で Jupyter ノートブックを使用する
+      url: https://notebooks.azure.com/
+    - text: Visual Studio Code での Python
+      url: https://code.visualstudio.com/docs/languages/python
+  - linkListType: how-to-guide
+    links:
+    - text: アプリケーションの認証
+      url: python-sdk-azure-authenticate.md
+  - linkListType: quickstart
+    links:
+    - text: Visual Studio Code を使用して Azure Functions でサーバーレスの Python アプリを作成する
+      url: /azure/azure-functions/tutorial-vs-code-serverless-python?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
+    - text: Jupyter ノートブックで Azure Machine Learning ツールを使用する
+      url: /azure/notebooks/use-machine-learning-services-jupyter-notebooks?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
+    - text: Azure Pipelines を使用して Python アプリを構築およびデプロイする
+      url: /azure/devops/pipelines/languages/python-webapp?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
+- title: Azure 内でのアプリケーションのホスト
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Azure App Service on Linux の概要
+      url: /azure/app-service/containers/app-service-linux-intro?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
+  - linkListType: quickstart
+    links:
+    - text: Python Web アプリを構築、デプロイ、スケーリングする
+      url: /azure/app-service/containers/quickstart-python?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
+    - text: Azure Kubernetes Service にコンテナー化されたアプリをデプロイする
+      url: /azure/aks/kubernetes-walkthrough?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
+    - text: Python でサーバーレス関数を作成してデプロイする
+      url: /azure/azure-functions/functions-create-first-function-python?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
+- title: データ サイエンス、AI、機械学習のためのサービス
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Azure Machine Learning service について
+      url: /azure/machine-learning/service?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
+    - text: Azure Cognitive Services について
+      url: /azure/cognitive-services?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
+  - linkListType: quickstart
+    links:
+    - text: データ処理にマネージド Azure HDInsights クラスターを使用する
+      url: /azure/hdinsight/hadoop/apache-hadoop-linux-create-cluster-get-started-portal?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
+    - text: データ サイエンス タスク用の Azure 仮想マシンを作成する
+      url: /azure/machine-learning/data-science-virtual-machine/dsvm-ubuntu-intro?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+- title: Azure SDK for Python のリファレンス
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: Azure SDK for Python API のリファレンス
+      url: /python/api?view=azure-python
+- title: Azure でのストレージ、メッセージング、データベース ソリューション
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Azure のストレージ ソリューションについて
+      url: /storage/common/storage-introduction?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
+    - text: Azure CosmosDB を使用したスケーラブルな NoSQL
+      url: /azure/cosmos-db/introduction?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
+    - text: Azure Service Bus を使用したアプリケーション間メッセージング
+      url: /azure/service-bus-messaging?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
+  - linkListType: quickstart
+    links:
+    - text: Python から Azure Storage の BLOB を管理する
+      url: /azure/storage/blobs/storage-quickstart-blobs-python?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
+    - text: Azure CosmosDB アカウント上で Python から SQL クエリを使用する
+      url: /azure/cosmos-db/create-sql-api-python?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
+    - text: Azure にマネージド SQL サーバーを設定する
+      url: /azure/sql-database/sql-database-connect-query-python?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
+    - text: Azure Event Hubs を使用してリアルタイムでデータを取り込む
+      url: /azure/event-hubs/event-hubs-python?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json

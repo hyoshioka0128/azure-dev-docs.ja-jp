@@ -8,12 +8,12 @@ ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.author: kraigb
-ms.openlocfilehash: 9c0b3b8b4a21975a849531d5c6560a291ed4b7f2
-ms.sourcegitcommit: 74e28a479c87a3a53592646420b78e69852dd86a
+ms.openlocfilehash: 6996121fc8ecba4489e2ec920de35574f6d1c5d8
+ms.sourcegitcommit: d6575ac86449380b5a9c6c66aa722cb33ed53438
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71019890"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71186168"
 ---
 # <a name="clean-up-resources"></a>リソースのクリーンアップ
 
@@ -29,7 +29,7 @@ ms.locfileid: "71019890"
 
 前述のように、Functions 拡張機能の詳細は GitHub リポジトリの [vscode-azurefunctions](https://github.com/Microsoft/vscode-azurefunctions) で参照できます。 問題提起や投稿も歓迎いたします。
 
-「[Azure Functions の概要](/azure/azure-functions/functions-overview.md)」では、使用できるさまざまなトリガーについて説明されています。
+「[Azure Functions の概要](/azure/azure-functions/functions-overview)」では、使用できるさまざまなトリガーについて説明されています。
 
 データ ストレージのほか、AI や機械学習のサービスなど、Python から使用できる Azure サービスの詳細については、[Azure Python デベロッパー センター](/azure/python/?view=azure-python)にアクセスしてください。
 

@@ -8,12 +8,12 @@ ms.service: app-service
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.author: kraigb
-ms.openlocfilehash: a398b5483f9cbe11768752551e11be430a3b3467
-ms.sourcegitcommit: 74e28a479c87a3a53592646420b78e69852dd86a
+ms.openlocfilehash: ab1609d6d0940172d61a61a31f4dbfabc868c023
+ms.sourcegitcommit: d6575ac86449380b5a9c6c66aa722cb33ed53438
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71020000"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71186129"
 ---
 # <a name="prepare-your-app"></a>アプリケーションの準備
 
@@ -44,7 +44,7 @@ ms.locfileid: "71020000"
     Flask==1.1.1
     ```
 
-1. [Flask チュートリアル (Flask 用のプロジェクト環境の作成)](/docs/python/tutorial-flask.md#create-a-project-environment-for-flask) の手順に従って、Flask がインストールされた仮想環境を作成します。この仮想環境内のローカルでアプリを実行することができます。
+1. [Flask チュートリアル (Flask 用のプロジェクト環境の作成)](https://code.visualstudio.com/docs/python/tutorial-flask#create-a-project-environment-for-flask) の手順に従って、Flask がインストールされた仮想環境を作成します。この仮想環境内のローカルでアプリを実行することができます。
 
 1. このアプリを実行するには、(オペレーティング システムに応じて) 次のコマンドを使用します。 FLASK_APP 環境変数によって、アプリ オブジェクトの検索先が Flask に伝えられます。
 
@@ -62,11 +62,11 @@ ms.locfileid: "71020000"
 
 ## <a name="vs-code-flask-tutorial-sample"></a>VS Code Flask チュートリアル サンプル
 
-[python-sample-vscode-flask-tutorial](https://github.com/Microsoft/python-sample-vscode-flask-tutorial) をダウンロードまたは複製します。これは [Flask チュートリアル](/docs/python/tutorial-flask.md)に従って得られた結果です。
+[python-sample-vscode-flask-tutorial](https://github.com/Microsoft/python-sample-vscode-flask-tutorial) をダウンロードまたは複製します。これは [Flask チュートリアル](https://code.visualstudio.com/docs/python/tutorial-flask)に従って得られた結果です。
 
 ## <a name="vs-code-django-tutorial-sample"></a>VS Code Django チュートリアル サンプル
 
-[Django チュートリアル](/docs/python/tutorial-django.md)で得られた結果である [python-sample-vscode-django-tutorial](https://github.com/Microsoft/python-sample-vscode-django-tutorial) をダウンロードまたは複製します。
+[Django チュートリアル](https://code.visualstudio.com/docs/python/tutorial-django)で得られた結果である [python-sample-vscode-django-tutorial](https://github.com/Microsoft/python-sample-vscode-django-tutorial) をダウンロードまたは複製します。
 
 このサンプルのようにローカル SQLite データベースが Django アプリに使用されている場合、事前初期化済みかつ事前設定済みの *db.sqlite3* ファイルのコピーをリポジトリに追加する必要があります。 これは、現在 App Service for Linux には、デプロイの過程で Django の `migrate` コマンドを実行する手段が用意されていないため、あらかじめ作成しておいたデータベースを自分でデプロイしなければならないためです。 その場合でも、データベースは事実上読み取り専用であり、また、データベースに書き込みを行うとエラーが発生します。
 

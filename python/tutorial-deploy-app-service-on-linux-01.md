@@ -8,12 +8,12 @@ ms.service: app-service
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.author: kraigb
-ms.openlocfilehash: 2007be8b9799df1b15cff76b3ef4aa1ad96cae44
-ms.sourcegitcommit: 74e28a479c87a3a53592646420b78e69852dd86a
+ms.openlocfilehash: 1b1e3d7fa1daa408584e4caf22c553d7f47bccea
+ms.sourcegitcommit: d6575ac86449380b5a9c6c66aa722cb33ed53438
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71019880"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71186193"
 ---
 # <a name="deploy-to-azure-app-service-on-linux"></a>Azure App Service on Linux にデプロイする
 
@@ -39,7 +39,7 @@ Azure サブスクリプションをお持ちでない場合は、無料アカ�
 次のソフトウェアをインストールします。
 
 - [Visual Studio Code](https://code.visualstudio.com/)。
-- Python および [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) 拡張機能。[VS Code Python チュートリアルの前提条件](https://code.visualstudio.com/docs/python/python-tutorial.md)に説明があります。
+- Python および [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) 拡張機能。[VS Code Python チュートリアルの前提条件](https://code.visualstudio.com/docs/python/python-tutorial)に説明があります。
 - [Azure App Service](vscode:extension/ms-azuretools.vscode-azureappservice) 拡張機能。VS Code 内から Azure App Service と対話できるようにする機能です。 全般的な情報については、[App Service 拡張機能のチュートリアル](https://code.visualstudio.com/tutorials/app-service-extension/getting-started)をご覧のうえ、[vscode-azureappservice GitHub リポジトリ](https://github.com/Microsoft/vscode-azureappservice)にアクセスしてください。
 
 ## <a name="sign-in-to-azure"></a>Azure へのサインイン

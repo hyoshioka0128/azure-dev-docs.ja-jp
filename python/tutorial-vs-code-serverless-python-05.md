@@ -8,18 +8,18 @@ ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 09/02/2019
 ms.author: kraigb
-ms.openlocfilehash: 0bf24a900eb0c501443b8ff353c8b07529f840be
-ms.sourcegitcommit: 74e28a479c87a3a53592646420b78e69852dd86a
+ms.openlocfilehash: da7761f568849537ac3ee06cf6ef2c4cc521b452
+ms.sourcegitcommit: d6575ac86449380b5a9c6c66aa722cb33ed53438
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71019960"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71186154"
 ---
 # <a name="deploy-to-azure-functions"></a>Azure Functions へのデプロイ
 
 [前の手順: ローカルでデバッグする](tutorial-vs-code-serverless-python-04.md)
 
-以下の手順では、Functions 拡張機能を使用し、Azure で関数アプリとその他の必要な Azure リソースを作成します。 Function App を使用すると、リソースの管理、デプロイ、および共有を容易にするためのロジック ユニットとして関数をグループ化できます。 また、データと[ホスティング プラン](/azure/azure-functions/functions-scale.md#hosting-plan-support)に Azure Storage アカウントが必要になります。 これらのリソースはすべて、1 つのリソース グループ内で整理されます。
+以下の手順では、Functions 拡張機能を使用し、Azure で関数アプリとその他の必要な Azure リソースを作成します。 Function App を使用すると、リソースの管理、デプロイ、および共有を容易にするためのロジック ユニットとして関数をグループ化できます。 また、データと[ホスティング プラン](/azure/azure-functions/functions-scale#hosting-plan-support)に Azure Storage アカウントが必要になります。 これらのリソースはすべて、1 つのリソース グループ内で整理されます。
 
 1. **[Azure: Functions]** エクスプローラーで、**Deploy to Function App** コマンドを選択するか、コマンド パレット (**F1**) を開き、**Azure Functions: Deploy to Function App** コマンドを選択します。 繰り返しになりますが、関数アプリは Azure で Python プロジェクトが実行される場所です。
 
@@ -30,7 +30,7 @@ ms.locfileid: "71019960"
 1. 拡張機能により次のアクションが実行されますが、それらは Visual Studio Code のポップアップ メッセージと **[出力]** ウィンドウで確認できます (処理には数分かかります)。
 
     - 与えた名前でリソース グループを作成します (ハイフンを除きます)。
-    - そのリソース グループで、ストレージ アカウント、ホスティング プラン、関数アプリを作成します。 既定では、[従量課金プラン](/azure/azure-functions/functions-scale.md#consumption-plan)が作成されます。 専用プランで関数を実行するには、[拡張作成オプションを使用して発行を有効にする](/azure/azure-functions/functions-develop-vs-code.md)必要があります。
+    - そのリソース グループで、ストレージ アカウント、ホスティング プラン、関数アプリを作成します。 既定では、[従量課金プラン](/azure/azure-functions/functions-scale#consumption-plan)が作成されます。 専用プランで関数を実行するには、[拡張作成オプションを使用して発行を有効にする](/azure/azure-functions/functions-develop-vs-code)必要があります。
     - 関数アプリにコードをデプロイします。
 
     **[Azure:Functions]** エクスプローラーには進捗状況も表示されます。

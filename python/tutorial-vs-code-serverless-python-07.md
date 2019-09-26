@@ -8,18 +8,18 @@ ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 09/02/2019
 ms.author: kraigb
-ms.openlocfilehash: 8fdb78024cc6ac1df0ee961fc424878f5f634cf2
-ms.sourcegitcommit: 74e28a479c87a3a53592646420b78e69852dd86a
+ms.openlocfilehash: 4595b6a60aa83d3818b41ddd1e4f06a44bb1eec1
+ms.sourcegitcommit: d6575ac86449380b5a9c6c66aa722cb33ed53438
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71019940"
+ms.lasthandoff: 09/23/2019
+ms.locfileid: "71186124"
 ---
 # <a name="add-a-binding-to-write-messages-to-azure-storage"></a>Azure Storage にメッセージを書き込む目的でバインドを追加する
 
 [前の手順: 2 つ目の関数をデプロイする](tutorial-vs-code-serverless-python-06.md)
 
-"_バインド_" を追加すると、データ アクセス コードを記述しなくても、Azure Storage などのリソースに関数コードを接続できます。 バインドは "*function.json*" ファイルに定義され、入力と出力の両方を表すことができます。 関数では複数の入力と出力のバインドを使用できますが、トリガーは 1 つだけです。 詳細については、「[Azure Functions でのトリガーとバインドの概念](/azure/azure-functions/functions-triggers-bindings.md)」を参照してください。
+"_バインド_" を追加すると、データ アクセス コードを記述しなくても、Azure Storage などのリソースに関数コードを接続できます。 バインドは "*function.json*" ファイルに定義され、入力と出力の両方を表すことができます。 関数では複数の入力と出力のバインドを使用できますが、トリガーは 1 つだけです。 詳細については、「[Azure Functions でのトリガーとバインドの概念](/azure/azure-functions/functions-triggers-bindings)」を参照してください。
 
 このセクションでは、このチュートリアルで前に作成した HttpExample 関数にストレージ バインドを追加します。 関数でこのバインドを使用し、要求ごとにストレージにメッセージを書き込みます。 ストレージでは、関数アプリで使用されているものと同じ既定のストレージ アカウントが使用されます。 ただし、ストレージを頻繁に利用する予定がある場合は、別アカウントの作成を検討してください。
 
@@ -92,9 +92,9 @@ ms.locfileid: "71019940"
 
     1. [Azure portal](https://portal.azure.com) にサインインし、関数プロジェクトが含まれるリソース グループに移動します。 そのリソース グループ内で、プロジェクトのストレージ アカウントを見つけて移動し、 **[キュー]** に進みます。 そのページで "outqueue" に進みます。ログに記録されているメッセージがすべて表示されるはずです。
 
-    1. Azure Storage Explorer でキューに移動し、キューを調べます。Azure Storage Explorer は Visual Studio と統合されますが、詳細は「[Visual Studio Code を使用して関数を Azure Storage に接続する](/azure/azure-functions/functions-add-output-binding-storage-queue-vs-code.md)」にあります。特に「[出力キューを確認する](/azure/azure-functions/functions-add-output-binding-storage-queue-vs-code.md#examine-the-output-queue)」セクションをご覧ください。
+    1. Azure Storage Explorer でキューに移動し、キューを調べます。Azure Storage Explorer は Visual Studio と統合されますが、詳細は「[Visual Studio Code を使用して関数を Azure Storage に接続する](/azure/azure-functions/functions-add-output-binding-storage-queue-vs-code)」にあります。特に「[出力キューを確認する](/azure/azure-functions/functions-add-output-binding-storage-queue-vs-code#examine-the-output-queue)」セクションをご覧ください。
 
-    1. Azure CLI を使用し、ストレージ キューにクエリを実行します。詳細は「[ストレージ キューに対するクエリを実行する](/azure/azure-functions/functions-add-output-binding-storage-queue-python.md#query-the-storage-queue)」にあります。
+    1. Azure CLI を使用し、ストレージ キューにクエリを実行します。詳細は「[ストレージ キューに対するクエリを実行する](/azure/azure-functions/functions-add-output-binding-storage-queue-python#query-the-storage-queue)」にあります。
 
 1. クラウドでテストするには、 **[Deploy to Function App]\(Function App にデプロイする\)** を **[Azure:Functions]** エクスプローラーで使用し、コードを再デプロイします。 プロンプトが表示されたら、前に作成した Function App を選択します。 デプロイが完了したら (数分かかります!)、繰り返しになりますが、 **[出力]** ウィンドウにテストを繰り返すことができる公開エンドポイントが表示されます。
 

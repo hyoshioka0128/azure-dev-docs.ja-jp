@@ -9,12 +9,12 @@ ms.devlang: java
 ms.topic: conceptual
 ms.service: azure
 ms.custom: seo-java-july2019, seo-java-august2019, seo-java-september2019
-ms.openlocfilehash: 02c8a59849ff24058a1d9d0727842c41e993711c
-ms.sourcegitcommit: cf5881235569c754c829a8f819642a6f5aed30be
+ms.openlocfilehash: c33b4586b801bda58493efdebc6e6fb6b8136992
+ms.sourcegitcommit: 50fbde9a640468147953d62f7ae0fca4685ed5e6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70904865"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71225236"
 ---
 # <a name="monitor-and-manage-java-workloads-with-java-flight-recorder-jfr-and-zulu-mission-control"></a>Java Flight Recorder (JFR) と Zulu Mission Control を使用して Java ワークロードを監視および管理する
 
@@ -88,7 +88,7 @@ Zulu Mission Control をインストールし、Java 仮想マシン (JVM) に�
     Windows では、*zmc.exe* はレジストリで構成されている既定の JVM インストールを使用します。 Zulu Mission Control は、ローカルの JVM インスタンスを自動的に検出することができるためには、完全な JDK から起動する必要があります。 これが JRE の場合、以下の警告が表示されます。
 
     > [!div class="mx-imgBorder"]
-    ![JDK のインストールが JRE のみの場合の警告](../media/jdk/azul-jfr-1.png)
+    ![JDK のインストールが JRE のみの場合の警告](../media/jdk/jfr-jre-warning-message.png)
 
     Mission Control によって使用される JVM を変更するには、次の手順を実行します。 
     1.  *zmc.exe* と同じディレクトリにある *zmc.ini*構成ファイルを開きます。
@@ -101,7 +101,7 @@ Zulu Mission Control をインストールし、Java 仮想マシン (JVM) に�
     2.  左上で、自分のアプリケーションを実行している JVM インスタンスのリスト アイテムを選択して展開します。
 
     > [!div class="mx-imgBorder"]
-    ![JVM インスタンスの左上のリスト アイテムを展開します](../media/jdk/azul-jfr-2.png)
+    ![JVM インスタンスの左上のリスト アイテムを展開します](../media/jdk/jfr-jvm-instance-dashboard.png)
 
 
 8.  Flight Recording を開始します (必要な場合)
@@ -109,7 +109,7 @@ Zulu Mission Control をインストールし、Java 仮想マシン (JVM) に�
     2.  固定期間の記録または継続的な記録のいずれかと、プロファイル構成 (詳細) または継続構成 (低オーバーヘッド) のいずれかを選択してから、 **[Finish]\(終了\)** を選択します。
 
     > [!div class="mx-imgBorder"]
-    ![Flight Recording の開始](../media/jdk/azul-jfr-3.png)
+    ![Flight Recording の開始](../media/jdk/jfr-start-flight-recording.png)
 
 9.  Flight Recording のダンプ
     1.  Flight Recording は、[JVM Browser]\(JVM ブラウザー\) の Flight Recorder の行の下に表示されます。 Flight Recording を表す行を右クリックし、 **[Dump whole recording]\(記録全体をダンプ\)** を選択します。
@@ -119,7 +119,7 @@ Zulu Mission Control をインストールし、Java 仮想マシン (JVM) に�
     1.  まだアクティブ化されていない場合、Zulu Mission Control ウィンドウの左側のウィンドウで **[Outline]\(アウトライン\)** というラベルのタブを選択します。 このタブには、Flight Recording で収集されたデータのさまざまなビューが含まれています。
  
     > [!div class="mx-imgBorder"]
-    ![Fliight Recording のレビュー](../media/jdk/azul-jfr-4.png)
+    ![Flight Recording のレビュー](../media/jdk/jfr-zulu-mission-control-data.png)
 
 ## <a name="resources"></a>リソース
 

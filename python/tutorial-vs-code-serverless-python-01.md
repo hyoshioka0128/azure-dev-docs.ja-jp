@@ -8,12 +8,12 @@ ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 09/02/2019
 ms.author: kraigb
-ms.openlocfilehash: efa55b4c2cc916f5bbebcc795ed70d920d395362
-ms.sourcegitcommit: 4188b92d8de367cf82f22dba5d9ccb2cb6dd2899
+ms.openlocfilehash: bf6dd180d5fabc04c8fe3bf09c8277bb7b22ea47
+ms.sourcegitcommit: 86aec15e2d25b5b706092feb4271fb958c29d5fa
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71126849"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71710203"
 ---
 # <a name="deploy-python-to-azure-functions-with-visual-studio-code"></a>Visual Studio Code を使用して Azure Functions に Python をデプロイする
 
@@ -39,6 +39,9 @@ Azure サブスクリプションをお持ちでない場合は、30 日間の�
 - [Visual Studio Code](https://code.visualstudio.com/)。
 - [Python 拡張機能](https://marketplace.visualstudio.com/items?itemName=ms-python.python)。[Visual Studio Code Python チュートリアルの前提条件](https://code.visualstudio.com/docs/python/python-tutorial)に説明があります。
 - [Azure Functions 拡張機能](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions)。 全般的な情報については、[vscode-azurefunctions GitHub リポジトリ](https://github.com/Microsoft/vscode-azurefunctions)をご覧ください。
+
+> [!NOTE]
+> Azure Functions 拡張機能は、[Azure Tools 拡張機能パック](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-node-azure-pack) に含まれています。
 
 ### <a name="azure-functions-core-tools"></a>Azure Functions Core Tools
 

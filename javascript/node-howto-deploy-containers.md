@@ -8,18 +8,19 @@ ms.topic: article
 ms.service: azure-nodejs
 ms.date: 08/20/2019
 ms.author: kraigb
-ms.openlocfilehash: aeef72d2e8b74cb7e6e30b95ed1cd12a1929ac31
-ms.sourcegitcommit: f519a1ee8017850b2fa37049af3bac1ea5ca5516
+ms.custom: seo-javascript-september2019
+ms.openlocfilehash: b35ee6c921fa9b5c01b5c89f7fa546a110bb21c2
+ms.sourcegitcommit: 945e92dae2fa4521eebdc049c65273ae6b5470ee
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69892506"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71813758"
 ---
-# <a name="how-to-deploy-nodejs-containers-to-azure"></a>Node.js コンテナーを Azure にデプロイする方法
+# <a name="use-azure-to-deploy-scale-and-manage-nodejs-containers"></a>Azure を使用して Node.js コンテナーをデプロイ、スケーリング、管理する
 
 コンテナーベースの Node.js アプリを簡単にデプロイ、スケーリング、管理できるよう、Azure には堅牢なコンテナー サービスが用意されています。
 
-最初に、[Docker と Visual Studio Code を使用した Azure へのデプロイ](https://code.visualstudio.com/tutorials/docker-extension/getting-started)に関する簡単なステップ バイ ステップのチュートリアルをご覧ください。 Azure Container Registry などのコンテナー レジストリにイメージをアップロードしたうえで、そのコンテナーを Azure App Service にデプロイする作業を Visual Studio Code を使用して簡単に行えます。
+最初に、[Docker と Visual Studio Code を使用した Azure へのデプロイ](tutorial-vscode-docker-node-01.md)に関する簡単なステップ バイ ステップのチュートリアルをご覧ください。 Azure Container Registry などのコンテナー レジストリにイメージをアップロードしたうえで、そのコンテナーを Azure App Service にデプロイする作業を Visual Studio Code を使用して簡単に行えます。
 
 次の Microsoft Learn モジュールにも取り組んでみてください。
 

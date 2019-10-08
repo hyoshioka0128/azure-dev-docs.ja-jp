@@ -8,14 +8,15 @@ ms.topic: article
 ms.service: azure-nodejs
 ms.date: 08/19/2019
 ms.author: kraigb
-ms.openlocfilehash: a5ed7d5d99009593845966969217f8a5081da4c4
-ms.sourcegitcommit: 9cd460ee16b637e701aa30078932878c0d0a7945
+ms.custom: seo-javascript-september2019
+ms.openlocfilehash: f1cea28186282cc3f72993439f0c3a2ab43885a9
+ms.sourcegitcommit: 945e92dae2fa4521eebdc049c65273ae6b5470ee
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70181949"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71813682"
 ---
-# <a name="how-to-write-serverless-nodejs-code-on-azure"></a>Azure でサーバーレス Node.js コードを書く方法
+# <a name="use-azure-functions-to-write-serverless-nodejs-code-on-azure"></a>Azure Functions を使用して Azure でサーバーレス Node.js コードを作成する
 
 サーバーレス コードを使用すると、インフラストラクチャのプロビジョニングや管理について心配することなく、応答性に優れたエンドポイントをオンデマンドでインターネット上に作成できます。 サーバーレス コードは、さまざまなイベントに反応して作動する、スクリプトなどの小さなコードから成ります。 Azure におけるサーバーレスのプランは、Azure Functions と呼ばれます。
 

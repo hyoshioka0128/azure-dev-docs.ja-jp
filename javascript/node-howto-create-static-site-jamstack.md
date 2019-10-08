@@ -9,14 +9,14 @@ ms.service: azure-nodejs
 ms.date: 08/20/2019
 ms.author: kraigb
 ms.custom: seo-javascript-september2019
-ms.openlocfilehash: dc1d376be0f57d7d79a7a67d43dca49c30163c90
-ms.sourcegitcommit: 52fa18873a6a8dc7f28c063cca0175bae2720b2a
+ms.openlocfilehash: 5fae0fb9e7d76d33e39ec85a27c46c339b4b38f4
+ms.sourcegitcommit: 945e92dae2fa4521eebdc049c65273ae6b5470ee
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/09/2019
-ms.locfileid: "70808467"
+ms.lasthandoff: 10/02/2019
+ms.locfileid: "71813709"
 ---
-# <a name="how-to-build-jamstack-static-site-web-apps-with-azure"></a>Azure で JAMstack (静的サイト) Web アプリを作成する方法
+# <a name="build-jamstack-static-site-web-apps-on-azure-with-nodejs"></a>Node.js を使用して Azure で JAMstack (静的サイト) Web アプリを作成する
 
 優れた Web アプリは、*JavaScript* フロント エンドと *API* (サーバーレス コードとして作成されたサードパーティまたはカスタムの API)、そして、静的ページとして返されるテンプレート化された "*マークアップ*" (HTML と CSS) とを組み合わせて生産的に作成、保守することができます。 JAMstack としても知られるこの組み合わせを利用すれば、Web ページを返す複雑なバック エンド コードを書かずに済みます。 システムから返されるのは静的ページ (HTML、CSS、JavaScript) のみであり、サーバー側の処理用の API は、それらのページから要求されます。 それらの API は、自動でスケーリングするサーバーレス技術を使って記述できるため、標準的な常時稼動のサーバーや Web ホストを使用するのに伴うコストやセキュリティ上の懸念は一切ありません (詳細については、[jamstack.org](https://jamstack.org/) を参照)。
 
@@ -31,7 +31,7 @@ Azure で静的 (JAMstack) サイトを実装するには、さまざまなツ�
 
 > [!VIDEO https://medius.studios.ms/Embed/Video-nc/B19-BRK3021?latestplayer=true]
 
-ステップ バイ ステップのチュートリアルは、Visual Studio Code のドキュメント「[静的な Web サイトを Azure にデプロイする](https://code.visualstudio.com/tutorials/static-website/getting-started)」でご覧いただけます。
+ステップ バイ ステップのチュートリアルは、[静的な Web サイトの Azure へのデプロイ](tutorial-vscode-static-website-node-01.md)に関するページでご覧いただけます。
 
 詳細については、次の記事も参照してください。
 
@@ -39,7 +39,7 @@ Azure で静的 (JAMstack) サイトを実装するには、さまざまなツ�
   
 - **サーバーレス API**:
 
-  - 「[Visual Studio Code を使用した初めての関数の作成](/azure/azure-functions/functions-create-first-function-vs-code)」からお始めください。Azure Functions が Visual Studio Code のコンテキストで紹介されており、多くの細かい点がわかりやすくなっています。
+  - 「[Visual Studio Code から Azure Functions をデプロイする](tutorial-vscode-serverless-node-01.md)」からお始めください。Azure Functions が Visual Studio Code のコンテキストで紹介されており、多くの細かい点がわかりやすくなっています。
   - 記事を完了すると、関数にちなんだ (その HTTP エンドポイントと同じ) 名前のサブフォルダーが格納された Azure Functions プロジェクト (フォルダー) が得られます。 その関数フォルダーに、コードを含んだ *index.js* ファイルが格納されています。
   - 必要に応じてその関数を変更したり、他の関数をプロジェクトに追加したりしたうえで、それらを再び Azure にデプロイしてパブリックに公開することができます。
   - サーバーレス開発に関するその他のリソースについては、「[Azure でサーバーレス Node.js コードを作成する方法](node-howto-write-serverless-code.md)」を参照してください。

@@ -1,5 +1,5 @@
 ---
-title: Visual Studio Code を使用してコンテナー イメージを Azure App Service にデプロイする
+title: チュートリアル:Visual Studio Code を使用してコンテナー イメージを Azure App Service にデプロイする
 description: チュートリアルの手順 2、実際の Docker イメージをコンテナー レジストリから Azure App Service にデプロイする。
 services: app-service
 author: kraigb
@@ -8,14 +8,15 @@ ms.service: app-service
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.author: kraigb
-ms.openlocfilehash: 27cc6e68892821170c1e438378f8635bd320afe5
-ms.sourcegitcommit: 74e28a479c87a3a53592646420b78e69852dd86a
+ms.custom: seo-python-october2019
+ms.openlocfilehash: a099e25134615fc05508cde3c0f128a3be813402
+ms.sourcegitcommit: bed07b313eeab51281d1a6d4eba67a75524b2f57
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71020090"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72172271"
 ---
-# <a name="deploy-the-image-to-azure"></a>Azure にイメージをデプロイする
+# <a name="tutorial-deploy-a-container-image-to-azure-app-service"></a>チュートリアル:コンテナー イメージを Azure App Service にデプロイする
 
 [前の手順: 前提条件](tutorial-deploy-containers-01.md)
 
@@ -47,7 +48,7 @@ ms.locfileid: "71020090"
 
 1. 設定を変更すると、App Service は自動的に再起動されます。 また、いつでも App Service を右クリックして **[再起動]** を選択できます。
 
-1. サービスが再起動したら、`http://<name>.azurewebsites.net` でサイトを参照します。 [出力] パネル内の URL を **Ctrl** キーを押しながらクリック (macOS の場合は **Cmd** キーを押しながらクリック) するか、 **[Azure: App Service]** エクスプローラー内で [App Service] をクリックして **[Web サイトの参照]** を選択します。
+1. サービスが再起動したら、`http://<name>.azurewebsites.net` でサイトを参照します。 [出力] パネル内の URL を **Ctrl** キーを押しながらクリック (macOS の場合は **Cmd** キーを押しながらクリック) するか、 **[Azure: App Service]** エクスプローラー内で [App Service] を右クリックして **[Web サイトの参照]** を選択します。
 
 > [!div class="nextstepaction"]
 > [イメージをデプロイしました](tutorial-deploy-containers-03.md)

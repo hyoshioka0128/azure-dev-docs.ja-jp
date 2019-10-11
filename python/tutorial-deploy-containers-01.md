@@ -1,5 +1,5 @@
 ---
-title: Visual Studio Code を使用して Docker コンテナーを Azure App Service にデプロイする
+title: チュートリアル:Visual Studio Code を使用して Docker コンテナーを Azure App Service にデプロイする
 description: チュートリアルの手順 1、概要と前提条件。
 services: app-service
 author: kraigb
@@ -8,16 +8,17 @@ ms.service: app-service
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.author: kraigb
-ms.openlocfilehash: 0135761f8294b3fbbb8fe821540b46126c107109
-ms.sourcegitcommit: d6575ac86449380b5a9c6c66aa722cb33ed53438
+ms.custom: seo-python-october2019
+ms.openlocfilehash: f6cdd345fddf0123cb26549ddbc498f156737799
+ms.sourcegitcommit: bed07b313eeab51281d1a6d4eba67a75524b2f57
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71186182"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72172297"
 ---
-# <a name="deploy-containers-to-azure-app-service"></a>Azure App Service にコンテナーをデプロイする
+# <a name="tutorial-deploy-docker-containers-to-azure-app-service-with-visual-studio-code"></a>チュートリアル:Visual Studio Code を使用して Docker コンテナーを Azure App Service にデプロイする
 
-このチュートリアルでは、Visual Studio Code を使用して、コンテナー イメージをコンテナー レジストリから [Azure App Service](https://azure.microsoft.com/services/app-service/containers/) にデプロイするプロセスについて説明します。これらはすべて Visual Studio Code 内で実行されます。
+この記事では、Visual Studio Code を使用して、コンテナー イメージをコンテナー レジストリから [Azure App Service](https://azure.microsoft.com/services/app-service/containers/) にデプロイするプロセスについて説明します。これらはすべて Visual Studio Code 内で実行されます。
 
 このチュートリアルのいずれかの手順で問題が発生した場合は、詳細をお知らせください。 フィードバックを送信するには、各記事の最後にある "**問題が発生しました**" リンクを使用します。
 

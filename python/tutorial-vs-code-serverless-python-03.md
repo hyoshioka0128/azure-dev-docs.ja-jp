@@ -1,5 +1,5 @@
 ---
-title: Visual Studio Code で Azure Functions の Python コード ファイルを調べる
+title: チュートリアル:Visual Studio Code で Azure Functions の Python コード ファイルを調べる
 description: チュートリアルの手順 3、Azure Functions が提供するテンプレートの Python コードを理解する。
 services: functions
 author: kraigb
@@ -8,14 +8,15 @@ ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 09/02/2019
 ms.author: kraigb
-ms.openlocfilehash: b1ed7f69656797822b17c11bcf0f2ece0caa09e2
-ms.sourcegitcommit: 86aec15e2d25b5b706092feb4271fb958c29d5fa
+ms.custom: seo-python-october2019
+ms.openlocfilehash: c09323e35c20a0b9fb5162c08f7fa223969d83fe
+ms.sourcegitcommit: bed07b313eeab51281d1a6d4eba67a75524b2f57
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71707344"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72172110"
 ---
-# <a name="examine-the-code-files"></a>コード ファイルを調べる
+# <a name="tutorial-examine-the-python-code-files-in-visual-studio-code"></a>チュートリアル:Visual Studio Code で Python コード ファイルを調べる
 
 [前の手順: 関数を作成する](tutorial-vs-code-serverless-python-02.md)
 

@@ -1,30 +1,27 @@
 ---
-title: Azure MySQL で Spring Data JPA を使用する方法
-description: Azure MySQL データベース で Spring Data JPA を使用する方法を説明します。
-services: mysql
+title: Azure Database for MySQL で Spring Data JPA を使用する方法
+description: Azure Database for MySQL で Spring Data JPA を構成して使用する方法について説明します。
 documentationcenter: java
 author: bmitchell287
 manager: douge
-editor: ''
-ms.assetid: ''
 ms.author: brendm
 ms.date: 12/19/2018
 ms.devlang: java
 ms.service: mysql
 ms.tgt_pltfrm: multiple
-ms.topic: article
-ms.openlocfilehash: 2a1ab27867c0f2c481c69f75934ac6a34e722239
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.topic: conceptual
+ms.openlocfilehash: 842dc7785f8c7c84d6e9ba464c96d65db75dc9fd
+ms.sourcegitcommit: 2610f3992cb6d21a3657032074acb981d130fdad
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68282093"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71960780"
 ---
-# <a name="how-to-use-spring-data-jpa-with-azure-mysql"></a>Azure MySQL で Spring Data JPA を使用する方法
+# <a name="how-to-use-spring-data-jpa-with-azure-database-for-mysql"></a>Azure Database for MySQL で Spring Data JPA を使用する方法
 
 ## <a name="overview"></a>概要
 
-この記事では、[Spring Data] を使用して、[Java Persistence API (JPA)](https://docs.oracle.com/javaee/7/tutorial/persistence-intro.htm) を使って Azure [MySQL](https://www.mysql.com/) データベース内の情報を格納および取得するサンプル アプリケーションを作成する方法を説明します。
+この記事では、[Spring Data] を使用して、[Java Persistence API (JPA)](https://docs.oracle.com/javaee/7/tutorial/persistence-intro.htm) を使って [Azure Database for MySQL](/azure/mysql/) データベース内の情報を格納および取得するサンプル アプリケーションを作成する方法を説明します。
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -37,23 +34,23 @@ ms.locfileid: "68282093"
 * [mysql](https://dev.mysql.com/downloads/) コマンドライン ユーティリティ。
 * [Git](https://git-scm.com/downloads) クライアント。
 
-## <a name="create-a-mysql-database-for-azure"></a>Azure 用に MySQL データベースを作成する
+## <a name="create-a-azure-database-for-mysql-server"></a>Azure Database for MySQL サーバーの作成
 
-### <a name="create-a-mysql-database-server-using-the-azure-portal"></a>Azure Portal を使用して MySQL データベース サーバーを作成する
+### <a name="create-a-server-using-the-azure-portal"></a>Azure portal を使用してサーバーを作成する
 
 > [!NOTE]
 > 
 > MySQL データベースの作成に関する詳細については、「[Azure portal を使用した Azure Database for MySQL サーバーの作成](/azure/mysql/quickstart-create-mysql-server-database-using-azure-portal)」を参照してください。
 
-1. Azure portal (<https://portal.azure.com/>) を参照し、サインインします。
+1. [Azure Portal](https://portal.azure.com)を参照して、サインインします。
 
-1. **[+ リソースの作成]** をクリックし、 **[データベース]** 、 **[Azure Database for MySQL]** の順にクリックします。
+1. **[+ リソースの作成]** を選択し、 **[データベース]** 、 **[Azure Database for MySQL]** の順に選択します。
 
    ![MySQL データベースを作成する][MYSQL01]
 
 1. 次の情報を入力します。
 
-   - **サーバー名**: MySQL サーバー用に一意の名前を選択します。この名前は、*wingtiptoysmysql.mysql.database.azure.com* のような完全修飾ドメイン名の作成に使用されます。
+   - **サーバー名**: Azure Database for MySQL サーバー用に一意の名前を選択します。この名前は、*wingtiptoysmysql.mysql.database.azure.com* のような完全修飾ドメイン名の作成に使用されます。
    - **サブスクリプション**:使用する Azure サブスクリプションを指定します。
    - **[リソース グループ]** :新しいリソース グループを作成するのか、既存のリソース グループを選択するのかを指定します。
    - **ソースの選択**:このチュートリアルでは、`Blank` を選択して新しいデータベースを作成します。
@@ -67,7 +64,7 @@ ms.locfileid: "68282093"
 
 1. 上記の情報をすべて入力したら、 **[作成]** をクリックします。
 
-### <a name="configure-a-firewall-rule-for-your-mysql-database-server-using-the-azure-portal"></a>Azure Portal を使用して MySQL データベース サーバーのファイアウォール規則を構成する
+### <a name="configure-a-firewall-rule-for-your-server-using-the-azure-portal"></a>Azure portal を使用してサーバーのファイアウォール規則を構成する
 
 1. Azure portal (<https://portal.azure.com/>) を参照し、サインインします。
 
@@ -79,11 +76,11 @@ ms.locfileid: "68282093"
 
    ![接続のセキュリティを構成する][MYSQL04]
 
-### <a name="retrieve-the-connection-string-for-your-mysql-server-using-the-azure-portal"></a>Azure Portal を使用して MySQL サーバーの接続文字列を取得する
+### <a name="retrieve-the-connection-string-for-your-server-using-the-azure-portal"></a>Azure portal を使用してサーバーの接続文字列を取得する
 
 1. Azure portal (<https://portal.azure.com/>) を参照し、サインインします。
 
-1. **[すべてのリソース]** をクリックし、先ほど作成した MySQL データベースをクリックします。
+1. **[すべてのリソース]** をクリックし、先ほど作成した Azure Database for MySQL リソースをクリックします。
 
    ![MySQL データベースを選択する][MYSQL03]
 
@@ -91,9 +88,9 @@ ms.locfileid: "68282093"
 
    ![JDBC 接続文字列を取得する][MYSQL05]
 
-### <a name="create-mysql-database-using-the-mysql-command-line-utility"></a>`mysql` コマンド ライン ユーティリティを使用して MySQL データベースを作成する
+### <a name="create-a-database-using-the-mysql-command-line-utility"></a>`mysql` コマンド ライン ユーティリティを使用してデータベースを作成する
 
-1. コマンド シェルを開き、次の例のように `mysql` コマンドを入力して MySQL サーバーに接続します。
+1. コマンド シェルを開き、次の例のように `mysql` コマンドを入力して Azure Database for MySQL サーバーに接続します。
 
    ```shell
    mysql --host wingtiptoysmysql.mysql.database.azure.com --user wingtiptoysuser@wingtiptoysmysql -p
@@ -232,7 +229,7 @@ ms.locfileid: "68282093"
 
 ## <a name="summary"></a>まとめ
 
-このチュートリアルでは、Spring Data を使用して、JPA を使って Azure MySQL データベース 内の情報を格納および取得する Java のサンプル アプリケーションを作成しました。
+このチュートリアルでは、Spring Data を使用して、JPA を使って Azure Database for MySQL データベース 内の情報を格納および取得する Java のサンプル アプリケーションを作成しました。
 
 ## <a name="next-steps"></a>次の手順
 

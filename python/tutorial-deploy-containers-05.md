@@ -1,5 +1,5 @@
 ---
-title: Azure リソースをクリーンアップする
+title: チュートリアル:Azure リソースをクリーンアップする
 description: チュートリアルの手順 5、引き続き料金を請求されないように Azure リソースをクリーンアップする。
 services: app-service
 author: kraigb
@@ -8,14 +8,15 @@ ms.service: app-service
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.author: kraigb
-ms.openlocfilehash: 96db5581b2752e29633412776efdfe9d1328abdb
-ms.sourcegitcommit: 74e28a479c87a3a53592646420b78e69852dd86a
+ms.custom: seo-python-october2019
+ms.openlocfilehash: 351d7853eb3ebbf5a62e7798eb0696657b0ca216
+ms.sourcegitcommit: bed07b313eeab51281d1a6d4eba67a75524b2f57
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71019520"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72172458"
 ---
-# <a name="clean-up-resources"></a>リソースのクリーンアップ
+# <a name="tutorial-clean-up-azure-resources"></a>チュートリアル:Azure リソースをクリーンアップする
 
 このチュートリアルで作成したさまざまな Azure リソースには、継続的なコストが発生する可能性があります。 それらをクリーンアップするには、[Azure portal](https://portal.azure.com) にアクセスし、左側にあるナビゲーション ウィンドウの **[リソース グループ]** を選択して、このチュートリアルで作成したリソース グループを選択し、 **[リソース グループの削除]** コマンドを使用することをお勧めします。
 

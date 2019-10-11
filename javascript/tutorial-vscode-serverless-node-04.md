@@ -23,7 +23,7 @@ ms.locfileid: "71685929"
 
     ![Azure Functions にデプロイするコマンド](media/functions-extension/deploy-app.png)
 
-    または、**コマンド パレット**を開き (**F1**)、「deploy to function app」と入力し、**Azure Functions:Deploy to Function App** コマンドを選択します。
+    または、**コマンド パレット**を開き (**F1**)、「deploy to function app」と入力し、**Azure Functions: Deploy to Function App<ept id="p3">**</ept> コマンドを実行します。
 
 1. **[Select Function App in Azure]\(Azure で関数アプリを選択してください\)** というプロンプトでは、 **[Create new Function app in Azure]\(Azure で新しい関数アプリを作成する\)** を選択します。
 

@@ -1,30 +1,26 @@
 ---
 title: Azure PostgreSQL で Spring Data JPA を使用する方法
-description: Azure PostgreSQL データベースで Spring Data JPA を使用する方法を説明します。
-services: postgresql
+description: Azure Database for PostgreSQL データベース で Spring Data JPA を構成して使用する方法について説明します。
 documentationcenter: java
 author: bmitchell287
-manager: douge
-editor: ''
-ms.assetid: ''
 ms.author: brendm
 ms.date: 12/19/2018
 ms.devlang: java
 ms.service: postgresql
 ms.tgt_pltfrm: multiple
-ms.topic: article
-ms.openlocfilehash: dca92f4cac26ba3e4f96f3591c3b4dfe997fbfba
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.topic: conceptual
+ms.openlocfilehash: da8feb20e4163d9280256b51f64d3148b077f7ce
+ms.sourcegitcommit: 2610f3992cb6d21a3657032074acb981d130fdad
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68281923"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71960768"
 ---
 # <a name="how-to-use-spring-data-jpa-with-azure-postgresql"></a>Azure PostgreSQL で Spring Data JPA を使用する方法
 
 ## <a name="overview"></a>概要
 
-この記事では、[Spring Data] を使用して、[Java Persistence API (JPA)](https://docs.oracle.com/javaee/7/tutorial/persistence-intro.htm) を使って Azure [PostgreSQL]https://www.postgresql.org/ データベース内の情報を格納および取得するサンプル アプリケーションを作成する方法を説明します。
+この記事では、[Spring Data] を使用して、[Java Persistence API (JPA)](https://docs.oracle.com/javaee/7/tutorial/persistence-intro.htm) を使って [Azure Database for PostgreSQL](/azure/postgresql/) データベース内の情報を格納および取得するサンプル アプリケーションを作成する方法を説明します。
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -39,7 +35,7 @@ ms.locfileid: "68281923"
 
 ## <a name="create-a-postgresql-database-for-azure"></a>Azure 用に PostgreSQL データベースを作成する
 
-### <a name="create-a-postgresql-database-server-using-the-azure-portal"></a>Azure Portal を使用して PostgreSQL データベース サーバーを作成する
+### <a name="create-a-postgresql-database-server-using-the-azure-portal"></a>Azure portal を使用して PostgreSQL データベース サーバーを作成する
 
 > [!NOTE]
 > 
@@ -67,7 +63,7 @@ ms.locfileid: "68281923"
 
 1. 上記の情報をすべて入力したら、 **[作成]** をクリックします。
 
-### <a name="configure-a-firewall-rule-for-your-postgresql-database-server-using-the-azure-portal"></a>Azure Portal を使用して PostgreSQL データベース サーバーのファイアウォール規則を構成する
+### <a name="configure-a-firewall-rule-for-your-postgresql-database-server-using-the-azure-portal"></a>Azure portal を使用して PostgreSQL データベース サーバーのファイアウォール規則を構成する
 
 1. Azure portal (<https://portal.azure.com/>) を参照し、サインインします。
 
@@ -79,7 +75,7 @@ ms.locfileid: "68281923"
 
    ![接続のセキュリティを構成する][POSTGRESQL04]
 
-### <a name="retrieve-the-connection-string-for-your-postgresql-server-using-the-azure-portal"></a>Azure Portal を使用して PostgreSQL サーバーの接続文字列を取得する
+### <a name="retrieve-the-connection-string-for-your-postgresql-server-using-the-azure-portal"></a>Azure portal を使用して PostgreSQL サーバーの接続文字列を取得する
 
 1. Azure portal (<https://portal.azure.com/>) を参照し、サインインします。
 

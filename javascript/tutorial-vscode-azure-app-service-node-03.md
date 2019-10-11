@@ -34,7 +34,7 @@ ms.locfileid: "71686254"
     ![Web アプリへのデプロイ](media/deploy-azure/deploy.png)
 
     > [!TIP]
-    > または、**コマンド パレット** を開き (**F1**)、「deploy to web app」と入力し、**Azure App Service:Deploy to Web App** コマンドを実行します。
+    > または、**コマンド パレット** を開き (**F1**)、「deploy to web app」と入力し、**Azure App Service: Deploy to Web App** コマンドを選択します。
 
 1. プロンプトで、次の情報を入力します。
 

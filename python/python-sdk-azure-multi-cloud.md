@@ -1,5 +1,5 @@
 ---
-title: マルチクラウド
+title: すべてのリージョンに接続する - Azure SDK for Python マルチクラウド
 description: さまざまなリージョンで Azure を使用する
 author: sptramer
 ms.author: sttramer
@@ -7,14 +7,15 @@ manager: carmonm
 ms.date: 02/22/2018
 ms.topic: conceptual
 ms.devlang: python
-ms.openlocfilehash: dd063ca7aa4e6620832aa59961f98c0ecca4dd49
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.custom: seo-python-october2019
+ms.openlocfilehash: 03c2a42463332cbeaffdcc7373c04967018af804
+ms.sourcegitcommit: bed07b313eeab51281d1a6d4eba67a75524b2f57
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68285743"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72172503"
 ---
-# <a name="multi-cloud---use-azure-on-all-regions"></a>マルチクラウド - さまざまなリージョンで Azure を使用する
+# <a name="multi-cloud-connect-to-all-regions-with-the-azure-sdk-for-python"></a>マルチクラウド:Azure SDK for Python を使用してすべてのリージョンに接続する
 
 Azure が[提供](https://azure.microsoft.com/regions/services)されているすべてのリージョンには、Azure SDK for Python を使用して接続できます。
 

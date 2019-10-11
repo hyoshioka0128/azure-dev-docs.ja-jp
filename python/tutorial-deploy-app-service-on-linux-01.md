@@ -1,5 +1,5 @@
 ---
-title: Visual Studio Code から Azure App Service on Linux に Python アプリをデプロイする
+title: チュートリアル:Visual Studio Code から Azure App Service on Linux に Python アプリをデプロイする
 description: チュートリアルの手順 1、概要、前提条件、Azure にサインインする。
 services: app-service
 author: kraigb
@@ -8,16 +8,17 @@ ms.service: app-service
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.author: kraigb
-ms.openlocfilehash: 1b1e3d7fa1daa408584e4caf22c553d7f47bccea
-ms.sourcegitcommit: d6575ac86449380b5a9c6c66aa722cb33ed53438
+ms.custom: seo-python-october2019
+ms.openlocfilehash: 24f615f5f456276b1ed78fc431e3cdd929e2d1cd
+ms.sourcegitcommit: bed07b313eeab51281d1a6d4eba67a75524b2f57
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71186193"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72172520"
 ---
-# <a name="deploy-to-azure-app-service-on-linux"></a>Azure App Service on Linux にデプロイする
+# <a name="tutorial-deploy-python-apps-to-azure-app-service-on-linux-from-visual-studio-code"></a>チュートリアル:Visual Studio Code から Azure App Service on Linux に Python アプリをデプロイする
 
-このチュートリアルでは、Visual Studio Code と [Azure App Service](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azureappservice) 拡張機能を使用して、Azure App Service on Linux に Python アプリケーションをデプロイする手順について説明します。
+この記事では、Visual Studio Code と [Azure App Service](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azureappservice) 拡張機能を使用して、Azure App Service on Linux に Python アプリケーションをデプロイする手順について説明します。
 
 このチュートリアルのいずれかの手順で問題が発生した場合は、詳細をお知らせください。 フィードバックを送信するには、各記事の最後にある "**問題が発生しました**" リンクを使用します。
 

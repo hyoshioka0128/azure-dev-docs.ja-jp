@@ -1,30 +1,26 @@
 ---
-title: Azure MySQL で Spring Data JDBC を使用する方法
-description: Azure MySQL データベースで Spring Data JDBC を使用する方法を説明します。
-services: mysql
+title: Azure Database for MySQL で Spring Data JDBC を使用する方法
+description: Azure Database for MySQL データベースで Spring Data JDBC を使用する方法を説明します。
 documentationcenter: java
 author: bmitchell287
-manager: douge
-editor: ''
-ms.assetid: ''
 ms.author: brendm
 ms.date: 12/19/2018
 ms.devlang: java
 ms.service: mysql
 ms.tgt_pltfrm: multiple
-ms.topic: article
-ms.openlocfilehash: 5e9947e3717fda66bab01a3e3d1dd658f1f1c649
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.topic: conceptual
+ms.openlocfilehash: 0fd650caba9ecd1746a18d8696cccc50aca64d82
+ms.sourcegitcommit: 2610f3992cb6d21a3657032074acb981d130fdad
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68282373"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71960790"
 ---
 # <a name="how-to-use-spring-data-jdbc-with-azure-mysql"></a>Azure MySQL で Spring Data JDBC を使用する方法
 
 ## <a name="overview"></a>概要
 
-この記事では、[Spring Data] を使用して、[Java Database Connectivity (JDBC)](https://docs.oracle.com/javase/8/docs/technotes/guides/jdbc/) を使って Azure [MySQL](https://www.mysql.com/) 内の情報を格納および取得するサンプル アプリケーションを作成する方法を説明します。
+この記事では、[Spring Data] を使用して、[Java Database Connectivity (JDBC)](https://docs.oracle.com/javase/8/docs/technotes/guides/jdbc/) を使って [Azure Database for MySQL](/azure/mysql/) データベース内の情報を格納および取得するサンプル アプリケーションを作成する方法を説明します。
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -37,9 +33,9 @@ ms.locfileid: "68282373"
 * [mysql](https://dev.mysql.com/downloads/) コマンドライン ユーティリティ。
 * [Git](https://git-scm.com/downloads) クライアント。
 
-## <a name="create-a-mysql-database-for-azure"></a>Azure 用に MySQL データベースを作成する
+## <a name="create-an-azure-database-for-mysql"></a>Azure Database for MySQL の作成 
 
-### <a name="create-a-mysql-database-server-using-the-azure-portal"></a>Azure Portal を使用して MySQL データベース サーバーを作成する
+### <a name="create-a-server-using-the-azure-portal"></a>Azure portal を使用してサーバーを作成する
 
 > [!NOTE]
 > 
@@ -67,11 +63,11 @@ ms.locfileid: "68282373"
 
 1. 上記の情報をすべて入力したら、 **[作成]** をクリックします。
 
-### <a name="configure-a-firewall-rule-for-your-mysql-database-server-using-the-azure-portal"></a>Azure Portal を使用して MySQL データベース サーバーのファイアウォール規則を構成する
+### <a name="configure-a-firewall-rule-for-your-server-using-the-azure-portal"></a>Azure portal を使用してサーバーのファイアウォール規則を構成する
 
 1. Azure portal (<https://portal.azure.com/>) を参照し、サインインします。
 
-1. **[すべてのリソース]** をクリックし、先ほど作成した MySQL データベースをクリックします。
+1. **[すべてのリソース]** をクリックし、先ほど作成した Azure Database for MySQL リソースをクリックします。
 
    ![MySQL データベースを選択する][MYSQL03]
 
@@ -79,11 +75,11 @@ ms.locfileid: "68282373"
 
    ![接続のセキュリティを構成する][MYSQL04]
 
-### <a name="retrieve-the-connection-string-for-your-mysql-server-using-the-azure-portal"></a>Azure Portal を使用して MySQL サーバーの接続文字列を取得する
+### <a name="retrieve-the-connection-string-for-your-server-using-the-azure-portal"></a>Azure portal を使用してサーバーの接続文字列を取得する
 
 1. Azure portal (<https://portal.azure.com/>) を参照し、サインインします。
 
-1. **[すべてのリソース]** をクリックし、先ほど作成した MySQL データベースをクリックします。
+1. **[すべてのリソース]** をクリックし、先ほど作成した Azure Database for MySQL を選択します。
 
    ![MySQL データベースを選択する][MYSQL03]
 
@@ -91,7 +87,7 @@ ms.locfileid: "68282373"
 
    ![JDBC 接続文字列を取得する][MYSQL05]
 
-### <a name="create-mysql-database-using-the-mysql-command-line-utility"></a>`mysql` コマンド ライン ユーティリティを使用して MySQL データベースを作成する
+### <a name="create-a-database-using-the-mysql-command-line-utility"></a>`mysql` コマンド ライン ユーティリティを使用してデータベースを作成する
 
 1. コマンド シェルを開き、次の例のように `mysql` コマンドを入力して MySQL サーバーに接続します。
 
@@ -229,7 +225,7 @@ ms.locfileid: "68282373"
 
 ## <a name="summary"></a>まとめ
 
-このチュートリアルでは、Spring Data を使用して、JDBC を使って Azure MySQL データベース内の情報を格納および取得する Java のサンプル アプリケーションを作成しました。
+このチュートリアルでは、Spring Data を使用して、JDBC を使って Azure Database for MySQL データベース内の情報を格納および取得する Java のサンプル アプリケーションを作成しました。
 
 ## <a name="next-steps"></a>次の手順
 

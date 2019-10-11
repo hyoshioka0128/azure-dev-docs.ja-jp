@@ -1,5 +1,5 @@
 ---
-title: Azure SDK for Python の操作の構成
+title: 操作の構成用のパラメーター - Azure SDK for Python
 description: Azure SDK for Python によってスローされる C
 author: sptramer
 ms.author: sttramer
@@ -7,20 +7,21 @@ manager: carmonm
 ms.date: 03/07/2018
 ms.topic: conceptual
 ms.devlang: python
-ms.openlocfilehash: 9638aa4602f96e2da0155a7b3840e5be4857eb98
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.custom: seo-python-october2019
+ms.openlocfilehash: ca69b72789f28445c4654e635e641e2954890a38
+ms.sourcegitcommit: bed07b313eeab51281d1a6d4eba67a75524b2f57
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68285513"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72172368"
 ---
-# <a name="operation-config"></a>操作の構成 
+# <a name="parameters-for-operation-configuration"></a>操作の構成用のパラメーター
 
 操作のメソッドには、`kwargs` で指定できる追加のパラメーターがあります。 これは operation_config と呼ばれます。
 
 操作の構成のオプションは次のとおりです。
 
-|パラメーター名|Type|Role|
+|パラメーター名|種類|Role|
 |----------------------|------|---------------|
 | 確認 |`bool`|SSL 証明書を確認するかどうか。 既定値は True です。|
 |  cert |`str`| クライアント側で確認するためのローカル証明書へのパス。|

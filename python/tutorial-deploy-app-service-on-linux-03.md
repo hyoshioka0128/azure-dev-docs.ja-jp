@@ -1,5 +1,5 @@
 ---
-title: Visual Studio Code から App Service を作成する
+title: チュートリアル:Visual Studio Code から App Service を作成する
 description: チュートリアルの手順 3、VS Code 拡張機能から App Service を作成する。
 services: app-service
 author: kraigb
@@ -8,20 +8,21 @@ ms.service: app-service
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.author: kraigb
-ms.openlocfilehash: 15e4e3b4ec5ab79110b1785335ce064cd90fd602
-ms.sourcegitcommit: 74e28a479c87a3a53592646420b78e69852dd86a
+ms.custom: seo-python-october2019
+ms.openlocfilehash: 8a2a719ee578553bb2033469e64c2df34351e36e
+ms.sourcegitcommit: bed07b313eeab51281d1a6d4eba67a75524b2f57
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71019810"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72172510"
 ---
-# <a name="create-the-app-service"></a>App Service の作成
+# <a name="tutorial-create-the-app-service-from-visual-studio-code"></a>チュートリアル:Visual Studio Code から App Service を作成する
 
 [前の手順: アプリを準備する](tutorial-deploy-app-service-on-linux-01.md)
 
 この手順では、アプリのデプロイ先となる Azure App Service のインスタンスを作成します。 次の手順で必要に応じてカスタム スタートアップ ファイルを構成できるよう、この手順は、コードをデプロイする前に行います。
 
-1. **[Azure: App Service]** エクスプローラーで、 **+** コマンドを選択して新しい App Service を作成するか、またはコマンド パレット (**F1**) を開いて **[Azure App Service: Create New Web App]\(Azure App Service: 新しい Web アプリを作成する\)** を選択します (App Service の用語では、"Web アプリ" とは、Web アプリ コードの**ホスト**であって、アプリのコード自体ではありません)。
+1. **[Azure: App Service]** エクスプローラーで、 **+** コマンドを選択して新しい App Service を作成するか、またはコマンド パレット (**F1**) を開いて **[Azure App Service: Create New Web App]\(Azure App Service: 新しい Web アプリを作成する\)** を選択します。 (App Service の用語では、"Web アプリ" とは、Web アプリ コードの**ホスト**であって、アプリのコード自体ではありません)。
 
     ![App Service エクスプローラーの新しい App Service の作成ボタン](media/deploy-azure/app-service-create-new.png)
 
@@ -34,7 +35,7 @@ ms.locfileid: "71019810"
 
     ![App Service の作成後に表示されるメッセージ](media/deploy-azure/app-service-created.png)
 
-1. App Service が正常に動作していることを確認するために、 **[Azure: App Service]** エクスプローラーでサブスクリプションを展開し、App Service の名前を右クリックして、 **[Web サイトの参照]** を選択します。
+1. App Service が正常に実行されていることを確認するために、 **[Azure: App Service]** エクスプローラーでサブスクリプションを展開し、App Service の名前を右クリックして、 **[Web サイトの参照]** を選択します。
 
     ![App Service エクスプローラーの [App Service] にある [Web サイトの参照] コマンド](media/deploy-azure/browse-website-command.png)
 

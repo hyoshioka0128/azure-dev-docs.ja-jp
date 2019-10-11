@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: azure-nodejs
 ms.date: 08/20/2019
 ms.author: kraigb
-ms.openlocfilehash: 736797aa4287909646b7dcaca430fc5b7c9f3b66
-ms.sourcegitcommit: f519a1ee8017850b2fa37049af3bac1ea5ca5516
+ms.openlocfilehash: 1861b5df8cc9a54379762fac001c5cecc2f89b1f
+ms.sourcegitcommit: 60c41faa59dbb59406eb7c1715f5708b5ed892c2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69892356"
+ms.lasthandoff: 10/08/2019
+ms.locfileid: "72036082"
 ---
 # <a name="how-to-integrate-azure-databases-in-nodejs-apps"></a>Azure のデータベースを Node.js アプリに統合する方法
 
@@ -25,7 +25,7 @@ ms.locfileid: "69892356"
 | **MongoDB** | [Node.js の MongoDB Web アプリの作成](/azure/app-service-web/app-service-web-tutorial-nodejs-mongodb-app) | [サンプル](https://docs.microsoft.com/samples/browse/?languages=javascript%2Cnodejs&term=Mongo%20DB) |
 | **Redis Cache** | [Redis Cache の作成と使用](/azure/redis-cache/cache-nodejs-get-started) | |
 | **Azure SQL データベース** | [Node.js を使用して Azure SQL データベースに照会する](/azure/sql-database/sql-database-connect-query-nodejs) | [サンプル](https://docs.microsoft.com/samples/browse/?languages=javascript%2Cnodejs&products=azure-sql-database) | |
-| **MySQL** | [Node.js を使った接続とデータの照会](/azure/mysql/connect-nodejs.md) | |
+| **MySQL** | [Node.js を使った接続とデータの照会](/azure/mysql/connect-nodejs) | |
 | **PostgreSQL** | [Node.js を使った接続とデータの照会](/azure/postgresql/connect-nodejs) | |
 
 ファイル (BLOB)、テーブル、キュー (メッセージ) のストレージには、Azure Storage を使用することもできます。

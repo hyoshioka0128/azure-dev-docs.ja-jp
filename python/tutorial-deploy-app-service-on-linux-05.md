@@ -1,5 +1,5 @@
 ---
-title: VS Code を使用して Azure App Service on Linux に Python Web アプリをデプロイする
+title: チュートリアル:VS Code を使用して Azure App Service on Linux に Python Web アプリをデプロイする
 description: チュートリアルの手順 5、Web アプリのコードをデプロイする
 services: app-service
 author: kraigb
@@ -8,14 +8,15 @@ ms.service: app-service
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.author: kraigb
-ms.openlocfilehash: e9b85928bd2b1308ab57747d7b0c32c085274cde
-ms.sourcegitcommit: 74e28a479c87a3a53592646420b78e69852dd86a
+ms.custom: seo-python-october2019
+ms.openlocfilehash: f7db7b93c3d8b2a130844ff91e1a4e294a0668f4
+ms.sourcegitcommit: bed07b313eeab51281d1a6d4eba67a75524b2f57
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/16/2019
-ms.locfileid: "71019680"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72172489"
 ---
-# <a name="deploy-your-app"></a>アプリをデプロイする
+# <a name="tutorial-deploy-your-python-web-app-to-azure-app-service-on-linux"></a>チュートリアル:Azure App Service on Linux に Python Web アプリをデプロイする
 
 [前の手順: カスタム スタートアップ ファイルを構成する](tutorial-deploy-app-service-on-linux-04.md)
 
@@ -40,7 +41,7 @@ ms.locfileid: "71019680"
 
     ![App Service でアプリが正常に実行されている](media/deploy-azure/running-app.png)
 
-1. ファイルがデプロイされたことを確認するには、 **[Azure:App Service]** エクスプローラーで App Service を展開し、 **[ファイル]** を展開します。
+1. ファイルがデプロイされていることを確認するには、 **[Azure: App Service]** エクスプローラーで App Service を展開し、 **[ファイル]** を展開します。
 
     ![App Service エクスプローラーでデプロイ ファイルを確認する](media/deploy-azure/expand-files-node.png)
 

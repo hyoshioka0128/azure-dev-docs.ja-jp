@@ -1,5 +1,5 @@
 ---
-title: インストール
+title: Azure SDK for Python をインストールする
 description: Azure Python SDK のインストール方法
 author: sptramer
 ms.author: sttramer
@@ -7,14 +7,15 @@ manager: carmonm
 ms.date: 06/05/2017
 ms.topic: conceptual
 ms.devlang: python
-ms.openlocfilehash: e72d150ce8902d556045f74c5df0c7ffabe08cf2
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.custom: seo-python-october2019
+ms.openlocfilehash: a0e979ec58cb659873a1bbe85bda4579363a9777
+ms.sourcegitcommit: bed07b313eeab51281d1a6d4eba67a75524b2f57
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68285753"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72172339"
 ---
-# <a name="installation"></a>インストール
+# <a name="install-the-azure-sdk-for-python"></a>Azure SDK for Python をインストールする
 
 ## <a name="which-python-and-which-version-to-use"></a>使用する Python とそのバージョン
 

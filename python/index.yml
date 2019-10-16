@@ -1,21 +1,21 @@
 ### YamlMime:Landing
-title: Azure SDK for Python のドキュメント
+title: Python 開発者向けの Azure
 summary: >
-  Azure SDK for Python の概要、使用を開始するための方法、開発者向け機能について説明します。 アプリケーション ホスティング、mySQL や PostgreSQL のようなオープンソース データベースのサポート、機械学習やその他のアプリケーションのビッグ データの操作など、便利な Azure 機能を使ってみましょう。
+  Python 開発者向けの Azure の機能について説明します。 アプリ ホスティング、mySQL や PostgreSQL のようなオープンソース データベースのサポート、機械学習やその他のアプリケーションのビッグ データの操作など、便利な Azure 機能を使ってみましょう。
 metadata:
   title: Python 開発者向けの Azure
-  description: 以下の開発者リソースを使用して、Azure SDK for Python を使用した開発を開始しましょう。
-  author: sptramer
-  ms.author: sttramer
-  ms.date: 09/10/2019
+  description: Python と Azure for Python を使用した開発を始めましょう。
+  author: kraigb
+  ms.author: kraigb
+  ms.date: 10/11/2019
   ms.topic: landing-page
   ms.collection: collection
-  ms.openlocfilehash: a753597a65f959e638a4aa72b99327ea1f635aee
-  ms.sourcegitcommit: 4a95777874ae3a3c760365148de868f937fdfd2e
+  ms.openlocfilehash: a6008ed6b2a07db2853521922a29f1bd51a909d3
+  ms.sourcegitcommit: e081f71211e8f33420e92635c9a61eaa2f34c5e6
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/18/2019
-  ms.locfileid: "71094810"
+  ms.lasthandoff: 10/14/2019
+  ms.locfileid: "72306314"
 landingContent:
 - title: Azure SDK for Python を使ってみる
   linkLists:
@@ -27,36 +27,54 @@ landingContent:
     links:
     - text: SDK のインストール
       url: python-sdk-azure-install.md
-    - text: Azure Notebooks で Jupyter ノートブックを使用する
-      url: https://notebooks.azure.com/
-    - text: Visual Studio Code での Python
-      url: https://code.visualstudio.com/docs/languages/python
   - linkListType: how-to-guide
     links:
     - text: アプリケーションの認証
       url: python-sdk-azure-authenticate.md
-  - linkListType: quickstart
+  - linkListType: reference
     links:
-    - text: Visual Studio Code を使用して Azure Functions でサーバーレスの Python アプリを作成する
-      url: /azure/azure-functions/tutorial-vs-code-serverless-python?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
-    - text: Jupyter ノートブックで Azure Machine Learning ツールを使用する
-      url: /azure/notebooks/use-machine-learning-services-jupyter-notebooks?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
-    - text: Azure Pipelines を使用して Python アプリを構築およびデプロイする
-      url: /azure/devops/pipelines/languages/python-webapp?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
+    - text: Azure SDK for Python API のリファレンス
+      url: /python/api?view=azure-python
 - title: Azure 内でのアプリケーションのホスト
   linkLists:
-  - linkListType: overview
-    links:
-    - text: Azure App Service on Linux の概要
-      url: /azure/app-service/containers/app-service-linux-intro?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
   - linkListType: quickstart
     links:
     - text: Python Web アプリを構築、デプロイ、スケーリングする
       url: /azure/app-service/containers/quickstart-python?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
+    - text: Visual Studio Code を使用して Azure Functions でサーバーレスの Python アプリを作成する
+      url: tutorial-vs-code-serverless-python-01.md
     - text: Azure Kubernetes Service にコンテナー化されたアプリをデプロイする
       url: /azure/aks/kubernetes-walkthrough?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
-    - text: Python でサーバーレス関数を作成してデプロイする
-      url: /azure/azure-functions/functions-create-first-function-python?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
+    - text: Azure Pipelines を使用して Python アプリを構築およびデプロイする
+      url: /azure/devops/pipelines/languages/python-webapp?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
+    - text: Python Web アプリケーションに Microsoft でサインインを追加する
+      url: /azure/active-directory/develop/quickstart-v2-python-webapp?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
+  - linkListType: overview
+    links:
+    - text: Azure App Service on Linux の概要
+      url: /azure/app-service/containers/app-service-linux-intro?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
+- title: 開発者ツールを使ってみる
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Visual Studio Code での Python
+      url: https://code.visualstudio.com/docs/languages/python
+  - linkListType: tutorial
+    links:
+    - text: Visual Studio Code を使用して Azure Functions でサーバーレスの Python アプリを作成する
+      url: tutorial-vs-code-serverless-python-01.md
+    - text: Visual Studio Code による Web アプリの作成と Azure へのデプロイ
+      url: tutorial-deploy-app-service-on-linux-01.md
+    - text: Visual Studio Code によるコンテナーの作成と Azure へのデプロイ
+      url: tutorial-deploy-containers-01.md
+  - linkListType: download
+    links:
+    - text: Visual Studio Code 用の Azure 拡張機能
+      url: https://code.visualstudio.com/docs/azure/extensions
+    - text: Azure CLI のインストール
+      url: /azure/install-azure-cli?view=azure-cli-latest?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
+    - text: さまざまなディストリビューションを使用して、Linux アプリケーションを Windows 10 上でネイティブに実行する
+      url: /windows/wsl/install-win10?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
 - title: データ サイエンス、AI、機械学習のためのサービス
   linkLists:
   - linkListType: overview
@@ -67,16 +85,14 @@ landingContent:
       url: /azure/cognitive-services?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
   - linkListType: quickstart
     links:
+    - text: Jupyter ノートブックで Azure Machine Learning ツールを使用する
+      url: /azure/notebooks/use-machine-learning-services-jupyter-notebooks?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
     - text: データ処理にマネージド Azure HDInsights クラスターを使用する
       url: /azure/hdinsight/hadoop/apache-hadoop-linux-create-cluster-get-started-portal?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
     - text: データ サイエンス タスク用の Azure 仮想マシンを作成する
       url: /azure/machine-learning/data-science-virtual-machine/dsvm-ubuntu-intro?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-- title: Azure SDK for Python のリファレンス
-  linkLists:
-  - linkListType: reference
-    links:
-    - text: Azure SDK for Python API のリファレンス
-      url: /python/api?view=azure-python
+    - text: Azure Notebooks で Jupyter ノートブックを使用する
+      url: https://notebooks.azure.com/
 - title: Azure でのストレージ、メッセージング、データベース ソリューション
   linkLists:
   - linkListType: overview
@@ -91,6 +107,10 @@ landingContent:
     links:
     - text: Python から Azure Storage の BLOB を管理する
       url: /azure/storage/blobs/storage-quickstart-blobs-python?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
+    - text: Azure 上に PostgreSQL インスタンスを作成し、Python を使用して接続する
+      url: /azure/postgresql/quickstart-create-server-database-portal?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+    - text: Azure 上に MySQL インスタンスを作成し、Python を使用して接続する。
+      url: /azure/mysql/quickstart-create-mysql-server-database-using-azure-portal?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
     - text: Azure CosmosDB アカウント上で Python から SQL クエリを使用する
       url: /azure/cosmos-db/create-sql-api-python?toc=%2Fazure%2Fpython%2Ftoc.json&bc=%2Fazure%2Fpython%2Fbreadcrumb%2Ftoc.json
     - text: Azure にマネージド SQL サーバーを設定する

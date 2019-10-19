@@ -2,6 +2,6 @@
   tocHref: /azure
   topicHref: /azure/index
   items:
-    - name: Azure 上の Node
+    - name: JavaScript および Node.js 開発者向けの Azure
       tocHref: /azure/javascript
       topicHref: /azure/javascript/index

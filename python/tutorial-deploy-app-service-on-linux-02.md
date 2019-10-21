@@ -9,16 +9,18 @@ ms.topic: conceptual
 ms.date: 09/12/2019
 ms.author: kraigb
 ms.custom: seo-python-october2019
-ms.openlocfilehash: b284dd6b5a5d1a09f1be48fb2ab7e6a8f95a4708
-ms.sourcegitcommit: bed07b313eeab51281d1a6d4eba67a75524b2f57
+ms.openlocfilehash: 96e3a653567d146e1ce10fe0ae7950d35b9ed9e3
+ms.sourcegitcommit: 6012460ad8d6ff112226b8f9ea6da397ef77712d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72172357"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72279076"
 ---
 # <a name="tutorial-prepare-your-app-for-deployment-to-azure-app-service"></a>チュートリアル:Azure App Service にデプロイするためにアプリを準備する
 
 [前の手順: 前提条件](tutorial-deploy-app-service-on-linux-01.md)
+
+この記事では、このチュートリアルの Azure App Service にデプロイするアプリを準備します。 既存のアプリを使用することも、アプリを作成またはダウンロードすることもできます。
 
 作業対象のアプリが既にある場合は、フレームワーク (Flask、Django など) を含む依存関係を記述した *requirements.txt* ファイルがあることを確認してください。
 

@@ -9,20 +9,22 @@ ms.topic: conceptual
 ms.date: 09/12/2019
 ms.author: kraigb
 ms.custom: seo-python-october2019
-ms.openlocfilehash: f4aac132e9c01a0c428e243e06e811357defc2aa
-ms.sourcegitcommit: bed07b313eeab51281d1a6d4eba67a75524b2f57
+ms.openlocfilehash: a60c8fd0202e935960f14a9ab5570f86a78fab6e
+ms.sourcegitcommit: 6012460ad8d6ff112226b8f9ea6da397ef77712d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72172232"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72278919"
 ---
 # <a name="tutorial-stream-logs-from-azure-app-service-into-visual-studio-code"></a>チュートリアル:Azure App Service から Visual Studio Code にログをストリーム配信する
 
 [前の手順: アプリをデプロイする](tutorial-deploy-app-service-on-linux-05.md)
 
+この手順を使用して、Azure App Service から Visual Studio Code にログをストリーム配信します。
+
 1. Visual Studio Code で **[Azure: App Service]** エクスプローラーを開き、App Service を右クリックして、 **[Start streaming logs]\(ログのストリーム配信を開始する\)** を選択します。
 
-   ![[Start streaming logs]\(ログのストリーム配信を開始する\) コマンド](media/deploy-azure/start-streaming-logs-command.png)
+   ![App Service エクスプローラーからログのストリーム配信を開始する](media/deploy-azure/start-streaming-logs-in-visual-studio-code.png)
 
 1. ファイルのログ記録を有効にして Web アプリを再起動するよう求められたら、 **[はい]** を選択します。 アプリの再起動中、VS Code の**出力**ウィンドウに進行状況が表示されます。 ログの有効化は、1 回限りのプロセスです。
 

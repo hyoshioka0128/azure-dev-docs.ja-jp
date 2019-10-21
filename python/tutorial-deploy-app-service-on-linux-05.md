@@ -9,20 +9,22 @@ ms.topic: conceptual
 ms.date: 09/12/2019
 ms.author: kraigb
 ms.custom: seo-python-october2019
-ms.openlocfilehash: f7db7b93c3d8b2a130844ff91e1a4e294a0668f4
-ms.sourcegitcommit: bed07b313eeab51281d1a6d4eba67a75524b2f57
+ms.openlocfilehash: b87271573f21dfc696c4f68b234780feb724ddd1
+ms.sourcegitcommit: 6012460ad8d6ff112226b8f9ea6da397ef77712d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72172489"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72278986"
 ---
 # <a name="tutorial-deploy-your-python-web-app-to-azure-app-service-on-linux"></a>チュートリアル:Azure App Service on Linux に Python Web アプリをデプロイする
 
 [前の手順: カスタム スタートアップ ファイルを構成する](tutorial-deploy-app-service-on-linux-04.md)
 
+この手順を使用して、Azure App Service に Python アプリをデプロイします。
+
 1. Visual Studio Code で **[Azure: App Service]** エクスプローラーを開いて、青色の上矢印を選択します。
 
-   ![Web アプリへのデプロイ コマンド](media/deploy-azure/deploy-to-web-app-command.png)
+   ![App Service エクスプローラーで Web アプリを App Service にデプロイする](media/deploy-azure/deploy-web-app-to-app-service-in-app-service-explorer.png)
 
     または、App Service の名前を右クリックして **[Web アプリにデプロイ]** コマンドを選択する方法もあります。
 
@@ -33,17 +35,17 @@ ms.locfileid: "72172489"
 
 1. デプロイ プロセスの進行中は、VS Code の**出力**ウィンドウで進行状況を確認できます。
 
-    ![VS Code の出力ウィンドウに表示されるデプロイの進行状況](media/deploy-azure/deployment-progress.png)
+    ![VS Code の出力ウィンドウに表示されるデプロイの進行状況](media/deploy-azure/view-deployment-progress-in-visual-studio-code-output.png)
 
 1. 数分後 (インストールする必要のある依存関係の数によって異なります) にデプロイが完了すると、次のメッセージが表示されます。 **[Web サイトの参照]** ボタンを選択すると、実行中のサイトが表示されます。
 
-    ![デプロイの完了メッセージ](media/deploy-azure/deployment-complete.png)
+    ![[Web サイトの参照] ボタンを使用したデプロイの完了](media/deploy-azure/web-app-deployment-complete-with-browse-website-button.png)
 
-    ![App Service でアプリが正常に実行されている](media/deploy-azure/running-app.png)
+    ![App Service でアプリが正常に実行されている](media/deploy-azure/web-app-running-successfully-on-app-service.png)
 
 1. ファイルがデプロイされていることを確認するには、 **[Azure: App Service]** エクスプローラーで App Service を展開し、 **[ファイル]** を展開します。
 
-    ![App Service エクスプローラーでデプロイ ファイルを確認する](media/deploy-azure/expand-files-node.png)
+    ![App Service エクスプローラーでデプロイ ファイルを確認する](media/deploy-azure/expand-files-node-to-check-deployment-of-web-app-files.png)
 
     *antenv* は、依存関係を含んだ仮想環境が App Service によって作成されるフォルダーです。 このノードを展開すると、*requirements.txt* に指定したパッケージが *antenv/lib/python3.7/site-packages* にインストールされていることを確認できます。
 

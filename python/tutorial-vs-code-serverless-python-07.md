@@ -9,18 +9,20 @@ ms.topic: conceptual
 ms.date: 09/02/2019
 ms.author: kraigb
 ms.custom: seo-python-october2019
-ms.openlocfilehash: e9f23e138dc9ddc0022199296320ff5c04e6c3d6
-ms.sourcegitcommit: bed07b313eeab51281d1a6d4eba67a75524b2f57
+ms.openlocfilehash: f8cfe602676c64f516f0a95ae73801b58f35076c
+ms.sourcegitcommit: 6012460ad8d6ff112226b8f9ea6da397ef77712d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72172121"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72278532"
 ---
 # <a name="tutorial-add-a-storage-binding-for-azure-functions-in-python"></a>チュートリアル:Python で Azure Functions のストレージ バインドを追加する
 
 [前の手順: 2 つ目の関数をデプロイする](tutorial-vs-code-serverless-python-06.md)
 
-"_バインド_" を追加すると、データ アクセス コードを記述しなくても、Azure Storage などのリソースに関数コードを接続できます。 バインドは "*function.json*" ファイルに定義され、入力と出力の両方を表すことができます。 関数では複数の入力と出力のバインドを使用できますが、トリガーは 1 つだけです。 詳細については、「[Azure Functions でのトリガーとバインドの概念](/azure/azure-functions/functions-triggers-bindings)」を参照してください。
+Azure Functions のストレージ バインドを追加できます。 "_バインド_" を追加すると、データ アクセス コードを記述しなくても、Azure Storage などのリソースに関数コードを接続できます。
+
+バインドは "*function.json*" ファイルに定義され、入力と出力の両方を表すことができます。 関数では複数の入力と出力のバインドを使用できますが、トリガーは 1 つだけです。 詳細については、「[Azure Functions でのトリガーとバインドの概念](/azure/azure-functions/functions-triggers-bindings)」を参照してください。
 
 このセクションでは、このチュートリアルで前に作成した HttpExample 関数にストレージ バインドを追加します。 関数でこのバインドを使用し、要求ごとにストレージにメッセージを書き込みます。 ストレージでは、関数アプリで使用されているものと同じ既定のストレージ アカウントが使用されます。 ただし、ストレージを頻繁に利用する予定がある場合は、別アカウントの作成を検討してください。
 
@@ -28,7 +30,7 @@ ms.locfileid: "72172121"
 
 1. `HttpExample` フォルダーで、"*function.json*" を右クリックし、 **[バインドの追加]** を選択します。
 
-    ![Visual Studio Code エクスプローラーの [バインドの追加] コマンド](media/tutorial-vs-code-serverless-python/add-binding-command.png)
+    ![Visual Studio Code エクスプローラーの [バインドの追加] コマンド](media/tutorial-vs-code-serverless-python/add-binding-command-to-azure-functions-in-visual-studio-code.png)
 
 1. Visual Studio Code の後続のプロンプトで、次の値を選択するか、指定します。
 

@@ -9,16 +9,18 @@ ms.topic: conceptual
 ms.date: 09/12/2019
 ms.author: kraigb
 ms.custom: seo-python-october2019
-ms.openlocfilehash: fdd3248e50020bb90cdde8a3e9c30c2895dccdae
-ms.sourcegitcommit: bed07b313eeab51281d1a6d4eba67a75524b2f57
+ms.openlocfilehash: 7c3c863ed333528c675cda939f52b86f53bc8380
+ms.sourcegitcommit: 6012460ad8d6ff112226b8f9ea6da397ef77712d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72172202"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72278945"
 ---
 # <a name="tutorial-configure-a-custom-startup-file-for-python-apps-on-azure-app-service"></a>チュートリアル:Azure App Service の Python アプリ用のカスタム スタートアップ ファイルを構成する
 
-[前の手順: App Service を作成する](tutorial-deploy-app-service-on-linux-02.md)
+[前の手順: App Service を作成する](tutorial-deploy-app-service-on-linux-03.md)
+
+この記事では、Azure App Service で Python アプリのカスタム スタートアップ ファイルを構成する必要があることについて説明します。
 
 アプリを構築した方法によっては、Azure Docs の [App Service on Linux 向けの Python アプリの構成](https://docs.microsoft.com/azure/app-service/containers/how-to-configure-python)に関するページで説明されているように、そのアプリ用にカスタム スタートアップ コマンド ファイルを作成することが必要になる場合があります。
 
@@ -37,11 +39,11 @@ ms.locfileid: "72172202"
 
 1. **[Azure: App Service]** エクスプローラーで [App Service] を展開し、 **[Application Settings]\(アプリケーション設定\)** を右クリックして、 **[ポータルで開く]** を選択します。
 
-    ![App Service エクスプローラーで設定をポータルで開くコマンド](media/deploy-azure/open-settings-in-portal-command.png)
+    ![App Service エクスプローラーでアプリケーション設定をポータルで開く](media/deploy-azure/open-application-settings-in-portal-for-app-service.png)
 
 1. Azure portal で必要に応じてサインインし、 **[Configuration]\(構成\)** ページの **[General settings]\(全般設定\)** を選択します。 **[Stack settings]\(スタックの設定\)**  >  **[スタートアップ コマンド]** でスタートアップ ファイルの名前 (*startup.txt* など) を入力して、 **[保存]** を選択します。
 
-    ![Azure portal でスタートアップ ファイルの名前を設定する](media/deploy-azure/azure-portal-startup-file.png)
+    ![Azure portal でスタートアップ コマンド ファイルの名前を設定する](media/deploy-azure/enter-startup-file-for-app-service-in-the-azure-portal.png)
 
     > [!NOTE]
     > スタートアップ コマンド ファイルを使用する代わりに、Azure portal の **[スタートアップ コマンド]** フィールドにスタートアップ コマンドを直接指定することもできます。 ただし、通常はファイルの使用をお勧めします。このようにちょっとした構成をリポジトリに保存し、そこで変更を監査したり、別の App Service インスタンスにまとめて再デプロイしたりできます。

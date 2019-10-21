@@ -9,22 +9,24 @@ ms.topic: conceptual
 ms.date: 09/02/2019
 ms.author: kraigb
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 231aefd696b3f4c91e5da8156dc339f4b355c1c7
-ms.sourcegitcommit: bed07b313eeab51281d1a6d4eba67a75524b2f57
+ms.openlocfilehash: 9acf6e4c0ecc5357580957e2ea9295cd89f441f0
+ms.sourcegitcommit: 6012460ad8d6ff112226b8f9ea6da397ef77712d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72172178"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72278557"
 ---
 # <a name="tutorial-deploy-azure-functions-in-python"></a>チュートリアル:Python で Azure Functions をデプロイする
 
 [前の手順: ローカルでデバッグする](tutorial-vs-code-serverless-python-04.md)
 
-以下の手順では、Functions 拡張機能を使用し、Azure で関数アプリとその他の必要な Azure リソースを作成します。 Function App を使用すると、リソースの管理、デプロイ、および共有を容易にするためのロジック ユニットとして関数をグループ化できます。 また、データと[ホスティング プラン](/azure/azure-functions/functions-scale#hosting-plan-support)に Azure Storage アカウントが必要になります。 これらのリソースはすべて、1 つのリソース グループ内で整理されます。
+この記事では、Azure Functions 拡張機能を使用し、Azure で関数アプリとその他の必要な Azure リソースを作成します。 Function App を使用すると、リソースの管理、デプロイ、および共有を容易にするためのロジック ユニットとして関数をグループ化できます。
+
+関数アプリでは、データと[ホスティング プラン](/azure/azure-functions/functions-scale#hosting-plan-support)に Azure Storage アカウントが必要になります。 これらのリソースはすべて、1 つのリソース グループ内で整理されます。
 
 1. **[Azure: Functions]** エクスプローラーで、**Deploy to Function App** コマンドを選択するか、コマンド パレット (**F1**) を開き、**Azure Functions: Deploy to Function App** コマンドを選択します。 繰り返しになりますが、関数アプリは Azure で Python プロジェクトが実行される場所です。
 
-    ![Deploy to Function App コマンド](media/tutorial-vs-code-serverless-python/deploy-command.png)
+    ![Python 関数を Azure 関数アプリにデプロイする](media/tutorial-vs-code-serverless-python/deploy-a-python-fuction-to-azure-function-app.png)
 
 1. プロンプトが表示されたら、 **[Create New Function App in Azure\(Azure で新しい関数アプリを作成する\)]** を選択し、Azure 全体で一意となる名前を指定します (通常、個人の名前か社名を他の一意の識別子と共に使用します。文字、数字、ハイフンを使用できます)。 前に Function App を作成した場合、その名前はこのオプション一覧に表示されます。
 
@@ -36,11 +38,11 @@ ms.locfileid: "72172178"
 
     **[Azure:Functions]** エクスプローラーには進捗状況も表示されます。
 
-    ![[Azure:Functions] エクスプローラー内の新しい関数を作成するコマンド](media/tutorial-vs-code-serverless-python/deploy-progress.png)
+    ![[Azure:Functions] エクスプローラー内の新しい関数を作成するコマンド](media/tutorial-vs-code-serverless-python/deployment-progress-indicator-in-azure-function-explorer.png)
 
 1. デプロイが完了すると、Azure Functions 拡張機能に 3 つの追加アクションのためのボタンを含むメッセージが表示されます。
 
-    ![デプロイの成功と追加のアクションを示すメッセージ](media/tutorial-vs-code-serverless-python/deployment-popup.png)
+    ![デプロイの成功と追加のアクションを示すメッセージ](media/tutorial-vs-code-serverless-python/azure-functions-deployment-success-with-additional-actions.png)
 
     **[Stream logs]\(ログをストリーミング\)** と **[Upload settings]\(設定をアップロード\)** については、次のセクションを参照してください。 **[View output]\(出力を表示\)** については、後続の手順 5 をご覧ください。
 

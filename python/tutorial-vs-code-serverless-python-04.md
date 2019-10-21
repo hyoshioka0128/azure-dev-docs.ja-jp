@@ -9,20 +9,22 @@ ms.topic: conceptual
 ms.date: 09/02/2019
 ms.author: kraigb
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 324a67e5eebfce8fde7a2cf88d40f15864817df5
-ms.sourcegitcommit: bed07b313eeab51281d1a6d4eba67a75524b2f57
+ms.openlocfilehash: cafa10a4ddc9ccc365f9054d009b58b3c9c615bf
+ms.sourcegitcommit: 6012460ad8d6ff112226b8f9ea6da397ef77712d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72172441"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72278591"
 ---
 # <a name="tutorial-debug-the-azure-functions-python-code-locally"></a>チュートリアル:Azure Functions の Python コードをローカルでデバッグする
 
 [前の手順: コード ファイルを調べる](tutorial-vs-code-serverless-python-03.md)
 
+Visual Studio Code で Azure Functions の Python コードをローカルでデバッグできます。
+
 1. Functions プロジェクトを作成すると、Visual Studio Code 拡張機能により、**Attach to Python Functions** という名前の構成が 1 つ含まれる起動構成も`.vscode/launch.json` に作成されます。 この構成では、F5 を押すか、デバッグ エクスプローラーを使用し、プロジェクトを開始できます。
 
-    ![Functions 起動構成が表示されたデバッグ エクスプローラー](media/tutorial-vs-code-serverless-python/launch-configuration.png)
+    ![Python プロジェクトを開始するためのデバッグ エクスプローラーの構成](media/tutorial-vs-code-serverless-python/configuration-to-start-a-python-project-for-debugging.png)
 
 1. デバッガーを起動すると、ターミナルが開き、利用できるエンドポイントの概要など、Azure Functions からの出力が表示されます。 "HttpExample" 以外の名前を使用した場合は、URL が異なることがあります。
 

@@ -9,16 +9,18 @@ ms.topic: conceptual
 ms.date: 09/02/2019
 ms.author: kraigb
 ms.custom: seo-python-october2019
-ms.openlocfilehash: c09323e35c20a0b9fb5162c08f7fa223969d83fe
-ms.sourcegitcommit: bed07b313eeab51281d1a6d4eba67a75524b2f57
+ms.openlocfilehash: 4a8ef594b461df406846f16ad71e595b64ffee5e
+ms.sourcegitcommit: 6012460ad8d6ff112226b8f9ea6da397ef77712d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72172110"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72278780"
 ---
 # <a name="tutorial-examine-the-python-code-files-in-visual-studio-code"></a>チュートリアル:Visual Studio Code で Python コード ファイルを調べる
 
 [前の手順: 関数を作成する](tutorial-vs-code-serverless-python-02.md)
+
+Visual Studio Code を使用して、関数フォルダー内の Python ファイルを確認します。
 
 新しく作成された関数のサブフォルダーにファイルが 3 つあります。" *\_\_init\_\_.py*" には関数のコードが含まれます。"*function.json*" は、Azure Functions の関数を説明するものです。"*sample.dat*" はサンプル データ ファイルです。 "*sample.dat*" は、他のファイルをサブフォルダーに追加できることを示すためだけに存在します。必要に応じて削除できます。
 

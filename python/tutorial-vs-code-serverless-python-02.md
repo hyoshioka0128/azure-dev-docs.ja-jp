@@ -9,20 +9,22 @@ ms.topic: conceptual
 ms.date: 09/02/2019
 ms.author: kraigb
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 691e64ae9b407ba4277ddde2a62a583623e53484
-ms.sourcegitcommit: bed07b313eeab51281d1a6d4eba67a75524b2f57
+ms.openlocfilehash: b87ca4bdefafbfa3e23c9538d6c77357dc9ba99b
+ms.sourcegitcommit: 6012460ad8d6ff112226b8f9ea6da397ef77712d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72172480"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72278745"
 ---
 # <a name="tutorial-create-a-python-function-for-azure-functions"></a>チュートリアル:Azure Functions 用に Python 関数を作成する
 
 [前の手順: 前提条件](tutorial-vs-code-serverless-python-01.md)
 
-1. Azure Functions のコードは、コードの作成前に最初に作成する Functions "_プロジェクト_" 内で管理されます。 **[Azure:Functions]** エクスプローラーで (左側の Azure アイコンを使用して開きます)、 **[新しいプロジェクト]** コマンド アイコンを選択するか、コマンド パレット (F1) を開き、 **[Azure Functions:新しいプロジェクトの作成]** を選択します。
+この記事では、Visual Studio Code を使用して Azure Functions 用に Python 関数を作成します。 Azure Functions のコードは、コードの作成前に最初に作成する Functions "_プロジェクト_" 内で管理されます。
 
-    ![Functions エクスプローラーの [新しいプロジェクトの作成] ボタン](media/tutorial-vs-code-serverless-python/project-create-new.png)
+1. **[Azure:Functions]** エクスプローラーで (左側の Azure アイコンを使用して開きます)、 **[新しいプロジェクト]** コマンド アイコンを選択するか、コマンド パレット (F1) を開き、 **[Azure Functions:新しいプロジェクトの作成]** を選択します。
+
+    ![Azure Functions エクスプローラーで新しいプロジェクトを作成する](media/tutorial-vs-code-serverless-python/create-a-new-project-in-azure-functions-explorer.png)
 
 1. 後続のプロンプトの内容:
 
@@ -37,17 +39,17 @@ ms.locfileid: "72172480"
 
 1. 短い時間の経過後、新しいプロジェクトが作成されたことを示すメッセージが表示されます。 **エクスプローラー**には、関数のために作成されたサブフォルダーがあります。Visual Studio Code によって *\_\_init\_\_.py* ファイルが開きますが、このファイルには既定の関数コードが含まれます。
 
-    [![新しい Python 関数プロジェクトを作成した結果](media/tutorial-vs-code-serverless-python/project-create-results.png)](media/tutorial-vs-code-serverless-python/project-create-results.png)
+    ![Azure Functions で新しい Python プロジェクトを作成した結果](media/tutorial-vs-code-serverless-python/display-results-of-new-python-project-in-azure-functions.png)
 
     > [!NOTE]
     > *\_\_init\_\_.py* を開いたとき、Python インタープリターが選択されていないと Visual Studio Code に表示されたら、コマンド パレット (**F1**) を開き、**Python: Select Interpreter** コマンドを選択します。次に、(プロジェクトの一部として作成された) ローカルの `.env` フォルダーで仮想環境を選択します。 前の記事の「[前提条件](tutorial-vs-code-serverless-python-01.md#prerequisites)」で説明したように、この環境は厳密に Python 3.6x をベースにする必要があります。
     >
-    > ![プロジェクトで作成された仮想環境を選択する](media/tutorial-vs-code-serverless-python/select-venv-interpreter.png)
+    > ![Python プロジェクトで作成された仮想環境を選択する](media/tutorial-vs-code-serverless-python/select-virtual-environment-created-with-the-python-project.png)
 
 > [!TIP]
 > 同じプロジェクトで別の関数を作成するときは必ず、**Create Function** コマンドを **[Azure:Functions]** エクスプローラーで使用するか、コマンド パレット (**F1**) を開き、**Azure Functions: Create Function** コマンドを探して選択します。 いずれのコマンドでも、関数名 (エンドポイントの名前) が求められ、既定のファイルと共にサブフォルダーが作成されます。
 >
-> ![[Azure:Functions] エクスプローラー内の新しい関数を作成するコマンド](media/tutorial-vs-code-serverless-python/function-create-new.png)
+> ![Azure Functions エクスプローラーで新規関数を使用して関数を作成する](media/tutorial-vs-code-serverless-python/create-new-functions-in-azure-functions-explorer.png)
 
 > [!div class="nextstepaction"]
 > [関数を作成しました](tutorial-vs-code-serverless-python-03.md)

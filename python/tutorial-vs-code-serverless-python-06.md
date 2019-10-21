@@ -9,18 +9,18 @@ ms.topic: conceptual
 ms.date: 09/02/2019
 ms.author: kraigb
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 07f806dc58eb5aede65f0dca67e1bc59ce495a25
-ms.sourcegitcommit: bed07b313eeab51281d1a6d4eba67a75524b2f57
+ms.openlocfilehash: f247ff7730a9f1bca8cc7ed6255ed52966d94d6d
+ms.sourcegitcommit: 6012460ad8d6ff112226b8f9ea6da397ef77712d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72172429"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72278503"
 ---
 # <a name="tutorial-add-a-second-python-function-to-azure-functions"></a>チュートリアル:2 つ目の Python 関数を Azure Functions に追加する
 
 [前の手順: Azure にデプロイする](tutorial-vs-code-serverless-python-05.md)
 
-最初のデプロイ後、関数を追加するなど、コードを変更し、同じ Functions App に再デプロイできます。
+最初のデプロイ後、Python 関数を追加するなど、コードを変更し、同じ Azure Functions アプリに再デプロイできます。
 
 1. **[Azure: Functions]** エクスプローラーで **[関数の作成]** コマンドを選択するか、コマンド パレットの **[Azure Functions:関数の作成]** を使用します。 関数には次の詳細を指定します。
 

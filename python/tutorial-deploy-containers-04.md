@@ -9,16 +9,18 @@ ms.topic: conceptual
 ms.date: 09/12/2019
 ms.author: kraigb
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 0f002444d2454b734821e067e65fa513619a68bf
-ms.sourcegitcommit: bed07b313eeab51281d1a6d4eba67a75524b2f57
+ms.openlocfilehash: 12cc4880a7001fc51b0e70f89f177390c5fd0f45
+ms.sourcegitcommit: 6012460ad8d6ff112226b8f9ea6da397ef77712d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72172219"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72278706"
 ---
 # <a name="tutorial-stream-logs-from-azure-app-service-for-a-container"></a>チュートリアル:コンテナー用の Azure App Service からログをストリーム配信する
 
 [前の手順: 変更を加えて再デプロイする](tutorial-deploy-containers-03.md)
+
+この手順を使用して、コンテナー用の Azure App Service から Visual Studio Code にログをストリーム配信します。
 
 VS Code 内から、Azure App Service で実行中のサイトのログを表示 (または追跡) できます。これにより、コンソールへの出力が `print` ステートメントの場合と同様にキャプチャされ、VS Code の **[出力]** パネルにルーティングされます。
 

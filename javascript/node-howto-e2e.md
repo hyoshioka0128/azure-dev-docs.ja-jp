@@ -4,19 +4,19 @@ description: Node.js アプリの作成、Docker 化、Azure へのデプロイ�
 services: multiple
 author: karlerickson
 manager: douge
-ms.service: azure-nodejs
+ms.service: app-service
 ms.tgt_pltfrm: na
 ms.devlang: nodejs
 ms.topic: article
 ms.date: 06/25/2017
 ms.author: karler
-ms.custom: seo-javascript-september2019
-ms.openlocfilehash: 51ed46032d0cff0f2e35c0a69e9b339158bad867
-ms.sourcegitcommit: 86aec15e2d25b5b706092feb4271fb958c29d5fa
+ms.custom: seo-javascript-september2019, seo-javascript-october2019
+ms.openlocfilehash: bc8e3a79e3d32cc3d16f496b169f4229d20a6163
+ms.sourcegitcommit: 2757d8bd0cc045b7d02f430d44de859f9de853f4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71710263"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72587369"
 ---
 # <a name="develop-and-deploy-a-containerized-nodejs-app-with-visual-studio-code-and-azure"></a>コンテナー化された Node.js アプリを Visual Studio Code と Azure を使用して開発してデプロイする
 
@@ -47,13 +47,13 @@ ms.locfileid: "71710263"
 
 1. コマンド パレットのプロンプトに「`gitcl`」と入力し、**Git: Clone** コマンドを選択して、**Enter** キーを押します。
 
-    ![Visual Studio Code コマンド パレットのプロンプトに gitcl コマンドを入力](./media/node-howto-e2e/git-clone.png)
+    ![Visual Studio Code コマンド パレットのプロンプトに gitcl コマンドを入力](./media/node-howto-e2e/visual-studio-code-git-clone.png)
 
 1. **リポジトリの URL** を求められたら、「`https://github.com/scotch-io/node-todo`」と入力し、**Enter** キーを押します。
 
 1. プロジェクトの複製先となるローカル ディレクトリを選択 (または作成) します。
 
-    ![Visual Studio Code エクスプローラー](./media/node-howto-e2e/explorer.png)
+    ![Visual Studio Code エクスプローラー](./media/node-howto-e2e/visual-studio-code-explorer.png)
 
 ## <a name="integrated-terminal"></a>統合ターミナル
 
@@ -63,7 +63,7 @@ Node.js プロジェクトであるため、最初に npm からプロジェク�
 
 1. 「`yarn`」と入力し、**Enter** キーを押します。  
 
-    ![Visual Studio Code 内で yarn コマンドを実行](./media/node-howto-e2e/terminal.png)
+    ![Visual Studio Code 内で yarn コマンドを実行](./media/node-howto-e2e/visual-studio-code-install-yarn.png)
 
 ## <a name="integrated-git-version-control"></a>Git バージョン コントロールの統合
 
@@ -75,7 +75,7 @@ Yarn でアプリの依存関係をインストールすると、`yarn.lock` フ
 
 1. **[メッセージ]** ボックスにコミット メッセージを入力し、**Ctrl + Enter** キーを押します。 
 
-    ![yarn.lock ファイルを Git に追加](./media/node-howto-e2e/git.png)
+    ![yarn.lock ファイルを Git に追加](./media/node-howto-e2e/visual-studio-code-add-yarn-lock.png)
 
 ## <a name="project-and-code-navigation"></a>プロジェクトとコードのナビゲーション
 
@@ -85,21 +85,21 @@ Yarn でアプリの依存関係をインストールすると、`yarn.lock` フ
 
 1. 「`.js`」と入力すると、プロジェクトに含まれているすべての JavaScript/JSON ファイルが、各ファイルの親ディレクトリと共に表示されます。 
 
-    ![すべての .js* ファイルを表示](./media/node-howto-e2e/git-output.png)
+    ![Visual Studio Code ですべての .js* ファイルを表示する](./media/node-howto-e2e/visual-studio-code-javascript-json-file-list.png)
 
 1. `server.js` (アプリのスタートアップ スクリプト) を選択します。 
 
 1. **database** 変数 (6 行目のインポート) にマウス カーソルを合わせると、該当する型が表示されます。 ファイル内の変数/モジュール/型をすぐに調べることができるので、プロジェクトの開発時にとても役立ちます。 
 
-    ![型の調査](./media/node-howto-e2e/hover-help.png)
+    ![ホバー ヘルプを使用して Visual Studio Code で型を検出する](./media/node-howto-e2e/visual-studio-code-hover-help.png)
 
 1. 変数 (**database** など) 内のどこかでマウスをクリックすると、同じファイル内でその変数が使われている箇所をすべて確認できます。 プロジェクト内である変数が使われている箇所をすべて表示するには、その変数を右クリックし、コンテキスト メニューから、 **[すべての参照の検索]** を選択します。
 
-    ![変数が使われている箇所を探す](./media/node-howto-e2e/word-hilight.png)
+    ![Visual Studio Code ですべての参照を検索する](./media/node-howto-e2e/visual-studio-code-find-all-references.png)
 
 1. マウス カーソルを変数に合わせることによってその型を調べることに加え、変数の定義を調べることもできます。別のファイルに存在していても問題ありません。 この機能の働きを確かめるには、**database.localUrl** (12 行目) を右クリックしてコンテキスト メニューから **[定義をここに表示]** を選択します。 
 
-    ![変数の定義をプレビュー](./media/node-howto-e2e/code-peek.png)
+    ![Visual Studio Code で変数の定義を表示する](./media/node-howto-e2e/visual-studio-code-peek-definition.png)
 
 ## <a name="modifying-the-code-and-using-autocompletion"></a>コードの変更とオートコンプリートの使用
 
@@ -121,7 +121,7 @@ Yarn でアプリの依存関係をインストールすると、`yarn.lock` フ
 
 コードを (コピーして貼り付けるのではなく) 手動で入力した場合、`process` の後にピリオドを入力すると自動的に、Node.js の **process** グローバル API で使用できるメンバーが表示されることに注目してください。
 
-![オートコンプリートによって API のメンバーが自動的に表示される](./media/node-howto-e2e/process-env.png)
+![オートコンプリートによって API のメンバーが自動的に表示される](./media/node-howto-e2e/visual-studio-code-process-env.png)
 
 オートコンプリートは、Visual Studio Code がバックグラウンドで TypeScript (JavaScript にも対応) を使用し、型情報を提供することによって実現されています。その型情報が、ユーザーが何か入力したときに、入力候補一覧に伝えられます。 Visual Studio Code は、Node.js プロジェクトを認識し、[Node.js に使用される TypeScript の型指定ファイルを NPM から](https://www.npmjs.com/package/@types/node)自動的にダウンロードします。 この型指定ファイルの存在によって、他の Node.js グローバル (**Buffer**、**setTimeout** など) や組み込みモジュール (**fs**、**http** など) でオートコンプリートが利用できるようになります。
 
@@ -133,7 +133,7 @@ mongoose.connection.on("error", () => { console.log("DB connection error"); });
 
 先ほどのコードと同様、何もしなくてもオートコンプリートが作動することがわかります。
 
-![オートコンプリートによって API のメンバーが自動的に表示される](./media/node-howto-e2e/mongoose.png)
+![オートコンプリートによって API のメンバーが自動的に表示される](./media/node-howto-e2e/visual-studio-code-autocomplete-mongoose.png)
 
 このオートコンプリート機能がどのモジュールでサポートされているかについては、[DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped) プロジェクトを参照すると確認できます。このプロジェクトは、TypeScript のすべての型定義のソースとなるもので、コミュニティが中心となって作成しています。
 
@@ -141,19 +141,19 @@ mongoose.connection.on("error", () => { console.log("DB connection error"); });
 
 コードをひととおり確認したら、実際にアプリを実行してみましょう。 Visual Studio Code でアプリを実行するには、**F5** キーを押します。 **F5** (デバッグ モード) でコードを実行すると、Visual Studio Code によってアプリが起動され、 **[デバッグ コンソール]** ウィンドウが表示されて、アプリの StdOut が表示されます。
 
-![デバッグ コンソールでアプリの StdOut を監視](./media/node-howto-e2e/console.png)
+![デバッグ コンソールでアプリの StdOut を監視](./media/node-howto-e2e/visual-studio-code-debug-console.png)
 
 また、**デバッグ コンソール**は最近実行したアプリにアタッチされるので、JavaScript の式を入力すれば、そのアプリ内で評価されます。オートコンプリートも機能します。 その働きを確かめるために、コンソールに「`process.env`」と入力してみましょう。
 
-![デバッグ コンソールにコードを入力](./media/node-howto-e2e/console-code.png)
+![デバッグ コンソールにコードを入力](./media/node-howto-e2e/visual-studio-code-debug-console-autocomplete.png)
 
 先ほど **F5** キーを押してアプリを実行できたのは、現在開いているファイルが JavaScript ファイル (`server.js`) であるためです。 その結果、プロジェクトが Node.js アプリであると Visual Studio Code によって認識されました。 Visual Studio Code で JavaScript ファイルをすべて閉じて、**F5** キーを押した場合は、環境を選択するように求められます。
 
-![ランタイム環境の指定](./media/node-howto-e2e/select-env.png)
+![ランタイム環境の指定](./media/node-howto-e2e/visual-studio-code-select-environment.png)
 
 ブラウザーを開いて `http://localhost:8080` に移動し、実行中のアプリを表示します。 テキスト ボックスにメッセージを入力し、いくつかの todo を追加/削除しながら、アプリの動作を確かめます。
 
-![実行中の todo アプリ](./media/node-howto-e2e/todo.png)
+![アプリを使用して todo を追加または削除する](./media/node-howto-e2e/add-remove-todos-app.png)
 
 ## <a name="debugging"></a>デバッグ
 
@@ -161,7 +161,7 @@ Visual Studio Code では、統合コンソールでアプリを実行したり�
 
 28 行目にブレークポイントを設定します。この行は、アプリが todo エントリを追加しようとしたときに呼び出される Express ルートを表します。 ブレークポイントは、次の図のようにエディター内で行番号の左側の領域をクリックするだけで設定できます。
 
-![Visual Studio Code 内でブレークポイントを設定](./media/node-howto-e2e/breakpoint.png)
+![Visual Studio Code 内でブレークポイントを設定](./media/node-howto-e2e/visual-studio-code-set-breakpoint.png)
 
 > [!NOTE]
 > Visual Studio Code では標準的なブレークポイントに加え、条件付きブレークポイントもサポートされており、アプリの実行を一時停止するタイミングをカスタマイズすることができます。 条件付きブレークポイントを設定するには、実行を一時停止する行の左側の領域を右クリックし、 **[条件付きブレークポイントの追加]** を選択します。次に、JavaScript の式 (例: `foo = "bar"`) または実行回数を指定して、実行を一時停止する条件を定義します。
@@ -170,7 +170,7 @@ Visual Studio Code では、統合コンソールでアプリを実行したり�
 
 ブレークポイントを設定したら、実行中のアプリに戻って、todo エントリを追加します。 todo エントリを追加するとすぐに、ブレークポイントを設定した 28 行目でアプリの実行が一時停止されます。
 
-![Visual Studio Code によりブレークポイントで実行が一時停止される](./media/node-howto-e2e/debugger.png)
+![Visual Studio Code によりブレークポイントで実行が一時停止される](./media/node-howto-e2e/visual-studio-code-pause-breakpoint-execution.png)
 
 アプリケーションが一時停止された後、コードの式にマウス カーソルを合わせると、現在の値を表示することができます。さらに、ローカル変数/ウォッチ式や呼び出し履歴を調べたり、デバッグ ツール バーを使ってコードをステップ実行することもできます。 **F5** キーを押すと、アプリの実行が再開されます。
 
@@ -180,17 +180,17 @@ Visual Studio Code では、統合コンソールでアプリを実行したり�
 
 **[拡張機能]** タブに切り替えて、検索ボックスに「`chrome`」と入力します。
 
-![Visual Studio Code 用の Chrome デバッグ拡張機能](./media/node-howto-e2e/chrome.png)
+![Visual Studio Code 用の Chrome デバッグ拡張機能](./media/node-howto-e2e/visual-studio-code-chrome-extension.png)
 
 **Debugger for Chrome** という名前の拡張機能を選択し、 **[インストール]** を選択します。 Chrome デバッグ拡張機能をインストールしたら、 **[再読み込み]** を選択してください。拡張機能をアクティブ化するために、Visual Studio Code を一度閉じて開き直します。 
 
-![Chrome デバッグ拡張機能をインストールした後で Visual Studio Code を再度読み込む](./media/node-howto-e2e/chrome-extension-reload-vscode.png)
+![Chrome デバッグ拡張機能をインストールした後で Visual Studio Code を再度読み込む](./media/node-howto-e2e/visual-studio-code-reload-extension.png)
 
 Node.js コードの実行とデバッグを行ううえで Visual Studio Code に特別な構成は必要ありませんでしたが、フロントエンド Web アプリをデバッグするためには、アプリの実行方法を Visual Studio Code に伝える `launch.json` ファイルを生成する必要があります。 
 
 `launch.json` ファイルを生成するためには、 **[デバッグ]** タブに切り替えて、歯車アイコン (上部に小さな赤色の点が表示されます) をクリックし、**node.js** 環境を選択します。
 
-![launch.json ファイルを構成するための Visual Studio Code オプション](./media/node-howto-e2e/debug-gear.png)
+![launch.json ファイルを構成するための Visual Studio Code オプション](./media/node-howto-e2e/visual-studio-code-debug-gear.png)
 
 生成された `launch.json` ファイルは、次のようになります。アプリをデバッグするために、それをどのように起動し、どのようにアタッチするかが、このファイルによって Visual Studio Code に伝えられます。 
 
@@ -219,7 +219,7 @@ Node.js コードの実行とデバッグを行ううえで Visual Studio Code �
 
 `launch.json` ファイルを開いた状態で、 **[構成の追加]** (右下) を選択し、**Chrome: Launch with userDataDir** を選択します。
 
-![Chrome の構成を Visual Studio Code に追加](./media/node-howto-e2e/add-chrome-config.png)
+![Chrome の構成を Visual Studio Code に追加](./media/node-howto-e2e/visual-studio-code-add-chrome-config.png)
 
 Chrome 用に新しい実行構成を追加することで、フロントエンド JavaScript コードをデバッグできるようになります。 
 
@@ -251,7 +251,7 @@ Chrome 用に新しい実行構成を追加することで、フロントエン�
 
 **compounds.configurations** 配列に指定した文字列値は、**configurations** のリストに含まれる各エントリの **name** を表します。 これらの名前を変更した場合は、適宜配列に変更を加える必要があります。 この動作を確かめるには、[デバッグ] タブに切り替えて、選択構成を **[Full-Stack]** (複合構成の名前) に変更し、**F5** キーを押して実行します。
 
-![Visual Studio Code での構成の実行](./media/node-howto-e2e/full-stack-profile.png)
+![Visual Studio Code での構成の実行](./media/node-howto-e2e/visual-studio-code-full-stack-configuration.png)
 
 この構成を実行すると、デバッグ コンソール出力に見られるような Node.js アプリと、`http://localhost:8080` の Node.js アプリに移動するように構成された Chrome が起動します。
 
@@ -261,7 +261,7 @@ Chrome 用に新しい実行構成を追加することで、フロントエン�
 
 実行中のアプリに戻って新しい todo エントリを追加すると、Visual Studio Code の実行が Angular コード内で中断されていることがわかります。
 
-![Visual Studio Code でのフロントエンド コードのデバッグ](./media/node-howto-e2e/chrome-pause.png)
+![Visual Studio Code でのフロントエンド コードのデバッグ](./media/node-howto-e2e/visual-studio-code-chrome-pause.png)
 
 Node.js のデバッグと同様、式にマウス カーソルを置くことでローカル変数/ウォッチ式を確認したり、コンソール内で式を評価したりすることができます。 
 
@@ -283,19 +283,19 @@ Node.js のデバッグと同様、式にマウス カーソルを置くこと�
 
 Docker 拡張機能をインストールし、Visual Studio Code を再度読み込みます。
 
-![Visual Studio Code 用の Docker 拡張機能をインストール](./media/node-howto-e2e/docker-search.png)
+![Visual Studio Code 用の Docker 拡張機能をインストール](./media/node-howto-e2e/visual-studio-code-docker-extension.png)
 
 Visual Studio Code 用 Docker 拡張機能には、*Dockerfile* や、既存のプロジェクト用の `docker-compose.yml` ファイルを生成するためのコマンドが含まれています。 
 
 利用可能な Docker コマンドを確認するには、**F1** キーを押してコマンド パレットを表示し、「`docker`」と入力します。
 
-![Visual Studio 用 Docker 拡張機能でサポートされているコマンド ](./media/node-howto-e2e/docker-commands.png)
+![Visual Studio Code 用 Docker 拡張機能でサポートされているコマンド ](./media/node-howto-e2e/visual-studio-code-available-docker-codes.png)
 
 **Docker: Add docker files to workspace** を選択してアプリのプラットフォームに **Node.js** を選択し、アプリで公開するポートとして `8080` を指定します。 
 
 この Docker コマンドによって、そのまま使うことができる完全な `Dockerfile` と Docker-compose ファイルが生成されます。
 
-![生成された Dockerfile](./media/node-howto-e2e/docker-file.png)
+![Visual Studio Code で生成された Dockerfile](./media/node-howto-e2e/visual-studio-code-complete-dockerfile.png)
 
 また、この Docker 拡張機能によって、`Dockerfiles` ファイルと `docker-compose.yml` ファイルでオートコンプリートを利用できるようになります。 
 
@@ -313,7 +313,7 @@ FROM mhart
 
 `mhart` の `t` の後にカーソルを置いて、**Ctrl + Space** キーを押すと、`mhart` が DockerHub に公開しているすべてのイメージ リポジトリが表示されます。
 
-![Docker 拡張機能のオートコンプリート](./media/node-howto-e2e/docker-completion.png)
+![DockerHub のイメージ リポジトリを表示する](./media/node-howto-e2e/visual-studio-code-dockerhub-image-repositories.png)
 
 `mhart/alpine-node` を選択します。このアプリに必要なあらゆるものが、ここから得られます。 
 
@@ -321,7 +321,7 @@ FROM mhart
 
 `Dockerfile` を生成したら、実際の Docker イメージを作成する必要があります。 ここでも、Docker 拡張機能によって Visual Studio Code にインストールされたコマンドを使用することができます。 **F1** キーを押し、コマンド パレットに「`dockerb`」と入力して、次を選択します: **Docker: Build Image** コマンド。 先ほど生成して編集した `/Dockerfile` を選択してください。 DockerHub のユーザー名が含まれたタグを指定します (例: `lostintangent/node`)。 **ENTER** キーを押して統合ターミナル ウィンドウを起動し、作成中の Docker イメージの出力を表示します。
 
-![Docker イメージの作成ステータス](./media/node-howto-e2e/docker-build.png)
+![Docker イメージのビルド出力](./media/node-howto-e2e/docker-build-image-output.png)
 
 このコマンドによって、`docker build` を実行するプロセスが自動化され、ここでも高い生産性が実現されていることに注目してください。この方法を選ばずに、単に Docker CLI を直接使用してもかまいません。 
 
@@ -381,7 +381,7 @@ FROM mhart
     az webapp browse
     ```
 
-    ![ブラウザーで実行中の todo アプリ](./media/node-howto-e2e/browse-app.png)
+    ![ブラウザーで実行中の todo アプリ](./media/node-howto-e2e/deployed-container-app.png)
 
     > [!NOTE]
     > 初回は、App Service が Docker イメージを DockerHub からプルして起動する必要があるために、アプリの読み込みに数分かかる場合があります。
@@ -414,7 +414,7 @@ MongoDB サーバー (またはレプリカ セット) を構成し、そのイ�
 
 4. ブラウザーに戻って最新の情報に更新します。 todo 項目の追加と削除を試しながら、(何も変更しなくても) アプリが正常に動作することを確かめます。 作成済みの Cosmos DB インスタンスを環境変数に設定します。MongoDB データベースは、この Cosmos DB インスタンスによって完全にエミュレートされます。
 
-    ![データベースに接続した後のデモ アプリ](./media/node-howto-e2e/finished-demo.png)
+    ![データベースに接続した後のデモ アプリ](./media/node-howto-e2e/finish-demo-walkthrough.png)
 
 必要に応じて Cosmos DB インスタンスに戻り、MongoDB インスタンスが必要とする予約済みスループットをスケールアップ (またはスケールダウン) すれば、インフラストラクチャを手動で管理することなく、トラフィックの増大に対応できるメリットを活かすことができます。
 

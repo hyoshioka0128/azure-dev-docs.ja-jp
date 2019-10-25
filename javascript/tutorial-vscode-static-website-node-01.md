@@ -8,16 +8,16 @@ ms.service: app-service
 ms.topic: conceptual
 ms.date: 09/23/2019
 ms.author: kraigb
-ms.openlocfilehash: 45dfb1f32d98385b2cb944340b4601de804e133f
-ms.sourcegitcommit: c04984b6367e922dbc5973af44f8cd0ca81ce157
+ms.openlocfilehash: 0e5a7e12d234b56899e3c814cb577002125ea052
+ms.sourcegitcommit: 2757d8bd0cc045b7d02f430d44de859f9de853f4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71685911"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72587129"
 ---
 # <a name="deploy-a-static-website-to-azure-from-visual-studio-code"></a>Visual Studio Code から静的 Web サイトを Azure にデプロイする
 
-このチュートリアルでは、[Azure Storage](https://docs.microsoft.com/azure/storage) を使用して、静的 Web サイトを作成し、Azure にデプロイします。 静的 Web サイトは、HTML、CSS、JavaScript、および画像やフォントなどのその他のファイルで構成されています。 静的サイトは通常、Angular または React で記述されたシングルページ アプリケーション ([SPA](https://en.wikipedia.org/wiki/Single-page_application)) です。 アプリの設計方法に関係なく、これらのファイルは、Web サーバーを使用するのではなく、*ストレージ*から直接ホストして提供します。 ストレージでのホスティングは、Web サーバーを維持するよりも簡単でコストが低くなります。
+このチュートリアルでは、[Azure Storage](https://docs.microsoft.com/azure/storage) を使用して、静的 Web サイトを作成し、Azure にデプロイします。 静的 Web サイトは、HTML、CSS、JavaScript、および画像やフォントなどのその他のファイルで構成されています。 静的サイトは通常、Angular、React、または Vue で記述されたシングルページ アプリケーション ([SPA](https://en.wikipedia.org/wiki/Single-page_application)) です。 アプリの設計方法に関係なく、これらのファイルは、Web サーバーを使用するのではなく、_ストレージ_から直接ホストして提供します。 ストレージでのホスティングは、Web サーバーを維持するよりも簡単でコストが低くなります。
 
 > [!NOTE]
 > Node.js/Express app などの独自のサーバー コードがある場合は、代わりに [App Service のチュートリアル](tutorial-vscode-azure-app-service-node-01.md)に従ってください。
@@ -27,7 +27,7 @@ ms.locfileid: "71685911"
 - [Azure サブスクリプション](#azure-subscription)。
 - [Visual Studio Code](https://code.visualstudio.com/)。
 - [Azure Storage の拡張機能](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurestorage)。
-- [Node.js と npm](https://nodejs.org/en/download)、Node.js パッケージ マネージャー。 (この要件は、サンプル プロジェクトを生成するためだけに使用されます。 既にアプリ コードがある場合は、Node.js をインストールする必要はありません。)
+- [Node.js と npm](https://nodejs.org/en/download)、Node.js パッケージ マネージャー。 (この要件は、サンプル プロジェクトを生成するためにのみ使用されます。 既にアプリ コードを持っている場合は、Node.js をインストールする必要はありません。)
 
 > <a class="tutorial-install-extension-btn" href="vscode:extension/ms-azuretools.vscode-azurestorage">Azure Storage 拡張機能をインストールする</a>
 

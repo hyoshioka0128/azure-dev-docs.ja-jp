@@ -4,19 +4,19 @@ description: Azure での Node.js および JavaScript 開発用の各ツール�
 services: multiple
 author: karlerickson
 manager: douge
-ms.service: azure-nodejs
+ms.service: app-service
 ms.tgt_pltfrm: na
 ms.devlang: nodejs
 ms.topic: article
 ms.date: 11/07/2017
 ms.author: karler
-ms.custom: seo-javascript-september2019
-ms.openlocfilehash: 801e621b361a87223a9d2b948ce2afa8c2b1a138
-ms.sourcegitcommit: 47afd94820bad5214e60b42575e2a2d91a07ff65
+ms.custom: seo-javascript-september2019, seo-javascript-october2019
+ms.openlocfilehash: d943325cae970b69629fbc71ff4d86b6c0fa0491
+ms.sourcegitcommit: 2757d8bd0cc045b7d02f430d44de859f9de853f4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72348044"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72587323"
 ---
 # <a name="azure-tools-for-javascript-developers"></a>JavaScript 開発者向け Azure ツール
 Azure での JavaScript アプリの開発には、次のツールが推奨されます。
@@ -24,7 +24,7 @@ Azure での JavaScript アプリの開発には、次のツールが推奨さ�
 ## <a name="azure-cli"></a>Azure CLI
 Azure CLI は、コマンド ラインから Azure リソースを管理する目的に最適化されています。
 
-![CLI](media/node-azure-tools/cli.png)
+![Azure リソースを管理するための Azure CLI](media/node-azure-tools/azure-cli.png)
  
 > [!div class="nextstepaction"]
 > [Azure CLI 2.0 をインストールします](/cli/azure/install-az-cli2)
@@ -32,7 +32,7 @@ Azure CLI は、コマンド ラインから Azure リソースを管理する�
 ## <a name="visual-studio-code"></a>Visual Studio Code
 任意の OS で JavaScript アプリを編集してデバッグします。
 
-![Visual Studio Code](media/node-azure-tools/vs-code.png)
+![Visual Studio Code を使用した JavaScript の編集](media/node-azure-tools/visual-studio-code-debug-javascript.png)
 
 > [!div class="nextstepaction"]
 > [Visual Studio Code をダウンロードする](https://code.visualstudio.com)

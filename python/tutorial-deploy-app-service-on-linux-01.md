@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 09/12/2019
 ms.author: kraigb
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 24f615f5f456276b1ed78fc431e3cdd929e2d1cd
-ms.sourcegitcommit: bed07b313eeab51281d1a6d4eba67a75524b2f57
+ms.openlocfilehash: 389b1ef07bd997ea6cd7d3d46fcaeffb36f6eaae
+ms.sourcegitcommit: 2757d8bd0cc045b7d02f430d44de859f9de853f4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72172520"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72587124"
 ---
 # <a name="tutorial-deploy-python-apps-to-azure-app-service-on-linux-from-visual-studio-code"></a>チュートリアル:Visual Studio Code から Azure App Service on Linux に Python アプリをデプロイする
 
@@ -23,7 +23,7 @@ ms.locfileid: "72172520"
 このチュートリアルのいずれかの手順で問題が発生した場合は、詳細をお知らせください。 フィードバックを送信するには、各記事の最後にある "**問題が発生しました**" リンクを使用します。
 
 > [!TIP]
-> [Azure App Service on Linux](https://docs.microsoft.com/azure/app-service/containers/app-service-linux-intro) (Python については現在プレビュー段階) は、定義済みの Docker コンテナーでソース コードを実行します。 そのコンテナーでは、Python 3.7 と [Gunicorn](https://gunicorn.org) Web サーバーを使用してアプリが実行されます。 このコンテナーの特性は、[App Service on Linux 向けの Python アプリの構成](https://docs.microsoft.com/azure/app-service/containers/how-to-configure-python)に関するページで説明されています。 コンテナーの定義自体は [github.com/Azure-App-Service/python](https://github.com/Azure-App-Service/python/tree/master/3.7) にあります。
+> [Azure App Service on Linux](https://docs.microsoft.com/azure/app-service/containers/app-service-linux-intro) は、定義済みの Docker コンテナーでソース コードを実行します。 そのコンテナーでは、Python 3.7 と [Gunicorn](https://gunicorn.org) Web サーバーを使用してアプリが実行されます。 このコンテナーの特性は、[App Service on Linux 向けの Python アプリの構成](https://docs.microsoft.com/azure/app-service/containers/how-to-configure-python)に関するページで説明されています。 コンテナーの定義自体は [github.com/Azure-App-Service/python](https://github.com/Azure-App-Service/python/tree/master/3.7) にあります。
 
 ## <a name="prerequisites"></a>前提条件
 

@@ -8,12 +8,12 @@ ms.service: app-service
 ms.topic: conceptual
 ms.date: 09/24/2019
 ms.author: buhollan
-ms.openlocfilehash: 705256291709c6715f90f19c220a7e3e127f923f
-ms.sourcegitcommit: 2757d8bd0cc045b7d02f430d44de859f9de853f4
+ms.openlocfilehash: 671e600471402dbd6ca71d385a238caeee889497
+ms.sourcegitcommit: 66cc8d1839dbd7cc01b33030f188e15bf5f24dae
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72587145"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72916681"
 ---
 # <a name="deploy-the-website-to-azure-storage"></a>Azure Storage に Web サイトをデプロイする
 
@@ -26,10 +26,6 @@ ms.locfileid: "72587145"
 1. Visual Studio Code で、**Azure Storage** エクスプローラーに移動し、サブスクリプションを展開し、前の手順で作成した Azure Storage アカウントのノードを展開してから、 **[BLOB コンテナー]** ノードを展開します。 `$web` コンテナーは、アプリ コードをデプロイする場所です。
 
    ![Azure Storage エクスプローラー内の Azure Storage ノード](media/static-website/storage-nodes.png)
-
-1. **ファイル** エクスプローラーを選択し、_dist/my-static-app_ フォルダーを右クリックし、 **[Deploy to Static Website]\(静的な Web サイトにデプロイする\)** を選択します。
-
-    ![Deploy to Static Website (静的な Web サイトにデプロイする) コマンド](media/static-website/deploy-build-angular.png)
 
 1. **ファイル** エクスプローラーを選択し、_dist/my-static-app_ フォルダーを右クリックし、 **[Deploy to Static Website]\(静的な Web サイトにデプロイする\)** を選択します。
 
@@ -48,10 +44,6 @@ ms.locfileid: "72587145"
 1. Visual Studio Code で、**Azure Storage** エクスプローラーに移動し、サブスクリプションを展開し、前の手順で作成した Azure Storage アカウントのノードを展開してから、 **[BLOB コンテナー]** ノードを展開します。 `$web` コンテナーは、アプリ コードをデプロイする場所です。
 
    ![Azure Storage エクスプローラー内の Azure Storage ノード](media/static-website/storage-nodes.png)
-
-1. **ファイル** エクスプローラーを選択し、_build_ フォルダーを右クリックし、 **[Deploy to Static Website]\(静的な Web サイトにデプロイする\)** を選択します。
-
-    ![Deploy to Static Website (静的な Web サイトにデプロイする) コマンド](media/static-website/deploy-build-react.png)
 
 1. **ファイル** エクスプローラーを選択し、_build_ フォルダーを右クリックし、 **[Deploy to Static Website]\(静的な Web サイトにデプロイする\)** を選択します。
 

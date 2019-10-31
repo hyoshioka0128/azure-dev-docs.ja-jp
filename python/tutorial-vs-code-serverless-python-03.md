@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 09/02/2019
 ms.author: kraigb
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 4a8ef594b461df406846f16ad71e595b64ffee5e
-ms.sourcegitcommit: 6012460ad8d6ff112226b8f9ea6da397ef77712d
+ms.openlocfilehash: f31cbb3c1ad66a97ab4bb87cdcc58c9bd815c72e
+ms.sourcegitcommit: 38fc0daead4f6ef0cf16d9f4762ad24f4dc4c3e9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72278780"
+ms.lasthandoff: 10/28/2019
+ms.locfileid: "72980948"
 ---
 # <a name="tutorial-examine-the-python-code-files-in-visual-studio-code"></a>チュートリアル:Visual Studio Code で Python コード ファイルを調べる
 
@@ -57,7 +57,7 @@ function.json ファイルには、Azure Functions エンドポイントに必�
 
 `bindings` 要素には、2 つのオブジェクトが含まれています。1 つは受信要求を説明するものであり、もう 1 つは HTTP 応答を説明するものです。 受信要求 (`"direction": "in"`) の場合、関数は HTTP GET または POST 要求に応答し、認証を必要としません。 応答 (`"direction": "out"`) は、`main` Python 関数から返される値が何であれ、それを返す HTTP 応答です。
 
-## <a name="__initpy__"></a>\_\_init.py\_\_
+## <a name="__init__py"></a>\_\_init\_\_.py
 
 新しい関数を作成すると、Azure Functions によって " *\_\_init\_\_.py*" に既定の Python コードが与えられます。
 

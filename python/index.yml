@@ -1,7 +1,7 @@
 ### YamlMime:Landing
 title: Python 開発者向けの Azure
 summary: >
-  Python 開発者向けの Azure の機能について説明します。 アプリ ホスティング、mySQL や PostgreSQL のようなオープンソース データベースのサポート、機械学習やその他のアプリケーションのビッグ データの操作など、便利な Azure 機能を使ってみましょう。
+  Azure では、アプリ ホスティング、ストレージ、mySQL や PostgreSQL などのオープンソース データベース、データ サイエンス、機械学習、AI など、Python 開発者向けの広範なサービスを提供しています。 Azure SDK for Python は、開発者がこれらのサービスを使用するときの生産性を高めるのに役立ちます。
 metadata:
   title: Python 開発者向けの Azure
   description: Python と Azure for Python を使用した開発を始めましょう。
@@ -10,12 +10,12 @@ metadata:
   ms.date: 10/11/2019
   ms.topic: landing-page
   ms.collection: collection
-  ms.openlocfilehash: a6008ed6b2a07db2853521922a29f1bd51a909d3
-  ms.sourcegitcommit: e081f71211e8f33420e92635c9a61eaa2f34c5e6
+  ms.openlocfilehash: b6c33142880eb289cfe1c87b54341341f98ef939
+  ms.sourcegitcommit: 7e5392a0af419c650225cfaa10215d1e0e56ce71
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 10/14/2019
-  ms.locfileid: "72306314"
+  ms.lasthandoff: 11/04/2019
+  ms.locfileid: "73568167"
 landingContent:
 - title: Azure SDK for Python を使ってみる
   linkLists:

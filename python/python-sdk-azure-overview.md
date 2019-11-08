@@ -1,35 +1,97 @@
 ---
-title: Python 用 Azure ライブラリ
-description: Python 用 Azure 管理/サービス ライブラリの概要
-author: sptramer
-ms.author: sttramer
-manager: carmonm
-ms.date: 06/01/2017
+title: Azure SDK for Python
+description: Azure サービス使用時の開発者の生産性を向上させる、Azure SDK for Python の機能の概要。
+author: kraigb
+ms.author: kraigb
+manager: barbkess
+ms.service: multiple
+ms.date: 10/30/2019
 ms.topic: conceptual
 ms.devlang: python
-ms.openlocfilehash: fc2cd78ff147cba6b228387dc8e39efacdedce47
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.openlocfilehash: 28787b4ca08b593239274bfce62a02895d7f6b6a
+ms.sourcegitcommit: 7e5392a0af419c650225cfaa10215d1e0e56ce71
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68284853"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73568212"
 ---
-# <a name="azure-libraries-for-python"></a>Python 用 Azure ライブラリ
+# <a name="azure-sdk-for-python"></a>Azure SDK for Python
 
-Python 用 Azure ライブラリを使うと、アプリケーションのコードから Azure サービスを使ったり Azure リソースを管理したりできます。 
+Azure SDK for Python は、Python アプリケーション コードからの Azure リソースの使用と管理を容易にします。 この SDK では Python 2.7 および Python 3.5.3 以降がサポートされています。
+
+`pip install <library>` を使用して任意の個別のコンポーネント ライブラリをインストールすることによって、この SDK をインストールします。 [Azure SDK for Python パッケージ インデックス](https://github.com/Azure/azure-sdk-for-python/blob/master/packages.md)に関するページで、ライブラリの一覧を確認できます。
+
+ライブラリをインストールしてプロジェクトにインポートする手順の詳細については、「[SDK のインストール](python-sdk-azure-install.md)」を参照してください。 その後、[SDK での作業開始](python-sdk-azure-get-started.yml)に関するページを確認して、認証を設定し、独自の Azure サブスクリプションに対してサンプル コードを実行します。
+
+> [!TIP]
+> SDK の変更点の詳細については、[SDK のリリースノート](https://azure.github.io/azure-sdk/)を参照してください。
+
+## <a name="connect-and-use-azure-services"></a>Azure サービスへの接続と使用
+
+SDK の多数の*クライアント ライブラリ*を使用すると、既存の Azure リソースに接続し、それらをアプリで使用できます。たとえば、ファイルのアップロード、テーブル データへのアクセス、さまざまな Azure Cognitive Services の操作などを行うことができます。 SDK では、サービスの汎用 REST API を使用するのではなく、使い慣れた Python プログラミング パラダイムを使用してこれらのリソースを操作します。
+
+たとえば、以前にプロビジョニングした Azure Storage アカウントに BLOB をアップロードするとします。 まず、適切なライブラリをインストールします。
+
+```bash
+pip install azure-storage-blob
+```
+
+次に、コードでライブラリをインポートします。
+
+```python
+from azure.storage.blob import BlobClient
+```
+
+最後に、ライブラリの API を使用して、データに接続し、アップロードします。 この例では、接続文字列とコンテナー名はストレージ アカウントで既にプロビジョニングされています。 BLOB 名は、アップロードされたデータに割り当てる名前です。
+
+```python
+blob = BlobClient.from_connection_string("my_connection_string", container="mycontainer", blob="my_blob")
+
+with open("./SampleSource.txt", "rb") as data:
+    blob.upload_blob(data)
+```
+
+各ライブラリでの操作の詳細については、[GitHub リポジトリ](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk)のライブラリのプロジェクト フォルダーにある *README.md* または *README.rst* ファイルを参照してください。 使用可能な [Azure サンプル](https://docs.microsoft.com/samples/browse/?languages=python)も参照してください。
+
+また、その他のコード スニペットについては、[リファレンス ドキュメント](/python/api?view=azure-python)で確認できます。
+
+### <a name="the-azure-core-library"></a>Azure コア ライブラリ
+
+現在、Python クライアント ライブラリは、コア機能 (再試行、ログ記録、トランスポート プロトコル、認証プロトコルなど) を共有するために更新中です。この共有機能は、[azure-core](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/core/azure-core) ライブラリに含まれています。 ライブラリとそのガイドラインの詳細については、「[Python ガイドライン: 概要](https://azure.github.io/azure-sdk/python_introduction.html)」を参照してください。
+
+現時点で、このコア ライブラリと共に使用できるライブラリは、以下のとおりです。
+
+- `azure-storage-blob`
+- `azure-storage-queue`
+- `azure-keyvault-keys`
+- `azure-keyvault-secrets`
 
 ## <a name="manage-azure-resources"></a>Azure のリソースを管理する
 
-Python 用 Azure ライブラリを使用すると、Python アプリケーションから Azure リソースを作成したり管理したりすることができます。
+Azure SDK for Python には、Azure リソース自体の作成、プロビジョニング、およびその他の管理を行うのに役立つ多くのライブラリも含まれています。 これらは*管理ライブラリ*と呼ばれています。 各管理ライブラリには `azure-mgmt-<service name>` という名前が付けられています。 管理ライブラリを使用すると、[Azure portal](https://portal.azure.com) または [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli) を使用して実行できるのと同じタスクを Python コードを記述して実行できます。
 
-たとえば、SQL Server インスタンスを作成するには、次のコードを使用できます。
+たとえば、SQL Server インスタンスを作成するとします。 まず、適切な管理ライブラリをインストールします。
+
+```bash
+pip install azure-mgmt-sql
+```
+
+Python コードでライブラリをインポートします。
 
 ```python
-sql_client = SqlManagementClient(
-    credentials,
-    subscription_id
-)
+from azure.mgmt.sql import SqlManagementClient
 
+```
+
+次に、資格情報と Azure サブスクリプション ID を使用して、管理クライアント オブジェクトを作成します。
+
+```python
+sql_client = SqlManagementClient(credentials, subscription_id)
+```
+
+最後に、そのクライアント オブジェクトを使用して、適切なリソース グループ名、サーバー名、場所、および管理者の資格情報を使ってリソースを作成します。
+
+```python
 server = sql_client.servers.create_or_update(
     'myresourcegroup',
     'myservername',
@@ -42,41 +104,13 @@ server = sql_client.servers.create_or_update(
 )
 ```
 
-ライブラリの全一覧とプロジェクトへのインポート方法については、[インストール手順](python-sdk-azure-install.md)を参照してください。そのうえで[概要の記事](python-sdk-azure-get-started.yml)を参照し、自分の Azure サブスクリプションに対して認証を設定したり、サンプル コードを実行したりする方法を確認しましょう。
+クライアント ライブラリの場合と同様に、各管理ライブラリでの操作の詳細については、[GitHub リポジトリ](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk)のライブラリのプロジェクト フォルダーにある *README.md* または *README.rst* ファイルで確認できます。
 
-## <a name="connect-to-azure-services"></a>Azure サービスへの接続
-
-Python ライブラリを使用すると、Azure 内のリソースを作成したり管理したりするだけでなく、アプリ内からそれらのリソースに接続して利用することができます。 たとえば、SQL Database のテーブルを更新したり、Azure Storage にファイルを格納したりすることもできます。 ライブラリの全一覧から、特定のサービスに必要なライブラリをお選びください。また、それらのライブラリをアプリ内で使用するためのチュートリアルやサンプル コードは、Python デベロッパー センターから入手できます。
-
-たとえば、単純な HTML ページを BLOB にアップロードして、URL を取得するには、次のようにします。
-
-```python
-storage_client = CloudStorageAccount(storage_account_name, storage_key)
-blob_service = storage_client.create_block_blob_service()
-
-blob_service.create_container(
-    'mycontainername',
-    public_access=PublicAccess.Blob
-)
-
-blob_service.create_blob_from_bytes(
-    'mycontainername',
-    'myblobname',
-    b'<center><h1>Hello World!</h1></center>',
-    content_settings=ContentSettings('text/html')
-)
-
-print(blob_service.make_blob_url('mycontainername', 'myblobname'))
-```
-
-## <a name="sample-code-and-reference"></a>サンプル コードとリファレンス
-以下のサンプルには、Python 用 Azure 管理ライブラリを使った一般的な自動化タスクが紹介されており、自分のアプリですぐに利用できるコードも用意されています。
-- [Virtual Machines](python-sdk-azure-virtual-machine-samples.md)
-- [Web アプリ](python-sdk-azure-web-apps-samples.md)
-- [SQL Database](python-sdk-azure-sql-database-samples.md)
-
-サービス ライブラリと管理ライブラリの全パッケージについて、[リファレンス](/python/api/overview/azure)が公開されています。 新機能、重大な変更、以前のバージョンからの移行手順については、[リリース ノート](python-sdk-azure-release-notes.md)を参照してください。 
+また、その他のコード スニペットについては、[リファレンス ドキュメント](/python/api?view=azure-python)で確認できます。 
 
 ## <a name="get-help-and-give-feedback"></a>質問とフィードバック
 
-[Stack Overflow](https://stackoverflow.com/questions/tagged/azure-sdk-python) のコミュニティに質問を投稿し、[GitHub プロジェクト](https://github.com/Azure/azure-sdk-for-python)で SDK に対して問題を開いてください。
+- [Azure SDK for Python のドキュメント](https://aka.ms/python-docs)をご覧ください。
+- ご質問は、[Stack Overflow](https://stackoverflow.com/questions/tagged/azure-sdk-python) のコミュニティに投稿してください。
+- [GitHub](https://github.com/Azure/azure-sdk-for-python/issues) でこの SDK に対して問題を開いてください。
+- Twitter で [@AzureSDK](https://twitter.com/AzureSdk/) にお知らせください。

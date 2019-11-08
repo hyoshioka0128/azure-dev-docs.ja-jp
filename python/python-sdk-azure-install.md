@@ -1,99 +1,72 @@
 ---
 title: Azure SDK for Python をインストールする
-description: Azure Python SDK のインストール方法
-author: sptramer
-ms.author: sttramer
-manager: carmonm
-ms.date: 06/05/2017
+description: pip または GitHub を使用して Azure SDK for Python をインストールする方法。 Azure SDK は、個々のライブラリとしてインストールすることも、完全なパッケージとしてインストールすることもできます。
+author: kraigb
+ms.author: kraigb
+manager: barbkess
+ms.service: multiple
+ms.date: 10/31/2019
 ms.topic: conceptual
 ms.devlang: python
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 6b131a9a59fdf332abce426b8cbe776341b5b36a
-ms.sourcegitcommit: 6012460ad8d6ff112226b8f9ea6da397ef77712d
+ms.openlocfilehash: c2a8b2da8cdb0d55bad260ed1f1f6e5ee2b8efc5
+ms.sourcegitcommit: 7e5392a0af419c650225cfaa10215d1e0e56ce71
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72279091"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73568189"
 ---
 # <a name="install-the-azure-sdk-for-python"></a>Azure SDK for Python をインストールする
 
-この記事では、Azure SDK for Python をインストールする方法について説明します。 pip を使用して、古いバージョンをインストールし、インストールを確認し、Azure SDK for Python をアンインストールできます。
+Azure SDK for Python には、Python コードから Azure を操作するための API が用意されています。 必要に応じて SDK から個々のライブラリをインストールすることも、ライブラリの完全なセットをまとめてインストールすることもできます。
 
-## <a name="which-python-and-which-version-to-use"></a>使用する Python とそのバージョン
+Azure SDK for Python は、CPython バージョン2.7 と 3.5.3 以降、および PyPy 5.4 以降でテストおよびサポートされています。 また、開発者は SDK を IronPython や Jython などの他のインタープリターと共に使用しますが、個別の問題や非互換性が発生する場合があります。 Python インタープリターが必要な場合は [python.org/downloads](https://www.python.org/downloads) から最新バージョンをインストールしてください。
 
-いくつかの Python インタープリターが提供されています。以下に例を示します。
+## <a name="install-sdk-libraries-using-pip"></a>pip を使用して SDK ライブラリをインストールする
 
-* CPython - 最も一般的に使用されている標準的な Python インタープリター
-* PyPy - CPython に準拠している高速な代替実装
-* IronPython - .Net/CLR 上で実行する Python インタープリター
-* Jython - Java 仮想マシン上で実行する Python インタープリター
+Azure SDK for Python はいくつかの個別のライブラリで構成されており、それぞれが特定の Azure サービスをプロビジョニングまたは使用します。 [SDK ライブラリの一覧](https://github.com/Azure/azure-sdk-for-python/blob/master/packages.md)に表示されている名前と共に `pip install <library>` を使用して、それぞれをインストールできます。 (この一覧には、各ライブラリの便利な README ファイルへのリンクが記載されています。)
 
-**CPython** v2.7 または v3.4 以降および PyPy 5.4.0 が、Python Azure SDK に対してテストされ、サポートされています。
+たとえば、Azure Storage を使用している場合は、`azure-storage-file`、`azure-storage-blob`、または `azure-storage-queue` ライブラリをインストールすることができます。 Azure Cosmos DB テーブルを使用している場合は、`azure-cosmosdb-table` をインストールします。 Azure Functions は、`azure-functions` ライブラリなどでサポートされています。 `azure-mgmt-` で始まるライブラリは、Azure リソースをプロビジョニングするための API を提供します。
 
-## <a name="where-to-get-python"></a>Python を入手するには
+### <a name="install-specific-library-versions"></a>特定のライブラリ バージョンをインストールする
 
-CPython はいくつかの方法で入手できます。
-
-* [Python](https://www.python.org/) から直接入手
-* 信頼できるディストリビューターから入手 ([Anaconda](https://www.anaconda.com/)、[Enthought](https://www.enthought.com/)、[ActiveState](https://www.activestate.com/) など)
-* ソースからビルド
-
-特定のニーズがない限り、最初の 2 つの入手方法をお勧めします。
-
-## <a name="installation-with-pip"></a>pip によるインストール
-
-各 Azure サービスのライブラリは、個別にインストールできます。
+特定のバージョンのライブラリをインストールする必要がある場合は、コマンド ラインでバージョンを指定します。
 
 ```bash
-pip install azure-batch          # Install the latest Batch runtime library
-pip install azure-mgmt-scheduler # Install the latest Storage management library
+pip install azure-storage-blob==12.0.0
 ```
 
-プレビュー パッケージをインストールするには、`--pre` フラグを使用します。
+### <a name="install-preview-packages"></a>プレビュー パッケージをインストールする
+
+Microsoft は、今後の機能をサポートするプレビュー SDK ライブラリを定期的にリリースしています。 ライブラリの最新のプレビューをインストールするには、コマンド ラインで `--pre` フラグを含めます。 
 
 ```bash
-pip install --pre azure-mgmt-compute # will install only the latest Compute Management library
-```
-
-`azure` メタ パッケージを使用して、一連の Azure ライブラリを 1 行でインストールすることもできます。
-
-```bash
-pip install azure
-```
-
-このパッケージのプレビュー バージョンを公開します。このバージョンには、次のように、--pre フラグを使用してアクセスすることができます。
-
-```bash
+# Install all preview versions of the Azure SDK for Python
 pip install --pre azure
+
+# Install the preview version for azure-storage-blob only.
+pip install --pre azure-storage-blob
 ```
 
-## <a name="install-from-github"></a>GitHub からのインストール
+## <a name="verify-sdk-installation-details-with-pip"></a>pip を使用して SDK のインストール詳細を確認する
 
-`azure` をソースからインストールする場合は、次のようにします。
+`pip show <library>` コマンドを使用して、ライブラリがインストールされていることを確認します。 ライブラリがインストールされている場合は、このコマンドによってバージョンとその他の概要情報が表示されます。 ライブラリがインストールされていない場合は、このコマンドで何も表示されません。
 
 ```bash
-git clone git://github.com/Azure/azure-sdk-for-python.git
-cd azure-sdk-for-python
-python setup.py install
+# Check installation of the Azure SDK for Python
+pip show azure
+
+# Check installation of a specific library
+pip show azure-storage-blob
 ```
 
-## <a name="install-an-older-version-with-pip"></a>pip を使用した古いバージョンのインストール
-'azure==3.0.0' とバージョン詳細を指定することにより、古いバージョンの `azure` をインストールできます。
-```bash
-pip install azure==3.0.0 
-```
-## <a name="check-sdk-installation-details-with-pip"></a>pip を使用した SDK のインストール詳細の確認
-`azure` SDK のインストール場所、バージョンの詳細などを確認できます。
-```bash
-pip show azure # Show installed version, location details etc.
-pip freeze     # Output installed packages in requirements format.
-pip list       # List installed packages, including editables.
-```
-## <a name="to-uninstall-with-pip"></a>pip でのアンインストール
-`azure` メタ パッケージを使用して、すべての Azure ライブラリを 1 行でアンインストールできます。
-```bash
-pip uninstall azure 
-```
-> [!NOTE]
-> `pip uninstall azure` により `azure` メタ パッケージが削除されますが、個別の `azure-*` パッケージ (および他の `adal` や `msrest` など) はそのまま残ります。 Python と pip の特徴として、依存関係のあるすべてのパッケージに関して、最初のパッケージをアンインストールしても依存関係はアンインストールされません。 `azure-` およびそのサポート パッケージを削除するには、コマンド `pip freeze | grep 'azure-' | xargs pip uninstall -y` を実行します (その後、adal、msrest、msrestazure の個別のアンインストールを実行します)。
+`pip freeze` または `pip list` を使用して、現在の Python 環境にインストールされているすべてのライブラリを表示することもできます。
 
+## <a name="uninstall-azure-sdk-for-python-libraries"></a>Azure SDK for Python ライブラリをアンインストールする
+
+個々のライブラリをアンインストールするには、`pip uninstall <library>` を使用します。
+
+## <a name="next-steps"></a>次の手順
+
+> [!div class="nextstepaction"]
+> [SDK の使用方法を確認](python-sdk-azure-get-started.yml)

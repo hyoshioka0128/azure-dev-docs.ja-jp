@@ -143,7 +143,7 @@
           href: spring-framework/deploy-spring-boot-java-app-from-container-registry-using-maven-plugin.md?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
         - name: イベント ハブと Cosmos DB を使用した Java 関数
           href: /azure/azure-functions/functions-event-hub-cosmos-db?toc=/azure/java/toc.json&bc=/azure/java/breadcrumb/toc.json
-        - name: Azure 上の Java で Logz.io を使用する
+        - name: Logz.io を使用した監視とログ記録
           href: java-get-started-with-logzio.md
     - name: ハウツー記事
       items:

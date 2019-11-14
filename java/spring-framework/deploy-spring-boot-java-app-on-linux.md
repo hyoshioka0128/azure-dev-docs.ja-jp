@@ -8,19 +8,19 @@ manager: douge
 editor: ''
 ms.assetid: ''
 ms.author: brendm
-ms.date: 12/19/2018
+ms.date: 11/12/2019
 ms.devlang: java
 ms.service: app-service
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: mvc
-ms.openlocfilehash: 93c67221748f354f2bf772a5f67903512a241063
-ms.sourcegitcommit: f799dd4590dc5a5e646d7d50c9604a9975dadeb1
+ms.openlocfilehash: 0d41f71ede412a34b39fb2cd74db3ce7a2190dee
+ms.sourcegitcommit: 25cef39b178a175822bf29f28fb2658bb8df8c59
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68691180"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74040479"
 ---
 # <a name="deploy-a-spring-boot-application-on-azure-app-service-for-container"></a>コンテナー用 Azure App Service で Spring Boot アプリケーションをデプロイする
 
@@ -75,7 +75,7 @@ ms.locfileid: "68691180"
 1. Web アプリが作成されたら、JAR ファイルがある `target` ディレクトリにディレクトリを変更し、Web アプリを起動します。次に例を示します。
    ```
    cd target
-   java -jar gs-spring-boot-docker-0.1.0.jar
+   java -jar gs-spring-boot-docker-0.1.0.jar --server.port=80
    ```
 
 1. Web アプリのテストは、Web ブラウザーを使用してアプリをローカルで参照して行います。 たとえば curl が使用でき、Tomcat サーバーをポート 80 で実行されるように構成した場合は、次のようになります。
@@ -83,7 +83,7 @@ ms.locfileid: "68691180"
    curl http://localhost
    ```
 
-1. 次のメッセージが表示されます。**Hello Docker World!**
+1. 次のメッセージが表示されます。**Hello Docker World**
 
    ![サンプル アプリをローカルに参照する][SB01]
 
@@ -124,7 +124,7 @@ Azure Portal を使用して Azure Container Registry を作成する手順を�
 
    ```xml
    <properties>
-      <jib-maven-plugin.version>1.2.0</jib-maven-plugin.version>
+      <jib-maven-plugin.version>1.7.0</jib-maven-plugin.version>
       <docker.image.prefix>wingtiptoysregistry.azurecr.io</docker.image.prefix>
       <java.version>1.8</java.version>
       <username>wingtiptoysregistry</username>

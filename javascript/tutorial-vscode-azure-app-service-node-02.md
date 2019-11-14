@@ -8,16 +8,16 @@ ms.service: app-service
 ms.topic: conceptual
 ms.date: 09/20/2019
 ms.author: kraigb
-ms.openlocfilehash: 769ca61ef7716eaa08d45e109a9bf50e5801721c
-ms.sourcegitcommit: c04984b6367e922dbc5973af44f8cd0ca81ce157
+ms.openlocfilehash: 0ee7b185532b3febe8aab720e40ff10cf4b079b7
+ms.sourcegitcommit: ad1b12d9ebb6113991ce48255f5b491364490079
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71686190"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73842206"
 ---
 # <a name="create-your-nodejs-application"></a>Node.js アプリケーションの作成
 
-[前の手順: 概要と前提条件](tutorial-vscode-azure-app-service-node-01.md)
+[前の手順:概要と前提条件](tutorial-vscode-azure-app-service-node-01.md)
 
 この手順では、Express アプリケーション ジェネレーターを使用して、Azure にデプロイできる単純な Node.js アプリを作成します。
 
@@ -26,7 +26,7 @@ ms.locfileid: "71686190"
 1. ターミナルまたはコマンド プロンプトで次のコマンドを使用して Express Generator を実行し、"myExpressApp" という新しい Express アプリをスキャフォールディングします。 (`--view pug --git` パラメーターは、[pug](https://pugjs.org/api/getting-started.html) テンプレート エンジン (旧称 Jade) を使用することと、 *.gitignore* ファイルを作成することをジェネレーターに伝えます。)
 
     ```bash
-    npx express-generator myExpressApp --view pug –git
+    npx express-generator myExpressApp --view pug -–git
     ```
 
 1. アプリ フォルダーで `npm install` を実行して、アプリケーションの依存関係をインストールします。

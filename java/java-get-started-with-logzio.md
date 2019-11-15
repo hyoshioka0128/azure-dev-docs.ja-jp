@@ -1,6 +1,6 @@
 ---
-title: Azure で実行中の Java プロジェクト用の Logz.io の概要
-description: このチュートリアルでは、Azure で実行されている Java プロジェクト用に Logz.io を統合して構成する方法について説明します。
+title: Azure で実行中の Java アプリ用の Logz.io の概要
+description: このチュートリアルでは、Azure で実行される Java アプリ用に Logz.io を統合して構成する方法について説明します。
 author: jdubois
 manager: bborges
 ms.devlang: java
@@ -8,16 +8,16 @@ ms.topic: tutorial
 ms.service: azure
 ms.date: 11/05/2019
 ms.author: judubois
-ms.openlocfilehash: 49fd2ada98bcfdb02db3f4b79afb2f80f2d700f2
-ms.sourcegitcommit: 380300c283f3df8a87c7c02635eae3596732fb72
+ms.openlocfilehash: 263a328866d36fd60e2ab7cc9fbe8fa8af45b9d4
+ms.sourcegitcommit: 794f7f72947034944dc4a5d19baa57d905a16ab0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73661288"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73957202"
 ---
-# <a name="tutorial-getting-started-with-logzio-for-java-projects-running-on-azure"></a>チュートリアル: Azure で実行中の Java プロジェクト用の Logz.io の概要
+# <a name="tutorial-getting-started-with-monitoring-and-logging-using-logzio-for-java-apps-running-on-azure"></a>チュートリアル:Azure で実行される Java アプリ用の Logz.io を使用した監視とログ記録の概要
 
-このチュートリアルでは、インジェストと分析のために [Logz.io](https://logz.io/) サービスにログを送信するように、クラシック Java アプリケーションを構成する方法について説明します。 Logz.io は、Elasticsearch、Logstash、Kibana、Grafana に基づく完全な監視ソリューションを提供します。
+このチュートリアルでは、インジェストと分析のために [Logz.io](https://logz.io/) サービスにログを送信するように、クラシック Java アプリケーションを構成する方法について説明します。 Logz.io により、Elasticsearch/Logstash/Kibana (ELK) および Grafana に基づく完全な監視ソリューションが提供されます。
 
 このチュートリアルは、Log4J または Logback の使用を前提としています。 これらのライブラリは、Java でのログ記録に最も広く使用されています。そのため、このチュートリアルは Azure で実行されるほとんどのアプリケーションに適用できます。 既に Elastic スタックを使用して Java アプリケーションを監視している場合、このチュートリアルでは、Logz.io エンドポイントをターゲットにするように再構成する方法を示します。
 
@@ -30,7 +30,7 @@ ms.locfileid: "73661288"
 ## <a name="prerequisites"></a>前提条件
 
 * [Java Developer Kit](https://aka.ms/azure-jdks) バージョン 8 以降
-* [Logz.io](https://logz.io/) アカウント。 または、[Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/logz.logzio-elk-as-a-service-pro) から Logz.io を購入することもできます。
+* [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/logz.logzio-elk-as-a-service-pro) からの Logz.io アカウント
 * Log4J または Logback を使用する既存の Java アプリケーション
 
 ## <a name="send-java-application-logs-to-logzio"></a>Java アプリケーションログを Logz.io に送信する
@@ -43,7 +43,7 @@ ms.locfileid: "73661288"
 
 ### <a name="install-and-configure-the-logzio-library-for-log4j-or-logback"></a>Log4J または Logback 用の Logz.io ライブラリをインストールして構成する
 
-Logz.io Java ライブラリは Maven Central で入手できるため、プロジェクト構成に依存関係として追加できます。 Maven Central でバージョン番号を確認し、次の構成設定で最新バージョンを使用します。
+Logz.io Java ライブラリは Maven Central で入手できるため、依存関係としてアプリ構成に追加できます。 Maven Central でバージョン番号を確認し、次の構成設定で最新バージョンを使用します。
 
 Maven を使用している場合は、`pom.xml` ファイルに次の依存関係を追加します。
 
@@ -88,9 +88,9 @@ implementation 'io.logz.logback:logzio-logback-appender:1.0.22'
 ```xml
 <Appenders>
     <LogzioAppender name="Logzio">
-        <logzioToken>{{your-logz-io-token}}</logzioToken>
+        <logzioToken><your-logz-io-token></logzioToken>
         <logzioType>java-application</logzioType>
-        <logzioUrl>https://listener-wa.logz.io:8071</logzioUrl>
+        <logzioUrl>https://<your-logz-io-listener-host>:8071</logzioUrl>
     </LogzioAppender>
 </Appenders>
 
@@ -108,8 +108,8 @@ implementation 'io.logz.logback:logzio-logback-appender:1.0.22'
     <!-- Use shutdownHook so that we can close gracefully and finish the log drain -->
     <shutdownHook class="ch.qos.logback.core.hook.DelayingShutdownHook"/>
     <appender name="LogzioLogbackAppender" class="io.logz.logback.LogzioLogbackAppender">
-        <token>{{your-logz-io-token}}</token>
-        <logzioUrl>https://listener-wa.logz.io:8071</logzioUrl>
+        <token><your-logz-io-token></token>
+        <logzioUrl>https://<your-logz-io-listener-host>:8071</logzioUrl>
         <logzioType>java-application</logzioType>
         <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
             <level>INFO</level>
@@ -121,6 +121,8 @@ implementation 'io.logz.logback:logzio-logback-appender:1.0.22'
     </root>
 </configuration>
 ```
+
+`<your-logz-io-token>` プレースホルダーを実際のアクセス トークンに、`<your-logz-io-listener-host>` プレースホルダーを自分の地域のリスナー ホスト (listener.logz.io など) に置き換えます。 アカウントのリージョンを検索する方法の詳細については、「[アカウント リージョン](https://docs.logz.io/user-guide/accounts/account-region.html)」を参照してください。
 
 `logzioType` 要素は、異なるドキュメントを相互に分離するために使用される Elasticsearch の論理フィールドを参照します。 Logz.io を最大限に活用するには、このパラメーターを適切に構成することが不可欠です。
 

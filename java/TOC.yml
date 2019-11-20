@@ -93,9 +93,10 @@
       items:
         - name: 概要
           href: java-azure-tools.md
-        - name: Java の長期サポート
-          href: jdk/index.md
+        - name: Java サポート
           items:
+            - name: Java の長期サポート
+              href: jdk/index.md
             - name: Java JDK のインストール
               href: jdk/java-jdk-install.md
             - name: Azure の Java Docker イメージ

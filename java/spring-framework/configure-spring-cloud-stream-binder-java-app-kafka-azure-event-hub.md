@@ -4,26 +4,20 @@ description: Spring Boot Initializer を使用して作成されたアプリケ�
 services: event-hubs
 documentationcenter: java
 author: bmitchell287
-manager: douge
-editor: ''
-ms.assetid: ''
 ms.author: brendm
 ms.date: 12/19/2018
 ms.devlang: java
 ms.service: event-hubs
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.workload: na
-ms.openlocfilehash: 074c7bb28907b3c71c981f261ae69d5477c21028
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.openlocfilehash: 5d1f1d40eba0f4b4a6aa2718f09124b765a06a82
+ms.sourcegitcommit: 54d34557bb83f52a215bf9020263cb9f9782b41d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68282623"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74118333"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-apache-kafka-with-azure-event-hubs"></a>Azure Event Hubs で Apache Kafka 用 Spring Boot Starter を使用する方法
-
-## <a name="overview"></a>概要
 
 この記事では、Spring Boot Initializr を使用して作成された Java ベースの Spring Cloud Stream Binder を、[Apache Kafka] と Azure Event Hubs を使用するように構成する方法について説明します。
 
@@ -46,18 +40,21 @@ ms.locfileid: "68282623"
 
 1. Azure portal (<https://portal.azure.com/>) を参照し、サインインします。
 
-1. **[+ リソースの作成]** をクリックし、 **[モノのインターネット]** 、 **[Event Hubs]** の順にクリックします。
+1. **[+ リソースの作成]** 、 **[モノのインターネット]** の順にクリックし、*Event Hubs** を検索します。
+
+1. **Create** をクリックしてください。
 
    ![Azure イベント ハブの名前空間を作成する][IMG01]
 
 1. **[名前空間の作成]** ページで、次の情報を入力します。
 
    * 一意の**名前**を入力します。この名前は、イベント ハブの名前空間の URI の一部になります。 たとえば、 **[名前]** に「**wingtiptoys**」と入力した場合、URI は *wingtiptoys.servicebus.windows.net* になります。
-   * イベント ハブの名前空間の**価格レベル**を選択します。
+   * 価格レベル。
    * 名前空間に対して **[Kafka を有効にする]** を指定します。
    * 名前空間に使用する**サブスクリプション**を選択します。
    * 名前空間の新しい**リソース グループ**を作成するか、既存のリソース グループを選択するかを指定します。
    * イベント ハブの名前空間の**場所**を指定します。
+   * 名前空間の **[スループット ユニット]** を指定することもできます。
 
    ![Azure イベント ハブの名前空間のオプションを指定する][IMG02]
 
@@ -65,23 +62,17 @@ ms.locfileid: "68282623"
 
 ### <a name="create-an-azure-event-hub-in-your-namespace"></a>名前空間に Azure イベント ハブを作成する
 
-1. Azure portal (<https://portal.azure.com/>) を参照します。
+名前空間のデプロイ後、名前空間にイベント ハブを作成できます。
 
-1. **[すべてのリソース]** をクリックし、作成した名前空間をクリックします。
+1. 前の手順で作成した名前空間に移動します。
 
-   ![Azure イベント ハブの名前空間を選択する][IMG03]
+1. 上部のメニュー バーの **[+ イベント ハブ]** をクリックします。
 
-1. **[Event Hubs]** をクリックし、 **[+ イベント ハブ]** をクリックします。
+1. イベント ハブに名前を指定します。
 
-   ![新しい Azure イベント ハブを追加する][IMG04]
+1. **Create** をクリックしてください。
 
-1. **[イベント ハブの作成]** ページで、イベント ハブの一意の**名前**を入力し、 **[作成]** をクリックします。
-
-   ![Azure Event Hub の作成][IMG05]
-
-1. イベント ハブが作成されると、 **[Event Hubs]** ページに表示されます。
-
-   ![Azure Event Hub の作成][IMG06]
+   ![イベント ハブの作成][IMG05]
 
 ## <a name="create-a-simple-spring-boot-application-with-the-spring-initializr"></a>Spring Initializr でシンプルな Spring Boot アプリケーションを作成する
 
@@ -104,8 +95,6 @@ ms.locfileid: "68282623"
 1. 上記のオプションを指定したら、 **[Generate Project]\(プロジェクトの生成\)** をクリックします。
 
 1. メッセージが表示されたら、ローカル コンピューター上のパスにプロジェクトをダウンロードします。
-
-   ![Spring プロジェクトをダウンロードする][SI02]
 
 1. ファイルをローカル システム上に展開したら、シンプルな Spring Boot アプリケーションの編集を開始できます。
 
@@ -229,7 +218,7 @@ ms.locfileid: "68282623"
    spring.cloud.azure.credential-file-path=my.azureauth
    spring.cloud.azure.resource-group=wingtiptoysresources
    spring.cloud.azure.region=West US
-   spring.cloud.azure.eventhub.namespace=wingtiptoysnamespace
+   spring.cloud.azure.eventhub.namespace=wingtiptoys
 
    spring.cloud.stream.bindings.input.destination=wingtiptoyshub
    spring.cloud.stream.bindings.input.group=$Default

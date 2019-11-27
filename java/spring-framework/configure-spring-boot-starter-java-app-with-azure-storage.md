@@ -4,26 +4,20 @@ description: Azure Storage スターターを使用して、Spring Boot Initiali
 services: storage
 documentationcenter: java
 author: bmitchell287
-manager: douge
-editor: ''
-ms.assetid: ''
 ms.author: brendm
 ms.date: 12/19/2018
 ms.devlang: java
 ms.service: storage
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.workload: storage
-ms.openlocfilehash: c4cc70cb97ec5e2199b41d768dbfd6313b19edcb
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.openlocfilehash: fe6f2869d775961cf69e7f109fe788d3dfad8b28
+ms.sourcegitcommit: 54d34557bb83f52a215bf9020263cb9f9782b41d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68282973"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74118064"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-storage"></a>Azure Storage 用の Spring Boot Starter の使用方法
-
-## <a name="overview"></a>概要
 
 この記事では、**Spring Initializr** を使用してカスタム アプリケーションを作成し、そのアプリケーションに Azure Storage スターターを追加した後、アプリケーションを使用して Azure ストレージ アカウントに BLOB をアップロードする手順について説明します。
 
@@ -32,7 +26,7 @@ ms.locfileid: "68282973"
 この記事の手順に従うには、次の前提条件が必要です。
 
 * Azure サブスクリプション。Azure サブスクリプションをまだお持ちでない場合は、[MSDN サブスクライバーの特典](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/)を有効にするか、または[無料の Azure アカウント](https://azure.microsoft.com/pricing/free-trial/)にサインアップできます。
-* [Azure コマンド ライン インターフェイス (CLI)](http://docs.microsoft.com/cli/azure/overview)。
+* [Azure コマンド ライン インターフェイス (CLI)](https://docs.microsoft.com/cli/azure/index)。
 * サポートされている Java Development Kit (JDK)。 Azure での開発時に使用可能な JDK の詳細については、<https://aka.ms/azure-jdks> を参照してください。
 * Apache [Maven](http://maven.apache.org/) バージョン 3.0 以降。
 
@@ -43,43 +37,42 @@ ms.locfileid: "68282973"
 
 ## <a name="create-an-azure-storage-account-and-blob-container-for-your-application"></a>アプリケーションの Azure ストレージ アカウントと BLOB コンテナーを作成する
 
+次の手順では、Azure ストレージ アカウントとコンテナーを作成します。
+
 1. Azure portal (<https://portal.azure.com/>) を参照し、サインインします。
 
 1. **[+ リソースの作成]** をクリックし、 **[Storage]** 、 **[ストレージ アカウント]** の順にクリックします。
 
    ![Azure ストレージ アカウントを作成する][IMG01]
 
-1. **[名前空間の作成]** ページで、次の情報を入力します。
+1. **[ストレージ アカウントの作成]** ページで、次の情報を入力します。
 
-   * 一意の**名前**を入力します。この名前は、ストレージ アカウントの URI の一部になります。 たとえば、 **[名前]** に「**wingtiptoysstorage**」と入力した場合、URI は *wingtiptoysstorage.core.windows.net* になります。
-   * **[アカウントの種類]** で **[Blob Storage]** を選択します。
+   * **[サブスクリプション]** を選択します。
+   * **リソース グループ** を選択するか、新しいリソース グループを作成します。
+   * 一意の**ストレージ アカウント名**を入力します。この名前は、ストレージ アカウントの URI の一部になります。 たとえば、 **[名前]** に「**wingtiptoysstorage**」と入力した場合、URI は *wingtiptoysstorage.core.windows.net* になります。
    * ストレージ アカウントの**場所**を指定します。
-   * ストレージ アカウントに使用する**サブスクリプション**を選択します。
-   * ストレージ アカウントの新しい**リソース グループ**を作成するか、既存のリソース グループを選択するかを指定します。
+1. 上記のオプションを指定したら、 **[Review + create]\(確認と作成\)** をクリックします。 
+1. 指定した内容を確認し、 **[作成]** をクリックしてストレージ アカウントを作成します。
+1. デプロイが完了したら、 **[リソースに移動]** をクリックします。
+1. **[コンテナー]** をクリックします。
+1. **[+ Container]** (+ コンテナー) をクリックします。
+   * コンテナーに名前を付けます。
+   * ドロップダウン リストから *[BLOB]* を選択します。
 
-   ![Azure ストレージ アカウントのオプションを指定する][IMG02]
-
-1. 上記のオプションを指定したら、 **[作成]** をクリックしてストレージ アカウントを作成します。
-
-1. Azure portal でストレージ アカウントが作成されたら、 **[BLOB]** をクリックし、 **[+ コンテナー]** をクリックします。
-
-   ![BLOB コンテナーを作成する][IMG03]
-
-1. BLOB コンテナーの**名前**を入力し、 **[OK]** をクリックします。
-
-   ![BLOB コンテナーのオプションを指定する][IMG04]
+   ![BLOB コンテナーを作成する][IMG02]
 
 1. BLOB コンテナーが作成されると、Azure portal に表示されます。
 
-   ![BLOB コンテナーの一覧の表示][IMG05]
-
 ## <a name="create-a-simple-spring-boot-application-with-the-spring-initializr"></a>Spring Initializr でシンプルな Spring Boot アプリケーションを作成する
 
-1. <https://start.spring.io/> を参照します。
+次の手順では、Spring Boot アプリケーションを作成します。
+
+1. [https://www.microsoft.com](<https://start.spring.io/>) を参照します。
 
 1. 次のオプションを指定します。
 
-   * **Java** で **Maven** プロジェクトを生成します。
+   * **Maven** プロジェクトを作成します。
+   * **[Java]** を指定します。
    * **Spring Boot** のバージョンとして、2.0 以上を指定します。
    * アプリケーションの**グループ (Group)** と**成果物 (Artifact)** の名前を指定します。
    * **Web** 依存関係を追加します。
@@ -91,15 +84,15 @@ ms.locfileid: "68282973"
    > Spring Initializr では、**グループ (Group)** と**成果物 (Artifact)** の名前を使用してパッケージ名を作成します (例: *com.wingtiptoys.storage*)。
    >
 
-1. 上記のオプションを指定したら、 **[Generate Project]\(プロジェクトの生成\)** をクリックします。
+1. 上記のオプションを指定したら、 **[生成]** をクリックします。
 
 1. メッセージが表示されたら、ローカル コンピューター上のパスにプロジェクトをダウンロードします。
-
-   ![Spring プロジェクトをダウンロードする][SI02]
 
 1. ファイルをローカル システム上に展開したら、シンプルな Spring Boot アプリケーションの編集を開始できます。
 
 ## <a name="configure-your-spring-boot-app-to-use-the-azure-storage-starter"></a>Azure Storage スターターを使用するように Spring Boot アプリを構成する
+
+次の手順では、Azure Storage を使用するように Spring Boot アプリケーションを構成します。
 
 1. アプリのルート ディレクトリで *pom.xml* ファイルを探します。次に例を示します。
 
@@ -124,6 +117,8 @@ ms.locfileid: "68282973"
 1. *pom.xml* ファイルを保存して閉じます。
 
 ## <a name="create-an-azure-credential-file"></a>Azure 資格情報ファイルを作成する
+
+次の手順では、Azure 資格情報ファイルを作成します。
 
 1. コマンド プロンプトを開きます。
 
@@ -200,6 +195,8 @@ ms.locfileid: "68282973"
 
 ## <a name="configure-your-spring-boot-app-to-use-your-azure-storage-account"></a>Azure ストレージ アカウントを使用するように Spring Boot アプリを構成する
 
+次の手順では、Azure ストレージ アカウントを使用するように Spring Boot アプリケーションを構成します。
+
 1. アプリの *resources* ディレクトリで *application.properties* を探します。次に例を示します。
 
    `C:\SpringBoot\storage\src\main\resources\application.properties`
@@ -242,7 +239,7 @@ ms.locfileid: "68282973"
 
    `/users/example/home/storage/src/main/java/com/wingtiptoys/storage/StorageApplication.java`
 
-1. テキスト エディターでメイン アプリケーションの Java ファイルを開き、ファイルに次の行を追加します。
+1. テキスト エディターでメイン アプリケーションの Java ファイルを開き、ファイルに次の行を追加します。 wingtiptoys を実際の値に置き換えます。
 
    ```java
    package com.wingtiptoys.storage;
@@ -270,7 +267,7 @@ ms.locfileid: "68282973"
 
    `/users/example/home/storage/src/main/java/com/wingtiptoys/storage/WebController.java`
 
-1. テキスト エディターで Web コントローラー Java ファイルを開き、ファイルに次の行を追加します。
+1. テキスト エディターで Web コントローラー Java ファイルを開き、ファイルに次の行を追加します。  *wingtiptoys* を実際のリソース グループに変更し、*storage* を実際の成果物名に変更します。
 
    ```java
    package com.wingtiptoys.storage;
@@ -357,7 +354,7 @@ ms.locfileid: "68282973"
 Spring および Azure の詳細については、Azure ドキュメント センターで引き続き Spring に関するドキュメントをご確認ください。
 
 > [!div class="nextstepaction"]
-> [Azure の Spring](/azure/java/spring-framework)
+> [Azure の Spring](https://docs.microsoft.com/java/azure/spring-framework/configure-spring-boot-starter-java-app-with-azure-key-vault?view=azure-java-stable)
 
 ### <a name="additional-resources"></a>その他のリソース
 

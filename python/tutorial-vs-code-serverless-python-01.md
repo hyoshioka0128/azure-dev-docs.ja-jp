@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 09/02/2019
 ms.author: kraigb
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 81121490f435c7ff2e2fe8ab397fa18bab7113a3
-ms.sourcegitcommit: 6012460ad8d6ff112226b8f9ea6da397ef77712d
+ms.openlocfilehash: 0aa353d741906c887723a012bb6d4abfc719a049
+ms.sourcegitcommit: 54d34557bb83f52a215bf9020263cb9f9782b41d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72278817"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74118208"
 ---
 # <a name="tutorial-create-and-deploy-serverless-azure-functions-in-python-with-visual-studio-code"></a>チュートリアル:Visual Studio Code を使用して Python でサーバーレスの Azure Functions を作成してデプロイする
 
@@ -38,7 +38,7 @@ Azure サブスクリプションをお持ちでない場合は、30 日間の�
 
 次のソフトウェアをインストールします。
 
-- Azure Functions で必要な Python 3.6.x。 [Python 3.6.8](https://www.python.org/downloads/release/python-368/) は最新の 3.6.x バージョンです。
+- Azure Functions で必要な Python 3.7 または Python 3.6。 [Python 3.7.5](https://www.python.org/downloads/release/python-375/) と [Python 3.6.8](https://www.python.org/downloads/release/python-368/) は互換性のある最新バージョンです。
 - [Visual Studio Code](https://code.visualstudio.com/)。
 - [Python 拡張機能](https://marketplace.visualstudio.com/items?itemName=ms-python.python)。[Visual Studio Code Python チュートリアルの前提条件](https://code.visualstudio.com/docs/python/python-tutorial)に説明があります。
 - [Azure Functions 拡張機能](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions)。 全般的な情報については、[vscode-azurefunctions GitHub リポジトリ](https://github.com/Microsoft/vscode-azurefunctions)をご覧ください。

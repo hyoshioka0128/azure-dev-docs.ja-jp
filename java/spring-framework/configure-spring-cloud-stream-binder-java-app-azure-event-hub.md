@@ -4,9 +4,6 @@ description: Spring Boot Initializr を使用して作成された Java ベー�
 services: event-hubs
 documentationcenter: java
 author: bmitchell287
-manager: douge
-editor: ''
-ms.assetid: ''
 ms.author: brendm
 ms.date: 12/19/2018
 ms.devlang: java
@@ -14,16 +11,14 @@ ms.service: event-hubs
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.workload: na
-ms.openlocfilehash: 48dfa19177c52da4f296b3e19ae26e91b1d44c33
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.openlocfilehash: 56ac71007af04d3294da811a879ebcf37f54ae73
+ms.sourcegitcommit: 54d34557bb83f52a215bf9020263cb9f9782b41d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68282703"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74118134"
 ---
 # <a name="how-to-create-a-spring-cloud-stream-binder-application-with-azure-event-hubs"></a>Azure Event Hubs を使用する Spring Cloud Stream Binder アプリケーションを作成する方法
-
-## <a name="overview"></a>概要
 
 この記事では、Spring Boot Initializr を使用して作成された Java ベースの Spring Cloud Stream Binder アプリケーションを、Azure Event Hubs を使用するように構成する方法について説明します。
 
@@ -42,69 +37,71 @@ ms.locfileid: "68282703"
 
 ## <a name="create-an-azure-event-hub-using-the-azure-portal"></a>Azure portal を使用して Azure イベント ハブを作成する
 
+次の手順では、Azure イベント ハブを作成します。
+
 ### <a name="create-an-azure-event-hub-namespace"></a>Azure イベント ハブの名前空間を作成する
 
 1. Azure portal (<https://portal.azure.com/>) を参照し、サインインします。
 
-1. **[+ リソースの作成]** をクリックし、 **[モノのインターネット]** 、 **[Event Hubs]** の順にクリックします。
+1. **[+ リソースの作成]** をクリックし、*Event Hubs** を検索します。
+
+1. **Create** をクリックしてください。
 
    ![Azure イベント ハブの名前空間を作成する][IMG01]
 
 1. **[名前空間の作成]** ページで、次の情報を入力します。
 
    * 一意の**名前**を入力します。この名前は、イベント ハブの名前空間の URI の一部になります。 たとえば、 **[名前]** に「**wingtiptoys**」と入力した場合、URI は *wingtiptoys.servicebus.windows.net* になります。
-   * イベント ハブの名前空間の**価格レベル**を選択します。
+   * 価格レベル。
    * 名前空間に使用する**サブスクリプション**を選択します。
    * 名前空間の新しい**リソース グループ**を作成するか、既存のリソース グループを選択するかを指定します。
    * イベント ハブの名前空間の**場所**を指定します。
+   * 名前空間の **[スループット ユニット]** を指定することもできます。
 
    ![Azure イベント ハブの名前空間のオプションを指定する][IMG02]
 
 1. 上記のオプションを指定したら、 **[作成]** をクリックして名前空間を作成します。
 
-### <a name="create-an-azure-event-hub-in-your-namespace"></a>名前空間に Azure イベント ハブを作成する
+## <a name="create-an-azure-event-hub-in-your-namespace"></a>名前空間に Azure イベント ハブを作成する
 
-1. Azure portal (<https://portal.azure.com/>) を参照します。
+名前空間のデプロイ後、名前空間にイベント ハブを作成できます。
 
-1. **[すべてのリソース]** をクリックし、作成した名前空間をクリックします。
+1. 前の手順で作成した名前空間に移動します。
 
-   ![Azure イベント ハブの名前空間を選択する][IMG03]
+1. 上部のメニュー バーの **[+ イベント ハブ]** をクリックします。
 
-1. **[Event Hubs]** をクリックし、 **[+ イベント ハブ]** をクリックします。
+1. イベント ハブに名前を指定します。
 
-   ![新しい Azure イベント ハブを追加する][IMG04]
+1. **Create** をクリックしてください。
 
-1. **[イベント ハブの作成]** ページで、イベント ハブの一意の**名前**を入力し、 **[作成]** をクリックします。
-
-   ![Azure Event Hub の作成][IMG05]
-
-1. イベント ハブが作成されると、 **[Event Hubs]** ページに表示されます。
-
-   ![Azure Event Hub の作成][IMG06]
+   ![イベント ハブの作成][IMG05]
 
 ### <a name="create-an-azure-storage-account-for-your-event-hub-checkpoints"></a>イベント ハブのチェックポイント用の Azure ストレージ アカウントを作成する
 
+次の手順では、イベント ハブのチェックポイント用のストレージ アカウントを作成します。
+
 1. Azure portal (<https://portal.azure.com/>) を参照します。
 
-1. **[+ リソースの作成]** をクリックし、 **[Storage]** 、 **[ストレージ アカウント]** の順にクリックします。
+1. **[+ 作成]** をクリックし、 **[Storage]** 、 **[ストレージ アカウント]** の順にクリックします。
 
-   ![Azure ストレージ アカウントを作成する][IMG07]
+1. **[ストレージ アカウントの作成]** ページで、次の情報を入力します。
 
-1. **[名前空間の作成]** ページで、次の情報を入力します。
-
-   * 一意の**名前**を入力します。この名前は、ストレージ アカウントの URI の一部になります。 たとえば、 **[名前]** に「**wingtiptoys**」と入力した場合、URI は *wingtiptoys.core.windows.net* になります。
-   * **[アカウントの種類]** で **[Blob Storage]** を選択します。
-   * ストレージ アカウントの**場所**を指定します。
    * ストレージ アカウントに使用する**サブスクリプション**を選択します。
    * ストレージ アカウントの新しい**リソース グループ**を作成するか、既存のリソース グループを選択するかを指定します。
+   * ストレージ アカウント用に一意の**名前**を入力します。
+   * ストレージ アカウントの**場所**を指定します。
 
    ![Azure ストレージ アカウントのオプションを指定する][IMG08]
 
-1. 上記のオプションを指定したら、 **[作成]** をクリックしてストレージ アカウントを作成します。
+1. 上記のオプションを指定したら、 **[確認および作成]** をクリックしてストレージ アカウントを作成します。
+
+1. 仕様を確認し、 **[作成]** をクリックします。  デプロイには数分かかります。
 
 ## <a name="create-a-simple-spring-boot-application-with-the-spring-initializr"></a>Spring Initializr でシンプルな Spring Boot アプリケーションを作成する
 
-1. <https://start.spring.io/> を参照します。
+次の手順では、Spring Boot アプリケーションを作成します。
+
+1. [https://www.microsoft.com](<https://start.spring.io/>) を参照します。
 
 1. 次のオプションを指定します。
 
@@ -123,8 +120,6 @@ ms.locfileid: "68282703"
 1. 上記のオプションを指定したら、 **[Generate Project]\(プロジェクトの生成\)** をクリックします。
 
 1. メッセージが表示されたら、ローカル コンピューター上のパスにプロジェクトをダウンロードします。
-
-   ![Spring プロジェクトをダウンロードする][SI02]
 
 1. ファイルをローカル システム上に展開したら、シンプルな Spring Boot アプリケーションの編集を開始できます。
 
@@ -245,7 +240,6 @@ ms.locfileid: "68282703"
    spring.cloud.azure.eventhub.checkpoint-storage-account=wingtiptoysstorage
    spring.cloud.stream.bindings.input.destination=wingtiptoyshub
    spring.cloud.stream.bindings.input.group=$Default
-   spring.cloud.stream.bindings.output.destination=wingtiptoyshub
    spring.cloud.stream.eventhub.bindings.input.consumer.checkpoint-mode=MANUAL
    ```
    各値の説明:
@@ -364,6 +358,8 @@ ms.locfileid: "68282703"
 1. *EventhubSink.java* ファイルを保存して閉じます。
 
 ## <a name="build-and-test-your-application"></a>アプリケーションをビルドしてテストする
+
+次の手順に従って、アプリケーションをビルドしてテストします。
 
 1. コマンド プロンプトを開き、ディレクトリを *pom.xml* ファイルが置かれているフォルダーに変更します。次に例を示します。
 

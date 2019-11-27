@@ -4,26 +4,21 @@ description: Azure Key Vault スターターを使用して、Spring Boot Initia
 services: key-vault
 documentationcenter: java
 author: bmitchell287
-manager: douge
-editor: ''
-ms.assetid: ''
 ms.author: brendm
-ms.date: 12/19/2018
+ms.date: 10/29/2019
 ms.devlang: java
 ms.service: key-vault
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
-ms.openlocfilehash: 1c04bab67c7fc6a409893416d27de7ed18018cd9
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.openlocfilehash: 7841386ba89f2f14e4ef6e5c279d62293940f4af
+ms.sourcegitcommit: 54d34557bb83f52a215bf9020263cb9f9782b41d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68283223"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74118023"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-key-vault"></a>Azure Key Vault 用の Spring Boot Starter の使用方法
-
-## <a name="overview"></a>概要
 
 この記事では、Azure Key Vault 用 Spring Boot Starter を使用した **[Spring Initializr]** を用いて、キー コンテナーにシークレットとして格納されている接続文字列を取得するアプリを作成する方法について説明します。
 
@@ -37,23 +32,25 @@ ms.locfileid: "68283223"
 
 ## <a name="create-an-app-using-spring-initializr"></a>Spring Initializr を使用したアプリの作成
 
-1. <https://start.spring.io/> を参照します。
+次の手順では、Spring Initializr を使用してアプリケーションを作成します。
 
-1. **Java** で **Maven** プロジェクトを生成することを指定し、アプリケーションの **[Group]\(グループ\)** と **[Aritifact]\(アーティファクト\)** に名前を入力して、Spring Initializr の **[Switch to the full version]\(完全バージョンへの切り替え\)** のリンクをクリックします。
+1. [https://www.microsoft.com](<https://start.spring.io/>) を参照します。
 
-   ![グループとアーティファクトの名前を指定する][secrets-01]
+1. **Java** で **Maven** プロジェクトを生成することを指定します。  
 
-1. 下へスクロールして **[Azure]** セクションを表示し、 **[Azure Key Vault]** チェック ボックスをオンにします。
+1. アプリケーションの **[Group]\(グループ\)** と **[Artifact]\(成果物\)** に名前を入力します。
 
-   ![Azure Key Vault スターターを選択する][secrets-02]
+1. **[Dependencies]\(依存関係\)** セクションで、「**Azure Key Vault**」と入力します。
 
-1. ページの下部までスクロールし、 **[Generate Project]\(プロジェクトの生成\)** をクリックします。
+1. ページの下部までスクロールし、 **[Generate]\(生成\)** をクリックします。
 
-   ![Spring Boot プロジェクトを生成する][secrets-03]
+   ![Spring Boot プロジェクトを生成する][secrets-01]
 
 1. メッセージが表示されたら、ローカル コンピューター上のパスにプロジェクトをダウンロードします。
 
 ## <a name="sign-into-azure"></a>Azure へのサインイン
+
+次の手順では、Azure CLI でユーザーを認証します。
 
 1. コマンド プロンプトを開きます。
 
@@ -62,13 +59,15 @@ ms.locfileid: "68283223"
    ```azurecli
    az login
    ```
-   指示に従って、サインインを完了します。
+
+指示に従って、サインインを完了します。
 
 1. サブスクリプションを一覧表示します。
 
    ```azurecli
    az account list
    ```
+
    Azure からサブスクリプションの一覧が返されます。使用するサブスクリプションの GUID をコピーする必要があります。次に例を示します。
 
    ```json
@@ -96,10 +95,14 @@ ms.locfileid: "68283223"
 
 ## <a name="create-a-new-azure-key-vault"></a>新しい Azure Key Vault の作成
 
+次の手順では、キー コンテナーを作成して初期化します。
+
 1. キー コンテナーに使用する Azure リソースのリソース グループを作成します。次に例を示します。
+
    ```azurecli
-   az group create --name wingtiptoysresources --location westus
+   az group create --name vged-rg2 --location westus
    ```
+
    各値の説明:
 
    | パラメーター | 説明 |
@@ -111,10 +114,10 @@ ms.locfileid: "68283223"
 
    ```json
    {
-     "id": "/subscriptions/ssssssss-ssss-ssss-ssss-ssssssssssss/resourceGroups/wingtiptoysresources",
+     "id": "/subscriptions/ssssssss-ssss-ssss-ssss-ssssssssssss/resourceGroups/vged-rg2",
      "location": "westus",
      "managedBy": null,
-     "name": "wingtiptoysresources",
+     "name": "vged-rg2",
      "properties": {
        "provisioningState": "Succeeded"
      },
@@ -124,7 +127,7 @@ ms.locfileid: "68283223"
 
 2. アプリケーション登録から Azure サービス プリンシパルを作成します。次に例を示します。
    ```shell
-   az ad sp create-for-rbac --name "wingtiptoysuser"
+   az ad sp create-for-rbac --name "vgeduser"
    ```
    各値の説明:
 
@@ -132,22 +135,24 @@ ms.locfileid: "68283223"
    |---|---|
    | `name` | Azure サービス プリンシパルの名前を指定します。 |
 
-   Azure CLI から JSON ステータス メッセージが返されます。このメッセージに含まれている *appId* と *password* は、後でクライアント ID およびクライアント パスワードとして使用します。次に例を示します。
+   Azure CLI から JSON の状態メッセージが返されます。このメッセージに含まれている *appId* と *password* は、後でクライアント ID およびクライアント パスワードとして使用します。次に例を示します。
 
    ```json
    {
      "appId": "iiiiiiii-iiii-iiii-iiii-iiiiiiiiiiii",
-     "displayName": "wingtiptoysuser",
-     "name": "http://wingtiptoysuser",
+     "displayName": "vgeduser",
+     "name": "http://vgeduser",
      "password": "pppppppp-pppp-pppp-pppp-pppppppppppp",
      "tenant": "tttttttt-tttt-tttt-tttt-tttttttttttt"
    }
    ```
 
 3. リソース グループに新しいキー コンテナーを作成します。次に例を示します。
+
    ```azurecli
-   az keyvault create --name wingtiptoyskeyvault --resource-group wingtiptoysresources --location westus --enabled-for-deployment true --enabled-for-disk-encryption true --enabled-for-template-deployment true --sku standard --query properties.vaultUri
+   az keyvault create --name vgedkeyvault --resource-group vged-rg2 --location westus --enabled-for-deployment true --enabled-for-disk-encryption true --enabled-for-template-deployment true --sku standard --query properties.vaultUri
    ```
+
    各値の説明:
 
    | パラメーター | 説明 |
@@ -162,14 +167,17 @@ ms.locfileid: "68283223"
 
    Azure CLI にキー コンテナーの URI が表示されます。この URI は後で使用します。次に例を示します。  
 
-   ```
-   "https://wingtiptoyskeyvault.vault.azure.net"
+   ```azurecli
+   "https://vgedkeyvault.vault.azure.net"
+
    ```
 
 4. 前の手順で作成した Azure サービス プリンシパルのアクセス ポリシーを設定します。次に例を示します。
+
    ```azurecli
-   az keyvault set-policy --name wingtiptoyskeyvault --secret-permission set get list delete --spn "iiiiiiii-iiii-iiii-iiii-iiiiiiiiiiii"
+   az keyvault set-policy --name vgedkeyvault --secret-permission set get list delete --spn "iiiiiiii-iiii-iiii-iiii-iiiiiiiiiiii"
    ```
+
    各値の説明:
 
    | パラメーター | 説明 |
@@ -184,22 +192,24 @@ ms.locfileid: "68283223"
    {
      "id": "/subscriptions/ssssssss-ssss-ssss-ssss-ssssssssssss/...",
      "location": "westus",
-     "name": "wingtiptoyskeyvault",
+     "name": "vgedkeyvault",
      "properties": {
        ...
        ... (A long list of values will be displayed here.)
        ...
      },
-     "resourceGroup": "wingtiptoysresources",
+     "resourceGroup": "vged-rg2",
      "tags": {},
      "type": "Microsoft.KeyVault/vaults"
    }
    ```
 
 5. 新しいキー コンテナーにシークレットを格納します。次に例を示します。
+
    ```azurecli
-   az keyvault secret set --vault-name "wingtiptoyskeyvault" --name "connectionString" --value "jdbc:sqlserver://SERVER.database.windows.net:1433;database=DATABASE;"
+   az keyvault secret set --vault-name "vgedkeyvault" --name "connectionString" --value "jdbc:sqlserver://SERVER.database.windows.net:1433;database=DATABASE;"
    ```
+
    各値の説明:
 
    | パラメーター | 説明 |
@@ -221,28 +231,32 @@ ms.locfileid: "68283223"
        "updated": "2017-12-01T09:00:16+00:00"
      },
      "contentType": null,
-     "id": "https://wingtiptoyskeyvault.vault.azure.net/secrets/connectionString/123456789abcdef123456789abcdef",
+     "id": "https://vgedkeyvault.vault.azure.net/secrets/connectionString/123456789abcdef123456789abcdef",
      "kid": null,
      "managed": null,
      "tags": {
        "file-encoding": "utf-8"
      },
-     "value": "jdbc:sqlserver://wingtiptoys.database.windows.net:1433;database=DATABASE;"
+     "value": "jdbc:sqlserver://.database.windows.net:1433;database=DATABASE;"
    }
    ```
 
 ## <a name="configure-and-compile-your-app"></a>アプリの構成およびコンパイル
+
+次の手順に従って、アプリケーションを構成およびコンパイルします。
 
 1. 以前にディレクトリにダウンロードした Spring Boot プロジェクトのパッケージ ファイルからファイルを抽出します。
 
 2. プロジェクトの *src/main/resources* フォルダーに移動し、テキスト エディターで *application.properties* ファイルを開きます。
 
 3. このチュートリアルで既に完了した手順で取得した値を使用して、キー コンテナーの値を追加します。次に例を示します。
+
    ```yaml
-   azure.keyvault.uri=https://wingtiptoyskeyvault.vault.azure.net/
+   azure.keyvault.uri=https://vgedkeyvault.vault.azure.net/
    azure.keyvault.client-id=iiiiiiii-iiii-iiii-iiii-iiiiiiiiiiii
    azure.keyvault.client-key=pppppppp-pppp-pppp-pppp-pppppppppppp
    ```
+
    各値の説明:
 
    |          パラメーター          |                                 説明                                 |
@@ -252,12 +266,12 @@ ms.locfileid: "68283223"
    | `azure.keyvault.client-key` | サービス プリンシパルの作成時に取得した *password* GUID を指定します。 |
 
 
-4. プロジェクトのメイン ソース コード ファイルに移動します (例: */src/main/java/com/wingtiptoys/secrets*)。
+4. プロジェクトのメイン ソース コード ファイルに移動します (例: */src/main/java/com/vged/secrets*)。
 
 5. テキスト エディターでアプリケーションのメイン Java ファイルを開き(例: *SecretsApplication.java*)、ファイルに次の行を追加します。
 
    ```java
-   package com.wingtiptoys.secrets;
+   package com.vged.secrets;
 
    import org.springframework.boot.SpringApplication;
    import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -284,6 +298,8 @@ ms.locfileid: "68283223"
 6. Java ファイルを保存して閉じます。
 
 ## <a name="build-and-test-your-app"></a>アプリのビルドとテスト
+
+次の手順に従って、アプリケーションをテストします。
 
 1. Spring Boot アプリの *pom.xml* ファイルがあるディレクトリに移動します。
 

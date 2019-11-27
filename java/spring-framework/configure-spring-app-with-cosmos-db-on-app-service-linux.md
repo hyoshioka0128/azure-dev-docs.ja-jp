@@ -7,18 +7,16 @@ ms.author: brendm
 ms.reviewer: joshuapa
 ms.date: 4/24/2019
 ms.devlang: java
-ms.service: app-service, cosmos-db
+ms.service: cosmos-db
 ms.topic: article
-ms.openlocfilehash: e7360067deaa9d038440978892f093dfb28db499
-ms.sourcegitcommit: f799dd4590dc5a5e646d7d50c9604a9975dadeb1
+ms.openlocfilehash: 7fcd23ad45a591614516fec97e312c71773ce657
+ms.sourcegitcommit: 54d34557bb83f52a215bf9020263cb9f9782b41d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68691159"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74118040"
 ---
 # <a name="how-to-use-spring-and-cosmos-db-with-app-service-on-linux"></a>App Service on Linux で Spring と Cosmos DB を使用する方法
-
-## <a name="overview"></a>概要
 
 この記事では、Azure App Service on Linux で Java Web アプリを構築、構成、デプロイ、トラブルシューティング、およびスケーリングするプロセスを、順を追って説明します。
 
@@ -38,6 +36,7 @@ ms.locfileid: "68691159"
 - [Maven 3](http://maven.apache.org/)
 
 ## <a name="clone-the-sample-java-web-app-repository"></a>サンプル Java Web アプリ リポジトリを複製する
+
 この演習では、[Spring Boot](https://spring.io/projects/spring-boot)、[Cosmos DB 用の Spring Data](https://docs.microsoft.com/azure/java/spring-framework/configure-spring-boot-starter-java-app-with-cosmos-db)、および [Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/sql-api-introduction) を使用して構築された Java アプリケーションである Spring Todo アプリを使用します。
 1. Spring Todo アプリを複製し、 **.prep** フォルダーの内容をコピーしてプロジェクトを初期化します。
 
@@ -58,8 +57,11 @@ ms.locfileid: "68691159"
 
    ```bash
    cd initial\spring-todo-app
-   ``` 
+   ```
+
 ## <a name="create-an-azure-cosmos-db-from-azure-cli"></a>Azure CLI から Azure Cosmos DB を作成する
+
+次の手順では、CLI を使用して Azure Cosmos データベースを作成します。
 
 1. Azure CLI にログインし、サブスクリプション ID を設定します。
 
@@ -68,6 +70,7 @@ ms.locfileid: "68691159"
     ```
 
 2. 必要に応じて、サブスクリプション ID を設定します。
+
     ```bash
     az account set -s <your-subscription-id>
     ```
@@ -88,13 +91,15 @@ Cosmos DB の名前には小文字のみを使用する必要があります。 
         -n <your-azure-COSMOS-DB-name-in-lower-case-letters>
      ```
 
-4. Azure Cosmos DB キーを取得し、後で使用するために `primaryMasterKey` 値を記録します。
+5. Azure Cosmos DB キーを取得し、後で使用するために `primaryMasterKey` 値を記録します。
 
     ```bash
-    az cosmosdb list-keys -g <your-azure-group-name> -n <your-azure-COSMOSDB-name>
+    az cosmosdb keys list -g <your-azure-group-name> -n <your-azure-COSMOSDB-name>
     ```
 
 ## <a name="build-and-run-the-app-locally"></a>ローカルでアプリをビルドおよび実行する
+
+次の手順では、開発用コンピューターでアプリケーションを実行します。
 
 1. 選択したコンソール内で、この記事で前に収集した Azure と Cosmos DB の接続情報を使用して、次のコード セクションに示された環境変数を構成します。 **WEBAPP_NAME** に一意の名前を指定し、**REGION** 変数に値を指定する必要があります。
 
@@ -139,6 +144,8 @@ set REGION=<put-your-REGION-here>
  ![ローカルで実行されている Spring アプリ][SCDB01]
 
 ## <a name="deploy-to-app-service-linux"></a>App Service Linux にデプロイする
+
+次の手順では、アプリケーションを Azure 上の Linux にデプロイします。
 
 1. リポジトリの **initial/spring-todo-app** ディレクトリに以前にコピーした pom.xml ファイルを開きます。 以下の pom.xml ファイルに示されているように、[Azure App Service 用の Maven プラグイン](https://github.com/Microsoft/azure-maven-plugins/blob/develop/azure-webapp-maven-plugin/README.md)が含まれていることを確認してください。 そのバージョンが **1.6.0** に設定されていない場合は、値を更新してください。
 
@@ -231,6 +238,8 @@ bash-3.2$ mvn azure-webapp:deploy
 
 ## <a name="troubleshoot-spring-todo-app-on-azure-by-viewing-logs"></a>ログを表示して Azure の Spring Todo アプリをトラブルシューティングする
 
+次の手順では、Azure でログ ファイルを開きます。
+
 1. Linux の Azure App Service にデプロイされた Java Web アプリのログを構成します。
 
     ```bash
@@ -282,6 +291,8 @@ bash-3.2$ az webapp log tail --name ${WEBAPP_NAME}  --resource-group ${RESOURCEG
 
 
 ## <a name="scale-out-the-spring-todo-app"></a>Spring Todo アプリをスケールアウトする
+
+次の手順に従って、アプリケーションをスケーリングします。
 
 1. Azure CLI を使用して Java Web アプリをスケールアウトします。
 

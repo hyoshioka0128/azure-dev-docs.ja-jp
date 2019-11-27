@@ -4,22 +4,18 @@ description: Application Insights Spring Boot Starter を使用するように�
 services: Application-Insights
 documentationcenter: java
 author: dhaval24
-manager: alexklim
-editor: ''
-ms.assetid: ''
 ms.author: dhdoshi
-ms.date: 12/19/2018
+ms.date: 11/29/2019
 ms.devlang: java
 ms.service: azure-monitor
 ms.tgt_pltfrm: application-insights
 ms.topic: article
-ms.workload: na
-ms.openlocfilehash: 56f54ee2fefcdfb5cfdb694f41426913b4978344
-ms.sourcegitcommit: f799dd4590dc5a5e646d7d50c9604a9975dadeb1
+ms.openlocfilehash: 25a036e129d6a8853059d61da7ff8565ab0ddd72
+ms.sourcegitcommit: 54d34557bb83f52a215bf9020263cb9f9782b41d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68691169"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74118263"
 ---
 # <a name="configure-a-spring-boot-initializer-app-to-use-application-insights"></a>Application Insights を使用するように Spring Boot Initializer アプリを構成する
 
@@ -36,6 +32,8 @@ ms.locfileid: "68691169"
 
 ## <a name="create-a-custom-application-using-spring-initializr"></a>Spring Initializr を使用してカスタム アプリケーションを作成する
 
+次の手順でアプリケーションを作成します。
+
 1. [https://start.spring.io/](https://start.spring.io/) を参照します。
 
 1. **Java** で **Maven** プロジェクトを生成するように指定し、自分のアプリケーションの**グループ**と**アーティファクト**の名前を入力して、依存関係セクションで Web 依存関係を選択します。
@@ -44,45 +42,46 @@ ms.locfileid: "68691169"
 
    > [!NOTE]
    >
-   > Spring Initializr では、**グループ**と**アーティファクト**の名前を使用してパッケージ名を作成します (例: *com.example.demo*)。
+   > Spring Initializr では、**グループ**と**アーティファクト**の名前を使用してパッケージ名を作成します (例: *com.vged.appinsights*)。
    >
 
-1. ボタンをクリックして、**プロジェクトを生成**します。
+1. **[生成]** ボタンをクリックします。
 
 1. メッセージが表示されたら、ローカル コンピューター上のパスにプロジェクトをダウンロードします。
 
 1. ファイルをローカル システム上に展開したら、カスタム Spring Boot アプリケーションの編集を開始できます。
 
-   ![カスタム Spring Boot プロジェクト ファイル][SI02]
-
 ## <a name="create-an-application-insights-resource-on-azure"></a>Azure で Application Insights のリソースを作成する
 
-1. <https://portal.azure.com/> で Azure を参照し、 **[+新規]** をクリックします。
+次の手順に従って、Application Insights のリソースを作成します。
 
-   ![Azure][AZ01]
+1. <https://portal.azure.com/> で Azure にアクセスし、 **[+ 新しいリソースを作成する]** をクリックします。
 
-1. **管理ツール** 、 **Application Insights**  の順にクリックします。
+1. **[IT と管理ツール]** をクリックし、 **[Application Insights]** をクリックします。
 
-   ![Azure][AZ02]
+1. **[Application Insights の新しいリソース]** ページで、以下の情報を指定します。
 
-1. **[Application Insights の新しい リソース]** ページで、以下の情報を指定します。
+* **サブスクリプション**と**リソース グループ**を指定します。
+* Application Insights のリソースの**名前**を入力してください。
+* **リージョン**を選択します。
 
-   * Application Insights のリソースの**名前**を入力してください。
-   * **[アプリケーションの種類]** として [Java Web アプリケーション] を選択します。
-   * **[サブスクリプション]** 、 **[リソース グループ]** 、 **[場所]** を指定します。
-   * リソースを Azure にピン留めしたい場合は、[ダッシュボードにピン留めする] オプションを選択します。
-
-   これらのオプションを指定したら、 **[作成]** をクリックして Application Insights リソースを作成します。
+   これらのオプションを指定したら、 **[確認と作成]** をクリックします。
 
    ![Azure][AZ03]
- 
-1. リソースが作成されると、Azure の**ダッシュボード**の他、 **[すべてのリソース]** ページにも表示されます。 それらの場所のいずれかでリソースをクリックすると、Application Insights リソースの概要ページを開くことができます。 この概要ページから、**インストルメンテーション キー**をコピーしてください。
+
+* 指定した内容を確認し、 **[作成]** をクリックします。
+
+リソースが作成されると、Azure の**ダッシュボード**の他、 **[すべてのリソース]** ページにも表示されます。 それらの場所のいずれかでリソースをクリックすると、Application Insights リソースの概要ページを開くことができます。
+
+この概要ページから、**インストルメンテーション キー**をコピーしてください。
 
    ![Azure][AZ04]
 
 ## <a name="configure-your-downloaded-spring-boot-application-to-use-application-insights"></a>Application Insights を使用するように、ダウンロードした Spring Boot Initializer を構成する
 
-1. アプリのルート ディレクトリで *POM.xml* ファイルを見つけ、dependencies セクションに次の依存関係を追加します。 
+次の手順に従って、アプリケーションを構成します。
+
+1. アプリのルート ディレクトリで *POM.xml* ファイルを見つけ、dependencies セクションに次の依存関係を追加します。
 
 ```XML
  <dependency>
@@ -93,8 +92,6 @@ ms.locfileid: "68691169"
 ```
 
 1. アプリの *resources* ディレクトリ内で *application.properties* ファイルを探すか、まだ存在しない場合はファイルを作成します。
-
-   ![application.properties ファイルを探す][RE01]
 
 1. テキスト エディターで *application.properties* ファイルを開き、そのファイルに次の行を追加し、サンプルの値を適切な資格情報を含む適切なプロパティで置き換えます。
 
@@ -190,6 +187,8 @@ ms.locfileid: "68691169"
 
 ## <a name="configure-springboot-application-to-send-log4j-logs-to-application-insights"></a>log4j ログを Application Insights に送信するように Springboot アプリケーションを構成する
 
+次の手順に従って、ログを送信するようにアプリケーションを構成します。
+
 1. プロジェクトの POM.xml を開き、次を使用して dependencies セクションに追加/変更します。 
 
 ```xml
@@ -257,13 +256,10 @@ ms.locfileid: "68691169"
   </Loggers>
 </Configuration>
 ```
-4. 上記のように Spring Boot アプリケーションをビルドし、もう一度実行します。 
 
-数秒で、すべての Spring ログが Azure で利用できることを確認できます。 
+4. 上記のように Spring Boot アプリケーションをビルドし、もう一度実行します。
 
-![Azure][AZ06]
-
-Analytics ポータルでは、詳細なログ メッセージを確認したり、分析を実行したりできます。 
+数秒で、すべての Spring ログが Azure で利用できることを確認できます。 Analytics ポータルでは、詳細なログ メッセージを確認したり、分析を実行したりできます。
 
 ![Azure][AZ07]
 
@@ -317,7 +313,7 @@ Java での Azure の使用の詳細については、「[Java 開発者向け�
 [AZ07]: ./media/configure-spring-boot-starter-java-app-with-azure-application-insights/traces_details.png
 [AZ08]: ./media/configure-spring-boot-starter-java-app-with-azure-application-insights/AppMap.png
 
-[SI01]: ./media/configure-spring-boot-starter-java-app-with-azure-application-insights/spring_start.png
+[SI01]: ./media/configure-spring-boot-starter-java-app-with-azure-application-insights/spring_start.PNG
 [SI02]: ./media/configure-spring-boot-starter-java-app-with-azure-application-insights/After_extract.png
 
 [RE01]: ./media/configure-spring-boot-starter-java-app-with-azure-application-insights/applicationproperties_loc.png

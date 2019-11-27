@@ -8,12 +8,12 @@ ms.service: multiple
 ms.date: 10/30/2019
 ms.topic: conceptual
 ms.devlang: python
-ms.openlocfilehash: 28787b4ca08b593239274bfce62a02895d7f6b6a
-ms.sourcegitcommit: 7e5392a0af419c650225cfaa10215d1e0e56ce71
+ms.openlocfilehash: dda3044bcf80ff45d4a39c9186c6ad44a153218e
+ms.sourcegitcommit: 54d34557bb83f52a215bf9020263cb9f9782b41d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73568212"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74118016"
 ---
 # <a name="azure-sdk-for-python"></a>Azure SDK for Python
 
@@ -57,7 +57,7 @@ with open("./SampleSource.txt", "rb") as data:
 
 ### <a name="the-azure-core-library"></a>Azure コア ライブラリ
 
-現在、Python クライアント ライブラリは、コア機能 (再試行、ログ記録、トランスポート プロトコル、認証プロトコルなど) を共有するために更新中です。この共有機能は、[azure-core](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/core/azure-core) ライブラリに含まれています。 ライブラリとそのガイドラインの詳細については、「[Python ガイドライン: 概要](https://azure.github.io/azure-sdk/python_introduction.html)」を参照してください。
+現在、Python クライアント ライブラリは、コア機能 (再試行、ログ記録、トランスポート プロトコル、認証プロトコルなど) を共有するために更新中です。この共有機能は、[azure-core](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/core/azure-core) ライブラリに含まれています。 ライブラリとそのガイドラインの詳細については、「[Python ガイドライン:概要](https://azure.github.io/azure-sdk/python_introduction.html)」を参照してください。
 
 現時点で、このコア ライブラリと共に使用できるライブラリは、以下のとおりです。
 

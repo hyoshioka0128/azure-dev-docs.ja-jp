@@ -13,16 +13,14 @@ ms.devlang: java
 ms.service: cosmos-db
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: 46084a5bc1d98f5e8343fc20446dc0516057ce83
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.openlocfilehash: 93dff9e1f12a17660b367060dd9d404127285df2
+ms.sourcegitcommit: 8be617e100ae3d3e90d56c672b1c7c110b7a588f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68282493"
+ms.lasthandoff: 11/18/2019
+ms.locfileid: "74160686"
 ---
 # <a name="how-to-use-spring-data-apache-cassandra-api-with-azure-cosmos-db"></a>Azure Cosmos DB で Spring Data Apache Cassandra API を使用する方法
-
-## <a name="overview"></a>概要
 
 この記事では、[Spring Data] を使用して、[Azure Cosmos DB Cassandra API](/azure/cosmos-db/cassandra-introduction) を使って情報を格納および取得するサンプル アプリケーションを作成する方法を説明します。
 
@@ -38,7 +36,9 @@ ms.locfileid: "68282493"
 
 ## <a name="create-an-azure-cosmos-db-account"></a>Azure Cosmos DB アカウントを作成する
 
-### <a name="create-a-cosmos-db-account-using-the-azure-portal"></a>Azure Portal を使用して Cosmos DB アカウントを作成する
+次の手順では、Azure portal で Cosmos アカウントを作成し、構成します。
+
+### <a name="create-a-cosmos-db-account-using-the-azure-portal"></a>Azure portal を使用して Cosmos DB アカウントを作成する
 
 > [!NOTE]
 > 
@@ -66,13 +66,13 @@ ms.locfileid: "68282493"
 
    ![Cosmos DB アカウントの設定を確認する][COSMOSDB03]
 
+データベースがデプロイされるまで数分かかります。
+
 ### <a name="add-a-keyspace-to-your-azure-cosmos-db-account"></a>Azure Cosmos DB アカウントにキースペースを追加する
 
 1. Azure portal (<https://portal.azure.com/>) を参照し、サインインします。
 
 1. **[すべてのリソース]** をクリックしてから、先ほど作成した Azure Cosmos DB アカウントをクリックします。
-
-   ![Azure Cosmos DB アカウントを選択する][COSMOSDB04]
 
 1. **[データ エクスプローラー]** をクリックし、 **[New Keyspace]\(新しいキースペース\)** をクリックします。 **[Keyspace id]\(キースペース ID\)** に一意の識別子を入力し、 **[OK]** をクリックします。
 
@@ -84,13 +84,13 @@ ms.locfileid: "68282493"
 
 1. **[すべてのリソース]** をクリックしてから、先ほど作成した Azure Cosmos DB アカウントをクリックします。
 
-   ![Azure Cosmos DB アカウントを選択する][COSMOSDB04]
-
 1. **[接続文字列]** をクリックし、 **[コンタクト ポイント]** 、 **[ポート]** 、 **[ユーザー名]** 、および **[プライマリ パスワード]** の各フィールドの値をコピーします。これらの値は、アプリケーションを構成するために後で使用します。
 
-   ![Cosmos DB の接続設定を取得する][COSMOSDB05]
+   ![Cosmos DB の接続設定を取得する][COSMOSDB06]
 
 ## <a name="configure-the-sample-application"></a>サンプル アプリケーションを構成する
+
+次の手順に従って、テスト アプリケーションを構成します。
 
 1. コマンド シェルを開き、次の例のように git コマンドを使用してサンプル プロジェクトを複製します。
 
@@ -121,6 +121,8 @@ ms.locfileid: "68282493"
 
 ## <a name="package-and-test-the-sample-application"></a>サンプル アプリケーションをパッケージ化してテストする 
 
+.pom ファイルを含むディレクトリを参照し、アプリケーションをビルドしてテストします。
+
 1. サンプル アプリケーションを Maven でビルドします。次に例を示します。
 
    ```shell
@@ -136,9 +138,9 @@ ms.locfileid: "68282493"
 1. 次の例のように、コマンド プロンプトから `curl` を使用して新しいレコードを作成します。
 
    ```shell
-   curl -s -d '{"name":"dog","species":"canine"}' -H "Content-Type: application/json" -X POST http://localhost:8080/pets
+   curl -s -d "{\"name\":\"dog\",\"species\":\"canine\"}" -H "Content-Type: application/json" -X POST http://localhost:8080/pets
 
-   curl -s -d '{"name":"cat","species":"feline"}' -H "Content-Type: application/json" -X POST http://localhost:8080/pets
+   curl -s -d "{\"name\":\"cat\",\"species\":\"feline\"}" -H "Content-Type: application/json" -X POST http://localhost:8080/pets
    ```
 
    アプリケーションから次のような値が返されます。
@@ -154,7 +156,7 @@ ms.locfileid: "68282493"
    ```shell
    curl -s http://localhost:8080/pets
    ```
-    
+
    アプリケーションから次のような値が返されます。
 
    ```json
@@ -194,3 +196,4 @@ Java での Azure の使用の詳細については、「[Java 開発者向け�
 [COSMOSDB03]: media/configure-spring-data-apache-cassandra-with-cosmos-db/create-cosmos-db-03.png
 [COSMOSDB04]: media/configure-spring-data-apache-cassandra-with-cosmos-db/create-cosmos-db-04.png
 [COSMOSDB05]: media/configure-spring-data-apache-cassandra-with-cosmos-db/create-cosmos-db-05.png
+[COSMOSDB06]: media/configure-spring-data-apache-cassandra-with-cosmos-db/create-cosmos-db-06.png

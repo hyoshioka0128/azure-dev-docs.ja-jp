@@ -12,12 +12,12 @@ ms.service: cosmos-db
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: data-services
-ms.openlocfilehash: 07481fa72186c02d9cd3bd082ecf6e57a44671d8
-ms.sourcegitcommit: 60c41faa59dbb59406eb7c1715f5708b5ed892c2
+ms.openlocfilehash: 192550b74a35eb24620c58e86e6a55e86e5e90ab
+ms.sourcegitcommit: 54d34557bb83f52a215bf9020263cb9f9782b41d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72036069"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74118174"
 ---
 # <a name="how-to-use-the-spring-boot-starter-with-the-azure-cosmos-db-sql-api"></a>Azure Cosmos DB SQL API で Spring Boot Starter を使用する方法
 
@@ -36,8 +36,6 @@ Azure Cosmos DB は、開発者が SQL、MongoDB、Graph、Table API などの�
 
 1. <https://portal.azure.com/> で Azure portal を参照し、 **[リソースの作成]** をクリックします。
 
-    ![Azure ポータル][AZ01]
-
 1. **[データベース]** 、 **[Azure Cosmos DB]** の順にクリックします。
 
     ![Azure ポータル][AZ02]
@@ -50,13 +48,11 @@ Azure Cosmos DB は、開発者が SQL、MongoDB、Graph、Table API などの�
     * API の**コア (SQL)** を選択します。
     * データベースの**場所**を指定します。
 
-    これらのオプションの指定後、 **[Review + create]\(確認および作成\)** をクリックしてデータベースを作成します。
+    これらのオプションを指定したら、 **[Review + create]\(確認と作成\)** をクリックして指定した内容を確認し、 **[作成]** をクリックします。
 
     ![Azure ポータル][AZ03]
 
 1. データベースが作成されると、それが Azure **ダッシュボード**に表示され、 **[すべてのリソース]** ページと **[Azure Cosmos DB]** ページにも表示されます。 これらのいずれかの場所でデータベースをクリックすると、キャッシュのプロパティ ページを開くことができます。
-
-    ![Azure ポータル][AZ04]
 
 1. データベースのプロパティ ページが表示されたら、 **[キー]** をクリックし、データベースの URI とアクセス キーをコピーします。これらの値は Spring Boot アプリケーションで使用します。
 

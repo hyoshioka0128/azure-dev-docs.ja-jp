@@ -1,23 +1,18 @@
 ---
 title: Visual Studio Code から Azure Functions アプリケーションを作成する
 description: チュートリアル パート2、Azure Functions アプリを作成する
-services: app-service
-author: kraigb
-manager: barbkess
-ms.service: app-service
 ms.topic: conceptual
 ms.date: 09/23/2019
-ms.author: kraigb
-ms.openlocfilehash: 190e574e9614eb11d913c8b26904f7b80dab35fc
-ms.sourcegitcommit: c04984b6367e922dbc5973af44f8cd0ca81ce157
+ms.openlocfilehash: 5b2e46cde8740020cc2ad7a1b50ac9b4687d17d3
+ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71685998"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74467133"
 ---
 # <a name="create-the-local-functions-app"></a>ローカルの Functions アプリを作成する
 
-[前の手順: 概要と前提条件](tutorial-vscode-serverless-node-01.md)
+[前の手順:概要と前提条件](tutorial-vscode-serverless-node-01.md)
 
 この手順では、HTTP トリガーを使用する関数を含むローカルな Azure Functions アプリケーションを作成します。 Azure Functions アプリには、さまざまなトリガーを持つ多数の関数を含めることができます。 HTTP トリガーは、特に着信 HTTP トラフィックの処理を行います。
 

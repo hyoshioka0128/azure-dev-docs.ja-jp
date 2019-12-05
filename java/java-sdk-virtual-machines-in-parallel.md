@@ -2,27 +2,23 @@
 title: 複数リージョンに対して同時に VM を作成する | Microsoft Docs
 description: Azure SDK for Java を使って複数の Azure リージョンに対して同時に仮想マシンを作成するためのサンプル コード
 author: rloutlaw
-manager: douge
 ms.assetid: e5a36699-2d96-4571-84f9-a6af13f3c067
-ms.service: azure
-ms.devlang: java
 ms.topic: article
 ms.date: 03/30/2017
-ms.author: brendm
 ms.reviewer: asirveda
-ms.openlocfilehash: 8aacf198657da96218ef48b4714c26c6199724fc
-ms.sourcegitcommit: f799dd4590dc5a5e646d7d50c9604a9975dadeb1
+ms.openlocfilehash: 2d4cca2552e4a85ebc231531d7e55ffda6d1909f
+ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68691787"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74812283"
 ---
 # <a name="create-virtual-machines-across-multiple-regions-from-your-java-applications"></a>Java アプリケーションから複数のリージョンに対して仮想マシンを作成する
 
 [このサンプル](https://github.com/Azure-Samples/compute-java-create-virtual-machines-across-regions-in-parallel)では、[Azure Management Libraries for Java](https://github.com/Azure/azure-sdk-for-java) を使って複数の Azure リージョンに対して同時に仮想マシンを作成します。
 
 > [!IMPORTANT]
-> 4 つのリージョンに対し、[STANDARD_DS3_V2 サイズ](http://docs.microsoft.com/azure/virtual-machines/virtual-machines-windows-sizes)の Ubuntu 16.04 LTS を実行する合計 48 の VM を作成します。 これらの仮想マシンは、終了前にサンプル コードによって削除されます。 このサンプルを既定の VM 数で実行する前に必ず、[サービスの制限とクォータをチェック](http://docs.microsoft.com/azure/azure-subscription-service-limits)してください。
+> 4 つのリージョンに対し、[STANDARD_DS3_V2 サイズ](/azure/virtual-machines/virtual-machines-windows-sizes)の Ubuntu 16.04 LTS を実行する合計 48 の VM を作成します。 これらの仮想マシンは、終了前にサンプル コードによって削除されます。 このサンプルを既定の VM 数で実行する前に必ず、[サービスの制限とクォータをチェック](/azure/azure-subscription-service-limits)してください。
 
 ## <a name="run-the-sample"></a>サンプルを実行する
 

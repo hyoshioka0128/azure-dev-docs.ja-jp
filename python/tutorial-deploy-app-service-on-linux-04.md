@@ -1,20 +1,15 @@
 ---
 title: チュートリアル:Azure App Service on Linux の Python アプリ用のカスタム スタートアップ ファイルを構成する
 description: チュートリアルの手順 4、Web アプリの起動方法を App Service に指定する。
-services: app-service
-author: kraigb
-manager: barbkess
-ms.service: app-service
 ms.topic: conceptual
 ms.date: 09/12/2019
-ms.author: kraigb
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 7c3c863ed333528c675cda939f52b86f53bc8380
-ms.sourcegitcommit: 6012460ad8d6ff112226b8f9ea6da397ef77712d
+ms.openlocfilehash: e18d58a5caf18103063fabfa3101988399bbb722
+ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72278945"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74467053"
 ---
 # <a name="tutorial-configure-a-custom-startup-file-for-python-apps-on-azure-app-service"></a>チュートリアル:Azure App Service の Python アプリ用のカスタム スタートアップ ファイルを構成する
 

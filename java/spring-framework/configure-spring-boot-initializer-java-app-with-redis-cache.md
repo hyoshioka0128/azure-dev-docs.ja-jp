@@ -3,23 +3,16 @@ title: Azure Redis Cache を使用するように Spring Boot Initializer アプ
 description: Spring Initializer で作成された Spring Boot アプリケーションを、Azure Redis Cache によってクラウドで Redis を使用するように構成します。
 services: redis-cache
 documentationcenter: java
-author: bmitchell287
-manager: douge
-editor: ''
-ms.assetid: ''
-ms.author: brendm
 ms.date: 12/19/2018
-ms.devlang: java
 ms.service: cache
 ms.tgt_pltfrm: cache-redis
 ms.topic: article
-ms.workload: na
-ms.openlocfilehash: 2f707c429d476382b72ab4e5355bcf86529c90ad
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.openlocfilehash: 06fbeb24ca237124210a2ffe0e37755645a446dd
+ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68283733"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74812185"
 ---
 # <a name="configure-a-spring-boot-initializer-app-to-use-redis-in-the-cloud-with-azure-redis-cache"></a>Azure Redis Cache によってクラウドで Redis を使用するように Spring Boot Initializer アプリを構成する
 
@@ -35,7 +28,7 @@ ms.locfileid: "68283733"
 
 ## <a name="create-a-custom-application-using-the-spring-initializr"></a>Spring Initializr を使用してカスタム アプリケーションを作成する
 
-1. <https://start.spring.io/> を参照します。
+1. [https://www.microsoft.com](<https://start.spring.io/>) を参照します。
 
 1. **Java** で **Maven** プロジェクトを生成することを指定し、アプリケーションの **[Group]\(グループ\)** と **[Aritifact]\(アーティファクト\)** に名前を入力して、Spring Initializr の **[Switch to the full version]\(完全バージョンへの切り替え\)** のリンクをクリックします。
 

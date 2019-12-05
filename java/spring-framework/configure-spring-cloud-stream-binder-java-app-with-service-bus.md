@@ -3,17 +3,15 @@ title: Azure Service Bus 用の Spring Cloud Azure Stream Binder を使用する
 description: この記事では、Spring Cloud Stream Binder を使用して Azure Service Bus との間でメッセージを送受信する方法について説明します。
 author: seanli1988
 manager: kyliel
-ms.author: Sean.Li
+ms.author: seal
 ms.date: 08/21/2019
-ms.devlang: java
-ms.service: azure-java
 ms.topic: article
-ms.openlocfilehash: 48bb5ee53c88910528ad2ed7f06c626e0a431275
-ms.sourcegitcommit: f519a1ee8017850b2fa37049af3bac1ea5ca5516
+ms.openlocfilehash: 2d888d225a8bcf5c957da11e18ea86d09ec8e897
+ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69892386"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74812055"
 ---
 # <a name="how-to-use-spring-cloud-azure-stream-binder-for-azure-service-bus"></a>Azure Service Bus 用の Spring Cloud Azure Stream Binder を使用する方法
 
@@ -268,7 +266,7 @@ Azure には、[Azure Service Bus](https://docs.microsoft.com/azure/service-bus-
 
 ## <a name="clean-up-resources"></a>リソースのクリーンアップ
 
-予想外の課金を防ぐために、この記事で作成したリソースが不要になったら、[Azure portal](http://ms.portal.azure.com/) を使用して削除してください。
+予想外の課金を防ぐために、この記事で作成したリソースが不要になったら、[Azure portal](https://portal.azure.com/) を使用して削除してください。
 
 ## <a name="next-steps"></a>次の手順
 

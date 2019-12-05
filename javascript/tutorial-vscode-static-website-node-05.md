@@ -1,19 +1,15 @@
 ---
 title: Visual Studio Code から静的 Node.js Web サイトに変更をデプロイする
 description: チュートリアル パート 5、変更を加えて再デプロイする
-services: app-service
-author: kraigb
-manager: barbkess
-ms.service: app-service
 ms.topic: conceptual
 ms.date: 09/24/2019
 ms.author: buhollan
-ms.openlocfilehash: 73d27549e5ff1acb294f8e65fa610d0b46f56914
-ms.sourcegitcommit: 2757d8bd0cc045b7d02f430d44de859f9de853f4
+ms.openlocfilehash: 0db773cdea2e288dc461479c3753b94c9a286e82
+ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72587271"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74466645"
 ---
 # <a name="make-changes-and-redeploy"></a>変更を加えて再デプロイする
 

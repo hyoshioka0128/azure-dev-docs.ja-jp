@@ -1,20 +1,15 @@
 ---
 title: チュートリアル:Visual Studio Code を使用して Azure Functions 用に Python 関数を作成する
 description: チュートリアルの手順 2、VS Code 用の Azure Functions 拡張機能の使用方法を紹介する。
-services: functions
-author: kraigb
-manager: barbkess
-ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 09/02/2019
-ms.author: kraigb
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 4c4fab3227194884e1b9a77439efbe87099a6812
-ms.sourcegitcommit: 54d34557bb83f52a215bf9020263cb9f9782b41d
+ms.openlocfilehash: 5ccb93abf37011de5075768b73ed330fd91461ea
+ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74118092"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74466029"
 ---
 # <a name="tutorial-create-a-python-function-for-azure-functions"></a>チュートリアル:Azure Functions 用に Python 関数を作成する
 

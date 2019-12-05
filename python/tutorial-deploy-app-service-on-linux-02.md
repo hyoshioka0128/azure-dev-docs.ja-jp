@@ -1,20 +1,15 @@
 ---
 title: チュートリアル:Visual Studio Code から Azure App Service on Linux にデプロイするアプリを準備する
 description: チュートリアルの手順 2、アプリケーションの設定
-services: app-service
-author: kraigb
-manager: barbkess
-ms.service: app-service
 ms.topic: conceptual
 ms.date: 09/12/2019
-ms.author: kraigb
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 96e3a653567d146e1ce10fe0ae7950d35b9ed9e3
-ms.sourcegitcommit: 6012460ad8d6ff112226b8f9ea6da397ef77712d
+ms.openlocfilehash: e504e78ae660719c60827db46d4801f5f5c4b3ce
+ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72279076"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74466215"
 ---
 # <a name="tutorial-prepare-your-app-for-deployment-to-azure-app-service"></a>チュートリアル:Azure App Service にデプロイするためにアプリを準備する
 

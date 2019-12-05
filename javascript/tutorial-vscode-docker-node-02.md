@@ -1,27 +1,22 @@
 ---
 title: Visual Studio Code からコンテナー レジストリを使用する
 description: チュートリアル パート2、コンテナー レジストリを使用する
-services: app-service
-author: kraigb
-manager: barbkess
-ms.service: app-service
 ms.topic: conceptual
 ms.date: 09/20/2019
-ms.author: kraigb
-ms.openlocfilehash: 790267333cadc1208b6a750e487f0e459e87185d
-ms.sourcegitcommit: c04984b6367e922dbc5973af44f8cd0ca81ce157
+ms.openlocfilehash: 7d51e8011824ec19e9530f9bc94bcb2ce07f2851
+ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71686247"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74466631"
 ---
 # <a name="use-a-container-registry"></a>コンテナー レジストリを使用する
 
-[前の手順: 概要と前提条件](tutorial-vscode-docker-node-01.md)
+[前の手順:概要と前提条件](tutorial-vscode-docker-node-01.md)
 
 この手順では、お使いのアプリ イメージに適したコンテナー レジストリを設定します。 その後、コンテナー対応のホスティング サービス (Azure App Service など) により、レジストリからイメージがプルされます。
 
-このチュートリアルでは、イメージに対して [Azure Container Registry](https://azure.microsoft.com/en-us/services/container-registry/) (ACR) を使用します。これは、セキュリティで保護されたプライベートなホスト型レジストリです。 ただし、ここで示されているツールとプロセスは、[Docker Hub](https://hub.docker.com/) などの他のレジストリでも機能します。
+このチュートリアルでは、イメージに対して [Azure Container Registry](https://azure.microsoft.com/services/container-registry/) (ACR) を使用します。これは、セキュリティで保護されたプライベートなホスト型レジストリです。 ただし、ここで示されているツールとプロセスは、[Docker Hub](https://hub.docker.com/) などの他のレジストリでも機能します。
 
 ## <a name="create-an-azure-container-registry"></a>Azure Container Registry を作成する
 

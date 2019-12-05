@@ -1,20 +1,15 @@
 ---
 title: チュートリアル:Visual Studio Code を使用して Python で Azure Functions をデプロイする
 description: チュートリアルの手順 5、Python の関数コードを Azure にデプロイし、ローカル プロジェクトと Azure の間でのログのストリーム配信や設定の同期の方法を学習する。
-services: functions
-author: kraigb
-manager: barbkess
-ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 09/02/2019
-ms.author: kraigb
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 9acf6e4c0ecc5357580957e2ea9295cd89f441f0
-ms.sourcegitcommit: 6012460ad8d6ff112226b8f9ea6da397ef77712d
+ms.openlocfilehash: 0c917ac707c33963187fc1a3000be9e52b21deeb
+ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72278557"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74467007"
 ---
 # <a name="tutorial-deploy-azure-functions-in-python"></a>チュートリアル:Python で Azure Functions をデプロイする
 

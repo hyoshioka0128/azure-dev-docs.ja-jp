@@ -2,24 +2,18 @@
 title: Azure Database for MySQL で Spring Data JPA を使用する方法
 description: Azure Database for MySQL で Spring Data JPA を構成して使用する方法について説明します。
 documentationcenter: java
-author: bmitchell287
-manager: douge
-ms.author: brendm
-ms.date: 12/19/2018
-ms.devlang: java
+ms.date: 11/27/2019
 ms.service: mysql
 ms.tgt_pltfrm: multiple
 ms.topic: conceptual
-ms.openlocfilehash: 842dc7785f8c7c84d6e9ba464c96d65db75dc9fd
-ms.sourcegitcommit: 2610f3992cb6d21a3657032074acb981d130fdad
+ms.openlocfilehash: 83883ffd06353854a3c69c9abdc946a035dda6b1
+ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71960780"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74811964"
 ---
 # <a name="how-to-use-spring-data-jpa-with-azure-database-for-mysql"></a>Azure Database for MySQL で Spring Data JPA を使用する方法
-
-## <a name="overview"></a>概要
 
 この記事では、[Spring Data] を使用して、[Java Persistence API (JPA)](https://docs.oracle.com/javaee/7/tutorial/persistence-intro.htm) を使って [Azure Database for MySQL](/azure/mysql/) データベース内の情報を格納および取得するサンプル アプリケーションを作成する方法を説明します。
 
@@ -50,27 +44,24 @@ ms.locfileid: "71960780"
 
 1. 次の情報を入力します。
 
-   - **サーバー名**: Azure Database for MySQL サーバー用に一意の名前を選択します。この名前は、*wingtiptoysmysql.mysql.database.azure.com* のような完全修飾ドメイン名の作成に使用されます。
    - **サブスクリプション**:使用する Azure サブスクリプションを指定します。
    - **[リソース グループ]** :新しいリソース グループを作成するのか、既存のリソース グループを選択するのかを指定します。
+   - **サーバー名**: MySQL サーバー用に一意の名前を選択します。この名前は、*wingtiptoysmysql.mysql.database.azure.com* のような完全修飾ドメイン名の作成に使用されます。
    - **ソースの選択**:このチュートリアルでは、`Blank` を選択して新しいデータベースを作成します。
    - **サーバー管理者ログイン**:データベース管理者名を指定します。
    - **[パスワード]** と **[パスワードの確認]** :データベース管理者のパスワードを指定します。
    - **[場所]** :データベースに最も近い地理的リージョンを指定します。
    - **バージョン**:最新のデータベース バージョンを指定します。
-   - **価格レベル**:このチュートリアルでは、最も安い価格レベルを指定します。
 
    ![MySQL データベースのプロパティを作成する][MYSQL02]
 
-1. 上記の情報をすべて入力したら、 **[作成]** をクリックします。
+1. 上記の情報をすべて入力したら、 **[レビュー + 作成]** をクリックします。
 
 ### <a name="configure-a-firewall-rule-for-your-server-using-the-azure-portal"></a>Azure portal を使用してサーバーのファイアウォール規則を構成する
 
 1. Azure portal (<https://portal.azure.com/>) を参照し、サインインします。
 
 1. **[すべてのリソース]** をクリックし、先ほど作成した MySQL データベースをクリックします。
-
-   ![MySQL データベースを選択する][MYSQL03]
 
 1. **[接続のセキュリティ]** をクリックし、 **[ファイアウォール規則]** で、規則の一意の名前を指定して新しい規則を作成し、データベースへのアクセス権を必要とする IP アドレスの範囲を入力して、 **[保存]** をクリックします。
 
@@ -81,8 +72,6 @@ ms.locfileid: "71960780"
 1. Azure portal (<https://portal.azure.com/>) を参照し、サインインします。
 
 1. **[すべてのリソース]** をクリックし、先ほど作成した Azure Database for MySQL リソースをクリックします。
-
-   ![MySQL データベースを選択する][MYSQL03]
 
 1. **[接続文字列]** をクリックし、 **[JDBC]** テキスト フィールド内の値をコピーします。
 
@@ -257,6 +246,5 @@ Java での Azure の使用の詳細については、「[Java 開発者向け�
 
 [MYSQL01]: media/configure-spring-data-jpa-with-azure-mysql/create-mysql-01.png
 [MYSQL02]: media/configure-spring-data-jpa-with-azure-mysql/create-mysql-02.png
-[MYSQL03]: media/configure-spring-data-jpa-with-azure-mysql/create-mysql-03.png
 [MYSQL04]: media/configure-spring-data-jpa-with-azure-mysql/create-mysql-04.png
 [MYSQL05]: media/configure-spring-data-jpa-with-azure-mysql/create-mysql-05.png

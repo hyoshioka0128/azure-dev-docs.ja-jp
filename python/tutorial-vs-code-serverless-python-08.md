@@ -1,20 +1,15 @@
 ---
 title: チュートリアル:Azure リソースをクリーンアップする - Python の Azure Functions
 description: チュートリアルの手順 8、引き続き料金を請求されないように Azure リソースをクリーンアップする。
-services: functions
-author: kraigb
-manager: barbkess
-ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 09/12/2019
-ms.author: kraigb
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 8c3110b14d70c787f81a18aa5d0b5bb3bde41ec1
-ms.sourcegitcommit: 6012460ad8d6ff112226b8f9ea6da397ef77712d
+ms.openlocfilehash: ddc2ab44d3d8865c89cb6cdf8368461b6e4f666a
+ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72278435"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74465947"
 ---
 # <a name="tutorial-clean-up-azure-resources-for-azure-functions"></a>チュートリアル:Azure Functions の Azure リソースをクリーンアップする
 

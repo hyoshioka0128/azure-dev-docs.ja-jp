@@ -3,22 +3,16 @@ title: Azure PostgreSQL で Spring Data JDBC を使用する方法
 description: Azure PostgreSQL データベースで Spring Data JDBC を使用する方法を説明します。
 services: postgresql
 documentationcenter: java
-author: bmitchell287
-manager: douge
-editor: ''
-ms.assetid: ''
-ms.author: brendm
 ms.date: 12/19/2018
-ms.devlang: java
 ms.service: postgresql
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: edbdb909e6ea5d55421a1734856d97844bd301f1
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.openlocfilehash: d7f4ddeab5c46f6070145e5aab0b273156ed38a0
+ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68282303"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74811994"
 ---
 # <a name="how-to-use-spring-data-jdbc-with-azure-postgresql"></a>Azure PostgreSQL で Spring Data JDBC を使用する方法
 
@@ -39,7 +33,7 @@ ms.locfileid: "68282303"
 
 ## <a name="create-a-postgresql-database-for-azure"></a>Azure 用に PostgreSQL データベースを作成する
 
-### <a name="create-a-postgresql-database-server-using-the-azure-portal"></a>Azure Portal を使用して PostgreSQL データベース サーバーを作成する
+### <a name="create-a-postgresql-database-server-using-the-azure-portal"></a>Azure portal を使用して PostgreSQL データベース サーバーを作成する
 
 > [!NOTE]
 > 
@@ -67,7 +61,7 @@ ms.locfileid: "68282303"
 
 1. 上記の情報をすべて入力したら、 **[作成]** をクリックします。
 
-### <a name="configure-a-firewall-rule-for-your-postgresql-database-server-using-the-azure-portal"></a>Azure Portal を使用して PostgreSQL データベース サーバーのファイアウォール規則を構成する
+### <a name="configure-a-firewall-rule-for-your-postgresql-database-server-using-the-azure-portal"></a>Azure portal を使用して PostgreSQL データベース サーバーのファイアウォール規則を構成する
 
 1. Azure portal (<https://portal.azure.com/>) を参照し、サインインします。
 
@@ -79,7 +73,7 @@ ms.locfileid: "68282303"
 
    ![接続のセキュリティを構成する][POSTGRESQL04]
 
-### <a name="retrieve-the-connection-string-for-your-postgresql-server-using-the-azure-portal"></a>Azure Portal を使用して PostgreSQL サーバーの接続文字列を取得する
+### <a name="retrieve-the-connection-string-for-your-postgresql-server-using-the-azure-portal"></a>Azure portal を使用して PostgreSQL サーバーの接続文字列を取得する
 
 1. Azure portal (<https://portal.azure.com/>) を参照し、サインインします。
 

@@ -2,20 +2,16 @@
 title: Java 開発者のための Azure ツール
 description: Azure を使用する Java 開発者のための IDE 統合、エミュレーター、リソース エクスプローラー、コマンド ライン インターフェイスについて取り上げます。
 author: rloutlaw
-manager: douge
 ms.assetid: b55923b7-d60a-460d-b77c-af5fac67f1cc
-ms.devlang: java
 ms.topic: article
-ms.service: azure
 ms.date: 11/13/2018
-ms.author: brendm
 ms.custom: seo-java-july2019
-ms.openlocfilehash: 88e587bf28c33c0499667aae89b6b44cd0fa919e
-ms.sourcegitcommit: f799dd4590dc5a5e646d7d50c9604a9975dadeb1
+ms.openlocfilehash: f03d67a545b79b83b5e065f1fa53c89a9481ca0d
+ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68691966"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74812465"
 ---
 # <a name="azure-tools-for-java-developers"></a>Java 開発者のための Azure ツール
 

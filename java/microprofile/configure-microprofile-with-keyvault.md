@@ -4,22 +4,18 @@ description: Azure Key Vault を使用してシークレットを MicroProfile W
 services: key-vault
 documentationcenter: java
 author: jonathangiles
-manager: douge
-editor: jonathangiles
-ms.assetid: ''
 ms.author: jogiles
 ms.date: 09/07/2018
-ms.devlang: java
 ms.service: key-vault
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
-ms.openlocfilehash: d61c1a30b83dc40c0b34e2f706fad8b578872453
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.openlocfilehash: 7c09b47ccdc65ab4d6aa0ab0443fd64ef273a205
+ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68283943"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74812214"
 ---
 # <a name="configure-microprofile-with-azure-key-vault"></a>Azure Key Vault を使用した MicroProfile の構成
 

@@ -3,23 +3,17 @@ title: IntelliJ 用のレガシ ツールキットを使用して Azure 用の H
 description: このチュートリアルでは、Azure Toolkit for IntelliJ バージョン 3.0.6 以前を使用して、Azure 用の Hello World Web アプリを作成する方法について説明します。
 services: app-service
 documentationcenter: java
-author: bmitchell287
-manager: douge
-editor: ''
-ms.assetid: ''
-ms.author: brendm
 ms.date: 11/13/2018
-ms.devlang: java
 ms.service: app-service
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
-ms.openlocfilehash: 3be6f9ffe08229343a948b4ddef0040b1e99dfca
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.openlocfilehash: 423379239c823bdeba9947719a43d9f446bbd2f3
+ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68281033"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74811186"
 ---
 # <a name="create-a-hello-world-web-app-for-azure-using-the-legacy-toolkit-for-intellij"></a>IntelliJ 用のレガシ ツールキットを使用して Azure 用の Hello World Web アプリを作成する
 

@@ -1,24 +1,20 @@
 ---
 title: Azure Monitor
 description: Azure Monitor からのメトリック レポートを調査および構成します。
-author: sptramer
-manager: carmonm
-ms.devlang: python
 ms.topic: conceptual
 ms.date: 6/15/2017
-ms.author: sttramer
-ms.openlocfilehash: ef46e316979c5a86e94c840ec52206400da7500c
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.openlocfilehash: 6b92cd130988773107a51ce4055ea196801fb4a8
+ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68285473"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74466293"
 ---
 # <a name="azure-monitor"></a>Azure Monitor
 
 このサンプルは、Azure 上のリソース (VM など) のメトリックを取得します。
 
-フィルターに使用可能なキーワードの完全な一覧については、[こちら](https://msdn.microsoft.com/en-us/library/azure/mt743622.aspx)を参照してください。
+フィルターに使用可能なキーワードの完全な一覧については、[こちら](https://msdn.microsoft.com/library/azure/mt743622.aspx)を参照してください。
 
 ```python
 import datetime

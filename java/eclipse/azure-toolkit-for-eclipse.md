@@ -1,25 +1,18 @@
 ---
 title: Azure Toolkit for Eclipse
 description: Azure Toolkit for Eclipse プラグインが、クラウド アプリケーションの作成と Azure へのデプロイにどのように役立つかを説明します。
-services: ''
 documentationcenter: java
-author: bmitchell287
-manager: douge
-editor: ''
 ms.assetid: ef2f3839-2549-4471-9b53-0deb7f4c128b
-ms.author: brendm
 ms.date: 12/12/2018
-ms.devlang: Java
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.workload: na
-ms.openlocfilehash: 0ce707247f8518073420ea5b1b35ec8ba429ac90
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.openlocfilehash: 8d932fe50bf52998550f980b7a2a07774c2887d9
+ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68430146"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74811771"
 ---
 # <a name="azure-toolkit-for-eclipse"></a>Azure Toolkit for Eclipse
 
@@ -62,13 +55,13 @@ Azure Toolkit for Eclipse は、Eclipse IDE の内部からクラウド アプ�
 > 
 
 <!-- [Deploying large deployments](azure-toolkit-for-eclipse-deploying-large-deployments.md) -->
-<!-- [How to Maintain Session Data with Session Affinity]: http://go.microsoft.com/fwlink/?LinkID=699539 -->
-<!-- [How to Use Co-located Caching]: http://go.microsoft.com/fwlink/?LinkID=699542 -->
-<!-- [How to Use Dedicated Caching]: http://go.microsoft.com/fwlink/?LinkID=699543 -->
-<!-- [How to Use JMS with AMQP 1.0 in Azure with Eclipse]: http://go.microsoft.com/fwlink/?LinkID=699544 -->
-<!-- [How to Use SSL Offloading]: http://go.microsoft.com/fwlink/?LinkID=699545 -->
-<!-- [SSL Offloading]: http://go.microsoft.com/fwlink/?LinkID=699549 -->
-<!-- [Using the Azure Service Runtime Library in JSP]: http://go.microsoft.com/fwlink/?LinkID=699551 -->
+<!-- [How to Maintain Session Data with Session Affinity]: https://go.microsoft.com/fwlink/?LinkID=699539 -->
+<!-- [How to Use Co-located Caching]: https://go.microsoft.com/fwlink/?LinkID=699542 -->
+<!-- [How to Use Dedicated Caching]: https://go.microsoft.com/fwlink/?LinkID=699543 -->
+<!-- [How to Use JMS with AMQP 1.0 in Azure with Eclipse]: https://go.microsoft.com/fwlink/?LinkID=699544 -->
+<!-- [How to Use SSL Offloading]: https://go.microsoft.com/fwlink/?LinkID=699545 -->
+<!-- [SSL Offloading]: https://go.microsoft.com/fwlink/?LinkID=699549 -->
+<!-- [Using the Azure Service Runtime Library in JSP]: https://go.microsoft.com/fwlink/?LinkID=699551 -->
 <!-- [How to Authenticate Web Users with Azure Access Control Service Using Eclipse]: /azure/active-directory/active-directory-java-authenticate-users-access-control-eclipse.md -->
 <!-- [Debug a Java Web App on Azure in Eclipse]: /azure/app-service-web/app-service-web-debug-java-web-app-in-eclipse.md -->
 <!-- [Debugging Azure Applications in Eclipse]: azure-toolkit-for-eclipse-debugging-azure-applications.md -->

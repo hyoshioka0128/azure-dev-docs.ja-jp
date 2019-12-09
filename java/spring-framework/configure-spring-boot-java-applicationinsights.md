@@ -56,7 +56,7 @@ ms.locfileid: "74812152"
 
 1. <https://portal.azure.com/> で Azure にアクセスし、 **[+ 新しいリソースを作成する]** をクリックします。
 
-1. **[IT と管理ツール]** をクリックし、 **[Application Insights]** をクリックします。
+1. **[IT と管理ツール]** をクリックし、**Application Insights** をクリックします。
 
 1. **[Application Insights の新しいリソース]** ページで、以下の情報を指定します。
 

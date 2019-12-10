@@ -1,25 +1,22 @@
 ---
-title: Java ベースの MicroProfile サービスを Azure Web App for Containers にデプロイする
+title: Java MicroProfile サービスのデプロイ
+titleSuffix: Azure Web App for Containers
 description: Docker および Azure Web App for Containers を使用して MicroProfile サービスをデプロイする方法について説明します
 services: container-registry;app-service
 documentationcenter: java
 author: jonathangiles
-manager: douge
-editor: jonathangiles
-ms.assetid: ''
 ms.author: jogiles
 ms.date: 09/07/2018
-ms.devlang: java
-ms.service: container-registry;app-service
+ms.service: app-service
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
-ms.openlocfilehash: 4ef47693094489baae85bc7622289d9943acb62b
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.openlocfilehash: 6deaced31e9cbe6ebd1ef1eb20bd0414ab5df471
+ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68284023"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74812188"
 ---
 # <a name="deploy-a-java-based-microprofile-service-to-azure-web-app-for-containers"></a>Java ベースの MicroProfile サービスを Azure Web App for Containers にデプロイする
 
@@ -37,9 +34,9 @@ Docker のしくみにより、多くの場合、アプリケーションのソ�
 
 ## <a name="creating-an-azure-container-registry"></a>Azure コンテナー レジストリの作成
 
-Azure コンテナー レジストリの作成には [Azure portal](http://portal.azure.com) を使用しますが、Azure CLI などの代替手段があることに注意してください。 新しい Azure コンテナー レジストリを作成するには、次の手順に従ってください。
+Azure Container Registry の作成には [Azure portal](https://portal.azure.com) を使用しますが、Azure CLI などの代替手段もあります。 新しい Azure コンテナー レジストリを作成するには、次の手順に従ってください。
 
-1. [Azure portal](http://portal.azure.com) にログインし、新しい Azure コンテナー レジストリ リソースを作成します。 レジストリの名前を指定します (これは `pom.xml` で `docker.registry` プロパティとして設定されている名前です)。 必要に応じて既定値を変更し、[作成] をクリックします。
+1. [Azure portal](https://portal.azure.com) にログインし、新しい Azure Container Registry リソースを作成します。 レジストリの名前を指定します (これは `pom.xml` で `docker.registry` プロパティとして設定されている名前です)。 必要に応じて既定値を変更し、[作成] をクリックします。
 
 1. コンテナー レジストリがライブになったら ([作成] をクリックしてから約 30 秒かかります)、コンテナー レジストリをクリックし、左側のメニュー領域にある [アクセス キー] リンクをクリックします。 ここで、"管理者ユーザー" 設定を有効にする必要があります。これにより、お使いのマシンから (Docker コンテナーをプッシュするために) このコンテナー レジストリにアクセスできるようになります。また、この後に設定する Azure Web App for Containers インスタンスからのアクセスも有効にします。
 
@@ -143,7 +140,7 @@ MicroProfile アプリケーションが正常にビルドされ、ローカル 
 
 ## <a name="creating-an-azure-web-app-for-containers-instance"></a>Web App for Containers インスタンスの作成
 
-1. [Azure portal](http://portal.azure.com) に戻り、(メニューの [Web + モバイル] 見出しの下で) 新しい Web App for Containers インスタンスを作成します。 ポイントがいくつかあります。
+1. [Azure portal](https://portal.azure.com) に戻り、(メニューの [Web + モバイル] 見出しの下で) 新しい Web App for Containers インスタンスを作成します。 ポイントがいくつかあります。
 
    1. ここで指定する名前は Web アプリのパブリック URL になります (ただし、必要に応じて、後でカスタム ドメインを追加できます)。このため、覚えやすい名前を選択することをお勧めします。
 

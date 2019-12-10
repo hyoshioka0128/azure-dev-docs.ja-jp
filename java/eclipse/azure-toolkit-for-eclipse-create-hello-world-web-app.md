@@ -5,23 +5,19 @@ services: app-service
 keywords: java, eclipse, web アプリ, azure app service, hello world, クイック スタート
 documentationcenter: java
 author: selvasingh
-manager: douge
-editor: ''
 ms.assetid: 20d41e88-9eab-462e-8ee3-89da71e7a33f
-ms.author: brendm
 ms.reviewer: asirveda
 ms.date: 02/01/2018
-ms.devlang: java
 ms.service: app-service
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
-ms.openlocfilehash: 3d673abe4f4efd7330307999c7a945cd5cb37179
-ms.sourcegitcommit: 3d42245ecbfaeda31abba5f3f813b28f715ffd7c
+ms.openlocfilehash: ae3d983a0b3e64489fa89d0e6a845310878b204c
+ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68691735"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74811437"
 ---
 # <a name="create-a-hello-world-web-app-for-azure-app-service-using-eclipse"></a>Eclipse を使用して Azure App Service 用の Hello World Web アプリを作成する
 
@@ -42,7 +38,7 @@ ms.locfileid: "68691735"
 
 1. 次のボタンを実行中の Eclipse ワークスペースにドラッグして、Azure Toolkit for Eclipse プラグインをインストールします ([他のインストール オプション](azure-toolkit-for-eclipse-installation.md))。
 
-    [![実行中の Eclipse* ワークスペースにドラッグします。*Eclipse Marketplace Client が必要](https://marketplace.eclipse.org/sites/all/themes/solstice/public/images/marketplace/btn-install.png)](http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1919278 "実行中の Eclipse* ワークスペースにドラッグします。*Eclipse Marketplace Client が必要")
+    [![実行している Eclipse* ワークスペースにドラッグします。*Eclipse Marketplace Client が必要です](https://marketplace.eclipse.org/sites/all/themes/solstice/public/images/marketplace/btn-install.png)](http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1919278 "実行している Eclipse* ワークスペースにドラッグします。*Eclipse Marketplace Client が必要です")
 
 1. Azure アカウントにサインインするには、 **[ツール]** 、 **[Azure]** 、 **[サインイン]** の順にクリックします。
    ![Azure サインイン用の Eclipse メニュー][I01]

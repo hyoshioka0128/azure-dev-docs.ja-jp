@@ -1,23 +1,20 @@
 ---
 title: Azure App Service を Visual Studio Code にデプロイした後にリソースをクリーンアップする
 description: チュートリアル パート 5、リソースをクリーンアップする
-services: app-service
 author: kraigb
 manager: barbkess
-ms.service: app-service
 ms.topic: conceptual
 ms.date: 09/20/2019
-ms.author: kraigb
-ms.openlocfilehash: 02f6525610620a45a6ecdd91a9e43fdaf550bada
-ms.sourcegitcommit: c04984b6367e922dbc5973af44f8cd0ca81ce157
+ms.openlocfilehash: d7ce42ab0807a9331d8c3021ff0d3007381f3bc1
+ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71686233"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74467197"
 ---
 # <a name="clean-up-resources"></a>リソースのクリーンアップ
 
-[前の手順: ログをストリーミングする](tutorial-vscode-azure-app-service-node-04.md)
+[前の手順:ログのストリーミング](tutorial-vscode-azure-app-service-node-04.md)
 
 作成した App Service には、バッキング App Service プランが含まれていて料金が発生する可能性があります。 リソースをクリーンアップするには、 **[Azure: App Service]** エクスプローラーで [App Service] を右クリックし、 **[削除]** を選択します。
 

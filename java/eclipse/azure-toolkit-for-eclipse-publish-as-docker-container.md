@@ -1,25 +1,18 @@
 ---
-title: Azure Toolkit for Eclipse を使用して Docker コンテナーを発行する
+title: Web アプリを Docker コンテナーとして発行する
+titleSuffix: Azure Toolkit for Eclipse
 description: Azure Toolkit for Eclipse を使用して、Web アプリを Docker コンテナーとして Microsoft Azure に発行する方法について説明します。
-services: ''
 documentationcenter: java
-author: bmitchell287
-manager: douge
-editor: ''
-ms.assetid: ''
-ms.author: brendm
 ms.date: 02/01/2018
-ms.devlang: Java
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.workload: na
-ms.openlocfilehash: f7029e7e1f9442b3707c4e8afd4358ec6e334c6d
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.openlocfilehash: 2d81c2a23a58c2dfdb036988b8831efe0c821392
+ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68430302"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74811804"
 ---
 # <a name="publish-a-web-app-as-a-docker-container-by-using-the-azure-toolkit-for-eclipse"></a>Azure Toolkit for Eclipse を使用して Web アプリを Docker コンテナーとして発行する
 
@@ -64,7 +57,7 @@ Docker コンテナーは、Web アプリケーションをデプロイするた
 
 4. **[Configure the new virtual machine] \(新しい仮想マシンの構成)** ウィンドウで、Docker ホストの次のオプションを指定します。 (このウィザードではほとんどのオプションが自動的に生成されますが、いずれのオプションも変更できます)。
 
-   a. **[名前]** :Docker ホストの一意の名前を入力します。 (これは前に指定した Docker イメージの名前と同じではありません)。
+   a. **Name**:Docker ホストの一意の名前を入力します。 (これは前に指定した Docker イメージの名前と同じではありません)。
 
    b. **サブスクリプション**:ホストに使用する Azure サブスクリプションを入力します。
 
@@ -103,7 +96,7 @@ Docker コンテナーは、Web アプリケーションをデプロイするた
        * **[ユーザー名]** : 仮想マシン ログイン資格情報のユーザー名を入力します。 
        * **[パスワード]** と **[確認]** : 仮想マシン ログイン資格情報のパスワードを入力します。 
        * **SSH**:Docker ホストの Secure Shell (SSH) 設定を入力します。 次のオプションから選択できます。 
-          * **なし**:仮想マシンが SSH 接続を許可しないことを指定します。 
+          * **なし**: 仮想マシンが SSH 接続を許可しないことを指定します。 
           * **[自動生成]** : SSH 経由で接続するために必要な設定を自動的に作成します。 
           * **[Import from directory]\(ディレクトリからインポート\)** : 以前に保存された一連の SSH 設定を含むディレクトリを指定します。 このディレクトリには、次の 2 つのファイルが含まれている必要があります。 
              * *[id_rsa]* : ユーザーの RSA ID が含まれます。 
@@ -115,7 +108,7 @@ Docker コンテナーは、Web アプリケーションをデプロイするた
 
        * **[Docker デーモン ポート]** : Docker ホストの固有の TCP ポートを入力します。 
        * **[TLS セキュリティ]** : Docker ホストのトランスポート層セキュリティ設定を入力します。 次のオプションから選択できます。 
-          * **なし**:仮想マシンが TLS 接続を許可しないことを指定します。 
+          * **なし**: 仮想マシンが TLS 接続を許可しないことを指定します。 
           * **[自動生成]** : TLS 経由で接続するために必要な設定を自動的に作成します。 
           * **[Import from directory]\(ディレクトリからインポート\)** : 以前に保存された一連の TLS 設定を含むディレクトリを指定します。 具体的には、ディレクトリには次の 6 つのファイルが含まれている必要があります。 
              * *[ca.pem]* と *[ca-key.pem]* : TLS 証明機関の証明書と公開キーが含まれます。 

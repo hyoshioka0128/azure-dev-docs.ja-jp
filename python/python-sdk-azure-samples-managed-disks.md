@@ -1,22 +1,18 @@
 ---
 title: Managed Disks
 description: マネージド ディスクの作成、サイズ変更、更新を行います。
-author: sptramer
-manager: carmonm
-ms.devlang: python
 ms.topic: conceptual
 ms.date: 6/15/2017
-ms.author: sttramer
-ms.openlocfilehash: ab80a4aebd5f43d10f0cb6d939afbdf7ea9fb1b5
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.openlocfilehash: c65e07dc4a56ef0376785df4f55d3a9fc9f129ac
+ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68285723"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74467025"
 ---
 # <a name="managed-disks"></a>Managed Disks
 
-Azure Managed Disks は、ディスク管理の簡素化、スケーラビリティの強化、セキュリティとスケールの向上を実現します。 ディスクのストレージ アカウントの概念を取り払い、顧客がストレージ アカウントに関連する制限を気にすることなくスケーリングを行えるようにします。 この記事では、Python のサービスを利用する際の概要とリファレンスを簡単に紹介します。
+Azure Managed Disks により、ディスク管理の簡素化、スケーラビリティの強化、セキュリティの向上、スケールが提供されます。 ディスクのストレージ アカウントの概念を取り払い、顧客がストレージ アカウントに関連する制限を気にすることなくスケーリングを行えるようにします。 この記事では、Python のサービスを利用する際の概要とリファレンスを簡単に紹介します。
 
 開発者の視点から見ると、Azure CLI の Managed Disks エクスペリエンスは、他のクロスプラットフォーム ツールの CLI と比べて独特です。 [Azure Python](https://azure.microsoft.com/develop/python/) SDK と [azure-mgmt-compute package 0.33.0](https://pypi.python.org/pypi/azure-mgmt-compute) を使用して、Managed Disks を管理できます。 この[チュートリアル](https://docs.microsoft.com/python/api/overview/azure/virtualmachines?view=azure-python)を使用して、コンピューティング クライアントを作成できます。
 
@@ -124,7 +120,7 @@ storage_profile = azure.mgmt.compute.models.StorageProfile(
 )
 ```
 
-この ``storage_profile`` パラメーターは現在有効になっています。 Python で VM を作成する方法 (ネットワークなどを含む) の完全な例を取得するには、[Python の VM チュートリアル](https://github.com/Azure-Samples/virtual-machines-python-manage)のページを参照してください。
+この ``storage_profile`` パラメーターは現在有効になっています。 Python で VM を作成する方法 (ネットワークなどを含む) の完全な例を取得するには、[Python の VM チュートリアル](https://github.com/Azure-Samples/virtual-machines-python-manage)全体を確認してください。
 
 また、独自のイメージを使用して ``storage_profile`` を作成することもできます。
 
@@ -166,7 +162,7 @@ async_update.wait()
 
 管理ディスクを使用する前は、スケール セットに含めるすべての VM に対してストレージ アカウントを手動で作成し、その後、リスト パラメーター ``vhd_containers`` を使用してすべてのストレージ アカウント名をスケール セットの RestAPI に渡す必要がありました。 正式な移行ガイドについては、こちらの記事 (`<https://docs.microsoft.com/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-convert-template-to-md>`) を参照してください。
 
-管理ディスクを使用するようになって、ストレージ アカウントを管理する必要はなくなりました。 VMSS Python SDK を使い慣れている場合は、``storage_profile`` は VM の作成に使用したものとまったく同じと考えてください。
+管理ディスクを使用するようになって、ストレージ アカウントを管理する必要はなくなりました。 仮想マシン スケール セット Python SDK を使い慣れている場合、``storage_profile`` は VM の作成に使用したものとまったく同じになります。
 
 ```python
 'storage_profile': {

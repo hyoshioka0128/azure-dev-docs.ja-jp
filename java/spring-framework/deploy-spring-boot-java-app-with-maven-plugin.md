@@ -1,23 +1,18 @@
 ---
-title: Maven を使用して Spring Boot JAR ファイルのアプリを Azure にデプロイする
-description: Linux 用の Azure Web Apps の Maven プラグインを使って、Spring Boot アプリをクラウドにデプロイする方法について説明します。
+title: Spring Boot JAR ファイルの Web アプリを Azure App Service on Linux にデプロイする
+description: Azure Web アプリの Maven プラグインを使用して、Spring Boot アプリの Jar ファイルを App Service on Linux にデプロイする方法について説明します。
 services: app-service
 documentationcenter: java
-author: bmitchell287
-manager: douge
-editor: brborges
-ms.author: brendm
 ms.date: 12/19/2018
-ms.devlang: java
 ms.service: app-service
 ms.topic: article
 ms.custom: seo-java-july2019, seo-java-august2019, seo-java-september2019
-ms.openlocfilehash: 274287a6e29bd75721758805d508ebebfcc7586a
-ms.sourcegitcommit: 8be617e100ae3d3e90d56c672b1c7c110b7a588f
+ms.openlocfilehash: c97363fa84421a73d9493b41c66e2d2dc40250cc
+ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/18/2019
-ms.locfileid: "74160750"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74811867"
 ---
 # <a name="deploy-a-spring-boot-jar-file-app-to-azure-app-service-with-maven-and-azure-on-linux"></a>Spring Boot JAR ファイルのアプリを Maven を使用して Linux 上の Azure App Service にデプロイする
 
@@ -198,7 +193,7 @@ Azure CLI を使って、Azure アカウントにサインインします。
    mvn azure-webapp:deploy
    ```
 
-Maven によって、ご自身の Web アプリが Azure にデプロイされます。Web アプリまたは Web アプリ プランが存在しない場合は、Maven によって新たに作成されます。 出力に示されている URL に Web アプリが表示されるまで数分かかることがあります。 Web ブラウザーで URL にアクセスします。  "Greetings from Spring Boot!" というメッセージが表示されます。
+Maven によって、ご自身の Web アプリが Azure にデプロイされます。Web アプリまたは Web アプリ プランが存在しない場合は、Maven によって新たに作成されます。 出力に示されている URL に Web アプリが表示されるまで数分かかることがあります。 Web ブラウザーで URL にアクセスします。  次のメッセージが表示されます。Greetings from Spring Boot!
 
 Web アプリのデプロイが完了すると、[Azure portal] で Web アプリを管理できるようになります。
 

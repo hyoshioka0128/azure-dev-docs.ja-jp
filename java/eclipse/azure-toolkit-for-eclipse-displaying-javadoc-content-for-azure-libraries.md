@@ -1,25 +1,19 @@
 ---
-title: Java 用 Azure ライブラリ パッケージの Javadoc コンテンツの Eclipse での表示
+title: Eclipse での Javadoc コンテンツの表示
+titleSuffix: Azure Libraries for Java
 description: Azure ライブラリの Javadoc コンテンツを Eclipse で表示する方法
-services: ''
 documentationcenter: java
-author: bmitchell287
-manager: douge
-editor: ''
 ms.assetid: 30f8b6a1-1d76-4d1c-861b-1db478c46e6b
-ms.author: brendm
 ms.date: 02/01/2018
-ms.devlang: Java
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.workload: na
-ms.openlocfilehash: b25feaeae2a38bbf6cbbbeef94ee40718956b85a
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.openlocfilehash: ecd491031522fdf2a9e06ff4104f7191f4efc59e
+ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68429383"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74811552"
 ---
 # <a name="displaying-javadoc-content-in-eclipse-for-the-azure-libraries-package-for-java"></a>Java 用 Azure ライブラリ パッケージの Javadoc コンテンツの Eclipse での表示
 
@@ -37,7 +31,7 @@ Java 用 Azure ライブラリの Javadoc コンテンツは、Javadoc コンテ
 
 1. **[Javadoc URL (Javadoc の URL)]** または **[Javadoc in archive (アーカイブの Javadoc)]** を指定できます。
 
-   * **Javadoc URL** を指定する場合は、 **http://dl.windowsazure.com/javadoc** 、 **http://dl.windowsazure.com/storage/javadoc** などの URL を使用します。
+   * **Javadoc URL** を指定する場合は、  **https://dl.windowsazure.com/javadoc**  、  **https://dl.windowsazure.com/storage/javadoc** などの URL を使用します。
 
    * **[Javadoc in archive]** を使用する場合は、外部ファイルまたはワークスペース ファイルを指定できます。
 

@@ -1,23 +1,18 @@
 ---
 title: コンテナー化された Node.js アプリを Visual Studio Code からデプロイした後にリソースをクリーンアップする
 description: チュートリアル パート 6、リソースをクリーンアップする
-services: app-service
-author: kraigb
-manager: barbkess
-ms.service: app-service
 ms.topic: conceptual
 ms.date: 09/20/2019
-ms.author: kraigb
-ms.openlocfilehash: 53fbfc2c3dc04ed30e940a680eb4c65de6591504
-ms.sourcegitcommit: c04984b6367e922dbc5973af44f8cd0ca81ce157
+ms.openlocfilehash: 7c235cff8b5685880fc63d7e50587980502c7e8d
+ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71686004"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74467131"
 ---
 # <a name="clean-up-resources"></a>リソースのクリーンアップ
 
-[前の手順: ログをストリーミングする](tutorial-vscode-docker-node-05.md)
+[前の手順:ログのストリーミング](tutorial-vscode-docker-node-05.md)
 
 コンテナー用に作成した App Service には、バッキング App Service プランが含まれていて料金が発生する可能性があります。 リソースをクリーンアップするには、 **[Azure: App Service]** エクスプローラーで [App Service] を右クリックし、 **[削除]** を選択します。
 

@@ -4,17 +4,15 @@ description: Java 8 から Java 11 への移行の利点を検討している意
 author: dsgrieve
 manager: maverberg
 tags: java
-ms.service: azure
-ms.devlang: java
 ms.topic: article
 ms.date: 11/19/2019
 ms.author: dagrieve
-ms.openlocfilehash: ed9b4d7e98357486367f7e7eaacac64ff05a0ff8
-ms.sourcegitcommit: 90068e30def5dfcb4289d8530ea5914728182a15
+ms.openlocfilehash: 7daf058c2abebbf2cca85dadc4f9ffe3e8771fa1
+ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74250749"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74812220"
 ---
 # <a name="reasons-to-move-to-java-11"></a>Java 11 に移行する理由
 
@@ -27,7 +25,7 @@ Java 8 以降、新機能が追加され、機能強化が行われてきまし�
 Java 11 への移行は、手順を追って行うことができます。 Java 11 で実行するためにコードで Java モジュールを使用する必要は "*ありません*"。 Java 11 を使用して、JDK 8 で開発およびビルドされたコードを実行できます。
 ただし、主に非推奨の API、クラス ローダー、およびリフレクションに関する潜在的な問題がいくつかあります。
 
-Java 8 から Java 11 への移行に関する包括的なガイドが、Microsoft Java Platform グループから発行される予定です。 また、Java 8 から Java 9 に移行するためのガイドが多数あり、それらを利用して作業を開始できます。 たとえば、「[Java Platform, Standard Edition Oracle JDK 9 Migration Guide](https://docs.oracle.com/javase/9/migrate/toc.htm)」や「[The State of the Module System:Compatibility and Migration](http://openjdk.java.net/projects/jigsaw/spec/sotms/#compatibility--migration)」などがあります。
+Java 8 から Java 11 への移行に関する包括的なガイドが、Microsoft Java Engineering グループから発行される予定です。 また、Java 8 から Java 9 に移行するためのガイドが多数あり、それらを利用して作業を開始できます。 たとえば、「[Java Platform, Standard Edition Oracle JDK 9 Migration Guide](https://docs.oracle.com/javase/9/migrate/toc.htm)」や「[The State of the Module System:Compatibility and Migration](http://openjdk.java.net/projects/jigsaw/spec/sotms/#compatibility--migration)」などがあります。
 
 ## <a name="high-level-changes-between-java-8-and-11"></a>Java 8 と 11 の間の高レベルの変更
 
@@ -66,7 +64,7 @@ Java 11 には、JVM のすべてのコンポーネントに共通のログ記�
 
 Java ヒープ割り当てをサンプリングするための新しい API が Java Virtual Machine Tool Interface (JVMTI) に追加されました。 サンプリングのオーバーヘッドは低く、継続的に有効にすることができます。 ヒープ割り当ては Java Flight Recorder (JFR) で監視できますが、JFR のサンプリング メソッドは割り当てに対してのみ機能します。 JFR 実装では、割り当てが見つからない場合もあります。 これに対して、Java 11 のヒープ サンプリングでは、ライブ オブジェクトと dead オブジェクトの両方に関する情報を提供できます。
 
-アプリケーション パフォーマンス監視 (APM) のベンダーは、この新機能を利用し始めており、Java Platform Group では、Azure パフォーマンス監視ツールでの使用の可能性を調査しています。
+アプリケーション パフォーマンス監視 (APM) のベンダーは、この新機能を利用し始めており、Java Engineering Group では、Azure パフォーマンス監視ツールでの使用の可能性を調査しています。
 
 #### <a name="stackwalker-9ref9"></a>StackWalker \[[9](#ref9)\]
 
@@ -148,52 +146,52 @@ JVM に対する次の変更は、パフォーマンスに直接影響します�
 (2019 年 11 月 13 日にアクセス)。
 
 <a id="ref4">\[4\]</a> Oracle Corporation、\"Project Jigsaw\"、9 月22日、 
-2017. (オンライン)。 参照先: http://openjdk.java.net/projects/jigsaw/ 。
+2017. (オンライン)。 参照先: http://openjdk.java.net/projects/jigsaw/.
 (2019 年 11 月 13 日にアクセス)。
 
-<a id="ref5">\[5\]</a> Oracle Corporation、\"JEP 328:Flight Recorder\"、2018 年 9 月 9 日。 (オンライン)。 参照先: http://openjdk.java.net/jeps/328 。 (2019 年 11 月 13 日にアクセス)。
+<a id="ref5">\[5\]</a> Oracle Corporation、\"JEP 328:Flight Recorder\"、2018 年 9 月 9 日。 (オンライン)。 参照先: http://openjdk.java.net/jeps/328. (2019 年 11 月 13 日にアクセス)。
 
-<a id="ref6">\[6\]</a> Oracle Corporation、\"Mission Control\"、2019 年 4 月 25 日。 (オンライン)。 参照先: https://wiki.openjdk.java.net/display/jmc/Main 。 (2019 年 11 月 13 日にアクセス)。
+<a id="ref6">\[6\]</a> Oracle Corporation、\"Mission Control\"、2019 年 4 月 25 日。 (オンライン)。 参照先: https://wiki.openjdk.java.net/display/jmc/Main. (2019 年 11 月 13 日にアクセス)。
 
-<a id="ref7">\[7\]</a> Oracle Corporation、\"JEP 158:統合 JVM ログ\"、2019 年 2 月 14 日。 (オンライン)。 参照先: http://openjdk.java.net/jeps/158 。
+<a id="ref7">\[7\]</a> Oracle Corporation、\"JEP 158:統合 JVM ログ\"、2019 年 2 月 14 日。 (オンライン)。 参照先: http://openjdk.java.net/jeps/158.
 (2019 年 11 月 13 日にアクセス)。
 
-<a id="ref8">\[8\]</a> Oracle Corporation、\"JEP 331:オーバーヘッドの低いヒープ プロファイル\"、2018 年 9 月 5 日。 (オンライン)。 参照先: http://openjdk.java.net/jeps/331 。 (2019 年 11 月 13 日にアクセス)。
+<a id="ref8">\[8\]</a> Oracle Corporation、\"JEP 331:オーバーヘッドの低いヒープ プロファイル\"、2018 年 9 月 5 日。 (オンライン)。 参照先: http://openjdk.java.net/jeps/331. (2019 年 11 月 13 日にアクセス)。
 
 <a id="ref9">\[9\]</a> Oracle Corporation、\"JEP 259:Stack-Walking API\"、2017 年 7 月 18 日。 (オンライン)。
-参照先: http://openjdk.java.net/jeps/259 。 (2019 年 11 月 13 日にアクセス)。
+参照先: http://openjdk.java.net/jeps/259. (2019 年 11 月 13 日にアクセス)。
 
 <a id="ref10">\[10\]</a> Oracle Corporation、\"JEP 248:G1 を既定のガベージ コレクターにする\"、2017 年 9 月 12 日。 (オンライン)。 参照先: http://openjdk.java.net/jeps/248. (2019 年 11 月 13 日にアクセス)。
 
 <a id="ref11">\[11\]</a> Oracle Corporation、\"JEP 318:Epsilon:非操作ガベージ コレクター\"、2018 年 9 月 24 日。
-(オンライン)。 参照先: http://openjdk.java.net/jeps/318 。 (2019 年 11 月 13 日にアクセス)。
+(オンライン)。 参照先: http://openjdk.java.net/jeps/318. (2019 年 11 月 13 日にアクセス)。
 
 <a id="ref12">\[12\]</a> Oracle Corporatio、\"JDK-8146115:Docker コンテナーの検出とリソース構成の使用の改善\"、2019 年 9 月 16 日。
-(オンライン)。 参照先: https://bugs.java.com/bugdatabase/view\_bug.do?bug\_id=JDK-8146115 。
+(オンライン)。 参照先: https://bugs.java.com/bugdatabase/view\_bug.do?bug\_id=JDK-8146115.
 (2019 年 11 月 13 日にアクセス)。
 
-<a id="ref13">\[13\]</a> Oracle Corporation、\"JEP 238:マルチリリース jar ファイル\"、2017 年 6 月 22 日。 (オンライン)。 参照先: http://openjdk.java.net/jeps/238 。 (2019 年 11 月 13 日にアクセス)。
+<a id="ref13">\[13\]</a> Oracle Corporation、\"JEP 238:マルチリリース jar ファイル\"、2017 年 6 月 22 日。 (オンライン)。 参照先: http://openjdk.java.net/jeps/238. (2019 年 11 月 13 日にアクセス)。
 
 <a id="ref14">\[14\]</a> Oracle Corporation、\"JEP 197:セグメント化コード キャッシュ\"、2017 年 4 月 28 日。 (オンライン)。
-参照先: http://openjdk.java.net/jeps/197 。 (2019 年 11 月 13 日にアクセス)。
+参照先: http://openjdk.java.net/jeps/197. (2019 年 11 月 13 日にアクセス)。
 
-<a id="ref15">\[15\]</a> Oracle Corporation、\"JEP 254:文字列の圧縮\"、2019 年 5 月 18 日。 (オンライン)。 参照先: http://openjdk.java.net/jeps/254 。
+<a id="ref15">\[15\]</a> Oracle Corporation、\"JEP 254:文字列の圧縮\"、2019 年 5 月 18 日。 (オンライン)。 参照先: http://openjdk.java.net/jeps/254.
 (2019 年 11 月 13 日にアクセス)。
 
-<a id="ref16">\[16\]</a> Oracle Corporation、\"JEP 310:アプリケーション クラス データ共有\"、2018 年 8 月 17 日。 (オンライン)。 参照先: https://openjdk.java.net/jeps/310 。 (2019 年 11 月 13 日にアクセス)。
+<a id="ref16">\[16\]</a> Oracle Corporation、\"JEP 310:アプリケーション クラス データ共有\"、2018 年 8 月 17 日。 (オンライン)。 参照先: https://openjdk.java.net/jeps/310. (2019 年 11 月 13 日にアクセス)。
 
 <a id="ref17">\[17\]</a> Oracle Corporation、\"JEP 312:スレッドローカル ハンドシェイク\"、2019 年 8 月 21 日。
-(オンライン)。 参照先: https://openjdk.java.net/jeps/312 。 (2019 年 11 月 13 日にアクセス)。
+(オンライン)。 参照先: https://openjdk.java.net/jeps/312. (2019 年 11 月 13 日にアクセス)。
 
-<a id="ref18">\[18\]</a> Oracle Corporation、\"JDK-8198756:コンパイラ スレッドのレイジー割り当て\"、2018 年 10 月 29 日。 (オンライン)。 参照先: https://bugs.java.com/bugdatabase/view\_bug.do?bug\_id=8198756 。
+<a id="ref18">\[18\]</a> Oracle Corporation、\"JDK-8198756:コンパイラ スレッドのレイジー割り当て\"、2018 年 10 月 29 日。 (オンライン)。 参照先: https://bugs.java.com/bugdatabase/view\_bug.do?bug\_id=8198756.
 (2019 年 11 月 13 日にアクセス)。
 
-<a id="ref19">\[19\]</a> Oracle Corporation、\"JEP 193:変数ハンドル\"、2017 年 8 月 17 日。 (オンライン)。 参照先: https://openjdk.java.net/jeps/193 。 (2019 年 11 月 13 日にアクセス)。
+<a id="ref19">\[19\]</a> Oracle Corporation、\"JEP 193:変数ハンドル\"、2017 年 8 月 17 日。 (オンライン)。 参照先: https://openjdk.java.net/jeps/193. (2019 年 11 月 13 日にアクセス)。
 
-<a id="ref20">\[20\]</a> Oracle Corporation、\"JEP 269:コレクションの便利なファクトリ メソッド\"、2017 年 6 月 26 日。 (オンライン)。 参照先: https://openjdk.java.net/jeps/269 。
+<a id="ref20">\[20\]</a> Oracle Corporation、\"JEP 269:コレクションの便利なファクトリ メソッド\"、2017 年 6 月 26 日。 (オンライン)。 参照先: https://openjdk.java.net/jeps/269.
 (2019 年 11 月 13 日にアクセス)。
 
-<a id="ref21">\[21\]</a> Oracle Corporation、\"JEP 285:スピン待機ヒント\"、2017 年 8 月 20 日。 (オンライン)。 参照先: https://openjdk.java.net/jeps/285 。 (2019 年 11 月 13 日にアクセス)。
+<a id="ref21">\[21\]</a> Oracle Corporation、\"JEP 285:スピン待機ヒント\"、2017 年 8 月 20 日。 (オンライン)。 参照先: https://openjdk.java.net/jeps/285. (2019 年 11 月 13 日にアクセス)。
 
 <a id="ref22">\[22\]</a> Oracle Corporation、\"JEP 321:HTTP クライアント (標準)\"、2018 年 9 月 27 日。 (オンライン)。
-参照先: https://openjdk.java.net/jeps/321 。 (2019 年 11 月 13 日にアクセス)。
+参照先: https://openjdk.java.net/jeps/321. (2019 年 11 月 13 日にアクセス)。

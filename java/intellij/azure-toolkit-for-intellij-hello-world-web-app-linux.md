@@ -1,24 +1,19 @@
 ---
-title: Azure Toolkit for IntelliJ を使用して Linux コンテナーで実行されている Hello World Web アプリをクラウドでデプロイする
+title: Linux コンテナーに Hello World Web アプリをデプロイする
+titleSuffix: Azure Toolkit for IntelliJ
 description: Linux コンテナーで基本的な Hello World Web アプリを実行し、Azure Toolkit for IntelliJ を使用してクラウドにデプロイします。
 services: app-service\web
 documentationcenter: java
-author: bmitchell287
-manager: douge
-editor: ''
-ms.assetid: ''
-ms.author: brendm
 ms.date: 12/20/2018
-ms.devlang: Java
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: 08e318de1a802d2b1d27db2f3a7bcc37c7ec8535
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.openlocfilehash: 3e36123086486e8f1d98ca135d4360962d0d23a8
+ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68281023"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74810993"
 ---
 # <a name="deploy-a-hello-world-web-app-to-a-linux-container-in-the-cloud-using-the-azure-toolkit-for-intellij"></a>Azure Toolkit for IntelliJ を使用して Hello World Web アプリをクラウドの Linux コンテナーにデプロイする
 
@@ -95,7 +90,7 @@ Azure Portal を使用して Azure Container Registry を作成する手順を�
 
 1. **[Run on Web App for Containers]\(Web App for Containers で実行\)** ダイアログ ボックスが表示されたら、必要な情報を入力します。
 
-   * **[名前]** :Azure Toolkit に表示されるフレンドリ名を指定します。 
+   * **Name**:Azure Toolkit に表示されるフレンドリ名を指定します。 
 
    * **[コンテナー レジストリ]** :この記事の前のセクションで作成したコンテナー レジストリをドロップダウン メニューから選択します。 **[サーバーの URL]** 、 **[ユーザー名]** 、 **[パスワード]** の各フィールドには、値が自動的に入力されます。
 

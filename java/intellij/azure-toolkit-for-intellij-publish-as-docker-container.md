@@ -1,25 +1,18 @@
 ---
-title: Azure Toolkit for IntelliJ を使用して Docker コンテナーを発行する
+title: Web アプリを Docker コンテナーとして発行する
+titleSuffix: Azure Toolkit for IntelliJ
 description: Azure Toolkit for IntelliJ を使用して、Web アプリを Docker コンテナーとして Microsoft Azure に発行する方法について説明します。
-services: ''
 documentationcenter: java
-author: bmitchell287
-manager: douge
-editor: ''
-ms.assetid: ''
-ms.author: brendm
 ms.date: 02/01/2018
-ms.devlang: Java
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.workload: na
-ms.openlocfilehash: a4518994b961294a6a9cf3dffc302da6bd52b441
-ms.sourcegitcommit: 3d42245ecbfaeda31abba5f3f813b28f715ffd7c
+ms.openlocfilehash: 0d57d691853cf16dba21cda9cea670629528c144
+ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68279213"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74812515"
 ---
 # <a name="publish-a-web-app-as-a-docker-container-by-using-the-azure-toolkit-for-intellij"></a>Azure Toolkit for IntelliJ を使用して Web アプリを Docker コンテナーとして発行する
 
@@ -112,7 +105,7 @@ Docker コンテナーは、Web アプリケーションをデプロイするた
 
      * **SSH**:Docker ホストの Secure Shell (SSH) 設定を入力します。 次のいずれかを選択します。
 
-     * **なし**:自分の仮想マシンで SSH 接続を許可しないように指定します。
+     * **なし**: 自分の仮想マシンで SSH 接続を許可しないように指定します。
 
      * **[自動生成]** : SSH 経由で接続するために必要な設定を自動的に作成します。
 
@@ -130,7 +123,7 @@ Docker コンテナーは、Web アプリケーションをデプロイするた
     
      * **[TLS セキュリティ]** : Docker ホストのトランスポート層セキュリティ設定を入力します。 次のオプションから選択できます。
     
-     * **なし**:自分の仮想マシンで TLS 接続を許可しないように指定します。
+     * **なし**: 自分の仮想マシンで TLS 接続を許可しないように指定します。
         
      * **[自動生成]** : TLS 経由で接続するために必要な設定を自動的に作成します。
         

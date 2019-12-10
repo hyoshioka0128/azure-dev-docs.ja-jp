@@ -2,23 +2,18 @@
 title: Azure PostgreSQL で Spring Data JPA を使用する方法
 description: Azure Database for PostgreSQL データベース で Spring Data JPA を構成して使用する方法について説明します。
 documentationcenter: java
-author: bmitchell287
-ms.author: brendm
 ms.date: 12/19/2018
-ms.devlang: java
 ms.service: postgresql
 ms.tgt_pltfrm: multiple
 ms.topic: conceptual
-ms.openlocfilehash: da8feb20e4163d9280256b51f64d3148b077f7ce
-ms.sourcegitcommit: 2610f3992cb6d21a3657032074acb981d130fdad
+ms.openlocfilehash: d2134ae08bdad69af1e347476e96833d375ee966
+ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71960768"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74811953"
 ---
 # <a name="how-to-use-spring-data-jpa-with-azure-postgresql"></a>Azure PostgreSQL で Spring Data JPA を使用する方法
-
-## <a name="overview"></a>概要
 
 この記事では、[Spring Data] を使用して、[Java Persistence API (JPA)](https://docs.oracle.com/javaee/7/tutorial/persistence-intro.htm) を使って [Azure Database for PostgreSQL](/azure/postgresql/) データベース内の情報を格納および取得するサンプル アプリケーションを作成する方法を説明します。
 
@@ -47,41 +42,40 @@ ms.locfileid: "71960768"
 
    ![PostgreSQL データベースを作成する][POSTGRESQL01]
 
+1. **[単一サーバー]** または **[Hyperscale server group]\(Hyperscale サーバー グループ\)** を選択します。
+
+1. **Create** をクリックしてください。
+
 1. 次の情報を入力します。
 
-   - **サーバー名**: PostgreSQL サーバー用に一意の名前を選択します。この名前は、*wingtiptoyspostgresql.postgres.database.azure.com* のような完全修飾ドメイン名の作成に使用されます。
    - **サブスクリプション**:使用する Azure サブスクリプションを指定します。
    - **[リソース グループ]** :新しいリソース グループを作成するのか、既存のリソース グループを選択するのかを指定します。
-   - **ソースの選択**:このチュートリアルでは、`Blank` を選択して新しいデータベースを作成します。
-   - **サーバー管理者ログイン**:データベース管理者名を指定します。
+   - **サーバー名**: PostgreSQL サーバー用に一意の名前を選択します。この名前は、*wingtiptoyspostgresql.postgres.database.azure.com* のような完全修飾ドメイン名の作成に使用されます。
+   - **データ ソース**:このチュートリアルでは、`Blank` を選択して新しいデータベースを作成します。
+   - **管理者ユーザー名**:データベース管理者名を指定します。
    - **[パスワード]** と **[パスワードの確認]** :データベース管理者のパスワードを指定します。
    - **[場所]** :データベースに最も近い地理的リージョンを指定します。
    - **バージョン**:最新のデータベース バージョンを指定します。
-   - **価格レベル**:このチュートリアルでは、最も安い価格レベルを指定します。
 
    ![PostgreSQL データベースのプロパティを作成する][POSTGRESQL02]
 
-1. 上記の情報をすべて入力したら、 **[作成]** をクリックします。
+1. 上記の情報をすべて入力したら、 **[確認と作成]** をクリックします。
+
+1. 選択内容を見直して確認し、 **[作成]** をクリックします。
 
 ### <a name="configure-a-firewall-rule-for-your-postgresql-database-server-using-the-azure-portal"></a>Azure portal を使用して PostgreSQL データベース サーバーのファイアウォール規則を構成する
 
-1. Azure portal (<https://portal.azure.com/>) を参照し、サインインします。
+1. デプロイが完了したら、 **[リソースに移動]** をクリックします。
 
-1. **[すべてのリソース]** をクリックし、先ほど作成した PostgreSQL データベースをクリックします。
+1. **[接続のセキュリティ]** をクリックします。
+
+1. 規則に一意の名前を指定することで新しい規則を作成し、データベースへのアクセス権を必要とする IP アドレスの範囲を入力して、 **[保存]** をクリックします。
 
    ![PostgreSQL データベースを選択する][POSTGRESQL03]
-
-1. **[接続のセキュリティ]** をクリックし、 **[ファイアウォール規則]** で、規則の一意の名前を指定して新しい規則を作成し、データベースへのアクセス権を必要とする IP アドレスの範囲を入力して、 **[保存]** をクリックします。
-
-   ![接続のセキュリティを構成する][POSTGRESQL04]
 
 ### <a name="retrieve-the-connection-string-for-your-postgresql-server-using-the-azure-portal"></a>Azure portal を使用して PostgreSQL サーバーの接続文字列を取得する
 
-1. Azure portal (<https://portal.azure.com/>) を参照し、サインインします。
-
-1. **[すべてのリソース]** をクリックし、先ほど作成した PostgreSQL データベースをクリックします。
-
-   ![PostgreSQL データベースを選択する][POSTGRESQL03]
+1. **[すべてのリソース]** ページで、先ほど作成した PostgreSQL データベースをクリックします。
 
 1. **[接続文字列]** をクリックし、 **[JDBC]** テキスト フィールド内の値をコピーします。
 

@@ -1,19 +1,15 @@
 ---
 title: Python 用 Azure 管理ライブラリを使用した認証
 description: Python 用 Azure 管理ライブラリへのサービス プリンシパルを使用して認証を行います
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.date: 04/11/2019
 ms.topic: conceptual
-ms.devlang: python
 ms.custom: seo-python-october2019
-ms.openlocfilehash: afeaafb4289544b92324154d5c45d3410cbb3b02
-ms.sourcegitcommit: 6012460ad8d6ff112226b8f9ea6da397ef77712d
+ms.openlocfilehash: 93d41e76bc8fb58d70a3590e2ea3658014a8673a
+ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72279105"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74466443"
 ---
 # <a name="authenticate-with-the-azure-management-libraries-for-python"></a>Python 用 Azure 管理ライブラリを使用した認証
 
@@ -215,9 +211,9 @@ client = get_client_from_cli_profile(ComputeManagementClient)
 
 ## <a name="mgmt-auth-legacy"></a>トークン資格情報による認証 (従来の方法)
 
-SDK の以前のバージョンでは、ADAL はまだ利用できず、`UserPassCredentials` クラスが用意されていました。 これは非推奨とされており、今後は使用しないでください。
+SDK の以前のバージョンでは、ADAL はまだ利用できず、`UserPassCredentials` クラスが用意されていました。 このクラスの使用は非推奨とされており、今後は使用しないでください。
 
-このサンプルでは、ユーザー/パスワードのシナリオを示します。 ここでは 2FA はサポートされません。
+このサンプルでは、2FA をサポートしていないユーザー/パスワードのシナリオを示しています。
 
 ```python
 from azure.common.credentials import UserPassCredentials

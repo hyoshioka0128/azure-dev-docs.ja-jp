@@ -3,22 +3,16 @@ title: Azure SQL Database で Spring Data JPA を使用する方法
 description: Azure SQL データベースで Spring Data JPA を使用する方法を説明します。
 services: sql-database
 documentationcenter: java
-author: bmitchell287
-manager: douge
-editor: ''
-ms.assetid: ''
-ms.author: brendm
 ms.date: 12/19/2018
-ms.devlang: java
 ms.service: sql-database
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: a344596f93a8fc24c3d8853821b8a829e8904547
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.openlocfilehash: d5c90992f4b669bf6089d0c0118496dfa33d67f1
+ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68281893"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74811947"
 ---
 # <a name="how-to-use-spring-data-jpa-with-azure-sql-database"></a>Azure SQL Database で Spring Data JPA を使用する方法
 
@@ -38,7 +32,7 @@ ms.locfileid: "68281893"
 
 ## <a name="create-an-azure-sql-database"></a>Azure SQL Database の作成
 
-### <a name="create-a-sql-database-server-using-the-azure-portal"></a>Azure Portal を使用して SQL データベース サーバーを作成する
+### <a name="create-a-sql-database-server-using-the-azure-portal"></a>Azure portal を使用して SQL データベース サーバーを作成する
 
 > [!NOTE]
 > 
@@ -66,21 +60,17 @@ ms.locfileid: "68281893"
    - **[パスワード]** と **[パスワードの確認]** :データベース管理者のパスワードを指定します。
    - **[場所]** :データベースに最も近い地理的リージョンを指定します。
 
-   ![SQL サーバーを指定する][SQL03]
+1. 上記の情報をすべて入力したら、 **[OK]** をクリックします。
 
-1. 上記の情報をすべて入力したら、 **[選択]** をクリックします。
+1. **[確認と作成]** をクリックします。
 
-1. このチュートリアルでは、最も安い**価格レベル**を指定して、 **[作成]** をクリックします。
+### <a name="configure-a-firewall-rule-for-your-sql-server-using-the-azure-portal"></a>Azure portal を使用して SQL サーバーのファイアウォール規則を構成する
 
-   ![SQL データベースを作成する][SQL04]
-
-### <a name="configure-a-firewall-rule-for-your-sql-server-using-the-azure-portal"></a>Azure Portal を使用して SQL サーバーのファイアウォール規則を構成する
+SQL データベースとサーバーを作成したら、セキュリティ設定を構成できます。
 
 1. Azure portal (<https://portal.azure.com/>) を参照し、サインインします。
 
 1. **[すべてのリソース]** をクリックし、先ほど作成した SQL サーバーをクリックします。
-
-   ![SQL サーバーを選択する][SQL05]
 
 1. **[概要]** セクションで、 **[ファイアウォール設定の表示]** をクリックします。
 
@@ -90,15 +80,18 @@ ms.locfileid: "68281893"
 
    ![ファイアウォール設定を構成する][SQL07]
 
-### <a name="retrieve-the-connection-string-for-your-sql-server-using-the-azure-portal"></a>Azure Portal を使用して SQL サーバーの接続文字列を取得する
+### <a name="retrieve-the-connection-string-for-your-sql-server-using-the-azure-portal"></a>Azure portal を使用して SQL サーバーの接続文字列を取得する
 
 1. Azure portal (<https://portal.azure.com/>) を参照し、サインインします。
 
 1. **[すべてのリソース]** をクリックし、先ほど作成した SQL データベースをクリックします。
 
+1. **[接続文字列]** をクリックします。
+
+
    ![SQL データベースを選択する][SQL08]
 
-1. **[接続文字列]** 、 **[JDBC]** の順にクリックし、JDBC のテキスト フィールド内の値をコピーします。
+1. 次に **[JDBC]** をクリックし、JDBC のテキスト フィールド内の値をコピーします。
 
    ![JDBC 接続文字列を取得する][SQL09]
 
@@ -140,15 +133,15 @@ ms.locfileid: "68281893"
 1. サンプル アプリケーションを開始します。次に例を示します。
 
    ```shell
-   java -jar target/spring-data-jpa-on-azure-0.1.0-SNAPSHOT.jar
+   java -jar target/spring-data-jdbc-on-azure-0.1.0-SNAPSHOT.jar
    ```
 
 1. 次の例のように、コマンド プロンプトから `curl` を使用して新しいレコードを作成します。
 
    ```shell
-   curl -s -d '{"name":"dog","species":"canine"}' -H "Content-Type: application/json" -X POST http://localhost:8080/pets
+   curl -s -d "{\"name\":\"dog\",\"species\":\"canine\"}" -H "Content-Type: application/json" -X POST http://localhost:8080/pets
 
-   curl -s -d '{"name":"cat","species":"feline"}' -H "Content-Type: application/json" -X POST http://localhost:8080/pets
+   curl -s -d "{\"name\":\"cat\",\"species\":\"feline\"}" -H "Content-Type: application/json" -X POST http://localhost:8080/pets
    ```
 
    アプリケーションから次のような値が返されます。

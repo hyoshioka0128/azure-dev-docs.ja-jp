@@ -1,24 +1,20 @@
 ---
 title: Python 開発者のための Azure ツール | Microsoft Docs
 description: Azure を使用する Python 開発者のための IDE 統合とコマンド ライン インターフェイス。
-author: sptramer
-manager: carmonm
-ms.devlang: python
 ms.topic: conceptual
 ms.date: 06/21/2017
-ms.author: sttramer
-ms.openlocfilehash: 19f314347296c2ecaf7e41da2332ff6a018a5a06
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.openlocfilehash: c1ca9752b63baa783f078d7d26a2576fdee74e6a
+ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68285773"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74467071"
 ---
 # <a name="azure-tools-for-python-developers"></a>Python 開発者のための Azure ツール
 
 ## <a name="azure-cli-20"></a>Azure CLI 2.0
 
-Azure 2.0 CLI は、サブスクリプション内の Azure リソースを作成および構成するためのコマンド ライン インターフェイスを提供します。 Azure CLI 2.0 はクロスプラットフォームであり、クエリとフィルター機能を備えているため、お気に入りのコマンド ライン ツールに出力をパイプで直接送ることができます。 
+Azure CLI 2.0 は、サブスクリプションに Azure リソースを作成して構成するためのコマンド ライン インターフェイスを提供します。 Azure CLI 2.0 はクロスプラットフォームであり、クエリとフィルター機能を備えているため、好みのコマンド ライン ツールに出力を直接パイプ処理することができます。
 
 [Azure CLI 2.0 をインストールします](https://docs.microsoft.com/cli/azure/install-azure-cli)
 

@@ -1,20 +1,15 @@
 ---
 title: チュートリアル:コンテナー用の Azure App Service から Visual Studio Code にログをストリーム配信する
 description: チュートリアルの手順 4、Azure App Service のログを表示してその動作を監視する。
-services: app-service
-author: kraigb
-manager: barbkess
-ms.service: app-service
 ms.topic: conceptual
 ms.date: 09/12/2019
-ms.author: kraigb
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 12cc4880a7001fc51b0e70f89f177390c5fd0f45
-ms.sourcegitcommit: 6012460ad8d6ff112226b8f9ea6da397ef77712d
+ms.openlocfilehash: e9b54e53763b729f5042cfb0d8df438650fd362f
+ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72278706"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74466994"
 ---
 # <a name="tutorial-stream-logs-from-azure-app-service-for-a-container"></a>チュートリアル:コンテナー用の Azure App Service からログをストリーム配信する
 
@@ -24,7 +19,7 @@ ms.locfileid: "72278706"
 
 VS Code 内から、Azure App Service で実行中のサイトのログを表示 (または追跡) できます。これにより、コンソールへの出力が `print` ステートメントの場合と同様にキャプチャされ、VS Code の **[出力]** パネルにルーティングされます。
 
-1. **[Azure: App Service]** エクスプローラーでアプリを探して右クリックし、 **[Start Streaming Logs]\(ログのストリーム配信を開始する\)** を選択します。
+1. アプリを **[Azure:App Service]** エクスプローラーで見つけて、そのアプリを右クリックし、 **[Start Streaming Logs]\(ログのストリーム配信を開始する\)** を選択します。
 
 1. ログを有効にしてアプリを再起動するよう求められたら、 **[はい]** と回答します。 アプリが再起動すると、VS Code の [出力] パネルが開き、ログ ストリームに接続されます。
 

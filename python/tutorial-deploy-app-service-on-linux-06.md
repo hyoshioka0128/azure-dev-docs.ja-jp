@@ -1,20 +1,15 @@
 ---
 title: チュートリアル:Azure App Service から VS Code にログをストリーム配信する
 description: チュートリアルの手順 6、アプリのログを Visual Studio Code にストリーム配信する
-services: app-service
-author: kraigb
-manager: barbkess
-ms.service: app-service
 ms.topic: conceptual
 ms.date: 09/12/2019
-ms.author: kraigb
 ms.custom: seo-python-october2019
-ms.openlocfilehash: a60c8fd0202e935960f14a9ab5570f86a78fab6e
-ms.sourcegitcommit: 6012460ad8d6ff112226b8f9ea6da397ef77712d
+ms.openlocfilehash: 56cbd468771af8d60fce20d88b8c984f95d4b9b9
+ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72278919"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74466073"
 ---
 # <a name="tutorial-stream-logs-from-azure-app-service-into-visual-studio-code"></a>チュートリアル:Azure App Service から Visual Studio Code にログをストリーム配信する
 
@@ -22,7 +17,7 @@ ms.locfileid: "72278919"
 
 この手順を使用して、Azure App Service から Visual Studio Code にログをストリーム配信します。
 
-1. Visual Studio Code で **[Azure: App Service]** エクスプローラーを開き、App Service を右クリックして、 **[Start streaming logs]\(ログのストリーム配信を開始する\)** を選択します。
+1. Visual Studio Code で **[Azure:App Service]** エクスプローラーを開き、App Service を右クリックし、 **[Start streaming logs]\(ログのストリーム配信を開始する\)** を選択します。
 
    ![App Service エクスプローラーからログのストリーム配信を開始する](media/deploy-azure/start-streaming-logs-in-visual-studio-code.png)
 
@@ -30,7 +25,7 @@ ms.locfileid: "72278919"
 
 1. ログを有効にしたら、App Service を右クリックし、再度、 **[Start streaming logs]\(ログのストリーム配信を開始する\)** を選択します。 VS Code の**出力**ウィンドウに "Starting Live Log Stream (ライブ ログ ストリームを開始しています)" と表示され、ログ出力が見え始めます。 ブラウザーで Web アプリを最新の情報に更新してみてください。さらに多くのログ情報が生成されます。
 
-1. (ログを無効にせずに) ログのストリーム配信を停止するには、 **[Azure: App Service]** エクスプローラーでアプリを右クリックし、 **[Stop streaming logs]\(ログのストリーム配信を停止する\)** を選択します。
+1. (ログを無効にせずに) ログのストリーム配信を停止するには、 **[Azure:App Service]** エクスプローラーでアプリを右クリックし、 **[Stop streaming logs]\(ログのストリーム配信を停止する\)** を選択します。
 
 > [!div class="nextstepaction"]
 > [ログを確認しました](tutorial-deploy-app-service-on-linux-07.md)

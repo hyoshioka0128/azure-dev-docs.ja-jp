@@ -1,25 +1,20 @@
 ---
 title: Visual Studio Code から Node.js アプリのコンテナー イメージをデプロイする
 description: チュートリアル パート 4、Azure App Service にイメージをデプロイする
-services: app-service
-author: kraigb
-manager: barbkess
-ms.service: app-service
 ms.topic: conceptual
 ms.date: 09/20/2019
-ms.author: kraigb
-ms.openlocfilehash: 60eb5be0b3d4049c7955195f3bb6bc85dd2b2498
-ms.sourcegitcommit: c04984b6367e922dbc5973af44f8cd0ca81ce157
+ms.openlocfilehash: b43f93ba97950c84302db2e18f69b506e44dc84e
+ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71686013"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74466544"
 ---
 # <a name="deploy-the-image-to-azure-app-service"></a>Azure App Service にイメージをデプロイする
 
-[前の手順: アプリ イメージを作成する](tutorial-vscode-docker-node-03.md)
+[前の手順:アプリ イメージを作成する](tutorial-vscode-docker-node-03.md)
 
-この手順では、レジストリにプッシュしたイメージを Visual Studio Code から直接 [Azure App Service](https://azure.microsoft.com/en-us/services/app-service/) にデプロイします。
+この手順では、レジストリにプッシュしたイメージを Visual Studio Code から直接 [Azure App Service](https://azure.microsoft.com/services/app-service/) にデプロイします。
 
 1. **DOCKER** エクスプローラーで、 **[Registries]\(レジストリ\)** でイメージのノードを展開し、`:latest` を右クリックし、 **[Deploy Image to Azure App Service]\(Azure App Service にイメージをデプロイする\)** を選択します。
 
@@ -29,7 +24,7 @@ ms.locfileid: "71686013"
 
     - この名前は Azure 全体で一意である必要があります。
     - 既存のリソース グループを選択するか、新しいリソース グループを作成します。 (**リソース グループ**は、基本的に、Azure のアプリケーション リソースの名前付きコレクションです。)
-    - 既存の App Service プランを選択するか、新しいプランを作成します。 (**App Service プラン**は、Web サイトをホストする物理リソースを定義します。 このチュートリアルでは、Basic または Free のプラン レベルを使用できます。)
+    - 既存の App Service プランを選択するか、新しいプランを作成します。 (Web サイトをホストする物理リソースは、**App Service プラン**によって定義されます。 このチュートリアルでは、Basic または無料プラン サービス レベルを使用できます)。
 
 1. デプロイが完了すると、Visual Studio Code は、Web サイトの URL を示す通知を表示します。
 

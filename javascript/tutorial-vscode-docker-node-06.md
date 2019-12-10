@@ -1,23 +1,18 @@
 ---
 title: コンテナー化された Node.js アプリからのログを Visual Studio Code からストリーム配信する
 description: チュートリアル パート 5、Visual Studio Code にログをストリーム配信する
-services: app-service
-author: kraigb
-manager: barbkess
-ms.service: app-service
 ms.topic: conceptual
 ms.date: 09/20/2019
-ms.author: kraigb
-ms.openlocfilehash: 9df23cb6aac013006cf0f21871f16eededdcb816
-ms.sourcegitcommit: c04984b6367e922dbc5973af44f8cd0ca81ce157
+ms.openlocfilehash: 2ac930996bd910014565c4e329bec93015bd2a3a
+ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71685984"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74466520"
 ---
 # <a name="stream-logs-into-visual-studio-code"></a>Visual Studio Code にログをストリーム配信する
 
-[前の手順: 変更を加えて再デプロイする](tutorial-vscode-docker-node-05.md)
+[前の手順:変更を加えて再デプロイする](tutorial-vscode-docker-node-05.md)
 
 この手順では、実行中の Web サイトが `console.log` への呼び出しを介して生成する出力を表示または "tail" する方法について説明します。 この出力は、Visual Studio Code の **[出力]** ウィンドウに表示されます。
 

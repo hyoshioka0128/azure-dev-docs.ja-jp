@@ -1,35 +1,30 @@
 ---
 title: Visual Studio Code から Azure Functions アプリケーションをデプロイする
 description: チュートリアル パート 4、Functions アプリをクラウドにデプロイする。
-services: app-service
-author: kraigb
-manager: barbkess
-ms.service: app-service
 ms.topic: conceptual
 ms.date: 09/23/2019
-ms.author: kraigb
-ms.openlocfilehash: 53d0dd11567084d42de71a0f737cf8b9f5fc5249
-ms.sourcegitcommit: c04984b6367e922dbc5973af44f8cd0ca81ce157
+ms.openlocfilehash: 690477392fffda4cd94d7271b061c195ccceb42b
+ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71685929"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74467098"
 ---
 # <a name="deploy-the-functions-app"></a>Functions アプリをデプロイする
 
-[前の手順: 関数をローカルでテストする](tutorial-vscode-serverless-node-03.md)
+[前の手順:関数をローカルでテストする](tutorial-vscode-serverless-node-03.md)
 
 1. VS Code で、Azure ロゴを選択して **Azure エクスプローラーを**を開き、次に、 **[Functions]\(関数\)** で青い上向き矢印を選択してアプリをデプロイします。
 
     ![Azure Functions にデプロイするコマンド](media/functions-extension/deploy-app.png)
 
-    または、**コマンド パレット**を開き (**F1**)、「deploy to function app」と入力し、**Azure Functions: Deploy to Function App<ept id="p3">**</ept> コマンドを実行します。
+    または、**コマンド パレット**を開き (**F1**)、「deploy to function app」と入力し、**Azure Functions:Deploy to Function App** コマンドを選択します。
 
 1. **[Select Function App in Azure]\(Azure で関数アプリを選択してください\)** というプロンプトでは、 **[Create new Function app in Azure]\(Azure で新しい関数アプリを作成する\)** を選択します。
 
 1. 次のプロンプトでは、関数アプリのグローバルに一意の名前を入力して、**Enter** キーを押します。 関数アプリ名として有効な文字は "a-z"、"0-9"、および "-" です。
 
-1. 次のプロンプトでは、お近くの Azure [リージョン](https://azure.microsoft.com/en-us/regions/)を選択します。
+1. 次のプロンプトでは、お近くの Azure [リージョン](https://azure.microsoft.com/regions/)を選択します。
 
 1. **Azure Functions** の VS Code **[出力]** パネルに進行状況が表示されます。
 

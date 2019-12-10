@@ -1,25 +1,17 @@
 ---
 title: Azure Explorer for Eclipse を使用してストレージ アカウントを管理する
 description: Azure Explorer for Eclipse を使用して Azure ストレージ アカウントを管理する方法について説明します。
-services: ''
 documentationcenter: java
-author: bmitchell287
-manager: douge
-editor: ''
-ms.assetid: ''
-ms.author: brendm
 ms.date: 02/01/2018
-ms.devlang: Java
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.workload: na
-ms.openlocfilehash: aea8d501dcd6eab9c60dfb25a00a7ba75ba6c556
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.openlocfilehash: 2eee5bf3546712c5f43056a9d4a2b170951ee810
+ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68430066"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74811090"
 ---
 # <a name="manage-storage-accounts-by-using-the-azure-explorer-for-eclipse"></a>Azure Explorer for Eclipse を使用してストレージ アカウントを管理する
 
@@ -43,7 +35,7 @@ Azure Explorer を使用してストレージ アカウントを作成するに�
 
    ![[新しいストレージ アカウントの作成] ダイアログ ボックス][CS02]
 
-   * **[名前]** :新しいストレージ アカウントの名前を指定します。
+   * **Name**:新しいストレージ アカウントの名前を指定します。
 
    * **サブスクリプション**:新しいストレージ アカウントに使用する Azure サブスクリプションを指定します。
 
@@ -118,7 +110,7 @@ Azure ストレージ アカウント、サイズ、および料金の詳細に�
 [Azure ストレージ アカウントについて]: /azure/storage/storage-create-storage-account
 [Azure Storage のレプリケーション]: /azure/storage/storage-redundancy
 [Azure Storage のスケーラビリティおよびパフォーマンスのターゲット]: /azure/storage/storage-scalability-targets
-[コンテナー、BLOB、メタデータの名前付けと参照]: http://go.microsoft.com/fwlink/?LinkId=255555
+[コンテナー、BLOB、メタデータの名前付けと参照]: https://go.microsoft.com/fwlink/?LinkId=255555
 
 [Azure の Windows ストレージ アカウントのサイズ]: /azure/virtual-machines/virtual-machines-windows-sizes
 [Azure の Linux ストレージ アカウントのサイズ]: /azure/virtual-machines/virtual-machines-linux-sizes

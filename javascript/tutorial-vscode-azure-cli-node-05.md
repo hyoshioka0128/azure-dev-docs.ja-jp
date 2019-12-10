@@ -1,23 +1,18 @@
 ---
 title: Azure App Service からログをストリーム配信する
 description: チュートリアル パート5、ログを表示する
-services: app-service
-author: kraigb
-manager: barbkess
-ms.service: app-service
 ms.topic: conceptual
 ms.date: 09/24/2019
-ms.author: kraigb
-ms.openlocfilehash: ce112d535d1f89a7e153f80b9fb80032a977b8d8
-ms.sourcegitcommit: c04984b6367e922dbc5973af44f8cd0ca81ce157
+ms.openlocfilehash: 8a173bbb7f53de2189e0ecb99b851d77704ff92d
+ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2019
-ms.locfileid: "71686150"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74466765"
 ---
 # <a name="stream-logs-from-app-service"></a>Azure App Service からログをストリーム配信する
 
-[前の手順: アプリをデプロイする](tutorial-vscode-azure-cli-node-04.md)
+[前の手順:アプリケーションをデプロイする](tutorial-vscode-azure-cli-node-04.md)
 
 この手順では、実行中の App Service からログを表示 ("tail") します。 サイト コードでの `console.log` への呼び出しはすべて、ターミナルに表示されます。
 

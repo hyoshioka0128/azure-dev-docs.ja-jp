@@ -1,20 +1,15 @@
 ---
 title: チュートリアル:Visual Studio Code で Azure Functions の Python コード ファイルを調べる
 description: チュートリアルの手順 3、Azure Functions が提供するテンプレートの Python コードを理解する。
-services: functions
-author: kraigb
-manager: barbkess
-ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 09/02/2019
-ms.author: kraigb
 ms.custom: seo-python-october2019
-ms.openlocfilehash: f31cbb3c1ad66a97ab4bb87cdcc58c9bd815c72e
-ms.sourcegitcommit: 38fc0daead4f6ef0cf16d9f4762ad24f4dc4c3e9
+ms.openlocfilehash: 5fa6f0095dec212f935c8c2e106f63eb58784d00
+ms.sourcegitcommit: 9d0a6de18d9b5180c1cb485eff8e2774de48d225
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/28/2019
-ms.locfileid: "72980948"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74540511"
 ---
 # <a name="tutorial-examine-the-python-code-files-in-visual-studio-code"></a>チュートリアル:Visual Studio Code で Python コード ファイルを調べる
 
@@ -90,7 +85,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
 
 コードの重要な部分は次のとおりです。
 
-- `azure.functions` から `func` をインポートする必要があります。ログ記録モジュールのインポートは任意ですが、お勧めします。
+- `azure.functions` モジュールをインポートする必要があります。ログ記録モジュールのインポートは任意ですが、お勧めします。
 - 必須の `main` Python 関数は、`req` という名前の `func.HttpRequest` オブジェクトを受け取り、`func.HttpResponse` 型の値を返します。 これらのオブジェクトの機能については、[func.HttpRequest](/python/api/azure-functions/azure.functions.httprequest?view=azure-python) と [func.HttpResponse](/python/api/azure-functions/azure.functions.httpresponse?view=azure-python) のリファレンスで詳細を確認できます。
 - 次に、`main` の本文で要求が処理され、応答が生成されます。 今回のコードでは、URL の `name` パラメーターを探します。 見つからなかった場合、要求本文に JSON が含まれるかどうかが確認され (`func.HttpRequest.get_json` を使用)、また、JSON に `name` 値が含まれることが確認されます (`get_json` によって返される JSON オブジェクトの `get` メソッドを使用)。
 - コードにより、名前が見つかった場合は、文字列 "Hello" の後ろに名前が追加されて返され、見つからなかった場合は、エラー メッセージが返されます。

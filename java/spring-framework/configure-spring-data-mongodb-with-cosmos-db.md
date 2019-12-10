@@ -3,22 +3,16 @@ title: Azure Cosmos DB で Spring Data MongoDB API を使用する方法
 description: Azure Cosmos DB で Spring Data MongoDB API を使用する方法を説明します。
 services: cosmos-db
 documentationcenter: java
-author: bmitchell287
-manager: douge
-editor: ''
-ms.assetid: ''
-ms.author: brendm
 ms.date: 12/19/2018
-ms.devlang: java
 ms.service: cosmos-db
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: 77851933366e09a7d5b0d1ae87816c563bf35e6b
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.openlocfilehash: 0284f89f6a37497709947649fba3b1284416a95c
+ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68281903"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74811938"
 ---
 # <a name="how-to-use-spring-data-mongodb-api-with-azure-cosmos-db"></a>Azure Cosmos DB で Spring Data MongoDB API を使用する方法
 
@@ -37,7 +31,7 @@ ms.locfileid: "68281903"
 
 ## <a name="create-an-azure-cosmos-db-account"></a>Azure Cosmos DB アカウントを作成する
 
-### <a name="create-a-cosmos-db-account-using-the-azure-portal"></a>Azure Portal を使用して Cosmos DB アカウントを作成する
+### <a name="create-a-cosmos-db-account-using-the-azure-portal"></a>Azure portal を使用して Cosmos DB アカウントを作成する
 
 > [!NOTE]
 > 
@@ -71,8 +65,6 @@ ms.locfileid: "68281903"
 
 1. **[すべてのリソース]** をクリックしてから、先ほど作成した Azure Cosmos DB アカウントをクリックします。
 
-   ![Azure Cosmos DB アカウントを選択する][COSMOSDB04]
-
 1. **[接続文字列]** をクリックし、 **[プライマリ接続文字列]** フィールドの値をコピーします。この値は、アプリケーションを構成するために後で使用します。
 
    ![Cosmos DB の接続文字列を取得する][COSMOSDB06]
@@ -102,7 +94,9 @@ ms.locfileid: "68281903"
 
 1. *application.properties* ファイルを保存して閉じます。
 
-## <a name="package-and-test-the-sample-application"></a>サンプル アプリケーションをパッケージ化してテストする 
+## <a name="package-and-test-the-sample-application"></a>サンプル アプリケーションをパッケージ化してテストする
+
+アプリケーションをビルドするには、 */gs-accessing-data-mongodb/complete* ディレクトリを参照します。ここには、pom.xml ファイルがあります。
 
 1. Maven でサンプル アプリケーションをビルドし、テストをスキップします。次に例を示します。
 
@@ -113,7 +107,7 @@ ms.locfileid: "68281903"
 1. サンプル アプリケーションを開始します。次に例を示します。
 
    ```shell
-   java -jar target/gs-accessing-data-mongodb-0.1.0.jar
+   java -jar target/accessing-data-mongodb-0.0.1-SNAPSHOT.jar
    ```
     
    アプリケーションから次のような値が返されます。

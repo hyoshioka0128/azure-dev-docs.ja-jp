@@ -1,20 +1,15 @@
 ---
 title: チュートリアル:Visual Studio Code を使用してコンテナー イメージを Azure App Service にデプロイする
 description: チュートリアルの手順 2、実際の Docker イメージをコンテナー レジストリから Azure App Service にデプロイする。
-services: app-service
-author: kraigb
-manager: barbkess
-ms.service: app-service
 ms.topic: conceptual
 ms.date: 09/12/2019
-ms.author: kraigb
 ms.custom: seo-python-october2019
-ms.openlocfilehash: bb1797ef86d9a98661412ef555b4eb78a9282ad9
-ms.sourcegitcommit: 6012460ad8d6ff112226b8f9ea6da397ef77712d
+ms.openlocfilehash: 0039b2cc9e612d7e03398e772183fe6eb81313f2
+ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72278852"
+ms.lasthandoff: 11/25/2019
+ms.locfileid: "74467041"
 ---
 # <a name="tutorial-deploy-a-container-image-to-azure-app-service"></a>チュートリアル:コンテナー イメージを Azure App Service にデプロイする
 
@@ -42,13 +37,13 @@ ms.locfileid: "72278852"
 
 1. App Service の作成には数分かかり、進行状況は VS Code の [出力] パネルに表示されます。
 
-1. 完了したら、App Service に `WEBSITES_PORT` という名前の設定を追加して ("WEBSITES" と複数形になっていることに注意してください)、コンテナーがリッスンしているポートを指定することも**必要です** (たとえば、[VS Code での Python コンテナーの作成](https://code.visualstudio.com/docs/python/tutorial-create-container)に関するチュートリアルにあるイメージを使用している場合、Flask のポートは 5000、Django のポートは 8000 になります)。 `WEBSITES_PORT` を設定するには、 **[Azure: App Service]** エクスプローラーに切り替え、新しい App Service のノードを展開します (必要に応じて更新します)。次に、 **[Application Settings]\(アプリケーション設定\)** を右クリックし、 **[新しい設定の追加]** を選択します。 プロンプトで、キーとして「`WEBSITES_PORT`」を入力し、その値にポート番号を入力します。
+1. 完了したら、App Service に `WEBSITES_PORT` という名前の設定を追加して ("WEBSITES" と複数形になっていることに注意してください)、コンテナーがリッスンしているポートを指定することも**必要です** (たとえば、[VS Code での Python コンテナーの作成](https://code.visualstudio.com/docs/python/tutorial-create-container)に関するチュートリアルにあるイメージを使用している場合、Flask のポートは 5000、Django のポートは 8000 になります)。 `WEBSITES_PORT` を設定するには、 **[Azure:App Service]** エクスプローラーに切り替え、新しい App Service のノードを展開します (必要に応じて更新します)。次に、 **[アプリケーション設定]** を右クリックし、 **[Add New Setting]\(新しい設定の追加\)** を選択します。 プロンプトで、キーとして「`WEBSITES_PORT`」を入力し、その値にポート番号を入力します。
 
     ![ポートを指定する新しい設定を App Service に追加する](media/deploy-containers/add-new-setting-in-app-service-settings-explorer.png)
 
 1. 設定を変更すると、App Service は自動的に再起動されます。 また、いつでも App Service を右クリックして **[再起動]** を選択できます。
 
-1. サービスが再起動したら、`http://<name>.azurewebsites.net` でサイトを参照します。 [出力] パネル内の URL を **Ctrl** キーを押しながらクリック (macOS の場合は **Cmd** キーを押しながらクリック) するか、 **[Azure: App Service]** エクスプローラー内で [App Service] を右クリックして **[Web サイトの参照]** を選択します。
+1. サービスが再起動したら、`http://<name>.azurewebsites.net` でサイトを参照します。 [出力] パネル内の URL を **Ctrl** キーを押しながらクリック (macOS の場合は **Cmd** キーを押しながらクリック) するか、 **[Azure:App Service]** エクスプローラー内で [App Service] を右クリックして **[Browse Website]\(Web サイトの参照\)** を選択します。
 
 > [!div class="nextstepaction"]
 > [イメージをデプロイしました](tutorial-deploy-containers-03.md)

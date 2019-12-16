@@ -4,12 +4,12 @@ description: pip または GitHub を使用して Azure SDK for Python をイン
 ms.date: 10/31/2019
 ms.topic: conceptual
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 39de0959f3d73306412c39b32a4e13766d1500e9
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: d3d162bc14f27a9b2bc3fb033dab36dcd1dfeb89
+ms.sourcegitcommit: 68a4044b9fa3291c9e7e2f68ae0049328f9c01bb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74466404"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74992490"
 ---
 # <a name="install-the-azure-sdk-for-python"></a>Azure SDK for Python をインストールする
 
@@ -19,7 +19,7 @@ Azure SDK for Python は、CPython バージョン2.7 と 3.5.3 以降、およ�
 
 ## <a name="install-sdk-libraries-using-pip"></a>pip を使用して SDK ライブラリをインストールする
 
-Azure SDK for Python はいくつかの個別のライブラリで構成されており、それぞれが特定の Azure サービスをプロビジョニングまたは使用します。 [SDK ライブラリの一覧](https://github.com/Azure/azure-sdk-for-python/blob/master/packages.md)に表示されている名前と共に `pip install <library>` を使用して、それぞれをインストールできます。 (この一覧には、各ライブラリの便利な README ファイルへのリンクが記載されています。)
+Azure SDK for Python はいくつかの個別のライブラリで構成されており、それぞれが特定の Azure サービスをプロビジョニングまたは使用します。 `pip install <library>` を使用して、それぞれをインストールできます。 各ライブラリの具体的な手順とドキュメントについては、[SDK のリリース ページ](https://azure.github.io/azure-sdk/releases/latest/python.html)を参照してください。
 
 たとえば、Azure Storage を使用している場合は、`azure-storage-file`、`azure-storage-blob`、または `azure-storage-queue` ライブラリをインストールすることができます。 Azure Cosmos DB テーブルを使用している場合は、`azure-cosmosdb-table` をインストールします。 Azure Functions は、`azure-functions` ライブラリなどでサポートされています。 `azure-mgmt-` で始まるライブラリは、Azure リソースをプロビジョニングするための API を提供します。
 

@@ -4,12 +4,12 @@ description: Azure Functions を使用してサーバーレス コードを作�
 ms.topic: article
 ms.date: 08/19/2019
 ms.custom: seo-javascript-september2019, seo-javascript-october2019
-ms.openlocfilehash: e8caa6d540d7f3be815b05e627b82745ccf9c14f
-ms.sourcegitcommit: 9d0a6de18d9b5180c1cb485eff8e2774de48d225
+ms.openlocfilehash: d1b17e33b5ae4aa51a84ceae8005a5385c162967
+ms.sourcegitcommit: 68a4044b9fa3291c9e7e2f68ae0049328f9c01bb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74540499"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74992474"
 ---
 # <a name="use-azure-functions-to-write-serverless-nodejs-code-on-azure"></a>Azure Functions を使用して Azure でサーバーレス Node.js コードを作成する
 

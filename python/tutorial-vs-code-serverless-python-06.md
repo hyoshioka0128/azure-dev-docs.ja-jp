@@ -1,15 +1,15 @@
 ---
-title: チュートリアル:Visual Studio Code を使用して 2 つ目の Python 関数を Azure Functions に追加する
+title: チュートリアル:VS Code を使用して 2 つ目の Python 関数を Azure Functions に追加する
 description: チュートリアルの手順 6、2 つ目の関数を追加して Azure Functions プロジェクトを展開する。
 ms.topic: conceptual
 ms.date: 09/02/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 84130e3bc4d5a85046e21b66338ccc07bba8cad1
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: 12cd3625d3eec63a2ba3de4d55dbd957fbf0fb34
+ms.sourcegitcommit: 68a4044b9fa3291c9e7e2f68ae0049328f9c01bb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74465911"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74992430"
 ---
 # <a name="tutorial-add-a-second-python-function-to-azure-functions"></a>チュートリアル:2 つ目の Python 関数を Azure Functions に追加する
 

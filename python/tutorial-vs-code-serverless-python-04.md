@@ -1,15 +1,15 @@
 ---
-title: チュートリアル:Visual Studio Code を使用して Azure Functions の Python コードをローカルでデバッグする
+title: チュートリアル:VS Code を使用して Azure Functions の Python コードをローカルでデバッグする
 description: チュートリアルの手順 4、VS Code デバッガーをローカルで実行して Python コードをチェックする。
 ms.topic: conceptual
 ms.date: 09/02/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: b1ea7c60b8d4dca8de829a9c627811a33ea57f01
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: 7dafd432289ad96664ca7c8a319b3368368adcbd
+ms.sourcegitcommit: 68a4044b9fa3291c9e7e2f68ae0049328f9c01bb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74465957"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74992452"
 ---
 # <a name="tutorial-debug-the-azure-functions-python-code-locally"></a>チュートリアル:Azure Functions の Python コードをローカルでデバッグする
 

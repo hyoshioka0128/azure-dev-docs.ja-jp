@@ -1,15 +1,15 @@
 ---
-title: チュートリアル:Visual Studio Code を使用して Python でサーバーレスの Azure Functions を作成してデプロイする
+title: チュートリアル:VS Code を使用して Python でサーバーレスの Azure Functions を作成してデプロイする
 description: チュートリアルの手順 1、概要と前提条件。
 ms.topic: conceptual
 ms.date: 09/02/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: e6076bf9760a2f5b5e38622693b9a23561d3c964
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: 388c49767e08d4f86ad02439ece58610b7c2cf09
+ms.sourcegitcommit: 68a4044b9fa3291c9e7e2f68ae0049328f9c01bb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74467017"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74992541"
 ---
 # <a name="tutorial-create-and-deploy-serverless-azure-functions-in-python-with-visual-studio-code"></a>チュートリアル:Visual Studio Code を使用して Python でサーバーレスの Azure Functions を作成してデプロイする
 
@@ -43,7 +43,9 @@ Azure サブスクリプションをお持ちでない場合は、30 日間の�
 
 ### <a name="azure-functions-core-tools"></a>Azure Functions Core Tools
 
-ご利用のオペレーティング システムに対する指示は、「[Azure Functions Core Tools のインストール](/azure/azure-functions/functions-run-local#v2)」に従います。 ツール自体は .NET Core で記述されています。Core Tools パッケージは Node.js パッケージ マネージャー (npm) を使用してインストールすることをお勧めします。そのため、Python であっても、現在のところ、.NET Core と Node.js をインストールする必要があります。 ただし、"拡張バンドル" を利用して .NET Core 要件を回避できます。説明は前述のドキュメントにあります。 いずれにせよ、以上のコンポーネントは 1 回だけインストールする必要があります。その後、更新プログラムがあれば、Visual Studio Code からインストールを自動的に求められます。
+ご利用のオペレーティング システムに対する指示は、「[Azure Functions Core Tools のインストール](/azure/azure-functions/functions-run-local#v2)」に従います。
+
+ツールは .NET Core で記述されています。Core Tools パッケージは Node.js パッケージ マネージャー (npm) を使用してインストールすることをお勧めします。そのため、Python で Azure Functions を処理する場合であっても、現在のところ、.NET Core と Node.js をインストールする必要があります。 ただし、"拡張バンドル" を利用して .NET Core 要件を回避できます。説明は前述のドキュメントにあります。 いずれにせよ、以上のコンポーネントは 1 回だけインストールする必要があります。その後、更新プログラムがあれば、Visual Studio Code からインストールを自動的に求められます。
 
 ### <a name="sign-in-to-azure"></a>Azure へのサインイン
 
@@ -57,7 +59,9 @@ Azure サブスクリプションをお持ちでない場合は、30 日間の�
 
 Azure Functions ロゴで始まる出力は (出力を上方向にスクロールする必要があります)、Azure Functions Core Tools が存在することを示します。
 
-`func` コマンドが認識されない場合は、Azure Functions Core Tools をインストールしたフォルダーが PATH 環境変数に含まれることを確認します。
+`func` コマンドが認識されない場合は、`npm install -g azure-functions-core-tools` を再度実行して、インストールが成功したことを確認します。 `-g` スイッチを install コマンドと共に使用することも確認してください。そうしない場合、npm は現在のフォルダーにのみパッケージをインストールします。
+
+`func` コマンドは、Node.js グローバル フォルダーにインストールされている *func.cmd* ファイルを介して機能します。 このフォルダーの場所を確認するには、`npm -l` を実行し、出力の最後にある場所を確認します。
 
 > [!div class="nextstepaction"]
 > [Azure にサインインしました](tutorial-vs-code-serverless-python-02.md)

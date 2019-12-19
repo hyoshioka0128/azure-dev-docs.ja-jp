@@ -3,12 +3,12 @@ title: Node.js を使った Azure サービス プリンシパルの作成
 description: Azure で Node.js および JavaScript を使用してサービス プリンシパルを認証する方法について説明します
 ms.topic: article
 ms.date: 06/17/2017
-ms.openlocfilehash: 4303d1e31431d38c37b300f6f19ca1e658008441
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: 1a85d185d6272a72b0f8029822b01174f9a043ce
+ms.sourcegitcommit: 5c65d22b5203b0c17806463d349a6ede93a99fa0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74466784"
+ms.lasthandoff: 12/12/2019
+ms.locfileid: "75010579"
 ---
 # <a name="create-an-azure-service-principal-with-nodejs"></a>Node.js を使った Azure サービス プリンシパルの作成 
 
@@ -23,6 +23,8 @@ ms.locfileid: "74466784"
 - Azure ポータル
 - Azure CLI 2.0
 - Azure SDK for Node.js
+
+[!INCLUDE [chrome-note](includes/chrome-note.md)]
 
 ## <a name="create-a-service-principal-using-the-azure-portal"></a>Azure Portal を使用してサービス プリンシパルを作成する
 

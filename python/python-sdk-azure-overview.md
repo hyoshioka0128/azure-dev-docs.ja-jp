@@ -3,12 +3,12 @@ title: Azure SDK for Python
 description: Azure サービス使用時の開発者の生産性を向上させる、Azure SDK for Python の機能の概要。
 ms.date: 10/30/2019
 ms.topic: conceptual
-ms.openlocfilehash: fb81b743de8332d18aeb815d1ed1efa09e6e3305
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: 7a70f6050890bc384bac0d58ba3f0aa2e5e553cb
+ms.sourcegitcommit: 5c65d22b5203b0c17806463d349a6ede93a99fa0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74466334"
+ms.lasthandoff: 12/12/2019
+ms.locfileid: "75010589"
 ---
 # <a name="azure-sdk-for-python"></a>Azure SDK for Python
 
@@ -20,6 +20,8 @@ Azure SDK for Python は、Python アプリケーション コードからの Az
 
 > [!TIP]
 > SDK の変更点の詳細については、[SDK のリリースノート](https://azure.github.io/azure-sdk/)を参照してください。
+
+[!INCLUDE [chrome-note](includes/chrome-note.md)]
 
 ## <a name="connect-and-use-azure-services"></a>Azure サービスへの接続と使用
 

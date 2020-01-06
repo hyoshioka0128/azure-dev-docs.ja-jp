@@ -1,18 +1,18 @@
 ---
-title: Azure Redis Cache を使用するように Spring Boot Initializer アプリを構成する
+title: Spring Boot Initializer アプリを作成する - Azure Redis Cache
 description: Spring Initializer で作成された Spring Boot アプリケーションを、Azure Redis Cache によってクラウドで Redis を使用するように構成します。
 services: redis-cache
 documentationcenter: java
 ms.date: 12/19/2018
 ms.service: cache
 ms.tgt_pltfrm: cache-redis
-ms.topic: article
-ms.openlocfilehash: 06fbeb24ca237124210a2ffe0e37755645a446dd
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.topic: conceptual
+ms.openlocfilehash: e70b5f9b8427bebd9c5ca3761a664464ad3b0909
+ms.sourcegitcommit: 670874dfe49e6ffa5bee88555851878f0da93042
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74812185"
+ms.lasthandoff: 12/16/2019
+ms.locfileid: "75034039"
 ---
 # <a name="configure-a-spring-boot-initializer-app-to-use-redis-in-the-cloud-with-azure-redis-cache"></a>Azure Redis Cache によってクラウドで Redis を使用するように Spring Boot Initializer アプリを構成する
 

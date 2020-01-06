@@ -1,5 +1,5 @@
 ---
-title: Maven と Azure を使用して Spring Boot JAR ファイルのアプリをクラウドにデプロイする
+title: Maven を使用して Spring Boot アプリを Azure にデプロイする
 description: Azure Web Apps 用の Maven プラグインを使って、Spring Boot アプリを Azure にデプロイする方法について説明します。
 services: app-service
 documentationcenter: java
@@ -9,12 +9,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: seo-java-july2019, seo-java-august2019
-ms.openlocfilehash: 8ea9007dbc929ccbe2718b16c1381e1d09ec3b3a
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: 5468016954c562258245958cf7b95d2200dcc5f0
+ms.sourcegitcommit: db803eba96ffa73b21b94fcb41439cb9b7a0e3c8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74811905"
+ms.lasthandoff: 12/13/2019
+ms.locfileid: "75031681"
 ---
 # <a name="use-maven-for-azure-web-apps-to-deploy-a-containerized-spring-boot-app-to-azure"></a>Azure Web Apps 用の Maven を使用して、コンテナー化された Spring Boot アプリを Azure にデプロイする
 
@@ -224,7 +224,7 @@ Maven プラグイン用に変更できる値は複数あります。これら�
 
 | 要素 | 説明 |
 |---|---|
-| `<version>` | [Azure Web Apps 用の Maven プラグイン]のバージョンを指定します。 最新バージョンを使用していることを確認するために、[Maven Central Respository](https://search.maven.org/#search%7Cga%7C1%7Ca%3A%22azure-webapp-maven-plugin%22) で一覧表示されているバージョンを確認してください。 |
+| `<version>` | [Azure Web Apps 用の Maven プラグイン]のバージョンを指定します。 [Maven Central Repository](https://search.maven.org/#search%7Cga%7C1%7Ca%3A%22azure-webapp-maven-plugin%22) に表示されているバージョンを確認して、最新バージョンを使用していることを確認してください。 |
 | `<authentication>` | Azure の認証情報を指定します。この例では `azure-auth` を含む `<serverId>` 要素が認証情報です。Maven はこの値を、この記事の前のセクションで定義した Maven の*settings.xml* ファイル内にある Azure サービス プリンシパルを見つけるために使います。 |
 | `<resourceGroup>` | ターゲット リソース グループを指定します。この例では `maven-plugin` です。 リソース グループが存在しない場合は、デプロイ中に新しいリソース グループが作成されます。 |
 | `<appName>` | Web アプリのターゲット名を指定します。 この例では、ターゲット名は `maven-linux-app-${maven.build.timestamp}` です。混乱を避けるため、この例ではサフィックスの `${maven.build.timestamp}` を追加しています (タイムスタンプは省略可能です。アプリ名には一意の文字列を指定できます)。 |

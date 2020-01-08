@@ -62,7 +62,7 @@ sections:
             title: Maven での Spring Boot アプリのデプロイ
             href: /azure/java/spring-framework/deploy-spring-boot-java-app-with-maven-plugin
           - image:
-              src: /azure/media/index/spring.svg
+              src: /java/media/spring.svg
             title: Azure Spring Cloud を使用したマイクロサービス
             href: /azure/spring-cloud/spring-cloud-quickstart-launch-app-portal
           - image:

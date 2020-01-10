@@ -3,20 +3,18 @@ title: Azure PostgreSQL で Spring Data JDBC を使用する方法
 description: Azure PostgreSQL データベースで Spring Data JDBC を使用する方法を説明します。
 services: postgresql
 documentationcenter: java
-ms.date: 12/19/2018
+ms.date: 12/26/2019
 ms.service: postgresql
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: d7f4ddeab5c46f6070145e5aab0b273156ed38a0
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: b5abc7479a52aa84cd3f05ffb56e5c7f31d0c533
+ms.sourcegitcommit: 94ca8c28d8d3e954cf118f1f46ac905c3a470b38
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74811994"
+ms.lasthandoff: 12/27/2019
+ms.locfileid: "75502378"
 ---
 # <a name="how-to-use-spring-data-jdbc-with-azure-postgresql"></a>Azure PostgreSQL で Spring Data JDBC を使用する方法
-
-## <a name="overview"></a>概要
 
 この記事では、[Spring Data] を使用して、[Java Database Connectivity (JDBC)](https://docs.oracle.com/javase/8/docs/technotes/guides/jdbc/) を使って Azure [PostgreSQL](https://www.postgresql.org/) データベース内の情報を格納および取得するサンプル アプリケーションを作成する方法を説明します。
 
@@ -47,19 +45,20 @@ ms.locfileid: "74811994"
 
 1. 次の情報を入力します。
 
-   - **サーバー名**: PostgreSQL サーバー用に一意の名前を選択します。この名前は、*wingtiptoyspostgresql.postgres.database.azure.com* のような完全修飾ドメイン名の作成に使用されます。
-   - **サブスクリプション**:使用する Azure サブスクリプションを指定します。
    - **[リソース グループ]** :新しいリソース グループを作成するのか、既存のリソース グループを選択するのかを指定します。
-   - **ソースの選択**:このチュートリアルでは、`Blank` を選択して新しいデータベースを作成します。
+   - **サブスクリプション**:使用する Azure サブスクリプションを指定します。
+   - **[サーバー名]** : PostgreSQL サーバー用に一意の名前を選択します。この名前は、*wingtiptoyspostgresql.postgres.database.azure.com* のような完全修飾ドメイン名の作成に使用されます。
+   - **ソースの選択**:このチュートリアルでは、`None` を選択して新しいデータベースを作成します。
    - **サーバー管理者ログイン**:データベース管理者名を指定します。
    - **[パスワード]** と **[パスワードの確認]** :データベース管理者のパスワードを指定します。
    - **[場所]** :データベースに最も近い地理的リージョンを指定します。
    - **バージョン**:最新のデータベース バージョンを指定します。
-   - **価格レベル**:このチュートリアルでは、最も安い価格レベルを指定します。
 
    ![PostgreSQL データベースのプロパティを作成する][POSTGRESQL02]
 
-1. 上記の情報をすべて入力したら、 **[作成]** をクリックします。
+1. 上記の情報をすべて入力したら、 **[確認と作成]** をクリックします。
+
+1. 指定した内容を確認し、 **[作成]** をクリックします。
 
 ### <a name="configure-a-firewall-rule-for-your-postgresql-database-server-using-the-azure-portal"></a>Azure portal を使用して PostgreSQL データベース サーバーのファイアウォール規則を構成する
 
@@ -67,19 +66,15 @@ ms.locfileid: "74811994"
 
 1. **[すべてのリソース]** をクリックし、先ほど作成した PostgreSQL データベースをクリックします。
 
-   ![PostgreSQL データベースを選択する][POSTGRESQL03]
-
 1. **[接続のセキュリティ]** をクリックし、 **[ファイアウォール規則]** で、規則の一意の名前を指定して新しい規則を作成し、データベースへのアクセス権を必要とする IP アドレスの範囲を入力して、 **[保存]** をクリックします。
 
-   ![接続のセキュリティを構成する][POSTGRESQL04]
+   ![接続のセキュリティを構成する][POSTGRESQL03]
 
 ### <a name="retrieve-the-connection-string-for-your-postgresql-server-using-the-azure-portal"></a>Azure portal を使用して PostgreSQL サーバーの接続文字列を取得する
 
 1. Azure portal (<https://portal.azure.com/>) を参照し、サインインします。
 
 1. **[すべてのリソース]** をクリックし、先ほど作成した PostgreSQL データベースをクリックします。
-
-   ![PostgreSQL データベースを選択する][POSTGRESQL03]
 
 1. **[接続文字列]** をクリックし、 **[JDBC]** テキスト フィールド内の値をコピーします。
 
@@ -94,7 +89,7 @@ ms.locfileid: "74811994"
    ```
    各値の説明:
 
-   | パラメーター | 説明 |
+   | パラメーター | [説明] |
    |---|---|
    | `host` | この記事の前半の完全修飾 PostgreSQL サーバー名を指定します。 |
    | `host` | PostgreSQL サーバー ポートを指定します。既定では `5432` です。 |
@@ -159,7 +154,7 @@ ms.locfileid: "74811994"
     ```
    各値の説明:
 
-   | パラメーター | 説明 |
+   | パラメーター | [説明] |
    |---|---|
    | `spring.datasource.url` | この記事の前半の PostgreSQL JDBC 文字列を指定します。 |
    | `spring.datasource.username` | この記事の前半の PostgreSQL 管理者名を指定し、その後に短縮サーバー名を追加します。 |
@@ -213,7 +208,7 @@ ms.locfileid: "74811994"
 
 このチュートリアルでは、Spring Data を使用して、JDBC を使って Azure PostgreSQL データベース 内の情報を格納および取得する Java のサンプル アプリケーションを作成しました。
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
 Spring および Azure の詳細については、Azure ドキュメント センターで引き続き Spring に関するドキュメントをご確認ください。
 

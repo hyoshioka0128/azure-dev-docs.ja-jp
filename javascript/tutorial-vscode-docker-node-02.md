@@ -3,12 +3,12 @@ title: Visual Studio Code からコンテナー レジストリを使用する
 description: チュートリアル パート2、コンテナー レジストリを使用する
 ms.topic: conceptual
 ms.date: 09/20/2019
-ms.openlocfilehash: 7d51e8011824ec19e9530f9bc94bcb2ce07f2851
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: c5e9ff3cd803ef4d57408199682c71e4b57f2d77
+ms.sourcegitcommit: fc3408b6e153c847dd90026161c4c498aa06e2fc
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74466631"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75191028"
 ---
 # <a name="use-a-container-registry"></a>コンテナー レジストリを使用する
 
@@ -20,9 +20,13 @@ ms.locfileid: "74466631"
 
 ## <a name="create-an-azure-container-registry"></a>Azure Container Registry を作成する
 
-1. [Azure portal](https://portal.azure.com) にサインインし、 **[リソースの作成]**  >  **[コンテナー]**  >  **[コンテナー レジストリ]** の順に選択します。
+1. [Azure portal](https://portal.azure.com) にサインインし、 **[リソースの作成]** を選択します。
 
-    ![Azure portal でコンテナー レジストリを作成する](media/deploy-containers/portal-01.png)
+    ![Azure portal での新しいリソースの作成](media/deploy-containers/portal-01a.png)
+
+1. 次のページで、 **[コンテナー]**  >  **[Container Registry]** を選択します。
+
+    ![Azure portal でコンテナー レジストリを作成する](media/deploy-containers/portal-01b.png)
 
 1. 表示された **[コンテナー レジストリの作成]** フォームに、次のように適切な値を入力します。
 
@@ -50,6 +54,8 @@ ms.locfileid: "74466631"
     ```bash
     docker login <registry_name>.azurecr.io -u <username> -p <password>
     ```
+
+    セキュリティを強化するには、`-p <password>` ではなく `--password-stdin` を使用し、プロンプトが表示されたらパスワードを貼り付けます。
 
 1. Visual Studio Code で、**Docker** エクスプローラーを開き、たった今設定したレジストリ エンドポイントが **[Registries]\(レジストリ\)** の下に表示されていることを確認します。
 

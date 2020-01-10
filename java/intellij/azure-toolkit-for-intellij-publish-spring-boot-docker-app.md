@@ -7,18 +7,18 @@ ms.date: 11/13/2018
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: eb8458301036ffedfce98844c22aa4ef1aafb0e0
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: 00d6d77c78a1b38bbeb5369301956b2cfce166a5
+ms.sourcegitcommit: fc3408b6e153c847dd90026161c4c498aa06e2fc
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74812501"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75191129"
 ---
-# <a name="publish-a-spring-boot-app-as-a-docker-container-by-using-the-azure-toolkit-for-intellij"></a>Azure Toolkit for IntelliJ を使用して Spring Boot アプリを Docker コンテナーとして発行する
+# <a name="publish-a-spring-boot-app-as-a-docker-container-by-using-the-azure-toolkit-for-intellij-deprecated"></a>Azure Toolkit for IntelliJ を使用して Spring Boot アプリを Docker コンテナーとして発行する (非推奨)
 
 [Spring Framework] は Java 開発者のエンタープライズ レベルのアプリケーション作成を支援するオープンソース ソリューションです。 このプラットフォームで構築される特に知られたプロジェクトの 1 つが [Spring Boot] です。これによって、スタンドアロンの Java アプリケーションの作成方法が簡略化されます。
 
-[Docker] は、開発者が、コンテナーで実行されるアプリケーションのデプロイ、スケーリング、および管理を自動化することを支援するオープン ソース ソリューションです。
+[Docker] は、開発者が、コンテナーで実行されるアプリケーションのデプロイ、スケーリング、管理を自動化することを支援するオープン ソース ソリューションです。
 
 このチュートリアルでは、Azure Toolkit for IntelliJ を使用して Spring Boot アプリケーションを Docker コンテナーとして Microsoft Azure にデプロイする手順について説明します。
 
@@ -144,12 +144,12 @@ Spring Boot アプリを発行するには、デプロイの準備ができた�
 
       ![メイン クラスの指定][ART04d]
 
-1. Click **OK**.
+1. **[OK]** をクリックします。
 
    ![[プロジェクト構造] ダイアログ ボックスを閉じる][ART05]
 
 > [!NOTE]
-> IntelliJ のアーティファクトの作成について詳しくは、JetBrains の Web サイトの「[Configuring Artifacts (アーティファクトの構成)]」をご覧ください。
+> IntelliJ のアーティファクトの作成について詳しくは、JetBrains の Web サイトの「[アーティファクトの構成]」をご覧ください。
 >
 
 ### <a name="build-the-artifact-for-deployment"></a>デプロイ用のアーティファクトのビルド
@@ -208,7 +208,7 @@ IntelliJ でプロジェクト ツール ウィンドウに、Spring Boot アプ
 
    ![正常にデプロイされた Docker ホスト][PU06]
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
 IntelliJ を使用して Spring Boot アプリを作成するための他の方法については、JetBrains Web サイトの [Spring Boot プロジェクトの作成](https://www.jetbrains.com/help/idea/creating-spring-boot-projects.html)に関する記事を参照してください。
 
@@ -218,7 +218,7 @@ IntelliJ を使用して Spring Boot アプリを作成するための他の方�
 
 [Azure Management Portal]: https://go.microsoft.com/fwlink/?LinkID=512959
 [Azure Sign In for IntelliJ]: ./azure-toolkit-for-intellij-sign-in-instructions.md
-[Configuring Artifacts (アーティファクトの構成)]: https://www.jetbrains.com/help/idea/2016.1/configuring-artifacts.html
+[アーティファクトの構成]: https://www.jetbrains.com/help/idea/2016.1/configuring-artifacts.html
 [Deploy Spring Boot on Linux in AKS]: /azure/container-service/kubernetes/container-service-deploy-spring-boot-app-on-linux
 [Docker]: https://www.docker.com/
 [Publish Container with Azure Toolkit]: ./azure-toolkit-for-intellij-publish-as-docker-container.md

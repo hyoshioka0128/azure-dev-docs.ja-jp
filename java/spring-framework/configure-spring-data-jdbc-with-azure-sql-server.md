@@ -7,12 +7,12 @@ ms.date: 12/19/2018
 ms.service: sql-database
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: 76fe515c6f315a340d5c306edfef31cdf736ceed
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: 028e54c54410caf9e81448fd8df8283532591895
+ms.sourcegitcommit: 7722fc50eeab0f97bd0ea9cb3263da87244af406
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74811986"
+ms.lasthandoff: 12/26/2019
+ms.locfileid: "75492233"
 ---
 # <a name="how-to-use-spring-data-jdbc-with-azure-sql-database"></a>Azure SQL Database で Spring Data JDBC を使用する方法
 
@@ -30,7 +30,7 @@ ms.locfileid: "74811986"
 * [Curl](https://curl.haxx.se/) または機能をテストするための類似の HTTP ユーティリティ。
 * [Git](https://git-scm.com/downloads) クライアント。
 
-## <a name="create-an-azure-sql-satabase"></a>Azure SQL データベースを作成する
+## <a name="create-an-azure-sql-database"></a>Azure SQL Database の作成
 
 ### <a name="create-a-sql-database-server-using-the-azure-portal"></a>Azure portal を使用して SQL データベース サーバーを作成する
 
@@ -42,7 +42,7 @@ ms.locfileid: "74811986"
 
 1. **[+ リソースの作成]** をクリックし、 **[データベース]** 、 **[SQL Database]** の順にクリックします。
 
-   ![SQL Database の作成][SQL01]
+   ![SQL データベースを作成する][SQL01]
 
 1. 次の情報を指定します。
 
@@ -53,20 +53,19 @@ ms.locfileid: "74811986"
 
    ![SQL データベースのプロパティを指定する][SQL02]
    
-1. **[サーバー]** 、 **[新しいサーバーの作成]** の順にクリックして、次の情報を指定します。
+1. **[サーバー]** 、 **[新規作成]** の順にクリックして、次の情報を指定します。
 
-   - **サーバー名**: SQL サーバー用に一意の名前を選択します。この名前は、*wingtiptoyssql.database.windows.net* のような完全修飾ドメイン名の作成に使用されます。
+   - **[サーバー名]** : SQL サーバー用に一意の名前を選択します。この名前は、*wingtiptoyssql.database.windows.net* のような完全修飾ドメイン名の作成に使用されます。
    - **サーバー管理者ログイン**:データベース管理者名を指定します。
    - **[パスワード]** と **[パスワードの確認]** :データベース管理者のパスワードを指定します。
    - **[場所]** :データベースに最も近い地理的リージョンを指定します。
 
-   ![SQL サーバーを指定する][SQL03]
 
-1. 上記の情報をすべて入力したら、 **[選択]** をクリックします。
+1. 上記の情報をすべて入力したら、 **[OK]** をクリックします。
 
-1. このチュートリアルでは、最も安い**価格レベル**を指定して、 **[作成]** をクリックします。
+1. **[確認と作成]** をクリックします。
 
-   ![SQL データベースを作成する][SQL04]
+1. 設定を確認し、 **[作成]** をクリックします。
 
 ### <a name="configure-a-firewall-rule-for-your-sql-server-using-the-azure-portal"></a>Azure portal を使用して SQL サーバーのファイアウォール規則を構成する
 
@@ -74,9 +73,7 @@ ms.locfileid: "74811986"
 
 1. **[すべてのリソース]** をクリックし、先ほど作成した SQL サーバーをクリックします。
 
-   ![SQL サーバーを選択する][SQL05]
-
-1. **[概要]** セクションで、 **[ファイアウォール設定の表示]** をクリックします。
+1. 左側のナビゲーション ウィンドウで、 **[概要]** セクションをクリックし、 **[サーバー ファイアウォールの設定]** をクリックします
 
    ![ファイアウォール設定の表示][SQL06]
 
@@ -89,8 +86,6 @@ ms.locfileid: "74811986"
 1. Azure portal (<https://portal.azure.com/>) を参照し、サインインします。
 
 1. **[すべてのリソース]** をクリックし、先ほど作成した SQL データベースをクリックします。
-
-   ![SQL データベースを選択する][SQL08]
 
 1. **[接続文字列]** 、 **[JDBC]** の順にクリックし、JDBC のテキスト フィールド内の値をコピーします。
 
@@ -115,7 +110,7 @@ ms.locfileid: "74811986"
     ```
    各値の説明:
 
-   | パラメーター | 説明 |
+   | パラメーター | [説明] |
    |---|---|
    | `spring.datasource.url` | この記事の前半の SQL JDBC 文字列の編集されたバージョンを指定します。 |
    | `spring.datasource.username` | この記事の前半の SQL 管理者名を指定し、その後に短縮サーバー名を追加します。 |
@@ -169,7 +164,7 @@ ms.locfileid: "74811986"
 
 このチュートリアルでは、Spring Data を使用して、JDBC を使って Azure SQL データベース内の情報を格納および取得する Java のサンプル アプリケーションを作成しました。
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
 Spring および Azure の詳細については、Azure ドキュメント センターで引き続き Spring に関するドキュメントをご確認ください。
 

@@ -2,16 +2,16 @@
 title: Azure Database for MySQL で Spring Data JDBC を使用する方法
 description: Azure Database for MySQL データベースで Spring Data JDBC を使用する方法を説明します。
 documentationcenter: java
-ms.date: 12/19/2018
+ms.date: 01/07/2020
 ms.service: mysql
 ms.tgt_pltfrm: multiple
 ms.topic: conceptual
-ms.openlocfilehash: 323613fa8508f4e52c602763b40f15c4d2ffbc54
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: a36484cb6858422f4d9b0e6a5c72a793f3686514
+ms.sourcegitcommit: 3b8ccf447921a55f16c25795914d9eed64c2b9cf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74812006"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75755656"
 ---
 # <a name="how-to-use-spring-data-jdbc-with-azure-mysql"></a>Azure MySQL で Spring Data JDBC を使用する方法
 
@@ -46,27 +46,26 @@ ms.locfileid: "74812006"
 
 1. 次の情報を入力します。
 
-   - **サーバー名**: MySQL サーバー用に一意の名前を選択します。この名前は、*wingtiptoysmysql.mysql.database.azure.com* のような完全修飾ドメイン名の作成に使用されます。
    - **サブスクリプション**:使用する Azure サブスクリプションを指定します。
    - **[リソース グループ]** :新しいリソース グループを作成するのか、既存のリソース グループを選択するのかを指定します。
-   - **ソースの選択**:このチュートリアルでは、`Blank` を選択して新しいデータベースを作成します。
-   - **サーバー管理者ログイン**:データベース管理者名を指定します。
+   - **[サーバー名]** : MySQL サーバー用に一意の名前を選択します。この名前は、*wingtiptoysmysql.mysql.database.azure.com* のような完全修飾ドメイン名の作成に使用されます。
+   - **データ ソース**:このチュートリアルでは、`Blank` を選択して新しいデータベースを作成します。
+   - **管理者ユーザー名**:データベース管理者名を指定します。
    - **[パスワード]** と **[パスワードの確認]** :データベース管理者のパスワードを指定します。
    - **[場所]** :データベースに最も近い地理的リージョンを指定します。
    - **バージョン**:最新のデータベース バージョンを指定します。
-   - **価格レベル**:このチュートリアルでは、最も安い価格レベルを指定します。
 
    ![MySQL データベースのプロパティを作成する][MYSQL02]
 
-1. 上記の情報をすべて入力したら、 **[作成]** をクリックします。
+1. 上記の情報をすべて入力したら、 **[レビュー + 作成]** をクリックします。
+
+1. 指定した内容を確認し、 **[作成]** をクリックします。
 
 ### <a name="configure-a-firewall-rule-for-your-server-using-the-azure-portal"></a>Azure portal を使用してサーバーのファイアウォール規則を構成する
 
 1. Azure portal (<https://portal.azure.com/>) を参照し、サインインします。
 
 1. **[すべてのリソース]** をクリックし、先ほど作成した Azure Database for MySQL リソースをクリックします。
-
-   ![MySQL データベースを選択する][MYSQL03]
 
 1. **[接続のセキュリティ]** をクリックし、 **[ファイアウォール規則]** で、規則の一意の名前を指定して新しい規則を作成し、データベースへのアクセス権を必要とする IP アドレスの範囲を入力して、 **[保存]** をクリックします。
 
@@ -77,8 +76,6 @@ ms.locfileid: "74812006"
 1. Azure portal (<https://portal.azure.com/>) を参照し、サインインします。
 
 1. **[すべてのリソース]** をクリックし、先ほど作成した Azure Database for MySQL を選択します。
-
-   ![MySQL データベースを選択する][MYSQL03]
 
 1. **[接続文字列]** をクリックし、 **[JDBC]** テキスト フィールド内の値をコピーします。
 
@@ -93,7 +90,7 @@ ms.locfileid: "74812006"
    ```
    各値の説明:
 
-   | パラメーター | 説明 |
+   | パラメーター | [説明] |
    |---|---|
    | `host` | この記事の前半の完全修飾 MySQL サーバー名を指定します。 |
    | `user` | この記事の前半の MySQL 管理者と短縮サーバー名を指定します。 |
@@ -170,7 +167,7 @@ ms.locfileid: "74812006"
     ```
    各値の説明:
 
-   | パラメーター | 説明 |
+   | パラメーター | [説明] |
    |---|---|
    | `spring.datasource.url` | タイム ゾーンを追加して、この記事の前半の MySQL JDBC 文字列を指定します。 |
    | `spring.datasource.username` | この記事の前半の MySQL 管理者名を指定し、その後に短縮サーバー名を追加します。 |
@@ -224,7 +221,7 @@ ms.locfileid: "74812006"
 
 このチュートリアルでは、Spring Data を使用して、JDBC を使って Azure Database for MySQL データベース内の情報を格納および取得する Java のサンプル アプリケーションを作成しました。
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
 Spring および Azure の詳細については、Azure ドキュメント センターで引き続き Spring に関するドキュメントをご確認ください。
 
@@ -250,6 +247,5 @@ Java での Azure の使用の詳細については、「[Java 開発者向け�
 
 [MYSQL01]: media/configure-spring-data-jdbc-with-azure-mysql/create-mysql-01.png
 [MYSQL02]: media/configure-spring-data-jdbc-with-azure-mysql/create-mysql-02.png
-[MYSQL03]: media/configure-spring-data-jdbc-with-azure-mysql/create-mysql-03.png
 [MYSQL04]: media/configure-spring-data-jdbc-with-azure-mysql/create-mysql-04.png
 [MYSQL05]: media/configure-spring-data-jdbc-with-azure-mysql/create-mysql-05.png

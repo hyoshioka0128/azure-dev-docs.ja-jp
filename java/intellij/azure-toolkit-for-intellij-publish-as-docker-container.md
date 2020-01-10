@@ -7,14 +7,14 @@ ms.date: 02/01/2018
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: 0d57d691853cf16dba21cda9cea670629528c144
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: 8b601f2faf1431cf393db3560077e299d2a52f4c
+ms.sourcegitcommit: fc3408b6e153c847dd90026161c4c498aa06e2fc
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74812515"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75191059"
 ---
-# <a name="publish-a-web-app-as-a-docker-container-by-using-the-azure-toolkit-for-intellij"></a>Azure Toolkit for IntelliJ を使用して Web アプリを Docker コンテナーとして発行する
+# <a name="publish-a-web-app-as-a-docker-container-by-using-the-azure-toolkit-for-intellij-deprecated"></a>Azure Toolkit for IntelliJ を使用して Web アプリを Docker コンテナーとして発行する (非推奨)
 
 Docker コンテナーは、Web アプリケーションをデプロイするために広く使用されている方法です。 Docker コンテナーを使用すると、開発者は、すべてのプロジェクト ファイルと依存関係を、サーバーにデプロイするために 1 つのパッケージに統合できます。 Java 開発者のこのプロセスを簡略化するために、Azure Toolkit for IntelliJ には、Microsoft Azure にデプロイするための "*Docker コンテナーとして発行*" 機能が追加されました。 この記事では、アプリケーションを Docker コンテナーとして Azure に発行するために必要な手順を説明します。
 
@@ -44,7 +44,7 @@ Docker コンテナーは、Web アプリケーションをデプロイするた
    * IntelliJ ツール バーの **[Publish Group]\(発行グループ\)** ボタンをクリックし、 **[Publish as Docker Container]\(Docker コンテナーとして発行\)** をクリックします。
 
       ![[Publish as Docker Container]\(Docker コンテナーとして発行\) コマンド][PUB02]  
-    **Deploy Docker Container on Azure (Azure に Docker コンテナーをデプロイ)** ウィザードが開かれます。
+    **[Deploy Docker Container on Azure] \(Azure への Docker コンテナーのデプロイ)** ウィザードが開きます。
 
    ![[Deploy Docker Container on Azure] \(Azure への Docker コンテナーのデプロイ) ウィザード][PUB03]
 
@@ -52,10 +52,10 @@ Docker コンテナーは、Web アプリケーションをデプロイするた
 
    a. **[Docker image name] \(Docker イメージ名)** ボックスに、Docker ホストの一意の名前を入力します。 (このウィザードでは名前が自動的に作成されますが、それは変更できます)。 
 
-   b. **[ホスト]** 領域には、既に作成しているすべての Docker ホストが表示されます。 次のいずれかを実行します。 
+   b. **[ホスト]** 領域には、既に作成しているすべての Docker ホストが表示されます。 以下のいずれかを実行します。 
    * 既存の Docker ホストがある場合は、それに Web アプリをデプロイできます。
    * Docker ホストを作成するには、緑色のプラス記号 ( **+** ) をクリックします。  
-     **[Create Docker Host]\(Docker ホストの作成\)** ダイアログ ボックスが表示されます。 
+     **[Create Docker Host] \(Docker ホストの作成)** ダイアログ ボックスが開きます。 
 
      ![[Deploy Docker Container on Azure] \(Azure への Docker コンテナーのデプロイ) ウィザード][PUB04a]
 
@@ -69,7 +69,7 @@ Docker コンテナーは、Web アプリケーションをデプロイするた
       
    d. **[OS and Size]\(OS とサイズ\)** タブで、以下の操作を行います。      
       * **[Host OS]\(ホスト OS\)** :ホストがある仮想マシンのオペレーティング システムを入力します。 
-      * **[サイズ]** :ホストの仮想マシンのサイズを入力します。   
+      * **Size**:ホストの仮想マシンのサイズを入力します。   
        
    e. **[リソース グループ]** タブで、以下のいずれかを選択します。      
       * **[新しいリソース グループ]** :自分のホストのリソース グループを作成します。
@@ -88,7 +88,7 @@ Docker コンテナーは、Web アプリケーションをデプロイするた
 
       ![[Configure log in credentials and port settings]\(ログイン資格情報とポート設定の構成\) ウィンドウ][PUB05]
 
-6. 次のいずれかのオプションを選択します。
+6. 以下のオプションの 1 つを選択します。
 
    * **[Import credentials from Azure Key Vault]\(Azure Key Vault からの資格情報のインポート\)** : 自分の Azure サブスクリプションに格納されている、以前に保存された一連の資格情報を指定します。
 
@@ -138,12 +138,12 @@ Docker コンテナーは、Web アプリケーションをデプロイするた
 7. 必要な情報を入力したら、 **[完了]** をクリックします。  
     **Deploy Docker Container on Azure (Azure に Docker コンテナーをデプロイ)** ウィザードが再び表示されます。
 
-   ![Deploy Docker Container on Azure (Azure に Docker コンテナーをデプロイ) ウィザード][PUB07]
+   ![[Deploy Docker Container on Azure] \(Azure への Docker コンテナーのデプロイ) ウィザード][PUB07]
 
 8. **[次へ]** をクリックします。  
     **[Configure the Docker container to be created]\(作成される Docker コンテナーの構成\)** ウィンドウが開きます。
 
-   ![[Configure the Docker container to be created]\(作成される Docker コンテナーの構成\) ウィンドウ][PUB08]
+   ![[Configure the Docker container to be created] \(作成される Docker コンテナーの構成) ウィンドウ][PUB08]
 
 9. **[Configure the Docker container to be created]\(作成される Docker コンテナーの構成\)** ウィンドウで、以下の情報を指定します。 
 
@@ -188,9 +188,9 @@ Azure Toolkit により、Docker コンテナーでの Azure への Web アプ�
 
    ![アーティファクトの [名前] ボックス][ART03]
 
-IntelliJ でのアーティファクトの作成の詳細については、JetBrains Web サイトの「[Configuring Artifacts (アーティファクトの構成)]」を参照してください。
+IntelliJ でのアーティファクトの作成の詳細については、JetBrains Web サイトの「[アーティファクトの構成]」を参照してください。
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
 Docker の他のリソースについては、公式の [Docker の Web サイト]を参照してください。
 
@@ -199,7 +199,7 @@ Docker の他のリソースについては、公式の [Docker の Web サイ�
 <!-- URL List -->
 
 [Docker の Web サイト]: https://www.docker.com/
-[Configuring Artifacts (アーティファクトの構成)]: https://www.jetbrains.com/help/idea/2016.1/configuring-artifacts.html
+[アーティファクトの構成]: https://www.jetbrains.com/help/idea/2016.1/configuring-artifacts.html
 
 <!-- IMG List -->
 

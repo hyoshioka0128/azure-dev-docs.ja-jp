@@ -7,16 +7,16 @@ ms.date: 02/01/2018
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: 2d81c2a23a58c2dfdb036988b8831efe0c821392
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: d1e384525ec32141b945f50d1d5be7190e84b239
+ms.sourcegitcommit: fc3408b6e153c847dd90026161c4c498aa06e2fc
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74811804"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75191049"
 ---
-# <a name="publish-a-web-app-as-a-docker-container-by-using-the-azure-toolkit-for-eclipse"></a>Azure Toolkit for Eclipse を使用して Web アプリを Docker コンテナーとして発行する
+# <a name="publish-a-web-app-as-a-docker-container-by-using-the-azure-toolkit-for-eclipse-deprecated"></a>Azure Toolkit for Eclipse を使用して Web アプリを Docker コンテナーとして発行する (非推奨)
 
-Docker コンテナーは、Web アプリケーションをデプロイするための広範に使用されている方法です。 Docker コンテナーを使用すると、開発者はすべてのプロジェクト ファイルおよび依存関係を、サーバーにデプロイするための 1 つのパッケージに統合できます。 Azure Toolkit for Eclipse は、Microsoft Azure にデプロイするための *[Docker コンテナーとして発行]* 機能を追加することによって、Java 開発者のこのプロセスを簡略化します。 この記事では、アプリケーションを Docker コンテナーとして Azure に発行するために必要な手順について説明します。
+Docker コンテナーは、Web アプリケーションをデプロイするために広く使用されている方法です。 Docker コンテナーを使用すると、開発者は、すべてのプロジェクト ファイルと依存関係を、サーバーにデプロイするために 1 つのパッケージに統合できます。 Azure Toolkit for Eclipse は、Microsoft Azure にデプロイするための *[Docker コンテナーとして発行]* 機能を追加することによって、Java 開発者のこのプロセスを簡略化します。 この記事では、アプリケーションを Docker コンテナーとして Azure に発行するために必要な手順を説明します。
 
 > [!NOTE]
 > Docker の詳細については、[Docker の Web サイト]を参照してください。
@@ -28,7 +28,7 @@ Docker コンテナーは、Web アプリケーションをデプロイするた
 
 1. Eclipse で、Web アプリ プロジェクトを開きます。
 
-2. **[Docker コンテナーとして発行]** ウィザードを起動するには、次のいずれかを実行します。
+2. **Publish as Docker Container (Docker コンテナーとして発行)** ウィザードを起動するには、次のいずれかの操作を行います。
 
    * **[ナビゲーター]** ビューで、プロジェクトを右クリックし、 **[Azure]** をクリックしてから **[Docker コンテナーとして発行]** をクリックします。
 
@@ -46,7 +46,7 @@ Docker コンテナーは、Web アプリケーションをデプロイするた
 
    a. **[Docker image name] \(Docker イメージ名)** ボックスに、Docker ホストの一意の名前を入力します。 (このウィザードでは名前が自動的に作成されますが、それは変更できます)。
 
-   b. **[ホスト]** 領域には、既に作成しているすべての Docker ホストが表示されます。 次のいずれかを実行します。
+   b. **[ホスト]** 領域には、既に作成しているすべての Docker ホストが表示されます。 以下のいずれかを実行します。
 
    * 既存の Docker ホストがある場合は、それに Web アプリをデプロイできます。
    * 新しい Docker ホストを作成するには、 **[追加]** をクリックします。  
@@ -65,7 +65,7 @@ Docker コンテナーは、Web アプリケーションをデプロイするた
 
    d. **[Host OS and Size] \(ホスト OS とサイズ)** タブ: 
    * **[Host OS]\(ホスト OS\)** :ホストがある仮想マシンのオペレーティング システムを入力します。
-   * **[サイズ]** :ホストの仮想マシンのサイズを入力します。
+   * **Size**:ホストの仮想マシンのサイズを入力します。
 
    e. **[リソース グループ]** タブ: 
    * **[新しいリソース グループ]** :ホストの新しいリソース グループを作成します。
@@ -147,9 +147,9 @@ Docker コンテナーは、Web アプリケーションをデプロイするた
 
 10. 上記の手順をすべて完了したら、 **[完了]** をクリックします。
 
-Azure Toolkit が Docker コンテナーでの Azure への Web アプリのデプロイを開始します。 
+Azure Toolkit により、Docker コンテナーでの Azure への Web アプリのデプロイが開始されます。 
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
 Docker の他のリソースについては、公式の [Docker の Web サイト]を参照してください。
 

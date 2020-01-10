@@ -1,5 +1,5 @@
 ---
-title: Azure Active Directory B2C 用の Spring Boot Starter の使用方法
+title: Azure Active Directory B2C 用の Spring Boot Starter を使用する
 description: Azure Active Directory B2C スターターを使用して、Spring Boot Initializer アプリを構成する方法について説明します。
 services: active-directory-b2c
 documentationcenter: java
@@ -11,12 +11,12 @@ ms.service: active-directory-b2c
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
-ms.openlocfilehash: 7996e4f2947e08fc7a802a741b958988e58829e8
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: 87134da87f47b1c808648a8b6e2f77650c9141bf
+ms.sourcegitcommit: a1f7e0f0cfd5c9d0806a7d44acdf2a54d578d8fe
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74812163"
+ms.lasthandoff: 12/20/2019
+ms.locfileid: "75319679"
 ---
 # <a name="tutorial-secure-a-java-web-app-using-the-spring-boot-starter-for-azure-active-directory-b2c"></a>チュートリアル:Azure Active Directory B2C 用の Spring Boot Starter を使用して Java Web アプリをセキュリティで保護する
 
@@ -144,7 +144,7 @@ Azure サブスクリプションをお持ちでない場合は、開始する�
    ```
    各値の説明:
 
-   | パラメーター | 説明 |
+   | パラメーター | [説明] |
    |---|---|
    | `azure.activedirectory.b2c.tenant` | 前の AD B2C の `${your-tenant-name` を指定します。 |
    | `azure.activedirectory.b2c.client-id` | 以前に完了したアプリの `${your-client-id}` を指定します。 |
@@ -274,7 +274,7 @@ Azure サブスクリプションをお持ちでない場合は、開始する�
 
 このチュートリアルでは、Azure Active Directory B2C スターターを使用した新しい Java Web アプリケーションの作成、新しい Azure AD B2C テナントの構成とそのテナントへの新しいアプリケーションの登録を行いました。また、Spring の注釈とクラスを使用して Web を保護するようにアプリケーションを構成しました。
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
 Spring および Azure の詳細については、Azure ドキュメント センターで引き続き Spring に関するドキュメントをご確認ください。
 

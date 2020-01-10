@@ -3,12 +3,12 @@ title: Visual Studio Code から Node.js アプリのコンテナー イメー�
 description: チュートリアル パート 3、Node.js アプリケーション イメージを作成する
 ms.topic: conceptual
 ms.date: 09/20/2019
-ms.openlocfilehash: c3662c7d21359008bdc0cc5c3050fb2fdc7d6241
-ms.sourcegitcommit: 9d0a6de18d9b5180c1cb485eff8e2774de48d225
+ms.openlocfilehash: ae39d6604f3ffe49915f6b311953cd6829ed9369
+ms.sourcegitcommit: fc3408b6e153c847dd90026161c4c498aa06e2fc
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74540518"
+ms.lasthandoff: 12/19/2019
+ms.locfileid: "75191081"
 ---
 # <a name="create-your-nodejs-application-image"></a>Node.js アプリケーション イメージを作成する
 
@@ -22,7 +22,7 @@ ms.locfileid: "74540518"
 
 1. Visual Studio Code で**コマンド パレット**を開き (**F1**)、「`add docker files to workspace`」と入力してから、**Docker: Add Docker files to workspace** コマンドを選択します。
 
-1. メッセージが表示されたら、アプリケーションの種類として **Node.js** を選択し、アプリケーションがリッスンするポートを選択します。
+1. メッセージが表示されたら、アプリケーションの種類として **Node.js** を選択し、Docker Compose ファイルについては **[いいえ]** と答えて、アプリケーションがリッスンするポートを選択します。
 
 1. このコマンドで、`Dockerfile` と、Docker Compose のいくつかの構成ファイル、および `.dockerignore` が作成されます。
 
@@ -36,19 +36,7 @@ ms.locfileid: "74540518"
 > [!TIP]
 > コンテナーとイメージの比較:コンテナーは、イメージのインスタンスです。
 
-1. **コマンド パレット**を開き (**F1**)、**Docker Images: Build Image** を実行してイメージをビルドします。
-
-1. メッセージが表示されたら、たった今作成した `Dockerfile` を選択し、イメージに名前を付けます。 名前には、ターゲット レジストリまたは Docker Hub アカウントを含める必要があります。
-
-    `[registry or username]/[image name]:[tag]`
-
-    このチュートリアルでは、Azure Container Registry を使用し、イメージ名は次のようになります。
-
-    `msdocsvscodereg.azurecr.io/myexpressapp:latest`
-
-    Docker Hub を使用している場合は、Docker Hub のユーザー名を使用します。 例:
-
-    `fiveisprime/myexpressapp:latest`
+1. **コマンド パレット**を開き (**F1**)、**Docker Images: Build Image** を実行してイメージをビルドします。 VS Code は、現在のフォルダーにある Dockerfile を使用して、現在のフォルダーと同じ名前をイメージに付けます。
 
 1. 完了すると、Visual Studio Code の **[Terminal]\(ターミナル\)** パネルが開いて、`docker build` コマンドが実行されます。 出力には、アプリ環境を構成する各ステップ (レイヤー) も表示されます。
 
@@ -58,9 +46,31 @@ ms.locfileid: "74540518"
 
 ## <a name="push-the-image-to-a-registry"></a>イメージをレジストリにプッシュする
 
-1. Visual Studio Code で、**コマンド パレット**を開き (**F1**)、**Docker Images: Push** を実行して、先ほどビルドしたイメージを選択します。 **[Terminal]\(ターミナル\)** パネルに、この操作に使用される `docker push` コマンドが表示されます。
+1. レジストリにイメージをプッシュするには、最初にレジストリ名を使用してそれにタグを付ける必要があります。 **DOCKER** エクスプローラーで、 **[latest]\(最新\)** イメージを右クリックします。
 
-1. 完了したら、Docker 拡張機能エクスプローラーの **[Images]\(イメージ\)** ノードを展開して、イメージを確認します。
+    ![Visual Studio Code のイメージ タグ付けコマンド](media/deploy-containers/tag-command.png)
+
+1. 後続のプロンプトで、タグを入力し、**Enter** キーを押します。
+
+    慣例により、タグ付けでは次の形式を使用します。
+
+    `[registry or username]/[image name]:[tag]`
+
+    Azure Container Registry を使用している場合、イメージ名は次のようになります。
+
+    `msdocsvscodereg.azurecr.io/myexpressapp:latest`
+
+    Docker Hub を使用している場合は、Docker Hub のユーザー名を使用します。 次に例を示します。
+
+    `fiveisprime/myexpressapp:latest`
+
+1. これで、新しくタグ付けされたイメージが、 **[Images]\(イメージ\)** の下のレジストリ名を含むノードに表示されます。 そのノードを展開し、 **[latest]\(最新\)** を右クリックして、 **[Push]\(プッシュ\)** を選択します。
+
+    ![Visual Studio Code のイメージのプッシュ コマンド](media/deploy-containers/push-command.png)
+
+1. **[Terminal]\(ターミナル\)** パネルに、この操作に使用される `docker push` コマンドが表示されます。 ターゲット レジストリは、イメージ名に指定されたレジストリによって決まります。
+
+1. 完了したら、Docker 拡張機能エクスプローラーの **[Registries]\(レジストリ\)** ノードを展開して、レジストリ内のイメージを確認します。
 
     ![プッシュされたイメージが Azure Container Registry に表示されている](media/deploy-containers/image-in-acr.png)
 

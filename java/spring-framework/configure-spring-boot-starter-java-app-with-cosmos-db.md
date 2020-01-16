@@ -10,12 +10,12 @@ ms.service: cosmos-db
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: data-services
-ms.openlocfilehash: 33e590106a5686eafa89924e22aeef05aa4f6df7
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: 887925fd652194c38db99c30e1db505ecfcee918
+ms.sourcegitcommit: 8c84b6db37d0f78d66779fb6489cc8fe063055b3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74812089"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "75913979"
 ---
 # <a name="how-to-use-the-spring-boot-starter-with-the-azure-cosmos-db-sql-api"></a>Azure Cosmos DB SQL API で Spring Boot Starter を使用する方法
 
@@ -36,7 +36,7 @@ Azure Cosmos DB は、開発者が SQL、MongoDB、Graph、Table API などの�
 
 1. **[データベース]** 、 **[Azure Cosmos DB]** の順にクリックします。
 
-    ![Azure ポータル][AZ02]
+    ![Azure portal][AZ02]
 
 1. **[Azure Cosmos DB]** ページで、次の情報を入力します。
 
@@ -48,19 +48,19 @@ Azure Cosmos DB は、開発者が SQL、MongoDB、Graph、Table API などの�
 
     これらのオプションを指定したら、 **[Review + create]\(確認と作成\)** をクリックして指定した内容を確認し、 **[作成]** をクリックします。
 
-    ![Azure ポータル][AZ03]
+    ![Azure portal][AZ03]
 
 1. データベースが作成されると、それが Azure **ダッシュボード**に表示され、 **[すべてのリソース]** ページと **[Azure Cosmos DB]** ページにも表示されます。 これらのいずれかの場所でデータベースをクリックすると、キャッシュのプロパティ ページを開くことができます。
 
 1. データベースのプロパティ ページが表示されたら、 **[キー]** をクリックし、データベースの URI とアクセス キーをコピーします。これらの値は Spring Boot アプリケーションで使用します。
 
-    ![Azure ポータル][AZ05]
+    ![Azure portal][AZ05]
 
 ## <a name="create-a-simple-spring-boot-application-with-the-spring-initializr"></a>Spring Initializr でシンプルな Spring Boot アプリケーションを作成する
 
 次の手順を使用して、Azure サポートで新しい Spring Boot アプリケーション プロジェクトを作成します。 別の方法として、[azure-spring-boot](https://github.com/microsoft/azure-spring-boot)リポジトリの [azure-cosmosdb-spring-boot-sample](https://github.com/microsoft/azure-spring-boot/tree/master/azure-spring-boot-samples/azure-cosmosdb-spring-boot-sample) サンプルを使用することもできます。 その後、そのまま「[アプリのビルドとテスト](#build-and-test-your-app)」に進むことができます。
 
-1. [https://www.microsoft.com](<https://start.spring.io/>) を参照します。
+1. [https://www.microsoft.com]\(<https://start.spring.io/>) を参照します。
 
 1. **Java** で **Maven プロジェクト**を生成することを指定し、**Spring Boot** のバージョンを指定して、アプリケーションの **[グループ]** と **[アーティファクト]** に名前を入力します。依存関係に **Azure サポート**を追加してから、 **[プロジェクトの生成]** のボタンをクリックします。
 
@@ -91,12 +91,6 @@ Azure Cosmos DB は、開発者が SQL、MongoDB、Graph、Table API などの�
         <groupId>com.microsoft.azure</groupId>
         <artifactId>azure-cosmosdb-spring-boot-starter</artifactId>
     </dependency>
-
-    <dependency>
-        <groupId>io.projectreactor.netty</groupId>
-        <artifactId>reactor-netty</artifactId>
-        <version>0.8.3.RELEASE</version>
-    </dependency>
     ```
 
 1. *properties* 要素に Java と Azure の必要なバージョンが示されていることを確認します。
@@ -104,7 +98,7 @@ Azure Cosmos DB は、開発者が SQL、MongoDB、Graph、Table API などの�
     ```xml
     <properties>
        <java.version>1.8</java.version>
-       <azure.version>2.2.0.M1</azure.version>
+       <azure.version>2.2.0</azure.version>
     </properties>
     ```
 
@@ -401,11 +395,11 @@ Azure Cosmos DB は、開発者が SQL、MongoDB、Graph、Table API などの�
 
     `Saved user` と `Found user` のメッセージは、データが正常に Cosmos DB に格納され、再度取得されたことを示します。
 
-## <a name="clean-up-resources"></a>リソースのクリーンアップ
+## <a name="clean-up-resources"></a>リソースをクリーンアップする
 
 このアプリケーションの使用を継続しない場合は、前に作成した Cosmos DB を含むリソース グループを必ず削除してください。 これは Azure Portal から行うことができます。
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
 Spring および Azure の詳細については、Azure ドキュメント センターで引き続き Spring に関するドキュメントをご確認ください。
 

@@ -6,12 +6,12 @@ ms.date: 01/07/2020
 ms.service: mysql
 ms.tgt_pltfrm: multiple
 ms.topic: conceptual
-ms.openlocfilehash: a36484cb6858422f4d9b0e6a5c72a793f3686514
-ms.sourcegitcommit: 3b8ccf447921a55f16c25795914d9eed64c2b9cf
+ms.openlocfilehash: 7a6550be633b29d97d55b8db2f50b2c57d0ba30d
+ms.sourcegitcommit: 2ad3f7ce8c87331f8aff759ac2a3dc1b29581866
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75755656"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76022075"
 ---
 # <a name="how-to-use-spring-data-jdbc-with-azure-mysql"></a>Azure MySQL で Spring Data JDBC を使用する方法
 
@@ -67,7 +67,7 @@ ms.locfileid: "75755656"
 
 1. **[すべてのリソース]** をクリックし、先ほど作成した Azure Database for MySQL リソースをクリックします。
 
-1. **[接続のセキュリティ]** をクリックし、 **[ファイアウォール規則]** で、規則の一意の名前を指定して新しい規則を作成し、データベースへのアクセス権を必要とする IP アドレスの範囲を入力して、 **[保存]** をクリックします。
+1. **[接続のセキュリティ]** をクリックし、 **[ファイアウォール規則]** で、規則の一意の名前を指定して新しい規則を作成し、データベースへのアクセス権を必要とする IP アドレスの範囲を入力して、 **[保存]** をクリックします。 (この演習では、クライアントである開発用マシンの IP アドレスです。  これを **[開始 IP アドレス]** と **[終了 IP アドレス]** の両方に使用できます。)
 
    ![接続のセキュリティを構成する][MYSQL04]
 
@@ -113,6 +113,7 @@ ms.locfileid: "75755656"
    
    mysql>
    ```
+   > 注:サーバーがこの IP アドレスを認識しないというエラーが表示される場合は、クライアントが使用している IP アドレスがエラーに示されます。  前に戻って、前の手順で説明したようにこれを割り当てます。*Azure portal を使用してサーバーのファイアウォール規則を構成する*。
 
 1. 次の例のように `mysql` コマンドを入力して、*mysqldb* という名前のデータベースを作成します。
 
@@ -192,9 +193,9 @@ ms.locfileid: "75755656"
 1. 次の例のように、コマンド プロンプトから `curl` を使用して新しいレコードを作成します。
 
    ```shell
-   curl -s -d '{"name":"dog","species":"canine"}' -H "Content-Type: application/json" -X POST http://localhost:8080/pets
+   curl -s -d "{\"name\":\"dog\",\"species\":\"canine\"}" -H "Content-Type: application/json" -X POST http://localhost:8080/pets
 
-   curl -s -d '{"name":"cat","species":"feline"}' -H "Content-Type: application/json" -X POST http://localhost:8080/pets
+   curl -s -d "{\"name\":\"cat\",\"species\":\"feline\"}" -H "Content-Type: application/json" -X POST http://localhost:8080/pets
    ```
 
    アプリケーションから次のような値が返されます。

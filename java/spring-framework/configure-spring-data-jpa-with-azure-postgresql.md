@@ -6,12 +6,12 @@ ms.date: 12/19/2018
 ms.service: postgresql
 ms.tgt_pltfrm: multiple
 ms.topic: conceptual
-ms.openlocfilehash: d2134ae08bdad69af1e347476e96833d375ee966
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: 5748f3e51132ff003e41d61f9c10dff61b95e364
+ms.sourcegitcommit: 2ad3f7ce8c87331f8aff759ac2a3dc1b29581866
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74811953"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76022106"
 ---
 # <a name="how-to-use-spring-data-jpa-with-azure-postgresql"></a>Azure PostgreSQL で Spring Data JPA を使用する方法
 
@@ -50,7 +50,7 @@ ms.locfileid: "74811953"
 
    - **サブスクリプション**:使用する Azure サブスクリプションを指定します。
    - **[リソース グループ]** :新しいリソース グループを作成するのか、既存のリソース グループを選択するのかを指定します。
-   - **サーバー名**: PostgreSQL サーバー用に一意の名前を選択します。この名前は、*wingtiptoyspostgresql.postgres.database.azure.com* のような完全修飾ドメイン名の作成に使用されます。
+   - **[サーバー名]** : PostgreSQL サーバー用に一意の名前を選択します。この名前は、*wingtiptoyspostgresql.postgres.database.azure.com* のような完全修飾ドメイン名の作成に使用されます。
    - **データ ソース**:このチュートリアルでは、`Blank` を選択して新しいデータベースを作成します。
    - **管理者ユーザー名**:データベース管理者名を指定します。
    - **[パスワード]** と **[パスワードの確認]** :データベース管理者のパスワードを指定します。
@@ -69,7 +69,7 @@ ms.locfileid: "74811953"
 
 1. **[接続のセキュリティ]** をクリックします。
 
-1. 規則に一意の名前を指定することで新しい規則を作成し、データベースへのアクセス権を必要とする IP アドレスの範囲を入力して、 **[保存]** をクリックします。
+1. 規則に一意の名前を指定することで新しい規則を作成し、データベースへのアクセス権を必要とする IP アドレスの範囲を入力して、 **[保存]** をクリックします。 (この演習では、クライアントである開発用マシンの IP アドレスです。  これを **[開始 IP アドレス]** と **[終了 IP アドレス]** の両方に使用できます。)
 
    ![PostgreSQL データベースを選択する][POSTGRESQL03]
 
@@ -90,7 +90,7 @@ ms.locfileid: "74811953"
    ```
    各値の説明:
 
-   | パラメーター | 説明 |
+   | パラメーター | [説明] |
    |---|---|
    | `host` | この記事の前半の完全修飾 PostgreSQL サーバー名を指定します。 |
    | `host` | PostgreSQL サーバー ポートを指定します。既定では `5432` です。 |
@@ -106,6 +106,7 @@ ms.locfileid: "74811953"
    
    postgres=>
    ```
+   > 注:サーバーがこの IP アドレスを認識しないというエラーが表示される場合は、クライアントが使用している IP アドレスがエラーに示されます。  前に戻って、前の手順で説明したようにこれを割り当てます。*Azure portal を使用してサーバーのファイアウォール規則を構成する*。
 
 1. 次の例のように `psql` コマンドを入力して、*mypgsqldb* という名前のデータベースを作成します。
 
@@ -155,7 +156,7 @@ ms.locfileid: "74811953"
     ```
    各値の説明:
 
-   | パラメーター | 説明 |
+   | パラメーター | [説明] |
    |---|---|
    | `spring.datasource.url` | この記事の前半の PostgreSQL JDBC 文字列を指定します。 |
    | `spring.datasource.username` | この記事の前半の PostgreSQL 管理者名を指定し、その後に短縮サーバー名を追加します。 |
@@ -209,7 +210,7 @@ ms.locfileid: "74811953"
 
 このチュートリアルでは、Spring Data を使用して、JPA を使って Azure PostgreSQL データベース 内の情報を格納および取得する Java のサンプル アプリケーションを作成しました。
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
 Spring および Azure の詳細については、Azure ドキュメント センターで引き続き Spring に関するドキュメントをご確認ください。
 

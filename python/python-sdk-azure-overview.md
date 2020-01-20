@@ -3,18 +3,18 @@ title: Azure SDK for Python
 description: Azure サービス使用時の開発者の生産性を向上させる、Azure SDK for Python の機能の概要。
 ms.date: 10/30/2019
 ms.topic: conceptual
-ms.openlocfilehash: 7a70f6050890bc384bac0d58ba3f0aa2e5e553cb
-ms.sourcegitcommit: 5c65d22b5203b0c17806463d349a6ede93a99fa0
+ms.openlocfilehash: 83a9541330f270e51ffa5ed8952a93dee8ff132f
+ms.sourcegitcommit: ac68fb174d606c7af2bfa79fe32b8ca7b73c86a1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/12/2019
-ms.locfileid: "75010589"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75946696"
 ---
 # <a name="azure-sdk-for-python"></a>Azure SDK for Python
 
 Azure SDK for Python は、Python アプリケーション コードからの Azure リソースの使用と管理を容易にします。 この SDK では Python 2.7 および Python 3.5.3 以降がサポートされています。
 
-`pip install <library>` を使用して任意の個別のコンポーネント ライブラリをインストールすることによって、この SDK をインストールします。 [Azure SDK for Python パッケージ インデックス](https://github.com/Azure/azure-sdk-for-python/blob/master/packages.md)に関するページで、ライブラリの一覧を確認できます。
+`pip install <library>` を使用して任意の個別のコンポーネント ライブラリをインストールすることによって、この SDK をインストールします。 さまざまなサービスのライブラリの名前については、[Azure SDK for Python のドキュメント](https://azure.github.io/azure-sdk-for-python/)を参照してください。
 
 ライブラリをインストールしてプロジェクトにインポートする手順の詳細については、「[SDK のインストール](python-sdk-azure-install.md)」を参照してください。 その後、[SDK での作業開始](python-sdk-azure-get-started.yml)に関するページを確認して、認証を設定し、独自の Azure サブスクリプションに対してサンプル コードを実行します。
 

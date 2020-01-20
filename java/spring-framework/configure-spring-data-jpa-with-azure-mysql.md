@@ -6,12 +6,12 @@ ms.date: 11/27/2019
 ms.service: mysql
 ms.tgt_pltfrm: multiple
 ms.topic: conceptual
-ms.openlocfilehash: 83883ffd06353854a3c69c9abdc946a035dda6b1
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: 927cc72a526651be71a7983a298ca2c6718f4546
+ms.sourcegitcommit: 2ad3f7ce8c87331f8aff759ac2a3dc1b29581866
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74811964"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76022088"
 ---
 # <a name="how-to-use-spring-data-jpa-with-azure-database-for-mysql"></a>Azure Database for MySQL で Spring Data JPA を使用する方法
 
@@ -46,7 +46,7 @@ ms.locfileid: "74811964"
 
    - **サブスクリプション**:使用する Azure サブスクリプションを指定します。
    - **[リソース グループ]** :新しいリソース グループを作成するのか、既存のリソース グループを選択するのかを指定します。
-   - **サーバー名**: MySQL サーバー用に一意の名前を選択します。この名前は、*wingtiptoysmysql.mysql.database.azure.com* のような完全修飾ドメイン名の作成に使用されます。
+   - **[サーバー名]** : MySQL サーバー用に一意の名前を選択します。この名前は、*wingtiptoysmysql.mysql.database.azure.com* のような完全修飾ドメイン名の作成に使用されます。
    - **ソースの選択**:このチュートリアルでは、`Blank` を選択して新しいデータベースを作成します。
    - **サーバー管理者ログイン**:データベース管理者名を指定します。
    - **[パスワード]** と **[パスワードの確認]** :データベース管理者のパスワードを指定します。
@@ -63,7 +63,7 @@ ms.locfileid: "74811964"
 
 1. **[すべてのリソース]** をクリックし、先ほど作成した MySQL データベースをクリックします。
 
-1. **[接続のセキュリティ]** をクリックし、 **[ファイアウォール規則]** で、規則の一意の名前を指定して新しい規則を作成し、データベースへのアクセス権を必要とする IP アドレスの範囲を入力して、 **[保存]** をクリックします。
+1. **[接続のセキュリティ]** をクリックし、 **[ファイアウォール規則]** で、規則の一意の名前を指定して新しい規則を作成し、データベースへのアクセス権を必要とする IP アドレスの範囲を入力して、 **[保存]** をクリックします。 (この演習では、クライアントである開発用マシンの IP アドレスです。  これを **[開始 IP アドレス]** と **[終了 IP アドレス]** の両方に使用できます。 また、見出し「*mysql コマンドライン ユーティリティを使用してデータベースを作成する*」の下にある注も参照してください。)
 
    ![接続のセキュリティを構成する][MYSQL04]
 
@@ -86,7 +86,7 @@ ms.locfileid: "74811964"
    ```
    各値の説明:
 
-   | パラメーター | 説明 |
+   | パラメーター | [説明] |
    |---|---|
    | `host` | この記事の前半の完全修飾 MySQL サーバー名を指定します。 |
    | `user` | この記事の前半の MySQL 管理者と短縮サーバー名を指定します。 |
@@ -110,6 +110,7 @@ ms.locfileid: "74811964"
    
    mysql>
    ```
+   > 注:サーバーがこの IP アドレスを認識しないというエラーが表示される場合は、クライアントが使用している IP アドレスがエラーに示されます。  前に戻って、前の手順で説明したようにこれを割り当てます。*Azure portal を使用してサーバーのファイアウォール規則を構成する*。
 
 1. 次の例のように `mysql` コマンドを入力して、*mysqldb* という名前のデータベースを作成します。
 
@@ -165,7 +166,7 @@ ms.locfileid: "74811964"
     ```
    各値の説明:
 
-   | パラメーター | 説明 |
+   | パラメーター | [説明] |
    |---|---|
    | `spring.jpa.database-platform` | JPA データベース プラットフォームを指定します。 |
    | `spring.datasource.url` | この記事の前半の MySQL JDBC 文字列を指定します。 |
@@ -220,7 +221,7 @@ ms.locfileid: "74811964"
 
 このチュートリアルでは、Spring Data を使用して、JPA を使って Azure Database for MySQL データベース 内の情報を格納および取得する Java のサンプル アプリケーションを作成しました。
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
 Spring および Azure の詳細については、Azure ドキュメント センターで引き続き Spring に関するドキュメントをご確認ください。
 

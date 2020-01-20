@@ -7,12 +7,12 @@ ms.date: 12/19/2018
 ms.service: sql-database
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: d5c90992f4b669bf6089d0c0118496dfa33d67f1
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: a57fbc5dc8be0848f0b68fd1a45a1478de52b419
+ms.sourcegitcommit: 2ad3f7ce8c87331f8aff759ac2a3dc1b29581866
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74811947"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76022130"
 ---
 # <a name="how-to-use-spring-data-jpa-with-azure-sql-database"></a>Azure SQL Database で Spring Data JPA を使用する方法
 
@@ -42,7 +42,7 @@ ms.locfileid: "74811947"
 
 1. **[+ リソースの作成]** をクリックし、 **[データベース]** 、 **[SQL Database]** の順にクリックします。
 
-   ![SQL Database の作成][SQL01]
+   ![SQL データベースを作成する][SQL01]
 
 1. 次の情報を指定します。
 
@@ -55,7 +55,7 @@ ms.locfileid: "74811947"
    
 1. **[サーバー]** 、 **[新しいサーバーの作成]** の順にクリックして、次の情報を指定します。
 
-   - **サーバー名**: SQL サーバー用に一意の名前を選択します。この名前は、*wingtiptoyssql.database.windows.net* のような完全修飾ドメイン名の作成に使用されます。
+   - **[サーバー名]** : SQL サーバー用に一意の名前を選択します。この名前は、*wingtiptoyssql.database.windows.net* のような完全修飾ドメイン名の作成に使用されます。
    - **サーバー管理者ログイン**:データベース管理者名を指定します。
    - **[パスワード]** と **[パスワードの確認]** :データベース管理者のパスワードを指定します。
    - **[場所]** :データベースに最も近い地理的リージョンを指定します。
@@ -76,7 +76,7 @@ SQL データベースとサーバーを作成したら、セキュリティ設�
 
    ![ファイアウォール設定の表示][SQL06]
 
-1. **[ファイアウォールと仮想ネットワーク]** セクションで、規則に一意の名前を指定することで新しい規則を作成し、データベースへのアクセス権を必要とする IP アドレスの範囲を入力して、 **[保存]** をクリックします。
+1. **[ファイアウォールと仮想ネットワーク]** セクションで、規則に一意の名前を指定することで新しい規則を作成し、データベースへのアクセス権を必要とする IP アドレスの範囲を入力して、 **[保存]** をクリックします。 (この演習では、クライアントである開発用マシンの IP アドレスです。  これを **[開始 IP アドレス]** と **[終了 IP アドレス]** の両方に使用できます。)
 
    ![ファイアウォール設定を構成する][SQL07]
 
@@ -114,7 +114,7 @@ SQL データベースとサーバーを作成したら、セキュリティ設�
     ```
    各値の説明:
 
-   | パラメーター | 説明 |
+   | パラメーター | [説明] |
    |---|---|
    | `spring.datasource.url` | この記事の前半の SQL JDBC 文字列の編集されたバージョンを指定します。 |
    | `spring.datasource.username` | この記事の前半の SQL 管理者名を指定し、その後に短縮サーバー名を追加します。 |
@@ -168,7 +168,7 @@ SQL データベースとサーバーを作成したら、セキュリティ設�
 
 このチュートリアルでは、Spring Data を使用して、JPA を使って Azure SQL データベース内の情報を格納および取得する Java のサンプル アプリケーションを作成しました。
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
 Spring および Azure の詳細については、Azure ドキュメント センターで引き続き Spring に関するドキュメントをご確認ください。
 

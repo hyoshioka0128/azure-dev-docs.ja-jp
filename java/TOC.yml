@@ -1,9 +1,9 @@
 - name: Java 開発者向けの Azure
   href: index.yml
   items:
-    - name: 作業の開始
+    - name: 開始するには
       href: java-sdk-azure-get-started.md
-    - name: クイック スタート
+    - name: クイックスタート
       items:
         - name: Web アプリのデプロイ
           items:
@@ -152,8 +152,16 @@
       items:
         - name: ルート証明書を追加する
           href: java-sdk-add-certificate-ca-store.md
-        - name: 認証
+        - name: Authenticate
           href: java-sdk-azure-authenticate.md
+        - name: Java を Azure に移行する
+          items:
+            - name: 概要
+              href: migration-overview.md
+            - name: Tomcat から Azure App Service へ
+              href: migrate-tomcat-to-tomcat-app-service.md
+            - name: Tomcat から AKS のコンテナーへ
+              href: migrate-tomcat-to-containers-on-azure-kubernetes-service.md
     - name: コード サンプル
       items:
         - name: Service Fabric
@@ -164,7 +172,7 @@
           href: java-sdk-azure-web-apps-samples.md
         - name: SQL Database
           href: java-sdk-azure-sql-database-samples.md
-        - name: セキュリティ
+        - name: Security
           href: java-sdk-azure-security-samples.md
         - name: Containers
           href: java-sdk-azure-containers-samples.md

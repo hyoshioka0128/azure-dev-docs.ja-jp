@@ -4,22 +4,22 @@ description: チュートリアルの手順 7、Azure のリソースをクリ�
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 5a890ae2db4f9aa9bd3ca09364467adb022beed8
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: 8145b33ae52427d55c9b3de9fcf6fb20467b7ba9
+ms.sourcegitcommit: a8073315f751631ab983618fa9f812eb95d8b2dc
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74466057"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76125265"
 ---
 # <a name="tutorial-clean-up-resources-after-deploying-to-azure-app-service-on-linux-from-visual-studio-code"></a>チュートリアル:Azure App Service on Linux にデプロイしたリソースを Visual Studio Code を使用してクリーンアップします。
 
 [前の手順: ログをストリーム配信する](tutorial-deploy-app-service-on-linux-06.md)
 
-作成した Azure App Service には、バッキング App Service プランが含まれていて料金が発生する可能性があります。 リソースをクリーンアップするには、 **[Azure: App Service]** エクスプローラーで [App Service] を右クリックし、 **[削除]** を選択します。
+作成した Azure App Service には、バッキング App Service プランが含まれていて料金が発生する可能性があります。 そのようなコストを回避するには、これらのすべてのリソースをまとめて含むリソース グループを削除します。
 
-[Azure portal](https://portal.azure.com) にアクセスし、左側にあるナビゲーション ウィンドウから **[リソース グループ]** を選択し、このチュートリアルで作成したリソース グループを選択し、 **[リソース グループの削除]** コマンドを使用することもできます。
+[!INCLUDE [delete-resource-group](includes/delete-resource-group.md)]
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
 おつかれさまです。このチュートリアルはこれで完了です。App Service on Linux に Python コードをデプロイしました。
 

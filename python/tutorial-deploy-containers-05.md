@@ -4,22 +4,22 @@ description: チュートリアルの手順 5、引き続き料金を請求さ�
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 0c6688dcfb1d3c8adbf4ba2e0eb2603ce85de43c
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: bbafb323c49b9dd6879bf69924d8e8bcf62093a3
+ms.sourcegitcommit: a8073315f751631ab983618fa9f812eb95d8b2dc
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74466060"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76125242"
 ---
 # <a name="tutorial-clean-up-azure-resources"></a>チュートリアル:Azure リソースをクリーンアップする
 
 [前の手順: ログをストリーム配信する](tutorial-deploy-containers-04.md)
 
-この記事では、Visual Studio Code で Azure App Service にアプリをデプロイするときに作成した Azure リソースを削除する方法について説明します。
+このチュートリアルで作成した Azure リソースには、継続的なコストが発生する可能性があります。 そのようなコストを回避するには、これらのすべてのリソースを含むリソース グループを削除します。
 
-このチュートリアルで作成したさまざまな Azure リソースには、継続的なコストが発生する可能性があります。 それらをクリーンアップするには、[Azure portal](https://portal.azure.com) にアクセスし、左側にあるナビゲーション ウィンドウの **[リソース グループ]** を選択して、このチュートリアルで作成したリソース グループを選択し、 **[リソース グループの削除]** コマンドを使用することをお勧めします。
+[!INCLUDE [delete-resource-group](includes/delete-resource-group.md)]
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
 Docker と App Service の拡張機能の詳細については、GitHub のそれぞれのリポジトリ ([vscode-docker](https://github.com/Microsoft/vscode-docker) と [vscode-azureappservice](https://github.com/Microsoft/vscode-azureappservice)) を参照してください。 問題提起や投稿も歓迎いたします。
 

@@ -1,0 +1,39 @@
+---
+author: yevster
+ms.author: yebronsh
+ms.topic: include
+ms.date: 1/20/2020
+ms.openlocfilehash: 8c2ada1a8a11e1f0ae108e4356434825a2cf0b76
+ms.sourcegitcommit: 3585b1b5148e0f8eb950037345bafe6a4f6be854
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 01/21/2020
+ms.locfileid: "76288561"
+---
+### <a name="inventory-external-resources"></a>外部リソースをインベントリする
+
+データ ソース、JMS メッセージ ブローカー、およびその他の外部リソースは、JNDI (Java Naming and Directory Interface) を介して挿入されます。 こうしたリソースの一部では、移行または再構成が必要な場合があります。
+
+#### <a name="inside-your-application"></a>アプリケーション内
+
+*META-INF/context.xml* ファイルを調べます。 `<Context>` 要素内の `<Resource>` 要素を探します。
+
+#### <a name="on-the-application-servers"></a>アプリケーション サーバー上
+
+*$CATALINA_BASE/conf/context.xml* および *$CATALINA_BASE/conf/server.xml* ファイルと、 *$CATALINA_BASE/conf/[engine-name]/[host-name]* ディレクトリにある *.xml*ファイルを調べます。
+
+*context.xml*ファイルでは、JNDI リソースは、最上位の `<Context>` 要素内の `<Resource>` 要素で記述されます。
+
+*server.xml* ファイルでは、JNDI リソースは `<GlobalNamingResources>` 要素内の `<Resource>` 要素で記述されます。
+
+#### <a name="datasources"></a>データソース
+
+データソースは、`type` 属性が `javax.sql.DataSource` に設定されている JNDI リソースです。 データソースごとに、次の情報を文書にまとめます。
+
+* データソース名
+* 接続プールの構成
+* JDBC ドライバーの JAR ファイルの場所
+
+#### <a name="all-other-external-resources"></a>その他のすべての外部リソース
+
+このガイドでは、考えられるすべての外部依存関係を記載することはできません。 アプリケーションの外部依存関係がすべて満たされるよう確認するのは、担当チームの責任です。

@@ -2,26 +2,28 @@
 title: チュートリアル:Azure Functions の Python コードで使用されるリソースをクリーンアップする
 description: チュートリアルの手順 8、引き続き料金を請求されないように Azure リソースをクリーンアップする。
 ms.topic: conceptual
-ms.date: 09/12/2019
+ms.date: 01/15/2020
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 441e3de83dfc56bc8c5b1b2adbcfb2042fe83355
-ms.sourcegitcommit: 68a4044b9fa3291c9e7e2f68ae0049328f9c01bb
+ms.openlocfilehash: 264c09a8d84c7115bb0a56d0455d576187695db0
+ms.sourcegitcommit: a8073315f751631ab983618fa9f812eb95d8b2dc
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74992441"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76125255"
 ---
 # <a name="tutorial-clean-up-azure-resources-for-azure-functions"></a>チュートリアル:Azure Functions の Azure リソースをクリーンアップする
 
 [前の手順: ストレージ バインドを追加する](tutorial-vs-code-serverless-python-07.md)
 
-この記事では、このチュートリアルで作成した Azure リソースを削除する方法について説明します。 Visual Studio Code で作成した Azure 関数アプリには、最小限のコストが発生する可能性があるリソースが含まれます。
+この記事では、このチュートリアルで作成した Azure リソースを削除する方法について説明します。 Visual Studio Code で作成した Azure 関数アプリには、最小限のコストが発生する可能性があるリソースが含まれます。 (詳細については、[Functions の価格](https://azure.microsoft.com/pricing/details/functions/)に関するページを参照してください。)
 
-リソースをクリーンアップするには、**Azure:Functions** エクスプローラーで Function App を右クリックし、 **[Delete Function App]\(関数アプリの削除\)** を選択します。 詳細については、[Functions の価格](https://azure.microsoft.com/pricing/details/functions/)に関するページを参照してください。
+リソースをクリーンアップする最善の方法は、このチュートリアルで使用されている個々のリソースをすべて含むリソース グループを削除することです。 リソースには、関数アプリ、ストレージ アカウント、および バッキング App Service プランが含まれています。
 
-[Azure portal](https://portal.azure.com) にアクセスし、左側にあるナビゲーション ウィンドウから **[リソース グループ]** を選択し、このチュートリアルで作成したリソース グループを選択し、 **[リソース グループの削除]** コマンドを使用することもできます。
+[!INCLUDE [delete-resource-group](includes/delete-resource-group.md)]
 
-## <a name="next-steps"></a>次の手順
+Visual Studio Code には、 **[Azure: Functions]** エクスプローラーの [関数アプリ] のコンテキスト メニューに **[Delete Function App]\(関数アプリの削除\)** コマンドがあります。 ただし、このコマンドによって削除されるのは関数アプリのみであり、他のリソースは配置されたままになるため、継続的なコストが発生する可能性があります。
+
+## <a name="next-steps"></a>次のステップ
 
 このチュートリアルを完了し、Azure Functions に Python コードをデプロイしました。おめでとうございます! これで、よりたくさんのサーバーレス関数を作成できる準備が整いました。
 

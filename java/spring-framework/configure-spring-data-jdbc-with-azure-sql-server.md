@@ -7,12 +7,12 @@ ms.date: 12/19/2018
 ms.service: sql-database
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: d5e7ff3a31f8fb66b4231770c86094244752b439
-ms.sourcegitcommit: 2ad3f7ce8c87331f8aff759ac2a3dc1b29581866
+ms.openlocfilehash: b75db0f3cff02b5f7ead90265a170fc63405dbb6
+ms.sourcegitcommit: 3585b1b5148e0f8eb950037345bafe6a4f6be854
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76022117"
+ms.lasthandoff: 01/21/2020
+ms.locfileid: "76283335"
 ---
 # <a name="how-to-use-spring-data-jdbc-with-azure-sql-database"></a>Azure SQL Database で Spring Data JDBC を使用する方法
 
@@ -46,10 +46,10 @@ ms.locfileid: "76022117"
 
 1. 次の情報を指定します。
 
-   - **データベース名**: SQL データベース用に一意の名前を選択します。このデータベースが、指定した SQL Server に後で作成されます。
-   - **サブスクリプション**:使用する Azure サブスクリプションを指定します。
-   - **[リソース グループ]** :新しいリソース グループを作成するのか、既存のリソース グループを選択するのかを指定します。
-   - **ソースの選択**:このチュートリアルでは、`Blank database` を選択して新しいデータベースを作成します。
+   * **データベース名**: SQL データベース用に一意の名前を選択します。このデータベースが、指定した SQL Server に後で作成されます。
+   * **サブスクリプション**:使用する Azure サブスクリプションを指定します。
+   * **[リソース グループ]** :新しいリソース グループを作成するのか、既存のリソース グループを選択するのかを指定します。
+   * **ソースの選択**:このチュートリアルでは、`Blank database` を選択して新しいデータベースを作成します。
 
    ![SQL データベースのプロパティを指定する][SQL02]
    
@@ -91,6 +91,19 @@ ms.locfileid: "76022117"
 
    ![JDBC 接続文字列を取得する][SQL09]
 
+### <a name="create-test-table-in-database"></a>データベースにテスト テーブルを作成する
+このデータベースに対してクライアント アプリケーションを実行するために、次の SQL コマンドを使用して新しいテーブルを作成します。
+
+``` SQL
+IF NOT EXISTS (SELECT 1 FROM sysobjects WHERE NAME='pet' and XTYPE='U')
+  CREATE TABLE pet (
+    id      INT           IDENTITY  PRIMARY KEY,
+    name    VARCHAR(255),
+    species VARCHAR(255)
+  );
+
+```
+
 ## <a name="configure-the-sample-application"></a>サンプル アプリケーションを構成する
 
 1. コマンド シェルを開き、次の例のように git コマンドを使用してサンプル プロジェクトを複製します。
@@ -99,11 +112,21 @@ ms.locfileid: "76022117"
    git clone https://github.com/Azure-Samples/spring-data-jdbc-on-azure.git
    ```
 
+1. POM ファイルを変更して、次の依存関係を含めます。
+
+```
+ <dependency>
+    <groupId>com.microsoft.sqlserver</groupId>
+    <artifactId>mssql-jdbc</artifactId>
+    <version>7.4.1.jre11</version>
+ </dependency>
+```
 1. サンプル プロジェクトの *resources* ディレクトリ内で *application.properties* ファイルを探すか、まだ存在しない場合はファイルを作成します。
 
 1. テキスト エディターで *application.properties* ファイルを開き、このファイルに次の行を追加するか構成して、サンプルの値を前半の該当する値に置き換えます。
 
    ```yaml
+   spring.datasource.driver-class-name=com.microsoft.sqlserver.jdbc.SQLServerDriver
    spring.datasource.url=jdbc:sqlserver://wingtiptoyssql.database.windows.net:1433;database=wingtiptoys;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;
    spring.datasource.username=wingtiptoysuser@wingtiptoyssql
    spring.datasource.password=********
@@ -136,8 +159,12 @@ ms.locfileid: "76022117"
 
    ```shell
    curl -s -d '{"name":"dog","species":"canine"}' -H "Content-Type: application/json" -X POST http://localhost:8080/pets
+   ```
 
-   curl -s -d '{"name":"cat","species":"feline"}' -H "Content-Type: application/json" -X POST http://localhost:8080/pets
+   または
+
+``` shell
+   curl -s -d "{\"name\":\"cat\",\"species\":\"feline\"}" -H "Content-Type: application/json" -X POST http://localhost:8080/pets
    ```
 
    アプリケーションから次のような値が返されます。

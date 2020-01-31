@@ -158,10 +158,14 @@
           items:
             - name: 概要
               href: migration-overview.md
+            - name: Spring から Azure App Service へ
+              href: migrate-java-se-to-java-se-app-service.md
             - name: Tomcat から Azure App Service へ
               href: migrate-tomcat-to-tomcat-app-service.md
             - name: Tomcat から AKS のコンテナーへ
               href: migrate-tomcat-to-containers-on-azure-kubernetes-service.md
+            - name: WebLogic から Azure Virtual Machines へ
+              href: migrate-weblogic-to-virtual-machines.md
     - name: コード サンプル
       items:
         - name: Service Fabric

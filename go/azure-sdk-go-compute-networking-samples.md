@@ -1,18 +1,14 @@
 ---
 title: Azure SDK for Go のサンプル (コンピューティングとネットワーク)
 description: Azure SDK for Go からコンピューティング リソース (VM や仮想ネットワークなど) を操作するための厳選されたサンプルです。
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.date: 09/05/2018
 ms.topic: sample
-ms.devlang: go
-ms.openlocfilehash: f04ba1af468e8f7f5e52847883f1f51948b94ff6
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.openlocfilehash: 9cb8af3ea5ceb24147006d8b57d7231c2c7e9ad9
+ms.sourcegitcommit: 4cf22356d6d4817421b551bd53fcba76bdb44cc1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68292008"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76871860"
 ---
 # <a name="azure-sdk-for-go-samples-for-compute-and-networking"></a>Azure SDK for Go のサンプル (コンピューティングとネットワーク)
 
@@ -20,7 +16,7 @@ ms.locfileid: "68292008"
 
 Azure SDK for Go の全サンプルは、[GitHub](https://github.com/Azure-Samples/azure-sdk-for-go-samples) で入手できます。
 
-| EnableAdfsAuthentication | 説明 |
+| Name | [説明] |
 |------|-------------|
 | [network/network](https://github.com/Azure-Samples/azure-sdk-for-go-samples/blob/master/network/network.go) | 仮想ネットワーク、サブネット、ネットワーク セキュリティ グループなどのネットワーク リソースを作成、更新、削除、および照会します。 |
 | [compute/vm_disk](https://github.com/Azure-Samples/azure-sdk-for-go-samples/blob/master/compute/vm_disk.go) | VM のデータ ディスクを作成、接続、切断、更新、および暗号化します。 |

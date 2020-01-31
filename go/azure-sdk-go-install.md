@@ -1,18 +1,14 @@
 ---
 title: Azure SDK for Go のインストール
 description: Azure SDK for Go のインストール、ベンダリング、構成の方法。
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.date: 03/14/2018
 ms.topic: conceptual
-ms.devlang: go
-ms.openlocfilehash: e7a4449ed29239e7cb08902cee299d74102a72bf
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.openlocfilehash: daf725a59042038e682c852a50080972d33a497e
+ms.sourcegitcommit: 4cf22356d6d4817421b551bd53fcba76bdb44cc1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68291940"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76871886"
 ---
 # <a name="install-the-azure-sdk-for-go"></a>Azure SDK for Go のインストール
 
@@ -24,7 +20,7 @@ Azure SDK for Go へようこそ。 この SDK を使用すると、Go アプリ
 
 一部の Azure サービスには独自の Go SDK が用意されていますが、これは Azure SDK for Go のコア パッケージには含まれていません。 次の表に、独自の SDK が用意されているサービスと、そのパッケージ名を示します。 これらのパッケージは、すべてプレビュー段階にあると考えられます。
 
-| Service | Package |
+| サービス | Package |
 |---------|---------|
 | Blob Storage | [github.com/Azure/azure-storage-blob-go](https://github.com/Azure/azure-storage-blob-go) |
 | File Storage | [github.com/Azure/azure-storage-file-go](https://github.com/Azure/azure-storage-file-go) |
@@ -47,7 +43,7 @@ version = "14.0.0"
 Go コードから Azure サービスを使用するには、対話するサービスと必要な `autorest` モジュールをインポートします。
 提供されているモジュールの一覧については、[利用可能なサービス](https://godoc.org/github.com/Azure/azure-sdk-for-go)および [AutoRest パッケージ](https://godoc.org/github.com/Azure/go-autorest) の GoDoc を参照してください。 必要となる `go-autorest` の最も一般的なパッケージを次に示します。
 
-| Package | 説明 |
+| Package | [説明] |
 |---------|-------------|
 | [github.com/Azure/go-autorest/autorest][autorest] | サービス クライアント認証を処理するためのオブジェクト |
 | [github.com/Azure/go-autorest/autorest/azure][autorest/azure] | Azure サービスと対話するための定数 |
@@ -77,7 +73,7 @@ import "github.com/Azure/azure-sdk-for-go/profiles/2017-03-09/resources/mgmt/res
 > [!WARNING]
 > `preview`、`latest` の各プロファイルも用意されています。 これらは使用しないことをお勧めします。 これらのプロファイルはローリング バージョンであり、サービスの動作が変更される可能性があります。
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
 Azure SDK for Go を使い始めるときには、クイック スタートをお試しください。
 

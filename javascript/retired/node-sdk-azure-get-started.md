@@ -1,20 +1,14 @@
 ---
 title: Node.js 用 Azure モジュールの概要
 description: Node.js 用の Azure モジュールを使用した認証およびリソース管理の概要
-author: karlerickson
-manager: douge
-ms.author: karler
 ms.date: 06/17/2017
 ms.topic: conceptual
-ms.prod: azure
-ms.devlang: nodejs
-ms.service: azure-nodejs
-ms.openlocfilehash: 3ba92eae7d6d287cec668dbd1bfcac8e52b04017
-ms.sourcegitcommit: f799dd4590dc5a5e646d7d50c9604a9975dadeb1
+ms.openlocfilehash: 66aface16b4281c541f0f40a3f0f6cbc12be8f89
+ms.sourcegitcommit: 4cf22356d6d4817421b551bd53fcba76bdb44cc1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68690835"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76872127"
 ---
 # <a name="get-started-with-the-azure-modules-for-nodejs"></a>Node.js 用 Azure モジュールの概要
 
@@ -23,7 +17,7 @@ ms.locfileid: "68690835"
 ## <a name="prerequisites"></a>前提条件
 
 - Azure アカウント。 所有していない場合は、[無料試用版を入手](https://azure.microsoft.com/free/)してください。
-- [Node.JS](https://nodejs.org)
+- [Node.js](https://nodejs.org)
 - [Azure Cloud Shell](/azure/cloud-shell/quickstart) または [Azure CLI 2.0](/cli/azure/install-az-cli2)。
 
 [!INCLUDE [azure-cloud-shell](../includes/cloud-shell-try-it.md)]
@@ -250,7 +244,7 @@ MsRest.loginWithServicePrincipalSecret(process.env.AZURE_ID, process.env.AZURE_P
 node uploadFile.js
 ```
 
-## <a name="clean-up-resources"></a>リソースのクリーンアップ
+## <a name="clean-up-resources"></a>リソースをクリーンアップする
 
 リソース グループを削除して、このガイドで作成したリソースを削除してください。
 
@@ -258,7 +252,7 @@ node uploadFile.js
 az group delete --name myResourceGroup
 ```
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
 アプリで使用できるその他の[サンプル Node.js コード](https://azure.microsoft.com/resources/samples/?platform=nodejs)を確認してください。
 

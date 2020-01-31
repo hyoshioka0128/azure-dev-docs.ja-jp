@@ -1,18 +1,14 @@
 ---
 title: Azure SDK for Go での認証
 description: Azure SDK for Go で使用できる認証方法とそれらの使用方法について説明します。
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.date: 09/05/2018
 ms.topic: conceptual
-ms.devlang: go
-ms.openlocfilehash: 34a3995b4eb5cc9012ca03b11fa8199460b9f9d4
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.openlocfilehash: b4bf09dbb3f59c77c2914ae9c9091dc0af31b093
+ms.sourcegitcommit: 4cf22356d6d4817421b551bd53fcba76bdb44cc1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68292076"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76871982"
 ---
 # <a name="authentication-methods-in-the-azure-sdk-for-go"></a>Azure SDK for Go における認証方法
 
@@ -68,12 +64,12 @@ Azure SDK for Go では、異なる資格情報セットを使用する複数の
 次の表に、環境ベースの認証でサポートされている各認証の種類で設定する必要がある環境変数の詳細を示します。
 
 
-|  認証の種類   |     環境変数     |                                                                                                     説明                                                                                                      |
+|  認証の種類   |     環境変数     |                                                                                                     [説明]                                                                                                      |
 |------------------------|------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **クライアントの資格情報** |      `AZURE_TENANT_ID`       |                                                                    サービス プリンシパルが属する Active Directory テナントの ID。                                                                     |
 |                        |      `AZURE_CLIENT_ID`       |                                                                                       サービス プリンシパルの名前または ID。                                                                                       |
 |                        |    `AZURE_CLIENT_SECRET`     |                                                                                  サービス プリンシパルに関連付けられているシークレット。                                                                                   |
-|    **証明書**     |      `AZURE_TENANT_ID`       |                                                                   証明書が登録されている Active Directory テナントの ID。                                                                    |
+|    **[MSSQLSERVER のプロトコルのプロパティ]**     |      `AZURE_TENANT_ID`       |                                                                   証明書が登録されている Active Directory テナントの ID。                                                                    |
 |                        |      `AZURE_CLIENT_ID`       |                                                                              証明書に関連付けられているアプリケーション クライアント ID。                                                                              |
 |                        |   `AZURE_CERTIFICATE_PATH`   |                                                                                       クライアント証明書ファイルのパス。                                                                                       |
 |                        | `AZURE_CERTIFICATE_PASSWORD` |                                                                                       クライアント証明書のパスワード。                                                                                       |
@@ -85,7 +81,7 @@ Azure SDK for Go では、異なる資格情報セットを使用する複数の
 
 既定の Azure パブリック クラウド以外のクラウドまたは管理エンドポイントに接続するには、次の環境変数を設定します。 Azure Stack、異なる地理的リージョンのクラウド、またはクラシック デプロイ モデルを使用する場合が最も一般的な理由です。
 
-| 環境変数 | 説明  |
+| 環境変数 | [説明]  |
 |----------------------|--------------|
 | `AZURE_ENVIRONMENT` | 接続先のクラウド環境の名前。 |
 | `AZURE_AD_RESOURCE` | 接続するときに管理エンドポイントの URI として使用する Active Directory リソース ID。 |
@@ -101,7 +97,7 @@ authorizer, err := auth.NewAuthorizerFromEnvironment()
 
 Azure Stack で認証するには、次の変数を設定する必要があります。
 
-| 環境変数 | 説明  |
+| 環境変数 | [説明]  |
 |----------------------|--------------|
 | `AZURE_AD_ENDPOINT` | Active Directory エンドポイント。 |
 | `AZURE_AD_RESOURCE` | Active Directory リソース ID。 |

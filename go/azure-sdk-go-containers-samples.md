@@ -1,18 +1,14 @@
 ---
 title: Azure SDK for Go のサンプル (コンテナー)
 description: Azure SDK for Go から Azure Container Instances と Azure Kubernetes Service を操作するための厳選されたサンプルです。
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.date: 09/05/2018
 ms.topic: sample
-ms.devlang: go
-ms.openlocfilehash: c229ba1c7af4b45ab2cabcabf313a53fdbb0db52
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.openlocfilehash: 58e87d4ae18a2d24f881822d44e003b6f292bcb4
+ms.sourcegitcommit: 4cf22356d6d4817421b551bd53fcba76bdb44cc1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68291974"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76871843"
 ---
 # <a name="azure-sdk-for-go-samples-for-containers"></a>Azure SDK for Go のサンプル (コンテナー)
 
@@ -20,7 +16,7 @@ ms.locfileid: "68291974"
 
 Azure SDK for Go の全サンプルは、[GitHub](https://github.com/Azure-Samples/azure-sdk-for-go-samples) で入手できます。
 
-| EnableAdfsAuthentication | 説明 |
+| Name | [説明] |
 |------|-------------|
 | [compute/container_instance](https://github.com/Azure-Samples/azure-sdk-for-go-samples/blob/master/compute/container_instance.go) | Azure Container Instances のコンテナー グループを操作します。 ACI グループ内でコンテナーを作成および変更します。 |
 | [compute/container_cluster](https://github.com/Azure-Samples/azure-sdk-for-go-samples/blob/master/compute/container_cluster.go) | Azure Kubernetes Service (AKS) クライアントを作成、削除、および検査します。 |

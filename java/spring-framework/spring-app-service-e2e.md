@@ -6,12 +6,12 @@ ms.author: karler
 ms.date: 11/12/2019
 ms.service: app-service
 ms.topic: article
-ms.openlocfilehash: aa26952b320392beb553f327920fe5bd905a0b85
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: 47f318708fbe786b2fd0b58dc7d68cdd5c975856
+ms.sourcegitcommit: 4cf22356d6d4817421b551bd53fcba76bdb44cc1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74811827"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76872137"
 ---
 # <a name="deploy-a-spring-app-to-app-service-with-mysql"></a>MySQL を使用して Spring アプリを App Service にデプロイする
 
@@ -121,7 +121,7 @@ Maven では、指定した名前で Azure リソースを作成するために�
 <plugin>
     <groupId>com.microsoft.azure</groupId>
     <artifactId>azure-webapp-maven-plugin</artifactId>
-    <version>1.8.0</version>
+    <version>1.9.0</version>
     <configuration>
         <schemaVersion>v2</schemaVersion>
         <resourceGroup>${RESOURCEGROUP_NAME}</resourceGroup>
@@ -300,7 +300,7 @@ az webapp log tail --name ${WEBAPP_NAME} \
 
 ログ ストリームは、`https://<app-name>.scm.azurewebsites.net/api/logstream` でも使用できます。
 
-## <a name="scale-out"></a>スケールアウト
+## <a name="scale-out"></a>スケール アウト
 
 アプリへのトラフィックの増加をサポートするために、次のコマンドを使用して複数のインスタンスにスケールアウトできます。
 
@@ -312,7 +312,7 @@ az appservice plan update --number-of-workers 2 \
 
 お疲れさまでした。 Spring Framework、JSP、Spring Data、Hibernate、JDBC、App Service Linux、および Azure Database for MySQL を使用して Java Web アプリをビルドし、スケールアウトしました。
 
-## <a name="clean-up-resources"></a>リソースのクリーンアップ
+## <a name="clean-up-resources"></a>リソースをクリーンアップする
 
 前のセクションでは、リソース グループに Azure リソースを作成しました。 これらのリソースを今後使用する予定がない場合は、次のコマンドを実行してリソース グループを削除します。
 
@@ -320,7 +320,7 @@ az appservice plan update --number-of-workers 2 \
 az group delete --name ${RESOURCEGROUP_NAME}
 ```
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
 次は、App Service で Java に使用できるその他の構成オプションと CI/CD オプションを確認します。
 

@@ -9,12 +9,12 @@ ms.date: 07/17/2019
 ms.service: azure-functions
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: a65c694e335650c0d5974aba48bd93576dd4c710
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: 12ca26bae42c17395c70448ffc5bf3f01dde9b8e
+ms.sourcegitcommit: 4cf22356d6d4817421b551bd53fcba76bdb44cc1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74811850"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76872147"
 ---
 # <a name="getting-started-with-spring-cloud-function-in-azure"></a>Azure での Spring Cloud Function の概要
 
@@ -64,7 +64,7 @@ Azure Functions 上で実行される古典的な "Hello, World" 関数をビル
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
-    <azure.functions.maven.plugin.version>1.3.2</azure.functions.maven.plugin.version>
+    <azure.functions.maven.plugin.version>1.4.0</azure.functions.maven.plugin.version>
     <azure.functions.java.library.version>1.3.0</azure.functions.java.library.version>
     <functionAppName>my-spring-function</functionAppName>
     <functionAppRegion>westus</functionAppRegion>

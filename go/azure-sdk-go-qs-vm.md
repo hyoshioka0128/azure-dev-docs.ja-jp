@@ -1,18 +1,14 @@
 ---
 title: Go から Azure 仮想マシンをデプロイする
 description: Azure SDK for Go を使用して仮想マシンをデプロイします。
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.date: 09/05/2018
 ms.topic: quickstart
-ms.devlang: go
-ms.openlocfilehash: 01f6e40e80a4c5f29a6179869a2fd95f6cea0623
-ms.sourcegitcommit: 2efdb9d8a8f8a2c1914bd545a8c22ae6fe0f463b
+ms.openlocfilehash: b777d638d0adb1b67351a7ccffb545e05309a53e
+ms.sourcegitcommit: 4cf22356d6d4817421b551bd53fcba76bdb44cc1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2019
-ms.locfileid: "68291957"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76872089"
 ---
 # <a name="quickstart-deploy-an-azure-virtual-machine-from-a-template-with-the-azure-sdk-for-go"></a>クイック スタート:Azure SDK for Go を使用してテンプレートから Azure 仮想マシンをデプロイする
 
@@ -298,7 +294,7 @@ func getLogin() {
 
 VM ユーザーの値も JSON から読み込まれます。 VM のパスワードは、認証ファイルから既に読み込まれています。
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
 このクイック スタートでは、既存のテンプレートを取得し、Go を使用してデプロイしました。 次に、新しく作成された VM に SSH 経由で接続しました。
 

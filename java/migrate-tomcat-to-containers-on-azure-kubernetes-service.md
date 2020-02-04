@@ -5,24 +5,18 @@ author: yevster
 ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 1/20/2020
-ms.openlocfilehash: da516609aaf976db929664bf0402a48f378034d3
-ms.sourcegitcommit: 3585b1b5148e0f8eb950037345bafe6a4f6be854
+ms.openlocfilehash: dbcf1f0989208f960f31fec13a65477d87b1a042
+ms.sourcegitcommit: 367780fe48d977c82cb84208c128b0bf694b1029
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/21/2020
-ms.locfileid: "76288611"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76825825"
 ---
 # <a name="migrate-tomcat-applications-to-containers-on-azure-kubernetes-service"></a>Azure Kubernetes Service のコンテナーに Tomcat アプリケーションを移行する
 
 このガイドでは、既存の Tomcat アプリケーションを移行して Azure Kubernetes Service (AKS) で実行する場合に知っておくべきことについて説明します。
 
 ## <a name="pre-migration-steps"></a>移行前の手順
-
-* [外部リソースをインベントリする](#inventory-external-resources)
-* [シークレットをインベントリする](#inventory-secrets)
-* [永続化の使用をインベントリする](#inventory-persistence-usage)
-* [特殊なケース](#special-cases)
-* [インプレース テスト](#in-place-testing)
 
 [!INCLUDE [inventory-external-resources](includes/migration/inventory-external-resources.md)]
 
@@ -75,7 +69,7 @@ Tomcat の組み込みの [PersistentManager](https://tomcat.apache.org/tomcat-8
 
 コンテナー イメージを作成する前に、AKS で使用する予定のアプリケーションを JDK と Tomcat に移行します。 アプリケーションを十分にテストして、互換性とパフォーマンスを確認します。
 
-### <a name="parametrize-the-configuration"></a>構成をパラメーター化する
+### <a name="parameterize-the-configuration"></a>構成のパラメーター化
 
 多くの場合、移行前に、*server.xml* および *context.xml* ファイル内でシークレットや外部依存関係 (データソースなど) が識別されます。 そのため、識別された各項目について、ユーザー名、パスワード、接続文字列、または URL を環境変数に置き換えます。
 
@@ -128,7 +122,7 @@ az aks create -g $resourceGroup -n $aksName --attach-acr $acrName --network-plug
 
 #### <a name="open-ports-for-clustering-if-needed"></a>クラスタリング用のポートを開く (必要な場合)
 
-AKS で [Tomcat クラスタリング](https://tomcat.apache.org/tomcat-9.0-doc/cluster-howto.html) を使用する場合は、必要なポート範囲が Dockerfile で公開されていることを確認してください。 `server.xml` でサーバーの IP アドレスを指定するには、コンテナーの起動時にポッドの IP アドレスに初期化された変数の値を使用してください。
+AKS で [Tomcat クラスタリング](https://tomcat.apache.org/tomcat-9.0-doc/cluster-howto.html) を使用する場合は、必要なポート範囲が Dockerfile で公開されていることを確認してください。 *server.xml* でサーバーの IP アドレスを指定するには、コンテナーの起動時にポッドの IP アドレスに初期化された変数の値を使用してください。
 
 または、セッション状態を[別の場所に保持](#identify-session-persistence-mechanism)して、レプリカ間で利用できるようにすることもできます。
 
@@ -218,7 +212,7 @@ echo "Your public IP address is ${publicIp}."
 
 アプリケーションで非揮発性ストレージが必要な場合は、[永続ボリューム](/azure/aks/azure-disks-dynamic-pv) を 1 つ以上構成します。
 
-Tomcat ログ ディレクトリ ( */tomcat_logs*) にマウントされた [Azure Files を含む永続ボリュームを作成](/azure/aks/azure-files-dynamic-pv)し、ログを一元的に保持することができます。
+Tomcat ログ ディレクトリ ( */tomcat_logs*) にマウントされた Azure Files を含む永続ボリュームを作成し、ログを一元的に保持することができます。 詳細については、「[Azure Kubernetes Service (AKS) で Azure Files を含む永続ボリュームを動的に作成して使用する](/azure/aks/azure-files-dynamic-pv)」を参照してください。
 
 ### <a name="configure-keyvault-flexvolume"></a>KeyVault FlexVolume を構成する
 

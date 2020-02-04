@@ -4,14 +4,14 @@ description: チュートリアル パート 2、サンプル アプリを作成
 ms.topic: conceptual
 ms.date: 09/24/2019
 ms.author: buhollan
-ms.openlocfilehash: bc930b7c6a3454ca335fec5a955113a45fa2f0f2
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: b236f64f04be0c0b8faa74eb67ce22f96ec595aa
+ms.sourcegitcommit: 367780fe48d977c82cb84208c128b0bf694b1029
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74466554"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76825846"
 ---
-# <a name="create-the-app"></a>アプリケーションの作成
+# <a name="create-the-app"></a>アプリを作成する
 
 [前の手順:概要と前提条件](tutorial-vscode-static-website-node-01.md)
 
@@ -42,7 +42,7 @@ ms.locfileid: "74466554"
     npm start
     ```
 
-1. ブラウザーを開いて [http://localhost:3000](http://localhost:3000) を参照し、アプリが実行されていることを確認します。
+1. ブラウザーを開いて [http://localhost:4200](http://localhost:4200) を参照し、アプリが実行されていることを確認します。
 
     ![実行中のサンプル Angular アプリ](media/static-website/local-app-angular.png)
 

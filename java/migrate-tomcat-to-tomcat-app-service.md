@@ -5,12 +5,12 @@ author: yevster
 ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 1/20/2020
-ms.openlocfilehash: ce1c54f0f4b28c5c0a2e11f4afc53f1dd59899c5
-ms.sourcegitcommit: 3585b1b5148e0f8eb950037345bafe6a4f6be854
+ms.openlocfilehash: f9611415264ce0c00a077d8988ef0fc9f7d97f66
+ms.sourcegitcommit: 367780fe48d977c82cb84208c128b0bf694b1029
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/21/2020
-ms.locfileid: "76288601"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76825886"
 ---
 # <a name="migrate-tomcat-applications-to-tomcat-on-azure-app-service"></a>Tomcat アプリケーションを Azure App Service 上の Tomcat に 移行する
 
@@ -21,36 +21,17 @@ ms.locfileid: "76288601"
 移行前の要件を満たすことができない場合は、以下の関連する移行ガイドを参照してください。
 
 * [Azure Kubernetes Service のコンテナーに Tomcat アプリケーションを移行する](migrate-tomcat-to-containers-on-azure-kubernetes-service.md)
-* Tomcat アプリケーションを Azure Virtual Machines に移行する (近日公開予定)
+* Tomcat アプリケーションを Azure Virtual Machines に移行する (計画済)
 
 ## <a name="pre-migration-steps"></a>移行前の手順
 
-* [サポートされているプラットフォームに切り替える](#switch-to-a-supported-platform)
-* [外部リソースをインベントリする](#inventory-external-resources)
-* [シークレットをインベントリする](#inventory-secrets)
-* [永続化の使用をインベントリする](#inventory-persistence-usage)
-* [特殊な場合](#special-cases)
-
 ### <a name="switch-to-a-supported-platform"></a>サポートされているプラットフォームに切り替える
 
-App Service では、特定のバージョンの Java で特定のバージョンの Tomcat が提供されます。 互換性を確保するために、残りの手順に進む前に、現在の環境でサポートされているバージョンの Tomcat および Java にアプリケーションを移行してください。 結果として得られた構成は、十分にテストしてください。 このようなテストでは、オペレーティング システムとして [Red Hat Enterprise Linux 8](https://portal.azure.com/#create/RedHat.RedHatEnterpriseLinux80-ARM) を使用します。
+App Service では、特定のバージョンの Java で特定のバージョンの Tomcat が提供されます。 互換性を確保するために、残りの手順に進む前に、現在の環境でサポートされているいずれかのバージョンの Tomcat および Java にアプリケーションを移行してください。 結果として得られた構成は、十分にテストしてください。 このようなテストでは、Linux ディストリビューションの安定した最新リリースを使用します。
 
-#### <a name="java"></a>Java
+[!INCLUDE [note-obtain-your-current-java-version](includes/migration/note-obtain-your-current-java-version.md)]
 
-> [!NOTE]
-> 現在のサーバーがサポートされていない JDK (Oracle JDK や IBM OpenJ9 など) で実行されている場合、この検証が特に重要です。
-
-現在の Java バージョンを取得するには、実稼働サーバーにサインインし、次のコマンドを実行します。
-
-```bash
-java -version
-```
-
-Azure App Service によって使用されている現在のバージョンを取得するには、Java 8 ランタイムを使用する場合は [Zulu 8](https://www.azul.com/downloads/zulu-community/?&version=java-8-lts&os=&os=linux&architecture=x86-64-bit&package=jdk) を、Java 11 ランタイムを使用する場合は [Zulu 11](https://www.azul.com/downloads/zulu-community/?&version=java-11-lts&os=&os=linux&architecture=x86-64-bit&package=jdk) をダウンロードしてください。
-
-#### <a name="tomcat"></a>Tomcat
-
-現在の Tomcat バージョンを確認するには、実稼働サーバーにサインインし、次のコマンドを実行します。
+現在の Tomcat バージョンを取得するには、実稼働サーバーにサインインし、次のコマンドを実行します。
 
 ```bash
 ${CATALINA_HOME}/bin/version.sh
@@ -61,6 +42,8 @@ Azure App Service によって使用されている現在のバージョンを�
 [!INCLUDE [inventory-external-resources](includes/migration/inventory-external-resources.md)]
 
 [!INCLUDE [inventory-secrets](includes/migration/inventory-secrets.md)]
+
+[!INCLUDE [inventory-certificates](includes/migration/inventory-certificates.md)]
 
 [!INCLUDE [inventory-persistence-usage](includes/migration/inventory-persistence-usage.md)]
 
@@ -123,7 +106,7 @@ App Service では、Tomcat ランタイムの外部でセッションのオフ�
 
 ## <a name="migration"></a>移行
 
-### <a name="parametrize-the-configuration"></a>構成をパラメーター化する
+### <a name="parameterize-the-configuration"></a>構成のパラメーター化
 
 多くの場合、移行前に、*server.xml* および *context.xml* ファイル内でシークレットや外部依存関係 (データソースなど) が識別されます。 そのため、識別された各項目について、ユーザー名、パスワード、接続文字列、または URL を環境変数に置き換えます。
 
@@ -164,7 +147,7 @@ App Service では、Tomcat ランタイムの外部でセッションのオフ�
 
 ### <a name="create-and-deploy-web-apps"></a>Web アプリを作成してデプロイする
 
-App Service プランでは、Tomcat サーバーにデプロイされている WAR ファイルごとに Web アプリを作成する必要があります。
+App Service プランでは、Tomcat サーバーにデプロイされている WAR ファイルごとに (ランタイム スタックとして Tomcat のバージョンを選択して) Web アプリを作成する必要があります。
 
 > [!NOTE]
 > 1 つの Web アプリに複数の WAR ファイルをデプロイすることは可能ですが、非常に望ましくない操作です。 1 つの Web アプリに複数の WAR ファイルをデプロイすると、各アプリケーションを独自の使用要件に従ってスケーリングできなくなります。 さらに、後続の配置パイプラインの複雑さも増大します。 1 つの URL で複数のアプリケーションを使用できるようにする必要がある場合は、[Azure Application Gateway](/azure/application-gateway/) などのルーティング ソリューションの使用を検討してください。
@@ -191,17 +174,15 @@ Web アプリが作成されたら、[利用可能なデプロイ メカニズ�
 
 アプリケーション固有のシークレットを格納するには、アプリケーション設定を使用します。 複数のアプリケーションで同じシークレットを使用する場合、またはきめ細かなアクセス ポリシーと監査機能が必要な場合は、代わりに [Azure Key Vault を使用](/azure/app-service/containers/configure-language-java#use-keyvault-references) します。
 
-### <a name="configure-custom-domain-and-ssl"></a>カスタム ドメインと SSL を構成する
+[!INCLUDE [configure-custom-domain-and-ssl](includes/migration/configure-custom-domain-and-ssl.md)]
 
-アプリケーションをカスタム ドメインに表示する場合は、[Web アプリケーションをそれにマップ](/azure/app-service/app-service-web-tutorial-custom-domain)する必要があります。
-
-その後に、[そのドメインの SSL 証明書を App Service Web アプリにバインドする](/azure/app-service/app-service-web-tutorial-custom-ssl)必要があります。
+[!INCLUDE [import-backend-certificates](includes/migration/import-backend-certificates.md)]
 
 ### <a name="migrate-data-sources-libraries-and-jndi-resources"></a>データソース、ライブラリ、および JNDI リソースを移行する
 
 [データ ソースを移行するには、こちらの手順](/azure/app-service/containers/configure-language-java#tomcat)に従います。
 
-追加のサーバー レベル クラスパスの依存関係を、[データ ソースの jar ファイルと同じ手順](/azure/app-service/containers/configure-language-java#finalize-configuration)に従って移行します。
+追加のサーバー レベル クラスパスの依存関係を、[データ ソースの JAR ファイルと同じ手順](/azure/app-service/containers/configure-language-java#finalize-configuration)に従って移行します。
 
 その他の[共有サーバー レベルの JDNI リソース](/azure/app-service/containers/configure-language-java#shared-server-level-resources)を移行します。
 
@@ -214,14 +195,7 @@ Web アプリが作成されたら、[利用可能なデプロイ メカニズ�
 
 追加の構成 ([領域](https://tomcat.apache.org/tomcat-8.5-doc/config/realm.html)、[JASPIC](https://tomcat.apache.org/tomcat-8.5-doc/config/jaspic.html) など) をコピーして移行を完了します
 
-### <a name="migrate-scheduled-jobs"></a>スケジュールされたジョブを移行する
-
-スケジュールされたジョブを Azure で実行するには、[Azure Functions をタイマー トリガーとともに](/azure/azure-functions/functions-bindings-timer)使用することを検討してください。 ジョブ コード自体を関数に移行する必要はありません。 この関数では、アプリケーションで URL を呼び出すだけでジョブをトリガーできます。
-
-または、[繰り返しトリガー](/azure/logic-apps/tutorial-build-schedule-recurring-logic-app-workflow#add-the-recurrence-trigger)を使用して[ロジック アプリ](/azure/logic-apps/logic-apps-overview)を作成し、アプリケーションの外部でコードを記述せずに URL を呼び出すこともできます。
-
-> [!NOTE]
-> 悪意のある使用を防ぐために、ジョブの呼び出しエンドポイントで資格情報が求められるようにする必要があります。 この場合、トリガー関数が資格情報を提供する必要があります。
+[!INCLUDE [migrate-scheduled-jobs](includes/migration/migrate-scheduled-jobs.md)]
 
 ### <a name="restart-and-smoke-test"></a>再起動とスモーク テスト
 

@@ -6,12 +6,12 @@ ms.assetid: 49be8b66-3b56-4c10-8f14-9d326d815cb4
 ms.topic: article
 ms.date: 3/30/2017
 ms.reviewer: asirveda
-ms.openlocfilehash: b1eeaa139e7642220524a76869fd8713044f9df5
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: 88298088099ed61c97eb6cb4a900c2ce55f5c3f0
+ms.sourcegitcommit: 6fa28ea675ae17ffb9ac825415e2e26a3dfe7107
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74812319"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "77002431"
 ---
 # <a name="manage-azure-storage-accounts-from-your-java-applications"></a>Java アプリケーションから Azure ストレージ アカウントを管理する
 
@@ -19,7 +19,7 @@ ms.locfileid: "74812319"
 
 ## <a name="run-the-sample"></a>サンプルを実行する
 
-[認証ファイル](https://github.com/Azure/azure-sdk-for-java/blob/master/AUTH.md)を作成し、そのファイルのコンピューター上における完全なパスを保持する環境変数 `AZURE_AUTH_LOCATION` を設定します。 次に、以下を実行します。
+[認証ファイル](https://github.com/Azure/azure-sdk-for-java/blob/master/AUTH.md)を作成し、そのファイルのコンピューター上における完全なパスを保持する環境変数 `AZURE_AUTH_LOCATION` を設定します。 次に、次のコマンドを実行します。
 
 ```
 git clone https://github.com/Azure-Samples/storage-java-manage-storage-accounts.git
@@ -43,7 +43,7 @@ StorageAccount storageAccount = azure.storageAccounts().define(storageAccountNam
                     .create();
 ```
 
-指定するストレージ名は、Azure に存在するいずれの名前とも重複しないこと、また小文字と数字だけで構成されていることが必要です。 このアカウントに使用される既定のパフォーマンスとレプリケーション プロファイルは [Standard_GRS](https://docs.microsoft.com/azure/storage/storage-redundancy#geo-redundant-storage) です。
+指定するストレージ名は、Azure に存在するいずれの名前とも重複しないこと、また小文字と数字だけで構成されていることが必要です。 このアカウントに使用される既定のパフォーマンスとレプリケーション プロファイルは [Standard_GRS](https://docs.microsoft.com/azure/storage/common/storage-redundancy-grs) です。
 
 ## <a name="list-keys-in-a-storage-account"></a>ストレージ アカウントに存在するキーの列挙
 ```java
@@ -75,7 +75,7 @@ for (StorageAccount sa : accounts) {
 }
 ```
 
-[com.microsoft.azure.management.storage.StorageAccount](https://docs.microsoft.com/java/api/com.microsoft.azure.management.storage._storage_account) には、ストレージ アカウントの構成を調べる際に利用できるさまざまなメソッドが掲載されています。
+[com.microsoft.azure.management.storage.StorageAccount](https://docs.microsoft.com/java/api/com.microsoft.azure.management.storage.storageaccount) には、ストレージ アカウントの構成を調べる際に利用できるさまざまなメソッドが掲載されています。
 
 ## <a name="delete-a-storage-account"></a>ストレージ アカウントを削除する
 ```java
@@ -98,11 +98,11 @@ azure.storageAccounts().deleteByResourceGroup(rgName,accountName);
 - リソース グループに含まれるすべてのストレージ アカウントの列挙
 - ストレージ アカウントの削除 
 
-| サンプルで使われているクラス | メモ
+| サンプルで使われているクラス | Notes
 |-------|-------|
-| [StorageAccount](https://docs.microsoft.com/java/api/com.microsoft.azure.management.storage._storage_account)  | Azure ストレージ アカウントを表します。 ストレージ アカウントに関する情報は、このクラスのメソッドを使って取得します。
-| [StorageAccountKey](https://docs.microsoft.com/java/api/com.microsoft.azure.management.storage._storage_account_key) | `StorageAccount.getKeys()` は、ストレージ アカウント キーを返します。 キーを更新するには、`StorageAccount` の `regenerateKey` メソッドを使用します。
+| [StorageAccount](https://docs.microsoft.com/java/api/com.microsoft.azure.management.storage.storageaccount)  | Azure ストレージ アカウントを表します。 ストレージ アカウントに関する情報は、このクラスのメソッドを使って取得します。
+| [StorageAccountKey](https://docs.microsoft.com/java/api/com.microsoft.azure.management.storage.storageaccountkey) | `StorageAccount.getKeys()` は、ストレージ アカウント キーを返します。 キーを更新するには、`StorageAccount` の `regenerateKey` メソッドを使用します。
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
 [!INCLUDE [next-steps](includes/java-next-steps.md)]

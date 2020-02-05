@@ -6,12 +6,12 @@ manager: kyliel
 ms.author: seal
 ms.date: 08/21/2019
 ms.topic: article
-ms.openlocfilehash: 2d888d225a8bcf5c957da11e18ea86d09ec8e897
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: 8c62a68ff2a9912d88361adc6ef3b8dc2ea29c98
+ms.sourcegitcommit: 6fa28ea675ae17ffb9ac825415e2e26a3dfe7107
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74812055"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "77002289"
 ---
 # <a name="how-to-use-spring-cloud-azure-stream-binder-for-azure-service-bus"></a>Azure Service Bus 用の Spring Cloud Azure Stream Binder を使用する方法
 
@@ -25,7 +25,7 @@ Azure には、[Azure Service Bus](https://docs.microsoft.com/azure/service-bus-
 
 この記事の前提条件は次のとおりです。
 
-1. Azure サブスクリプションをまだお持ちでない場合は、[MSDN サブスクライバーの特典](https://azure.microsoft.com/pricing/member-offers/credit-for-visual-studio-subscribers/)を有効にするか、[無料アカウント](https://azure.microsoft.comfree/)にサインアップしてください。
+1. Azure サブスクリプションをまだお持ちでない場合は、[MSDN サブスクライバーの特典](https://azure.microsoft.com/pricing/member-offers/credit-for-visual-studio-subscribers/)を有効にするか、[無料アカウント](https://azure.microsoft.com/free/)にサインアップしてください。
 
 1. サポートされている Java Development Kit (JDK) (バージョン 8 以降)。 Azure での開発時に使用可能な JDK の詳細については、<https://aka.ms/azure-jdks> を参照してください。
 
@@ -119,7 +119,7 @@ Azure には、[Azure Service Bus](https://docs.microsoft.com/azure/service-bus-
 
     **<a name="fd">フィールドの説明</a>**
 
-    |                                        フィールド                                   |                                                                                   説明                                                                                    |
+    |                                        フィールド                                   |                                                                                   [説明]                                                                                    |
     |--------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
     |               `spring.cloud.azure.servicebus.connection-string`                |                                        Azure portal の自分の Service Bus 名前空間で取得した接続文字列を指定します。                                   |
     |               `spring.cloud.stream.bindings.input.destination`                 |                            このチュートリアルで自分が使用した Service Bus キューまたは Service Bus トピックを指定します。                         |
@@ -264,11 +264,11 @@ Azure には、[Azure Service Bus](https://docs.microsoft.com/azure/service-bus-
     Message 'hello' successfully checkpointed
     ```
 
-## <a name="clean-up-resources"></a>リソースのクリーンアップ
+## <a name="clean-up-resources"></a>リソースをクリーンアップする
 
 予想外の課金を防ぐために、この記事で作成したリソースが不要になったら、[Azure portal](https://portal.azure.com/) を使用して削除してください。
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
 > [!div class="nextstepaction"]
 > [Azure の Spring](/java/azure/spring-framework)

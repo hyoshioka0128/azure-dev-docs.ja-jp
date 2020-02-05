@@ -6,12 +6,12 @@ ms.assetid: 92736911-3df6-46e7-b751-25bb36bf89b9
 ms.topic: article
 ms.date: 3/30/2017
 ms.reviewer: asirveda
-ms.openlocfilehash: 9f66434c67cabd08304faecb56e51107a2aeb8ee
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: 3c537d7d7030ea46bdbc7d6873819ea8e12f03b3
+ms.sourcegitcommit: 6fa28ea675ae17ffb9ac825415e2e26a3dfe7107
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74812305"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "77002360"
 ---
 # <a name="create-and-manage-azure-virtual-networks-from-your-java-apps"></a>Java アプリによる Azure 仮想ネットワークの作成と管理
 
@@ -19,7 +19,7 @@ ms.locfileid: "74812305"
 
 ## <a name="run-the-sample"></a>サンプルを実行する
 
-[認証ファイル](https://github.com/Azure/azure-sdk-for-java/blob/master/AUTH.md)を作成し、そのファイルのコンピューター上における完全なパスを保持する環境変数 `AZURE_AUTH_LOCATION` を設定します。 次に、以下を実行します。
+[認証ファイル](https://github.com/Azure/azure-sdk-for-java/blob/master/AUTH.md)を作成し、そのファイルのコンピューター上における完全なパスを保持する環境変数 `AZURE_AUTH_LOCATION` を設定します。 次に、次のコマンドを実行します。
 
 ```
 git clone https://github.com/Azure-Samples/network-java-manage-virtual-network.git
@@ -171,12 +171,12 @@ azure.networks().deleteByResourceGroup(rgName,vnetName1);
 
 このサンプルでは、それぞれ 1 つの仮想マシンを含んだ 2 つのサブネットから成る仮想ネットワークを作成します。 バック サブネットは、パブリック インターネットから切り離します。 外部に公開されたフロント サブネットは、インターネットからの受信方向の HTTP トラフィックを受け入れます。 仮想ネットワーク内の 2 つの仮想マシンは、既定のネットワーク セキュリティ グループの規則に従って互いに通信を行います。
 
-| サンプルで使われているクラス | メモ
+| サンプルで使われているクラス | Notes
 |-------|-------|
-| [ネットワーク](https://docs.microsoft.com/java/api/com.microsoft.azure.management.network._network) | `azure.networks().define()...create()` から作成された仮想ネットワークのローカル オブジェクトを表します。 `update()...apply()` という fluent チェーンを使用して、既存の仮想ネットワークを更新します。
-| [サブネット](https://docs.microsoft.com/java/api/com.microsoft.azure.management.network._subnet) | 仮想ネットワーク上のサブネットは、そのネットワークを定義または更新するときに、`withSubnet()` を使って作成します。 サブネットのオブジェクト表現は、`Network.subnets().get()` または `Network.subnets().entrySet()` から取得します。 これらのオブジェクトには、サブネットのプロパティを照会するためのメソッドが用意されています。
-| [NetworkSecurityGroup](https://docs.microsoft.com/java/api/com.microsoft.azure.management.network._network_security_group) | `azure.networkSecurityGroups().define()...create()` という fluent チェーンを使って作成され、仮想ネットワーク内のサブネットを更新または作成するときにサブネットに適用されます。 
+| [Network](https://docs.microsoft.com/java/api/com.microsoft.azure.management.network.network) | `azure.networks().define()...create()` から作成された仮想ネットワークのローカル オブジェクトを表します。 `update()...apply()` という fluent チェーンを使用して、既存の仮想ネットワークを更新します。
+| [サブネット](https://docs.microsoft.com/java/api/com.microsoft.azure.management.network.subnet) | 仮想ネットワーク上のサブネットは、そのネットワークを定義または更新するときに、`withSubnet()` を使って作成します。 サブネットのオブジェクト表現は、`Network.subnets().get()` または `Network.subnets().entrySet()` から取得します。 これらのオブジェクトには、サブネットのプロパティを照会するためのメソッドが用意されています。
+| [NetworkSecurityGroup](https://docs.microsoft.com/java/api/com.microsoft.azure.management.network.networksecuritygroup) | `azure.networkSecurityGroups().define()...create()` という fluent チェーンを使って作成され、仮想ネットワーク内のサブネットを更新または作成するときにサブネットに適用されます。 
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
 [!INCLUDE [next-steps](includes/java-next-steps.md)]

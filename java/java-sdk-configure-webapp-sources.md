@@ -5,12 +5,12 @@ author: rloutlaw
 ms.assetid: 833e9c78-1e50-4c23-a611-f73a2f0c2983
 ms.topic: article
 ms.date: 03/30/2017
-ms.openlocfilehash: 8ed90b7fff9c973481af1603e14fdb5858d5b9e0
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: e8cda5ca26b57e7c64d577fb5542295c930f5623
+ms.sourcegitcommit: 6fa28ea675ae17ffb9ac825415e2e26a3dfe7107
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74812339"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "77002465"
 ---
 # <a name="configure-azure-app-service-deployment-sources-from-your-java-applications"></a>Java アプリケーションから Azure App Service のデプロイ ソースを構成する
 
@@ -18,7 +18,7 @@ ms.locfileid: "74812339"
 
 ## <a name="run-the-sample"></a>サンプルを実行する
 
-[認証ファイル](https://github.com/Azure/azure-sdk-for-java/blob/master/AUTH.md)を作成し、そのファイルのコンピューター上における完全なパスを保持する環境変数 `AZURE_AUTH_LOCATION` を設定します。 次に、以下を実行します。
+[認証ファイル](https://github.com/Azure/azure-sdk-for-java/blob/master/AUTH.md)を作成し、そのファイルのコンピューター上における完全なパスを保持する環境変数 `AZURE_AUTH_LOCATION` を設定します。 次に、次のコマンドを実行します。
 
 ```
 git clone https://github.com/Azure-Samples/app-service-java-configure-deployment-sources-for-web-apps.git
@@ -151,15 +151,15 @@ WebApp app4 = azure.webApps()
 
 4 つ目のアプリケーションでは、GitHub リポジトリのマスター ブランチに対して変更をプッシュするか pull request をマージすると、その都度、マスター ブランチにあるコードがデプロイされます。
 
-| サンプルで使われているクラス | メモ
+| サンプルで使われているクラス | Notes
 |-------|-------|
-| [WebApp](https://docs.microsoft.com/java/api/com.microsoft.azure.management.appservice._web_app) | `azure.webApps().define()....create()` という fluent チェーンから作成されます。 App Service Web アプリのほか、そのアプリに必要なすべてのリソースが作成されます。 そのメソッドは、オブジェクトに構成の詳細を照会するものが大半ですが、動詞を含んだメソッド (`restart()` など) では、Web アプリの状態が変更されます。
-| [WebContainer](https://docs.microsoft.com/java/api/com.microsoft.azure.management.appservice._web_container) | static public フィールドがあるクラスで、Java Web コンテナーを実行する WebApp を定義する際に `withWebContainer()` のパラメーターとして使用されます。 Jetty と Tomcat のどちらもバージョンを選択できます。
-| [PublishingProfile](https://docs.microsoft.com/java/api/com.microsoft.azure.management.appservice._publishing_profile) | WebApp オブジェクトの `getPublishingProfile()` メソッドを使用して取得できます。 FTP と Git のデプロイ情報を保持します。たとえば、デプロイのユーザー名とパスワード (Azure アカウントやサービス プリンシパルの資格情報とは区別されます) が含まれます。
-| [AppServicePlan](https://docs.microsoft.com/java/api/com.microsoft.azure.management.appservice._app_service_plan) | `azure.appServices().appServicePlans().getByResourceGroup()` から返されます。 プランで実行されている Web アプリの数、レベル、キャパシティをチェックするためのメソッドが利用できます。
-| [AppServicePricingTier](https://docs.microsoft.com/java/api/com.microsoft.azure.management.appservice._app_service_pricing_tier) | App Service のレベルを表す static public フィールドがあるクラス。 プランのレベルをアプリの作成時に `withPricingTier()` を使ってインラインで定義するとき、または `azure.appServices().appServicePlans().define()` によってプランを定義する際にそのレベルを直接定義するときに使用します。
-| [JavaVersion](https://docs.microsoft.com/java/api/com.microsoft.azure.management.appservice._java_version) | App Service によってサポートされる Java のバージョンを表す static public フィールドがあるクラス。 新しい Web アプリを作成するときに `define()...create()` チェーンの中で `withJavaVersion()` と組み合わせて使用します。
+| [WebApp](https://docs.microsoft.com/java/api/com.microsoft.azure.management.appservice.webapp) | `azure.webApps().define()....create()` という fluent チェーンから作成されます。 App Service Web アプリのほか、そのアプリに必要なすべてのリソースが作成されます。 そのメソッドは、オブジェクトに構成の詳細を照会するものが大半ですが、動詞を含んだメソッド (`restart()` など) では、Web アプリの状態が変更されます。
+| [WebContainer](https://docs.microsoft.com/java/api/com.microsoft.azure.management.appservice.webcontainer) | static public フィールドがあるクラスで、Java Web コンテナーを実行する WebApp を定義する際に `withWebContainer()` のパラメーターとして使用されます。 Jetty と Tomcat のどちらもバージョンを選択できます。
+| [PublishingProfile](https://docs.microsoft.com/java/api/com.microsoft.azure.management.appservice.publishingprofile) | WebApp オブジェクトの `getPublishingProfile()` メソッドを使用して取得できます。 FTP と Git のデプロイ情報を保持します。たとえば、デプロイのユーザー名とパスワード (Azure アカウントやサービス プリンシパルの資格情報とは区別されます) が含まれます。
+| [AppServicePlan](https://docs.microsoft.com/java/api/com.microsoft.azure.management.appservice.appserviceplan) | `azure.appServices().appServicePlans().getByResourceGroup()` から返されます。 プランで実行されている Web アプリの数、レベル、キャパシティをチェックするためのメソッドが利用できます。
+| [AppServicePricingTier](https://docs.microsoft.com/java/api/com.microsoft.azure.management.appservice.PricingTier) | App Service のレベルを表す static public フィールドがあるクラス。 プランのレベルをアプリの作成時に `withPricingTier()` を使ってインラインで定義するとき、または `azure.appServices().appServicePlans().define()` によってプランを定義する際にそのレベルを直接定義するときに使用します。
+| [JavaVersion](https://docs.microsoft.com/java/api/com.microsoft.azure.management.appservice.javaversion) | App Service によってサポートされる Java のバージョンを表す static public フィールドがあるクラス。 新しい Web アプリを作成するときに `define()...create()` チェーンの中で `withJavaVersion()` と組み合わせて使用します。
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
 [!INCLUDE [next-steps](includes/java-next-steps.md)]

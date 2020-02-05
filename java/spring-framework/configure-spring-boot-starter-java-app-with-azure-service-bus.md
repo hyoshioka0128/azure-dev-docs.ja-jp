@@ -6,12 +6,12 @@ manager: kyliel
 ms.author: seal
 ms.date: 08/21/2019
 ms.topic: article
-ms.openlocfilehash: b64095bc2971bf9d9a7308bebdb91617538796c4
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: 17baf4899bd47b15bc60d02b853605c422d3c82b
+ms.sourcegitcommit: 6fa28ea675ae17ffb9ac825415e2e26a3dfe7107
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74812117"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "77002316"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-service-bus-jms"></a>Azure Service Bus JMS 用の Spring Boot スターターの使用方法
 
@@ -27,7 +27,7 @@ Azure Service Bus JMS 用の Spring Boot スターターを使用すると、Spr
 
 この記事の前提条件は次のとおりです。
 
-1. Azure サブスクリプションをまだお持ちでない場合は、[MSDN サブスクライバーの特典](https://azure.microsoft.com/pricing/member-offers/credit-for-visual-studio-subscribers/)を有効にするか、[無料アカウント](https://azure.microsoft.comfree/)にサインアップしてください。
+1. Azure サブスクリプションをまだお持ちでない場合は、[MSDN サブスクライバーの特典](https://azure.microsoft.com/pricing/member-offers/credit-for-visual-studio-subscribers/)を有効にするか、[無料アカウント](https://azure.microsoft.com/free/)にサインアップしてください。
 
 1. サポートされている Java Development Kit (JDK) (バージョン 8 以降)。 Azure での開発時に使用可能な JDK の詳細については、<https://aka.ms/azure-jdks> を参照してください。
 
@@ -94,7 +94,7 @@ Azure Service Bus JMS 用の Spring Boot スターターを使用すると、Spr
 
     **フィールドの説明**
 
-    | フィールド                                     | 説明                                                                                     |
+    | フィールド                                     | [説明]                                                                                     |
     |-------------------------------------------|-------------------------------------------------------------------------------------------------|
     | `spring.jms.servicebus.connection-string` | Azure portal の自分の Service Bus 名前空間で取得した接続文字列を指定します。 |
     | `spring.jms.servicebus.idle-timeout`      | アイドル タイムアウトをミリ秒単位で指定します。 このチュートリアルで推奨される値は 1800000 です。   |
@@ -123,7 +123,7 @@ Azure Service Bus JMS 用の Spring Boot スターターを使用すると、Spr
 
     **フィールドの説明**
 
-    | フィールド                                     | 説明                                                                                       |
+    | フィールド                                     | [説明]                                                                                       |
     |-------------------------------------------|---------------------------------------------------------------------------------------------------|
     | `spring.jms.servicebus.connection-string` | Azure portal の自分の Service Bus 名前空間で取得した接続文字列を指定します。   |
     | `spring.jms.servicebus.topic-client-id`   | 持続的サブスクリプションで Azure Service Bus トピックを使用している場合は、JMS クライアント ID を指定します。 |
@@ -344,11 +344,11 @@ Azure Service Bus JMS 用の Spring Boot スターターを使用すると、Spr
     [enerContainer-1] com.wingtiptoys.servicebus.ReceiveController : Received message: hello
     ```
 
-## <a name="clean-up-resources"></a>リソースのクリーンアップ
+## <a name="clean-up-resources"></a>リソースをクリーンアップする
 
 予想外の課金を防ぐために、この記事で作成したリソースが不要になったら、[Azure portal](https://portal.azure.com/) を使用して削除してください。
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
 > [!div class="nextstepaction"]
 > [Service Bus と AMQP 1.0 で JMS API を使用する方法](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-java-how-to-use-jms-api-amqp)

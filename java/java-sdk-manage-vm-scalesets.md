@@ -6,12 +6,12 @@ ms.assetid: b55923b7-d60a-460d-b77c-af5fac67f1cc
 ms.topic: article
 ms.date: 3/30/2017
 ms.reviewer: asirveda
-ms.openlocfilehash: bd956502c6cd5910f6c22844840aeec6cb1ec8aa
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: 092bb328c4d7e68da9c75a43eaa9c31173d79864
+ms.sourcegitcommit: 6fa28ea675ae17ffb9ac825415e2e26a3dfe7107
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74812293"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "77002536"
 ---
 # <a name="manage-azure-virtual-machine-scale-sets-from-your-java-applications"></a>Azure 仮想マシン スケール セットを Java アプリケーションから管理する
 
@@ -19,7 +19,7 @@ ms.locfileid: "74812293"
 
 ## <a name="run-the-sample"></a>サンプルを実行する
 
-[認証ファイル](https://github.com/Azure/azure-sdk-for-java/blob/master/AUTH.md)を作成し、そのファイルのコンピューター上における完全なパスを保持する環境変数 `AZURE_AUTH_LOCATION` を設定します。 次に、以下を実行します。
+[認証ファイル](https://github.com/Azure/azure-sdk-for-java/blob/master/AUTH.md)を作成し、そのファイルのコンピューター上における完全なパスを保持する環境変数 `AZURE_AUTH_LOCATION` を設定します。 次に、次のコマンドを実行します。
 
 ```
 git clone https://github.com/Azure-Samples/compute-java-manage-virtual-machine-scale-sets.git
@@ -224,14 +224,14 @@ virtualMachineScaleSet.update()
 
 [このサンプル コード](https://github.com/Azure-Samples/compute-java-manage-virtual-machine-scale-sets/blob/master/src/main/java/com/microsoft/azure/management/compute/samples/ManageVirtualMachineScaleSet.java)ではまず、スケール セットの仮想マシン間の通信に使用する仮想ネットワークを作成し、トラフィックを仮想マシン間で分散するためのロード バランサーを作成します。 Apache Web サーバーを実行する 3 つの Linux インスタンスから成るスケール セットが、`azure.virtualMachineScaleSets().define()...create()` メソッド チェーンによって作成されます。    
    
-| サンプルで使われているクラス | メモ
+| サンプルで使われているクラス | Notes
 |-------|-------|
-| [VirtualMachineScaleSet](https://docs.microsoft.com/java/api/com.microsoft.azure.management.compute._virtual_machine_scale_set) | スケール セットに含まれるすべての仮想マシンを対象に、照会、起動、停止、更新、削除を実行します。
-| [VirtualMachineScaleSetVM](https://docs.microsoft.com/java/api/com.microsoft.azure.management.compute._virtual_machine_scale_set_v_m) | `virtualMachineScaleSet.virtualMachines().get()` または `list()` から取得して、スケール セットの仮想マシンを対象に、照会、起動、停止、構成、削除を実行できます。
-| [VirtualMachineScaleSetNetworkInterface](https://docs.microsoft.com/java/api/com.microsoft.azure.management.network._virtual_machine_scale_set_network_interface) | スケール セットに含まれる仮想マシンの読み取り専用のネットワーク インターフェイスを表します。`virtualMachineScaleSet.listNetworkInterfaces()` から返されます。
-| [VirtualMachineScaleSetSkuTypes](https://docs.microsoft.com/java/api/com.microsoft.azure.management.compute._virtual_machine_scale_set_sku_types) | スケール セットのメンバーが利用できるリソースの量を定義する[仮想マシン スケール セットのレベル](https://azure.microsoft.com/pricing/details/virtual-machine-scale-sets/linux/)を設定するための静的フィールドのクラスです。
-| [VirtualMachineScaleSetNicIpConfiguration](https://docs.microsoft.com/java/api/com.microsoft.azure.management.network._virtual_machine_scale_set_nic_i_p_configuration) | スケール セットの仮想マシン上のネットワーク インターフェイスに関連付けられている IP 構成を照会する際に使用します。
+| [VirtualMachineScaleSet](https://docs.microsoft.com/java/api/com.microsoft.azure.management.compute.virtualmachinescaleset) | スケール セットに含まれるすべての仮想マシンを対象に、照会、起動、停止、更新、削除を実行します。
+| [VirtualMachineScaleSetVM](https://docs.microsoft.com/java/api/com.microsoft.azure.management.compute.virtualmachinescalesetvm) | `virtualMachineScaleSet.virtualMachines().get()` または `list()` から取得して、スケール セットの仮想マシンを対象に、照会、起動、停止、構成、削除を実行できます。
+| [VirtualMachineScaleSetNetworkInterface](https://docs.microsoft.com/java/api/com.microsoft.azure.management.network.virtualmachinescalesetnetworkinterface) | スケール セットに含まれる仮想マシンの読み取り専用のネットワーク インターフェイスを表します。`virtualMachineScaleSet.listNetworkInterfaces()` から返されます。
+| [VirtualMachineScaleSetSkuTypes](https://docs.microsoft.com/java/api/com.microsoft.azure.management.compute.virtualmachinescalesetskutypes) | スケール セットのメンバーが利用できるリソースの量を定義する[仮想マシン スケール セットのレベル](https://azure.microsoft.com/pricing/details/virtual-machine-scale-sets/linux/)を設定するための静的フィールドのクラスです。
+| [VirtualMachineScaleSetNicIpConfiguration](https://docs.microsoft.com/java/api/com.microsoft.azure.management.network.virtualmachinescalesetnicipconfiguration) | スケール セットの仮想マシン上のネットワーク インターフェイスに関連付けられている IP 構成を照会する際に使用します。
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
 [!INCLUDE [next-steps](includes/java-next-steps.md)]

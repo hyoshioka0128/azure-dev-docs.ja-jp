@@ -6,12 +6,12 @@ ms.assetid: e5a36699-2d96-4571-84f9-a6af13f3c067
 ms.topic: article
 ms.date: 03/30/2017
 ms.reviewer: asirveda
-ms.openlocfilehash: 2d4cca2552e4a85ebc231531d7e55ffda6d1909f
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: ef56241e0ddf0dca34a0229c7d2261d996d05870
+ms.sourcegitcommit: 6fa28ea675ae17ffb9ac825415e2e26a3dfe7107
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74812283"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "77002509"
 ---
 # <a name="create-virtual-machines-across-multiple-regions-from-your-java-applications"></a>Java アプリケーションから複数のリージョンに対して仮想マシンを作成する
 
@@ -22,7 +22,7 @@ ms.locfileid: "74812283"
 
 ## <a name="run-the-sample"></a>サンプルを実行する
 
-[認証ファイル](https://github.com/Azure/azure-sdk-for-java/blob/master/AUTH.md)を作成し、そのファイルのコンピューター上における完全なパスを保持する環境変数 `AZURE_AUTH_LOCATION` を設定します。 次に、以下を実行します。
+[認証ファイル](https://github.com/Azure/azure-sdk-for-java/blob/master/AUTH.md)を作成し、そのファイルのコンピューター上における完全なパスを保持する環境変数 `AZURE_AUTH_LOCATION` を設定します。 次に、次のコマンドを実行します。
 
 ```
 git clone https://github.com/Azure-Samples/compute-java-create-virtual-machines-across-regions-in-parallel.git
@@ -51,7 +51,7 @@ virtualMachinesByLocation.put(Region.US_NORTH_CENTRAL, 12);
 
 この `Map` は、後で各リージョンへの VM の分配を設定するためにサンプルの中で使用します。
 
-## <a name="create-a-resource-group"></a>リソース グループの作成 
+## <a name="create-a-resource-group"></a>リソース グループを作成する 
 
 ```java
 // logically associate the resources in the sample into a randomly named resource group
@@ -183,14 +183,14 @@ finally {
 
 万一エラーが発生した場合でも、`finally` ブロックで、Azure サブスクリプションからリソースが削除されます。
 
-| サンプルで使われているクラス | メモ
+| サンプルで使われているクラス | Notes
 |-------|-------|
-| [VirtualMachine](https://docs.microsoft.com/java/api/com.microsoft.azure.management.compute._virtual_machine) | 仮想マシンのプロパティを照会したり、仮想マシンの状態を管理したりすることができます。 `azure.virtualMachines().list()` からリスト形式で取得するか、`azure.virtualMachines().getByResourceGroup()` から名前または ID で取得します。
-| [VirtualMachineSizeTypes](https://docs.microsoft.com/java/api/com.microsoft.azure.management.compute._virtual_machine_size_types) | [仮想マシン サイズのオプション](https://azure.microsoft.com/pricing/details/virtual-machines/linux/)に対応する静的な値です。仮想マシンを定義するときに、`withSize()` に渡すパラメーターとして使用されます。
-| [PublicIpAddress](https://docs.microsoft.com/java/api/com.microsoft.azure.management.network._public_i_p_address) | 仮想マシンごとに `azure.publicIpAddresses().define()` を使用して定義されます (ただしすぐには作成されません)。 `Creatable` ごとにキーを保存しておいて、後から `createdRelatedResource()` で取得します。
-| [KnownLinuxVirtualMachineImage](https://docs.microsoft.com/java/api/com.microsoft.azure.management.compute._known_linux_virtual_machine_image) | Linux 仮想マシンの一連のオプションです。仮想マシンを定義するときに、`withPopularLinuxImage()` メソッドに渡すパラメーターとして使用されます。
-| [ネットワーク](https://docs.microsoft.com/java/api/com.microsoft.azure.management.network._network) | このサンプルでは、各リージョンにつき 1 つの仮想ネットワークを `azure.networks().define()` で定義しています。 
+| [VirtualMachine](https://docs.microsoft.com/java/api/com.microsoft.azure.management.compute.virtualmachine) | 仮想マシンのプロパティを照会したり、仮想マシンの状態を管理したりすることができます。 `azure.virtualMachines().list()` からリスト形式で取得するか、`azure.virtualMachines().getByResourceGroup()` から名前または ID で取得します。
+| [VirtualMachineSizeTypes](https://docs.microsoft.com/java/api/com.microsoft.azure.management.compute.virtualmachinesizetypes) | [仮想マシン サイズのオプション](https://azure.microsoft.com/pricing/details/virtual-machines/linux/)に対応する静的な値です。仮想マシンを定義するときに、`withSize()` に渡すパラメーターとして使用されます。
+| [PublicIpAddress](https://docs.microsoft.com/java/api/com.microsoft.azure.management.network.publicipaddress) | 仮想マシンごとに `azure.publicIpAddresses().define()` を使用して定義されます (ただしすぐには作成されません)。 `Creatable` ごとにキーを保存しておいて、後から `createdRelatedResource()` で取得します。
+| [KnownLinuxVirtualMachineImage](https://docs.microsoft.com/java/api/com.microsoft.azure.management.compute.knownlinuxvirtualmachineimage) | Linux 仮想マシンの一連のオプションです。仮想マシンを定義するときに、`withPopularLinuxImage()` メソッドに渡すパラメーターとして使用されます。
+| [Network](https://docs.microsoft.com/java/api/com.microsoft.azure.management.network.network) | このサンプルでは、各リージョンにつき 1 つの仮想ネットワークを `azure.networks().define()` で定義しています。 
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
 [!INCLUDE [next-steps](includes/java-next-steps.md)]

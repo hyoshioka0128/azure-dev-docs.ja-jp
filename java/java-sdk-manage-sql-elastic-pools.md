@@ -6,12 +6,12 @@ ms.assetid: 9b461de8-46bc-4650-8e9e-59531f4e2a53
 ms.topic: article
 ms.date: 3/30/2017
 ms.reviewer: asirveda
-ms.openlocfilehash: 9a30217ccd336b0fa656910c9015615a95dc193a
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: 535490109824f0caf9e7d041114ada9a507b41ea
+ms.sourcegitcommit: 6fa28ea675ae17ffb9ac825415e2e26a3dfe7107
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74812334"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "77002448"
 ---
 # <a name="manage-azure-sql-databases-in-elastic-pools-from-your-java-applications"></a>Java アプリケーションからエラスティック プールの Azure SQL データベースを管理する
 
@@ -19,7 +19,7 @@ ms.locfileid: "74812334"
 
 ## <a name="run-the-sample"></a>サンプルを実行する
 
-[認証ファイル](https://github.com/Azure/azure-sdk-for-java/blob/master/AUTH.md)を作成し、そのファイルのコンピューター上における完全なパスを保持する環境変数 `AZURE_AUTH_LOCATION` を設定します。 次に、以下を実行します。
+[認証ファイル](https://github.com/Azure/azure-sdk-for-java/blob/master/AUTH.md)を作成し、そのファイルのコンピューター上における完全なパスを保持する環境変数 `AZURE_AUTH_LOCATION` を設定します。 次に、次のコマンドを実行します。
 
 ```
 git clone https://github.com/Azure-Samples/sql-database-java-manage-sql-dbs-in-elastic-pool
@@ -48,7 +48,7 @@ SqlServer sqlServer = azure.sqlServers().define(sqlServerName)
                     .create();
 ```
 
-現在のエディションの値については、[ElasticPoolEditions クラスのリファレンス](https://docs.microsoft.com/java/api/com.microsoft.azure.management.sql._elastic_pool_editions)を参照してください。 エディションごとのリソース特性を比較するには、[SQL データベースのエラスティック プールに関するドキュメント](https://docs.microsoft.com/azure/sql-database/sql-database-elastic-pool)を参照してください。 
+現在のエディションの値については、[ElasticPoolEditions クラスのリファレンス](https://docs.microsoft.com/java/api/com.microsoft.azure.management.sql.elasticpooleditions)を参照してください。 エディションごとのリソース特性を比較するには、[SQL データベースのエラスティック プールに関するドキュメント](https://docs.microsoft.com/azure/sql-database/sql-database-elastic-pool)を参照してください。 
 
 ## <a name="change-database-transaction-unit-dtu-settings-in-an-elastic-pool"></a>エラスティック プールのデータベース トランザクション ユニット (DTU) 設定の変更
 
@@ -83,7 +83,7 @@ anotherDatabase = anotherDatabase.update()
                      .apply();
 ```
 
-`withEdition()` に渡す値については、[DatabaseEditions クラスのリファレンス](https://docs.microsoft.com/java/api/com.microsoft.azure.management.sql._database_editions)を参照してください。
+`withEdition()` に渡す値については、[DatabaseEditions クラスのリファレンス](https://docs.microsoft.com/java/api/com.microsoft.azure.management.sql.databaseeditions)を参照してください。
 
 ## <a name="list-current-database-activities-in-an-elastic-pool"></a>エラスティック プールにおける現在のデータベース アクティビティの列挙
 ```java
@@ -106,7 +106,7 @@ for (SqlDatabase databaseInServer : elasticPool.listDatabases()) {
 }
 ```
 
-データベースを照会するための各種メソッドについて詳しくは、[com.microsoft.azure.management.sql.SqlDatabase](https://docs.microsoft.com/java/api/com.microsoft.azure.management.sql._sql_database) を参照してください。
+データベースを照会するための各種メソッドについて詳しくは、[com.microsoft.azure.management.sql.SqlDatabase](https://docs.microsoft.com/java/api/com.microsoft.azure.management.sql.sqldatabase) を参照してください。
 
 ## <a name="delete-an-elastic-pool"></a>エラスティック プールの削除
 ```java
@@ -121,16 +121,16 @@ sqlServer.elasticPools().delete(elasticPoolName);
 
 このサンプルで作成したリソースは、終了前にすべて削除されます。
 
-| サンプルで使われているクラス | メモ |
+| サンプルで使われているクラス | Notes |
 |-------|-------|
-| [SqlServer](https://docs.microsoft.com/java/api/com.microsoft.azure.management.sql._sql_server) | Azure における SQL DB サーバー。`azure.sqlServers().define()...create()` という fluent チェーンによって作成されます。 エラスティック プールやデータベースを作成したり操作したりするためのメソッドが備わっています。 
-| [SqlDatabase](https://docs.microsoft.com/java/api/com.microsoft.azure.management.sql._sql_database) | SQL データベースを表すクライアント側オブジェクト。 `sqlServer().define()...create()` を使って作成します。 
-| [DatabaseEditions](https://docs.microsoft.com/java/api/com.microsoft.azure.management.sql._database_editions) | エラスティック プールの外にデータベースを作成したり、エラスティック プールからデータベースを移動したりする際に、データベース リソースを設定するための静的な定数フィールド。  
-| [SqlElasticPool](https://docs.microsoft.com/java/api/com.microsoft.azure.management.sql._sql_elastic_pool) | Azure に SqlServer を作成した fluent チェーンの `withNewElasticPool()` セクションから作成されます。 エラスティック プールで実行されるデータベース (またはエラスティック プールそのもの) のリソース制限を設定するためのメソッドが備わっています。 
-| [ElasticPoolEditions](https://docs.microsoft.com/java/api/com.microsoft.azure.management.sql._elastic_pool_editions) | エラスティック プールで利用可能なリソースを定義する定数フィールドのクラス。 詳細については、[SQL データベースのエラスティック プールに関するドキュメント](https://docs.microsoft.com/azure/sql-database/sql-database-elastic-pool)を参照してください。 
-| [ElasticPoolDatabaseActivity](https://docs.microsoft.com/java/api/com.microsoft.azure.management.sql._elastic_pool_database_activity) | `SqlElasticPool.listDatabaseActivities()` から取得されます。 この型のオブジェクトはそれぞれ、エラスティック プール内のデータベースに対して実行されるアクティビティを表します。
-| [ElasticPoolActivity](https://docs.microsoft.com/java/api/com.microsoft.azure.management.sql._elastic_pool_activity) | `SqlElasticPool.listActivities()` からリスト形式で取得されます。 リストに含まれる各オブジェクトは、(エラスティック プール内のデータベースではなく) エラスティック プールに対して実行されるアクティビティを表します。
+| [SqlServer](https://docs.microsoft.com/java/api/com.microsoft.azure.management.sql.sqlserver) | Azure における SQL DB サーバー。`azure.sqlServers().define()...create()` という fluent チェーンによって作成されます。 エラスティック プールやデータベースを作成したり操作したりするためのメソッドが備わっています。 
+| [SqlDatabase](https://docs.microsoft.com/java/api/com.microsoft.azure.management.sql.sqldatabase) | SQL データベースを表すクライアント側オブジェクト。 `sqlServer().define()...create()` を使って作成します。 
+| [DatabaseEditions](https://docs.microsoft.com/java/api/com.microsoft.azure.management.sql.databaseeditions) | エラスティック プールの外にデータベースを作成したり、エラスティック プールからデータベースを移動したりする際に、データベース リソースを設定するための静的な定数フィールド。  
+| [SqlElasticPool](https://docs.microsoft.com/java/api/com.microsoft.azure.management.sql.sqlelasticpool) | Azure に SqlServer を作成した fluent チェーンの `withNewElasticPool()` セクションから作成されます。 エラスティック プールで実行されるデータベース (またはエラスティック プールそのもの) のリソース制限を設定するためのメソッドが備わっています。 
+| [ElasticPoolEditions](https://docs.microsoft.com/java/api/com.microsoft.azure.management.sql.elasticpooleditions) | エラスティック プールで利用可能なリソースを定義する定数フィールドのクラス。 詳細については、[SQL データベースのエラスティック プールに関するドキュメント](https://docs.microsoft.com/azure/sql-database/sql-database-elastic-pool)を参照してください。 
+| [ElasticPoolDatabaseActivity](https://docs.microsoft.com/java/api/com.microsoft.azure.management.sql.elasticpooldatabaseactivity) | `SqlElasticPool.listDatabaseActivities()` から取得されます。 この型のオブジェクトはそれぞれ、エラスティック プール内のデータベースに対して実行されるアクティビティを表します。
+| [ElasticPoolActivity](https://docs.microsoft.com/java/api/com.microsoft.azure.management.sql.elasticpoolactivity) | `SqlElasticPool.listActivities()` からリスト形式で取得されます。 リストに含まれる各オブジェクトは、(エラスティック プール内のデータベースではなく) エラスティック プールに対して実行されるアクティビティを表します。
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
 [!INCLUDE [next-steps](includes/java-next-steps.md)]

@@ -4,12 +4,12 @@ description: Node.js アプリの作成、Docker 化、Azure へのデプロイ�
 ms.topic: article
 ms.date: 06/25/2017
 ms.custom: seo-javascript-september2019, seo-javascript-october2019
-ms.openlocfilehash: 98b154a78702fa5c5a0808170c8227ce7910459b
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: b8841e5259a49b45db1f526330e0238d1bd0d050
+ms.sourcegitcommit: 6fa28ea675ae17ffb9ac825415e2e26a3dfe7107
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74467380"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "77002523"
 ---
 # <a name="develop-and-deploy-a-containerized-nodejs-app-with-visual-studio-code-and-azure"></a>コンテナー化された Node.js アプリを Visual Studio Code と Azure を使用して開発してデプロイする
 
@@ -354,7 +354,7 @@ Docker でコンテナー化したアプリを作成して DockerHub にプッ�
     ```
 
     > [!NOTE]
-    > カスタム コンテナーではなく Git デプロイを使いたい場合は、記事「[Azure で Node.js Web アプリを作成する](/azure/app-service-web/app-service-web-get-started-nodejs#configure-to-use-nodejs)」を参照してください。
+    > カスタム コンテナーではなく Git デプロイを使いたい場合は、記事「[Azure で Node.js Web アプリを作成する](/azure/app-service-web/app-service-web-get-started-nodejs)」を参照してください。
 
 1. Web アプリを既定の Web インスタンスとして設定します。
 

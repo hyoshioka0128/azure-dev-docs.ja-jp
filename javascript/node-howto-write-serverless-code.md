@@ -4,12 +4,12 @@ description: Azure Functions を使用してサーバーレス コードを作�
 ms.topic: article
 ms.date: 08/19/2019
 ms.custom: seo-javascript-september2019, seo-javascript-october2019
-ms.openlocfilehash: d1b17e33b5ae4aa51a84ceae8005a5385c162967
-ms.sourcegitcommit: 68a4044b9fa3291c9e7e2f68ae0049328f9c01bb
+ms.openlocfilehash: ae6a4cebef39976af4d9a30534d394d37d86a0c8
+ms.sourcegitcommit: 6fa28ea675ae17ffb9ac825415e2e26a3dfe7107
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74992474"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "77002496"
 ---
 # <a name="use-azure-functions-to-write-serverless-nodejs-code-on-azure"></a>Azure Functions を使用して Azure でサーバーレス Node.js コードを作成する
 
@@ -39,13 +39,13 @@ Azure におけるサーバーレスのプランは、Azure Functions と呼ば�
   - [Azure BLOB ストレージにファイルがアップロードされたりファイルが更新されたときにコードを実行する](/azure/storage/blobs/storage-upload-process-images?tabs=nodejsv10)
   - [Azure Queue storage にメッセージが書き込まれたときにコードを実行する](/azure/azure-functions/functions-create-storage-queue-triggered-function)
 
-- [Azure Functions と Azure Cosmos DB を使用して非構造化データを格納する](/azure/azure-functions/functions-integrate-store-unstructured-data-cosmosdb.md?tabs=javascript)。 その他のデータベースについては、[Azure のデータベースを Node.js コードに統合する方法](node-howto-integrate-databases.md)に関するページを参照してください。
+- [Azure Functions と Azure Cosmos DB を使用して非構造化データを格納する](/azure/azure-functions/functions-integrate-store-unstructured-data-cosmosdb?tabs=javascript)。 その他のデータベースについては、[Azure のデータベースを Node.js コードに統合する方法](node-howto-integrate-databases.md)に関するページを参照してください。
 
 - [Azure Functions をローカルでコーディングしてテストする](/azure/azure-functions/functions-develop-local)
 
 - [Azure Functions のコードをテストするための戦略](/azure/azure-functions/functions-test-a-function)と[エラー処理](/azure/azure-functions/functions-bindings-error-pages)
 
-- [Azure Active Directory による認証の構成](/azure/app-service/configure-authentication-provider-aad.md?toc=%2fazure%2fazure-functions%2ftoc.json)
+- [Azure Active Directory による認証の構成](/azure/app-service/configure-authentication-provider-aad?toc=%2fazure%2fazure-functions%2ftoc.json)
 
 - [Azure Pipelines を使用した継続的デプロイの設定](/azure/azure-functions/functions-how-to-azure-devops)
 

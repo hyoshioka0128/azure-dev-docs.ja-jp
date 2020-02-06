@@ -4,12 +4,12 @@ description: チュートリアルの手順 3、コンテナー イメージを�
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 7f6c8f742029533fa54bad2c4492397a0fe17d70
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: 88c5b608316f7dec601625fbf5962b9b888a4662
+ms.sourcegitcommit: 6fa28ea675ae17ffb9ac825415e2e26a3dfe7107
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74466040"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "77002303"
 ---
 # <a name="tutorial-redeploy-a-container-to-azure-app-service-after-making-changes"></a>チュートリアル:変更を加えた後に Azure App Service にコンテナーを再デプロイする
 
@@ -19,7 +19,7 @@ ms.locfileid: "74466040"
 
 アプリには必然的に変更を加えるため、最終的にコンテナーのリビルドと再デプロイは何回も実施することになります。 さいわい、このプロセスは単純です。
 
-1. アプリケーションに変更を加えて、ローカルでテストします (この手順と後続の 2 つの手順については、[VS Code での Python コンテナーの作成](https://code.visualstudio.com/docs/python/tutorial-create-container)に関するチュートリアルで説明しています)。
+1. アプリケーションに変更を加えて、ローカルでテストします (この手順と後続の 2 つの手順については、[VS Code での Python コンテナーの作成](https://code.visualstudio.com/docs/python/tutorial-create-containers)に関するチュートリアルで説明しています)。
 
 1. Docker イメージをリビルドします。 アプリのコードのみを変更する場合は、ビルドにかかる時間はわずか数秒です。
 

@@ -3,12 +3,12 @@ title: Visual Studio Code で Azure Functions アプリケーションをロー�
 description: チュートリアル パート 3、アプリをローカルで実行してテストする
 ms.topic: conceptual
 ms.date: 09/23/2019
-ms.openlocfilehash: 2a7cb5e5c433c90d74cd3b7771ce90529f617fcb
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: d5af3cbe6fd138bc8aeeb36a60ea05f2a6460f8f
+ms.sourcegitcommit: d9f585bea70b01ba6657a75ea245d8519d4a5aad
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74466568"
+ms.lasthandoff: 02/03/2020
+ms.locfileid: "76967229"
 ---
 # <a name="test-the-function-locally"></a>関数をローカルでテストする
 
@@ -20,7 +20,7 @@ Functions アプリを作成したときに、Azure Functions 拡張機能によ
 
 1. Visual Studio Code で、**F5** を押して (または **[デバッグ]**  >  **[Start Debugging]\(デバッグの開始\)** メニュー コマンドを使用して) デバッガーを起動し、Azure Functions ホストに接続します。 (このコマンドでは、Azure Functions が作成した単一のデバッグ構成が自動的に使用されます。)
 
-1. Functions Core ツールの出力は、VS Code の **[Terminal]\(ターミナル\)** パネルに表示されます。 ホストが起動したら、出力に表示されるローカル URL を **Ctrl** を押しながらクリックしてブラウザーを開き、関数を実行します。
+1. Functions Core ツールの出力は、VS Code の **[Terminal]\(ターミナル\)** パネルに表示されます。 ホストが起動したら、出力に表示されるローカル URL を **Alt** を押しながらクリックしてブラウザーを開き、関数を実行します。
 
     ![ローカルでデバッグをしているときに VS Code の [Terminal]\(ターミナル\) パネルに表示される出力](media/functions-extension/local-test-output.png)
 
@@ -33,4 +33,4 @@ Functions アプリを作成したときに、Azure Functions 拡張機能によ
     ![VS Code がブレークポイントで停止](media/functions-extension/debugging-breakpoint.png)
 
 > [!div class="nextstepaction"]
-> [Functions アプリをローカルで実行しました](tutorial-vscode-serverless-node-04.md) [問題が発生しました](https://www.research.net/r/PWZWZ52?tutorial=node-deployment-azurefunctions&step=run-app)
+> [Function アプリをローカルで実行しました](tutorial-vscode-serverless-node-04.md) [問題が発生しました](https://www.research.net/r/PWZWZ52?tutorial=node-deployment-azurefunctions&step=run-app)

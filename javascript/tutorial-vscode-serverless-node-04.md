@@ -3,12 +3,12 @@ title: Visual Studio Code から Azure Functions アプリケーションをデ�
 description: チュートリアル パート 4、Functions アプリをクラウドにデプロイする。
 ms.topic: conceptual
 ms.date: 09/23/2019
-ms.openlocfilehash: 690477392fffda4cd94d7271b061c195ccceb42b
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: e287f24429fc5939bcd64ba753b36eb0f387d8f3
+ms.sourcegitcommit: 20634277152d72a35ad9b35fa1203608740d1145
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74467098"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77144066"
 ---
 # <a name="deploy-the-functions-app"></a>Functions アプリをデプロイする
 
@@ -23,6 +23,10 @@ ms.locfileid: "74467098"
 1. **[Select Function App in Azure]\(Azure で関数アプリを選択してください\)** というプロンプトでは、 **[Create new Function app in Azure]\(Azure で新しい関数アプリを作成する\)** を選択します。
 
 1. 次のプロンプトでは、関数アプリのグローバルに一意の名前を入力して、**Enter** キーを押します。 関数アプリ名として有効な文字は "a-z"、"0-9"、および "-" です。
+
+1. Node.js バージョン/ランタイムを選択します。 
+
+    ![Node.js バージョン/ランタイムを示す VS Code 出力パネル](media/functions-extension/nodejs-runtime-version.png)
 
 1. 次のプロンプトでは、お近くの Azure [リージョン](https://azure.microsoft.com/regions/)を選択します。
 
@@ -44,4 +48,4 @@ ms.locfileid: "74467098"
     > デプロイ時には関数アプリケーション全体がデプロイされるため、すべての個別の関数に対する変更が一度にデプロイされます。
 
 > [!div class="nextstepaction"]
-> [関数アプリをデプロイしました](tutorial-vscode-serverless-node-05.md) [問題が発生しました](https://www.research.net/r/PWZWZ52?tutorial=node-deployment-azurefunctions&step=deploy-app)
+> [Function アプリをデプロイしました](tutorial-vscode-serverless-node-05.md) [問題が発生しました](https://www.research.net/r/PWZWZ52?tutorial=node-deployment-azurefunctions&step=deploy-app)

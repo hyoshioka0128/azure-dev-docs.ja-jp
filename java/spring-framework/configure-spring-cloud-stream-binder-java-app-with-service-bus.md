@@ -6,12 +6,12 @@ manager: kyliel
 ms.author: seal
 ms.date: 08/21/2019
 ms.topic: article
-ms.openlocfilehash: 8c62a68ff2a9912d88361adc6ef3b8dc2ea29c98
-ms.sourcegitcommit: 6fa28ea675ae17ffb9ac825415e2e26a3dfe7107
+ms.openlocfilehash: e8f9dd93da56b17efca059e00cf1483666f4cf33
+ms.sourcegitcommit: 24795630044c10a07b5dedc0f51c280f090c097e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "77002289"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77075269"
 ---
 # <a name="how-to-use-spring-cloud-azure-stream-binder-for-azure-service-bus"></a>Azure Service Bus 用の Spring Cloud Azure Stream Binder を使用する方法
 
@@ -34,7 +34,7 @@ Azure には、[Azure Service Bus](https://docs.microsoft.com/azure/service-bus-
 1. 構成済みの Service Bus キューまたはトピックが既にある場合は、Service Bus 名前空間が次の要件を満たすようにしてください。
 
     1. すべてのネットワークからのアクセスを許可する
-    1. Premium (またはそれ以上) である
+    1. Standard (またはそれ以上)
     1. 自分のキューおよびトピックに対する読み取り/書き込みアクセス権限を含んだアクセス ポリシーがある
 
 1. 構成済みの Service Bus キューまたはトピックがない場合は、Azure portal を使用して [Service Bus キュー](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-quickstart-portal)または [Service Bus トピック](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-quickstart-topics-subscriptions-portal)を作成します。 前の手順で指定された要件を名前空間が確実に満たすようにしてください。 また、名前空間に含まれる接続文字列をメモしてください。これは、このチュートリアルのテスト アプリに必要です。
@@ -119,7 +119,7 @@ Azure には、[Azure Service Bus](https://docs.microsoft.com/azure/service-bus-
 
     **<a name="fd">フィールドの説明</a>**
 
-    |                                        フィールド                                   |                                                                                   [説明]                                                                                    |
+    |                                        フィールド                                   |                                                                                   説明                                                                                    |
     |--------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
     |               `spring.cloud.azure.servicebus.connection-string`                |                                        Azure portal の自分の Service Bus 名前空間で取得した接続文字列を指定します。                                   |
     |               `spring.cloud.stream.bindings.input.destination`                 |                            このチュートリアルで自分が使用した Service Bus キューまたは Service Bus トピックを指定します。                         |

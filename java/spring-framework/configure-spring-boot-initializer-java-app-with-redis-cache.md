@@ -3,16 +3,16 @@ title: Spring Boot Initializer アプリを作成する - Azure Redis Cache
 description: Spring Initializer で作成された Spring Boot アプリケーションを、Azure Redis Cache によってクラウドで Redis を使用するように構成します。
 services: redis-cache
 documentationcenter: java
-ms.date: 12/19/2018
+ms.date: 02/06/2020
 ms.service: cache
 ms.tgt_pltfrm: cache-redis
 ms.topic: conceptual
-ms.openlocfilehash: e70b5f9b8427bebd9c5ca3761a664464ad3b0909
-ms.sourcegitcommit: 670874dfe49e6ffa5bee88555851878f0da93042
+ms.openlocfilehash: 8287cf923acb5770a5ba5eb88fe60896e6cd3a4d
+ms.sourcegitcommit: 24795630044c10a07b5dedc0f51c280f090c097e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/16/2019
-ms.locfileid: "75034039"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77075331"
 ---
 # <a name="configure-a-spring-boot-initializer-app-to-use-redis-in-the-cloud-with-azure-redis-cache"></a>Azure Redis Cache によってクラウドで Redis を使用するように Spring Boot Initializer アプリを構成する
 
@@ -28,9 +28,12 @@ ms.locfileid: "75034039"
 
 ## <a name="create-a-custom-application-using-the-spring-initializr"></a>Spring Initializr を使用してカスタム アプリケーションを作成する
 
-1. [https://www.microsoft.com](<https://start.spring.io/>) を参照します。
+1. <https://start.spring.io/> を参照します。
 
-1. **Java** で **Maven** プロジェクトを生成することを指定し、アプリケーションの **[Group]\(グループ\)** と **[Aritifact]\(アーティファクト\)** に名前を入力して、Spring Initializr の **[Switch to the full version]\(完全バージョンへの切り替え\)** のリンクをクリックします。
+1. **Java** で **Maven** プロジェクトを生成することを指定し、アプリケーションの **[グループ]** と **[アーティファクト]** に名前を入力します。
+
+1. **Spring Web** セクションの依存関係を追加し、**Web** のチェックボックスをオンにします。次に、**NoSQL** セクションまで下にスクロールし、 **[Spring Data Reactive Redis]\(Spring Data Reactive Redis\)** のチェックボックスをオンにします。 
+1. ページの下部までスクロールし、 **[Generate Project]\(プロジェクトの生成\)** をクリックします。
 
    ![基本的な Spring Initializr オプション][SI01]
 
@@ -38,10 +41,6 @@ ms.locfileid: "75034039"
    >
    > Spring Initializr では、 **[Group]\(グループ\)** と **[Aritifact]\(アーティファクト\)** の名前を使用してパッケージ名を作成します (例: *com.contoso.myazuredemo*)。
    >
-
-1. 下にスクロールして **[Web]** セクションに移動し、 **[Web]** チェック ボックスをオンにし、下にスクロールして **[NoSQL]** セクションに移動し、 **[Redis]** チェック ボックスをオンにします。その後、ページの下部までスクロールし、 **[Generate Project]\(プロジェクトの生成\)** ボタンをクリックします。
-
-   ![すべての Spring Initializr オプション][SI02]
 
 1. メッセージが表示されたら、ローカル コンピューター上のパスにプロジェクトをダウンロードします。
 
@@ -55,11 +54,9 @@ ms.locfileid: "75034039"
 
 1. <https://portal.azure.com/> で Azure Portal を参照し、 **[+新規]** をクリックします。
 
-   ![Azure ポータル][AZ01]
-
 1. **[データベース]** をクリックし、 **[Redis Cache]** をクリックします。
 
-   ![Azure ポータル][AZ02]
+   ![Azure portal][AZ02]
 
 1. **[新規 Redis Cache]** ページで、以下の情報を指定します。
 
@@ -74,15 +71,15 @@ ms.locfileid: "75034039"
 
    これらのオプションの指定後、 **[作成]** をクリックしてキャッシュを作成します。
 
-   ![Azure ポータル][AZ03]
+   ![Azure portal][AZ03]
 
 1. キャッシュが作成されると、Azure の**ダッシュボード**のほか、 **[すべてのリソース]** ブレードと **[Redis Cach]** ページにも作成したキャッシュが表示されます。 これらのいずれかの場所でキャッシュをクリックすると、そのキャッシュのプロパティ ページを開くことができます。
 
-   ![Azure ポータル][AZ04]
+   ![Azure portal][AZ04]
 
 1. キャッシュのプロパティの一覧が含まれているページが表示されたら、 **[アクセス キー]** をクリックし、キャッシュのアクセス キーをコピーします。
 
-   ![Azure ポータル][AZ05]
+   ![Azure portal][AZ05]
 
 ## <a name="configure-your-custom-spring-boot-to-use-your-redis-cache"></a>Redis Cache を使用するようにカスタム Spring Boot を構成する
 
@@ -107,7 +104,7 @@ ms.locfileid: "75034039"
 
    > [!NOTE] 
    > 
-   > SSL を有効にする Jedis のような異なる Redis クライアントを使用している場合は、SSL 使用する旨を *application.properties* ファイルで指定し、ポート 6380 を使用します。 例:
+   > SSL を有効にする Jedis のような異なる Redis クライアントを使用している場合は、SSL 使用する旨を *application.properties* ファイルで指定し、ポート 6380 を使用します。 次に例を示します。
    > 
    > ```yaml
    > # Specify the DNS URI of your Redis cache.
@@ -189,7 +186,7 @@ ms.locfileid: "75034039"
 
    "Hello World!" というメッセージがサンプル コントローラーから表示されることがわかります。これは、Redis cache から動的に取得されます。
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
 Spring および Azure の詳細については、Azure ドキュメント センターで引き続き Spring に関するドキュメントをご確認ください。
 

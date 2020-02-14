@@ -3,12 +3,12 @@ title: Visual Studio Code で Azure Functions アプリケーションをロー�
 description: チュートリアル パート 3、アプリをローカルで実行してテストする
 ms.topic: conceptual
 ms.date: 09/23/2019
-ms.openlocfilehash: d5af3cbe6fd138bc8aeeb36a60ea05f2a6460f8f
-ms.sourcegitcommit: d9f585bea70b01ba6657a75ea245d8519d4a5aad
+ms.openlocfilehash: fd2255fa3a085f979e5893d6178063ee8686ea08
+ms.sourcegitcommit: 20634277152d72a35ad9b35fa1203608740d1145
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2020
-ms.locfileid: "76967229"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77144047"
 ---
 # <a name="test-the-function-locally"></a>関数をローカルでテストする
 
@@ -31,6 +31,10 @@ Functions アプリを作成したときに、Azure Functions 拡張機能によ
 1. 関数をローカルで実行すると、コードのさまざまな部分にブレークポイントを設定できます。 (VS Code でのブレークポイントとデバッグの詳細については、「[デバッグ](https://code.visualstudio.com/docs/editor/debugging)」を参照してください。)*index.js* を開き、エディター ウィンドウで 11 行目の左側の余白をクリックします。 ブレークポイントを示す小さな赤い点が表示されます。 次に、ブラウザーの URL から `?name=` 引数を削除します。 ブラウザーがその要求を行うと、VS Code はそのブレークポイントの関数コードを停止します。
 
     ![VS Code がブレークポイントで停止](media/functions-extension/debugging-breakpoint.png)
+
+> [!Note]
+>
+> このプロセスで実行ポリシー エラーが発生した場合は、npm を使用して `azure-functions-core-tools@3` をアンインストールしてから、管理者特権のターミナルで Chocolatey を使用してパッケージを再インストールします。
 
 > [!div class="nextstepaction"]
 > [Function アプリをローカルで実行しました](tutorial-vscode-serverless-node-04.md) [問題が発生しました](https://www.research.net/r/PWZWZ52?tutorial=node-deployment-azurefunctions&step=run-app)

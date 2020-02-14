@@ -9,12 +9,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: mvc
-ms.openlocfilehash: a98575021be229ed067ce424cd101721c98f9ea4
-ms.sourcegitcommit: 3b8ccf447921a55f16c25795914d9eed64c2b9cf
+ms.openlocfilehash: b6c8e138c9d738b56d237180e618268cb71284e3
+ms.sourcegitcommit: 20634277152d72a35ad9b35fa1203608740d1145
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75755724"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77144086"
 ---
 # <a name="deploy-a-spring-boot-application-on-azure-app-service-for-container"></a>コンテナー用 Azure App Service で Spring Boot アプリケーションをデプロイする
 
@@ -223,7 +223,7 @@ ms.locfileid: "75755724"
 >
 > 4. 左側のナビゲーション ウィンドウで、 **[構成]** をクリックします。
 >
-> 5. **[アプリケーション設定]** セクションで、**PORT** という名前の新しい設定を追加して、この値にカスタム ポート番号を入力します。
+> 5. **[アプリケーション設定]** セクションで、**WEBSITES_PORT** という名前の新しい設定を追加して、この値にカスタム ポート番号を入力します。
 >
 > 6. **[OK]** をクリックします。 **[保存]** をクリックします。
 >

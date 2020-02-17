@@ -10,17 +10,17 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 12/04/2019
 ms.locfileid: "74812235"
 ---
-# <a name="install-the-jdk-for-azure-and-azure-stack"></a>Azure 用の JDK および Azure Stack をインストールする
+# <a name="install-the-jdk-for-azure-and-azure-stack"></a>Azure および Azure Stack 用の JDK をインストールする
 
 Azul Zulu for Azure - Enterprise Edition JDK ビルドは、Microsoft および Azul Systems によってサポートされる、無料でマルチプラットフォーム対応かつ実稼働可能な、Azure と Azure Stack 用の OpenJDK のディストリビューションです。 これらには、Java SE アプリケーションを構築および実行するためのすべてのコンポーネントが含まれています。
 
 [クライアント OS ごとに複数のダウンロード パッケージ タイプがサポート](https://www.azul.com/downloads/azure-only/zulu/)されています。 Azure Marketplace ギャラリーから、次のプラットフォーム用の仮想マシン イメージを入手することもできます。
 
-  * [Azul Zulu:Ubuntu 18.04 上の Java 8](https://azuremarketplace.microsoft.com/marketplace/apps/azul.azul-zulu8-ubuntu-1804)
-  * [Azul Zulu:Windows Server 2019 上の Java 8](https://azuremarketplace.microsoft.com/marketplace/apps/azul.azul-zulu8-windows-2019)
+  * [Azul Zulu:Java 8 on Ubuntu 18.04](https://azuremarketplace.microsoft.com/marketplace/apps/azul.azul-zulu8-ubuntu-1804)
+  * [Azul Zulu:Java 8 on Windows Server 2019](https://azuremarketplace.microsoft.com/marketplace/apps/azul.azul-zulu8-windows-2019)
   
-  * [Azul Zulu:Ubuntu 18.04 上の Java 11](https://azuremarketplace.microsoft.com/marketplace/apps/azul.azul-zulu11-ubuntu-1804)
-  * [Azul Zulu:Windows Server 2019 上の Java 11](https://azuremarketplace.microsoft.com/marketplace/apps/azul.azul-zulu11-windows-2019)
+  * [Azul Zulu:Java 11 on Ubuntu 18.04](https://azuremarketplace.microsoft.com/marketplace/apps/azul.azul-zulu11-ubuntu-1804)
+  * [Azul Zulu:Java 11 on Windows Server 2019](https://azuremarketplace.microsoft.com/marketplace/apps/azul.azul-zulu11-windows-2019)
 
 
 > [!NOTE]
@@ -30,7 +30,7 @@ Azul Zulu for Azure - Enterprise Edition JDK ビルドは、Microsoft および 
 
 ## <a name="download-and-install-the-azul-zulu-for-azure---enterprise-edition-jdk-builds-for-windows"></a>Windows 用の Azul Zulu for Azure - Enterprise Edition JDK ビルドをダウンロードしてインストールする 
 
-1. お使いのクライアント上の場所 (`C:\Users\<your_login>\Downloads` など) に [64 ビット Azul Zulu JDK 8 を MSI としてダウンロード](https://repos.azul.com/azure-only/zulu/packages/zulu-11/11.0.3/zulu-11-azure-jdk_11.31.11-11.0.3-win_x64.msi)します。 (.ZIP パッケージも [Azul の Azure ダウンロード ページ](https://www.azul.com/downloads/azure-only/zulu/)で提供されています。)
+1. お使いのクライアント上の場所 (`C:\Users\<your_login>\Downloads` など) に MSI 形式の [64 ビット Azul Zulu JDK 8 をダウンロード](https://repos.azul.com/azure-only/zulu/packages/zulu-11/11.0.3/zulu-11-azure-jdk_11.31.11-11.0.3-win_x64.msi)します。 (.ZIP パッケージも [Azul の Azure ダウンロード ページ](https://www.azul.com/downloads/azure-only/zulu/)で提供されています。)
 
 2. そのディレクトリに移動し、ダウンロードした MSI ファイルをダブルクリックしてインストールを開始します。
 
@@ -38,7 +38,7 @@ Azul Zulu for Azure - Enterprise Edition JDK ビルドは、Microsoft および 
 
 これらの手順では、ZIP ファイルを Mac にダウンロードします。 DMG バージョンも利用できます。
 
-1. お使いのクライアント上の場所 (`/Library/Java/JavaVirtualMachines/` など) に [64 ビット Azul Zulu JDK 8 を ZIP ファイルとしてダウンロード](https://repos.azul.com/azure-only/zulu/packages/zulu-11/11.0.3/zulu-11-azure-jdk_11.31.11-11.0.3-macosx_x64.zip)します。 (.DMG パッケージも [Azul の Azure ダウンロード ページ](https://www.azul.com/downloads/azure-only/zulu/)で提供されています。)
+1. お使いのクライアント上の場所 (`/Library/Java/JavaVirtualMachines/` など) に ZIP 形式の [64 ビット Azul Zulu JDK 8 をダウンロード](https://repos.azul.com/azure-only/zulu/packages/zulu-11/11.0.3/zulu-11-azure-jdk_11.31.11-11.0.3-macosx_x64.zip)します。 (.DMG パッケージも [Azul の Azure ダウンロード ページ](https://www.azul.com/downloads/azure-only/zulu/)で提供されています。)
 
 2. Finder を起動し、ダウンロード ディレクトリに移動して、ZIP ファイルをダブルクリックします。 または、ターミナル コマンド ウィンドウを起動し、そのディレクトリに移動して、次を実行することもできます。
 
@@ -48,7 +48,7 @@ unzip <name_of_zulu_package>.zip
 
 ## <a name="download-and-install-the-azul-zulu-for-azure---enterprise-edition-jdk-builds-for-alpine-linux"></a>Alpine Linux 用の Azul Zulu for Azure - Enterprise Edition JDK ビルドをダウンロードしてインストールする
 
-1. お使いのクライアント上の場所 (`/usr/lib/jvm` など) に [64 ビット Azul Zulu JDK 8 を TAR ファイルとしてダウンロード](https://repos.azul.com/azure-only/zulu/packages/zulu-11/11.0.3/zulu-11-azure-jdk_11.31.11-11.0.3-linux_x64.tar.gz)します。 (.RPM と .DEB パッケージも [Azul の Azure ダウンロード ページ](https://www.azul.com/downloads/azure-only/zulu/)で提供されています。)
+1. お使いのクライアント上の場所 (`/usr/lib/jvm` など) に TAR 形式の [64 ビット Azul Zulu JDK 8 をダウンロード](https://repos.azul.com/azure-only/zulu/packages/zulu-11/11.0.3/zulu-11-azure-jdk_11.31.11-11.0.3-linux_x64.tar.gz)します。 (.RPM と .DEB パッケージも [Azul の Azure ダウンロード ページ](https://www.azul.com/downloads/azure-only/zulu/)で提供されています。)
 
 2. 該当のディレクトリに移動し、次のコマンドを実行してファイルを解凍し、展開します。
 

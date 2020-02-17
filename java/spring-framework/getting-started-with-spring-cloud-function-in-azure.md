@@ -199,14 +199,14 @@ public class HelloFunction {
 ```
 
 > [!NOTE] 
-> `hello()` は、非常に具体的な関数です。
+> `hello()` は、非常に特徴的な関数です。
 > 
 > - これは、このクイックスタートで使用される関数である `java.util.function.Function` を返します。 これにはビジネス ロジックが含まれており、標準の Java API を使用して、あるオブジェクトを別のオブジェクトに変換します。
-> - これは `@Bean` 注釈を備えているため、Spring Bean です。既定では、メソッドのいずれか (`hello`) がその名前になっています。 これは自分のアプリケーションに他の関数を作成したい場合に重要です。この名前が、次のセクションで作成する Azure 関数の名前と一致する必要があるためです。
+> - これは `@Bean` 注釈を備えているため、Spring Bean です。既定では、その名前はメソッド名 (`hello`) になっています。 これは自分のアプリケーションに他の関数を作成したい場合に重要です。この名前が、次のセクションで作成する Azure 関数の名前と一致する必要があるためです。
 
 ## <a name="create-the-azure-function"></a>Azure 関数を作成する
 
-完全な Azure Functions API のメリットを得るために、次は特定のクラスのコードを書きます。これは、その実行を前の手順で作成した Spring Coud 関数に委任する Azure 関数です。
+完全な Azure Functions API のメリットを得るために、これから具体的なクラスのコードを書きます。これは、その実行を前の手順で作成した Spring Coud 関数に委任する Azure 関数です。
 
 *src/main/java/com/example* フォルダーで、次の Azure 関数を作成します。
 
@@ -325,7 +325,7 @@ curl http://localhost:7071/api/hello -d "{\"name\":\"Azure\"}"
 
 ## <a name="deploy-the-function-to-azure-functions"></a>関数を Azure Functions にデプロイする
 
-次に、Azure 関数を運用環境に発行します。 *pom.xml* で自分が定義した `<functionAppName>`、`<functionAppRegion>`、`<functionResourceGroup>` の各プロパティは、自分の関数を構成するために使用されることを覚えておいてください。
+次に、Azure 関数を運用環境に発行します。 *pom.xml* で定義した `<functionAppName>`、`<functionAppRegion>`、`<functionResourceGroup>` プロパティを使用して関数を構成します。
 
 Maven を実行して自分の関数を自動でデプロイします。
 

@@ -4,7 +4,7 @@
   items:
     - name: Python SDK について
       href: python-sdk-azure-overview.md
-- name: クイック スタート
+- name: クイックスタート
   items:
     - name: Python SDK
       href: python-sdk-azure-get-started.yml
@@ -64,51 +64,51 @@
   items:
     - name: VS Code で App Service にデプロイする
       items:
-        - name: 概要と前提条件
+        - name: 1 概要と前提条件
           href: tutorial-deploy-app-service-on-linux-01.md
-        - name: アプリケーションの準備
+        - name: 2 アプリケーションの準備
           href: tutorial-deploy-app-service-on-linux-02.md
-        - name: App Service の作成
+        - name: 3 App Service の作成
           href: tutorial-deploy-app-service-on-linux-03.md
-        - name: スタートアップ ファイルの構成
+        - name: 4 スタートアップ ファイルの構成
           href: tutorial-deploy-app-service-on-linux-04.md
-        - name: アプリケーションのデプロイ
+        - name: 5 アプリケーションのデプロイ
           href: tutorial-deploy-app-service-on-linux-05.md
-        - name: ログのストリーミング
+        - name: 6 ログのストリーミング
           href: tutorial-deploy-app-service-on-linux-06.md
-        - name: リソースのクリーンアップ
+        - name: 7 リソースのクリーンアップ
           href: tutorial-deploy-app-service-on-linux-07.md
     - name: VS Code を使用したコンテナーのデプロイ
       items:
-        - name: 概要と前提条件
+        - name: 1 概要と前提条件
           href: tutorial-deploy-containers-01.md
-        - name: コンテナー イメージをデプロイする
+        - name: 2 コンテナー イメージをデプロイする
           href: tutorial-deploy-containers-02.md
-        - name: 変更を加えて再デプロイする
+        - name: 3 変更を加えて再デプロイする
           href: tutorial-deploy-containers-03.md
-        - name: ログのストリーミング
+        - name: 4 ログのストリーミング
           href: tutorial-deploy-containers-04.md
-        - name: リソースのクリーンアップ
+        - name: 5 リソースのクリーンアップ
           href: tutorial-deploy-containers-05.md
     - name: VS Code で Azure Functions をデプロイする
       items:
-        - name: 概要と前提条件
+        - name: 1 概要と前提条件
           href: tutorial-vs-code-serverless-python-01.md
-        - name: Python 関数を作成する
+        - name: 2 Python 関数を作成する
           href: tutorial-vs-code-serverless-python-02.md
-        - name: コード ファイルを調べる
+        - name: 3 コード ファイルを調べる
           href: tutorial-vs-code-serverless-python-03.md
-        - name: ローカル デバッグ
+        - name: 4 ローカル デバッグ
           href: tutorial-vs-code-serverless-python-04.md
-        - name: Deploy to Azure (Azure へのデプロイ)
+        - name: 5 Azure へのデプロイ
           href: tutorial-vs-code-serverless-python-05.md
-        - name: 2 つ目の関数を追加する
+        - name: 6 2 つ目の関数を追加する
           href: tutorial-vs-code-serverless-python-06.md
-        - name: ストレージ バインディングを追加する
+        - name: 7 ストレージ バインディングを追加する
           href: tutorial-vs-code-serverless-python-07.md
-        - name: リソースのクリーンアップ
+        - name: 8 リソースのクリーンアップ
           href: tutorial-vs-code-serverless-python-08.md
-- name: ハウツー ガイド
+- name: 操作方法ガイド
   items:
     - name: SDK のインストール
       href: python-sdk-azure-install.md
@@ -124,7 +124,7 @@
       href: 'https://docs.microsoft.com/samples/browse/?languages=python&products=azure-functions%2Cazure-app-service%2Cazure-logic-apps'
     - name: データベース
       href: 'https://docs.microsoft.com/samples/browse/?languages=python&products=azure-cosmos-db%2Cazure-sql-database'
-    - name: Storage
+    - name: ストレージ
       items:
         - name: Azure Storage
           href: 'https://docs.microsoft.com/samples/browse/?languages=python&products=azure-storage'
@@ -144,7 +144,7 @@
           href: 'https://docs.microsoft.com/samples/browse/?languages=python&products=azure-hdinsight'
     - name: AI と Cognitive Services
       href: 'https://docs.microsoft.com/samples/browse/?languages=python&products=azure-cognitive-services'
-    - name: Search
+    - name: 検索
       href: 'https://docs.microsoft.com/samples/browse/?languages=python&products=azure-search'
     - name: すべてのサンプル
       href: 'https://docs.microsoft.com/samples/browse/?languages=python'

@@ -3,12 +3,12 @@ title: Visual Studio Code から Azure Functions アプリケーションをデ�
 description: チュートリアル パート 4、Functions アプリをクラウドにデプロイする。
 ms.topic: conceptual
 ms.date: 09/23/2019
-ms.openlocfilehash: e287f24429fc5939bcd64ba753b36eb0f387d8f3
-ms.sourcegitcommit: 20634277152d72a35ad9b35fa1203608740d1145
+ms.openlocfilehash: 8cb80b25e224d6f4552ec165779cda35f990ad6a
+ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77144066"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77422531"
 ---
 # <a name="deploy-the-functions-app"></a>Functions アプリをデプロイする
 
@@ -24,7 +24,7 @@ ms.locfileid: "77144066"
 
 1. 次のプロンプトでは、関数アプリのグローバルに一意の名前を入力して、**Enter** キーを押します。 関数アプリ名として有効な文字は "a-z"、"0-9"、および "-" です。
 
-1. Node.js バージョン/ランタイムを選択します。 
+1. Node.js バージョン/ランタイムを選択します。
 
     ![Node.js バージョン/ランタイムを示す VS Code 出力パネル](media/functions-extension/nodejs-runtime-version.png)
 

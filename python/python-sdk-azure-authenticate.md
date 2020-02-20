@@ -4,12 +4,12 @@ description: Azure 管理 SDK ライブラリを使用して、Azure サービ�
 ms.date: 01/16/2020
 ms.topic: conceptual
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 0c1dc8395710eec86f2bcd2b7e8334b987f15917
-ms.sourcegitcommit: 20634277152d72a35ad9b35fa1203608740d1145
+ms.openlocfilehash: 30979223a5f5f055ee51a82a4cb97f8ae4cf5a38
+ms.sourcegitcommit: b41b4c48a57de223be3424cb9d9d08c1a4001575
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77144036"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77478027"
 ---
 # <a name="authenticate-by-using-the-azure-management-libraries-for-python"></a>Python 用 Azure 管理ライブラリを使用した認証
 
@@ -45,7 +45,7 @@ ms.locfileid: "77144036"
     ```
 
     > [!TIP]
-    > Azure にサインインすることで、サブスクリプション ID が既に設定されている資格情報ファイルを取得できます。その際には、[az login](/cli/azure/group#az-login) コマンドの後に [az ad sp create-for-rbac](/cli/azure/ad/sp?view=azure-cli-latest#az-ad-sp-create-for-rbac) コマンドを使用します。
+    > Azure にサインインすることで、サブスクリプション ID が既に設定されている資格情報ファイルを取得できます。その際には、[az login](/cli/azure/reference-index#az-login) コマンドの後に [az ad sp create-for-rbac](/cli/azure/ad/sp?view=azure-cli-latest#az-ad-sp-create-for-rbac) コマンドを使用します。
     >
     > ```azurecli
     > az login

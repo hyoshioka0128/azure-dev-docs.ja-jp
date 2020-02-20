@@ -6,12 +6,12 @@ ms.date: 12/19/2018
 ms.service: postgresql
 ms.tgt_pltfrm: multiple
 ms.topic: conceptual
-ms.openlocfilehash: 5748f3e51132ff003e41d61f9c10dff61b95e364
-ms.sourcegitcommit: 2ad3f7ce8c87331f8aff759ac2a3dc1b29581866
+ms.openlocfilehash: e968f6a86cc8616b0ae79e5d55756acea76040a6
+ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76022106"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77422541"
 ---
 # <a name="how-to-use-spring-data-jpa-with-azure-postgresql"></a>Azure PostgreSQL で Spring Data JPA を使用する方法
 
@@ -24,7 +24,7 @@ ms.locfileid: "76022106"
 * Azure サブスクリプション。Azure サブスクリプションをまだお持ちでない場合は、[MSDN サブスクライバーの特典]を有効にするか、または[無料の Azure アカウント]にサインアップできます。
 * サポートされている Java Development Kit (JDK)。 Azure での開発時に使用可能な JDK の詳細については、<https://aka.ms/azure-jdks> を参照してください。
 * [Apache Maven](http://maven.apache.org/) バージョン 3.0 以降。
-* [Curl](https://curl.haxx.se/) または機能をテストするための類似の HTTP ユーティリティ。 または機能をテストするための類似の HTTP ユーティリティ。
+* [Curl](https://curl.haxx.se/) または機能をテストするための類似の HTTP ユーティリティ。
 * [psql](https://www.postgresql.org/docs/current/app-psql.html) コマンドライン ユーティリティ。
 * [Git](https://git-scm.com/downloads) クライアント。
 
@@ -90,7 +90,7 @@ ms.locfileid: "76022106"
    ```
    各値の説明:
 
-   | パラメーター | [説明] |
+   | パラメーター | 説明 |
    |---|---|
    | `host` | この記事の前半の完全修飾 PostgreSQL サーバー名を指定します。 |
    | `host` | PostgreSQL サーバー ポートを指定します。既定では `5432` です。 |
@@ -156,7 +156,7 @@ ms.locfileid: "76022106"
     ```
    各値の説明:
 
-   | パラメーター | [説明] |
+   | パラメーター | 説明 |
    |---|---|
    | `spring.datasource.url` | この記事の前半の PostgreSQL JDBC 文字列を指定します。 |
    | `spring.datasource.username` | この記事の前半の PostgreSQL 管理者名を指定し、その後に短縮サーバー名を追加します。 |

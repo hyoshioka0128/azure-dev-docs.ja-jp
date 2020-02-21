@@ -4,62 +4,92 @@
   items:
     - name: Python SDK について
       href: python-sdk-azure-overview.md
+    - name: 開発者ツール
+      href: python-azure-tools.md
 - name: クイックスタート
   items:
     - name: Python SDK
       href: python-sdk-azure-get-started.yml
-    - name: 開発者ツール
-      href: python-azure-tools.md
     - name: アプリ ホスティング
       items:
-        - name: App Service
+        - name: サーバーレス関数のデプロイ (VS Code)
+          href: /azure/azure-functions/functions-create-first-function-vs-code?pivots=programming-language-python&toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+        - name: サーバーレス関数のデプロイ (CLI)
+          href: /azure/azure-functions/functions-create-first-function-python?pivots=programming-language-python&toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+        - name: App Service にデプロイする
           href: /azure/app-service/containers/quickstart-python?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-        - name: Kubernetes
+        - name: Kubernetes クラスターのデプロイ
           href: /azure/aks/kubernetes-walkthrough?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-        - name: Linux VM
-          href: /azure/virtual-machines/linux/quick-create-cli?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-        - name: コンテナー インスタンス
+        - name: Azure コンテナー インスタンスのデプロイ
           href: /azure/container-instances/container-instances-quickstart?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-        - name: Batch
+        - name: Azure Batch ジョブを実行する
           href: /azure/batch/quick-run-python?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+        - name: Linux VM の作成
+          href: /azure/virtual-machines/linux/quick-create-cli?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
     - name: データ ソリューション
       items:
-        - name: Blob Storage
-          href: /azure/storage/blobs/storage-quickstart-blobs-python?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-        - name: Table Storage
-          href: /azure/cosmos-db/create-table-python?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-        - name: Cosmos DB
-          href: /azure/cosmos-db/sql-api-python-application?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-        - name: Redis Cache
-          href: /azure/redis-cache/cache-python-get-started?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-        - name: SQL Database
-          href: /azure/sql-database/sql-database-connect-query-python?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-        - name: PostgreSQL
-          href: /azure/app-service/containers/tutorial-docker-python-postgresql-app?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-        - name: MySQL
+        - name: Django で PostgreSQL を使用する
+          href: /azure/app-service/containers/tutorial-python-postgresql-app?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+        - name: MySQL データベースを使用する
           href: /azure/mysql/connect-python?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-        - name: Data Factory
+        - name: SQL データベースを使用する
+          href: /azure/sql-database/sql-database-connect-query-python?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+        - name: BLOB ストレージの管理
+          href: /azure/storage/blobs/storage-quickstart-blobs-python?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+        - name: Table Storage を使用する
+          href: /azure/cosmos-db/create-table-python?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+        - name: Azure Cosmos DB SQL API を使用する
+          href: /azure/cosmos-db/create-sql-api-python?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+        - name: Azure Cache for Redis を使用する
+          href: /azure/azure-cache-for-redis/cache-python-get-started?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+        - name: Azure データ ファクトリを作成する
           href: /azure/data-factory/quickstart-create-data-factory-python?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-    - name: AI と機械学習
+    - name: 機械学習
       items:
-        - name: Machine Learning サービス
-          href: /azure/machine-learning/desktop-workbench/tutorial-classifying-iris-part-1?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-        - name: Batch AI
-          href: /azure/batch-ai/quickstart-python?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+        - name: ML 実験を作成する
+          href: /azure/machine-learning/tutorial-1st-experiment-sdk-setup?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+        - name: 分類モデルをトレーニングする
+          href: /azure/machine-learning/tutorial-train-models-with-aml?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+    - name: Azure Cognitive Services
+      items:
+        - name: Cognitive Services SDK for Python
+          href: /python/api/overview/azure/cognitive-services?view=azure-python
         - name: Computer Vision
           href: /azure/cognitive-services/Computer-vision/Quickstarts/python-analyze?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+        - name: Custom Vision
+          href: /azure/cognitive-services/custom-vision-service/python-tutorial?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+        - name: 顔認識
+          href: /azure/cognitive-services/face/quickstarts/python-sdk?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+        - name: Language Understanding
+          href: /azure/cognitive-services/luis/sdk-authoring?pivots=programming-language-python&toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
         - name: Text Analytics
-          href: /azure/cognitive-services/Text-Analytics/quickstarts/python?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-        - name: Azure Notebooks
-          href: 'https://notebooks.azure.com/liwong/libraries/iris1234/html/Data+Science+Quickstart.ipynb'
+          href: '/azure/cognitive-services/text-analytics/quickstarts/text-analytics-sdk?pivots=programming-language-python#sentiment-analysis&toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json'
+        - name: 自動提案
+          href: /azure/cognitive-services/bing-autosuggest/quickstarts/python?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+        - name: コンテンツ モデレーター
+          href: /azure/cognitive-services/content-moderator/python-sdk-quickstart?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+        - name: 音声サービス ハブ ページ
+          href: /azure/cognitive-services/speech-service/index
+        - name: 検索ハブ ページ
+          href: /azure/cognitive-services/bing-web-search/index
+    - name: メッセージング
+      items:
+        - name: Azure Queue storage の使用
+          href: /azure/storage/queues/storage-python-how-to-use-queue-storage?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+        - name: Azure Service Bus キューの使用
+          href: /azure/service-bus-messaging/service-bus-python-how-to-use-queues?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+        - name: Event Hubs でリアルタイム データを取り込む
+          href: /azure/event-hubs/event-hubs-python?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+        - name: Event Grid を使ったカスタム イベントのルーティング
+          href: /azure/event-grid/custom-event-quickstart?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
     - name: セキュリティと統合
       items:
-        - name: Service Bus
-          href: /azure/service-bus-messaging/service-bus-python-how-to-use-queues?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-        - name: Event Grid
-          href: /azure/event-grid/custom-event-quickstart?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
-        - name: Queue Storage
-          href: /azure/storage/queues/storage-python-how-to-use-queue-storage?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+        - name: Active Directory を使用して認証する
+          href: python-sdk-azure-authenticate.md
+        - name: Key Vault を使用してシークレットを格納する
+          href: /azure/key-vault/quick-create-python?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
+        - name: Active Directory を使用して Web アプリにサインインする
+          href: /azure/active-directory/develop/quickstart-v2-python-webapp?toc=/azure/python/toc.json&bc=/azure/python/breadcrumb/toc.json
 - name: チュートリアル
   items:
     - name: VS Code で App Service にデプロイする

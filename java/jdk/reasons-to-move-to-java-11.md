@@ -1,18 +1,19 @@
 ---
 title: Java 11 に移行する理由
+titleSuffix: Azure
 description: Java 8 から Java 11 への移行の利点を検討している意思決定者を対象とした概要レベルのドキュメント。
 author: dsgrieve
-manager: maverberg
+manager: maverbur
 tags: java
 ms.topic: article
 ms.date: 11/19/2019
 ms.author: dagrieve
-ms.openlocfilehash: 7daf058c2abebbf2cca85dadc4f9ffe3e8771fa1
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: c0a2f46f8a3249f6c9580e823e102a86291e15e7
+ms.sourcegitcommit: aceed8548ad4529a81d83eb15a095edc8607cac5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74812220"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77440923"
 ---
 # <a name="reasons-to-move-to-java-11"></a>Java 11 に移行する理由
 
@@ -25,13 +26,13 @@ Java 8 以降、新機能が追加され、機能強化が行われてきまし�
 Java 11 への移行は、手順を追って行うことができます。 Java 11 で実行するためにコードで Java モジュールを使用する必要は "*ありません*"。 Java 11 を使用して、JDK 8 で開発およびビルドされたコードを実行できます。
 ただし、主に非推奨の API、クラス ローダー、およびリフレクションに関する潜在的な問題がいくつかあります。
 
-Java 8 から Java 11 への移行に関する包括的なガイドが、Microsoft Java Engineering グループから発行される予定です。 また、Java 8 から Java 9 に移行するためのガイドが多数あり、それらを利用して作業を開始できます。 たとえば、「[Java Platform, Standard Edition Oracle JDK 9 Migration Guide](https://docs.oracle.com/javase/9/migrate/toc.htm)」や「[The State of the Module System:Compatibility and Migration](http://openjdk.java.net/projects/jigsaw/spec/sotms/#compatibility--migration)」などがあります。
+Microsoft Java Engineering グループには、[Java 8 から Java 11 への移行](./transition-from-java-8-to-java-11.md)に関するガイドがあります。 「[Java Platform, Standard Edition Oracle JDK 9 Migration Guide (Java Platform、Standard Edition Oracle JDK 9 移行ガイド)](https://docs.oracle.com/javase/9/migrate/toc.htm)」と「[The State of the Module System: Compatibility and Migration (モジュール システムの状態: 互換性と移行)](http://openjdk.java.net/projects/jigsaw/spec/sotms/#compatibility--migration)」もお勧めのガイドです。 
 
 ## <a name="high-level-changes-between-java-8-and-11"></a>Java 8 と 11 の間の高レベルの変更
 
 このセクションには、Java バージョン 9 \[[1](#ref1)\]、10 \[[2](#ref2)\]、および 11 \[[3](#ref3)\] に加えられたすべての変更が挙げられているわけではありません。 パフォーマンス、診断、生産性に影響を与える変更について紹介しています。
 
-### <a name="modules-4ref4"></a>モジュール \[[4](#ref4)\]
+### <a name="modules-4"></a>モジュール \[[4](#ref4)\]
 
 モジュールは、"*クラスパス*" で実行されている大規模なアプリケーションでは管理が困難な構成とカプセル化の問題に対処します。 "*モジュール*" は、Java クラスとインターフェイス、および関連リソースの自己記述型のコレクションです。
 
@@ -46,31 +47,31 @@ Java 8 から Java 11 への移行に関する包括的なガイドが、Microso
 
 ### <a name="profiling-and-diagnostics"></a>プロファイルと診断
 
-#### <a name="java-flight-recorder-5ref5"></a>Java Flight Recorder \[[5](#ref5)\]
+#### <a name="java-flight-recorder-5"></a>Java Flight Recorder \[[5](#ref5)\]
 
 Java Flight Recorder (JFR) は、実行中の Java アプリケーションから診断データとプロファイル データを収集します。 JFR は、実行中の Java アプリケーションにほとんど影響しません。 収集したデータは、Java Mission Control (JMC) などのツールを使用して分析できます。 JFR と JMC は Java 8 では商用機能でしたが、どちらも Java 11 ではオープンソースです。
 
-#### <a name="java-mission-control-6ref6"></a>Java Mission Control \[[6](#ref6)\]
+#### <a name="java-mission-control-6"></a>Java Mission Control \[[6](#ref6)\]
 
 Java Mission Control (JMC) は、Java Flight Recorder (JFR) で収集されたデータをグラフィカルに表示し、また Java のオープンソースです。
 11. JMC では、実行中のアプリケーションに関する一般的な情報に加えて、ユーザーがデータをドリルダウンすることができます。 JFR と JMC を使用して、メモリ リーク、GC のオーバーヘッド、ホット メソッド、スレッドのボトルネック、ブロッキング I/O などのランタイムの問題を診断できます。
 
-#### <a name="unified-logging-7ref7"></a>統合ログ \[[7](#ref7)\]
+#### <a name="unified-logging-7"></a>統合ログ \[[7](#ref7)\]
 
 Java 11 には、JVM のすべてのコンポーネントに共通のログ記録システムがあります。
 この統合されたログ記録システムにより、ユーザーはログに記録するコンポーネントとそのレベルを定義できます。 この詳細なログ記録は、JVM のクラッシュに関する根本原因分析の実行や、運用環境でのパフォーマンスの問題の診断に役立ちます。
 
-#### <a name="low-overhead-heap-profiling-8ref8"></a>オーバーヘッドの低いヒープ プロファイル \[[8](#ref8)\]
+#### <a name="low-overhead-heap-profiling-8"></a>オーバーヘッドの低いヒープ プロファイル \[[8](#ref8)\]
 
 Java ヒープ割り当てをサンプリングするための新しい API が Java Virtual Machine Tool Interface (JVMTI) に追加されました。 サンプリングのオーバーヘッドは低く、継続的に有効にすることができます。 ヒープ割り当ては Java Flight Recorder (JFR) で監視できますが、JFR のサンプリング メソッドは割り当てに対してのみ機能します。 JFR 実装では、割り当てが見つからない場合もあります。 これに対して、Java 11 のヒープ サンプリングでは、ライブ オブジェクトと dead オブジェクトの両方に関する情報を提供できます。
 
 アプリケーション パフォーマンス監視 (APM) のベンダーは、この新機能を利用し始めており、Java Engineering Group では、Azure パフォーマンス監視ツールでの使用の可能性を調査しています。
 
-#### <a name="stackwalker-9ref9"></a>StackWalker \[[9](#ref9)\]
+#### <a name="stackwalker-9"></a>StackWalker \[[9](#ref9)\]
 
 ログを記録するときに、現在のスレッドのスタックのスナップショットがよく取得されます。 問題は、ログに記録するスタック トレースの量と、そもそもスタック トレースをログに記録するかどうかです。 たとえば、あるメソッドからの特定の例外についてのみ、スタック トレースを確認したい場合があります。 StackWalker クラス (Java 9 で追加) は、スタックのスナップショットを提供し、プログラマがスタック トレースの使用方法をきめ細かく制御できるようにするメソッドを提供します。
 
-### <a name="garbage-collection-10ref10"></a>ガベージ コレクション \[[10](#ref10)\]
+### <a name="garbage-collection-10"></a>ガベージ コレクション \[[10](#ref10)\]
 
 Java 11 では、次のガベージ コレクターを使用できます。シリアル、パラレル、ガベージファースト、および Epsilon。 Java 11 の既定のガベージ コレクターは、ガベージファースト ガベージ コレクター (G1GC) です。
 
@@ -88,12 +89,12 @@ Java 11 の既定のガベージ コレクターは、G1 ガベージ コレク�
 
 パラレル コレクターは、Java 8 の既定のコレクターです。 パラレル GC は、複数のスレッドを使用してガベージ コレクションを高速化するスループット コレクターです。
 
-#### <a name="epsilon-11ref11"></a>Epsilon \[[11](#ref11)\]
+#### <a name="epsilon-11"></a>Epsilon \[[11](#ref11)\]
 
 Epsilon ガベージ コレクターは割り当てを処理しますが、メモリを再利用することはありません。 ヒープが使い果たされると、JVM はシャットダウンします。
 Epsilon は、短期間のサービスや、ガベージフリーであることが判明しているアプリケーションに向いています。
 
-#### <a name="improvements-for-docker-containers-12ref12"></a>Docker コンテナーの改善 \[[12](#ref12)\]
+#### <a name="improvements-for-docker-containers-12"></a>Docker コンテナーの改善 \[[12](#ref12)\]
 
 Java 10 より前では、コンテナーに設定されているメモリと CPU の制約は JVM によって認識されませんでした。 たとえば Java 8 では、JVM によって、最大ヒープ サイズは基になるホストの物理メモリの 1/4 に設定されます。 Java 10 以降では、JVM はコンテナー コントロール グループ (cgroups) によって設定された制約を使用して、メモリと CPU の制限を設定します (下記の注を参照してください)。
 たとえば、既定の最大ヒープ サイズは、コンテナーのメモリ制限の1/4 です (例: -m2G の場合 500 MB)。
@@ -105,7 +106,7 @@ JVM オプションも追加されました。これにより、Docker コンテ
 > [!NOTE]
 > cgroup の有効化作業のほとんどは、jdk8u191 の時点で Java 8 に移植されました。 今後の改善は、必ずしも 8 に移植されるとは限りません。
 
-#### <a name="multi-release-jar-files-13ref13"></a>マルチリリース jar ファイル \[[13](#ref13)\]
+#### <a name="multi-release-jar-files-13"></a>マルチリリース jar ファイル \[[13](#ref13)\]
 
 Java 11 では、Java リリース固有の、複数のバージョンのクラス ファイルを含む jar ファイルを作成できます。 マルチリリースの jar ファイルを使用することで、ライブラリ開発者は複数のバージョンの jar ファイルを配布せずに、複数のバージョンの Java をサポートできるようになります。 これらのライブラリの利用者にとっては、マルチリリース jar ファイルにより、特定の jar ファイルを特定のランタイム ターゲットに一致させる必要があるという問題が解決します。
 
@@ -126,7 +127,7 @@ JVM に対する次の変更は、パフォーマンスに直接影響します�
 
 コア ライブラリに対する次の変更は、新規または変更されたコードのパフォーマンスに影響を与えます。
 
--   **JEP 193:変数ハンドル**\[[19](#ref19)\] - オブジェクトのフィールドや配列要素に対してさまざまな java.util.concurrent.atomic および sun.misc.Unsafe 操作と同等のものを呼び出すための標準的な手段、メモリ並べ替えの詳細な制御のためのフェンス操作の標準セット、および参照オブジェクトを確実にアクセス可能なままにするための標準 reachability-fence 操作を定義します。
+-   **JEP 193:変数ハンドル** \[[19](#ref19)\] - オブジェクトのフィールドや配列要素に対してさまざまな java.util.concurrent.atomic および sun.misc.Unsafe 操作と同等のものを呼び出すための標準的な手段、メモリ並べ替えの詳細な制御のためのフェンス操作の標準セット、および参照オブジェクトを確実にアクセス可能なままにするための標準 reachability-fence 操作を定義します。
 
 -   **JEP 269:コレクションの便利なファクトリ メソッド** \[[20](#ref20)\] - 少数の要素でコレクションとマップのインスタンスを作成するのに便利なライブラリ API を定義します。 コンパクトで変更できないコレクション インスタンスを作成する、コレクション インターフェイスの静的ファクト リメソッドです。 これらのインスタンスは、本質的に効率的です。 API により、コンパクトに表現され、ラッパー クラスを持たないコレクションが作成されます。
 
@@ -134,15 +135,15 @@ JVM に対する次の変更は、パフォーマンスに直接影響します�
 
 -   **JEP 321:HTTP クライアント (標準)** \[[22](#ref22)\] - HTTP/2 および WebSocket を実装する新しい HTTP クライアント API を提供します。従来の HttpURLConnection API に置き換えることができます。
 
-## <a name="references"></a>参照
+## <a name="references"></a>References
 
-<a id="ref1">\[1\]</a> Oracle Corporation、\"Java Development Kit 9 リリース ノート\" (オンライン)。 参照先: https://www.oracle.com/technetwork/java/javase/9u-relnotes-3704429.html 。
+<a id="ref1">\[1\]</a> Oracle Corporation、\"Java Development Kit 9 リリース ノート\" (オンライン)。 参照先: https://www.oracle.com/technetwork/java/javase/9u-relnotes-3704429.html.
 (2019 年 11 月 13 日にアクセス)。
 
-<a id="ref2">\[2\]</a> Oracle Corporation、\"Java Development Kit 10 リリース ノート\" (オンライン)。 参照先: https://www.oracle.com/technetwork/java/javase/10u-relnotes-4108739.html 。
+<a id="ref2">\[2\]</a> Oracle Corporation、\"Java Development Kit 10 リリース ノート\" (オンライン)。 参照先: https://www.oracle.com/technetwork/java/javase/10u-relnotes-4108739.html.
 (2019 年 11 月 13 日にアクセス)。
 
-<a id="ref3">\[3\]</a> Oracle Corporation、\"Java Development Kit 11 リリース ノート\" (オンライン)。 参照先: https://www.oracle.com/technetwork/java/javase/11u-relnotes-5093844.html 。
+<a id="ref3">\[3\]</a> Oracle Corporation、\"Java Development Kit 11 リリース ノート\" (オンライン)。 参照先: https://www.oracle.com/technetwork/java/javase/11u-relnotes-5093844.html.
 (2019 年 11 月 13 日にアクセス)。
 
 <a id="ref4">\[4\]</a> Oracle Corporation、\"Project Jigsaw\"、9 月22日、 

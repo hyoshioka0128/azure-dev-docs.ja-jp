@@ -1,17 +1,17 @@
 ---
-title: チュートリアル:VS Code を使用して 2 つ目の Python 関数を Azure Functions に追加する
+title: 手順 6:VS Code を使用して 2 つ目の Python 関数を Azure Functions に追加する
 description: チュートリアルの手順 6、2 つ目の関数を追加して Azure Functions プロジェクトを展開する。
 ms.topic: conceptual
 ms.date: 09/02/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 12cd3625d3eec63a2ba3de4d55dbd957fbf0fb34
-ms.sourcegitcommit: 68a4044b9fa3291c9e7e2f68ae0049328f9c01bb
+ms.openlocfilehash: 45a17a403073110fec03c077d6009e26928d2310
+ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74992430"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77422158"
 ---
-# <a name="tutorial-add-a-second-python-function-to-azure-functions"></a>チュートリアル:2 つ目の Python 関数を Azure Functions に追加する
+# <a name="6-add-a-second-python-function-to-azure-functions"></a>6: 2 つ目の Python 関数を Azure Functions に追加する
 
 [前の手順: Azure にデプロイする](tutorial-vs-code-serverless-python-05.md)
 
@@ -119,6 +119,6 @@ ms.locfileid: "74992430"
 1. デプロイが完了したら (数分かかります!)、 **[出力]** ウィンドウに、テストを繰り返すことができる公開エンドポイントが表示されます。
 
 > [!div class="nextstepaction"]
-> [2 つ目の関数を追加しました](tutorial-vs-code-serverless-python-07.md)
+> [2 つ目の関数を追加しました - 手順 7 に進む >>>](tutorial-vs-code-serverless-python-07.md)
 
 [問題が発生しました](https://www.research.net/r/PWZWZ52?tutorial=vscode-functions-python&step=06-second-function)

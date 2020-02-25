@@ -1,17 +1,17 @@
 ---
-title: チュートリアル:Azure リソースをクリーンアップする
+title: 手順 5:Azure リソースをクリーンアップする
 description: チュートリアルの手順 5、引き続き料金を請求されないように Azure リソースをクリーンアップする。
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: bbafb323c49b9dd6879bf69924d8e8bcf62093a3
-ms.sourcegitcommit: a8073315f751631ab983618fa9f812eb95d8b2dc
+ms.openlocfilehash: df785e68de26fe4414430289800fdabfa8757eef
+ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76125242"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77422231"
 ---
-# <a name="tutorial-clean-up-azure-resources"></a>チュートリアル:Azure リソースをクリーンアップする
+# <a name="5-clean-up-azure-resources"></a>5:Azure リソースをクリーンアップする
 
 [前の手順: ログをストリーム配信する](tutorial-deploy-containers-04.md)
 
@@ -37,6 +37,6 @@ VS Code 用の Azure 拡張機能は他にもあります。役に立つ機能�
 - [Azure リソース マネージャー ツール](https://marketplace.visualstudio.com/items?itemName=msazurermtools.azurerm-vscode-tools)
 
 > [!div class="nextstepaction"]
-> [終わりました](https://docs.microsoft.com/python/azure/?view=azure-python)
+> [完了しました。](https://docs.microsoft.com/python/azure/?view=azure-python)
 
 [問題が発生しました](https://www.research.net/r/PWZWZ52?tutorial=vscode-appservice-containers&step=07-clean-up-resources)

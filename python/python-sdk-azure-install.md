@@ -4,12 +4,12 @@ description: pip または GitHub を使用して Azure SDK for Python をイン
 ms.date: 10/31/2019
 ms.topic: conceptual
 ms.custom: seo-python-october2019
-ms.openlocfilehash: d3d162bc14f27a9b2bc3fb033dab36dcd1dfeb89
-ms.sourcegitcommit: 68a4044b9fa3291c9e7e2f68ae0049328f9c01bb
+ms.openlocfilehash: de36effc1787c83d137f84f8e0d670c97c71cdcf
+ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74992490"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77422502"
 ---
 # <a name="install-the-azure-sdk-for-python"></a>Azure SDK for Python をインストールする
 
@@ -30,6 +30,9 @@ Azure SDK for Python はいくつかの個別のライブラリで構成され�
 ```bash
 pip install azure-storage-blob==12.0.0
 ```
+
+> [!NOTE]
+> Linux システムでは、SDK は `sudo pip install` を使用してすべてのユーザーにライブラリをインストールすることをサポートしていません。 各ユーザーは `pip install` を個別に使用する必要があります。 
 
 ### <a name="install-preview-packages"></a>プレビュー パッケージをインストールする
 
@@ -61,7 +64,7 @@ pip show azure-storage-blob
 
 個々のライブラリをアンインストールするには、`pip uninstall <library>` を使用します。
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
 > [!div class="nextstepaction"]
 > [SDK の使用方法を確認](python-sdk-azure-get-started.yml)

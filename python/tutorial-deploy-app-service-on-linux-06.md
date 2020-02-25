@@ -1,17 +1,17 @@
 ---
-title: チュートリアル:Azure App Service から VS Code にログをストリーム配信する
+title: 手順 6:Azure App Service から VS Code にログをストリーム配信する
 description: チュートリアルの手順 6、アプリのログを Visual Studio Code にストリーム配信する
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 56cbd468771af8d60fce20d88b8c984f95d4b9b9
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: f2e19a52b673ddcef927165191d610776e06a32f
+ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74466073"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77422422"
 ---
-# <a name="tutorial-stream-logs-from-azure-app-service-into-visual-studio-code"></a>チュートリアル:Azure App Service から Visual Studio Code にログをストリーム配信する
+# <a name="6-stream-logs-from-azure-app-service-into-visual-studio-code"></a>6: Azure App Service から Visual Studio Code にログをストリーム配信する
 
 [前の手順: アプリをデプロイする](tutorial-deploy-app-service-on-linux-05.md)
 
@@ -28,6 +28,6 @@ ms.locfileid: "74466073"
 1. (ログを無効にせずに) ログのストリーム配信を停止するには、 **[Azure:App Service]** エクスプローラーでアプリを右クリックし、 **[Stop streaming logs]\(ログのストリーム配信を停止する\)** を選択します。
 
 > [!div class="nextstepaction"]
-> [ログを確認しました](tutorial-deploy-app-service-on-linux-07.md)
+> [ログを確認しました - 手順 7 に進む >>>](tutorial-deploy-app-service-on-linux-07.md)
 
 [問題が発生しました](https://www.research.net/r/PWZWZ52?tutorial=vscode-appservice-python&step=06-stream-logs)

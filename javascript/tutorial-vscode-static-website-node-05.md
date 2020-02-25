@@ -4,12 +4,12 @@ description: チュートリアル パート 5、変更を加えて再デプロ�
 ms.topic: conceptual
 ms.date: 09/24/2019
 ms.author: buhollan
-ms.openlocfilehash: 0db773cdea2e288dc461479c3753b94c9a286e82
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: d0f6be1d57c9d378a4428a5a05da0428314f76c0
+ms.sourcegitcommit: aceed8548ad4529a81d83eb15a095edc8607cac5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74466645"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77440951"
 ---
 # <a name="make-changes-and-redeploy"></a>変更を加えて再デプロイする
 
@@ -17,7 +17,7 @@ ms.locfileid: "74466645"
 
 この手順では、アプリのソース コードに簡単な変更を行ってサイトを再デプロイして、エンドツーエンドのデプロイ ワークフローを体験します。
 
-# <a name="angulartabangular"></a>[Angular](#tab/angular)
+# <a name="angular"></a>[Angular](#tab/angular)
 
 1. Visual Studio Code で _src/app/app.component.html_ ファイルを開き、次に一致するように 305 行目を変更します。
 
@@ -33,7 +33,7 @@ ms.locfileid: "74466645"
 
     ![再デプロイ後のアプリの変更](media/static-website/updated-azure-app-angular.png)
 
-# <a name="reacttabreact"></a>[React](#tab/react)
+# <a name="react"></a>[React](#tab/react)
 
 1. Visual Studio Code で _src/app.js_ ファイルを開き、次に一致するように 11 行目を変更します。
 
@@ -49,7 +49,7 @@ ms.locfileid: "74466645"
 
     ![再デプロイ後のアプリの変更](media/static-website/updated-azure-app-react.png)
 
-# <a name="vuetabvue"></a>[Vue](#tab/vue)
+# <a name="vue"></a>[Vue](#tab/vue)
 
 1. Visual Studio Code で _src/App.vue_ ファイルを開き、次に一致するように 11 行目を変更します。
 
@@ -64,6 +64,37 @@ ms.locfileid: "74466645"
 1. デプロイが完了したら、ブラウザーでサイトを更新して変更を確認します。
 
     ![再デプロイ後のアプリの変更](media/static-website/updated-azure-app-vue.png)
+
+# <a name="svelte"></a>[Svelte](#tab/svelte)
+
+1. Visual Studio Code で _src/main.js_ ファイルを開き、6 行目を次のように変更します。
+
+    ```js
+    import App from './App.svelte';
+
+    const app = new App({
+        target: document.body,
+        props: {
+            name: 'Welcome to Azure!'
+        }
+    });
+
+    export default app;
+    ```
+
+2. 次に _src/App.svelte_ ファイルを開き、6 行目を次のように変更します
+
+    ```html
+    <h1>{name}</h1>
+    ```
+
+1. ターミナルまたはコマンド プロンプトで `npm run build` を実行します。
+
+1. VS Code で、更新した _public_ フォルダーを右クリックし、もう一度 **[Deploy to Static Website]\(静的な Web サイトにデプロイする\)** を選択します。 Storage アカウントを選択し、変更をデプロイすることを確認します。 (Azure 拡張機能では、キャッシュの問題を回避するために、変更をデプロイする前に古いファイルが自動的に削除されます。)
+
+1. デプロイが完了したら、ブラウザーでサイトを更新して変更を確認します。
+
+    ![再デプロイ後のアプリの変更](media/static-website/updated-azure-app-svelte.png)
 
 ---
 

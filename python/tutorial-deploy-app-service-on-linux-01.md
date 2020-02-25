@@ -4,12 +4,12 @@ description: チュートリアルの手順 1、概要、前提条件、Azure �
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: d5eed3d2b1aeea92b3681ada006b3723e67f70c4
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: 8995c31203b2cbd096820832beb3d6a7d165f132
+ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74466275"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77422492"
 ---
 # <a name="tutorial-deploy-python-apps-to-azure-app-service-on-linux-from-visual-studio-code"></a>チュートリアル:Visual Studio Code から Azure App Service on Linux に Python アプリをデプロイする
 
@@ -43,6 +43,6 @@ Azure サブスクリプションをお持ちでない場合は、無料アカ�
 [!INCLUDE [azure-sign-in](includes/azure-sign-in.md)]
 
 > [!div class="nextstepaction"]
-> [Azure にサインインしました](tutorial-deploy-app-service-on-linux-02.md)
+> [Azure にサインインしました - 手順 2 に進む >>>](tutorial-deploy-app-service-on-linux-02.md)
 
 [問題が発生しました](https://www.research.net/r/PWZWZ52?tutorial=vscode-appservice-python&step=01-verify-prerequisites)

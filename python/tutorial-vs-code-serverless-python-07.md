@@ -1,17 +1,17 @@
 ---
-title: チュートリアル:VS Code を使用して Python で Azure Functions のストレージ バインドを追加する
+title: 手順 7:VS Code を使用して Python で Azure Functions のストレージ バインドを追加する
 description: チュートリアルの手順 7、メッセージを Azure Storage に書き込むバインドを Python で追加する。
 ms.topic: conceptual
 ms.date: 09/02/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 34ee80b2fac2f66e37e67fd45ca366b97d3f52dd
-ms.sourcegitcommit: 6fa28ea675ae17ffb9ac825415e2e26a3dfe7107
+ms.openlocfilehash: 2203104d53387254284e75e322367f2e7142bfad
+ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "77002080"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77422175"
 ---
-# <a name="tutorial-add-a-storage-binding-for-azure-functions-in-python"></a>チュートリアル:Python で Azure Functions のストレージ バインドを追加する
+# <a name="7-add-a-storage-binding-for-azure-functions-in-python"></a>7:Python で Azure Functions のストレージ バインドを追加する
 
 [前の手順: 2 つ目の関数をデプロイする](tutorial-vs-code-serverless-python-06.md)
 
@@ -97,6 +97,6 @@ Azure Functions のストレージ バインドを追加できます。 "_バイ
 1. クラウドでテストするには、 **[Deploy to Function App]\(Function App にデプロイする\)** を **[Azure:Functions]** エクスプローラーで使用し、コードを再デプロイします。 プロンプトが表示されたら、前に作成した Function App を選択します。 デプロイが完了したら (数分かかります!)、繰り返しになりますが、 **[出力]** ウィンドウにテストを繰り返すことができる公開エンドポイントが表示されます。
 
 > [!div class="nextstepaction"]
-> [ストレージ バインドを追加しました](tutorial-vs-code-serverless-python-08.md)
+> [ストレージ バインドを追加しました - 手順 8 に進む >>>](tutorial-vs-code-serverless-python-08.md)
 
 [問題が発生しました](https://www.research.net/r/PWZWZ52?tutorial=python-functions-extension&step=07-storage-binding)

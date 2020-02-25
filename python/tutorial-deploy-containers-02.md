@@ -1,17 +1,17 @@
 ---
-title: チュートリアル:Visual Studio Code を使用してコンテナー イメージを Azure App Service にデプロイする
+title: 手順 2:Visual Studio Code を使用してコンテナー イメージを Azure App Service にデプロイする
 description: チュートリアルの手順 2、実際の Docker イメージをコンテナー レジストリから Azure App Service にデプロイする。
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 446653a4de98954ae75caa38c9cb2ae04ec071c4
-ms.sourcegitcommit: 6fa28ea675ae17ffb9ac825415e2e26a3dfe7107
+ms.openlocfilehash: 8005ba428d99051d9b5b86ed4f5222c1cd9ba673
+ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "77002374"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77422408"
 ---
-# <a name="tutorial-deploy-a-container-image-to-azure-app-service"></a>チュートリアル:コンテナー イメージを Azure App Service にデプロイする
+# <a name="2-deploy-a-container-image-to-azure-app-service"></a>2:コンテナー イメージを Azure App Service にデプロイする
 
 [前の手順: 前提条件](tutorial-deploy-containers-01.md)
 
@@ -46,6 +46,6 @@ ms.locfileid: "77002374"
 1. サービスが再起動したら、`http://<name>.azurewebsites.net` でサイトを参照します。 [出力] パネル内の URL を **Ctrl** キーを押しながらクリック (macOS の場合は **Cmd** キーを押しながらクリック) するか、 **[Azure:App Service]** エクスプローラー内で [App Service] を右クリックして **[Browse Website]\(Web サイトの参照\)** を選択します。
 
 > [!div class="nextstepaction"]
-> [イメージをデプロイしました](tutorial-deploy-containers-03.md)
+> [イメージをデプロイしました - 手順 3 に進む >>>](tutorial-deploy-containers-03.md)
 
 [問題が発生しました](https://www.research.net/r/PWZWZ52?tutorial=vscode-appservice-containers&step=02-deploy-container)

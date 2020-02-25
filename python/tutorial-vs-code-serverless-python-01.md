@@ -4,12 +4,12 @@ description: チュートリアルの手順 1、概要と前提条件。
 ms.topic: conceptual
 ms.date: 09/02/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: a380a447150f29653a1f94a3fe1f6464dd495a81
-ms.sourcegitcommit: fc3408b6e153c847dd90026161c4c498aa06e2fc
+ms.openlocfilehash: 3056ccaa6d0cc8e5f2e15c6b7511172f59644936
+ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75190999"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77422187"
 ---
 # <a name="tutorial-create-and-deploy-serverless-azure-functions-in-python-with-visual-studio-code"></a>チュートリアル:Visual Studio Code を使用して Python でサーバーレスの Azure Functions を作成してデプロイする
 
@@ -67,6 +67,6 @@ Azure Functions ロゴで始まる出力は (出力を上方向にスクロー�
 `func` コマンドは、Node.js グローバル フォルダーにインストールされている *func.cmd* ファイルを介して機能します。 このフォルダーの場所を確認するには、`npm -l` を実行し、出力の最後にある場所を確認します。
 
 > [!div class="nextstepaction"]
-> [Azure にサインインしました](tutorial-vs-code-serverless-python-02.md)
+> [Azure にサインインしました - 手順 2 に進む >>>](tutorial-vs-code-serverless-python-02.md)
 
 [問題が発生しました](https://www.research.net/r/PWZWZ52?tutorial=vscode-functions-python&step=01-verify-prerequisites)

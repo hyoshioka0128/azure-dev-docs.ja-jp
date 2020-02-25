@@ -1,17 +1,17 @@
 ---
-title: チュートリアル:VS Code を使用して Azure Functions 用に Python 関数を作成する
+title: 手順 2:VS Code を使用して Azure Functions 用に Python 関数を作成する
 description: チュートリアルの手順 2、VS Code 用の Azure Functions 拡張機能の使用方法を紹介する。
 ms.topic: conceptual
 ms.date: 09/02/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 49ab6b150f14268b6d52ac48524f66e6e520e547
-ms.sourcegitcommit: 68a4044b9fa3291c9e7e2f68ae0049328f9c01bb
+ms.openlocfilehash: 3d33213d00c2b20d3a712c5cf9ca6888d25ebb8a
+ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74992518"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77422169"
 ---
-# <a name="tutorial-create-a-python-function-for-azure-functions"></a>チュートリアル:Azure Functions 用に Python 関数を作成する
+# <a name="2-create-a-python-function-for-azure-functions"></a>2:Azure Functions 用に Python 関数を作成する
 
 [前の手順: 前提条件](tutorial-vs-code-serverless-python-01.md)
 
@@ -23,13 +23,13 @@ ms.locfileid: "74992518"
 
 1. 後続のプロンプトの内容:
 
-    | Prompt | 値 | 説明 |
+    | Prompt | Value | 説明 |
     | --- | --- | --- |
     | Specify a folder for the project (プロジェクトのフォルダーを指定してください) | 現在開いているフォルダー | プロジェクトを作成するフォルダー。 サブフォルダーにプロジェクトを作成することもできます。 |
     | Select a language for your function app project (関数アプリ プロジェクトの言語を選択してください) | **Python** | 関数に使用する言語。これによりコードに使用するテンプレートが決定されます。 |
     | Select a template for your project's first function (プロジェクトの最初の関数のテンプレートを選択してください) | **HTTP トリガー** | HTTP トリガーを使用する関数は、関数のエンドポイントに HTTP 要求が行われるたびに実行されます。 (Azure Functions には他にもさまざまなトリガーがあります。 詳細は、「[Functions でできること](/azure/azure-functions/functions-overview#what-can-i-do-with-functions)」を参照してください。) |
     | Provide a function name (関数名を指定してください) | HttpExample | この名前は、構成データと共に関数のコードが含まれるサブフォルダーに使用されます。また、HTTP エンドポイントの名前がこの名前で定義されます。 関数自体とトリガーを区別する目的で、既定の "HTTPTrigger" をそのまま使用せず、"HttpExample" を使用します。 |
-    | 承認レベル | **匿名** | 匿名認証の場合、関数は公開され、誰でもアクセスできます。 |
+    | 承認レベル | **Anonymous** | 匿名認証の場合、関数は公開され、誰でもアクセスできます。 |
     | Select how you would like to open your project (プロジェクトを開く方法を選択してください) | **現在のウィンドウで開く** | 現在の Visual Studio Code ウィンドウでプロジェクトを開きます。 |
 
     > [!NOTE]
@@ -50,6 +50,6 @@ ms.locfileid: "74992518"
 > ![Azure Functions エクスプローラーで新規関数を使用して関数を作成する](media/tutorial-vs-code-serverless-python/create-new-functions-in-azure-functions-explorer.png)
 
 > [!div class="nextstepaction"]
-> [関数を作成しました](tutorial-vs-code-serverless-python-03.md)
+> [関数を作成しました - 手順 3 に進む >>>](tutorial-vs-code-serverless-python-03.md)
 
 [問題が発生しました](https://www.research.net/r/PWZWZ52?tutorial=vscode-functions-python&step=02-create-function)

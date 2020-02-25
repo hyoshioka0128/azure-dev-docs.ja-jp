@@ -5,12 +5,12 @@ author: yevster
 ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 1/20/2020
-ms.openlocfilehash: d32c38d763901152135b965484362031dfac7f0a
-ms.sourcegitcommit: 367780fe48d977c82cb84208c128b0bf694b1029
+ms.openlocfilehash: 7025393f45a32a42fcd2ae3dafee6274a4ba3cbc
+ms.sourcegitcommit: aceed8548ad4529a81d83eb15a095edc8607cac5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76825796"
+ms.lasthandoff: 02/18/2020
+ms.locfileid: "77440850"
 ---
 # <a name="migrate-java-applications-to-azure"></a>Java アプリケーションを Azure に移行する
 
@@ -48,7 +48,7 @@ Web アプリケーションは、 *.war* 拡張子 (WAR ファイル) を使用
 
 ### <a name="java-ee-applications"></a>Java EE アプリケーション
 
-Java EE アプリケーション (J2EE アプリケーションや、さらに最近では JakartaEE アプリケーションとも呼ばれます) は、Web アプリケーションの一部またはすべての要素を含む場合や、まったく含んでいない場合があります。 また、[Java EE 仕様](https://en.wikipedia.org/wiki/Java_Platform,_Enterprise_Edition)で定義されているような、多くの追加コンポーネントを格納して使用する場合もあります。
+Java EE アプリケーション (J2EE アプリケーションや、さらに最近では Jakarta EE アプリケーションとも呼ばれます) は、Web アプリケーションの一部またはすべての要素を含む場合や、まったく含んでいない場合があります。 また、[Java EE 仕様](https://en.wikipedia.org/wiki/Java_Platform,_Enterprise_Edition)で定義されているような、多くの追加コンポーネントを格納して使用する場合もあります。
 
 Java EE アプリケーションは、 *.ear* 拡張子 (EAR ファイル) を使用してアーカイブとしてパッケージ化することも、 *.war* 拡張子 (WAR ファイル) を使用してアーカイブとしてパッケージ化することもできます。
 

@@ -1,17 +1,17 @@
 ---
-title: チュートリアル:Azure App Service on Linux にデプロイしたリソースを Visual Studio Code を使用してクリーンアップします。
+title: 手順 7:Azure App Service on Linux にデプロイしたリソースを Visual Studio Code を使用してクリーンアップします。
 description: チュートリアルの手順 7、Azure のリソースをクリーンアップする
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 8145b33ae52427d55c9b3de9fcf6fb20467b7ba9
-ms.sourcegitcommit: a8073315f751631ab983618fa9f812eb95d8b2dc
+ms.openlocfilehash: 001e5d58311267221c5fafb3de89aff3859f4197
+ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76125265"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77422432"
 ---
-# <a name="tutorial-clean-up-resources-after-deploying-to-azure-app-service-on-linux-from-visual-studio-code"></a>チュートリアル:Azure App Service on Linux にデプロイしたリソースを Visual Studio Code を使用してクリーンアップします。
+# <a name="7-clean-up-resources-after-deploying-to-azure-app-service-on-linux-from-visual-studio-code"></a>7:Azure App Service on Linux にデプロイしたリソースを Visual Studio Code を使用してクリーンアップします。
 
 [前の手順: ログをストリーム配信する](tutorial-deploy-app-service-on-linux-06.md)
 
@@ -39,6 +39,6 @@ VS Code 用の Azure 拡張機能は他にもあります。役に立つ機能�
 - [Azure Resource Manager (ARM) Tools](https://marketplace.visualstudio.com/items?itemName=msazurermtools.azurerm-vscode-tools)
 
 > [!div class="nextstepaction"]
-> [終わりました](https://docs.microsoft.com/python/azure/?view=azure-python) 
+> [完了しました。](https://docs.microsoft.com/python/azure/?view=azure-python) 
 
 [問題が発生しました](https://www.research.net/r/PWZWZ52?tutorial=vscode-appservice-python&step=07-clean-up-resources)

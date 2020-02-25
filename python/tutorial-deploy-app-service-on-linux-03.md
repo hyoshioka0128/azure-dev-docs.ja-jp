@@ -1,17 +1,17 @@
 ---
-title: チュートリアル:Visual Studio Code から App Service を作成する
+title: 手順 3:Visual Studio Code から App Service を作成する
 description: チュートリアルの手順 3、VS Code 拡張機能から App Service を作成する。
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: b64adc1604698de74f4f318b805dd8c289c8fff8
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: dea4ace359c8d072af8ab9ed33451bc8077249b7
+ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74466224"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77422462"
 ---
-# <a name="tutorial-create-the-app-service-from-visual-studio-code"></a>チュートリアル:Visual Studio Code から App Service を作成する
+# <a name="3-create-the-app-service-from-visual-studio-code"></a>3:Visual Studio Code から App Service を作成する
 
 [前の手順: アプリを準備する](tutorial-deploy-app-service-on-linux-02.md)
 
@@ -19,7 +19,7 @@ ms.locfileid: "74466224"
 
 次の手順で必要に応じてカスタム スタートアップ ファイルを構成できるよう、この手順は、コードをデプロイする前に行います。
 
-1. **[Azure: App Service]** エクスプローラーで、 **+** コマンドを選択して新しい App Service を作成するか、またはコマンド パレット (**F1**) を開いて **[Azure App Service: Create New Web App]\(Azure App Service: 新しい Web アプリを作成する\)** を選択します。 (App Service の用語では、"Web アプリ" とは、Web アプリ コードの**ホスト**であって、アプリのコード自体ではありません)。
+1. **[Azure: App Service]** エクスプローラーで、 **+** コマンドを選択して新しい App Service を作成するか、またはコマンド パレット (**F1**) を開いて **[Azure App Service: 新しい Web アプリの作成]** を選択します。 (App Service の用語では、"Web アプリ" とは、Web アプリ コードの**ホスト**であって、アプリのコード自体ではありません)。
 
     ![App Service エクスプローラーで新しい App Service を作成する](media/deploy-azure/create-new-app-service-in-app-service-explorer.png)
 
@@ -32,7 +32,7 @@ ms.locfileid: "74466224"
 
     ![App Service の URL、リソース グループ、および App Service プラン](media/deploy-azure/url-for-your-new-app-service-and-resource-group-and-plan.png)
 
-1. App Service が正常に実行されていることを確認するために、 **[Azure: App Service]** エクスプローラーでサブスクリプションを展開し、App Service の名前を右クリックして、 **[Web サイトの参照]** を選択します。
+1. App Service が正常に動作していることを確認するには、 **[Azure: App Service]** エクスプローラーでサブスクリプションを展開し、App Service 名を右クリックして、 **[Web サイトの参照]** を選択します。
 
     ![App Service エクスプローラーの [App Service] にある [Web サイトの参照] コマンド](media/deploy-azure/select-command-to-browse-website-in-app-service.png)
 
@@ -53,6 +53,6 @@ ms.locfileid: "74466224"
 1. Azure portal で直接設定を作成した場合は、 **[Application Settings]\(アプリケーション設定\)** ノードを右クリックし、 **[Download Remote Settings]\(リモート設定のダウンロード\)** を選択することで、それらの設定を定義ファイルに保存できます。 このプロセスを通じて、それらの設定をポータルだけでなく自分のリポジトリにも確保することができます。
 
 > [!div class="nextstepaction"]
-> [App Service を作成しました](tutorial-deploy-app-service-on-linux-04.md)
+> [App Service を作成しました - 手順 4 に進む >>>](tutorial-deploy-app-service-on-linux-04.md)
 
 [問題が発生しました](https://www.research.net/r/PWZWZ52?tutorial=vscode-appservice-python&step=03-create-app-service)

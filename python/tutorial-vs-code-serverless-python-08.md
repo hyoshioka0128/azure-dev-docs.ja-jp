@@ -1,17 +1,17 @@
 ---
-title: チュートリアル:Azure Functions の Python コードで使用されるリソースをクリーンアップする
+title: 手順 8:Azure Functions の Python コードで使用されるリソースをクリーンアップする
 description: チュートリアルの手順 8、引き続き料金を請求されないように Azure リソースをクリーンアップする。
 ms.topic: conceptual
 ms.date: 01/15/2020
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 264c09a8d84c7115bb0a56d0455d576187695db0
-ms.sourcegitcommit: a8073315f751631ab983618fa9f812eb95d8b2dc
+ms.openlocfilehash: 1e8735f8cb1a3955fda50365a70274ae6c3c5230
+ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76125255"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77422196"
 ---
-# <a name="tutorial-clean-up-azure-resources-for-azure-functions"></a>チュートリアル:Azure Functions の Azure リソースをクリーンアップする
+# <a name="8-clean-up-azure-resources-for-azure-functions"></a>8:Azure Functions の Azure リソースをクリーンアップする
 
 [前の手順: ストレージ バインドを追加する](tutorial-vs-code-serverless-python-07.md)
 
@@ -21,7 +21,7 @@ ms.locfileid: "76125255"
 
 [!INCLUDE [delete-resource-group](includes/delete-resource-group.md)]
 
-Visual Studio Code には、 **[Azure: Functions]** エクスプローラーの [関数アプリ] のコンテキスト メニューに **[Delete Function App]\(関数アプリの削除\)** コマンドがあります。 ただし、このコマンドによって削除されるのは関数アプリのみであり、他のリソースは配置されたままになるため、継続的なコストが発生する可能性があります。
+Visual Studio Code では、 **[Azure: Functions]** エクスプローラーの Function App に **[Delete Function App]\(関数アプリの削除\)** コマンドというコンテキスト メニューがあります。 ただし、このコマンドによって削除されるのは関数アプリのみであり、他のリソースは配置されたままになるため、継続的なコストが発生する可能性があります。
 
 ## <a name="next-steps"></a>次のステップ
 
@@ -45,6 +45,6 @@ Visual Studio Code 用の Azure 拡張機能は他にもあります。役に立
 - [Azure リソース マネージャー ツール](https://marketplace.visualstudio.com/items?itemName=msazurermtools.azurerm-vscode-tools)
 
 > [!div class="nextstepaction"]
-> [終わりました](https://docs.microsoft.com/python/azure/?view=azure-python)
+> [完了しました。](https://docs.microsoft.com/python/azure/?view=azure-python)
 
 [問題が発生しました](https://www.research.net/r/PWZWZ52?tutorial=vscode-functions-python&step=08-clean-up-resources)

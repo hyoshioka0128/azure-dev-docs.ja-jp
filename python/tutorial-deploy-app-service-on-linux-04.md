@@ -1,17 +1,17 @@
 ---
-title: チュートリアル:Azure App Service on Linux の Python アプリ用のカスタム スタートアップ ファイルを構成する
+title: 手順 4:Azure App Service on Linux の Python アプリ用のカスタム スタートアップ ファイルを構成する
 description: チュートリアルの手順 4、Web アプリの起動方法を App Service に指定する。
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: e18d58a5caf18103063fabfa3101988399bbb722
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: d744b4a270c89b7feb826353366ba021345eac85
+ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74467053"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77422484"
 ---
-# <a name="tutorial-configure-a-custom-startup-file-for-python-apps-on-azure-app-service"></a>チュートリアル:Azure App Service の Python アプリ用のカスタム スタートアップ ファイルを構成する
+# <a name="4-configure-a-custom-startup-file-for-python-apps-on-azure-app-service"></a>4:Azure App Service の Python アプリ用のカスタム スタートアップ ファイルを構成する
 
 [前の手順: App Service を作成する](tutorial-deploy-app-service-on-linux-03.md)
 
@@ -21,7 +21,7 @@ ms.locfileid: "74467053"
 
 カスタム スタートアップ コマンドの具体的なユース ケースは次のとおりです。
 
-- 所有している **Flask** アプリのスタートアップ ファイルとアプリ オブジェクトそれぞれに、*application.py* と `app` **以外**の名前が付けられている。 つまり、プロジェクトのルート フォルダーに *application.py* が存在し、"*かつ*" Flask アプリ オブジェクトの名前が `app` である場合以外は、カスタム スタートアップ コマンドが必要となります。
+- 所有している **Flask** アプリのスタートアップ ファイルとアプリ オブジェクトそれぞれに、*application.py* と `app`**以外**の名前が付けられている。 つまり、プロジェクトのルート フォルダーに *application.py* が存在し、"*かつ*" Flask アプリ オブジェクトの名前が `app` である場合以外は、カスタム スタートアップ コマンドが必要となります。
 - 既定値 (`--bind=0.0.0.0 --timeout 600`) 以外の引数を使って Gunicorn Web サーバーを起動したい。
 
 ## <a name="create-a-startup-file"></a>スタートアップ ファイルを作成する
@@ -88,6 +88,6 @@ Gunicorn のいずれかの引数を変更したい場合は (`--timeout 1200` �
     ```
 
 > [!div class="nextstepaction"]
-> [スタートアップ ファイルを構成しました](tutorial-deploy-app-service-on-linux-05.md)
+> [スタートアップ ファイルを構成しました - 手順 5 に進む >>>](tutorial-deploy-app-service-on-linux-05.md)
 
 [問題が発生しました](https://www.research.net/r/PWZWZ52?tutorial=vscode-appservice-python&step=04-startup-command)

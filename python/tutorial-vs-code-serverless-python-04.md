@@ -1,17 +1,17 @@
 ---
-title: チュートリアル:VS Code を使用して Azure Functions の Python コードをローカルでデバッグする
+title: 手順 4:VS Code を使用して Azure Functions の Python コードをローカルでデバッグする
 description: チュートリアルの手順 4、VS Code デバッガーをローカルで実行して Python コードをチェックする。
 ms.topic: conceptual
 ms.date: 09/02/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: ffd5d433166c44edd8c021fd29cb7e43395df7ff
-ms.sourcegitcommit: ac68fb174d606c7af2bfa79fe32b8ca7b73c86a1
+ms.openlocfilehash: ddb6cd0b1c1cac308e7e7e8da5b658cda277586a
+ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75946686"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77422144"
 ---
-# <a name="tutorial-debug-the-azure-functions-python-code-locally"></a>チュートリアル:Azure Functions の Python コードをローカルでデバッグする
+# <a name="4-debug-the-azure-functions-python-code-locally"></a>4:Azure Functions の Python コードをローカルでデバッグする
 
 [前の手順: コード ファイルを調べる](tutorial-vs-code-serverless-python-03.md)
 
@@ -59,6 +59,6 @@ Visual Studio Code で Azure Functions の Python コードをローカルでデ
 1. 関数をローカルで徹底的にテストできたら、デバッガーを停止します ( **[デバッグ]**  >  **[デバッグの停止]** メニュー コマンドを使用するか、デバッグ ツールバーで **Disconnect** コマンドを使用します)。
 
 > [!div class="nextstepaction"]
-> [デバッガーをローカルで実行しました](tutorial-vs-code-serverless-python-05.md)
+> [デバッガーをローカルで実行しました - 手順 5 に進む >>>](tutorial-vs-code-serverless-python-05.md)
 
 [問題が発生しました](https://www.research.net/r/PWZWZ52?tutorial=vscode-functions-python&step=04-test-debug)

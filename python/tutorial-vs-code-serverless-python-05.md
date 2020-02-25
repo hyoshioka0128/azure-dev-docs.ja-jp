@@ -1,17 +1,17 @@
 ---
-title: チュートリアル:VS Code を使用して Python で Azure Functions をデプロイする
+title: 手順 5:VS Code を使用して Python で Azure Functions をデプロイする
 description: チュートリアルの手順 5、Python の関数コードを Azure にデプロイし、ローカル プロジェクトと Azure の間でのログのストリーム配信や設定の同期の方法を学習する。
 ms.topic: conceptual
 ms.date: 09/02/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 07af40c402104f07844c2cbe0d84c38c86f2fca2
-ms.sourcegitcommit: 68a4044b9fa3291c9e7e2f68ae0049328f9c01bb
+ms.openlocfilehash: 94f142bdaba07b272f840684057811fdc7fafde8
+ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74992508"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77422208"
 ---
-# <a name="tutorial-deploy-azure-functions-in-python"></a>チュートリアル:Python で Azure Functions をデプロイする
+# <a name="5-deploy-azure-functions-in-python"></a>5:Python で Azure Functions をデプロイする
 
 [前の手順: ローカルでデバッグする](tutorial-vs-code-serverless-python-04.md)
 
@@ -41,7 +41,7 @@ ms.locfileid: "74992508"
 
     **[Stream logs]\(ログをストリーミング\)** と **[Upload settings]\(設定をアップロード\)** については、次のセクションを参照してください。 **[View output]\(出力を表示\)** については、後続の手順 5 をご覧ください。
 
-1. デプロイ後、 **[出力]** ウィンドウには、Azure の公開エンドポイントも表示されます。
+1. デプロイ後、 **[出力]** ウィンドウには Azure のパブリック エンドポイントも表示されます (特定のエンドポイントの URL は、関数アプリに指定した名前と一致します)。
 
     ```output
     HTTP Trigger Urls:
@@ -70,6 +70,6 @@ func azure functionapp logstream <app_name> --browser
 ポータルまたは **Azure Explorer** で行った変更を *local.settings.json* ファイルに適用するには、 **[アプリケーション設定]** ノードを右クリックし、 **[Download remote settings]\(リモート設定のダウンロード\)** コマンドを選択します。 コマンド パレットを使用し、 **[Azure Functions:リモート設定のダウンロード]** コマンドを選択することもできます。
 
 > [!div class="nextstepaction"]
-> [関数をデプロイしました](tutorial-vs-code-serverless-python-06.md)
+> [関数をデプロイしました - 手順 6 に進む >>>](tutorial-vs-code-serverless-python-06.md)
 
 [問題が発生しました](https://www.research.net/r/PWZWZ52?tutorial=vscode-functions-python&step=05-deploy)

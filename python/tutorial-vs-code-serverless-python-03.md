@@ -1,17 +1,17 @@
 ---
-title: チュートリアル:VS Code で Azure Functions の Python コード ファイルを調べる
+title: 手順 3:VS Code で Azure Functions の Python コード ファイルを調べる
 description: チュートリアルの手順 3、Azure Functions が提供するテンプレートの Python コードを理解する。
 ms.topic: conceptual
 ms.date: 09/02/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 253bc4384f896c9114f2f1113cdf0ee2f290819d
-ms.sourcegitcommit: 68a4044b9fa3291c9e7e2f68ae0049328f9c01bb
+ms.openlocfilehash: 77dc4cb44158ded1dd5c6d1e19afb48272177a12
+ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74992497"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77422214"
 ---
-# <a name="tutorial-examine-the-python-code-files-in-visual-studio-code"></a>チュートリアル:Visual Studio Code で Python コード ファイルを調べる
+# <a name="3-examine-the-python-code-files-in-visual-studio-code"></a>3:Visual Studio Code で Python コード ファイルを調べる
 
 [前の手順: 関数を作成する](tutorial-vs-code-serverless-python-02.md)
 
@@ -91,6 +91,6 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
 - コードにより、名前が見つかった場合は、文字列 "Hello" の後ろに名前が追加されて返され、見つからなかった場合は、エラー メッセージが返されます。
 
 > [!div class="nextstepaction"]
-> [コード ファイルを調べました](tutorial-vs-code-serverless-python-04.md)
+> [コード ファイルを確認しました - 手順 4 に進む >>>](tutorial-vs-code-serverless-python-04.md)
 
 [問題が発生しました](https://www.research.net/r/PWZWZ52?tutorial=vscode-functions-python&step=03-examine-code-files)

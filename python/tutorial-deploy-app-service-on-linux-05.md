@@ -1,23 +1,23 @@
 ---
-title: チュートリアル:VS Code を使用して Azure App Service on Linux に Python Web アプリをデプロイする
+title: 手順 5:VS Code を使用して Azure App Service on Linux に Python Web アプリをデプロイする
 description: チュートリアルの手順 5、Web アプリのコードをデプロイする
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 02d906611ac5f2a56ba85202d89c7c39058b3bc1
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: 3f17fe3190857d1cc4faca84c9319e1c514cea4c
+ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74466093"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77422454"
 ---
-# <a name="tutorial-deploy-your-python-web-app-to-azure-app-service-on-linux"></a>チュートリアル:Azure App Service on Linux に Python Web アプリをデプロイする
+# <a name="5-deploy-your-python-web-app-to-azure-app-service-on-linux"></a>5:Azure App Service on Linux に Python Web アプリをデプロイする
 
 [前の手順: カスタム スタートアップ ファイルを構成する](tutorial-deploy-app-service-on-linux-04.md)
 
 この手順を使用して、Azure App Service に Python アプリをデプロイします。
 
-1. Visual Studio Code で **[Azure: App Service]** エクスプローラーを開いて、青色の上矢印を選択します。
+1. Visual Studio Code で **[Azure:App Service]** エクスプローラーを開き、青色の上矢印を選択します。
 
    ![App Service エクスプローラーで Web アプリを App Service にデプロイする](media/deploy-azure/deploy-web-app-to-app-service-in-app-service-explorer.png)
 
@@ -38,13 +38,13 @@ ms.locfileid: "74466093"
 
     ![App Service でアプリが正常に実行されている](media/deploy-azure/web-app-running-successfully-on-app-service.png)
 
-1. ファイルがデプロイされていることを確認するには、 **[Azure: App Service]** エクスプローラーで App Service を展開し、 **[ファイル]** を展開します。
+1. ファイルがデプロイされていることを確認するには、 **[Azure: App Service]** エクスプローラーで App Service を選択し、 **[ファイル]** を展開します。
 
     ![App Service エクスプローラーでデプロイ ファイルを確認する](media/deploy-azure/expand-files-node-to-check-deployment-of-web-app-files.png)
 
     *antenv* は、依存関係を含んだ仮想環境が App Service によって作成されるフォルダーです。 このノードを展開すると、*requirements.txt* に指定したパッケージが *antenv/lib/python3.7/site-packages* にインストールされていることを確認できます。
 
 > [!div class="nextstepaction"]
-> [アプリをデプロイしました](tutorial-deploy-app-service-on-linux-06.md)
+> [アプリをデプロイしました - 手順 6 に進む >>>](tutorial-deploy-app-service-on-linux-06.md)
 
 [問題が発生しました](https://www.research.net/r/PWZWZ52?tutorial=vscode-appservice-python&step=05-deploy-app)

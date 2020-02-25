@@ -1,17 +1,17 @@
 ---
-title: チュートリアル:Visual Studio Code から Azure App Service on Linux にデプロイするアプリを準備する
+title: 手順 2:Visual Studio Code から Azure App Service on Linux にデプロイするアプリを準備する
 description: チュートリアルの手順 2、アプリケーションの設定
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: d77da775a112185f7ccb81805272c5c70a2aecb3
-ms.sourcegitcommit: 367780fe48d977c82cb84208c128b0bf694b1029
+ms.openlocfilehash: 78a8bc92e05d0e13874345ab86907cfa4c29764b
+ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76825776"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77422469"
 ---
-# <a name="tutorial-prepare-your-app-for-deployment-to-azure-app-service"></a>チュートリアル:Azure App Service にデプロイするためにアプリを準備する
+# <a name="2-prepare-your-app-for-deployment-to-azure-app-service"></a>2:Azure App Service にデプロイするためにアプリを準備する
 
 [前の手順: 前提条件](tutorial-deploy-app-service-on-linux-01.md)
 
@@ -75,6 +75,6 @@ ms.locfileid: "76825776"
 いずれのケースも最善の方法は、アプリのコードとは無関係にデプロイおよび初期化された別個のデータベースを使用することです。
 
 > [!div class="nextstepaction"]
-> [アプリの準備が完了しました](tutorial-deploy-app-service-on-linux-03.md)
+> [アプリの準備ができました - 手順 3 に進む >>>](tutorial-deploy-app-service-on-linux-03.md)
 
 [問題が発生しました](https://www.research.net/r/PWZWZ52?tutorial=vscode-appservice-python&step=02-prepare-app)

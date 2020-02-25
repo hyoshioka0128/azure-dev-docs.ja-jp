@@ -1,17 +1,17 @@
 ---
-title: チュートリアル:コンテナー用の Azure App Service から Visual Studio Code にログをストリーム配信する
+title: 手順 4:コンテナー用の Azure App Service から Visual Studio Code にログをストリーム配信する
 description: チュートリアルの手順 4、Azure App Service のログを表示してその動作を監視する。
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: e9b54e53763b729f5042cfb0d8df438650fd362f
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: 4f448945c0e1d1eda7870eb633d644535da7be0e
+ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74466994"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77422223"
 ---
-# <a name="tutorial-stream-logs-from-azure-app-service-for-a-container"></a>チュートリアル:コンテナー用の Azure App Service からログをストリーム配信する
+# <a name="4-stream-logs-from-azure-app-service-for-a-container"></a>4:コンテナー用の Azure App Service からログをストリーム配信する
 
 [前の手順: 変更を加えて再デプロイする](tutorial-deploy-containers-03.md)
 
@@ -39,6 +39,6 @@ VS Code 内から、Azure App Service で実行中のサイトのログを表示
 1. そのアプリ内を移動して、さまざまな HTTP 要求に関する追加出力を確認します。
 
 > [!div class="nextstepaction"]
-> [ログを確認しました](tutorial-deploy-containers-05.md)
+> [ログを確認しました - 手順 5 に進む >>>](tutorial-deploy-containers-05.md)
 
 [問題が発生しました](https://www.research.net/r/PWZWZ52?tutorial=vscode-appservice-containers&step=04-stream-logs)

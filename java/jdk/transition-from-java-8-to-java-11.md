@@ -10,12 +10,12 @@ ms.devlang: java
 ms.topic: article
 ms.date: 11/19/2019
 ms.author: dagrieve
-ms.openlocfilehash: a5e36d535cba39728d28c1f2aa64985863103ee6
-ms.sourcegitcommit: aceed8548ad4529a81d83eb15a095edc8607cac5
+ms.openlocfilehash: 21b302225f8b28099e36622ae5e32a84c947a58a
+ms.sourcegitcommit: c34647aee3b9a72fa0ee6aeac2dfa1e36d67c7ef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/18/2020
-ms.locfileid: "77441089"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77504552"
 ---
 # <a name="transition-from-java-8-to-java-11"></a>Java 8 から Java 11 への移行
 
@@ -26,7 +26,7 @@ Java 8 から Java 11 にコードを移行するための万能のソリュー�
 
 Java 11 への移行は苦労する価値があります。 Java 8 以降、新機能が追加され、機能強化が行われてきました。 これらの機能と機能強化により、起動、パフォーマンス、メモリ使用量が向上し、コンテナーとの統合が強化されます。 また、開発者の生産性を向上させる API に追加や変更が加えられています。 
 
-このドキュメントでは、コードを検査するツールについて説明します。 また、発生する可能性のある問題とその解決に関する推奨事項についても説明します。 「[Oracle JDK Migration Guide (Oracle JDK 移行ガイド)](https://docs.oracle.com/en/java/javase/11/migrate/index.htm)」など、他のガイドも参照することをお勧めします。 既存のコード [モジュラー](http://openjdk.java.net/projects/jigsaw)の作成方法については、ここでは説明しません。  
+このドキュメントでは、コードを検査するツールについて説明します。 また、発生する可能性のある問題とその解決に関する推奨事項についても説明します。 「[Oracle JDK Migration Guide (Oracle JDK 移行ガイド)](https://docs.oracle.com/en/java/javase/11/migrate/index.html)」など、他のガイドも参照することをお勧めします。 既存のコード [モジュラー](http://openjdk.java.net/projects/jigsaw)の作成方法については、ここでは説明しません。  
 
 
 ## <a name="the-toolbox"></a>ツールボックス
@@ -125,7 +125,7 @@ JDK 11 を使用してコンパイルする場合は、ビルド スクリプト
 ### <a name="check-command-line-options"></a>コマンドライン オプションを確認する
 
 Java 11 上で実行する前に、コマンドライン オプションのクイック スキャンを実行します。 
-[削除されたオプション](#unrecognized options)を選択すると、Java 仮想マシン (JVM) が終了します。 GC ログ オプションを使用する場合は、Java 8 から大幅に変更されたため、このチェックは特に重要です。 [JaCoLine](https://jacoline.dev/about) ツールは、コマンドライン オプションを使用して問題を検出するために適しています。 
+[削除されたオプション](#unrecognized-options)を選択すると、Java 仮想マシン (JVM) が終了します。 GC ログ オプションを使用する場合は、Java 8 から大幅に変更されたため、このチェックは特に重要です。 [JaCoLine](https://jacoline.dev/about) ツールは、コマンドライン オプションを使用して問題を検出するために適しています。 
 
 ### <a name="check-third-party-libraries"></a>サードパーティ製ライブラリを確認する
 

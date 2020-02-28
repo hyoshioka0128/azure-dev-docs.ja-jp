@@ -4,12 +4,12 @@ description: Java アプリケーションを開発して実行するための�
 ms.topic: conceptual
 ms.date: 04/09/2019
 ms.custom: seo-java-september2019
-ms.openlocfilehash: 3e0bb0e457d79f337c36b0c5649f471061a2a162
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: 5a54b81e1df649eea6716682059744a28ecff200
+ms.sourcegitcommit: 6ffa53b933da524e09911b164bba8515722bfa91
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74812270"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77629413"
 ---
 # <a name="java-long-term-support-for-azure-and-azure-stack"></a>Azure および Azure Stack の Java 長期サポート
 
@@ -20,13 +20,13 @@ Azure と Azure Stack を使用する Java 開発者は、[Azul Zulu for Azure -
 
 ## <a name="long-term-support-lts"></a>長期サポート (LTS)
 
-* [Java 11](https://www.azul.com/downloads/azure-only/zulu/#java11)
-* [Java 8](https://www.azul.com/downloads/azure-only/zulu/#java8)
-* [Java 7](https://www.azul.com/downloads/azure-only/zulu/#java7)
+* [Java 11](https://www.azul.com/downloads/azure-only/zulu/?&version=java-11-lts)
+* [Java 8](https://www.azul.com/downloads/azure-only/zulu/?&version=java-8-lts)
+* [Java 7](https://www.azul.com/downloads/azure-only/zulu/?&version=java-7-lts)
 
 ## <a name="technical-preview"></a>テクニカル プレビュー
 
-* [Java 12](https://www.azul.com/downloads/azure-only/zulu/#java12)
+* [Java 13](https://www.azul.com/downloads/azure-only/zulu/?&version=java-13)
 
 ## <a name="what-is-the-zulu-openjdk-for-azure"></a>Azure の Zulu OpenJDK とは何ですか?
 
@@ -39,10 +39,10 @@ OpenJDK の Azul Zulu for Azure - Enterprise Edition ビルドは、Microsoft �
 * 次のような多くの Azure サービスを稼働させるために Microsoft Azure で使用。
   * App Service Windows
   * App Service Linux
-  * Functions
+  * 関数
   * Service Fabric
   * HDInsight
-  * Search
+  * 検索
   * Azure DevOps
   * Cloud Shell  
 
@@ -52,10 +52,10 @@ Azul Systems は、Java SE 7、8、11 以降の Java のすべての長期サポ
 
 |Java SE LTS  |サポート期限  |
 |---------|----------|
-|[![サポートされている Java バージョン - Java 7](../media/jdk/supported-java-versions-java-7.png)](https://www.azul.com/downloads/azure-only/zulu/#java7) |2023 年 7 月 |
-|[![サポートされている Java バージョン - Java 8](../media/jdk/supported-java-versions-java-8.png)](https://www.azul.com/downloads/azure-only/zulu/#java8) |2025 年 3 月|
-|[![サポートされている Java バージョン - Java 11](../media/jdk/supported-java-versions-java-11.png)](https://www.azul.com/downloads/azure-only/zulu/#java11) |2026 年 9 月|
-|[![サポートされている Java バージョン - Java 12](../media/jdk/supported-java-versions-java-12.png)]() |**プレビュー**|
+|[![サポートされている Java バージョン - Java 7](../media/jdk/supported-java-versions-java-7.png)](https://www.azul.com/downloads/azure-only/zulu/?&version=java-7-lts) |2023 年 7 月 |
+|[![サポートされている Java バージョン - Java 8](../media/jdk/supported-java-versions-java-8.png)](https://www.azul.com/downloads/azure-only/zulu/?&version=java-8-lts) |2025 年 3 月|
+|[![サポートされている Java バージョン - Java 11](../media/jdk/supported-java-versions-java-11.png)](https://www.azul.com/downloads/azure-only/zulu/?&version=java-11-lts) |2026 年 9 月|
+|[![サポートされている Java バージョン - Java 13](../media/jdk/supported-java-versions-java-13.png)](https://www.azul.com/downloads/azure-only/zulu/?&version=java-13) |**プレビュー**|
 
 これらの JDK リリースには、四半期ごとのセキュリティ更新プログラムとバグ修正が含まれ、必要に応じて、重要なアウトオブバンドの更新プログラムと修正プログラムも含まれます。  このサポートには、Java 11 などの新しいバージョンの Java で報告されたセキュリティ更新プログラムとバグ修正の Java 7 および 8 へのバック ポーティングが含まれており、古いバージョンの Java の継続的な安定性とセキュリティが確保されます。  Azure のお客様は、予定外の Java SE サブスクリプション料金を負担することなく、これらのセキュリティ更新プログラムとプラットフォームのバグ修正を入手できます。
 
@@ -127,7 +127,7 @@ Azul Zulu for Azure - Enterprise Edition JDK リリース:
 
 Java 開発者は、Oracle JDK や Red Hat JDK などの独自の Java ランタイムを Azure に取り込んで、セキュリティ保護されたインフラストラクチャと機能豊富なサービスを利用できます。 Java 開発者は、Azure 上の Windows または Linux 仮想マシンで Java ワークロードを実行するために Oracle Java SE の運用エディションも利用できます。
 
-## <a name="use-for-local-development"></a>ローカル開発に使用 
+## <a name="use-for-local-development"></a>ローカル開発に使用
 
 開発者は、Azure および Azure Stack 用の Java JDK を[ダウンロード](https://www.azul.com/downloads/azure-only/zulu/)して、ローカル開発環境で使用できます。 ダウンロードは、Windows、Linux、macOS で利用できます。 Linux を使用している開発者は、[yum](https://www.azul.com/downloads/azure-only/zulu/#yum-repo) および [apt](https://www.azul.com/downloads/azure-only/zulu/#apt-repo) パッケージ マネージャーを使ってパッケージを入手することもできます。
 

@@ -4,16 +4,16 @@ description: pip または GitHub を使用して Azure SDK for Python をイン
 ms.date: 10/31/2019
 ms.topic: conceptual
 ms.custom: seo-python-october2019
-ms.openlocfilehash: de36effc1787c83d137f84f8e0d670c97c71cdcf
-ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
+ms.openlocfilehash: c244280703400a3dabd150c10e66550dbc064abc
+ms.sourcegitcommit: c34647aee3b9a72fa0ee6aeac2dfa1e36d67c7ef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/17/2020
-ms.locfileid: "77422502"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77504555"
 ---
 # <a name="install-the-azure-sdk-for-python"></a>Azure SDK for Python をインストールする
 
-Azure SDK for Python には、Python コードから Azure を操作するための API が用意されています。 必要に応じて SDK から個々のライブラリをインストールすることも、ライブラリの完全なセットをまとめてインストールすることもできます。
+Azure SDK for Python には、Python コードから Azure を操作するための API が用意されています。 必要に応じて、SDK から個々のライブラリをインストールします。
 
 Azure SDK for Python は、CPython バージョン2.7 と 3.5.3 以降、および PyPy 5.4 以降でテストおよびサポートされています。 また、開発者は SDK を IronPython や Jython などの他のインタープリターと共に使用しますが、個別の問題や非互換性が発生する場合があります。 Python インタープリターが必要な場合は [python.org/downloads](https://www.python.org/downloads) から最新バージョンをインストールしてください。
 

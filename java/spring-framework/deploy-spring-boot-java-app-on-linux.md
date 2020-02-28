@@ -9,12 +9,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: mvc
-ms.openlocfilehash: 9288f680f5eb92046ada7ce420d64de2e5301fcc
-ms.sourcegitcommit: aceed8548ad4529a81d83eb15a095edc8607cac5
+ms.openlocfilehash: 5d0e196a6d0c65a6bf8f159f880b0890341a9fc3
+ms.sourcegitcommit: c34647aee3b9a72fa0ee6aeac2dfa1e36d67c7ef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/18/2020
-ms.locfileid: "77440975"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77504437"
 ---
 # <a name="deploy-a-spring-boot-application-on-azure-app-service-for-container"></a>コンテナー用 Azure App Service で Spring Boot アプリケーションをデプロイする
 
@@ -126,7 +126,7 @@ ms.locfileid: "77440975"
 
 `<from>/<image>` に基本イメージを指定します。ここでは `openjdk:8-jre-alpine` です。 基本イメージからビルドする最終イメージの名前を `<to>/<image>` に指定します。  
 
-認証 `{docker.image.prefix}` は、前に示したレジストリ ページの**ログイン サーバー**です。 `{project.artifactId}` は、プロジェクトの最初の Mavin ビルドに由来する JAR ファイルの名前とバージョン番号です。
+認証 `{docker.image.prefix}` は、前に示したレジストリ ページの**ログイン サーバー**です。 `{project.artifactId}` は、プロジェクトの最初の Maven ビルドに由来する JAR ファイルの名前とバージョン番号です。
 
 レジストリ ペインのユーザー名とパスワードを `<to>/<auth>` ノードに指定します。 次に例を示します。
 

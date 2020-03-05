@@ -4,12 +4,12 @@ description: チュートリアルの手順 6、2 つ目の関数を追加して
 ms.topic: conceptual
 ms.date: 09/02/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 45a17a403073110fec03c077d6009e26928d2310
-ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
+ms.openlocfilehash: 0f28ef3b6d57abe75c286839001078875787b849
+ms.sourcegitcommit: aa2c66b0fecce51862cc9115f68d39c770f0b2ae
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/17/2020
-ms.locfileid: "77422158"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77709659"
 ---
 # <a name="6-add-a-second-python-function-to-azure-functions"></a>6: 2 つ目の Python 関数を Azure Functions に追加する
 
@@ -104,13 +104,11 @@ ms.locfileid: "77422158"
 
 1. F5 を押すか、 **[デバッグ]**  >  **[デバッグの開始]** メニュー コマンドを選択し、デバッガーを開始します。 **[出力]** ウィンドウには、プロジェクトの両方のエンドポイントが表示されるはずです。
 
-    ```output
+    <pre>
     Http Functions:
-
             DigitsOfPi: [GET] http://localhost:7071/api/DigitsOfPi
-
             HttpExample: [GET,POST] http://localhost:7071/api/HttpExample
-    ```
+    </pre>
 
 1. ブラウザーで、あるいは curl から、`http://localhost:7071/api/DigitsOfPi?digits=125` に要求を行い、出力を確認します (コード アルゴリズムは完全には正しくないことに気付かれるかもしれませんが、改善は皆様におまかせします!)完了したらデバッガーを停止します。
 

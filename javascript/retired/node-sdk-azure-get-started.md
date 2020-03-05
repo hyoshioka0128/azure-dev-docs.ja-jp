@@ -3,12 +3,12 @@ title: Node.js 用 Azure モジュールの概要
 description: Node.js 用の Azure モジュールを使用した認証およびリソース管理の概要
 ms.date: 06/17/2017
 ms.topic: conceptual
-ms.openlocfilehash: ecd256b28e666368d3b15a97a198aacc82a0f823
-ms.sourcegitcommit: 6fa28ea675ae17ffb9ac825415e2e26a3dfe7107
+ms.openlocfilehash: 600c10c052a3aa95eb4dc04de0166a6974ede060
+ms.sourcegitcommit: aa2c66b0fecce51862cc9115f68d39c770f0b2ae
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "77002276"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77709899"
 ---
 # <a name="get-started-with-the-azure-modules-for-nodejs"></a>Node.js 用 Azure モジュールの概要
 
@@ -38,7 +38,7 @@ npm install --save azure ms-rest-azure azure-arm-compute azure-arm-network azure
 
 [Azure CLI 2.0 を使ってサービス プリンシパルを作成](/cli/azure/create-an-azure-service-principal-azure-cli)し、その出力をキャプチャしてください。 password 引数には、`MY_SECURE_PASSWORD` ではなく、[セキュリティで保護されたパスワード](/azure/active-directory/active-directory-passwords-policy)を指定する必要があります。
 
-```azurecli-interactive
+```azurecli
 az ad sp create-for-rbac --name AzureNodeTest --password MY_SECURE_PASSWORD
 ```
 
@@ -62,7 +62,7 @@ export AZURE_TENANT XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
 
 [az account show](/cli/azure/account#az-account-show) でサブスクリプションの ID を取得します。
 
-```azurecli-interactive
+```azurecli
 az account show
 ```
 
@@ -181,7 +181,7 @@ node createVM.js
 
 このコードの実行後、新しい仮想マシンの IP を取得し、コードの `adminPass` の値を使って SSH でログインします。
 
-```azurecli-interactive
+```azurecli
 az vm list-ip-addresses --name newLinuxVM
 ```
 
@@ -248,7 +248,7 @@ node uploadFile.js
 
 リソース グループを削除して、このガイドで作成したリソースを削除してください。
 
-```azurecli-interactive
+```azurecli
 az group delete --name myResourceGroup
 ```
 

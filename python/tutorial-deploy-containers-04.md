@@ -4,12 +4,12 @@ description: チュートリアルの手順 4、Azure App Service のログを�
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 4f448945c0e1d1eda7870eb633d644535da7be0e
-ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
+ms.openlocfilehash: b6c8d85ca74359863aca5b4e83cf96107e5a8e88
+ms.sourcegitcommit: aa2c66b0fecce51862cc9115f68d39c770f0b2ae
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/17/2020
-ms.locfileid: "77422223"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77709789"
 ---
 # <a name="4-stream-logs-from-azure-app-service-for-a-container"></a>4:コンテナー用の Azure App Service からログをストリーム配信する
 
@@ -23,9 +23,9 @@ VS Code 内から、Azure App Service で実行中のサイトのログを表示
 
 1. ログを有効にしてアプリを再起動するよう求められたら、 **[はい]** と回答します。 アプリが再起動すると、VS Code の [出力] パネルが開き、ログ ストリームに接続されます。
 
-1. 数秒後、ログストリーミング サービスに接続されていることを示すメッセージが表示されます。
+1. 数秒後、ログストリーミング サービスに接続されていることを示すメッセージが出力に表示されます。
 
-    ```bash
+    <pre>
     Connecting to log stream...
     2018-09-27T20:14:26  Welcome, you are now connected to log-streaming service.
 
@@ -34,7 +34,7 @@ VS Code 内から、Azure App Service で実行中のサイトのログを表示
     2018-09-27 20:14:59.270 INFO  - docker run -d -p 24138:8000 --name vsdocs-django-sample-container_0 -e WEBSITES_PORT=8000 -e WEBSITE_SITE_NAME=vsdocs-django-sample-container -e WEBSITE_AUTH_ENABLED=False -e WEBSITE_ROLE_INSTANCE_ID=0 -e WEBSITE_INSTANCE_ID=02c705ae24eaf5f298e553a9c2724b9fe4485707c2d1c36137cd02931091e561 -e HTTP_LOGGING_ENABLED=1 vsdocsregistry.azurecr.io/python-sample-vscode-django-tutorial:latest
 
     2018-09-27 20:15:06.216 INFO  - Container vsdocs-django-sample-container_0 for site vsdocs-django-sample-container initialized successfully.
-    ```
+    </pre>
 
 1. そのアプリ内を移動して、さまざまな HTTP 要求に関する追加出力を確認します。
 

@@ -3,12 +3,12 @@ title: Visual Studio Code から Docker コンテナーを Azure App Service に
 description: チュートリアル パート 1、概要と前提条件。
 ms.topic: conceptual
 ms.date: 09/20/2019
-ms.openlocfilehash: 2d6721060281fb73d31576caa47f316f2d078d29
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: 98ebb6bd857216cb395eb8cc62faa3d6ee30e3eb
+ms.sourcegitcommit: aa2c66b0fecce51862cc9115f68d39c770f0b2ae
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74467152"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77709836"
 ---
 # <a name="deploy-containers-to-azure-app-service"></a>Azure App Service にコンテナーをデプロイする
 
@@ -45,9 +45,9 @@ docker --version
 
 出力は次のようになります。
 
-```output
+<pre>
 Docker Version 17.12.0-ce, build c97c6d6
-```
+</pre>
 
 > [!div class="nextstepaction"]
 > [Docker 拡張機能をインストールしました](tutorial-vscode-docker-node-02.md) [問題が発生しました](https://www.research.net/r/PWZWZ52?tutorial=docker-extension&step=getting-started)

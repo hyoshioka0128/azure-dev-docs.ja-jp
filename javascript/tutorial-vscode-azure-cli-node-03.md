@@ -3,12 +3,12 @@ title: アプリをホストするための Azure App Service を Azure CLI か�
 description: チュートリアル パート 3、App Service を作成する
 ms.topic: conceptual
 ms.date: 09/24/2019
-ms.openlocfilehash: afac5aa2f610384b537c1f235b99cd29e6ff86d0
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: 827bcde79336304f424a283ccbdc4a4282a50bf7
+ms.sourcegitcommit: aa2c66b0fecce51862cc9115f68d39c770f0b2ae
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74466773"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77709889"
 ---
 # <a name="create-the-app-service"></a>App Service の作成
 
@@ -18,7 +18,7 @@ ms.locfileid: "74466773"
 
 1. ターミナルまたはコマンド プロンプトで次のコマンドを使用して、App Service の**リソース グループ**を作成します。 リソース グループは、基本的に、Web サイト、データベース、Azure Functions など、Azure におけるアプリ リソースの名前付きコレクションです。
 
-    ```bash
+    ```azurecli
     az group create --name myResourceGroup --location westus
     ```
 
@@ -28,13 +28,13 @@ ms.locfileid: "74466773"
 
 1. 次のコマンドを実行して、後続コマンド用の既定のリソース グループとリージョンを設定します。 これにより、毎回これらの値を指定する必要がなくなります。 (このコマンドには、成功時の出力はありません。)
 
-    ```bash
+    ```azurecli
     az configure --defaults group=myResourceGroup location=westus
     ```
 
 1. 次のコマンドを実行して、App Service で使用される基の仮想マシンを定義する **App Service プラン**を作成します。
 
-    ```bash
+    ```azurecli
     az appservice plan create --name myPlan --sku F1
     ```
 
@@ -42,7 +42,7 @@ ms.locfileid: "74466773"
 
 1. 次のコマンドを実行して、App Service を作成します。`<your_app_name>` は、URL `http://<your_app_name>.azurewebsites.net` になる一意の名前に置き換えます。 PowerShell コマンドは少し異なることに注意してください。 `--runtime "node|6.9"` 引数は、サーバーでノード バージョン 6.9.x を使用するように Azure に指示します。
 
-    ```bash
+    ```azurecli
     az webapp create --name <your_app_name> --plan myPlan --runtime "node|6.9"
     ```
 
@@ -57,7 +57,7 @@ ms.locfileid: "74466773"
 
 1. 次のコマンドを実行して、新しく作成された App Service をブラウザーで開きます。ここでも、`<your_app_name>` は、使用した名前に置き換えます。
 
-    ```bash
+    ```azurecli
     az webapp browse --name <your_app_name>
     ```
 

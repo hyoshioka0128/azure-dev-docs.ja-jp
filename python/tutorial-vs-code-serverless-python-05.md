@@ -4,12 +4,12 @@ description: チュートリアルの手順 5、Python の関数コードを Azu
 ms.topic: conceptual
 ms.date: 09/02/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 94f142bdaba07b272f840684057811fdc7fafde8
-ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
+ms.openlocfilehash: 425fb745cec74672cfabc6c3c5eab96821a43224
+ms.sourcegitcommit: aa2c66b0fecce51862cc9115f68d39c770f0b2ae
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/17/2020
-ms.locfileid: "77422208"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77709759"
 ---
 # <a name="5-deploy-azure-functions-in-python"></a>5:Python で Azure Functions をデプロイする
 
@@ -43,10 +43,11 @@ ms.locfileid: "77422208"
 
 1. デプロイ後、 **[出力]** ウィンドウには Azure のパブリック エンドポイントも表示されます (特定のエンドポイントの URL は、関数アプリに指定した名前と一致します)。
 
-    ```output
+    <pre>
     HTTP Trigger Urls:
-      HttpExample: https://vscode-azure-functions.azurewebsites.net/api/HttpExample
-    ```
+
+          HttpExample: https://vscode-azure-functions.azurewebsites.net/api/HttpExample
+    </pre>
 
     このエンドポイントを使用し、ローカルで実行したものと同じテストを実行します。要求本文には、URL パラメーターと JSON データを含む要求の一方または両方を使用します。 パブリック エンドポイントの結果は、前に[パート 4](tutorial-vs-code-serverless-python-04.md) でテストしたローカル エンドポイントの結果と一致するはずです。
 
@@ -56,7 +57,7 @@ ms.locfileid: "77422208"
 
 ただし、現在のところ、これらのコマンドは動作しません。 ログ ストリーミングは代わりに、次のコマンドを実行することでブラウザーで実行できます。`<app_name>` は、Azure の Functions アプリの名前に変更してください。
 
-```bash
+```
 # Replace <app_name> with the name of your Functions app on Azure
 func azure functionapp logstream <app_name> --browser
 ```

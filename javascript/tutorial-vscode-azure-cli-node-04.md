@@ -3,12 +3,12 @@ title: Azure CLI を使用して Azure App Service にアプリ コードをデ�
 description: チュートリアル パート 4、Web サイトをデプロイする
 ms.topic: conceptual
 ms.date: 09/24/2019
-ms.openlocfilehash: 4911ccdf4003b44359d40c58d1b924e6bf88c829
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: 668d055a56eae2eb365884a41fcc515aae5fb229
+ms.sourcegitcommit: aa2c66b0fecce51862cc9115f68d39c770f0b2ae
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74467174"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77709799"
 ---
 # <a name="deploy-the-app-to-app-service"></a>アプリを App Service にデプロイする
 
@@ -26,23 +26,23 @@ ms.locfileid: "74467174"
 
 1. 次のコマンドを実行して、Azure にデプロイ資格情報を設定します。`username` と `pPassword` は、ご自分の資格情報に置き換えてください。 このコマンドは、成功すると JSON 出力を表示します。
 
-    ```bash
+    ```azurecli
     az webapp deployment user set --user-name <username> --password <password>
     ```
 
 1. 次のコマンドを実行して、アプリ コードをプッシュする Git エンドポイントを取得します。`<your_app_name>` は、前の手順で App Service を作成するときに使用した名前に置き換えてください。
 
-    ```bash
+    ```azurecli
     az webapp deployment source config-local-git --name <your_app_name>
     ```
 
     このコマンドの出力は次のようになります。
 
-    ```output
+    <pre>
     {
       "url": "https://username@msdocs-node-cli.scm.azurewebsites.net/msdocs-node-cli.git"
     }
-    ```
+    </pre>
 
 1. 次のコマンドを実行して、`azure` という名前の新しいリモートを Git に設定します。前の手順の URL から*ユーザー名を省略*したものを使用します。 前の手順の例を使用すると、コマンドは次のようになります。
 
@@ -63,7 +63,7 @@ ms.locfileid: "74467174"
 > [!TIP]
 > エラー `Object #<eventemitter> has no method 'hrtime'` が発生した場合は、サイトでノードのランタイム バージョンを設定することが必要な可能性があります。 次のコマンドは、ノード バージョン `6.9.1` を使用するようにサイトに指示します。 サイトで、ノードの異なるバージョンまたはより新しいバージョンが必要な場合は、完全なセマンティック バージョン `major.minor.patch` を指定します。
 >
-> ```bash
+> ```azurecli
 > az webapp config appsettings set --name <your_app_name> --settings
 > ```
 

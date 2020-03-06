@@ -3,20 +3,20 @@ title: Azure CLI を使用して Azure に Node.js アプリをデプロイし�
 description: チュートリアル パート 7、リソースをクリーンアップする
 ms.topic: conceptual
 ms.date: 09/24/2019
-ms.openlocfilehash: 7998eb641090b252455613a46ae41e45e5cd1c1d
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: 183539b8e2f0246bd812e5fa364a885b75626819
+ms.sourcegitcommit: aa2c66b0fecce51862cc9115f68d39c770f0b2ae
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74466751"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77709859"
 ---
-# <a name="clean-up-resources"></a>リソースのクリーンアップ
+# <a name="clean-up-resources"></a>リソースをクリーンアップする
 
 [前の手順:変更を加えて再デプロイする](tutorial-vscode-docker-node-06.md)
 
 作成した App Service には、バッキング App Service プランが含まれていて料金が発生する可能性があります。 リソースをクリーンアップするには、ターミナルまたはコマンド プロンプトで次のコマンドを実行します。
 
-```bash
+```azurecli
 az group delete --name myResourceGroup
 ```
 

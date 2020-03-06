@@ -3,12 +3,12 @@ title: Azure App Service からログをストリーム配信する
 description: チュートリアル パート5、ログを表示する
 ms.topic: conceptual
 ms.date: 09/24/2019
-ms.openlocfilehash: 8a173bbb7f53de2189e0ecb99b851d77704ff92d
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: f96deb992af0d446876265e1b8214879ddff45e6
+ms.sourcegitcommit: aa2c66b0fecce51862cc9115f68d39c770f0b2ae
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74466765"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77709879"
 ---
 # <a name="stream-logs-from-app-service"></a>Azure App Service からログをストリーム配信する
 
@@ -18,23 +18,23 @@ ms.locfileid: "74466765"
 
 1. 次のコマンドを実行して、ログ記録を開始します。`<your_app_name>` は、お使いの App Service の名前に置き換えてください。
 
-    ```bash
+    ```azurecli
     az webapp log tail --name <your_app_name>
     ```
 
-1. 数秒後、ログ ストリーミング サービスに接続されていることを示すメッセージが表示されます。
+1. 数秒後、ログ ストリーミング サービスに接続されていることを示すメッセージが出力に表示されます。
 
-    ```bash
+    <pre>
     2019-09-25T13:39:23  Welcome, you are now connected to log-streaming service. The default timeout is 2 hours. Change the timeout with the App Setting SCM_LOGSTREAM_TIMEOUT (in seconds).
-    ```
+    </pre>
 
 1. ブラウザーで数回、ページを最新の情報に更新して追加の出力を生成します。
 
-    ```bash
+    <pre>
     GET / 304 2.327 ms - -
     GET / 304 0.957 ms - -
     GET / 304 2.435 ms - -
-    ```
+    </pre>
 
 1. **Ctrl**+**C** を押してログ セッションを終了します。
 

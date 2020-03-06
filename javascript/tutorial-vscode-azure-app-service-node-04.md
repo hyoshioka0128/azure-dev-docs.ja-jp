@@ -3,12 +3,12 @@ title: Azure App Service から Visual Studio Code にログをストリーム�
 description: チュートリアル パート 4、ログを表示または tail する。
 ms.topic: conceptual
 ms.date: 09/20/2019
-ms.openlocfilehash: cc140d7751f9b014f1a16065fd4c65b481c7d1ae
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: 4048fd1d5d288d88cadf0a865c2c5b0ddd517daf
+ms.sourcegitcommit: aa2c66b0fecce51862cc9115f68d39c770f0b2ae
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74466811"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77709809"
 ---
 # <a name="stream-logs-from-azure-app-service"></a>Azure App Service からログをストリーム配信する
 
@@ -26,11 +26,11 @@ ms.locfileid: "74466811"
 
 1. アプリが再起動すると、VS Code の **[出力]** ウィンドウが開き、ログ ストリームへの接続が示され、出力が表示されます。
 
-    ```bash
+    <pre>
     Connecting to log-streaming service...
     2019-09-20 17:33:51.428 INFO  - Container msdocs-vscode-node_2 for site msdocs-vscode-node initialized successfully.
     2019-09-20 17:33:56.500 INFO  - Container logs
-    ```
+    </pre>
 
 1. ブラウザーで数回、Web ページを最新の情報に更新して追加のログ出力を確認します。
 

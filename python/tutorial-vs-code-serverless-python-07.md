@@ -4,12 +4,12 @@ description: チュートリアルの手順 7、メッセージを Azure Storage
 ms.topic: conceptual
 ms.date: 09/02/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 2203104d53387254284e75e322367f2e7142bfad
-ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
+ms.openlocfilehash: 4ed8fee52e466643ac73a96ef1529bf492418256
+ms.sourcegitcommit: f1e3c72c38376b15f5313d4bfe5fefdbfc022dc9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/17/2020
-ms.locfileid: "77422175"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79022309"
 ---
 # <a name="7-add-a-storage-binding-for-azure-functions-in-python"></a>7:Python で Azure Functions のストレージ バインドを追加する
 
@@ -92,7 +92,7 @@ Azure Functions のストレージ バインドを追加できます。 "_バイ
 
     1. Azure Storage Explorer でキューに移動し、キューを調べます。Azure Storage Explorer は Visual Studio と統合されますが、詳細は「[Visual Studio Code を使用して関数を Azure Storage に接続する](/azure/azure-functions/functions-add-output-binding-storage-queue-vs-code)」にあります。特に「[出力キューを確認する](/azure/azure-functions/functions-add-output-binding-storage-queue-vs-code#examine-the-output-queue)」セクションをご覧ください。
 
-    1. Azure CLI を使用し、ストレージ キューにクエリを実行します。詳細は「[ストレージ キューに対するクエリを実行する](/azure/azure-functions/functions-add-output-binding-storage-queue-python)」にあります。
+    1. Azure CLI を使用し、ストレージ キューにクエリを実行します。詳細は「[ストレージ キューに対するクエリを実行する](/azure/azure-functions/functions-add-output-binding-storage-queue-cli?pivots=programming-language-python)」にあります。
 
 1. クラウドでテストするには、 **[Deploy to Function App]\(Function App にデプロイする\)** を **[Azure:Functions]** エクスプローラーで使用し、コードを再デプロイします。 プロンプトが表示されたら、前に作成した Function App を選択します。 デプロイが完了したら (数分かかります!)、繰り返しになりますが、 **[出力]** ウィンドウにテストを繰り返すことができる公開エンドポイントが表示されます。
 

@@ -3,12 +3,12 @@ title: Visual Studio Code から Azure Functions アプリケーションを作�
 description: チュートリアル パート2、Azure Functions アプリを作成する
 ms.topic: conceptual
 ms.date: 09/23/2019
-ms.openlocfilehash: 6c0adc93899eb9480008774fe35f3aa3b2ab5842
-ms.sourcegitcommit: d9f585bea70b01ba6657a75ea245d8519d4a5aad
+ms.openlocfilehash: fb7b5f3bab0dbde0a04671126ad7aa8e5be16ba0
+ms.sourcegitcommit: 21ddeb9bd9abd419d143dc2ca8a7c821a1758cf9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2020
-ms.locfileid: "76967244"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79089956"
 ---
 # <a name="create-the-local-functions-app"></a>ローカルの Functions アプリを作成する
 
@@ -48,7 +48,7 @@ ms.locfileid: "76967244"
     | ファイル名 | 説明 |
     | --- | --- |
     | *index.js* |  HTTP 要求に応答するソース コード。 |
-    | *functions.json* | HTTP トリガーの[バインディング構成](/azure/azure-functions/functions-triggers-bindings)。 |
+    | *function.json* | HTTP トリガーの[バインディング構成](/azure/azure-functions/functions-triggers-bindings)。 |
     | *sample.dat* | フォルダー内に他のファイルを含めることができることを示すプレースホルダー データ ファイル。 このファイルは、このチュートリアルでは使用されていないため、必要に応じて削除できます。 |
 
     ![関数アプリの作成の結果](media/functions-extension/create-function-app-results.png)

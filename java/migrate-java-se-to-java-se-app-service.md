@@ -5,12 +5,12 @@ author: yevster
 ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 01/22/2019
-ms.openlocfilehash: 5a9f6838e516b6168be40c83ea1ff4329676e6e3
-ms.sourcegitcommit: 367780fe48d977c82cb84208c128b0bf694b1029
+ms.openlocfilehash: 2846dc10ff782568d596daee4baa8ecbd1195729
+ms.sourcegitcommit: 56e5f51daf6f671f7b6e84d4c6512473b35d31d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76830710"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78894196"
 ---
 # <a name="migrate-executable-jar-web-applications-to-java-se-on-azure-app-service"></a>実行可能 JAR Web アプリケーションを Azure App Service 上の Java SE に移行する
 
@@ -23,7 +23,7 @@ ms.locfileid: "76830710"
 * Azure Kubernetes Service のコンテナーに実行可能 JAR アプリケーションを移行する (計画済)
 * 実行可能 JAR アプリケーションを Azure Virtual Machines に移行する (計画済)
 
-## <a name="pre-migration-steps"></a>移行前の手順
+## <a name="pre-migration"></a>移行前
 
 ### <a name="switch-to-a-supported-platform"></a>サポートされているプラットフォームに切り替える
 
@@ -209,7 +209,7 @@ Web アプリが作成されたら、[利用可能なデプロイ メカニズ�
 
 最後に、Web アプリを再起動してすべての構成の変更を適用する必要があります。 再起動が完了したら、アプリケーションが正しく実行されていることを確認します。
 
-## <a name="post-migration-steps"></a>移行後の手順
+## <a name="post-migration"></a>移行後
 
 アプリケーションを Azure App Service に移行したので、期待どおりに動作することを確認する必要があります。 これを完了したら、アプリケーションをよりクラウドネイティブにするための推奨事項がいくつかあります。
 

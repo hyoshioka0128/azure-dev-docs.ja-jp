@@ -10,12 +10,12 @@ ms.devlang: java
 ms.topic: article
 ms.date: 11/19/2019
 ms.author: dagrieve
-ms.openlocfilehash: 21b302225f8b28099e36622ae5e32a84c947a58a
-ms.sourcegitcommit: c34647aee3b9a72fa0ee6aeac2dfa1e36d67c7ef
+ms.openlocfilehash: 528b111e945bb68bd18c849847522a070259c0f3
+ms.sourcegitcommit: f1e3c72c38376b15f5313d4bfe5fefdbfc022dc9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77504552"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79022299"
 ---
 # <a name="transition-from-java-8-to-java-11"></a>Java 8 から Java 11 への移行
 
@@ -246,7 +246,7 @@ $ java --add-opens=java.base/jdk.internal.loader=UNNAMED-MODULE example.Main
 
 ##### <a name="noclassdeffounderror-caused-by-using-java-ee-or-corba-modules"></a>Java EE または CORBA モジュールを使用して発生した NoClassDefFoundError
 
-アプリケーションは Java 8 上で動作しますが `java.lang.NoClassDefFoundError` または `java.lang.ClassNotFoundError` がスローされる場合、アプリケーションで Java EE または CORBA モジュールのパッケージが使用されている可能性があります。 これらのモジュールは Java 9 で非推奨になり、[Java 11 で削除されました](https://openjdk.java.net/jeps/320)。 
+アプリケーションは Java 8 上で動作しますが `java.lang.NoClassDefFoundError` または `java.lang.ClassNotFoundException` がスローされる場合、アプリケーションで Java EE または CORBA モジュールのパッケージが使用されている可能性があります。 これらのモジュールは Java 9 で非推奨になり、[Java 11 で削除されました](https://openjdk.java.net/jeps/320)。 
 
 この問題を解決するには、ランタイム依存関係をプロジェクトに追加します。
 

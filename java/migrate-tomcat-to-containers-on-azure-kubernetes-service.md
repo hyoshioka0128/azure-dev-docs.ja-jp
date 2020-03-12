@@ -5,18 +5,18 @@ author: yevster
 ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 1/20/2020
-ms.openlocfilehash: dbcf1f0989208f960f31fec13a65477d87b1a042
-ms.sourcegitcommit: 367780fe48d977c82cb84208c128b0bf694b1029
+ms.openlocfilehash: fafe7b16b14f43f6fe97090de8964c4e78796bda
+ms.sourcegitcommit: 56e5f51daf6f671f7b6e84d4c6512473b35d31d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76825825"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78893738"
 ---
 # <a name="migrate-tomcat-applications-to-containers-on-azure-kubernetes-service"></a>Azure Kubernetes Service のコンテナーに Tomcat アプリケーションを移行する
 
 このガイドでは、既存の Tomcat アプリケーションを移行して Azure Kubernetes Service (AKS) で実行する場合に知っておくべきことについて説明します。
 
-## <a name="pre-migration-steps"></a>移行前の手順
+## <a name="pre-migration"></a>移行前
 
 [!INCLUDE [inventory-external-resources](includes/migration/inventory-external-resources.md)]
 
@@ -224,26 +224,26 @@ Tomcat ログ ディレクトリ ( */tomcat_logs*) にマウントされた Azur
 
 AKS クラスターでスケジュールされたジョブを実行するには、必要に応じて [Cron ジョブ](https://kubernetes.io/docs/tasks/job/automated-tasks-with-cron-jobs/)を定義します。
 
-## <a name="post-migration-steps"></a>移行後の手順
+## <a name="post-migration"></a>移行後
 
 アプリケーションを AKS に移行したので、期待どおりに動作することを確認する必要があります。 これを完了したら、アプリケーションをよりクラウド ネイティブにするための推奨事項がいくつかあります。
 
-1. イングレス コントローラーまたはアプリケーション ロード バランサーに割り当てられた IP アドレスに [DNS 名を追加する](/azure/aks/ingress-static-ip#configure-a-dns-name)ことを検討してください。
+* イングレス コントローラーまたはアプリケーション ロード バランサーに割り当てられた IP アドレスに [DNS 名を追加する](/azure/aks/ingress-static-ip#configure-a-dns-name)ことを検討してください。
 
-1. [アプリケーションに HELM チャートを追加](https://helm.sh/docs/topics/charts/)することを検討してください。 Helm チャートを使用すると、より多様な顧客によって使用およびカスタマイズされるように、アプリケーションのデプロイをパラメーター化できます。
+* [アプリケーションに HELM チャートを追加](https://helm.sh/docs/topics/charts/)することを検討してください。 Helm チャートを使用すると、より多様な顧客によって使用およびカスタマイズされるように、アプリケーションのデプロイをパラメーター化できます。
 
-1. DevOps の戦略を設計し、実装します。 信頼性を維持しながら開発速度を向上させるには、[Azure Pipelines を使用してデプロイとテストを自動化する](/azure/devops/pipelines/ecosystems/kubernetes/aks-template)ことを検討してください。
+* DevOps の戦略を設計し、実装します。 信頼性を維持しながら開発速度を向上させるには、[Azure Pipelines を使用してデプロイとテストを自動化する](/azure/devops/pipelines/ecosystems/kubernetes/aks-template)ことを検討してください。
 
-1. [クラスターに対して Azure 監視](/azure/azure-monitor/insights/container-insights-enable-existing-clusters)を有効にし、コンテナー ログの収集や使用状況の追跡などを許可します。
+* [クラスターに対して Azure 監視](/azure/azure-monitor/insights/container-insights-enable-existing-clusters)を有効にし、コンテナー ログの収集や使用状況の追跡などを許可します。
 
-1. Prometheus を使用して、アプリケーション固有のメトリックを公開することを検討してください。 Prometheus は、Kubernetes コミュニティで広く採用されているオープンソースのメトリック フレームワークです。 独自の Prometheus サーバーをホストするのではなく、[Azure Monitor で Prometheus メトリックのスクレーピング](/azure/azure-monitor/insights/container-insights-prometheus-integration)を構成して、アプリケーションからのメトリックの集計と、異常な状態に対する自動応答またはエスカレーションを有効にできます。
+* Prometheus を使用して、アプリケーション固有のメトリックを公開することを検討してください。 Prometheus は、Kubernetes コミュニティで広く採用されているオープンソースのメトリック フレームワークです。 独自の Prometheus サーバーをホストするのではなく、[Azure Monitor で Prometheus メトリックのスクレーピング](/azure/azure-monitor/insights/container-insights-prometheus-integration)を構成して、アプリケーションからのメトリックの集計と、異常な状態に対する自動応答またはエスカレーションを有効にできます。
 
-1. 事業継続とディザスター リカバリー戦略を設計し、実装します。 ミッション クリティカルなアプリケーションの場合は、[複数リージョン デプロイのアーキテクチャ](/azure/aks/operator-best-practices-multi-region)を検討してください。
+* 事業継続とディザスター リカバリー戦略を設計し、実装します。 ミッション クリティカルなアプリケーションの場合は、[複数リージョン デプロイのアーキテクチャ](/azure/aks/operator-best-practices-multi-region)を検討してください。
 
-1. [Kubernetes バージョン サポート ポリシー](/azure/aks/supported-kubernetes-versions#kubernetes-version-support-policy)を確認します。 常にサポートされているバージョンが実行されるように、継続的に [AKS クラスターを更新する](/azure/aks/upgrade-cluster)のは開発者の責任です。
+* [Kubernetes バージョン サポート ポリシー](/azure/aks/supported-kubernetes-versions#kubernetes-version-support-policy)を確認します。 常にサポートされているバージョンが実行されるように、継続的に [AKS クラスターを更新する](/azure/aks/upgrade-cluster)のは開発者の責任です。
 
-1. クラスター管理とアプリケーション開発を担当するすべてのチーム メンバーに、関連する [AKS のベスト プラクティス](/azure/aks/best-practices)を確認してもらいます。
+* クラスター管理とアプリケーション開発を担当するすべてのチーム メンバーに、関連する [AKS のベスト プラクティス](/azure/aks/best-practices)を確認してもらいます。
 
-1. *logging.properties* ファイル内の項目を評価します。 パフォーマンスを改善するために、一部のログ出力をなくすか減らすことを検討します。
+* *logging.properties* ファイル内の項目を評価します。 パフォーマンスを改善するために、一部のログ出力をなくすか減らすことを検討します。
 
-1. さらにパフォーマンスを最適化するために、[コードのキャッシュ サイズを監視](https://docs.oracle.com/javase/8/embedded/develop-apps-platforms/codecache.htm)し、パラメーター `-XX:InitialCodeCacheSize` および `-XX:ReservedCodeCacheSize` を Dockerfile の `JAVA_OPTS` 変数に追加することを検討します。
+* さらにパフォーマンスを最適化するために、[コードのキャッシュ サイズを監視](https://docs.oracle.com/javase/8/embedded/develop-apps-platforms/codecache.htm)し、パラメーター `-XX:InitialCodeCacheSize` および `-XX:ReservedCodeCacheSize` を Dockerfile の `JAVA_OPTS` 変数に追加することを検討します。

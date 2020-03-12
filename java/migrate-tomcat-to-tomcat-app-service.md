@@ -5,12 +5,12 @@ author: yevster
 ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 1/20/2020
-ms.openlocfilehash: f9611415264ce0c00a077d8988ef0fc9f7d97f66
-ms.sourcegitcommit: 367780fe48d977c82cb84208c128b0bf694b1029
+ms.openlocfilehash: a6212433e10de774924d49e508cb010251d60b02
+ms.sourcegitcommit: 56e5f51daf6f671f7b6e84d4c6512473b35d31d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76825886"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78893752"
 ---
 # <a name="migrate-tomcat-applications-to-tomcat-on-azure-app-service"></a>Tomcat アプリケーションを Azure App Service 上の Tomcat に 移行する
 
@@ -23,7 +23,7 @@ ms.locfileid: "76825886"
 * [Azure Kubernetes Service のコンテナーに Tomcat アプリケーションを移行する](migrate-tomcat-to-containers-on-azure-kubernetes-service.md)
 * Tomcat アプリケーションを Azure Virtual Machines に移行する (計画済)
 
-## <a name="pre-migration-steps"></a>移行前の手順
+## <a name="pre-migration"></a>移行前
 
 ### <a name="switch-to-a-supported-platform"></a>サポートされているプラットフォームに切り替える
 
@@ -201,18 +201,18 @@ Web アプリが作成されたら、[利用可能なデプロイ メカニズ�
 
 最後に、Web アプリを再起動してすべての構成の変更を適用する必要があります。 再起動が完了したら、アプリケーションが正しく実行されていることを確認します。
 
-## <a name="post-migration-steps"></a>移行後の手順
+## <a name="post-migration"></a>移行後
 
 アプリケーションを Azure App Service に移行したので、期待どおりに動作することを確認する必要があります。 これを完了したら、アプリケーションをよりクラウド ネイティブにするための推奨事項がいくつかあります。
 
 ### <a name="recommendations"></a>Recommendations
 
-1. ファイル ストレージ用に */home* ディレクトリを使用することを選択した場合は、[それを Azure Storage に置き換える](/azure/app-service/containers/how-to-serve-content-from-azure-storage)ことを検討してください。
+* ファイル ストレージ用に */home* ディレクトリを使用することを選択した場合は、[それを Azure Storage に置き換える](/azure/app-service/containers/how-to-serve-content-from-azure-storage)ことを検討してください。
 
-1. 接続文字列、SSL キー、およびその他の機密情報が含まれている */home* ディレクトリ内に構成がある場合、可能であれば、[Azure Key Vault](/azure/app-service/app-service-key-vault-references) と [アプリケーション設定を使用するパラメーター インジェクション](/azure/app-service/configure-common#configure-app-settings)とを組み合わせて使用することを検討してください。
+* 接続文字列、SSL キー、およびその他の機密情報が含まれている */home* ディレクトリ内に構成がある場合、可能であれば、[Azure Key Vault](/azure/app-service/app-service-key-vault-references) と [アプリケーション設定を使用するパラメーター インジェクション](/azure/app-service/configure-common#configure-app-settings)とを組み合わせて使用することを検討してください。
 
-1. ダウンタイムなしで信頼性の高いデプロイを行うには、[デプロイ スロットの使用](/azure/app-service/deploy-staging-slots)を検討してください。
+* ダウンタイムなしで信頼性の高いデプロイを行うには、[デプロイ スロットの使用](/azure/app-service/deploy-staging-slots)を検討してください。
 
-1. DevOps の戦略を設計し、実装します。 信頼性を維持しながら開発速度を向上させるには、[Azure Pipelines を使用してデプロイとテストを自動化する](/azure/devops/pipelines/ecosystems/java-webapp)ことを検討してください。 デプロイ スロットを使用する場合は、[スロットへのデプロイと後続のスロット スワップを自動化](/azure/devops/pipelines/targets/webapp?view=azure-devops&tabs=yaml#deploy-to-a-slot)できます。
+* DevOps の戦略を設計し、実装します。 信頼性を維持しながら開発速度を向上させるには、[Azure Pipelines を使用してデプロイとテストを自動化する](/azure/devops/pipelines/ecosystems/java-webapp)ことを検討してください。 デプロイ スロットを使用する場合は、[スロットへのデプロイと後続のスロット スワップを自動化](/azure/devops/pipelines/targets/webapp?view=azure-devops&tabs=yaml#deploy-to-a-slot)できます。
 
-1. 事業継続とディザスター リカバリー戦略を設計し、実装します。 ミッション クリティカルなアプリケーションの場合は、[複数リージョン デプロイのアーキテクチャ](/azure/architecture/reference-architectures/app-service-web-app/multi-region)を検討してください。
+* 事業継続とディザスター リカバリー戦略を設計し、実装します。 ミッション クリティカルなアプリケーションの場合は、[複数リージョン デプロイのアーキテクチャ](/azure/architecture/reference-architectures/app-service-web-app/multi-region)を検討してください。

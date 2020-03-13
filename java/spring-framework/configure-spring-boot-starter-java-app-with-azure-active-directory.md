@@ -8,12 +8,12 @@ ms.service: active-directory
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
-ms.openlocfilehash: 3a1c174662d172b38e9d2c88043be24f18332356
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: c3dc7dd1df14ef7d12667c603fbaab588667ac22
+ms.sourcegitcommit: 56e5f51daf6f671f7b6e84d4c6512473b35d31d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74812141"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78893931"
 ---
 # <a name="tutorial-secure-a-java-web-app-using-the-spring-boot-starter-for-azure-active-directory"></a>チュートリアル:Azure Active Directory 用の Spring Boot Starter を使用して Java Web アプリをセキュリティで保護する
 
@@ -23,11 +23,10 @@ ms.locfileid: "74812141"
 
 このチュートリアルでは、以下の内容を学習します。
 
-> [!div class="checklist"]
-> * Spring Initializr を使用して Java アプリケーションを作成する
-> * Azure Active Directory を構成する
-> * Spring Boot クラスと注釈を使用してアプリケーションをセキュリティで保護する
-> * Java アプリケーションをビルドしてテストする
+ * Spring Initializr を使用して Java アプリケーションを作成する
+ * Azure Active Directory を構成する
+ * Spring Boot クラスと注釈を使用してアプリケーションをセキュリティで保護する
+ * Java アプリケーションをビルドしてテストする
 
 Azure サブスクリプションをお持ちでない場合は、開始する前に [無料アカウント](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) を作成してください。
 
@@ -40,19 +39,17 @@ Azure サブスクリプションをお持ちでない場合は、開始する�
 
 ## <a name="create-an-app-using-spring-initializr"></a>Spring Initializr を使用したアプリの作成
 
-1. [https://www.microsoft.com](<https://start.spring.io/>) を参照します。
+1. <https://start.spring.io/> を参照します。
 
-1. **Java** で **Maven** プロジェクトを生成することを指定し、アプリケーションの **[Group]\(グループ\)** と **[Artifact]\(アーティファクト)** に名前を入力して、Spring Initializr の **[Switch to the full version]\(完全バージョンへの切り替え\)** のリンクをクリックします。
+1. **Java** で **Maven** プロジェクトを生成することを指定し、アプリケーションの **[グループ]** と **[アーティファクト]** に名前を入力します。
 
    ![グループとアーティファクトの名前を指定する][create-spring-app-01]
 
-1. 下へスクロールして **[Core]\(コア\)** セクションに移動し、 **[Security]\(セキュリティ\)** チェックボックスをオンにし、 **[Web]** セクションで **[Web]** チェックボックスをオンにします。次に、下へスクロールして **[Azure]** セクションに移動し、 **[Azure Active Directory]** チェックボックスをオンにします。
+1. 下にスクロールして、**Spring Web**、**Azure Active Directory**、および **Spring Security** の**依存関係**を追加します。
+
+1. ページの下部にある **[生成]** ボタンをクリックします。
 
    ![セキュリティ、Web、および Azure Active Directory スターターを選択する][create-spring-app-02]
-
-1. ページの上部または下部までスクロールし、 **[Generate Project]\(プロジェクトの生成\)** をクリックします。
-
-   ![Spring Boot プロジェクトを生成する][create-spring-app-03]
 
 1. メッセージが表示されたら、ローカル コンピューター上のパスにプロジェクトをダウンロードします。
 
@@ -66,65 +63,63 @@ Azure サブスクリプションをお持ちでない場合は、開始する�
 
    ![新しい Azure Active Directory インスタンスを作成する][create-directory-01]
 
-1. **組織名**と**初期ドメイン名**を入力します。 ディレクトリの完全な URL をコピーします。このチュートリアルでは後ほど、これを使用してユーザー アカウントを追加します (例: `wingtiptoysdirectory.onmicrosoft.com`)。操作が完了したら、 **[作成]** をクリックします。
+1. **組織名**と**初期ドメイン名**を入力します。 ディレクトリの完全な URL をコピーします。このチュートリアルでは後ほど、これを使用してユーザー アカウントを追加します (例: `wingtiptoysdirectory.onmicrosoft.com`)。 
+
+ディレクトリの完全な URL をコピーします。このチュートリアルでは後ほど、これを使用してユーザー アカウントを追加します (例: wingtiptoysdirectory.onmicrosoft.com)。
+
+操作が完了したら、 **[作成]** をクリックします。 新しいリソースの作成には数分かかります。
 
    ![Azure Active Directory の名前を指定する][create-directory-02]
 
-1. Azure portal ツール バーの右上にあるご自身のアカウント名を選択し、 **[ディレクトリの切り替え]** をクリックします。
+1. 完了したら、クリックして新しいディレクトリにアクセスします。
 
    ![Azure アカウント名を選択する][create-directory-03]
 
-1. ドロップダウン メニューから新しく作成した Azure Active Directory を選択します。
+1. **テナント ID** をコピーします。この値を使用して、このチュートリアルの後の方で *application.properties* ファイルを構成します。
 
-   ![Azure Active Directory を選択する][create-directory-04]
-
-1. ポータル メニューから **[Azure Active Directory]** を選択し、 **[プロパティ]** をクリックして **[ディレクトリ ID]** をコピーします。このチュートリアルでは後ほど、この値を使用して *application.properties* ファイルを構成します。
-
-   ![Azure Active Directory ID をコピーする][create-directory-05]
+   ![テナント ID のコピー][create-directory-05]
 
 ### <a name="add-an-application-registration-for-your-spring-boot-app"></a>Spring Boot アプリのアプリケーション登録を追加する
 
-1. ポータルのメニューで **[Azure Active Directory]** を選択し、 **[アプリの登録]** 、 **[新しいアプリケーションの登録]** の順にクリックします。
+1. ポータル メニューで **[アプリの登録]** をクリックしてから、 **[アプリケーションの登録]** をクリックします。
 
    ![新しいアプリ登録を追加する][create-app-registration-01]
 
-2. アプリケーションの**名前**を指定し、 **[サインオン URL]** に「 http://localhost:8080 」と入力し、 **[作成]** をクリックします。
+1. アプリケーションを指定し、 **[登録]** をクリックします。
 
    ![新しいアプリ登録を作成する][create-app-registration-02]
 
-4. アプリ登録のページが表示されたら、**アプリケーション ID** をコピーします。このチュートリアルでは後ほど、この値を使用して *application.properties* ファイルを構成します。 **[設定]** をクリックし、 **[キー]** をクリックします。
+1. アプリ登録のページが表示されたら、**アプリケーション ID** と**テナント ID** をコピーします。このチュートリアルでは後ほど、これらの値を使用して *application.properties* ファイルを構成します。
 
    ![アプリの登録キーを作成する][create-app-registration-03]
 
-5. **説明**を追加し、新しいキーの**期間**を指定して、 **[保存]** をクリックします。 **[保存]** アイコンをクリックすると、キーの値が自動的に入力されます。このチュートリアルで後ほど *application.properties* ファイルを構成できるように、キーの値をコピーする必要があります。 (この値は後で取得することはできません)。
+1. 左側のナビゲーション ウィンドウで、 **[証明書とシークレット]** をクリックします。  次に、 **[新しいクライアント シークレット]** をクリックします。
+
+   ![アプリの登録キーを作成する][create-app-registration-03.5]
+
+1. **説明**を追加し、 **[有効期限]** 一覧で期間を選択します。  **[追加]** をクリックします。 キーの値は自動的に入力されます。
 
    ![アプリの登録キーのパラメーターを指定する][create-app-registration-04]
 
-6. アプリ登録のメイン ページで、 **[設定]** 、 **[必要なアクセス許可]** の順にクリックします。
+1. このチュートリアルの後の方で *application.properties* ファイルを構成するために、クライアント シークレットの値をコピーして保存します。 (この値は後で取得することはできません)。
 
-   ![アプリ登録の必要なアクセス許可][create-app-registration-05]
+   ![アプリの登録キーのパラメーターを指定する][create-app-registration-04.5]
 
-7. **[Windows Azure Active Directory]** をクリックします。
+1. 左側のナビゲーション ウィンドウで **[API のアクセス許可]** をクリックします。 
 
-   ![[Windows Azure Active Directory] を選択する][create-app-registration-06]
-
-8. **[サインインしたユーザーとしてディレクトリにアクセスします]** と **[サインインとユーザー プロファイルの読み取り]** の各チェック ボックスをオンにし、 **[保存]** をクリックします。
-
-   ![アクセス許可を有効にする][create-app-registration-07]
-
-9. **[必要なアクセス許可]** ページで **[アクセス許可の付与]** をクリックし、メッセージが表示されたら **[はい]** をクリックします。
+1. **[API のアクセス許可]** ページで、 **[管理者の同意を与える]** をクリックし、メッセージが表示されたら **[はい]** をクリックします。
 
    ![アクセス許可を付与する][create-app-registration-08]
 
-10. アプリ登録のメイン ページで、 **[設定]** 、 **[応答 URL]** の順にクリックします。
+1. アプリ登録のメイン ページで、 **[認証]** をクリックし、 **[プラットフォームを追加]** をクリックします。  次に、 **[Web アプリケーション]** をクリックします。
 
     ![応答 URL を編集する][create-app-registration-09]
 
-11. 新しい応答 URL として「<http://localhost:8080/login/oauth2/code/azure>」と入力し、 **[保存]** をクリックします。
+1. <http:<span></span>//localhost:8080/login/oauth2/code/azure> を新しい**リダイレクト URI** として入力し、 **[構成]** をクリックします。
 
     ![新しい応答 URL を追加する][create-app-registration-10]
 
-12. アプリ登録のメイン ページで、 **[マニフェスト]** をクリックして `oauth2AllowImplicitFlow` パラメーターの値を `true` に設定し、 **[保存]** をクリックします。
+1. アプリ登録のメイン ページで、 **[マニフェスト]** をクリックして `oauth2AllowImplicitFlow` パラメーターの値を `true` に設定し、 **[保存]** をクリックします。
 
     ![アプリケーション マニフェストの構成][create-app-registration-11]
 
@@ -139,7 +134,7 @@ Azure サブスクリプションをお持ちでない場合は、開始する�
 
    ![新しいユーザー アカウントを追加する][create-user-01]
 
-1. **[ユーザー]** パネルが表示されたら、 **[名前]** と **[ユーザー名]** に入力します。
+1. **[ユーザー]** パネルが表示されたら、 **[ユーザー名]** と **[名前]** を入力します。  **[Create]** をクリックします。
 
    ![ユーザー アカウント情報を入力する][create-user-02]
 
@@ -150,11 +145,13 @@ Azure サブスクリプションをお持ちでない場合は、開始する�
    > `wingtipuser@wingtiptoysdirectory.onmicrosoft.com`
    > 
 
-1. **[グループ]** をクリックして、アプリケーションの承認で使用するグループを選択し、 **[選択]** をクリックします (このチュートリアルの目的では、アカウントを _Users_ グループに追加します)。
+1. **[グループ]** をクリックして、アプリケーションの承認に使用する**新しいグループを作成**します。
 
-   ![ユーザーのグループを選択する][create-user-03]
+1. **[メンバーが選択されていません]** をクリックします (このチュートリアルでは、*users* という名前のグループを作成します)。前の手順で作成されたユーザーを検索します。  **[選択]** をクリックして、ユーザーをグループに追加します。  **[作成]** をクリックして、新しいグループを作成します。
 
-1. **[パスワードの表示]** をクリックしてパスワードをコピーします。このチュートリアルで後ほどアプリケーションにログインするときに、これを使用します。 パスワードをコピーしたら、 **[作成]** をクリックして新しいユーザー アカウントをディレクトリに追加します。
+   ![グループのユーザーの選択][create-user-03]
+
+1. **[ユーザー]** パネルに戻り、 **[パスワードのリセット]** をクリックしてパスワードをコピーします。このチュートリアルで後ほどアプリケーションにログインするときに、これを使用します。 
 
    ![パスワードを表示する][create-user-04]
 
@@ -317,7 +314,7 @@ Azure サブスクリプションをお持ちでない場合は、開始する�
 
    ![アプリをビルドする][build-application]
 
-1. Maven によってアプリケーションがビルドされ、起動したら、Web ブラウザーで <http://localhost:8080> を開きます。ユーザー名とパスワードを入力するように求めるメッセージが表示されます。
+1. Maven によってアプリケーションがビルドされ、起動したら、Web ブラウザーでhttp:<span></span>//localhost:8080 を開きます。ユーザー名とパスワードを入力するように求めるメッセージが表示されます。
 
    ![アプリケーションへのログイン][application-login]
 
@@ -341,7 +338,10 @@ Azure サブスクリプションをお持ちでない場合は、開始する�
 
 このチュートリアルでは、Azure Active Directory スターターを使用した新しい Java Web アプリケーションの作成、新しい Azure AD テナントの構成とそのテナントへの新しいアプリケーションの登録を行いました。また、Spring の注釈とクラスを使用して Web を保護するようにアプリケーションを構成しました。
 
-## <a name="next-steps"></a>次の手順
+## <a name="see-also"></a>関連項目
+* 新しい UI オプションについて詳しくは、「[新しい Azure portal アプリの登録トレーニング ガイド](https://docs.microsoft.com/azure/active-directory/develop/app-registrations-training-guide-for-app-registrations-legacy-users)」をご覧ください。
+
+## <a name="next-steps"></a>次のステップ
 
 Spring および Azure の詳細については、Azure ドキュメント センターで引き続き Spring に関するドキュメントをご確認ください。
 
@@ -377,7 +377,9 @@ Spring および Azure の詳細については、Azure ドキュメント セ�
 [create-app-registration-01]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/create-app-registration-01.png
 [create-app-registration-02]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/create-app-registration-02.png
 [create-app-registration-03]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/create-app-registration-03.png
+[create-app-registration-03.5]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/create-app-registration-03.5.png
 [create-app-registration-04]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/create-app-registration-04.png
+[create-app-registration-04.5]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/create-app-registration-04.5.png
 [create-app-registration-05]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/create-app-registration-05.png
 [create-app-registration-06]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/create-app-registration-06.png
 [create-app-registration-07]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/create-app-registration-07.png

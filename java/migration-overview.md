@@ -5,12 +5,12 @@ author: yevster
 ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 1/20/2020
-ms.openlocfilehash: 7025393f45a32a42fcd2ae3dafee6274a4ba3cbc
-ms.sourcegitcommit: aceed8548ad4529a81d83eb15a095edc8607cac5
+ms.openlocfilehash: f6ee53e25f7ce75e5e0d88688880f788fa6795f9
+ms.sourcegitcommit: 21ddeb9bd9abd419d143dc2ca8a7c821a1758cf9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/18/2020
-ms.locfileid: "77440850"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79089946"
 ---
 # <a name="migrate-java-applications-to-azure"></a>Java アプリケーションを Azure に移行する
 
@@ -73,16 +73,16 @@ Java EE 仕様によって提供される機能のみに依存するアプリケ
 
 次のグリッドを使用して、必要なアプリケーションの種類と機能をサポートする移行先を特定してください。
 
-|   |アプリ<br>サービス<br>Java SE|アプリ<br>サービス<br>Tomcat|アプリ<br>サービス<br>WildFly|Azure<br>Spring<br>クラウド|AKS|Virtual Machines|
+|   |アプリ<br>サービス<br>Java SE|アプリ<br>サービス<br>Tomcat|Azure<br>Spring<br>クラウド|AKS|Virtual Machines|
 |---|---|---|---|---|---|---|
-| Spring Boot/JAR アプリケーション                                    |&#x2714;|        |        |        |&#x2714;|&#x2714;|
-| Spring Cloud/マイクロサービス                                      |        |        |        |&#x2714;|&#x2714;|&#x2714;|
-| Web アプリケーション                                                  |        |&#x2714;|&#x2714;|        |&#x2714;|&#x2714;|
-| Java EE アプリケーション                                              |        |        |&#x2714;|        |&#x2714;|&#x2714;|
-| 商用アプリケーション サーバー<br>(WebLogic や WebSphere など) |        |        |        |        |&#x2714;|&#x2714;|
-| ローカル ファイル システムでの長期保存                         |&#x2714;|&#x2714;|&#x2714;|        |&#x2714;|&#x2714;|
-| アプリケーション サーバー レベルのクラスタリング                               |        |        |        |        |&#x2714;|&#x2714;|
-| バッチ/スケジュールされたジョブ                                            |        |        |        |&#x2714;|&#x2714;|&#x2714;|
+| Spring Boot/JAR アプリケーション                                    |&#x2714;|        |        |&#x2714;|&#x2714;|
+| Spring Cloud/マイクロサービス                                      |        |        |&#x2714;|&#x2714;|&#x2714;|
+| Web アプリケーション                                                  |        |&#x2714;|        |&#x2714;|&#x2714;|
+| Java EE アプリケーション                                              |        |        |        |&#x2714;|&#x2714;|
+| 商用アプリケーション サーバー<br>(WebLogic や WebSphere など) |        |        |        |&#x2714;|&#x2714;|
+| ローカル ファイル システムでの長期保存                         |&#x2714;|&#x2714;|        |&#x2714;|&#x2714;|
+| アプリケーション サーバー レベルのクラスタリング                               |        |        |        |&#x2714;|&#x2714;|
+| バッチ/スケジュールされたジョブ                                            |        |        |&#x2714;|&#x2714;|&#x2714;|
 
 ### <a name="ongoing-responsibility-grid"></a>継続的な役割グリッド
 
@@ -127,22 +127,26 @@ Java EE 仕様によって提供される機能のみに依存するアプリケ
 
 次の行では Java アプリケーションの種類を確認し、列ではアプリケーションをホストする Azure サービス移行先を確認します。
 
-|移行先&nbsp;→<br><br>アプリケーションの&nbsp;種類&nbsp;↓|アプリ<br>サービス<br>Java SE|アプリ<br>サービス<br>Tomcat|アプリ<br>サービス<br>WildFly|Azure<br>Spring<br>クラウド|AKS|Virtual Machines|
+App Service 上の Tomcat に JBoss EAP アプリを移行する場合は、まず、Tomcat 上で実行されている Java Web Apps (サーブレット) に Java EE アプリを変換し、次に示すガイダンスに従ってください。
+
+Tomcat 上の Web アプリを Azure Spring Cloud に移行する場合は、まずアプリを Spring Cloud マイクロサービスに変換し、次に示すガイダンスに従ってください。
+
+|移行先&nbsp;→<br><br>アプリケーションの&nbsp;種類&nbsp;↓|アプリ<br>サービス<br>Java SE|アプリ<br>サービス<br>Tomcat|Azure<br>Spring<br>クラウド|AKS|Virtual Machines|
 |---|---|---|---|---|---|---|
-| Spring Boot/<br>JAR アプリケーション | [使用可能][5] | 予定        | 予定 | 予定 | 予定        | 予定 |
-| Spring Cloud/<br>マイクロサービス   | 該当なし            | 該当なし            | 該当なし     | 予定 | 予定        | 予定 |
-| Web アプリケーション<br>(Tomcat 上)     | 該当なし            | [使用可能][2] | 該当なし     | 該当なし     | [使用可能][3] | 予定 |
+| Spring Boot/<br>JAR アプリケーション | [ガイダンス][5] | ガイダンス<br>予定 | ガイダンス<br>予定 | ガイダンス<br>予定 | ガイダンス<br>予定 |
+| Spring Cloud/<br>マイクロサービス   | 該当なし           | 該当なし                 | ガイダンス<br>予定 | ガイダンス<br>予定 | ガイダンス<br>予定 |
+| Web アプリケーション<br>(Tomcat 上)     | 該当なし           | [ガイダンス][2]       | 該当なし                 | [ガイダンス][3]       | ガイダンス<br>予定 |
 
 **Java EE アプリケーション**
 
 次の行では、特定のアプリ サーバーで実行されている Java EE アプリケーションの種類を確認します。 列では、アプリケーションをホストする Azure サービス移行先を確認します。
 
-|移行先&nbsp;→<br><br>アプリ サーバー&nbsp;↓|アプリ<br>サービス<br>Java SE|アプリ<br>サービス<br>Tomcat|アプリ<br>サービス<br>WildFly|Azure<br>Spring<br>クラウド|AKS|Virtual Machines|
+|移行先&nbsp;→<br><br>アプリ サーバー&nbsp;↓|アプリ<br>サービス<br>Java SE|アプリ<br>サービス<br>Tomcat|Azure<br>Spring<br>クラウド|AKS|Virtual Machines|
 |---|---|---|---|---|---|---|
-| WildFly/<br>JBoss AS | 該当なし | 該当なし | 予定 | 該当なし | 予定 | 予定        |
-| WebLogic              | 該当なし | 該当なし | 予定 | 該当なし | 予定 | [使用可能][4] |
-| WebSphere             | 該当なし | 該当なし | 予定 | 該当なし | 予定 | 予定        |
-| JBoss EAP             | 該当なし | 該当なし | 予定 | 該当なし | 該当なし     | 予定        |
+| WildFly/<br>JBoss AS | 該当なし | 該当なし | 該当なし | ガイダンス<br>予定 | ガイダンス<br>予定 |
+| WebLogic              | 該当なし | 該当なし | 該当なし | [ガイダンス][6]       | [ガイダンス][4]       |
+| WebSphere             | 該当なし | 該当なし | 該当なし | [ガイダンス][7]       | ガイダンス<br>予定 |
+| JBoss EAP             | 該当なし | 該当なし | 該当なし | 該当なし                 | ガイダンス<br>予定 |
 
 <!-- reference links, for use with tables -->
 [1]: media/migration-overview/logo_azure.svg
@@ -150,3 +154,5 @@ Java EE 仕様によって提供される機能のみに依存するアプリケ
 [3]: migrate-tomcat-to-containers-on-azure-kubernetes-service.md
 [4]: migrate-weblogic-to-virtual-machines.md
 [5]: migrate-java-se-to-java-se-app-service.md
+[6]: migrate-weblogic-to-wildfly-on-azure-kubernetes-service.md
+[7]: migrate-websphere-to-wildfly-on-azure-kubernetes-service.md

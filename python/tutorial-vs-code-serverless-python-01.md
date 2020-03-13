@@ -4,12 +4,12 @@ description: チュートリアルの手順 1、概要と前提条件。
 ms.topic: conceptual
 ms.date: 09/02/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: b9aecefc05db95aa121e496c9c993a5bba373ef7
+ms.openlocfilehash: 509e62b5bb8b23365dc30781b6f658a39894d56d
 ms.sourcegitcommit: a9ec05f964009409fe6e54b95c9d548f805a518e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/02/2020
-ms.locfileid: "78215337"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78875809"
 ---
 # <a name="tutorial-create-and-deploy-serverless-azure-functions-in-python-with-visual-studio-code"></a>チュートリアル:Visual Studio Code を使用して Python でサーバーレスの Azure Functions を作成してデプロイする
 

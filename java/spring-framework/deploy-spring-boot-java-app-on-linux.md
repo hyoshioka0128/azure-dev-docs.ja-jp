@@ -9,12 +9,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: mvc
-ms.openlocfilehash: 5d0e196a6d0c65a6bf8f159f880b0890341a9fc3
-ms.sourcegitcommit: c34647aee3b9a72fa0ee6aeac2dfa1e36d67c7ef
+ms.openlocfilehash: 943f4c5d859ed31bc7a28b8056855ed4cd2c2a98
+ms.sourcegitcommit: 56e5f51daf6f671f7b6e84d4c6512473b35d31d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77504437"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78893704"
 ---
 # <a name="deploy-a-spring-boot-application-on-azure-app-service-for-container"></a>コンテナー用 Azure App Service で Spring Boot アプリケーションをデプロイする
 
@@ -215,7 +215,7 @@ ms.locfileid: "77504437"
 
 > [!NOTE]
 >
-> Azure は、80 または 8080 の標準のポートで実行されている埋め込みの Tomcat サーバーにインターネットの要求を自動的にマップします。 ただし、埋め込みの Tomcat サーバーをカスタム ポートで実行するように構成している場合は、埋め込みの Tomcat サーバーのポートを定義する環境変数を Web アプリに追加する必要があります。 そのためには、次の手順を実行してください。
+> Azure により、ポート 80 で実行されている埋め込みの Tomcat サーバーにインターネットの要求が自動的にマップされます。 ただし、埋め込みの Tomcat サーバーをポート 8080 またはカスタム ポートで実行するように構成している場合は、埋め込みの Tomcat サーバーのポートを定義する環境変数を Web アプリに追加する必要があります。 そのためには、次の手順を実行してください。
 >
 > 1. [Azure Portal]を参照して、サインインします。
 > 

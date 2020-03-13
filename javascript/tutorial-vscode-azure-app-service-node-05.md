@@ -1,26 +1,24 @@
 ---
 title: Azure App Service を Visual Studio Code にデプロイした後にリソースをクリーンアップする
 description: チュートリアル パート 5、リソースをクリーンアップする
-author: kraigb
-manager: barbkess
 ms.topic: conceptual
-ms.date: 09/20/2019
-ms.openlocfilehash: d7ce42ab0807a9331d8c3021ff0d3007381f3bc1
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.date: 03/04/2020
+ms.openlocfilehash: 1c3b277270bf6f8f7cb5884b7bb56ce2c9b3368c
+ms.sourcegitcommit: 56e5f51daf6f671f7b6e84d4c6512473b35d31d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74467197"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78894211"
 ---
-# <a name="clean-up-resources"></a>リソースのクリーンアップ
+# <a name="clean-up-resources"></a>リソースをクリーンアップする
 
 [前の手順:ログのストリーミング](tutorial-vscode-azure-app-service-node-04.md)
 
-作成した App Service には、バッキング App Service プランが含まれていて料金が発生する可能性があります。 リソースをクリーンアップするには、 **[Azure: App Service]** エクスプローラーで [App Service] を右クリックし、 **[削除]** を選択します。
+作成した App Service には、無料の価格レベルで実行されているバッキング App Service プランが含まれているため、継続的なコストは発生しません。
 
-[Azure portal](https://portal.azure.com) にアクセスし、左側にあるナビゲーション ウィンドウから **[リソース グループ]** を選択し、このチュートリアルで作成したリソース グループを選択し、 **[リソース グループの削除]** コマンドを使用することもできます。
+リソースをクリーンアップするには、[Azure portal](https://portal.azure.com) にアクセスし、 **[リソース グループ]** を選択し、このチュートリアルで作成されたリソース グループを選択してから (`AppServiceTutorial-rg` など)、 **[リソース グループの削除]** コマンドを使用することもできます。
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
 [!INCLUDE [tutorial-next-steps](includes/tutorial-next-steps.md)]
 

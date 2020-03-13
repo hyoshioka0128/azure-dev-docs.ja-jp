@@ -2,70 +2,83 @@
 title: Visual Studio Code から Azure App Service に Node.js アプリをデプロイする
 description: チュートリアル パート 3、Web サイトをデプロイする
 ms.topic: conceptual
-ms.date: 09/20/2019
-ms.openlocfilehash: 937eb54e9885e3b5b9fa7be54f551945a54572cd
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.date: 03/04/2020
+ms.openlocfilehash: 1a8b4a37fa823b631e6b4849cf7cff6ac2ba26f3
+ms.sourcegitcommit: 56e5f51daf6f671f7b6e84d4c6512473b35d31d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74467203"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78894273"
 ---
-# <a name="deploy-the-website"></a>Web サイトのデプロイ
+# <a name="deploy-the-app-to-azure"></a>Azure にアプリケーションをデプロイする
 
 [前の手順:アプリケーションの作成](tutorial-vscode-azure-app-service-node-02.md)
 
-この手順では、Visual Studio Code と Azure App Service 拡張機能を使用して Node.js Web サイトをデプロイします。 このチュートリアルでは、アプリが圧縮されて Azure App Service on Linux にデプロイされる、最も基本的なデプロイ モデルを使用します。
+この手順では、VS コードと Azure App Service 拡張機能を介して git デプロイを使って Node.js アプリをデプロイします。 この目標を達成するには、まずローカル git リポジトリを初期化し、次に Azure で Web アプリを作成した後、git デプロイを使用するように VS Code を構成します。
 
-1. アプリをデプロイする前に、それが、`PORT` 環境変数 `process.env.PORT` で指定されたポートでリッスンしていることを確認してください。
-
-1. アプリ フォルダー (前の手順の `myExpressApp` など) で、次のコマンドを使用してそのフォルダー内の VS Code を起動します。
+1. ターミナルで、*expressApp1* フォルダーにいることを確認し、次のコマンドを使用して Visual Studio Code を開始します。
 
     ```bash
     code .
     ```
 
-1. VS Code で、Azure アイコンを選択して **Azure App Service** エクスプローラーを開き、青い上矢印アイコンを選択してアプリを Azure にデプロイします。
+1. VS Code で、ソース管理アイコンを選択して、**ソース管理**エクスプローラーを開き、[ **+** ] を選択してローカル git リポジトリを初期化します。
 
-    ![Web アプリへのデプロイ](media/deploy-azure/deploy.png)
+    ![git リポジトリを初期化する](media/deploy-azure/git-init.png)
 
-    > [!TIP]
-    > または、**コマンド パレット** を開き (**F1**)、「deploy to web app」と入力し、**Azure App Service:Deploy to Web App** コマンドを実行します。
+1. プロンプトで、ワークスペース フォルダーの *[expressApp1]* を選択します。
 
-1. プロンプトで、次の情報を入力します。
+1. リポジトリが初期化されたら、「Initial commit (初期コミット)」というメッセージを入力し、チェックマークをオンにして、ソース ファイルの初期コミットを作成します。
 
-    a. アプリ (このチュートリアルで使用されている `myExpressApp`) の現在のフォルダーを選択します。
+    ![リポジトリへの初期コミットを完了する](media/deploy-azure/initial-commit.png)
 
-    a. **[新しい Web アプリを作成する]** を選択します。
+1. コマンド パレット (**Ctrl**+**Shift**+**P**) で、「create web (Web の作成)」と入力して、 **[Azure App Service: Create New Web App...Advanced]\(Azure App Service: 新しい Web アプリの作成\)、[詳細設定]** の順に選択します。 詳細設定コマンドを使って、Linux の既定値を使用する代わりに、リソース グループ、App Service プラン、オペレーティング システムなどのデプロイを完全に制御できます。
 
-    a. アプリのグローバルに一意の名前を入力し、**Enter** キーを押します。 アプリ名に使用できる有効な文字は "a-z"、"0-9"、"-" です。
+1. プロンプトに次のように応答します。
 
-    a. 自分の近く、またはアクセスする必要がある他のサービスの近くにある Azure リージョン内の場所 ([リージョン](https://azure.microsoft.com/regions/)に関するページで説明) を選択します。
+    - **[Enter a globally unique name]\(グローバルに一意の名前を入力する\)** に、Azure 全体で一意の名前を入力します。 英数字 ('A-Z'、'a-z'、および '0-9') とハイフン ('-') のみを使用します。
+    - **[新しいリソース グループの作成]** を選択して、`AppServiceTutorial-rg` のような名前を指定します。
+    - オペレーティング システム (Windows または Linux) を選択します。
+    - Linux のみ: Node.js バージョンを選択します (Windows の場合、後でアプリ設定を使ってバージョンを設定します)。
+    - **[Create a new App Service plan]\(新しい App Service プランの作成\)** を選択して、`AppServiceTutorial-plan` のような名前を指定し、 **[F1 Free]** 価格レベルを選択します。
+    - Application Insights リソースに対して **[Skip for now]\(今はしない\)** を選択します。
+    - お近くの場所を選択します。
 
-    a. **Node.js のバージョン**を選択します (LTS を推奨)。
+1. しばらくすると、VS Code により作成が完了したことが通知されます。 **[X]** ボタンを使って、通知を閉じます。
 
-1. 拡張機能によってアプリが作成されると、VS Code の **[出力]** ウィンドウに進行状況が表示されます (**Azure App Service** の出力を選択しなければならない場合があります)。
+    ![Web アプリの作成の完了に関する通知](media/deploy-azure/creation-complete.png)
 
-    ![Azure App Service に対する Visual Studio Code の [出力] ウィンドウ](media/deploy-azure/output-window.png)
+1. Web アプリを配置したら、次に、ローカル git リポジトリからコードをデプロイするように VS Code に指示します。 Azure アイコンを選択して **Azure App Service** エクスプローラーを開き、サブスクリプション ノードを展開します。作成した Web アプリの名前を右クリックし、 **[Configure Deployment Source]\(デプロイ ソースの構成\)** を選択します。
 
-1. ターゲット サーバーで `npm install` を実行するように構成を更新するよう求められたら、 **[はい]** を選択します。 その後、アプリがデプロイされます。
+    ![Web アプリでのデプロイ ソースの構成コマンド](media/deploy-azure/configure-deployment-source.png)
 
-    ![構成済みのデプロイ](media/deploy-azure/server-build.png)
+1. メッセージが表示されたら、 **[LocalGit]** を選択します。
 
-1. デプロイが開始されると、すべての後続のデプロイで、同じ App Service Web アプリが自動的にターゲットになるようにワークスペースを更新するよう求められます。 自分の変更が適切なアプリにデプロイされるよう **[はい]** を選択してください。
+1. Windows で App Service にデプロイする場合は、デプロイする前に 2 つの設定を作成する必要があります。
 
-    ![構成済みのデプロイ](media/deploy-azure/save-configuration.png)
+    1. VS Code で、新しい App Service のノードを展開し、 **[アプリケーション設定]** を右クリックして、 **[Add New Setting]\(新しい設定の追加\)** を選択します。
 
-1. デプロイが完了したら、プロンプトで **[Web サイトの参照]** を選択して、新しくデプロイした Web サイトを表示します。
+        ![アプリ設定の追加コマンド](media/deploy-azure/add-setting.png)
 
-## <a name="troubleshooting"></a>トラブルシューティング
+    1. 設定キーとして「`WEBSITE_NODE_DEFAULT_VERSION`」を、設定値として「`10.15.2`」を入力します。 この設定により、Node.js のバージョンが設定されます。
+    1. この手順を繰り返して、値 `1` を持つ `SCM_DO_BUILD_DURING_DEPLOYMENT` のキーを作成します。 この設定により、デプロイ時にサーバーにより `npm install` が実行されるよう強制されます。
+    1. **Application Settings\(アプリケーション設定\)** ノードを展開して、設定が有効になっていることを確認します。
 
-"このディレクトリまたはページを表示するアクセス許可がありません" というエラーは、おそらくアプリが正常に起動できなかったことを示しています。 [次の手順](tutorial-vscode-azure-app-service-node-04.md)に記載されているように、ログを表示すると、問題を診断して修正するのに役立ちます。 ご自身で解決できない場合は、以下の **[問題が発生しました]** ボタンをクリックしてお問い合わせください。 喜んでお手伝いします。
+1. 青色の上向き矢印アイコンを選択して、Azure にコードをデプロイします。
 
-## <a name="updating-the-website"></a>Web サイトの更新
+    ![Web アプリへのデプロイ アイコン](media/deploy-azure/deploy.png)
 
-同じプロセスを使用し、新しいアプリを作成する代わりに既存のものを選択することで、このアプリに対する変更をデプロイできます。
+1. プロンプトで *[expressApp1]* フォルダーを選択し、先ほど作成した Web アプリの名前を選択します。
 
-----
+1. Linux へのデプロイ時にターゲット サーバーで `npm install` を実行するように構成を更新するよう求められたら、 **[はい]** を選択します。
+
+    ![ターゲットの Linux サーバー上で構成を更新するように求めるメッセージ](media/deploy-azure/server-build.png)
+
+1. Linux および Windows の場合、 **[Always deploy the workspace "nodejs-docs-hello-world" to (app name)"]\(ワークスペース "nodejs-docs-hello-world" を常に (アプリ名) にデプロイ\)** というメッセージが表示されたら、 **[はい]** を選択します。 **[はい]** を選択すると、後続のデプロイで同じ App Service Web アプリを自動的に対象とするように VS Code に指示されます。
+
+1. デプロイが完了したら、プロンプトで **[Web サイトの参照]** を選択して、新しくデプロイした Web アプリを表示します。 "Hello World!" がブラウザーに表示されます。
+
+1. (省略可能):コード ファイルに変更を加えてから、デプロイ ボタンを再度使用して Web アプリを更新できます。
 
 > [!div class="nextstepaction"]
 > [サイトは Azure にあります](tutorial-vscode-azure-app-service-node-04.md) [問題が発生しました](https://www.research.net/r/PWZWZ52?tutorial=node-deployment-azureappservice&step=deploy-app)

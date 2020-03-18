@@ -2,19 +2,19 @@
 author: edburns
 ms.author: edburns
 ms.date: 1/21/2020
-ms.openlocfilehash: b2fc31e4742786ec23d00bafd2af1f7cca58ab21
-ms.sourcegitcommit: 367780fe48d977c82cb84208c128b0bf694b1029
+ms.openlocfilehash: 64033b5182afaa20b88fd04b1ff428c9f7d42c74
+ms.sourcegitcommit: 56e5f51daf6f671f7b6e84d4c6512473b35d31d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76830720"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78894123"
 ---
 ### <a name="document-datasources"></a>データソースの文書化
 
 アプリケーションでデータベースを使用する場合は、次の情報を把握する必要があります。
 
-1. データソース名
-2. 接続プールの構成
-3. JDBC ドライバーの JAR ファイルの場所
+* データソース名
+* 接続プールの構成
+* JDBC ドライバーの JAR ファイルの場所
 
 WebLogic の JDBC ドライバーの詳細については、「[WebLogic Server での JDBC ドライバの使用方法](https://docs.oracle.com/middleware/1213/wls/JDBCA/third_party_drivers.htm)」を参照してください。

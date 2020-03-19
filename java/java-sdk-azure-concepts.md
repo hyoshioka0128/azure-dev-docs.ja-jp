@@ -9,11 +9,11 @@ ms.service: multiple
 ms.assetid: f452468b-7aae-4944-abad-0b1aaf19170d
 ms.custom: seo-java-july2019, seo-java-september2019
 ms.openlocfilehash: 2bf2630c5fef6c399e2642e1ae153630f48874a9
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.sourcegitcommit: 1586dacf8ea29f24f3bc9ccbf0eb07638b5596d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74812424"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79318169"
 ---
 # <a name="patterns-and-best-practices-for-development-with-the-azure-libraries-for-java"></a>Java 用 Azure ライブラリを使用した開発のパターンとベスト プラクティス 
 
@@ -36,7 +36,7 @@ StorageAccount storage = azure.storageAccounts().define(storageAccountName)
 
 定義しようとする Azure リソースに合ったメソッドを、IDE に表示される候補の中から選んでつなげていきます。 必要なメソッドがチェーンに欠落している場合、その部分がエラーとして IDE によって強調表示されます。
 
-## <a name="resource-collections"></a>リソースのコレクション
+## <a name="resource-collections"></a>リソース コレクション
 
 管理ライブラリは、最上位の `com.microsoft.azure.management.Azure` オブジェクトを通じてリソースを作成したり更新したりする際の、1 つの入口としての役割を果たします。 操作の対象となるリソースの種類は、`Azure` オブジェクトに定義されているリソース コレクションのメソッドを使って選択します。 たとえば SQL Database の場合は次のように記述します。
 
@@ -49,7 +49,7 @@ SqlServer sqlServer = azure.sqlServers().define(sqlServerName)
     .create();
 ```
 
-## <a name="lists-and-iterations"></a>リストと反復
+## <a name="lists-and-iterations"></a>リストとイテレーション
 
 それぞれのリソース コレクションには、そのリソースのすべてのインスタンスを現在のサブスクリプションから返す `list()` メソッドがあります。 たとえば、`azure.sqlServers().list()` とした場合、そのサブスクリプションに存在する SQL データベースがすべて返されます。
 
@@ -78,14 +78,14 @@ for (VirtualMachine vm : vms) {
 
 | 動詞   |  使用例 |
 |--------|---------------|
-| create | `azure.virtualMachines().create(listOfVMCreatables)` |
+| 作成 | `azure.virtualMachines().create(listOfVMCreatables)` |
 | apply  | `virtualMachineScaleSet.update().withCapacity(6).apply()` |
 | delete | `azure.disks().deleteById(id)` | 
 | list   | `azure.sqlServers().list()` | 
 | get    | `VirtualMachine vm  = azure.virtualMachines().getByResourceGroup(group, vmName)` |
 
 >[!NOTE]
-> `define()` と `update()` は動詞ですが、その後で `create()` または `apply()` が続かない限り、他の処理がブロックされることはありません。
+> `define()` と `update()` は動詞ですが、その後に `create()` または `apply()` が続かない限り、他の処理がブロックされることはありません。
  
 いくつかのメソッドには、[Reactive 拡張機能](https://github.com/ReactiveX/RxJava)を使った非同期版が存在し、`Async` というサフィックスが付きます。 
 
@@ -126,7 +126,7 @@ Creatable<VirtualMachine> vmCreatable = azure.virtualMachines().define("creatabl
 CreatedResources<VirtualMachine> virtualMachine = azure.virtualMachines().create(vmCreatable);
 ```
 
-`create()` の呼び出しに `Creatable<T>` を渡すと、単一のリソース オブジェクトではなく `CreatedResources` オブジェクトが返されます。  `CreatedResources<T>` オブジェクトを使用すると、`create()` の呼び出しで作成された (呼び出しの中で型指定したリソースだけでなく) すべてのリソースにアクセスすることができます。 上の例で作成した仮想マシンに関して Azure に作成されたパブリック IP アドレスには、次のようにしてアクセスできます。
+`create()` の呼び出しに `Creatable<T>` を渡すと、単一のリソース オブジェクトではなく `CreatedResources` オブジェクトが返されます。  `CreatedResources<T>` オブジェクトを使用すると、`create()` の呼び出しで作成された (呼び出しの中で型指定したリソースだけでなく) すべてのリソースにアクセスすることができます。 前の例で作成した仮想マシンの、Azure で作成されたパブリック IP アドレスにアクセスするには、次のコードを使用します。
 
 ```java
 PublicIPAddress pip = (PublicIPAddress) virtualMachine.createdRelatedResource(publicIPAddressCreatable.key());

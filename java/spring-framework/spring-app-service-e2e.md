@@ -6,12 +6,12 @@ ms.author: karler
 ms.date: 11/12/2019
 ms.service: app-service
 ms.topic: article
-ms.openlocfilehash: 47f318708fbe786b2fd0b58dc7d68cdd5c975856
-ms.sourcegitcommit: 4cf22356d6d4817421b551bd53fcba76bdb44cc1
+ms.openlocfilehash: 4daf41e1cf13d57a42230cd8ed6af4a2258e5e01
+ms.sourcegitcommit: 9f9f5c51472dbdd7b9304b02364ed136dcf81f1c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76872137"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79139302"
 ---
 # <a name="deploy-a-spring-app-to-app-service-with-mysql"></a>MySQL を使用して Spring アプリを App Service にデプロイする
 
@@ -115,7 +115,7 @@ export REGION=<region>
 
 Maven では、指定した名前で Azure リソースを作成するためにこれらの値が使用されます。 環境変数を使用すると、プロジェクト ファイルのアカウントのシークレットを保持することができます。
 
-次に、*pom.xml* ファイルを更新して、Azure へのデプロイ用に Maven を構成します。 以前に追加した `<plugin>` 要素の後に、次の XML を追加します。 必要に応じて、`1.7.0` を [Azure App Service 用 Maven プラグイン](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme)の最新バージョンに変更します。
+次に、*pom.xml* ファイルを更新して、Azure へのデプロイ用に Maven を構成します。 以前に追加した `<plugin>` 要素の後に、次の XML を追加します。 必要に応じて、`1.9.0` を [Azure App Service 用 Maven プラグイン](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme)の最新バージョンに変更します。
 
 ```xml
 <plugin>
@@ -230,13 +230,13 @@ cd ../../initial-mysql/spring-framework-petclinic
 </profile>
 ```
 
-次に、*pom.xml* ファイルを構成して、Azure のデプロイと MySQL の使用のために Maven を構成します。 以前に追加した `<plugin>` 要素の後に、次の XML を追加します。 必要に応じて、`1.7.0` を [Azure App Service 用 Maven プラグイン](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme)の最新バージョンに変更します。
+次に、*pom.xml* ファイルを構成して、Azure のデプロイと MySQL の使用のために Maven を構成します。 以前に追加した `<plugin>` 要素の後に、次の XML を追加します。 必要に応じて、`1.9.0` を [Azure App Service 用 Maven プラグイン](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme)の最新バージョンに変更します。
 
 ```xml
 <plugin>
     <groupId>com.microsoft.azure</groupId>
     <artifactId>azure-webapp-maven-plugin</artifactId>
-    <version>1.7.0</version>
+    <version>1.9.0</version>
     <configuration>
 
         <resourceGroup>${RESOURCEGROUP_NAME}</resourceGroup>

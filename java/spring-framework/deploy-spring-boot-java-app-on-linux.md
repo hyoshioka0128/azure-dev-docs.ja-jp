@@ -9,12 +9,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: mvc
-ms.openlocfilehash: 943f4c5d859ed31bc7a28b8056855ed4cd2c2a98
-ms.sourcegitcommit: 56e5f51daf6f671f7b6e84d4c6512473b35d31d2
+ms.openlocfilehash: 03aa4ec91b8c39ccdd774a99d2e4c3af39b997b6
+ms.sourcegitcommit: 0cf7703a8b26469bb58840853ce9135b5adf4417
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78893704"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79510613"
 ---
 # <a name="deploy-a-spring-boot-application-on-azure-app-service-for-container"></a>コンテナー用 Azure App Service で Spring Boot アプリケーションをデプロイする
 
@@ -124,11 +124,11 @@ ms.locfileid: "78893704"
 
 1. *pom.xml* ファイルの `<plugins>` コレクションに [jib-maven-plugin](https://github.com/GoogleContainerTools/jib/tree/master/jib-maven-plugin) を追加します。  この例では、バージョン1.8.0 を使用します。 
 
-`<from>/<image>` に基本イメージを指定します。ここでは `openjdk:8-jre-alpine` です。 基本イメージからビルドする最終イメージの名前を `<to>/<image>` に指定します。  
+   `<from>/<image>` に基本イメージを指定します。ここでは `mcr.microsoft.com/java/jre:8-zulu-alpine` です。 基本イメージからビルドする最終イメージの名前を `<to>/<image>` に指定します。  
 
-認証 `{docker.image.prefix}` は、前に示したレジストリ ページの**ログイン サーバー**です。 `{project.artifactId}` は、プロジェクトの最初の Maven ビルドに由来する JAR ファイルの名前とバージョン番号です。
+   認証 `{docker.image.prefix}` は、前に示したレジストリ ページの**ログイン サーバー**です。 `{project.artifactId}` は、プロジェクトの最初の Maven ビルドに由来する JAR ファイルの名前とバージョン番号です。
 
-レジストリ ペインのユーザー名とパスワードを `<to>/<auth>` ノードに指定します。 次に例を示します。
+   レジストリ ペインのユーザー名とパスワードを `<to>/<auth>` ノードに指定します。 次に例を示します。
 
    ```xml
    <plugin>
@@ -137,7 +137,7 @@ ms.locfileid: "78893704"
      <version>1.8.0</version>
      <configuration>
         <from>
-            <image>openjdk:8-jre-alpine</image>
+            <image>mcr.microsoft.com/java/jre:8-zulu-alpine</image>
         </from>
         <to>
             <image>${docker.image.prefix}/${project.artifactId}</image>
@@ -165,7 +165,7 @@ ms.locfileid: "78893704"
 
 1. [Azure Portal]を参照して、サインインします。
 
-2. **[+ リソースの作成]** のメニュー アイコンをクリックし、 **[Web]** 、 **[Web App for Containers]** の順にクリックします。
+2. **[+ リソースの作成]** のメニュー アイコンをクリックし、 **[コンピューティング]** 、 **[Web App for Containers]** の順にクリックします。
    
    ![Azure ポータルで Web アプリを新しく作成する][LX01]
 

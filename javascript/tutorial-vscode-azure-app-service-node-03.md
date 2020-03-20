@@ -3,12 +3,12 @@ title: Visual Studio Code から Azure App Service に Node.js アプリをデ�
 description: チュートリアル パート 3、Web サイトをデプロイする
 ms.topic: conceptual
 ms.date: 03/04/2020
-ms.openlocfilehash: 1a8b4a37fa823b631e6b4849cf7cff6ac2ba26f3
-ms.sourcegitcommit: 56e5f51daf6f671f7b6e84d4c6512473b35d31d2
+ms.openlocfilehash: 7e7a6c765b79878ca3ddc86bd16349694cb7ded6
+ms.sourcegitcommit: 0cf7703a8b26469bb58840853ce9135b5adf4417
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78894273"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79510600"
 ---
 # <a name="deploy-the-app-to-azure"></a>Azure にアプリケーションをデプロイする
 
@@ -36,6 +36,7 @@ ms.locfileid: "78894273"
 
 1. プロンプトに次のように応答します。
 
+    - **サブスクリプション**のアカウントを選択します。
     - **[Enter a globally unique name]\(グローバルに一意の名前を入力する\)** に、Azure 全体で一意の名前を入力します。 英数字 ('A-Z'、'a-z'、および '0-9') とハイフン ('-') のみを使用します。
     - **[新しいリソース グループの作成]** を選択して、`AppServiceTutorial-rg` のような名前を指定します。
     - オペレーティング システム (Windows または Linux) を選択します。
@@ -68,7 +69,7 @@ ms.locfileid: "78894273"
 
     ![Web アプリへのデプロイ アイコン](media/deploy-azure/deploy.png)
 
-1. プロンプトで *[expressApp1]* フォルダーを選択し、先ほど作成した Web アプリの名前を選択します。
+1. プロンプトで *[expressApp1]* フォルダーを選択し、**サブスクリプション**のアカウントを再度選択し、先ほど作成した Web アプリの名前を選択します。
 
 1. Linux へのデプロイ時にターゲット サーバーで `npm install` を実行するように構成を更新するよう求められたら、 **[はい]** を選択します。
 

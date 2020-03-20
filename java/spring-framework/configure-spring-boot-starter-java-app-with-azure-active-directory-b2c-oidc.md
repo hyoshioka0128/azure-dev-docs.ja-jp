@@ -6,17 +6,17 @@ documentationcenter: java
 author: panli
 manager: kevinzha
 ms.author: panli
-ms.date: 02/28/2019
+ms.date: 02/06/2020
 ms.service: active-directory-b2c
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
-ms.openlocfilehash: 87134da87f47b1c808648a8b6e2f77650c9141bf
-ms.sourcegitcommit: a1f7e0f0cfd5c9d0806a7d44acdf2a54d578d8fe
+ms.openlocfilehash: b554af8f375d3b054a4391a35c0b457944b4bad1
+ms.sourcegitcommit: 9f9f5c51472dbdd7b9304b02364ed136dcf81f1c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/20/2019
-ms.locfileid: "75319679"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79139336"
 ---
 # <a name="tutorial-secure-a-java-web-app-using-the-spring-boot-starter-for-azure-active-directory-b2c"></a>チュートリアル:Azure Active Directory B2C 用の Spring Boot Starter を使用して Java Web アプリをセキュリティで保護する
 
@@ -43,11 +43,11 @@ Azure サブスクリプションをお持ちでない場合は、開始する�
 
 ## <a name="create-an-app-using-spring-initializr"></a>Spring Initializr を使用したアプリの作成
 
-1. [https://www.microsoft.com](<https://start.spring.io/>) を参照します。
+1. <https://start.spring.io/> を参照します。
 
 2. **Java** で **Maven** プロジェクトを生成することを指定し、アプリケーションの **[Group]\(グループ\)** と **[Artifact]\(アーティファクト)** に名前を入力して、Spring Initializr の **[Web]** および **[Security]\(セキュリティ\)** モジュールを選択します。
 
-   ![グループとアーティファクトの名前を指定する](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/SI.png)
+   ![グループとアーティファクトの名前を指定する](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/si-n.png)
 
 
 3. [`Generate Project`]\(プロジェクトの生成\) をクリックし、メッセージが表示されたら、ローカル コンピューター上のパスにプロジェクトをダウンロードします。
@@ -58,45 +58,45 @@ Azure サブスクリプションをお持ちでない場合は、開始する�
 
 1. <https://portal.azure.com> にログインします。
 
-2. **[+リソースの作成]** 、 **[ID]** 、 **[Azure Active Directory B2C]** の順にクリックします。
+2. **[+リソースの作成]** 、 **[ID]** 、 **[すべて表示]** の順にクリックします。  **Azure Active Directory B2C** を検索します。
 
-   ![新しい Azure Active Directory B2C インスタンスを作成する](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/AZ1.png)
+   ![新しい Azure Active Directory B2C インスタンスを作成する](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/az-1-n.png)
 
-3. **組織名**と**初期ドメイン名**を入力し、**ドメイン名**を `${your-tenant-name}` として記録して **[作成]** をクリックします。
+3. **Create** をクリックしてください。
 
-   ![B2C テナント名の取得](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/AZ5.png)
+   ![B2C テナント名の取得](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/az-5-n.png)
 
-4. Azure portal ツール バーの右上にあるご自身のアカウント名を選択し、 **[ディレクトリの切り替え]** をクリックします。
+4. **[Create a new Azure AD B2C Tenant]\(新しい Azure AD B2C テナントの作成\)** を選択します。
 
-   ![Azure Active Directory を選択する](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/AZ2.png)
+   ![新しい Azure Active Directory を作成する](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/az-2-n.png)
 
-5. ドロップダウン メニューから新しく作成した Azure Active Directory を選択します。
+5. 組織名と初期ドメイン名を入力し、後で参照するためにドメイン名を保存します。  **Create** をクリックしてください。
 
-   ![Azure Active Directory を選択する](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/AZ3.png)
+   ![Azure Active Directory を選択する](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/az-3-n.png)
 
-6. `b2c` を検索し、`Azure AD B2C` サービスをクリックします。
+6. Active Directory の作成が完了したら、新しいディレクトリに移動します。  `b2c` を検索し、`Azure AD B2C` サービスをクリックします。
 
-   ![Azure Active Directory B2C インスタンスの検索](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/AZ4.png)
+   ![Azure Active Directory B2C インスタンスの検索](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/az-4-n.ng.png)
 
 ### <a name="add-an-application-registration-for-your-spring-boot-app"></a>Spring Boot アプリのアプリケーション登録を追加する
 
 1. ポータル メニューから **Azure AD B2C** を選択し、 **[アプリケーション]** 、 **[追加]** の順にクリックします。
 
-   ![新しいアプリ登録を追加する](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/B2C1.png)
+   ![新しいアプリ登録を追加する](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/b2c1-n.png)
 
 2. アプリケーションの **[名前]** を指定し、 **[応答 URL]** に `http://localhost:8080/home` を追加し、**アプリケーション ID** を `${your-client-id}` として記録して **[保存]** をクリックします。
 
-   ![アプリケーションの応答 URL の追加](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/B2C2.png)
+   ![アプリケーションの応答 URL の追加](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/b2c2-n.png)
 
 3. ご使用のアプリケーションから **[キー]** を選択し、 **[キーの生成]** をクリックして `${your-client-secret}` を生成してから **[保存]** をクリックします。
 
 4. 左側の **[ユーザー フロー]** を選択し、**[新しいユーザー フロー]** を**クリック**します。
 
-   ![ユーザー フローの作成](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/B2C3.png)
+   ![ユーザー フローの作成](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/b2c3-n.png)
 
 5. **[サインアップまたはサインイン]** 、 **[Profile editing]\(プロファイル編集\)** 、 **[パスワードのリセット]** を選択し、それぞれユーザー フローを作成します。 ユーザー フローの **[名前]** と **[ユーザー属性と要求]** を指定し、 **[作成]** をクリックします。
 
-   ![ユーザー フローの構成](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/B2C4.png)
+   ![ユーザー フローの構成](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/b2c4-n.png)
 
 ## <a name="configure-and-compile-your-app"></a>アプリの構成およびコンパイル
 
@@ -144,7 +144,7 @@ Azure サブスクリプションをお持ちでない場合は、開始する�
    ```
    各値の説明:
 
-   | パラメーター | [説明] |
+   | パラメーター | 説明 |
    |---|---|
    | `azure.activedirectory.b2c.tenant` | 前の AD B2C の `${your-tenant-name` を指定します。 |
    | `azure.activedirectory.b2c.client-id` | 以前に完了したアプリの `${your-client-id}` を指定します。 |
@@ -260,15 +260,15 @@ Azure サブスクリプションをお持ちでない場合は、開始する�
 
 3. Maven によってアプリケーションがビルドされ、起動したら、Web ブラウザーで <http://localhost:8080/> を開きます。ログイン ページにリダイレクトされます。
 
-   ![ログイン ページ](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/LO1.png)
+   ![ログイン ページ](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/lo1-n.png)
 
 4. `${your-sign-up-or-in}` ユーザー フローの名前を持つリンクをクリックすると、Azure AD B2C にリダイレクトされ、認証プロセスが開始されます。
 
-   ![Azure AD B2C のログイン](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/LO2.png)
+   ![Azure AD B2C のログイン](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/lo2-n.png)
 
 4. 正常にログインすると、ブラウザーにサンプルの `home page` が表示されます。
 
-   ![正常なログイン](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/LO3.png)
+   ![正常なログイン](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/lo3-n.png)
 
 ## <a name="summary"></a>まとめ
 

@@ -1,16 +1,12 @@
 - name: Azure Toolkit for IntelliJ
   href: azure-toolkit-for-intellij.md
   items:
-    - name: 作業の開始
+    - name: 開始するには
       href: azure-toolkit-for-intellij-create-hello-world-web-app.md
     - name: チュートリアル
       items:
         - name: Linux コンテナーに Web アプリをデプロイする
           href: azure-toolkit-for-intellij-hello-world-web-app-linux.md
-        - name: Web アプリを Docker コンテナーとして発行する
-          href: azure-toolkit-for-intellij-publish-as-docker-container.md
-        - name: Spring Boot アプリを Docker コンテナーとして発行する
-          href: azure-toolkit-for-intellij-publish-spring-boot-docker-app.md
     - name: 操作方法
       items:
         - name: Azure アカウントへのサインイン

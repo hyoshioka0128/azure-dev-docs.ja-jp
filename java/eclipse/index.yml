@@ -1,0 +1,52 @@
+### YamlMime:Landing
+title: Azure Toolkit for Eclipse のドキュメント
+summary: Azure Toolkit for Eclipse は、Eclipse IDE の内部からクラウド アプリケーションを簡単に作成、開発、テストし、Azure にデプロイするために使用できるテンプレートと機能を提供します。
+metadata:
+  title: Azure Toolkit for Eclipse のドキュメント
+  description: Azure Toolkit for Eclipse プラグインが、クラウド アプリケーションの作成と Azure へのデプロイにどのように役立つかを説明します。
+  ms.service: azure-java
+  author: bmitchell287
+  ms.author: brendm
+  ms.date: 03/13/2020
+  ms.topic: landing-page
+  ms.openlocfilehash: 43a83bd5cd50abaa507ca1d2f80601b85526df0b
+  ms.sourcegitcommit: efa585ecdcf1cc54a6f0b664fb83cd4f0ccc7b2c
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 03/21/2020
+  ms.locfileid: "80063909"
+landingContent:
+- title: ファースト ステップ ガイド
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Azure App Service 用の Hello World Web アプリを作成する
+      url: azure-toolkit-for-eclipse-create-hello-world-web-app.md
+- title: ステップバイステップのチュートリアル
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: HDInsight Spark Linux クラスター向けの Spark アプリケーションを作成する
+      url: /azure/hdinsight/hdinsight-apache-spark-eclipse-tool-plugin
+- title: Azure のリソースを管理する
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Redis Cache
+      url: azure-toolkit-for-eclipse-managing-redis-caches-using-azure-explorer.md
+    - text: ストレージ アカウント
+      url: azure-toolkit-for-eclipse-managing-storage-accounts-using-azure-explorer.md
+    - text: 仮想マシン
+      url: azure-toolkit-for-eclipse-managing-virtual-machines-using-azure-explorer.md
+- title: サポート対象 JDK
+  linkLists:
+  - linkListType: download
+    links:
+    - text: Azure および Azure Stack 用の Java
+      url: /azure/java/jdk/
+- title: ソース コード
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: Java 用 Azure ツールキット
+      url: https://github.com/microsoft/azure-tools-for-java

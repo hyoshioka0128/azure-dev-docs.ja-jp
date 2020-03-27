@@ -11,12 +11,12 @@ ms.service: active-directory-b2c
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
-ms.openlocfilehash: b554af8f375d3b054a4391a35c0b457944b4bad1
-ms.sourcegitcommit: 9f9f5c51472dbdd7b9304b02364ed136dcf81f1c
+ms.openlocfilehash: a795f7ffea218f4f117a9935adac4f2bb74af9f3
+ms.sourcegitcommit: efa585ecdcf1cc54a6f0b664fb83cd4f0ccc7b2c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79139336"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "79990493"
 ---
 # <a name="tutorial-secure-a-java-web-app-using-the-spring-boot-starter-for-azure-active-directory-b2c"></a>チュートリアル:Azure Active Directory B2C 用の Spring Boot Starter を使用して Java Web アプリをセキュリティで保護する
 
@@ -84,15 +84,15 @@ Azure サブスクリプションをお持ちでない場合は、開始する�
 
    ![新しいアプリ登録を追加する](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/b2c1-n.png)
 
-2. アプリケーションの **[名前]** を指定し、 **[応答 URL]** に `http://localhost:8080/home` を追加し、**アプリケーション ID** を `${your-client-id}` として記録して **[保存]** をクリックします。
+2. アプリケーションの **[名前]** を指定し、 **[リダイレクト URI]** に `http://localhost:8080/home` を追加します。 **[保存]** をクリックします。  **[アプリケーション ID]** を、`${your-client-id}` としてメモします。  
 
-   ![アプリケーションの応答 URL の追加](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/b2c2-n.png)
+   ![アプリケーションのリダイレクト URI を追加する](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/b2c2-n.png)
 
-3. ご使用のアプリケーションから **[キー]** を選択し、 **[キーの生成]** をクリックして `${your-client-secret}` を生成してから **[保存]** をクリックします。
-
-4. 左側の **[ユーザー フロー]** を選択し、**[新しいユーザー フロー]** を**クリック**します。
+3. ご使用のアプリケーションから **[証明書とシークレット]** を選択し、 **[キーの生成]** をクリックして `${your-client-secret}` を生成してから **[保存]** をクリックします。
 
    ![ユーザー フローの作成](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/b2c3-n.png)
+
+4. 左側の **[ユーザー フロー]** を選択し、**[新しいユーザー フロー]** を**クリック**します。
 
 5. **[サインアップまたはサインイン]** 、 **[Profile editing]\(プロファイル編集\)** 、 **[パスワードのリセット]** を選択し、それぞれユーザー フローを作成します。 ユーザー フローの **[名前]** と **[ユーザー属性と要求]** を指定し、 **[作成]** をクリックします。
 
@@ -135,7 +135,7 @@ Azure サブスクリプションをお持ちでない場合は、開始する�
          tenant: ${your-tenant-name}
          client-id: ${your-client-id}
          client-secret: ${your-client-secret}
-         reply-url: ${your-reply-url-from-aad} # should be absolute url.
+         reply-url: ${your-redirect-uri-from-aad} # should be absolute url.
          logout-success-url: ${you-logout-success-url}
          user-flows:
            sign-up-or-sign-in: ${your-sign-up-or-in-user-flow}
@@ -149,7 +149,7 @@ Azure サブスクリプションをお持ちでない場合は、開始する�
    | `azure.activedirectory.b2c.tenant` | 前の AD B2C の `${your-tenant-name` を指定します。 |
    | `azure.activedirectory.b2c.client-id` | 以前に完了したアプリの `${your-client-id}` を指定します。 |
    | `azure.activedirectory.b2c.client-secret` | 以前に完了したアプリの `${your-client-secret}` を指定します。 |
-   | `azure.activedirectory.b2c.reply-url` | 以前に完了したアプリの**応答 URL** のいずれかを指定します。 |
+   | `azure.activedirectory.b2c.reply-url` | 以前に完了したアプリの**リダイレクト URI** のいずれかを指定します。 |
    | `azure.activedirectory.b2c.logout-success-url` | アプリケーションが正常にログアウトしたときの URL を指定します。 |
    | `azure.activedirectory.b2c.user-flows` | 以前に完了したユーザー フローの名前を指定します。
 

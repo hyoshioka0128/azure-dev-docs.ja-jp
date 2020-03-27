@@ -1,5 +1,5 @@
 ---
-title: コンテナー用 Azure App Service で Spring Boot Web アプリをデプロイする
+title: Spring Boot Web アプリを Azure App Service の Linux にデプロイする
 description: このチュートリアルでは、Microsoft Azure の Linux Web アプリとして Spring Boot アプリケーションをデプロイする方法について説明します。
 services: azure app service
 documentationcenter: java
@@ -9,14 +9,14 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: mvc
-ms.openlocfilehash: 03aa4ec91b8c39ccdd774a99d2e4c3af39b997b6
-ms.sourcegitcommit: 0cf7703a8b26469bb58840853ce9135b5adf4417
+ms.openlocfilehash: fb8e49ce59c363276a0ed615b3da29ca8d02f09e
+ms.sourcegitcommit: efa585ecdcf1cc54a6f0b664fb83cd4f0ccc7b2c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/18/2020
-ms.locfileid: "79510613"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "79990492"
 ---
-# <a name="deploy-a-spring-boot-application-on-azure-app-service-for-container"></a>コンテナー用 Azure App Service で Spring Boot アプリケーションをデプロイする
+# <a name="deploy-a-spring-boot-application-to-linux-on-azure-app-service"></a>Spring Boot アプリケーションを Azure App Service の Linux にデプロイする
 
 このチュートリアルでは、[Docker] を使用してお使いの [Spring Boot] アプリケーションをコンテナー化し、ご自身の Docker イメージを [Azure App Service](https://docs.microsoft.com/azure/app-service/containers/app-service-linux-intro) の Linux ホストにデプロイする手順について説明します。
 
@@ -34,46 +34,46 @@ ms.locfileid: "79510613"
 > [!NOTE]
 >
 > このチュートリアルには仮想化要件があるため、仮想マシンでこの記事の手順を実行することはできません。仮想化機能を有効にした物理コンピューターを使用する必要があります。
->
 
 ## <a name="create-the-spring-boot-on-docker-getting-started-web-app"></a>Spring Boot on Docker Getting Started Web アプリを作成する
 
 次の手順では、単純な Spring Boot Web アプリケーションを作成し、それをローカルにテストするために必要な手順について説明します。
 
 1. コマンド プロンプトを開き、アプリケーションを保持するためのローカル ディレクトリを作成して、そのディレクトリに変更します。次に例を示します。
-   ```
-   md C:\SpringBoot
-   cd C:\SpringBoot
-   ```
-   -- または --
-   ```
+
+   ```bash
    md /users/robert/SpringBoot
    cd /users/robert/SpringBoot
    ```
 
 1. [Docker での Spring Boot の使用開始]のサンプル プロジェクトを今作成したディレクトリに複製します。次に例を示します。
-   ```
+
+   ```bash
    git clone https://github.com/spring-guides/gs-spring-boot-docker.git
    ```
 
 1. 完成したプロジェクトにディレクトリを変更します。次に例を示します。
-   ```
+
+   ```bash
    cd gs-spring-boot-docker/complete
    ```
 
 1. Maven を使用して JAR ファイルを構築します。次に例を示します。
-   ```
+
+   ```bash
    mvn package
    ```
 
 1. Web アプリが作成されたら、JAR ファイルがある `target` ディレクトリにディレクトリを変更し、Web アプリを起動します。次に例を示します。
-   ```
+
+   ```bash
    cd target
    java -jar gs-spring-boot-docker-0.1.0.jar --server.port=80
    ```
 
 1. Web アプリのテストは、Web ブラウザーを使用してアプリをローカルで参照して行います。 たとえば curl が使用でき、Tomcat サーバーをポート 80 で実行されるように構成した場合は、次のようになります。
-   ```
+
+   ```bash
    curl http://localhost
    ```
 
@@ -88,14 +88,13 @@ ms.locfileid: "79510613"
 > [!NOTE]
 >
 > Azure Portal ではなく Azure CLI を使用する場合は、「[Azure CLI 2.0 を使用したプライベート Docker コンテナー レジストリの作成](/azure/container-registry/container-registry-get-started-azure-cli)」の手順に従います。
->
 
 1. [Azure Portal]を参照して、サインインします。
 
    Azure portal のアカウントにサインインしたら、[Azure portal を使用したプライベート Docker コンテナー レジストリの作成]に関する記事の手順に従います。便宜上、この手順を改めて以下で説明します。
 
 1. **[+ 新規]** のメニュー アイコン、 **[コンテナー]** 、 **[Azure Container Registry]** の順にクリックします。
-   
+
    ![Azure Container Registry を新しく作成する][AR01]
 
 1. **[コンテナー レジストリの作成]** ページが表示されたら、 **[レジストリ名]** 、 **[サブスクリプション]** 、 **[リソース グループ]** 、 **[場所]** を入力します。 **[管理者ユーザー]** で **[有効]** を選択します。 **[Create]** をクリックします。
@@ -122,7 +121,7 @@ ms.locfileid: "79510613"
    </properties>
    ```
 
-1. *pom.xml* ファイルの `<plugins>` コレクションに [jib-maven-plugin](https://github.com/GoogleContainerTools/jib/tree/master/jib-maven-plugin) を追加します。  この例では、バージョン1.8.0 を使用します。 
+1. *pom.xml* ファイルの `<plugins>` コレクションに [jib-maven-plugin](https://github.com/GoogleContainerTools/jib/tree/master/jib-maven-plugin) を追加します。  この例では、バージョン1.8.0 を使用します。
 
    `<from>/<image>` に基本イメージを指定します。ここでは `mcr.microsoft.com/java/jre:8-zulu-alpine` です。 基本イメージからビルドする最終イメージの名前を `<to>/<image>` に指定します。  
 
@@ -152,7 +151,7 @@ ms.locfileid: "79510613"
 
 1. Spring Boot アプリケーション用の完了プロジェクト ディレクトリに移動し、次のコマンドを実行してアプリケーションをリビルドし、コンテナーを Azure Container Registry にプッシュします。
 
-   ```cmd
+   ```bash
    mvn compile jib:build
    ```
 
@@ -198,15 +197,15 @@ ms.locfileid: "79510613"
    * **イメージ**:前に作成したイメージ ("*gs-spring-boot-docker*" など) を選択します
 
    * **タグ**: イメージのタグ ("*latest*" など) を選択します。
-   
+
    * **スタートアップ コマンド**:イメージには既にスタートアップ コマンドがあるため、これは空白のままにしておきます
-   
+
    上記の情報をすべて入力したら、 **[レビュー + 作成]** をクリックします。
 
    ![Web アプリの設定を構成する][LX02-A]
 
    * **[Review + create]\(レビュー + 作成\)** をクリックします。
-   
+
 情報を確認し、 **[作成]** をクリックします。
 
 デプロイが完了したら、 **[リソースに移動]** をクリックします。  デプロイ ページには、アプリケーションにアクセスするための URL が表示されます。
@@ -218,17 +217,16 @@ ms.locfileid: "79510613"
 > Azure により、ポート 80 で実行されている埋め込みの Tomcat サーバーにインターネットの要求が自動的にマップされます。 ただし、埋め込みの Tomcat サーバーをポート 8080 またはカスタム ポートで実行するように構成している場合は、埋め込みの Tomcat サーバーのポートを定義する環境変数を Web アプリに追加する必要があります。 そのためには、次の手順を実行してください。
 >
 > 1. [Azure Portal]を参照して、サインインします。
-> 
+>
 > 2. **[Web Apps]** のアイコンをクリックし、 **[App Services]** ページからアプリを選択します。
 >
-> 4. 左側のナビゲーション ウィンドウで、 **[構成]** をクリックします。
+> 3. 左側のナビゲーション ウィンドウで、 **[構成]** をクリックします。
 >
-> 5. **[アプリケーション設定]** セクションで、**WEBSITES_PORT** という名前の新しい設定を追加して、この値にカスタム ポート番号を入力します。
+> 4. **[アプリケーション設定]** セクションで、**WEBSITES_PORT** という名前の新しい設定を追加して、この値にカスタム ポート番号を入力します。
 >
-> 6. **[OK]** をクリックします。 **[保存]** をクリックします。
+> 5. **[OK]** をクリックします。 **[保存]** をクリックします。
 >
 > ![Azure Portal でのカスタム ポート番号の保存][LX03]
->
 
 <!--
 ##  OPTIONAL: Configure the embedded Tomcat server to run on a different port

@@ -1,0 +1,54 @@
+### YamlMime:Landing
+title: Azure SDK for Go のドキュメント
+summary: >
+  Azure SDK for Go の使用方法、SDK に備わった機能、Go を利用して Azure を簡単に使えるようにする開発ツールについて説明します。
+metadata:
+  title: Go 開発者向けの Azure
+  description: 以下の開発者リソースを使用して、Azure SDK for Go での開発を開始しましょう。
+  author: sptramer
+  ms.author: sttramer
+  ms.date: 09/09/2019
+  ms.topic: landing-page
+  ms.collection: collection
+  ms.devlang: golang
+  ms.openlocfilehash: b5e01d5f172a842d6b85355c568c170949236be8
+  ms.sourcegitcommit: 31f6d047f244f1e447faed6d503afcbc529bd28c
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 03/26/2020
+  ms.locfileid: "80319859"
+landingContent:
+- title: Azure SDK for Go を使ってみる
+  linkLists:
+  - linkListType: download
+    links:
+    - text: Azure SDK for Go のインストール
+      url: azure-sdk-install.md
+    - text: 開発者用ツール
+      url: azure-sdk-tools.md
+  - linkListType: how-to-guide
+    links:
+    - text: アプリケーションの認証
+      url: azure-sdk-authorization.md
+- title: Azure SDK for Go の例
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: テンプレートから仮想マシンをデプロイする
+      url: azure-sdk-qs-vm.md
+    - text: Blob Storage を Go と共に使用
+      url: /azure/storage/blobs/storage-quickstart-blobs-go?toc=/azure/develoer/go/toc.json&bc=/azure/developer/breadcrumb/toc.json
+    - text: Azure Database for PostgreSQL に接続する
+      url: /azure/postgresql/connect-go?toc=/azure/developer/go/toc.json&bc=/azure/develpoer/breadcrumb/toc.json
+    - text: Azure Database for MySQL に接続する
+      url: /azure/mysql/connect-go?toc=/azure/developer/go/toc.json&bc=/azure/developer/breadcrumb/toc.json
+    - text: Azure SQL データベースにクエリを実行する
+      url: /azure/sql-database/sql-database-connect-query-go?toc=/azure/developer/go/toc.json&bc=/azure/developer/breadcrumb/toc.json
+- title: Azure SDK for Go リファレンス
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: Azure SDK for Go コード サンプル
+      url: https://github.com/azure-samples/azure-sdk-for-go-samples
+    - text: Azure SDK for Go の API リファレンス
+      url: https://godoc.org/github.com/Azure/azure-sdk-for-go

@@ -3,13 +3,13 @@
 - name: 概要
   items:
     - name: Python SDK について
-      href: python-sdk-azure-overview.md
+      href: azure-sdk-overview.md
     - name: 開発者ツール
-      href: python-azure-tools.md
+      href: azure-tools.md
 - name: クイックスタート
   items:
     - name: Python SDK
-      href: python-sdk-azure-get-started.yml
+      href: azure-sdk-get-started.yml
     - name: アプリ ホスティング
       href: quickstarts-app-hosting.md
     - name: データ ソリューション
@@ -73,13 +73,13 @@
 - name: 操作方法ガイド
   items:
     - name: SDK のインストール
-      href: python-sdk-azure-install.md
+      href: azure-sdk-install.md
     - name: 認証
-      href: python-sdk-azure-authenticate.md
+      href: azure-sdk-authenticate.md
     - name: 操作の構成
-      href: python-sdk-azure-operation-config.md
+      href: azure-sdk-operation-config.md
     - name: マルチクラウド開発
-      href: python-sdk-azure-multi-cloud.md
+      href: azure-sdk-multi-cloud.md
 - name: サンプル
   items:
     - name: Web アプリとサーバーレス

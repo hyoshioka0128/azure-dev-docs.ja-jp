@@ -1,0 +1,114 @@
+- name: Python 開発者向けの Azure
+  href: index.yml
+- name: 概要
+  items:
+    - name: Python SDK について
+      href: azure-sdk-overview.md
+    - name: 開発者ツール
+      href: azure-tools.md
+- name: クイックスタート
+  items:
+    - name: Python SDK
+      href: azure-sdk-get-started.yml
+    - name: アプリ ホスティング
+      href: quickstarts-app-hosting.md
+    - name: データ ソリューション
+      href: quickstarts-data-solutions.md
+    - name: 機械学習
+      href: quickstarts-machine-learning.md
+    - name: Azure Cognitive Services
+      href: quickstarts-cognitive-services.md
+    - name: メッセージング
+      href: quickstarts-messaging.md
+    - name: セキュリティと統合
+      href: quickstarts-security-integration.md
+- name: チュートリアル
+  items:
+    - name: VS Code で App Service にデプロイする
+      items:
+        - name: 1 概要と前提条件
+          href: tutorial-deploy-app-service-on-linux-01.md
+        - name: 2 アプリケーションの準備
+          href: tutorial-deploy-app-service-on-linux-02.md
+        - name: 3 App Service の作成
+          href: tutorial-deploy-app-service-on-linux-03.md
+        - name: 4 スタートアップ ファイルの構成
+          href: tutorial-deploy-app-service-on-linux-04.md
+        - name: 5 アプリケーションのデプロイ
+          href: tutorial-deploy-app-service-on-linux-05.md
+        - name: 6 ログのストリーミング
+          href: tutorial-deploy-app-service-on-linux-06.md
+        - name: 7 リソースのクリーンアップ
+          href: tutorial-deploy-app-service-on-linux-07.md
+    - name: VS Code を使用したコンテナーのデプロイ
+      items:
+        - name: 1 概要と前提条件
+          href: tutorial-deploy-containers-01.md
+        - name: 2 コンテナー イメージをデプロイする
+          href: tutorial-deploy-containers-02.md
+        - name: 3 変更を加えて再デプロイする
+          href: tutorial-deploy-containers-03.md
+        - name: 4 ログのストリーミング
+          href: tutorial-deploy-containers-04.md
+        - name: 5 リソースのクリーンアップ
+          href: tutorial-deploy-containers-05.md
+    - name: VS Code で Azure Functions をデプロイする
+      items:
+        - name: 1 概要と前提条件
+          href: tutorial-vs-code-serverless-python-01.md
+        - name: 2 Python 関数を作成する
+          href: tutorial-vs-code-serverless-python-02.md
+        - name: 3 コード ファイルを調べる
+          href: tutorial-vs-code-serverless-python-03.md
+        - name: 4 ローカル デバッグ
+          href: tutorial-vs-code-serverless-python-04.md
+        - name: 5 Azure へのデプロイ
+          href: tutorial-vs-code-serverless-python-05.md
+        - name: 6 2 つ目の関数を追加する
+          href: tutorial-vs-code-serverless-python-06.md
+        - name: 7 ストレージ バインディングを追加する
+          href: tutorial-vs-code-serverless-python-07.md
+        - name: 8 リソースのクリーンアップ
+          href: tutorial-vs-code-serverless-python-08.md
+- name: 操作方法ガイド
+  items:
+    - name: SDK のインストール
+      href: azure-sdk-install.md
+    - name: 認証
+      href: azure-sdk-authenticate.md
+    - name: 操作の構成
+      href: azure-sdk-operation-config.md
+    - name: マルチクラウド開発
+      href: azure-sdk-multi-cloud.md
+- name: サンプル
+  items:
+    - name: Web アプリとサーバーレス
+      href: 'https://docs.microsoft.com/samples/browse/?languages=python&products=azure-functions%2Cazure-app-service%2Cazure-logic-apps'
+    - name: データベース
+      href: 'https://docs.microsoft.com/samples/browse/?languages=python&products=azure-cosmos-db%2Cazure-sql-database'
+    - name: ストレージ
+      items:
+        - name: Azure Storage
+          href: 'https://docs.microsoft.com/samples/browse/?languages=python&products=azure-storage'
+        - name: Redis Cache
+          href: 'https://docs.microsoft.com/samples/browse/?languages=python&products=azure-redis-cache'
+    - name: ID とセキュリティ
+      href: 'https://docs.microsoft.com/samples/browse/?languages=python&products=azure-active-directory%2Cazure-key-vault'
+    - name: IoT
+      href: 'https://docs.microsoft.com/samples/browse/?languages=python&products=azure-iot-hub%2Cazure-iot-edge%2Cazure-iot-central'
+    - name: データ サイエンス
+      items:
+        - name: Machine Learning Service
+          href: 'https://docs.microsoft.com/samples/browse/?languages=python&products=azure-machine-learning-service'
+        - name: Databricks
+          href: 'https://docs.microsoft.com/samples/browse/?languages=python&products=azure-databricks'
+        - name: HDInsight
+          href: 'https://docs.microsoft.com/samples/browse/?languages=python&products=azure-hdinsight'
+    - name: AI と Cognitive Services
+      href: 'https://docs.microsoft.com/samples/browse/?languages=python&products=azure-cognitive-services'
+    - name: 検索
+      href: 'https://docs.microsoft.com/samples/browse/?languages=python&products=azure-search'
+    - name: すべてのサンプル
+      href: 'https://docs.microsoft.com/samples/browse/?languages=python'
+- name: リファレンス
+  href: /python/api/?view=azure-python

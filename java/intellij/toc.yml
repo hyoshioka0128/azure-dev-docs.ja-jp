@@ -1,8 +1,10 @@
 - name: Azure Toolkit for IntelliJ
   href: azure-toolkit-for-intellij.md
   items:
-    - name: 開始するには
+    - name: はじめに - Web アプリ
       href: azure-toolkit-for-intellij-create-hello-world-web-app.md
+    - name: はじめに - 関数
+      href: azure-toolkit-for-intellij-quickstart-functions.md
     - name: チュートリアル
       items:
         - name: Linux コンテナーに Web アプリをデプロイする

@@ -1,5 +1,5 @@
 ---
-title: Kubernetes での Spring Boot アプリのデプロイ
+title: Spring Boot アプリケーションを Azure Kubernetes Service にデプロイする
 titleSuffix: Azure Kubernetes Service
 description: このチュートリアルでは、Microsoft Azure の Kubernetes クラスターに Spring Boot アプリケーションをデプロイする方法について説明します。
 services: container-service
@@ -9,14 +9,14 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: mvc
-ms.openlocfilehash: 3e845f9d8a4069225f0f2d949f8a8de492b21771
-ms.sourcegitcommit: 9f9f5c51472dbdd7b9304b02364ed136dcf81f1c
+ms.openlocfilehash: dedd7a8c30e71b1197781838c1006745884eb67d
+ms.sourcegitcommit: 31f6d047f244f1e447faed6d503afcbc529bd28c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79139251"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80306781"
 ---
-# <a name="deploy-a-spring-boot-application-on-a-kubernetes-cluster-in-the-azure-kubernetes-service"></a>Azure Kubernetes Service で Spring Boot アプリケーションを Kubernetes クラスターにデプロイする
+# <a name="deploy-spring-boot-application-to-the-azure-kubernetes-service"></a>Spring Boot アプリケーションを Azure Kubernetes Service にデプロイする
 
 **[Kubernetes]** と **[Docker]** は、開発者が、コンテナーで実行されるアプリケーションのデプロイ、スケーリング、管理を自動化することを支援するオープン ソース ソリューションです。
 
@@ -30,6 +30,7 @@ ms.locfileid: "79139251"
 * Apache の [Maven] 構築ツール (バージョン 3)。
 * [Git] クライアント。
 * [Docker] クライアント。
+* [ACR Docker 資格情報ヘルパー](https://github.com/Azure/acr-docker-credential-helper)。
 
 > [!NOTE]
 >
@@ -121,8 +122,7 @@ ms.locfileid: "79139251"
       <java.version>1.8</java.version>
    </properties>
    ```
-
-1. *pom.xml* ファイルの `<plugins>` コレクションを、`jib-maven-plugin` に `<plugin>` が含まれるように更新します。
+1. 以下の例に示すように *pom.xml* ファイルの `<plugins>` コレクションを更新し、`<plugin>` 要素に `jib-maven-plugin` のエントリが含まれるようにします。 ここでは、Microsoft Container Registry (MCR) の基本イメージ (`mcr.microsoft.com/java/jdk:8-zulu-alpine`) が使用されていることに注目してください。このイメージには、公式にサポートされた Azure 用の JDK が含まれています。 その他公式にサポートされた JDK を含む MCR 基本イメージについては、「[Java SE JDK](https://hub.docker.com/_/microsoft-java-jdk)」、「[Java SE JRE](https://hub.docker.com/_/microsoft-java-jre)」、「[Java SE ヘッドレス JRE](https://hub.docker.com/_/microsoft-java-jre-headless)」、「[Java SE JDK と Maven](https://hub.docker.com/_/microsoft-java-maven)」を参照してください。
 
    ```xml
    <plugin>
@@ -131,7 +131,7 @@ ms.locfileid: "79139251"
      <version>${jib-maven-plugin.version}</version>
      <configuration>
         <from>
-            <image>openjdk:8-jre-alpine</image>
+            <image>mcr.microsoft.com/java/jdk:8-zulu-alpine</image>
         </from>
         <to>
             <image>${docker.image.prefix}/${project.artifactId}</image>

@@ -7,12 +7,12 @@ ms.date: 12/19/2018
 ms.service: sql-database
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: a57fbc5dc8be0848f0b68fd1a45a1478de52b419
-ms.sourcegitcommit: 2ad3f7ce8c87331f8aff759ac2a3dc1b29581866
+ms.openlocfilehash: 180eac30a5aaeb10abe09904c578463bfe5a71da
+ms.sourcegitcommit: 3b76a0aa1683f28bcb42cd4d506426b48e5b0397
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76022130"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80537212"
 ---
 # <a name="how-to-use-spring-data-jpa-with-azure-sql-database"></a>Azure SQL Database で Spring Data JPA を使用する方法
 
@@ -114,7 +114,7 @@ SQL データベースとサーバーを作成したら、セキュリティ設�
     ```
    各値の説明:
 
-   | パラメーター | [説明] |
+   | パラメーター | 説明 |
    |---|---|
    | `spring.datasource.url` | この記事の前半の SQL JDBC 文字列の編集されたバージョンを指定します。 |
    | `spring.datasource.username` | この記事の前半の SQL 管理者名を指定し、その後に短縮サーバー名を追加します。 |
@@ -122,7 +122,11 @@ SQL データベースとサーバーを作成したら、セキュリティ設�
 
 1. *application.properties* ファイルを保存して閉じます。
 
-## <a name="package-and-test-the-sample-application"></a>サンプル アプリケーションをパッケージ化してテストする 
+> [!NOTE]
+> *application.properties* ファイルの最初のプロパティは `spring.jpa.hibernate.ddl-auto=create` です。これは、アプリケーションの起動時にデータベース スキーマを自動的に削除して再作成する休止プロパティです。
+> この構成は開発およびテスト時に有用ですが、運用環境では使用しないでください。
+
+## <a name="package-and-test-the-sample-application"></a>サンプル アプリケーションをパッケージ化してテストする
 
 1. サンプル アプリケーションを Maven でビルドします。次に例を示します。
 

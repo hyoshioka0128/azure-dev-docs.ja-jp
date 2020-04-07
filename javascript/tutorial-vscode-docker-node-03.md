@@ -3,12 +3,12 @@ title: Visual Studio Code から Node.js アプリのコンテナー イメー�
 description: チュートリアル パート 3、Node.js アプリケーション イメージを作成する
 ms.topic: conceptual
 ms.date: 09/20/2019
-ms.openlocfilehash: ae39d6604f3ffe49915f6b311953cd6829ed9369
-ms.sourcegitcommit: fc3408b6e153c847dd90026161c4c498aa06e2fc
+ms.openlocfilehash: 47e9440852f8a3443147e3d03b5c833d8da0c36b
+ms.sourcegitcommit: a65fa8dbb168bd39e225a293d9ee73d18ece1864
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75191081"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80362787"
 ---
 # <a name="create-your-nodejs-application-image"></a>Node.js アプリケーション イメージを作成する
 
@@ -16,7 +16,7 @@ ms.locfileid: "75191081"
 
 この手順では、Visual Studio Code の Docker 拡張機能を使用して、アプリのイメージを作成するために必要なファイルを追加し、イメージをビルドして、レジストリにプッシュします。
 
-このチュートリアル用のアプリがまだない場合は、[Visual Studio Code Node.js チュートリアル](https://code.visualstudio.com/docs/nodejs/nodejs-tutorial)のアプリを使用してください。
+このチュートリアル用のアプリがまだない場合は、[Visual Studio Code Node.js チュートリアル](https://code.visualstudio.com/docs/nodejs/nodejs-tutorial#_an-express-application)のアプリを使用してください。
 
 ## <a name="add-docker-files"></a>Docker ファイルを追加する
 

@@ -3,12 +3,12 @@ title: Visual Studio Code から Node.js アプリのコンテナー イメー�
 description: チュートリアル パート 4、Azure App Service にイメージをデプロイする
 ms.topic: conceptual
 ms.date: 09/20/2019
-ms.openlocfilehash: b43f93ba97950c84302db2e18f69b506e44dc84e
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: 8fe8024adca9edda2142dc6582b6456b77ea4b8f
+ms.sourcegitcommit: a65fa8dbb168bd39e225a293d9ee73d18ece1864
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74466544"
+ms.lasthandoff: 03/27/2020
+ms.locfileid: "80362781"
 ---
 # <a name="deploy-the-image-to-azure-app-service"></a>Azure App Service にイメージをデプロイする
 
@@ -25,6 +25,8 @@ ms.locfileid: "74466544"
     - この名前は Azure 全体で一意である必要があります。
     - 既存のリソース グループを選択するか、新しいリソース グループを作成します。 (**リソース グループ**は、基本的に、Azure のアプリケーション リソースの名前付きコレクションです。)
     - 既存の App Service プランを選択するか、新しいプランを作成します。 (Web サイトをホストする物理リソースは、**App Service プラン**によって定義されます。 このチュートリアルでは、Basic または無料プラン サービス レベルを使用できます)。
+    - 新しい App Service プランの価格レベルを選択します。
+    - 新しいリソースの場所を選択します (近くの場所)。
 
 1. デプロイが完了すると、Visual Studio Code は、Web サイトの URL を示す通知を表示します。
 

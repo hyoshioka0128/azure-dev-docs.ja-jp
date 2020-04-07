@@ -6,12 +6,12 @@ ms.date: 11/27/2019
 ms.service: mysql
 ms.tgt_pltfrm: multiple
 ms.topic: conceptual
-ms.openlocfilehash: 927cc72a526651be71a7983a298ca2c6718f4546
-ms.sourcegitcommit: 2ad3f7ce8c87331f8aff759ac2a3dc1b29581866
+ms.openlocfilehash: 58863eb3d6193833e0d8506b90abe7223b87d661
+ms.sourcegitcommit: 3b76a0aa1683f28bcb42cd4d506426b48e5b0397
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76022088"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80537216"
 ---
 # <a name="how-to-use-spring-data-jpa-with-azure-database-for-mysql"></a>Azure Database for MySQL で Spring Data JPA を使用する方法
 
@@ -86,7 +86,7 @@ ms.locfileid: "76022088"
    ```
    各値の説明:
 
-   | パラメーター | [説明] |
+   | パラメーター | 説明 |
    |---|---|
    | `host` | この記事の前半の完全修飾 MySQL サーバー名を指定します。 |
    | `user` | この記事の前半の MySQL 管理者と短縮サーバー名を指定します。 |
@@ -166,7 +166,7 @@ ms.locfileid: "76022088"
     ```
    各値の説明:
 
-   | パラメーター | [説明] |
+   | パラメーター | 説明 |
    |---|---|
    | `spring.jpa.database-platform` | JPA データベース プラットフォームを指定します。 |
    | `spring.datasource.url` | この記事の前半の MySQL JDBC 文字列を指定します。 |
@@ -175,7 +175,11 @@ ms.locfileid: "76022088"
 
 1. *application.properties* ファイルを保存して閉じます。
 
-## <a name="package-and-test-the-sample-application"></a>サンプル アプリケーションをパッケージ化してテストする 
+> [!NOTE]
+> *application.properties* ファイルの最初のプロパティは `spring.jpa.hibernate.ddl-auto=create` です。これは、アプリケーションの起動時にデータベース スキーマを自動的に削除して再作成する休止プロパティです。
+> この構成は開発およびテスト時に有用ですが、運用環境では使用しないでください。
+
+## <a name="package-and-test-the-sample-application"></a>サンプル アプリケーションをパッケージ化してテストする
 
 1. サンプル アプリケーションを Maven でビルドします。次に例を示します。
 

@@ -1,0 +1,93 @@
+### YamlMime:Landing
+title: Azure 上の Ansible のドキュメント
+summary: Ansible を使用してクラウド プロビジョニング、構成管理、アプリケーションのデプロイを自動化する方法について説明します。
+metadata:
+  title: Azure 上の Ansible のドキュメント
+  description: Ansible を使用してクラウド プロビジョニング、構成管理、アプリケーションのデプロイを自動化する方法について説明します。
+  services: azure
+  ms.service: ansible
+  ms.topic: landing-page
+  author: TomArcherMsft
+  ms.author: tarcher
+  ms.date: 04/03/2020
+  ms.openlocfilehash: d0880d656bede1b8ad9da64694ee2b8bd4a25588
+  ms.sourcegitcommit: f89c59f772364ec717e751fb59105039e6fab60c
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 04/06/2020
+  ms.locfileid: "80741860"
+landingContent:
+- title: Azure 上の Ansible について
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Azure 上の Ansible について
+      url: overview.md
+  - linkListType: reference
+    links:
+    - text: リリースと機能
+      url: module-version-matrix.md
+    - text: Azure 用のすべてのモジュール
+      url: https://docs.ansible.com/ansible/latest/modules/list_of_cloud_modules#azure
+- title: Ansible のインストールと構成
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Ansible ソリューション テンプレートを CentOS にデプロイする
+      url: solution-template-deploy.md
+    - text: Ansible を Linux 仮想マシンにインストールする
+      url: install-on-linux-vm.md
+    - text: Cloud Shell でプレイブックを実行する
+      url: cloudshell-run-playbook.md
+  - linkListType: tutorial
+    links:
+    - text: 動的インベントリの構成
+      url: dynamic-inventory-configure.md
+  - linkListType: download
+    links:
+    - text: Ansible 用 Visual Studio Code 拡張機能
+      url: https://marketplace.visualstudio.com/items?itemName=vscoss.vscode-ansible
+- title: 仮想マシンの管理
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Linux 仮想マシンを構成する
+      url: vm-configure.md
+    - text: Linux 仮想マシンを管理する
+      url: vm-manage.md
+    - text: Shared Image Gallery から作成する
+      url: vm-configure-from-azure-shared-image-gallery.md
+- title: Virtual Machine Scale Sets の管理
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: 仮想マシン スケール セットの構成
+      url: vm-scale-set-configure.md
+    - text: 仮想マシン スケール セットへのアプリケーションのデプロイ
+      url: vm-scale-set-deploy-app.md
+    - text: 仮想マシン スケール セットの自動スケール
+      url: vm-scale-set-auto-scale.md
+    - text: カスタム イメージの更新
+      url: vm-scale-set-update-image.md
+    - text: Shared Image Gallery から作成する
+      url: vm-configure-from-azure-shared-image-gallery.md
+- title: 仮想ネットワークを管理する
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: ピアリングの構成
+      url: virtual-network-peering-configure.md
+    - text: ルート テーブルの構成
+      url: route-table-configure.md
+- title: AKS の管理
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: AKS クラスターの構成
+      url: aks-configure-clusters.md
+    - text: Azure CNI ネットワークの構成
+      url: aks-configure-cni-networking.md
+    - text: kubenet ネットワークの構成
+      url: aks-configure-kubenet-networking.md
+    - text: AKS クラスターでの RBAC ロールの構成
+      url: aks-configure-rbac.md

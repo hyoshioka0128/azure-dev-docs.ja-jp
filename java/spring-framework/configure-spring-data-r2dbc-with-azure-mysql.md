@@ -7,12 +7,12 @@ ms.service: mysql
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.author: judubois
-ms.openlocfilehash: f5c9f3d0cccad7f6e1a8b5ab199f841925f416cc
-ms.sourcegitcommit: a65fa8dbb168bd39e225a293d9ee73d18ece1864
+ms.openlocfilehash: 32008e4ddbf2663050dd1241e1d028e66ffb7dab
+ms.sourcegitcommit: 951fc116a9519577b5d35b6fb584abee6ae72b0f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80366753"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80611911"
 ---
 # <a name="how-to-use-spring-data-r2dbc-with-azure-mysql"></a>Azure MySQL で Spring Data R2DBC を使用する方法
 
@@ -45,7 +45,7 @@ AZ_LOCAL_IP_ADDRESS=<YOUR_LOCAL_IP_ADDRESS>
 - `<YOUR_DATABASE_NAME>`:MySQL サーバー インスタンスの名前。 Azure 全体で一意である必要があります。
 - `<YOUR_AZURE_REGION>`: 使用する Azure リージョン。 既定で `eastus` を使用できますが、居住地に近いリージョンを構成することをお勧めします。 「`az account list-locations`」を入力すると、使用可能なリージョンの完全な一覧を表示できます。
 - `<YOUR_MYSQL_PASSWORD>`: MySQL データベース サーバーのパスワード。 このパスワードは少なくとも 8 文字で、英大文字、英小文字、数字 (0 から 9)、英数字以外の文字 (!、$、#、% など) のうち、3 つのカテゴリの文字が含まれている必要があります。
-- `<YOUR_LOCAL_IP_ADDRESS>`: ローカル コンピューターの IP アドレス。そこから、Spring Boot アプリケーションを実行します。 これを確認する簡単な方法は、ブラウザーで [http://ipv4.icanhazip.com](http://ipv4.icanhazip.com) にアクセスすることです。
+- `<YOUR_LOCAL_IP_ADDRESS>`: ローカル コンピューターの IP アドレス。そこから、Spring Boot アプリケーションを実行します。 これを確認する簡単な方法は、ブラウザーで [http://whatismyip.akamai.com/](http://whatismyip.akamai.com/) にアクセスすることです。
 
 次に、リソース グループを作成します。
 

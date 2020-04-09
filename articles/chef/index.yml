@@ -1,0 +1,51 @@
+### YamlMime:Landing
+title: Azure 上の Chef ソフトウェアのドキュメント
+summary: Chef ソフトウェア製品を使用して Azure リソースをデプロイおよび管理する方法を説明します。
+metadata:
+  title: Azure 上の Chef ソフトウェアのドキュメント
+  description: Chef ソフトウェア製品を使用して Azure リソースをデプロイおよび管理する方法を説明します。
+  services: azure
+  ms.service: chef
+  ms.topic: landing-page
+  author: TomArcherMsft
+  ms.author: tarcher
+  ms.date: 09/17/2019
+  ms.openlocfilehash: a969cf384592ad92bd5a2cf1280db725f723a0f3
+  ms.sourcegitcommit: a32ca0946275165ce24216c6fa243ec21d6c9193
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 04/08/2020
+  ms.locfileid: "80893181"
+landingContent:
+- title: Azure 上の Chef ソフトウェアについて
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Azure 上の Chef について
+      url: overview.md
+    - text: Azure 上の Habitat について
+      url: habitat-overview.md
+    - text: Azure 上の InSpec について
+      url: inspec-overview.md
+  - linkListType: architecture
+    links:
+    - text: Azure Chef 拡張機能
+      url: https://docs.chef.io/azure_portal.html#azure-chef-extension
+- title: Chef ソフトウェア製品をインストールして構成する
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Azure portal を使用して Chef をインストールする
+      url: client-install-from-azure-portal.md
+  - linkListType: download
+    links:
+    - text: Chef の Azure DevOps Services 拡張機能
+      url: https://marketplace.visualstudio.com/items?itemName=chef-software.vsts-chef-tasks
+    - text: Habitat の Azure DevOps Services 拡張機能
+      url: https://marketplace.visualstudio.com/items?itemName=chef-software.vsts-habitat-tasks
+- title: 仮想マシンの管理
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Windows VM の作成
+      url: windows-vm-configure.md

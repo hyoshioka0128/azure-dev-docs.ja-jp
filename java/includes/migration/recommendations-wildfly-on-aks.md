@@ -2,16 +2,16 @@
 author: mriem
 ms.author: manriem
 ms.date: 2/28/2020
-ms.openlocfilehash: e76f43988c408bfd1d2400ef3d28363e7827d0f9
-ms.sourcegitcommit: 56e5f51daf6f671f7b6e84d4c6512473b35d31d2
+ms.openlocfilehash: ab1cd8d8671b12c44a06ae01268364741f7138f6
+ms.sourcegitcommit: 2e4167c9e47cea3f2e7dc2607884b2e0d4214556
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78897659"
+ms.lasthandoff: 04/07/2020
+ms.locfileid: "80813800"
 ---
 ### <a name="recommendations"></a>Recommendations
 
-* イングレス コントローラーまたはアプリケーション ロード バランサーに割り当てられた IP アドレスに DNS 名を追加することを検討してください。 詳細については、「[AKS の静的パブリック IP アドレスを使用してイングレス コントローラーを作成する](/azure/aks/ingress-static-ip)」の「[DNS 名を構成する](/azure/aks/ingress-static-ip#configure-a-dns-name)」を参照してください。
+* イングレス コントローラーまたはアプリケーション ロード バランサーに割り当てられた IP アドレスに DNS 名を追加することを検討してください。 詳細については、「[AKS の静的パブリック IP アドレスを使用してイングレス コントローラーを作成する](/azure/aks/ingress-static-ip)」の「[DNS 名を構成する](/azure/aks/ingress-static-ip#create-an-ingress-controller)」を参照してください。
 
 * アプリケーションに [HELM チャート](https://helm.sh/docs/topics/charts/)を追加することを検討してください。 Helm チャートを使用すると、より多様な顧客によって使用およびカスタマイズされるように、アプリケーションのデプロイをパラメーター化できます。
 

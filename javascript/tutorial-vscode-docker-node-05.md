@@ -1,29 +1,56 @@
 ---
-title: Visual Studio Code を使用して変更を加えた後に Azure App Service にコンテナーを再デプロイする
-description: チュートリアルの手順 5、コンテナー イメージをリビルドして再デプロイするための簡単な手順。
+title: Visual Studio Code から Node.js アプリのコンテナー イメージをデプロイする
+description: 'チュートリアル パート 5: Azure App Service にイメージをデプロイする'
 ms.topic: conceptual
 ms.date: 09/20/2019
-ms.openlocfilehash: 6ca29318b7dd5f1256d1b4503cf1ae9fc37ab111
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: 487110258ed3302e781cfa24a5ae9f518ebb3bda
+ms.sourcegitcommit: f89c59f772364ec717e751fb59105039e6fab60c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74467110"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80740666"
 ---
-# <a name="make-changes-and-redeploy"></a>変更を加えて再デプロイする
+# <a name="deploy-the-image-to-azure-app-service"></a>Azure App Service にイメージをデプロイする
 
-[前の手順:アプリ イメージをデプロイする](tutorial-vscode-docker-node-04.md)
+[前の手順:アプリ イメージを作成する](tutorial-vscode-docker-node-04.md)
 
-アプリには必然的に変更を加えるため、最終的にコンテナーのリビルドと再デプロイは何回も実施することになります。 さいわい、このプロセスは単純です。
+この手順では、レジストリにプッシュしたイメージを Visual Studio Code から直接 [Azure App Service](https://azure.microsoft.com/services/app-service/) にデプロイします。
 
-1. アプリケーションに変更を加えて、ローカルでテストします
+## <a name="enable-admin-access-on-the-registry"></a>レジストリの管理者アクセスを有効にする
 
-1. Visual Studio Code で**コマンド パレット**を開き (**F1**)、**Docker Images: Build Image** を実行してイメージをリビルドします。 アプリのコードのみを変更する場合は、ビルドにかかる時間はわずか数秒です。
+イメージを Web アプリに配置するには、Azure portal でレジストリに対して "管理者" アクセスを有効にする必要があります。
 
-1. イメージをレジストリにプッシュするには、再度**コマンド パレット**を開き (**F1**)、先ほどビルドしたイメージを選択して **Docker Images: Push** を実行します。 前と同様に、アプリ コードへの変更が小さく、そのレイヤーだけをプッシュすればよいので、通常このプロセスは数秒で完了します。
+1. **Docker** エクスプローラーで、レジストリ名を右クリックし、[ポータルで開く] を選択します。 
 
-1. **[Azure: App Service]** エクスプローラーで、適切な App Service を右クリックし、 **[再起動]** を選択します。 App Service を再起動すると、最新のコンテナー イメージがレジストリから自動的にプルされます。
+    ![VS Code の [ポータルで開く] コマンド](media/deploy-containers/open-in-portal.png)
 
-1. 約 15 から 20 秒後に、App Service の URL にもう一度アクセスして、更新プログラムを確認します。
+    これにより、Azure portal でレジストリが開きます。
 
-> [変更を確認しました](tutorial-vscode-docker-node-06.md) [問題が発生しました](https://www.research.net/r/PWZWZ52?tutorial=node-deployment-docker-extension&step=deploy-changes)
+1. サイドバーで [アクセス キー] をクリックし、[管理者ユーザー] 設定を [有効] に切り替えます。  
+    
+    ![Azure portal で管理者ユーザー設定を有効にする](media/deploy-containers/access-keys.png)
+
+## <a name="deploy-image"></a>イメージをデプロイする
+
+1. **DOCKER** エクスプローラーで、 **[Registries]\(レジストリ\)** でイメージのノードを展開し、`:latest` を右クリックし、 **[Deploy Image to Azure App Service]\(Azure App Service にイメージをデプロイする\)** を選択します。
+
+    ![エクスプローラーからデプロイする](media/deploy-containers/deploy-image-command.png)
+
+1. 入力を求められたら、App Service の値を指定します。
+
+    - この名前は Azure 全体で一意である必要があります。
+    - 既存のリソース グループを選択するか、新しいリソース グループを作成します。 (**リソース グループ**は、基本的に、Azure のアプリケーション リソースの名前付きコレクションです。)
+    - 既存の App Service プランを選択するか、新しいプランを作成します。 (Web サイトをホストする物理リソースは、**App Service プラン**によって定義されます。 このチュートリアルでは、Basic または無料プラン サービス レベルを使用できます)。
+
+1. デプロイが完了すると、Visual Studio Code は、Web サイトの URL を示す通知を表示します。
+
+    ![デプロイ成功のメッセージ](media/deploy-containers/deploy-successful.png)
+
+1. 結果は、Visual Studio Code の **[出力]** パネルの **[Docker]** セクションでも確認することができます。
+
+    ![デプロイ成功の出力](media/deploy-containers/deploy-output.png)
+
+1. デプロイされた Web サイトを参照するには、 **[出力]** パネルの URL を **Ctrl**+**クリック**することもできます。 新しい App Service は、Visual Studio Code で **AZURE** エクスプローラーの **[APP SERVICE]** セクションにも表示されます。そこで、Web サイトを右クリックして、 **[Web サイトの参照]** を選択できます。
+
+> [!div class="nextstepaction"]
+> [サイトは Azure にあります](tutorial-vscode-docker-node-06.md) [問題が発生しました](https://www.research.net/r/PWZWZ52?tutorial=docker-extension&step=deploy-app)

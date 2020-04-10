@@ -1,20 +1,20 @@
 ---
-title: WebSphere アプリケーションを Azure Kubernetes Service 上の WildFly に移行する
-description: このガイドでは、既存の WebSphere アプリケーションを移行して Azure Kubernetes Service コンテナーの WildFly 上で実行する場合に知っておくべきことについて説明します。
+title: WildFly アプリケーションを Azure Kubernetes Service 上の WildFly に移行する
+description: このガイドでは、既存の WildFly アプリケーションを移行して Azure Kubernetes Service コンテナーの WildFly 上で実行する場合に知っておくべきことについて説明します。
 author: mriem
 ms.author: manriem
 ms.topic: conceptual
-ms.date: 2/28/2020
-ms.openlocfilehash: a32784542618c3ee3a57d8cc1105837a414883ad
+ms.date: 3/16/2020
+ms.openlocfilehash: 892000065b26a11dd332481abc75f8b73d207890
 ms.sourcegitcommit: 951fc116a9519577b5d35b6fb584abee6ae72b0f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/02/2020
-ms.locfileid: "80612145"
+ms.locfileid: "80613115"
 ---
-# <a name="migrate-websphere-applications-to-wildfly-on-azure-kubernetes-service"></a>WebSphere アプリケーションを Azure Kubernetes Service 上の WildFly に移行する
+# <a name="migrate-wildfly-applications-to-wildfly-on-azure-kubernetes-service"></a>WildFly アプリケーションを Azure Kubernetes Service 上の WildFly に移行する
 
-このガイドでは、既存の WebSphere アプリケーションを移行して Azure Kubernetes Service コンテナーの WildFly 上で実行する場合に知っておくべきことについて説明します。
+このガイドでは、既存の WildFly アプリケーションを移行して Azure Kubernetes Service コンテナーの WildFly 上で実行する場合に知っておくべきことについて説明します。
 
 ## <a name="pre-migration"></a>移行前
 
@@ -22,7 +22,9 @@ ms.locfileid: "80612145"
 
 ### <a name="inventory-all-secrets"></a>すべてのシークレットをインベントリする
 
-すべてのシークレットとパスワードについて、実稼働サーバー上のすべてのプロパティと構成ファイルを確認します。 必ず、WAR 内の *ibm-web-bnd.xml* を確認してください。 また、パスワードや資格情報を含む構成ファイルがアプリケーション内に見つかる場合もあります。
+すべてのシークレットとパスワードについて、実稼働サーバー上のすべてのプロパティと構成ファイルを確認します。 必ず、WAR 内の *jboss-web.xml* を確認してください。 また、パスワードや資格情報を含む構成ファイルがアプリケーション内に見つかる場合もあります。
+
+これらのシークレットを Azure Key Vault に格納することを検討してください。 詳細については、「[Azure Key Vault の基本的な概念](/azure/key-vault/basic-concepts)」を参照してください。
 
 [!INCLUDE [inventory-all-certificates](includes/migration/inventory-all-certificates.md)]
 
@@ -36,13 +38,19 @@ Azure Kubernetes Service で WildFly を使用するには、特定のバージ�
 java -version
 ```
 
+WildFly の実行に使用するバージョンのガイダンスについては、「[Requirements](http://docs.wildfly.org/19/Getting_Started_Guide.html#requirements)」を参照してください。
+
 ### <a name="inventory-jndi-resources"></a>JNDI リソースをインベントリする
 
 すべての JNDI リソースをインベントリします。 JMS メッセージ ブローカーなどでは、移行または再構成が必要になる場合があります。
 
+### <a name="determine-whether-session-replication-is-used"></a>セッション レプリケーションが使用されているかどうか確認する
+
+アプリケーションがセッション レプリケーションに依存している場合は、アプリケーションを変更してこの依存関係を削除する必要があります。
+
 #### <a name="inside-your-application"></a>アプリケーション内
 
-ファイル *WEB-INF/ibm-web-bnd.xml* または *WEB-INF/web.xml*、またはその両方を調べます。
+ファイル *WEB-INF/jboss-web.xml* または *WEB-INF/web.xml*、あるいはその両方を調べます。
 
 ### <a name="document-datasources"></a>データソースの文書化
 
@@ -52,11 +60,11 @@ java -version
 * 接続プールの構成
 * JDBC ドライバーの JAR ファイルの場所
 
-詳細については、WebSphere のドキュメントの「[データベース接続の構成](https://www.ibm.com/support/knowledgecenter/SSQP76_8.10.x/com.ibm.odm.distrib.config.was/config_dc_websphere/tpc_was_create_datasrc_cpl.html)」を参照してください。
+詳細については、WildFly のドキュメントの「[DataSource Configuration](http://docs.wildfly.org/19/Admin_Guide.html#DataSource)」を参照してください。
 
 ### <a name="determine-whether-and-how-the-file-system-is-used"></a>ファイル システムが使用されているかどうかとその使用方法を判断する
 
-アプリケーション サーバーでファイル システムを使用する場合は、再構成や、まれにアーキテクチャの変更が必要になります。 ファイル システムは、WebSphere モジュールまたはアプリケーション コードによって使用される場合があります。 次のセクションに記載された一部または全部のシナリオを確認できます。
+アプリケーション サーバーでファイル システムを使用する場合は、再構成や、まれにアーキテクチャの変更が必要になります。 ファイル システムは、WildFly モジュールまたはアプリケーション コードによって使用される場合があります。 次のセクションに記載された一部または全部のシナリオを確認できます。
 
 #### <a name="read-only-static-content"></a>読み取り専用の静的コンテンツ
 
@@ -76,10 +84,6 @@ java -version
 
 [!INCLUDE [determine-whether-jms-queues-or-topics-are-in-use](includes/migration/determine-whether-jms-queues-or-topics-are-in-use.md)]
 
-### <a name="determine-whether-your-application-uses-websphere-specific-apis"></a>アプリケーションで WebSphere 固有の API が使用されているかどうかを判断する
-
-アプリケーションで WebSphere 固有の API が使用される場合、それらの依存関係を削除するためにそれをリファクタリングする必要があります。 たとえば、[IBM WebSphere アプリケーション サーバー、Release 9.0 API の仕様](https://www.ibm.com/support/knowledgecenter/en/SSEQTJ_9.0.5/com.ibm.websphere.javadoc.doc/web/apidocs/overview-summary.html?view=embed)に記載されているクラスを使用している場合は、アプリケーションで WebSphere 固有の API を使用しています。
-
 [!INCLUDE [determine-whether-your-application-uses-entity-beans](includes/migration/determine-whether-your-application-uses-entity-beans.md)]
 
 [!INCLUDE [determine-whether-the-java-ee-application-client-feature-is-in-use-aks](includes/migration/determine-whether-the-java-ee-application-client-feature-is-in-use-aks.md)]
@@ -90,7 +94,7 @@ java -version
 
 ### <a name="determine-whether-jca-connectors-are-in-use"></a>JCA コネクタが使用されているかどうかを判断する
 
-アプリケーションで JCA コネクタを使用する場合は、WildFly で JCA コネクタを使用できることを確認する必要があります。 JCA の実装が WebSphere に関連付けられている場合は、その依存関係を削除するようにアプリケーションをリファクタリングする必要があります。 コネクタを使用できる場合は、JAR をサーバーのクラスパスに追加し、必要な構成ファイルを WildFly サーバー ディレクトリ内の適切な場所に配置して使用できるようにする必要があります。
+アプリケーションで JCA コネクタを使用する場合は、WildFly で JCA コネクタを使用できることを確認する必要があります。 JCA の実装が WildFly に関連付けられている場合は、その依存関係を削除するようにアプリケーションをリファクタリングする必要があります。 コネクタを使用できる場合は、JAR をサーバーのクラスパスに追加し、必要な構成ファイルを WildFly サーバー ディレクトリ内の適切な場所に配置して使用できるようにする必要があります。
 
 [!INCLUDE [determine-whether-jaas-is-in-use](includes/migration/determine-whether-jaas-is-in-use.md)]
 
@@ -100,7 +104,7 @@ java -version
 
 ### <a name="determine-whether-your-application-is-packaged-as-an-ear"></a>アプリケーションが EAR としてパッケージ化されているかどうか確認する
 
-アプリケーションが EAR ファイルとしてパッケージ化されている場合は、必ず *application.xml* および *weblogic-application.xml* ファイルを調べて、その構成を把握してください。
+アプリケーションが EAR ファイルとしてパッケージ化されている場合は、必ず *application.xml* ファイルを調べて、構成を把握してください。
 
 > [!NOTE]
 > AKS リソースの使用を改善するために各 Web アプリケーションを個別に拡張できるようにする場合は、個々の Web アプリケーションに EAR を分割する必要があります。

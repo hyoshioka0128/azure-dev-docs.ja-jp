@@ -11,12 +11,12 @@ ms.service: active-directory-b2c
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
-ms.openlocfilehash: a795f7ffea218f4f117a9935adac4f2bb74af9f3
-ms.sourcegitcommit: efa585ecdcf1cc54a6f0b664fb83cd4f0ccc7b2c
+ms.openlocfilehash: 63fa23a946841d284d229561e597ea1d9450e822
+ms.sourcegitcommit: f89c59f772364ec717e751fb59105039e6fab60c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "79990493"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80740702"
 ---
 # <a name="tutorial-secure-a-java-web-app-using-the-spring-boot-starter-for-azure-active-directory-b2c"></a>チュートリアル:Azure Active Directory B2C 用の Spring Boot Starter を使用して Java Web アプリをセキュリティで保護する
 
@@ -162,12 +162,12 @@ Azure サブスクリプションをお持ちでない場合は、開始する�
 
 8. アプリケーションの Java ソース フォルダー内に *controller* という名前のフォルダーを作成します。
 
-9. *controller* フォルダーに "*HelloController.java*" という名前の新しい Java ファイルを作成し、テキスト エディターで開きます。
+9. *controller* フォルダーに "*java*" という名前の新しい Java ファイルを作成し、テキスト エディターで開きます。
 
 10. 次のコードを入力し、ファイルを保存して閉じます。
 
     ```java
-    package sample.aad.controller;
+    package com.example.demo.controller;
     
     import org.springframework.security.oauth2.client.authentication.OAuth2AuthenticationToken;
     import org.springframework.security.oauth2.core.user.OAuth2User;
@@ -212,12 +212,12 @@ Azure サブスクリプションをお持ちでない場合は、開始する�
 
 11. アプリケーションの Java ソース フォルダー内に *security* という名前のフォルダーを作成します。
 
-12. *security* フォルダーに "*WebSecurityConfig.java*" という名前の新しい Java ファイルを作成し、テキスト エディターで開きます。
+12. *security* フォルダーに "*WebSecurityConfiguration.java*" という名前の新しい Java ファイルを作成し、テキスト エディターで開きます。
 
 13. 次のコードを入力し、ファイルを保存して閉じます。
 
     ```java
-    package sample.aad.security;
+    package com.example.demo.security;
     
     import com.microsoft.azure.spring.autoconfigure.b2c.AADB2COidcLoginConfigurer;
     import org.springframework.security.config.annotation.web.builders.HttpSecurity;

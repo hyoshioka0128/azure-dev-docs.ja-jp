@@ -5,12 +5,12 @@ author: yevster
 ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 01/22/2019
-ms.openlocfilehash: 2846dc10ff782568d596daee4baa8ecbd1195729
-ms.sourcegitcommit: 56e5f51daf6f671f7b6e84d4c6512473b35d31d2
+ms.openlocfilehash: 91292d50f49bde2b76084f8a09119ae74a20f72f
+ms.sourcegitcommit: 951fc116a9519577b5d35b6fb584abee6ae72b0f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78894196"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80612112"
 ---
 # <a name="migrate-executable-jar-web-applications-to-java-se-on-azure-app-service"></a>実行可能 JAR Web アプリケーションを Azure App Service 上の Java SE に移行する
 
@@ -20,8 +20,8 @@ ms.locfileid: "78894196"
 
 移行前の要件を満たすことができない場合は、以下の関連する移行ガイドを参照してください。
 
-* Azure Kubernetes Service のコンテナーに実行可能 JAR アプリケーションを移行する (計画済)
-* 実行可能 JAR アプリケーションを Azure Virtual Machines に移行する (計画済)
+* Azure Kubernetes Service のコンテナーに実行可能 JAR アプリケーションを移行する (ガイド計画済)
+* 実行可能 JAR アプリケーションを Azure Virtual Machines に移行する (ガイド計画済)
 
 ## <a name="pre-migration"></a>移行前
 
@@ -39,7 +39,7 @@ App Service では、特定のバージョンの Java SE が提供されてい�
 
 SQL データベースが存在する場合は、接続文字列を特定します。
 
-Spring Boot アプリケーションの場合、接続文字列は通常、構成ファイルに記載があります。 
+Spring Boot アプリケーションの場合、接続文字列は通常、構成ファイルに記載があります。
 
 *application.properties* ファイルの例を次に示します。
 
@@ -57,6 +57,8 @@ spring:
     mongodb:
       uri: mongodb://mongouser:deepsecret@mongoserver.contoso.com:27017
 ```
+
+詳細については、Spring のドキュメントの「[JPA Repositories](https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#jpa.repositories)」と「[JDBC Repositories](https://docs.spring.io/spring-data/jdbc/docs/current/reference/html/#jdbc.repositories)」を参照してください。
 
 #### <a name="jms-message-brokers"></a>JMS メッセージ ブローカー
 
@@ -143,7 +145,7 @@ App Service では、1 つのポートで 1 つの HTTP エンドポイントの
 
 ### <a name="parameterize-the-configuration"></a>構成のパラメーター化
 
-すべての外部リソース座標 (データベース接続文字列など) およびその他のカスタマイズ可能な設定が環境変数から読み取れることを確認します。 Spring Boot アプリケーションを移行する場合は、すべての構成設定が既に[外部化可能](https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-features.html#boot-features-external-config)である必要があります。
+すべての外部リソース座標 (データベース接続文字列など) およびその他のカスタマイズ可能な設定が環境変数から読み取れることを確認します。 Spring Boot アプリケーションを移行する場合は、すべての構成設定が既に外部化可能である必要があります。 詳細については、Spring Boot のドキュメントの「[Externalized Configuration](https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-features.html#boot-features-external-config)」を参照してください。
 
 *application.properties* ファイルから `SERVICEBUS_CONNECTION_STRING` 環境変数を参照する例を次に示します。
 

@@ -1,30 +1,30 @@
 ---
-title: コンテナー化された Node.js アプリからのログを Visual Studio Code からストリーム配信する
-description: チュートリアル パート 5、Visual Studio Code にログをストリーム配信する
+title: Visual Studio Code を使用して変更を加えた後に Azure App Service にコンテナーを再デプロイする
+description: 'チュートリアル ステップ 6: コンテナー イメージをリビルドして再デプロイするための簡単な手順。'
 ms.topic: conceptual
 ms.date: 09/20/2019
-ms.openlocfilehash: 2ac930996bd910014565c4e329bec93015bd2a3a
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: 7920bc9ddb2b9b7cc06f936fb97400a5c1d9dd7d
+ms.sourcegitcommit: f89c59f772364ec717e751fb59105039e6fab60c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74466520"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80740650"
 ---
-# <a name="stream-logs-into-visual-studio-code"></a>Visual Studio Code にログをストリーム配信する
+# <a name="make-changes-and-redeploy"></a>変更を加えて再デプロイする
 
-[前の手順:変更を加えて再デプロイする](tutorial-vscode-docker-node-05.md)
+[前の手順:アプリ イメージをデプロイする](tutorial-vscode-docker-node-05.md)
 
-この手順では、実行中の Web サイトが `console.log` への呼び出しを介して生成する出力を表示または "tail" する方法について説明します。 この出力は、Visual Studio Code の **[出力]** ウィンドウに表示されます。
+アプリには必然的に変更を加えるため、最終的にコンテナーのリビルドと再デプロイは何回も実施することになります。 さいわい、このプロセスは単純です。
 
-1. **Azure App Service** エクスプローラーで、アプリ ノードを右クリックし、 **[Start Streaming Logs]\(ストリーミング ログの開始\)** を選択します。
+1. アプリケーションに変更を加えて、ローカルでテストします
 
-    ![ストリーミング ログの表示](media/deploy-containers/stream-logs-command.png)
+1. Visual Studio Code で**コマンド パレット**を開き (**F1**)、**Docker Images:Build Image** を実行してイメージをリビルドします。 アプリのコードのみを変更する場合は、ビルドにかかる時間はわずか数秒です。
 
-1. 確認を求められたら、ログを有効にしてアプリケーションを再起動します。
+1. イメージをレジストリにプッシュするには、再度**コマンド パレット**を開き (**F1**)、先ほどビルドしたイメージを選択して **Docker Images:Push** を実行します。 前と同様に、アプリ コードへの変更が小さく、そのレイヤーだけをプッシュすればよいので、通常このプロセスは数秒で完了します。
 
-    ![ログの有効化と再起動のプロンプト](media/deploy-azure/enable-restart.png)
+1. **[Azure: App Service]** エクスプローラーで、適切な App Service を右クリックし、 **[再起動]** を選択します。 App Service を再起動すると、最新のコンテナー イメージがレジストリから自動的にプルされます。
 
-1. アプリが再起動されると、Visual Studio Code の **[出力]** パネルが開き、`Starting Live Log Stream` というメッセージで始まる、ログ ストリームへの接続が表示されます。
+1. 約 15 から 20 秒後に、App Service の URL にもう一度アクセスして、更新プログラムを確認します。
 
 > [!div class="nextstepaction"]
-> [ログを確認しました](tutorial-vscode-docker-node-07.md) [問題が発生しました](https://www.research.net/r/PWZWZ52?tutorial=node-deployment-docker-extension&step=tailing-logs)
+> [変更を確認しました](tutorial-vscode-docker-node-07.md) [問題が発生しました](https://www.research.net/r/PWZWZ52?tutorial=node-deployment-docker-extension&step=deploy-changes)

@@ -3,12 +3,12 @@ title: Visual Studio Code からコンテナー レジストリを使用する
 description: チュートリアル パート2、コンテナー レジストリを使用する
 ms.topic: conceptual
 ms.date: 09/20/2019
-ms.openlocfilehash: c5e9ff3cd803ef4d57408199682c71e4b57f2d77
-ms.sourcegitcommit: fc3408b6e153c847dd90026161c4c498aa06e2fc
+ms.openlocfilehash: e6dde135a2e6482284488fb83d9f811b02249c4d
+ms.sourcegitcommit: f89c59f772364ec717e751fb59105039e6fab60c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/19/2019
-ms.locfileid: "75191028"
+ms.lasthandoff: 04/06/2020
+ms.locfileid: "80740551"
 ---
 # <a name="use-a-container-registry"></a>コンテナー レジストリを使用する
 
@@ -20,46 +20,38 @@ ms.locfileid: "75191028"
 
 ## <a name="create-an-azure-container-registry"></a>Azure Container Registry を作成する
 
-1. [Azure portal](https://portal.azure.com) にサインインし、 **[リソースの作成]** を選択します。
+1. Visual Studio Code で、<kbd>F1</kbd> キーを押して**コマンド パレット**を開きます。
 
-    ![Azure portal での新しいリソースの作成](media/deploy-containers/portal-01a.png)
+1. 検索ボックスに「registry」と入力し、 **[Azure Container Registry:Create Registry]** を選択します。
 
-1. 次のページで、 **[コンテナー]**  >  **[Container Registry]** を選択します。
+   ![VS Code の Docker エクスプローラー](media/deploy-containers/docker-create-registry.jpg)
 
-    ![Azure portal でコンテナー レジストリを作成する](media/deploy-containers/portal-01b.png)
-
-1. 表示された **[コンテナー レジストリの作成]** フォームに、次のように適切な値を入力します。
+1. プロンプトで次の値を指定します
 
     - **レジストリ名**は Azure 全体で一意にする必要があり、英数字で 5 から 50 文字にする必要があります。
-    - **[サブスクリプション]** では、ご使用のサブスクリプションを選択します。
+    - **[SKU]** には、 **[Basic]** を選択します。
     - **[リソース グループ]** は、ご使用のサブスクリプション内でのみ一意である必要があります。
     - **[場所]** では、お近くのリージョンを選択します。
-    - **[管理者ユーザー]** は、 **[有効にする]** に設定します。
-    - **[SKU]** には、 **[Basic]** を選択します。
 
-    ![コンテナー レジストリ フォームの値](media/deploy-containers/portal-02.png)
+    Visual Studio Code によって、Azure でのレジストリ作成プロセスが開始されます。 完了すると、次のような通知が表示され、レジストリが正常に作成されたことを確認できます。
 
-1. **[作成]** を選択して、レジストリを作成します。
+   ![Visual Studio Code でのレジストリが作成されたことの確認](media/deploy-containers/registry-created.jpg)
 
-1. レジストリが作成されたら、ポータルで通知を開き、レジストリに対して **[リソースに移動]** を選択します。
+1. **Docker** エクスプローラーを開き、たった今設定したレジストリ エンドポイントが **[Registries]\(レジストリ\)** の下に表示されていることを確認します。
 
-    ![新しく作成されたレジストリ リソースを開く](media/deploy-containers/portal-03.png)
+   ![レジストリが Docker エクスプローラーに表示されていることを確認する](media/deploy-containers/docker-explorer-registry.jpg)
 
-1. レジストリ ページで、 **[アクセス キー]** を選択し、管理者の資格情報をメモします。
+## <a name="sign-in-to-azure-container-registry"></a>Azure Container Registry にサインインする
 
-    ![Azure portal 上のレジストリのレジストリ資格情報](media/deploy-containers/portal-04.png)
+Azure レジストリは Docker 拡張機能に表示されますが、Azure Container Registry (ACR) にログインするまでは、それらにイメージをプッシュすることはできません。
 
-1. コマンド プロンプトまたはターミナルで、以下のコマンドを使って Docker にログインします。`<registry_name>` はお使いのレジストリの名前に置き換え、`<username>` と `<password>` は Azure portal に示されている管理者ユーザーの値に置き換えてください。
+1. <kbd>Ctrl と `</kbd> キーを押して、VS Code で**統合ターミナル**を開きます。
+
+1. 次の Azure CLI コマンドを実行して、ACR にログインします。 "<your-registry-name>" を、先ほど作成したレジストリの名前に置き換えます。
 
     ```bash
-    docker login <registry_name>.azurecr.io -u <username> -p <password>
+    az acr login --name <your-registry-name>
     ```
-
-    セキュリティを強化するには、`-p <password>` ではなく `--password-stdin` を使用し、プロンプトが表示されたらパスワードを貼り付けます。
-
-1. Visual Studio Code で、**Docker** エクスプローラーを開き、たった今設定したレジストリ エンドポイントが **[Registries]\(レジストリ\)** の下に表示されていることを確認します。
-
-    ![レジストリが Docker エクスプローラーに表示されていることを確認する](media/deploy-containers/registries.png)
 
 > [!div class="nextstepaction"]
 > [レジストリを作成しました](tutorial-vscode-docker-node-03.md) [問題が発生しました](https://www.research.net/r/PWZWZ52?tutorial=docker-extension&step=create-registry)

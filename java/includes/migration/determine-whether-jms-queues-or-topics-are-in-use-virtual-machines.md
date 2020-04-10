@@ -2,14 +2,14 @@
 author: edburns
 ms.author: edburns
 ms.date: 1/21/2020
-ms.openlocfilehash: e36fae7adfda8c05e222151872b137fa600cdd97
-ms.sourcegitcommit: 367780fe48d977c82cb84208c128b0bf694b1029
+ms.openlocfilehash: 69bddfce67388d3392e6908f3ddf1af378b116cf
+ms.sourcegitcommit: 951fc116a9519577b5d35b6fb584abee6ae72b0f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76830770"
+ms.lasthandoff: 04/02/2020
+ms.locfileid: "80624256"
 ---
-### <a name="determine-whether-jms-queues-or-topics-are-in-use"></a>JMS キューまたはトピックが使用中かどうか確認する
+### <a name="determine-whether-java-message-service-jms-queues-or-topics-are-in-use"></a>Java Message Service (JMS) キューまたはトピックが使用中かどうか確認する
 
 アプリケーションで JMS キューまたはトピックを使用している場合は、外部でホストされている JMS サーバーにそれらを移行する必要があります。 Azure Service Bus と Advanced Message Queuing Protocol は、JMS を使用している場合の優れた移行方法となります。 詳細については、「[Azure Service Bus と AMQP 1.0 で Java Message Service (JMS) を使用する](/azure/service-bus-messaging/service-bus-java-how-to-use-jms-api-amqp)」を参照してください。
 

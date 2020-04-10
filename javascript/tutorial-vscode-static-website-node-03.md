@@ -3,12 +3,12 @@ title: Visual Studio Code から静的 Node.js Web サイト用の Azure Storage
 description: チュートリアル パート 3、Azure Storage アカウントを作成する
 ms.topic: conceptual
 ms.date: 09/24/2019
-ms.openlocfilehash: 42badfc649d7cc43eb1a58ab20c8ff639eff5354
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: 4adca67f850497777abce7d550e39532e59257d9
+ms.sourcegitcommit: a32ca0946275165ce24216c6fa243ec21d6c9193
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74466507"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80890849"
 ---
 # <a name="create-an-azure-storage-account"></a>Azure Storage アカウントの作成
 
@@ -28,17 +28,19 @@ ms.locfileid: "74466507"
 
 1. [Enter the name of the new storage account]\(新しいストレージ アカウントの名前を入力してください\) というプロンプトでは、Storage アカウントのグローバルに一意の名前を入力して、Enter キーを押します。 アプリの名前として有効な文字は、'a-z' と '0-9' です。
 
-1. [Select a resource group]\(リソース グループを選択してください\) というプロンプトでは、 **[Create a new Resource Group]\(新しいリソース グループを作成する\)** を選択し、既定の名前をそのまま使用します。
-
-1. [Select a location]\(場所を選択してください\) というプロンプトでは、近くの[リージョン](https://azure.microsoft.com/regions/)を選択します。
+    > [!NOTE]
+    > これにより、ストレージ アカウントと、同じ名前のリソース グループが作成されます。 このストレージ アカウントは、米国西部に自動的に配置されます。 リソース グループと場所を指定する場合は、コンテキスト メニューの [ストレージ アカウントの作成 (詳細)] オプションを選択します。
 
 1. Storage アカウントが作成されている間、VS Code の **[出力]** パネルに進行状況が表示されます。
 
-1. Storage アカウントが完成したら、そのアカウントを右クリックし、 **[Configure Static Website]\(静的 Web サイトの構成\)** を選択します。 静的 Web サイトのホスティングを有効にするとは、インデックス ドキュメントやその他の静的な資産が、Azure Storage によって自動的に提供されることを意味します。
+    ![VS Code の出力ウィンドウ ](media/static-website/output-storage.png)
 
-    ![[ストレージ アカウントを作成]](media/static-website/configure-static-website.png)
+1. Storage アカウントが完了すると、ストレージ アカウントに対して静的な Web サイトのホスティングが有効になっていることを示すメッセージが表示されます。
 
-1. プロンプトが表示されたら、インデックス ドキュメント名と 404 エラー ドキュメント名の両方に対して *index.html* と入力します。 エラー ドキュメントには *index.html* を使用します。これは、React、Angular、および Vue などの最新のシングルページ アプリケーション (SPA) ではクライアントでエラーが処理されるからです。 従来の静的 Web サイトには、カスタム 404 エラー ページを使用します。
+    ![ストレージ アカウントの作成](media/static-website/static-website-enabled-notification.png)
+
+    > [!IMPORTANT]
+    > エラー ドキュメントには *index.html* を使用します。これは、React、Angular、および Vue などの最新のシングルページ アプリケーション (SPA) ではクライアントでルート エラーが処理されるためです。 従来の静的 Web サイトには、カスタム 404 エラー ページを使用します。
 
 > [!div class="nextstepaction"]
-> [ストレージ コンテナーを作成しました](tutorial-vscode-static-website-node-04.md) [問題が発生しました](https://www.research.net/r/PWZWZ52?tutorial=node-deployment-staticwebsite&step=create-storage)
+> [ストレージ コンテナーを作成しました](tutorial-vscode-static-website-node-04.md)[問題が発生しました](https://www.research.net/r/PWZWZ52?tutorial=node-deployment-staticwebsite&step=create-storage)

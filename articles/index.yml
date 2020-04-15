@@ -1,0 +1,92 @@
+### YamlMime:Hub
+title: Azure 開発者向けドキュメント
+summary: Azure で開発するために必要な言語とツールを紹介します。
+brand: azure
+metadata:
+  title: Azure 開発者向けドキュメント
+  description: お気に入りの言語とツールを使用して Azure で開発できます。 Azure では、C#、.Net、Java、JavaScript、Python、Azure PowerShell、Azure CLI を使用した開発がサポートされています。
+  ms.topic: hub-page
+  author: barbkess
+  ms.author: barbkess
+  manager: barbkess
+  ms.date: 04/08/2020
+  ms.openlocfilehash: 52290f4acd28cc40c4dffe8c2c85a1c5786a43c5
+  ms.sourcegitcommit: 295cf6efadb1ba8e443e71e4e6b6ea6897eb697a
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 04/14/2020
+  ms.locfileid: "81275896"
+tools:
+  title: Languages
+  items:
+  - title: Python
+    imageSrc: https://docs.microsoft.com/media/logos/logo_python.svg
+    url: https://docs.microsoft.com/azure/developer/python/
+  - title: .NET
+    imageSrc: https://docs.microsoft.com/azure/media/index/net-logo.svg
+    url: https://docs.microsoft.com/dotnet/azure/
+  - title: JavaScript
+    imageSrc: https://docs.microsoft.com/media/logos/logo_js.svg
+    url: https://docs.microsoft.com/azure/javascript/
+  - title: Java
+    imageSrc: https://docs.microsoft.com/media/logos/logo_java.svg
+    url: https://docs.microsoft.com/azure/java/
+  - title: Go
+    imageSrc: https://docs.microsoft.com/media/logos/logo_Go-lightblue.svg
+    url: https://docs.microsoft.com/azure/developer/go/
+additionalContent:
+  sections:
+  - title: 開発ツール
+    items:
+    - title: REST API
+      url: https://docs.microsoft.com/rest/api/
+    - title: Visual Studio Code Azure 拡張機能
+      url: https://code.visualstudio.com/docs/azure/extensions
+    - title: .NET SDK
+      url: https://docs.microsoft.com/dotnet/azure/sdk/
+    - title: Python SDK
+      url: https://docs.microsoft.com/python/api/?view=azure-python
+    - title: JavaScript SDK
+      url: https://docs.microsoft.com/javascript/api/
+    - title: Java SDK
+      url: https://docs.microsoft.com/java/api/
+    - title: Azure の Spring
+      url: https://docs.microsoft.com/azure/java/spring-framework/
+  - title: DevOps ツール
+    items:
+    - title: Azure PowerShell
+      summary: Azure PowerShell のコマンドレットを使用して、PowerShell コマンド ラインから Azure リソースを直接管理できます。
+      url: https://docs.microsoft.com/powershell/azure/
+    - title: Azure CLI
+      summary: Azure CLI コマンドは、コマンド ラインからリソースを作成および管理するために使用します。
+      url: https://docs.microsoft.com/cli/azure/
+    - title: ARM テンプレート
+      summary: Azure Resource Manager テンプレートを使用して、JSON ファイルでプロジェクトを定義および構成します。
+      url: https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/
+    - title: Azure DevOps
+      summary: Azure DevOps を使用して、作業の計画、コード開発での共同作業、アプリケーションのビルドおよびデプロイを行います。
+      url: https://docs.microsoft.com/azure/devops/?view=azure-devops
+    - title: GitHub のアクション
+      summary: GitHub Actions を使用して、リポジトリ内からソフトウェア開発ワークフローを自動化、カスタマイズ、実行します。
+      url: https://help.github.com/en/actions
+    - title: Jenkins
+      summary: Jenkins を使用して、ソフトウェア プロジェクトの継続的インテグレーションとデリバリー (CI/CD) を自動化します。
+      url: https://docs.microsoft.com/azure/jenkins/
+    - title: Terraform
+      summary: Hashicorp Terraform を使用して、クラウド インフラストラクチャのプロビジョニングと管理を行います。
+      url: https://docs.microsoft.com/azure/terraform/
+    - title: Ansible
+      summary: クラウド プロビジョニング、構成管理、アプリケーションのデプロイを自動化するには、Ansible を使用します。
+      url: https://docs.microsoft.com/azure/developer/ansible/
+    - title: Chef
+      summary: Chef を使用して、Azure 上の仮想マシン インフラストラクチャをコードに変換します。
+      url: https://docs.microsoft.com/azure/developer/chef/
+    - title: Maven
+      summary: Maven を使用して、Java プロジェクトのビルドと管理の方法を自動化します。 他の言語でも機能します。
+      url: https://docs.microsoft.com/java/api/overview/azure/maven/README
+    - title: Azure Toolkit for IntelliJ
+      summary: Azure Toolkit for IntelliJ を使用して、IntelliJ IDE 内から Azure アプリケーションを作成、開発、テスト、デプロイします。
+      url: https://docs.microsoft.com/azure/java/intellij/
+    - title: Azure Toolkit for Eclipse
+      summary: Azure Toolkit for Eclipse を使用して、Eclipse IDE 内から Azure アプリケーションを作成、開発、テスト、デプロイします。
+      url: https://docs.microsoft.com/azure/java/eclipse/

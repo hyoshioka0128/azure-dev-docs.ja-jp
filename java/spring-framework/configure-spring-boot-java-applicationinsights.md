@@ -1,5 +1,5 @@
 ---
-title: Azure Application Insights SpringBoot Starter を使用するように Spring Boot Initializer アプリを構成する
+title: Spring Boot Starter 用の Initializer アプリを構成する - Azure Monitor
 description: Application Insights Spring Boot Starter を使用するように、Spring Initializr で作成された Spring Boot アプリケーションを構成します。
 services: Application-Insights
 documentationcenter: java
@@ -9,12 +9,12 @@ ms.date: 11/29/2019
 ms.service: azure-monitor
 ms.tgt_pltfrm: application-insights
 ms.topic: article
-ms.openlocfilehash: 083abdf87d2298c99b9898db3b17e1c0e5e64bd8
-ms.sourcegitcommit: b3b7dc6332c0532f74d210b2a5cab137e38a6750
+ms.openlocfilehash: 39993902ba01fd92bf44c6ccb85016ef9e73ac97
+ms.sourcegitcommit: 8aac5c35fbbd3d954bc4963933f96c93e10623d4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74812152"
+ms.lasthandoff: 04/11/2020
+ms.locfileid: "81119532"
 ---
 # <a name="configure-a-spring-boot-initializer-app-to-use-application-insights"></a>Application Insights を使用するように Spring Boot Initializer アプリを構成する
 
@@ -161,7 +161,7 @@ ms.locfileid: "74812152"
 
 1. *TestController.java* ファイルを保存して閉じます。
 
-1. 自分の Spring Boot アプリケーションを Maven でビルドし、実行します。 例:
+1. 自分の Spring Boot アプリケーションを Maven でビルドし、実行します。 次に例を示します。
 
    ```shell
    mvn clean package
@@ -230,7 +230,7 @@ ms.locfileid: "74812152"
 
 2. *POM.xml* ファイルを保存して閉じます。
 
-3. \Src\main\resources フォルダーに、*log4j2.xml* という新しいファイルを作成し、構成します。 例:
+3. \Src\main\resources フォルダーに、*log4j2.xml* という新しいファイルを作成し、構成します。 次に例を示します。
 
 ```xml
 <?xml version="1.0" encoding="UTF-8" ?>
@@ -262,7 +262,7 @@ ms.locfileid: "74812152"
 
 ![Azure][AZ07]
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
 Spring および Azure の詳細については、Azure ドキュメント センターで引き続き Spring に関するドキュメントをご確認ください。
 

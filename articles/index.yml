@@ -9,57 +9,115 @@ metadata:
   author: barbkess
   ms.author: barbkess
   manager: barbkess
-  ms.date: 04/08/2020
-  ms.openlocfilehash: 52290f4acd28cc40c4dffe8c2c85a1c5786a43c5
-  ms.sourcegitcommit: 295cf6efadb1ba8e443e71e4e6b6ea6897eb697a
+  ms.date: 04/15/2020
+  ms.openlocfilehash: 7f1fcf0084a0275e994b38bdf95ae7471afde42a
+  ms.sourcegitcommit: 2c0495fc81fea8b9852729b24a53f6279bb4f31c
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 04/14/2020
-  ms.locfileid: "81275896"
-tools:
-  title: Languages
+  ms.lasthandoff: 04/16/2020
+  ms.locfileid: "81527703"
+productDirectory:
   items:
   - title: Python
     imageSrc: https://docs.microsoft.com/media/logos/logo_python.svg
-    url: https://docs.microsoft.com/azure/developer/python/
-  - title: .NET
-    imageSrc: https://docs.microsoft.com/azure/media/index/net-logo.svg
-    url: https://docs.microsoft.com/dotnet/azure/
+    links:
+    - url: https://docs.microsoft.com/en-us/azure/developer/python/tutorial-vs-code-serverless-python-01
+      text: サーバーレス Python アプリを Azure Functions にデプロイする
+    - url: https://docs.microsoft.com/azure/developer/python/tutorial-deploy-app-service-on-linux-01
+      text: Python アプリを Azure App Service にデプロイする
+    - url: https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-python
+      text: Azure SDK for Python を使用して Storage BLOB を管理する
+    - url: https://docs.microsoft.com/azure/sql-database/sql-database-connect-query-python
+      text: Python を使用して Azure SQL Database のクエリを実行する
+    - url: https://docs.microsoft.com/azure/data-factory/quickstart-create-data-factory-python
+      text: Python を使用して Azure データ ファクトリを作成する
+    - url: https://docs.microsoft.com/azure/developer/python/
+      text: Python デベロッパー センターで詳細を見る
   - title: JavaScript
     imageSrc: https://docs.microsoft.com/media/logos/logo_js.svg
-    url: https://docs.microsoft.com/azure/javascript/
+    links:
+    - url: https://docs.microsoft.com/azure/javascript/tutorial-vscode-static-website-node-01?tabs=bash
+      text: 静的な Web サイトを作成してデプロイする
+    - url: https://docs.microsoft.com/azure/javascript/tutorial-vscode-azure-app-service-node-01?tabs=bash
+      text: Node.js アプリを Azure App Service にデプロイする
+    - url: https://docs.microsoft.com/azure/javascript/tutorial-vscode-serverless-node-01?tabs=bash
+      text: Azure Functions アプリケーションをデプロイする
+    - url: https://docs.microsoft.com/azure/javascript/tutorial-vscode-docker-node-01?tabs=bash
+      text: Docker コンテナーを使用して Node.js アプリをデプロイする
+    - url: https://docs.microsoft.com/azure/cosmos-db/create-mongodb-nodejs?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
+      text: MongoDB Web アプリを Azure Cosmos DB に移行する
+    - url: https://docs.microsoft.com/azure/javascript/
+      text: JavaScript デベロッパー センターで詳細を見る
   - title: Java
     imageSrc: https://docs.microsoft.com/media/logos/logo_java.svg
-    url: https://docs.microsoft.com/azure/java/
-  - title: Go
-    imageSrc: https://docs.microsoft.com/media/logos/logo_Go-lightblue.svg
-    url: https://docs.microsoft.com/azure/developer/go/
+    links:
+    - url: https://docs.microsoft.com/azure/java/jdk/java-jdk-install
+      text: Azure 用の JDK および Azure Stack をインストールする
+    - url: https://docs.microsoft.com/azure/spring-cloud/spring-cloud-quickstart-launch-app-portal
+      text: Azure portal を使用して Azure Spring Cloud アプリをデプロイする
+    - url: https://docs.microsoft.com/azure/app-service/app-service-web-get-started-java
+      text: Azure App Service で Java アプリを作成する
+    - url: https://docs.microsoft.com/azure/java/spring-framework/configure-spring-boot-starter-java-app-with-azure-active-directory
+      text: Azure Active Directory 用の Spring Boot Starter を使用する
+    - url: https://docs.microsoft.com/azure/java/migration-overview
+      text: Java アプリケーションを Azure に移行する
+    - url: https://docs.microsoft.com/azure/java/
+      text: Java デベロッパー センターで詳細を見る
+  - title: .NET
+    imageSrc: https://docs.microsoft.com/azure/media/index/net-logo.svg
+    links:
+    - url: https://docs.microsoft.com/dotnet/azure/sdk/
+      text: Azure SDK for .NET
+    - url: https://docs.microsoft.com/dotnet/azure/intro
+      text: Azure と .NET の概要
+    - url: https://docs.microsoft.com/azure/app-service/app-service-web-get-started-dotnet
+      text: ASP.NET Web アプリをデプロイする
+    - url: https://docs.microsoft.com/azure/azure-functions/functions-create-your-first-function-visual-studio
+      text: サーバーレス関数を構築する
+    - url: https://docs.microsoft.com/visualstudio/containers/container-tools?view=vs-2019
+      text: ASP.NET Core と Docker
+    - url: https://docs.microsoft.com/dotnet/azure/
+      text: .NET デベロッパー センターで詳細を見る
+  - title: Azure PowerShell
+    imageSrc: https://docs.microsoft.com/media/logos/logo_powershell.svg
+    links:
+    - url: https://docs.microsoft.com/powershell/azure/new-azureps-module-az
+      text: 新しい Az モジュールとは
+    - url: https://docs.microsoft.com/powershell/azure/migrate-from-azurerm-to-az
+      text: AzureRM から Az への移行
+    - url: https://docs.microsoft.com/powershell/azure/install-az-ps
+      text: インストール
+    - url: https://docs.microsoft.com/powershell/azure/authenticate-azureps
+      text: サインイン
+    - url: https://docs.microsoft.com/powershell/azure/context-persistence
+      text: 資格情報のコンテキストを保持する
+    - url: https://docs.microsoft.com/powershell/azure/
+      text: Azure PowerShell デベロッパー センターで詳細を見る
+  - title: Azure CLI
+    imageSrc: https://docs.microsoft.com/media/logos/logo_CLIgeneric.svg
+    links:
+    - url: https://docs.microsoft.com/cli/azure/get-started-with-azure-cli?view=azure-cli-latest
+      text: はじめに
+    - url: https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest
+      text: インストール
+    - url: https://docs.microsoft.com/cli/azure/authenticate-azure-cli?view=azure-cli-latest
+      text: サインイン
+    - url: https://docs.microsoft.com/en-us/cli/azure/query-azure-cli?view=azure-cli-latest
+      text: CLI コマンドの出力に対してクエリを実行する
+    - url: https://docs.microsoft.com/en-us/cli/azure/azure-cli-vm-tutorial?view=azure-cli-latest
+      text: 仮想マシンの作成
+    - url: https://docs.microsoft.com/cli/azure/
+      text: Azure CLI デベロッパー センターで詳細を見る
 additionalContent:
   sections:
-  - title: 開発ツール
+  - title: ツール
     items:
-    - title: REST API
-      url: https://docs.microsoft.com/rest/api/
     - title: Visual Studio Code Azure 拡張機能
+      summary: 拡張機能を介して Visual Studio Code から直接 Azure を使用します。
       url: https://code.visualstudio.com/docs/azure/extensions
-    - title: .NET SDK
-      url: https://docs.microsoft.com/dotnet/azure/sdk/
-    - title: Python SDK
-      url: https://docs.microsoft.com/python/api/?view=azure-python
-    - title: JavaScript SDK
-      url: https://docs.microsoft.com/javascript/api/
-    - title: Java SDK
-      url: https://docs.microsoft.com/java/api/
-    - title: Azure の Spring
-      url: https://docs.microsoft.com/azure/java/spring-framework/
-  - title: DevOps ツール
-    items:
-    - title: Azure PowerShell
-      summary: Azure PowerShell のコマンドレットを使用して、PowerShell コマンド ラインから Azure リソースを直接管理できます。
-      url: https://docs.microsoft.com/powershell/azure/
-    - title: Azure CLI
-      summary: Azure CLI コマンドは、コマンド ラインからリソースを作成および管理するために使用します。
-      url: https://docs.microsoft.com/cli/azure/
+    - title: REST API
+      summary: REST API を使用して、HTTP 操作を介してサービスのリソースにアクセスします。
+      url: https://docs.microsoft.com/rest/api/
     - title: ARM テンプレート
       summary: Azure Resource Manager テンプレートを使用して、JSON ファイルでプロジェクトを定義および構成します。
       url: https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/

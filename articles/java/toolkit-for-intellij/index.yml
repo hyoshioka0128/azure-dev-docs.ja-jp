@@ -1,0 +1,53 @@
+### YamlMime:Landing
+title: Azure Toolkit for IntelliJ のドキュメント
+summary: Azure Toolkit for IntelliJ は、IntelliJ 統合開発環境 (IDE) を使って Azure アプリケーションを簡単に作成、開発、テスト、またデプロイできるテンプレートと機能を提供します。
+metadata:
+  title: Azure Toolkit for IntelliJ のドキュメント
+  description: Azure Toolkit for IntelliJ の概要について説明します。
+  ms.date: 03/13/2020
+  ms.topic: landing-page
+  ms.openlocfilehash: f816ad75074b92b0b2b8025c5e541b5ef7988b65
+  ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 04/21/2020
+  ms.locfileid: "81675388"
+landingContent:
+- title: ファースト ステップ ガイド
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Azure App Service 用の Hello World Web アプリを作成する
+      url: create-hello-world-web-app.md
+    - text: Azure Functions 用に HTTP トリガー関数を作成する
+      url: quickstart-functions.md
+- title: ステップバイステップのチュートリアル
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Linux コンテナーで Hello World Web アプリを実行する
+      url: hello-world-web-app-linux.md
+    - text: HDInsight Spark Linux クラスター向けの Spark アプリケーションを作成する
+      url: /azure/hdinsight/hdinsight-apache-spark-intellij-tool-plugin
+- title: Azure のリソースを管理する
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Redis Cache
+      url: managing-redis-caches-using-azure-explorer.md
+    - text: ストレージ アカウント
+      url: managing-virtual-machines-using-azure-explorer.md
+    - text: 仮想マシン
+      url: managing-storage-accounts-using-azure-explorer.md
+- title: サポート対象 JDK
+  linkLists:
+  - linkListType: download
+    links:
+    - text: Azure および Azure Stack 用の Java
+      url: /azure/developer/java/fundamentals
+- title: ソース コード
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: Java 用 Azure ツールキット
+      url: https://github.com/microsoft/azure-tools-for-java

@@ -1,0 +1,30 @@
+- name: Azure Toolkit for IntelliJ のドキュメント
+  href: index.yml
+  items:
+    - name: はじめに - Web アプリ
+      href: create-hello-world-web-app.md
+    - name: はじめに - 関数
+      href: quickstart-functions.md
+    - name: チュートリアル
+      expanded: true
+      items:
+        - name: Linux コンテナーに Web アプリをデプロイする
+          href: hello-world-web-app-linux.md
+    - name: 操作方法
+      expanded: true
+      items:
+        - name: Azure アカウントへのサインイン
+          href: sign-in-instructions.md
+        - name: Azure のリソースを管理する
+          expanded: true
+          items:
+            - name: 仮想マシン
+              href: managing-virtual-machines-using-azure-explorer.md
+            - name: ストレージ アカウント
+              href: managing-storage-accounts-using-azure-explorer.md
+            - name: Azure Redis Cache
+              href: managing-redis-caches-using-azure-explorer.md
+    - name: リリース ノート
+      href: 'https://github.com/Microsoft/azure-tools-for-java/releases'
+    - name: マーケットプレース
+      href: 'https://plugins.jetbrains.com/plugin/8053'

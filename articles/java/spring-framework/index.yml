@@ -1,0 +1,75 @@
+### YamlMime:Landing
+title: Azure 上の Spring 統合のドキュメント
+summary: Spring は Pivotal によって開発されたオープンソースのアプリケーション フレームワークであり、Java アプリケーションを作成するための簡素化されたモジュール方式のアプローチを提供します。 この Web サイトのコンテンツでは、Spring アプリを開発し、クラウドにデプロイする方法を説明します。
+metadata:
+  title: Azure 上の Spring 統合のドキュメント
+  description: Spring は Pivotal によって開発されたオープンソースのアプリケーション フレームワークであり、Java アプリケーションを作成するための簡素化されたモジュール方式のアプローチを提供します。 この Web サイトのコンテンツでは、Spring アプリを開発し、クラウドにデプロイする方法を説明します。
+  ms.date: 03/13/2020
+  ms.topic: landing-page
+  ms.openlocfilehash: 5cb86fbe5b328e84e3437dc3e5946061b62de421
+  ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 04/21/2020
+  ms.locfileid: "81675408"
+landingContent:
+- title: ファースト ステップ ガイド
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Azure 向けの Spring Boot Starter
+      url: spring-boot-starters-for-azure.md
+    - text: Spring Data Azure Cosmos DB
+      url: how-to-guides-spring-data-cosmosdb.md
+  - linkListType: get-started
+    links:
+    - text: Azure Storage
+      url: configure-spring-boot-starter-java-app-with-azure-storage.md
+    - text: Key Vault
+      url: configure-spring-boot-starter-java-app-with-azure-key-vault.md
+    - text: Kafka と Event Hubs
+      url: configure-spring-cloud-stream-binder-java-app-kafka-azure-event-hub.md
+    - text: Application Insights
+      url: configure-spring-boot-java-applicationinsights.md
+- title: ステップバイステップのチュートリアル
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Azure Active Directory を使用してアプリを保護する
+      url: configure-spring-boot-starter-java-app-with-azure-active-directory.md
+    - text: Redis Cache を使用するようにアプリを構成する
+      url: configure-spring-boot-initializer-java-app-with-redis-cache.md
+    - text: Azure Cosmos DB SQL API を使用する
+      url: configure-spring-boot-starter-java-app-with-cosmos-db.md
+    - text: Spring Boot アプリのデプロイ
+      url: deploy-spring-boot-java-app-with-maven-plugin.md
+    - text: AKS のクラスターにアプリをデプロイする
+      url: deploy-spring-boot-java-app-on-kubernetes.md
+    - text: Web App for Containers にアプリをデプロイする
+      url: deploy-spring-boot-java-app-on-linux.md
+    - text: Maven を使用して Web App for Containers にデプロイする
+      url: deploy-containerized-spring-boot-java-app-with-maven-plugin.md
+    - text: ACR から Azure にアプリをデプロイする
+      url: deploy-spring-boot-java-app-from-container-registry-using-maven-plugin.md
+- title: コード サンプル
+  linkLists:
+  - linkListType: sample
+    links:
+    - text: Azure 向けの Spring Boot のサンプル
+      url: https://github.com/Microsoft/azure-spring-boot/tree/master/azure-spring-boot-samples
+    - text: Spring のガイド
+      url: https://github.com/spring-guides/
+- title: Spring のリソース
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: Spring Framework
+      url: https://spring.io/
+    - text: Spring Cloud Azure
+      url: https://spring.io/projects/spring-cloud-azure
+    - text: Spring を学習する
+      url: https://spring.io/learn
+    - text: Spring Boot
+      url: https://spring.io/projects/spring-boot
+    - text: Spring Initializr
+      url: https://start.spring.io/

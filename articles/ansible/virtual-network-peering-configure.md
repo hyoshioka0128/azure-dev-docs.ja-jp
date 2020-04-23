@@ -4,22 +4,22 @@ description: Ansible を使用して、仮想ネットワーク ピアリング�
 keywords: ansible, azure, devops, bash, プレイブック, ネットワーキング, ピアリング
 ms.topic: tutorial
 ms.date: 04/30/2019
-ms.openlocfilehash: 78699a005d721b46a88a26452f5db68438793d34
-ms.sourcegitcommit: f89c59f772364ec717e751fb59105039e6fab60c
+ms.openlocfilehash: 2b5af7546900c45dde7eea0e1d57370d2ffc3991
+ms.sourcegitcommit: eabc9e3fb8ad0f067be5ed878c2eacebd461b6ce
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80741770"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81743887"
 ---
 # <a name="tutorial-configure-azure-virtual-network-peering-using-ansible"></a>チュートリアル:Ansible を使用して Azure Virtual Network ピアリングを構成する
 
-[!INCLUDE [ansible-28-note.md](../../includes/ansible-28-note.md)]
+[!INCLUDE [ansible-28-note.md](includes/ansible-28-note.md)]
 
 [仮想ネットワーク (VNet) ピアリング](/azure/virtual-network/virtual-network-peering-overview)を使用すると、2 つの Azure 仮想ネットワークをシームレスに接続することができます。 ピアリングされた 2 つの仮想ネットワークは、接続において、見かけ上 1 つのネットワークとして機能します。 
 
 同じ仮想ネットワーク内の VM 間のトラフィックは、プライベート IP アドレスを使用してルーティングされます。 同様に、ピアリングされた仮想ネットワーク内の VM 間のトラフィックは、Microsoft のバックボーン インフラストラクチャを介してルーティングされます。 その結果、異なる仮想ネットワーク内の VM が相互に通信することができます。
 
-[!INCLUDE [ansible-tutorial-goals.md](../../includes/ansible-tutorial-goals.md)]
+[!INCLUDE [ansible-tutorial-goals.md](includes/ansible-tutorial-goals.md)]
 
 > [!div class="checklist"]
 >
@@ -29,8 +29,8 @@ ms.locfileid: "80741770"
 
 ## <a name="prerequisites"></a>前提条件
 
-[!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../../includes/open-source-devops-prereqs-azure-subscription.md)]
-[!INCLUDE [ansible-prereqs-cloudshell-use-or-vm-creation2.md](../../includes/ansible-prereqs-cloudshell-use-or-vm-creation2.md)]
+[!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
+[!INCLUDE [ansible-prereqs-cloudshell-use-or-vm-creation2.md](includes/ansible-prereqs-cloudshell-use-or-vm-creation2.md)]
 
 ## <a name="create-two-resource-groups"></a>2 つのリソース グループを作成する
 

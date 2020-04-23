@@ -4,22 +4,22 @@ description: Ansible を使用して Azure の自動スケール機能で仮想�
 keywords: ansible, azure, devops, bash, プレイブック, スケール, 自動スケール, 仮想マシン, 仮想マシン スケール セット, vmss
 ms.topic: tutorial
 ms.date: 04/30/2019
-ms.openlocfilehash: 8c8aab0a96fe30d08c0f673f9e5bc5fb47b2b409
-ms.sourcegitcommit: f89c59f772364ec717e751fb59105039e6fab60c
+ms.openlocfilehash: f50ac83b03d957e0d6649a5803ee90982a532935
+ms.sourcegitcommit: eabc9e3fb8ad0f067be5ed878c2eacebd461b6ce
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80741700"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81743875"
 ---
 # <a name="tutorial-autoscale-virtual-machine-scale-sets-in-azure-using-ansible"></a>チュートリアル:Ansible を使用して Azure の仮想マシン スケール セットを自動的にスケーリングする
 
-[!INCLUDE [ansible-27-note.md](../../includes/ansible-27-note.md)]
+[!INCLUDE [ansible-27-note.md](includes/ansible-27-note.md)]
 
-[!INCLUDE [open-source-devops-intro-vm-scale-set.md](../../includes/open-source-devops-intro-vm-scale-set.md)]
+[!INCLUDE [open-source-devops-intro-vm-scale-set.md](../includes/open-source-devops-intro-vm-scale-set.md)]
 
 VM インスタンスの数を自動的に調整する機能を[自動スケール](/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-autoscale-overview)と呼びます。 自動スケールのメリットは、アプリケーションのパフォーマンスを監視して最適化するための管理上のオーバーヘッドが削減されることです。 自動スケールは、要求に応じて構成することも、定義されたスケジュールで構成することもできます。 Ansible を使用して、肯定的なカスタマー エクスペリエンスを得られる、許容可能なパフォーマンスを定義する自動スケール ルールを指定することができます。
 
-[!INCLUDE [ansible-tutorial-goals.md](../../includes/ansible-tutorial-goals.md)]
+[!INCLUDE [ansible-tutorial-goals.md](includes/ansible-tutorial-goals.md)]
 
 > [!div class="checklist"]
 >
@@ -31,9 +31,9 @@ VM インスタンスの数を自動的に調整する機能を[自動スケー�
 
 ## <a name="prerequisites"></a>前提条件
 
-[!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../../includes/open-source-devops-prereqs-azure-subscription.md)]
-[!INCLUDE [ansible-prereqs-cloudshell-use-or-vm-creation2.md](../../includes/ansible-prereqs-cloudshell-use-or-vm-creation2.md)] 
-[!INCLUDE [ansible-prereqs-vm-scale-set.md](../../includes/ansible-prereqs-vm-scale-set.md)]
+[!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
+[!INCLUDE [ansible-prereqs-cloudshell-use-or-vm-creation2.md](includes/ansible-prereqs-cloudshell-use-or-vm-creation2.md)] 
+[!INCLUDE [ansible-prereqs-vm-scale-set.md](includes/ansible-prereqs-vm-scale-set.md)]
 
 ## <a name="autoscale-based-on-a-schedule"></a>スケジュールに基づいた自動スケール
 

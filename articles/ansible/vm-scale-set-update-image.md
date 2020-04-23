@@ -4,22 +4,22 @@ description: Ansible を使用して、カスタム イメージを使って Azu
 keywords: ansible, azure, devops, bash, プレイブック, 仮想マシン, 仮想マシン スケール セット, vmss
 ms.topic: tutorial
 ms.date: 04/30/2019
-ms.openlocfilehash: a80df95b0977a4c93fc91a188ce4b69afda80169
-ms.sourcegitcommit: f89c59f772364ec717e751fb59105039e6fab60c
+ms.openlocfilehash: ae25012346c7d6fbc65c43fad6b3b228eedc9e7c
+ms.sourcegitcommit: eabc9e3fb8ad0f067be5ed878c2eacebd461b6ce
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80740960"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81743829"
 ---
 # <a name="tutorial-update-the-custom-image-of-azure-virtual-machine-scale-sets-using-ansible"></a>チュートリアル:Ansible を使用して Azure Virtual Machine Scale Sets のカスタム イメージを更新する
 
-[!INCLUDE [ansible-27-note.md](../../includes/ansible-28-note.md)]
+[!INCLUDE [ansible-27-note.md](includes/ansible-28-note.md)]
 
-[!INCLUDE [open-source-devops-intro-vm-scale-set.md](../../includes/open-source-devops-intro-vm-scale-set.md)]
+[!INCLUDE [open-source-devops-intro-vm-scale-set.md](../includes/open-source-devops-intro-vm-scale-set.md)]
 
 VM がデプロイされたら、アプリに必要なソフトウェアを使用して VM を構成します。 この構成タスクを VM ごとに行う代わりに、カスタム イメージを作成することができます。 カスタム イメージは、インストールされているソフトウェアを含む既存の VM のスナップショットです。 [スケール セットを構成する](./vm-scale-set-configure.md)ときに、そのスケール セットの VM に使用するイメージを指定します。 カスタム イメージを使用することにより、各 VM インスタンスはご使用のアプリに対して同じように構成されます。 場合によっては、スケール セットのカスタム イメージの更新が必要になることがあります。 そのタスクがこのチュートリアルの焦点です。
 
-[!INCLUDE [ansible-tutorial-goals.md](../../includes/ansible-tutorial-goals.md)]
+[!INCLUDE [ansible-tutorial-goals.md](includes/ansible-tutorial-goals.md)]
 
 > [!div class="checklist"]
 >
@@ -30,8 +30,8 @@ VM がデプロイされたら、アプリに必要なソフトウェアを使�
 
 ## <a name="prerequisites"></a>前提条件
 
-[!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../../includes/open-source-devops-prereqs-azure-subscription.md)]
-[!INCLUDE [ansible-prereqs-cloudshell-use-or-vm-creation2.md](../../includes/ansible-prereqs-cloudshell-use-or-vm-creation2.md)]
+[!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
+[!INCLUDE [ansible-prereqs-cloudshell-use-or-vm-creation2.md](includes/ansible-prereqs-cloudshell-use-or-vm-creation2.md)]
 
 ## <a name="configure-two-vms"></a>2 つの VM を構成する
 

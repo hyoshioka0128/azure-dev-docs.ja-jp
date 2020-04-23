@@ -1,0 +1,235 @@
+### YamlMime:Tutorial
+title: Azure CLI で仮想マシンを作成する
+metadata:
+  title: Azure CLI で仮想マシンを作成する
+  description: 仮想マシンを作成して Azure CLI を開始します。
+  audience: Developer
+  level: Beginner
+  displayType: two-column
+  interactive: azurecli
+  ms.date: 07/09/2018
+  ms.author: dbradish
+  author: dbradish-microsoft
+  manager: barbkess
+  ms.devlang: azure-cli
+  ms.topic: tutorial
+  ms.prod: azure
+  ms.technology: azurecli
+  clicktale: true
+  ms.openlocfilehash: fb231b99b0f25760b84683d160a63e62c4f36276
+  ms.sourcegitcommit: 36e02e96b955ed0531f98b9c0f623f4acb508661
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 04/22/2020
+  ms.locfileid: "82030944"
+items:
+- durationInMinutes: 1
+  content: >-
+    このチュートリアルでは、Azure CLI での仮想マシンの設定に関連するすべての手順について学習します。 チュートリアルでは、出力クエリ、Azure リソースの再利用、およびリソースのクリーンアップについても説明します。
+
+
+    これは、Azure Cloud Shell によって提供される対話型チュートリアルです。また、ローカルに [CLI をインストール](install-azure-cli.md)することもできます。
+
+
+    チュートリアルのテキストを Azure Cloud Shell に貼り付けるには、__Ctrl + Shift + V__ キー (macOS の場合は __cmd-v shift__) を使用します。
+- durationInMinutes: 1
+  title: サインイン
+  content: "CLI のローカル インストールを使用している場合は、最初にサインインしてから、他の手順を実行します。\n\n```azurecli-interactive\naz login\n```\n\nご使用の端末に表示される手順に従って、認証プロセスを完了してください。 "
+- durationInMinutes: 1
+  title: リソース グループを作成する
+  content: >-
+    Azure では、すべてのリソースがリソース管理グループに割り当てられます。 リソース グループではリソースを論理グループに分類できるため、コレクションとして操作しやすくなります。 このチュートリアルでは、作成されたすべてのリソースが、`TutorialResources` という名前の 1 つのグループに割り当てられます。
+
+
+    ```azurecli
+
+    az group create --name TutorialResources --location eastus
+
+    ```
+- durationInMinutes: 4
+  title: 仮想マシンの作成
+  content: "Azure の仮想マシンには依存関係が多数含まれます。 CLI では、指定したコマンドライン引数に基づいてこのようなリソースが自動的に作成されます。\n\nUbuntu が実行されている新しい仮想マシンを作成します。この仮想マシンでは、ログインに SSH 認証が使用されます。\n\n```azurecli-interactive\naz vm create --resource-group TutorialResources \\\n  --name TutorialVM1 \\\n  --image UbuntuLTS \\\n  --generate-ssh-keys \\\n  --output json \\\n  --verbose \n```\n\n> [!NOTE]\n> 既に `id_rsa` という名前の SSH キーを使用できる場合は、新しいキーが生成されるのではなく、そのキーが認証に使用されます。\n\nVM が作成されるとき、`--verbose` オプションによって、使用されているローカル値と、作成中の Azure のリソースが表示されます。\nVM の準備ができたら、パブリック IP アドレスを含め、JSON が Azure サービスから返されます。\n\n```json\n{\n  \"fqdns\": \"\",\n  \"id\": \"...\",\n  \"location\": \"eastus\",\n  \"macAddress\": \"...\",\n  \"powerState\": \"VM running\",\n  \"privateIpAddress\": \"...\",\n  \"publicIpAddress\": <PUBLIC_IP_ADDRESS>,\n  \"resourceGroup\": \"TutorialResources\",\n  \"zones\": \"\"\n}\n```\n\nSSH 経由で接続することで VM が実行されていることを確認します。\n\n```bash\nssh <PUBLIC_IP_ADDRESS>\n```\n\nVM からログアウトします。\n\nVM が開始されたら、この IP アドレスは他の方法でも取得できます。 次のセクションでは、VM の詳細情報を取得する方法と、その情報をフィルター処理する方法を見ていきます。"
+- durationInMinutes: 3
+  title: クエリでの VM 情報の取得
+  content: "VM が作成されたので、その詳細情報を取得できます。 リソースから情報を取得するには、通常、`show` コマンドを使用します。\n\n```azurecli-interactive\naz vm show --name TutorialVM1 --resource-group TutorialResources\n```\n\n多くの情報が表示されるため、視覚的に解析するのは困難です。 返された JSON には、認証、ネットワーク インターフェイス、ストレージなどの情報が含まれています。 重要なのは、これに VM の接続先リソースの Azure オブジェクト ID が含まれていることです。 オブジェクト ID により、こうしたリソースに直接アクセスして、VM の構成と機能に関する詳細を取得できます。 \n\n必要なオブジェクト ID を抽出するには、`--query` 引数が使用されます。 クエリは [JMESPath クエリ言語](http://jmespath.org)で記述されます。 最初はネットワーク インターフェイス コント ローラー (NIC) オブジェクト ID を取得します。\n\n```azurecli-interactive\naz vm show --name TutorialVM1 \\\n  --resource-group TutorialResources \\\n  --query 'networkProfile.networkInterfaces[].id' \\\n  --output tsv\n```\n\nクエリを追加するだけで、ここでは多くのことが行われます。 それぞれの部分が出力 JSON のキーを参照するか、JMESPath 演算子になります。\n\n* `networkProfile` はトップレベル JSON のキーで、`networkInterfaces` がサブキーとして含まれます。 JSON 値がディクショナリの場合、そのキーは、`.` 演算子で親キーから参照されます。\n* `networkInterfaces` 値は配列であるため、`[]` 演算子でフラット化されます。 この演算子は、各配列要素でクエリの残りの部分を実行します。 ここでは、すべての配列要素の `id` 値を取得します。\n\n出力形式 `tsv` (タブ区切り値) に含まれるのは、必ず結果データと、タブおよび改行文字で構成される空白文字だけになります。\n返される値は飾りのない 1 つの文字列であるため、環境変数に直接割り当てても問題ありません。\n\nここで NIC オブジェクト ID を環境変数に割り当てます。\n\n```bash\nNIC_ID=$(az vm show -n TutorialVM1 -g TutorialResources \\\n  --query 'networkProfile.networkInterfaces[].id' \\\n  -o tsv)\n```\n\nこの例では、短い引数の使用も示しています。 `--resource-group` の代わりに `-g` を、`--name` の代わりに `-n` を、そして `--output` の代わりに `-o` を使用できます。"
+- durationInMinutes: 4
+  title: CLI 出力からの環境変数の設定
+  content: >-
+    NIC ID が用意できたので、`az network nic show` を実行して、情報を取得してみましょう。 Azure リソース ID 内にリソース グループ名が含まれているので、ここでは、リソース グループが不要であることに注意してください。
+
+
+    ```azurecli-interactive
+
+    az network nic show --ids $NIC_ID
+
+    ```
+
+
+
+    このコマンドにより、VM のネットワーク インターフェイスの情報すべてが表示されます。 このデータには、DNS 設定、IP 情報、セキュリティ設定、および MAC アドレスが含まれます。 現時点での目的は、パブリック IP アドレスとサブネット オブジェクト ID を取得することです。
+
+
+    ```azurecli-interactive
+
+    az network nic show --ids $NIC_ID \
+      --query '{IP:ipConfigurations[].publicIpAddress.id, Subnet:ipConfigurations[].subnet.id}' \
+      -o json
+    ```
+
+
+    ```json
+
+    {
+      "IP": [
+        "/subscriptions/.../resourceGroups/TutorialResources/providers/Microsoft.Network/publicIPAddresses/TutorialVM1PublicIP"
+      ],
+      "Subnet": [
+        "/subscriptions/.../resourceGroups/TutorialResources/providers/Microsoft.Network/virtualNetworks/TutorialVM1VNET/subnets/TutorialVM1Subnet"
+      ]
+    }
+
+    ```
+
+
+    このコマンドにより、抽出された値のカスタム キー ("IP" および "サブネット") を含む JSON オブジェクトが表示されます。 この出力スタイルは、コマンドライン ツールには不便な場合がありますが、可読性の向上に役立ち、カスタム スクリプトで使用できます。
+
+
+    コマンドライン ツールを使用するには、コマンドを変更することで、カスタム JSON キーを削除し、`tsv` として出力します。 このスタイルの出力は、シェル `read` コマンドで処理して、結果を複数の変数に読み込むことができます。 各行に 2 つの値が表示されるため、`read` コマンドの区切り記号は、既定値の改行以外の空白文字ではなく、空の文字列に設定する必要があります。
+
+
+    ```bash
+
+    read -d '' IP_ID SUBNET_ID <<< $(az network nic show \
+      --ids $NIC_ID \
+      --query '[ipConfigurations[].publicIpAddress.id, ipConfigurations[].subnet.id]' \
+      -o tsv)
+    ```
+
+
+    サブネット ID はすぐには使用しませんが、後でもう一度ルックアップを実行しなくてもすむように、ここで保存しておきます。 ここでは、パブリック IP オブジェクト ID を使用して、パブリック IP アドレスをルックアップし、シェル変数に格納します。
+
+
+    ```bash
+
+    VM1_IP_ADDR=$(az network public-ip show --ids $IP_ID \
+      --query ipAddress \
+      -o tsv)
+    ```
+
+
+    これで VM の IP アドレスがシェル変数に格納されました。 これが、最初に VM に接続したときに使用した値と同じであることを確認してください。
+
+
+    ```bash
+
+    echo $VM1_IP_ADDR
+
+    ```
+- durationInMinutes: 2
+  title: 既存のサブネットでの新しい VM の作成
+  content: >-
+    2 番目の VM では既存のサブネットを使用します。 環境変数に格納された新しい VM のパブリック IP アドレスを取得する手順はいくつかスキップできます。これは VM 作成情報で返されるためです。 VM に関する他の情報が後で必要になった場合は、`az vm show` コマンドからいつでも取得できます。
+
+
+    ```bash
+
+    VM2_IP_ADDR=$(az vm create -g TutorialResources \
+      -n TutorialVM2 \
+      --image UbuntuLTS \
+      --generate-ssh-keys \
+      --subnet $SUBNET_ID \
+      --query publicIpAddress \
+      -o tsv)
+    ```
+
+
+    格納された IP アドレスを使用して、新しく作成した VM に SSH 接続します。
+
+
+    ```bash
+
+    ssh $VM2_IP_ADDR
+
+    ```
+
+
+    VM からログアウトします。
+- durationInMinutes: 2
+  title: クリーンアップ
+  content: >-
+    これでチュートリアルは終了です。次は、作成したリソースをクリーンアップします。 `delete` コマンドを使用すると個別のリソースを削除できますが、最も安全な方法は、`group delete` コマンドでリソース グループ内のすべてのリソースを削除することです。
+
+
+    ```azurecli-interactive
+
+    az group delete --name TutorialResources --no-wait
+
+    ```
+
+
+    このコマンドは、チュートリアルで作成したリソースを削除し、必ず正しい順序でその割り当てを解除します。 `--no-wait` パラメーターは、削除の実行中に CLI がブロックされないようにします。 削除が完了するまで待つか、進行状況を監視するには、`group wait` コマンドを使用します。
+
+
+    ```azurecli-interactive
+
+    az group wait --name TutorialResources --deleted
+
+    ```
+
+
+    クリーンアップが完了したら、チュートリアルは終了です。 引き続き、ここで学習した内容を簡単に確認し、次のステップで役立つリソースへのリンクを紹介します。
+- durationInMinutes: 1
+  title: まとめ
+  content: >-
+    お疲れさまでした。 ここでは、新規または既存のリソースを使用して VM を作成する方法を学習し、`--query` および `--output` 引数を使用してデータを取得し、シェル変数に格納しました。また、Azure VM 用に作成されたリソースをいくつか確認しました。
+
+
+    次の作業は、CLI を使用する目的によって異なります。 このチュートリアルで説明した機能の詳細を説明した資料には、さまざまなものがあります。
+
+
+    ### <a name="samples"></a>サンプル
+
+
+    特定のタスクをすぐに開始する必要がある場合は、サンプル スクリプトを確認してください。
+
+
+    * [Linux VM](/azure/virtual-machines/linux/cli-samples?toc=%2fcli%2fazure%2ftoc.json) と [Windows VM](/azure/virtual-machines/windows/cli-samples?toc=%2fcli%2fazure%2ftoc.json) を使用する
+
+    * [WebApps](/azure/app-service/app-service-cli-samples?toc=%2Fcli%2Fazure%2Ftoc.json) と [Azure Functions](/azure/azure-functions/functions-cli-samples?toc=%2fcli%2fazure%2ftoc.json) を使用する
+
+    * データベースを使用する - [Azure SQL データベース](/azure/sql-database/sql-database-cli-samples?toc=%2fcli%2fazure%2ftoc.json)、[PostgreSQL](/azure/postgresql/sample-scripts-azure-cli?toc=%2fcli%2fazure%2ftoc.json)、[MySQL](/azure/mysql/sample-scripts-azure-cli?toc=%2fcli%2fazure%2ftoc.json)、および [CosmosDB](/azure/cosmos-db/cli-samples?toc=%2fcli%2fazure%2ftoc.json)。
+
+
+    ### <a name="in-depth-cli-documentation"></a>詳細な Azure CLI ドキュメント
+
+
+    次のトピックでは、このチュートリアルで示した CLI 機能について詳しく説明します。
+
+
+    * [出力形式](format-output-azure-cli.md)の詳細
+
+    * [出力クエリ](query-azure-cli.md)の詳細
+
+    * [Azure での承認](authenticate-azure-cli.md)の詳細
+
+
+    ### <a name="other-useful-documentation"></a>その他の有用なドキュメント
+
+
+    必要に応じて、[既定値の構成](azure-cli-configuration.md)、[拡張機能](azure-cli-extensions-overview.md)など、CLI の高度な機能について調べる時間をとります。
+
+
+    ### <a name="feedback"></a>フィードバック
+
+
+    CLI に関するフィードバック、ご提案、ご質問はさまざまな方法で送信できます。
+
+
+    * `az feedback` は CLI の組み込みコマンドで、自由形式のフィードバックをチームに提供できます。
+
+    * [Azure CLI リポジトリ](https://github.com/Azure/azure-cli)で CLI を使用して、機能要求またはバグ レポートを提出できます。
+
+    * [Azure CLI ドキュメント リポジトリ](https://github.com/MicrosoftDocs/azure-docs-cli/issues)で問題を報告することで、ご質問や内容確認を行うことができます。
+
+
+    Azure CLI をご利用いただましたら幸いです。

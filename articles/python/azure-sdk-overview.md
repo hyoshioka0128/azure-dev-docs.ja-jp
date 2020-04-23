@@ -3,12 +3,12 @@ title: Azure SDK for Python
 description: Azure リソースのプロビジョニング、使用、管理の際の開発者の生産性を向上させる、Azure SDK for Python の機能の概要。
 ms.date: 03/17/2020
 ms.topic: conceptual
-ms.openlocfilehash: a7fa744884972c6e25ac85b69c6b8317d7cb5190
-ms.sourcegitcommit: 1bd9ec6a4115e9162e33b76a933869788e6ab702
+ms.openlocfilehash: 3d24a512420610f37285a03fe6a39d81e97510ee
+ms.sourcegitcommit: 36e02e96b955ed0531f98b9c0f623f4acb508661
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/31/2020
-ms.locfileid: "80441677"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82026115"
 ---
 # <a name="azure-sdk-for-python"></a>Azure SDK for Python
 
@@ -91,7 +91,7 @@ from azure.storage.blob import BlobClient
 最後に、ライブラリの API を使用して、データに接続し、アップロードします。 この例では、接続文字列とコンテナー名はストレージ アカウントで既にプロビジョニングされています。 BLOB 名は、アップロードされたデータに割り当てる名前です。
 
 ```python
-blob = BlobClient.from_connection_string("my_connection_string", container="mycontainer", blob="my_blob")
+blob = BlobClient.from_connection_string("my_connection_string", container_name="mycontainer", blob_name="my_blob")
 
 with open("./SampleSource.txt", "rb") as data:
     blob.upload_blob(data)

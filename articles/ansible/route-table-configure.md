@@ -4,20 +4,20 @@ description: Ansible を使用して Azure ルート テーブルを作成、管
 keywords: ansible, azure, devops, bash, プレイブック, ネットワーク, ルート, ルート テーブル
 ms.topic: tutorial
 ms.date: 04/30/2019
-ms.openlocfilehash: 1f08aebe7e9dcc1c5687f50ac91c7cb8cc8a62eb
-ms.sourcegitcommit: f89c59f772364ec717e751fb59105039e6fab60c
+ms.openlocfilehash: cadc8f63d887cdd1ffe8b230dbe53a68645e601b
+ms.sourcegitcommit: eabc9e3fb8ad0f067be5ed878c2eacebd461b6ce
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80741090"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81743325"
 ---
 # <a name="tutorial-configure-azure-route-tables-using-ansible"></a>チュートリアル:Ansible を使用して Azure ルート テーブルを構成する
 
-[!INCLUDE [ansible-27-note.md](../../includes/ansible-28-note.md)]
+[!INCLUDE [ansible-27-note.md](includes/ansible-28-note.md)]
 
 Azure では、Azure のサブネット、仮想ネットワーク、およびオンプレミスのネットワーク間のトラフィックが自動的にルーティングされます。 ご使用環境のルーティングをより制御する必要がある場合は、[ルート テーブル](/azure/virtual-network/virtual-networks-udr-overview)を作成することができます。 
 
-[!INCLUDE [ansible-tutorial-goals.md](../../includes/ansible-tutorial-goals.md)]
+[!INCLUDE [ansible-tutorial-goals.md](includes/ansible-tutorial-goals.md)]
 
 > [!div class="checklist"]
 >
@@ -25,8 +25,8 @@ Azure では、Azure のサブネット、仮想ネットワーク、および�
 
 ## <a name="prerequisites"></a>前提条件
 
-[!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../../includes/open-source-devops-prereqs-azure-subscription.md)]
-[!INCLUDE [ansible-prereqs-cloudshell-use-or-vm-creation2.md](../../includes/ansible-prereqs-cloudshell-use-or-vm-creation2.md)]
+[!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
+[!INCLUDE [ansible-prereqs-cloudshell-use-or-vm-creation2.md](includes/ansible-prereqs-cloudshell-use-or-vm-creation2.md)]
 
 ## <a name="create-a-route-table"></a>ルート テーブルの作成
 

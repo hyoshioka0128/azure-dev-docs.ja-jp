@@ -4,20 +4,20 @@ description: Ansible を使用して Azure Cache for Redis に対するファイ
 keywords: ansible, azure, devops, bash, プレイブック, キャッシュ, redis
 ms.topic: tutorial
 ms.date: 04/30/2019
-ms.openlocfilehash: 2ef36ee9e3601d77bfa114b903f6a75b5874b158
-ms.sourcegitcommit: f89c59f772364ec717e751fb59105039e6fab60c
+ms.openlocfilehash: 0101d9afc3f9d6e4466455aa56ae069a009bfa6f
+ms.sourcegitcommit: eabc9e3fb8ad0f067be5ed878c2eacebd461b6ce
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80741310"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81743455"
 ---
 # <a name="tutorial-configure-caches-in-azure-cache-for-redis-using-ansible"></a>チュートリアル:Ansible を使用して Azure Cache for Redis のキャッシュを構成する
 
-[!INCLUDE [ansible-28-note.md](../../includes/ansible-28-note.md)]
+[!INCLUDE [ansible-28-note.md](includes/ansible-28-note.md)]
 
 [Azure Cache for Redis](/azure/azure-cache-for-redis/) は、データに高速アクセスを提供することによって応答性の高いアプリの構築を可能にする、オープンソースの互換性のあるサービスです。 
 
-[!INCLUDE [ansible-tutorial-goals.md](../../includes/ansible-tutorial-goals.md)]
+[!INCLUDE [ansible-tutorial-goals.md](includes/ansible-tutorial-goals.md)]
 
 > [!div class="checklist"]
 >
@@ -29,8 +29,8 @@ ms.locfileid: "80741310"
 
 ## <a name="prerequisites"></a>前提条件
 
-[!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../../includes/open-source-devops-prereqs-azure-subscription.md)]
-[!INCLUDE [ansible-prereqs-cloudshell-use-or-vm-creation2.md](../../includes/ansible-prereqs-cloudshell-use-or-vm-creation2.md)]
+[!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
+[!INCLUDE [ansible-prereqs-cloudshell-use-or-vm-creation2.md](includes/ansible-prereqs-cloudshell-use-or-vm-creation2.md)]
 
 ## <a name="create-a-cache"></a>キャッシュの作成
 

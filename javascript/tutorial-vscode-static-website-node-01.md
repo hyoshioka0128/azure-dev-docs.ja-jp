@@ -3,16 +3,22 @@ title: Visual Studio Code から静的 Node.js Web サイトを Azure にデプ�
 description: チュートリアル パート 1、概要と前提条件。
 ms.topic: conceptual
 ms.date: 09/23/2019
-ms.openlocfilehash: 8b19b32933c2405082e2d1e2aa46c7a06af1f9d1
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: 4795d3a80be1ffa7516f64fa5563d4960f58a31b
+ms.sourcegitcommit: 36e02e96b955ed0531f98b9c0f623f4acb508661
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74467093"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82026165"
 ---
 # <a name="deploy-a-static-website-to-azure-from-visual-studio-code"></a>Visual Studio Code から静的 Web サイトを Azure にデプロイする
 
 このチュートリアルでは、[Azure Storage](https://docs.microsoft.com/azure/storage) を使用して、静的 Web サイトを作成し、Azure にデプロイします。 静的 Web サイトは、HTML、CSS、JavaScript、および画像やフォントなどのその他のファイルで構成されています。 静的サイトは通常、Angular、React、または Vue で記述されたシングルページ アプリケーション ([SPA](https://en.wikipedia.org/wiki/Single-page_application)) です。 アプリの設計方法に関係なく、これらのファイルは、Web サーバーを使用するのではなく、_ストレージ_から直接ホストして提供します。 ストレージでのホスティングは、Web サーバーを維持するよりも簡単でコストが低くなります。
+
+## <a name="walkthrough-video"></a>チュートリアル ビデオ
+
+この記事の内容の完全なチュートリアルについては、こちらのビデオをご覧ください。
+
+> [!VIDEO https://channel9.msdn.com/Shows/Docs-Azure/Deploy-static-website-to-Azure-from-Visual-Studio-Code/player]
 
 > [!NOTE]
 > Node.js/Express app などの独自のサーバー コードがある場合は、代わりに [App Service のチュートリアル](tutorial-vscode-azure-app-service-node-01.md)に従ってください。

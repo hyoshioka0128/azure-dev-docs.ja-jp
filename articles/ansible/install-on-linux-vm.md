@@ -8,12 +8,12 @@ author: tomarchermsft
 manager: gwallace
 ms.author: tarcher
 ms.date: 04/30/2019
-ms.openlocfilehash: 6c346ad30be953550dfd679d60bf2c5ce6f3d8c7
-ms.sourcegitcommit: f89c59f772364ec717e751fb59105039e6fab60c
+ms.openlocfilehash: 4f577b9841375d63bfc88249da88e554c1464bde
+ms.sourcegitcommit: eabc9e3fb8ad0f067be5ed878c2eacebd461b6ce
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80741130"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81743586"
 ---
 # <a name="quickstart-install-ansible-on-linux-virtual-machines-in-azure"></a>クイック スタート:Azure で Linux 仮想マシンに Ansible をインストールする
 
@@ -21,8 +21,8 @@ Ansible を使用すると、環境でのリソースの展開と構成を自動
 
 ## <a name="prerequisites"></a>前提条件
 
-[!INCLUDE [open-source-devops-prereqs-azure-sub.md](../../includes/open-source-devops-prereqs-azure-subscription.md)]
-[!INCLUDE [open-source-devops-prereqs-create-sp.md](../../includes/open-source-devops-prereqs-create-service-principal.md)]
+[!INCLUDE [open-source-devops-prereqs-azure-sub.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
+[!INCLUDE [open-source-devops-prereqs-create-sp.md](../includes/open-source-devops-prereqs-create-service-principal.md)]
 - **Linux または Linux 仮想マシンへのアクセス** - Linux マシンを所有していない場合は、[Linux 仮想マシン](/azure/virtual-network/quick-create-cli)を作成してください。
 
 ## <a name="install-ansible-on-an-azure-linux-virtual-machine"></a>Azure の Linux 仮想マシンへの Ansible のインストール
@@ -159,7 +159,7 @@ Ansible の資格情報の定義について詳しくは、「[Providing Credent
 
 正しく構成されたことを確認するには、Ansible を使用して Azure リソース グループを作成します。
 
-[!INCLUDE [create-resource-group-with-ansible.md](../../includes/ansible-snippet-create-resource-group.md)]
+[!INCLUDE [create-resource-group-with-ansible.md](includes/ansible-snippet-create-resource-group.md)]
 
 ## <a name="next-steps"></a>次のステップ
 

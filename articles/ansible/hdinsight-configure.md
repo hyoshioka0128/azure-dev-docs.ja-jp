@@ -4,20 +4,20 @@ description: Ansible を使用して Azure HDInsight クラスターの構成、
 keywords: ansible, azure, devops, bash, プレイブック, apache hadoop, hdinsight
 ms.topic: tutorial
 ms.date: 04/30/2019
-ms.openlocfilehash: 2281c9683583e1def034b79809829a068ef9f3e6
-ms.sourcegitcommit: f89c59f772364ec717e751fb59105039e6fab60c
+ms.openlocfilehash: 78cb70a3346aec86d079d2667349f9bc6e0eb4b2
+ms.sourcegitcommit: eabc9e3fb8ad0f067be5ed878c2eacebd461b6ce
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80741190"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81743638"
 ---
 # <a name="tutorial-configure-a-cluster-in-azure-hdinsight-using-ansible"></a>チュートリアル:Ansible を使用して Azure HDInsight でクラスターを構成する
 
-[!INCLUDE [ansible-28-note.md](../../includes/ansible-28-note.md)]
+[!INCLUDE [ansible-28-note.md](includes/ansible-28-note.md)]
 
 [Azure HDInsight](/azure/hdinsight/) はデータを処理するための Hadoop ベースの分析サービスです。 HDInsight は、ビッグ データ (構造化または非構造化のいずれも) を操作するために使用される ETL (抽出、変換、読み込み) ツールです。 HDInsight では、それぞれの種類で異なるコンポーネント セットがサポートされている複数の[クラスターの種類](/azure/hdinsight/hadoop/apache-hadoop-introduction)がサポートされています。 
 
-[!INCLUDE [ansible-tutorial-goals.md](../../includes/ansible-tutorial-goals.md)]
+[!INCLUDE [ansible-tutorial-goals.md](includes/ansible-tutorial-goals.md)]
 
 > [!div class="checklist"]
 >
@@ -28,8 +28,8 @@ ms.locfileid: "80741190"
 
 ## <a name="prerequisites"></a>前提条件
 
-[!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../../includes/open-source-devops-prereqs-azure-subscription.md)]
-[!INCLUDE [ansible-prereqs-cloudshell-use-or-vm-creation2.md](../../includes/ansible-prereqs-cloudshell-use-or-vm-creation2.md)] 
+[!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
+[!INCLUDE [ansible-prereqs-cloudshell-use-or-vm-creation2.md](includes/ansible-prereqs-cloudshell-use-or-vm-creation2.md)] 
 
 ## <a name="create-a-random-postfix"></a>ランダムな postfix を作成する
 

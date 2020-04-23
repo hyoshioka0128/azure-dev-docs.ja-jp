@@ -1,0 +1,119 @@
+- name: Azure CLI
+  href: index.yml
+- name: 概要
+  items:
+    - name: Azure CLI とは
+      href: what-is-azure-cli.md
+      displayName: 'overview, intro, introduction'
+    - name: サービス一覧
+      href: azure-services-the-azure-cli-can-manage.md
+      displayName: 'into, introduction, matrix, azure products, products supported, services App Configuration, App Service, Active Directory (AD), Backup, Cognitive Search,  Cosmos DB, Data Lake Storage, Database, MariaDB, MySQL, PostgreSQL, PostgreSQL,  DevOps, DevTest Labs, DNS, Functions, IoT, IoT Central, IoT Edge, IoT Hub,  Kubernetes Service (AKS), Lab Services, Machine Learning, Managed Applications,  Private Link, Resource Manager, Spring Cloud, SQL Database, Batch, Cognitive Services,  Container Instances, Container Registry, Data Lake Analytics, Event Grid, Event Hubs,  HDInsight, Key Vault, Load Balancer, Managed Disks, Media Services,  Notification Hubs, Service Bus, Service Fabric, Storage Accounts, Traffic Manager,  Virtual Machine Scale Sets, Virtual Network, Compute, Networking, Internet of Things,  Developer Tools, Databases, Analytics, Management and Governance, Hybrid, Storage, Security, AI + Machine Learning'
+    - name: はじめに
+      href: get-started-with-azure-cli.md
+      displayName: 'intro, introduction, sign in, signin, log in, login, find, interactive, feedback'
+    - name: 人気の記事
+      href: popular-articles-using-the-azure-cli.md
+      displayName: 'into, introduction, popular articles, page views, virtual machines, Azure Kubernetes Service (AKS),  Batch, Azure CLI (Core), Resource Manager, Key Vault, Stack Hub, Functions,  Database, Event Hubs, App Configuration, App Config, Germany, Security, Governance,  Insights, IoT, Internet of Things, DevOps, Virtual Network, Compute, Networking,  Developer Tools, Databases, Analytics, Management and Governance, Hybrid, Storage, Security, AI,  AI + Machine Learning, Linux, Windows, Ubuntu, automation, application, web app, script, certificate'
+    - name: リリース ノート
+      href: release-notes-azure-cli.md?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
+    - name: CLI のバージョン管理
+      href: cli-versioning-identifiers.md
+      displayName: 'version, classic, 2.0, 1.0, xplat'
+- name: インストールと実行
+  items:
+    - name: インストール
+      href: install-azure-cli.md
+      items:
+        - name: インストール - Windows
+          href: install-azure-cli-windows.md
+          displayName: 'install, powershell, cmd, command prompt'
+        - name: インストール - macOS
+          href: install-azure-cli-macos.md
+          displayName: 'install, macos, brew, homebrew, osx, os x, mac'
+        - name: インストール - Linux (apt を使用)
+          href: install-azure-cli-apt.md
+          displayName: 'ubuntu, debian, mint, linux, install, wsl'
+        - name: インストール - Linux (yum を使用)
+          href: install-azure-cli-yum.md
+          displayName: 'rhel, redhat, red hat, fedora, linux, install, wsl'
+        - name: インストール - Linux (zypper を使用)
+          href: install-azure-cli-zypper.md
+          displayName: 'opensuse, suse, sles, leap, tumbleweed, linux, install, wsl'
+        - name: インストール - Linux インストール スクリプト
+          href: install-azure-cli-linux.md
+          displayName: 'install, script, unix, bsd, linux, lfs, wsl, slackware'
+    - name: 実行 - Docker
+      href: run-azure-cli-docker.md
+      displayName: 'linux, unix, container, image'
+    - name: 実行 - Azure Cloud Shell
+      href: /azure/cloud-shell/quickstart
+      displayName: 'bash, Powershell'
+    - name: サインイン
+      href: authenticate-azure-cli.md
+      displayName: 'sign in, signin, log in, login, credentials, msi, managed identity, tenant, subscription, region, certificate, service principal, authenticate'
+- name: チュートリアル
+  items:
+    - name: サービス プリンシパルの作成
+      href: create-an-azure-service-principal-azure-cli.md
+      displayName: 'automation, application, web app, script, certificate, sign in, signin, log in, login, devops, dev ops, itpro, it pro, role, aad, authentication, authenticate'
+    - name: 仮想マシンを作成する
+      href: azure-cli-vm-tutorial.yml
+- name: サンプル
+  items:
+    - name: Linux VM
+      href: /azure/virtual-machines/linux/cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
+      displayName: virtual machines
+    - name: Windows VM
+      href: /azure/virtual-machines/windows/cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
+      displayName: virtual machines
+    - name: Web Apps
+      href: /azure/app-service-web/app-service-cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
+    - name: 関数
+      href: /azure/azure-functions/functions-cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
+      displayName: 'serverless, lambda'
+    - name: SQL Database
+      href: /azure/sql-database/sql-database-cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
+    - name: PostgreSQL
+      href: /azure/postgresql/sample-scripts-azure-cli?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
+    - name: MySQL
+      href: /azure/mysql/sample-scripts-azure-cli?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
+    - name: Cosmos DB
+      href: /azure/cosmos-db/cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
+      displayName: 'database, nosql, mongodb, couchdb'
+    - name: Batch
+      href: /azure/batch/cli-samples?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
+- name: 操作方法ガイド
+  items:
+    - name: Query results
+      href: query-azure-cli.md
+      displayName: 'filter, search, format, output, variable, scripting, array, dictionary, map, object, json, jsonc, jmespath  '
+    - name: 出力の書式設定
+      href: format-output-azure-cli.md
+      displayName: 'table, yaml, json, jsonc, tsv, ascii, configure, default'
+    - name: 設定の構成
+      href: azure-cli-Configuration.md
+      displayName: 'configure, defaults, environment, variables'
+    - name: サブスクリプションの管理
+      href: manage-azure-subscriptions-azure-cli.md
+      displayName: 'tenant, user, sign in, signin, log in, login, authenticate, authentication, accounts'
+    - name: 対話モードでの作業
+      href: interactive-azure-cli.md
+    - name: 複数のクラウドの処理
+      href: manage-clouds-azure-cli.md?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
+      displayName: 'region, china, germany, government, governance, stack'
+    - name: テンプレートを使用したデプロイ
+      items:
+        - name: デプロイ テンプレートの使用
+          href: /azure/azure-resource-manager/resource-group-template-deploy-cli?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
+        - name: デプロイ テンプレートのエクスポート
+          href: /azure/azure-resource-manager/resource-manager-export-template-cli?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json
+    - name: 拡張機能の使用
+      items:
+        - name: 概要
+          href: azure-cli-extensions-overview.md
+        - name: 使用可能な拡張機能
+          href: azure-cli-extensions-list.md
+        - name: エイリアス拡張機能
+          href: azure-cli-extension-alias.md
+        - name: プライベート テンプレートからのデプロイ
+          href: /azure/azure-resource-manager/resource-manager-cli-sas-token?toc=%2fcli%2fazure%2ftoc.json&bc=%2fcli%2fazure%2fbreadcrumb%2ftoc.json

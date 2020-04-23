@@ -4,20 +4,20 @@ description: Ansible を使用して、Shared Image Gallery にある一般化�
 keywords: Ansible, Azure, DevOps, Bash, プレイブック, 仮想マシン, 仮想マシン スケール セット, Shared Image Gallery
 ms.topic: tutorial
 ms.date: 10/14/2019
-ms.openlocfilehash: f784419736854095cc1bc5da14f3867ac3f7eb12
-ms.sourcegitcommit: f89c59f772364ec717e751fb59105039e6fab60c
+ms.openlocfilehash: cd66899b5d5f37bc056d251a68117456062c16cf
+ms.sourcegitcommit: eabc9e3fb8ad0f067be5ed878c2eacebd461b6ce
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80741750"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81743281"
 ---
 # <a name="tutorial-create-a-vm-or-virtual-machine-scale-set-from-the-azure-shared-image-gallery-using-ansible"></a>チュートリアル:Ansible を使用して Azure Shared Image Gallery から VM または仮想マシン スケール セットを作成する
 
-[!INCLUDE [ansible-29-note.md](../../includes/ansible-29-note.md)]
+[!INCLUDE [ansible-29-note.md](includes/ansible-29-note.md)]
 
 [Shared Image Gallery](/azure/virtual-machines/windows/shared-image-galleries) は、カスタムのマネージド イメージを簡単に管理、共有、整理できるようにするサービスです。 この機能は、多くのイメージが保持、共有されているシナリオに役立ちます。 カスタム イメージは、サブスクリプション間および Azure Active Directory のテナント間で共有できます。 また、デプロイのスケーリングにかかる時間を短縮するために、イメージを複数のリージョンにレプリケートすることもできます。
 
-[!INCLUDE [ansible-tutorial-goals.md](../../includes/ansible-tutorial-goals.md)]
+[!INCLUDE [ansible-tutorial-goals.md](includes/ansible-tutorial-goals.md)]
 
 > [!div class="checklist"]
 >
@@ -30,8 +30,8 @@ ms.locfileid: "80741750"
 
 ## <a name="prerequisites"></a>前提条件
 
-[!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../../includes/open-source-devops-prereqs-azure-subscription.md)]
-[!INCLUDE [ansible-prereqs-cloudshell-use-or-vm-creation2.md](../../includes/ansible-prereqs-cloudshell-use-or-vm-creation2.md)]
+[!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
+[!INCLUDE [ansible-prereqs-cloudshell-use-or-vm-creation2.md](includes/ansible-prereqs-cloudshell-use-or-vm-creation2.md)]
 
 ## <a name="get-the-sample-playbooks"></a>サンプル プレイブックを取得する
 

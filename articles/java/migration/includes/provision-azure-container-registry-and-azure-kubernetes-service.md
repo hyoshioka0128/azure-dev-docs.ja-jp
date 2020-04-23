@@ -1,0 +1,20 @@
+---
+author: mriem
+ms.author: manriem
+ms.date: 2/28/2020
+ms.openlocfilehash: e72cefaab3ccdbbaae01992cc11285944fb09a36
+ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 04/21/2020
+ms.locfileid: "81673208"
+---
+### <a name="provision-azure-container-registry-and-azure-kubernetes-service"></a>Azure Container Registry と Azure Kubernetes Service をプロビジョニングする
+
+次のコマンドを使用して、レジストリの閲覧者ロールを持つサービス プリンシパルを使って、コンテナー レジストリと Azure Kubernetes クラスターを作成します。 クラスターのネットワーク要件に応じて、[適切なネットワーク モデル](/azure/aks/operator-best-practices-network#choose-the-appropriate-network-model)を選択してください。
+
+```bash
+az group create -g $resourceGroup -l eastus
+az acr create -g $resourceGroup -n $acrName --sku Standard
+az aks create -g $resourceGroup -n $aksName --attach-acr $acrName --network-plugin azure
+```

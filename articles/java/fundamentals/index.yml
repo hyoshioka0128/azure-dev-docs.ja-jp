@@ -1,0 +1,67 @@
+### YamlMime:Landing
+title: Azure 開発者ツールの Java に関するドキュメント
+summary: Azure での Java 開発のためのツール、IDE、およびサポートされている JDK。
+metadata:
+  title: Azure での Java の基礎に関するドキュメント
+  description: Azure での Java 開発のためのツール、IDE、およびサポートされている JDK
+  ms.date: 04/03/2020
+  ms.topic: landing-page
+  ms.openlocfilehash: d229e7b7964290c78c8ab963e7c70374043c40a8
+  ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 04/21/2020
+  ms.locfileid: "81675268"
+landingContent:
+- title: Java クラウド開発者向けのツール
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: ツールの概要
+      url: java-azure-tools.md
+- title: サポート対象 JDK
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: Java の長期サポート
+      url: java-jdk-long-term-support.md
+    - text: Java JDK のインストール
+      url: java-jdk-install.md
+    - text: Azure の Java Docker イメージ
+      url: java-jdk-docker-images.md
+- title: IDE
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Visual Studio Code
+      url: https://code.visualstudio.com/docs/languages/java
+    - text: IntelliJ IDEA
+      url: /azure/developer/java/toolkit-for-intellij
+    - text: Eclipse
+      url: /azure/developer/java/toolkit-for-eclipse
+- title: Maven プラグイン
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Azure App Service
+      url: /java/api/overview/azure/maven/azure-webapp-maven-plugin/readme
+    - text: Azure Functions
+      url: /java/api/overview/azure/maven/azure-functions-maven-plugin/readme
+    - text: Azure Spring Cloud
+      url: /java/api/overview/azure/maven/azure-spring-cloud-maven-plugin/readme
+- title: ログ記録
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Azure SDK for Java でのログ記録の構成
+      url: /azure/developer/java/sdk/java-sdk-azure-log
+    - text: Logz.io を使用した監視とログ記録
+      url: java-get-started-with-logzio.md
+- title: DevOps
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Azure DevOps
+      url: /azure/devops/java/
+    - text: Jenkins での CI/CD
+      url: /azure/jenkins/

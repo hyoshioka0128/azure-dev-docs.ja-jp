@@ -1,0 +1,35 @@
+- name: Azure SDK for Java のドキュメント
+  href: index.yml
+  items:
+    - name: 開始するには
+      href: java-sdk-azure-get-started.md
+    - name: 概念
+      expanded: true
+      items:
+        - name: パターンとベスト プラクティス
+          href: java-sdk-azure-concepts.md
+    - name: ハウツー記事
+      expanded: true
+      items:
+        - name: ルート証明書を追加する
+          href: java-sdk-add-certificate-ca-store.md
+        - name: Authenticate
+          href: java-sdk-azure-authenticate.md
+        - name: ログの構成
+          href: java-sdk-azure-log.md
+    - name: コード サンプル
+      items:
+        - name: 仮想マシン
+          href: java-sdk-azure-virtual-machine-samples.md
+        - name: Web Apps
+          href: java-sdk-azure-web-apps-samples.md
+        - name: SQL Database
+          href: java-sdk-azure-sql-database-samples.md
+        - name: Security
+          href: java-sdk-azure-security-samples.md
+        - name: Containers
+          href: java-sdk-azure-containers-samples.md
+        - name: すべての Java サンプル
+          href: /samples/browse/?products=azure&languages=java
+    - name: リファレンス
+      href: /java/api/?view=azure-java

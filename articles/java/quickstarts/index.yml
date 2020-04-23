@@ -1,0 +1,112 @@
+### YamlMime:Landing
+title: Java 用 Azure クイック スタート
+metadata:
+  title: Java 用 Azure クイック スタート
+  description: これらのクイックスタートを使用して、クラウド用の Java アプリの開発を開始します。
+  ms.topic: landing-page
+  ms.date: 04/08/2020
+  ms.openlocfilehash: 4df3926c2de96a207b0f1f20445d60c4a2f4daac
+  ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 04/21/2020
+  ms.locfileid: "81675348"
+landingContent:
+- title: Web アプリのデプロイ
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Linux および Tomcat
+      url: /azure/app-service/containers/quickstart-java
+    - text: Linux および Java SE
+      url: /azure/developer/java/spring-framework/deploy-spring-boot-java-app-with-maven-plugin
+    - text: IntelliJ を使用して Linux にデプロイする
+      url: /azure/developer/java/toolkit-for-intellij/create-hello-world-web-app
+    - text: Visual Studio Code を使用して Linux にデプロイする
+      url: https://code.visualstudio.com/docs/java/java-webapp
+- title: サーバーレスな Functions
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: 関数を作成して Azure に発行する
+      url: /azure/azure-functions/functions-create-first-java-maven
+    - text: IntelliJ を使用してデプロイする
+      url: /azure/developer/java/toolkit-for-intellij/quickstart-functions
+    - text: Visual Studio Code を使用してデプロイする
+      url: /azure/azure-functions/functions-create-first-function-vs-code?pivots=programming-language-java
+- title: Azure Spring Cloud
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Azure portal を使用して起動する
+      url: /azure/spring-cloud/spring-cloud-quickstart-launch-app-portal
+    - text: Azure CLI を使用して起動する
+      url: /azure/spring-cloud/spring-cloud-quickstart-launch-app-cli
+    - text: ソース コードから起動する
+      url: /azure/spring-cloud/spring-cloud-launch-from-source
+    - text: Maven を使用して起動する
+      url: /azure/spring-cloud/spring-cloud-quickstart-launch-app-maven
+- title: ストレージ
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Storage BLOB
+      url: /azure/storage/blobs/storage-quickstart-blobs-java
+- title: データベース
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: SQL Database
+      url: /azure/sql-database/sql-database-connect-query-java
+    - text: MySQL
+      url: /azure/mysql/connect-java
+    - text: PostgreSQL
+      url: /azure/postgresql/connect-java
+- title: Cosmos DB
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: SQL API
+      url: /azure/cosmos-db/create-sql-api-java
+    - text: テーブル API
+      url: /azure/cosmos-db/create-table-java
+    - text: Graph API
+      url: /azure/cosmos-db/create-graph-java
+    - text: Cassandra API
+      url: /azure/cosmos-db/create-cassandra-java
+    - text: MongoDB API
+      url: /azure/cosmos-db/create-mongodb-java
+- title: イベント
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Event Hubs
+      url: /azure/event-hubs/event-hubs-java-get-started-send
+    - text: Event Hubs と Kafka
+      url: /azure/event-hubs/event-hubs-quickstart-kafka-enabled-event-hubs
+- title: Service Bus メッセージング
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: キューの使用
+      url: /azure/service-bus-messaging/service-bus-java-how-to-use-queues
+    - text: トピックとサブスクリプションの使用
+      url: /azure/service-bus-messaging/service-bus-java-how-to-use-topics-subscriptions
+    - text: JMS と AMQP
+      url: /azure/service-bus-messaging/service-bus-java-how-to-use-jms-api-amqp
+- title: IoT Hub
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: テレメトリを送信する
+      url: /azure/iot-hub/quickstart-send-telemetry-java
+    - text: デバイスの制御
+      url: /azure/iot-hub/quickstart-control-device-java
+- title: キャッシュ
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Jedis を使用したアプリ キャッシュ
+      url: /azure/azure-cache-for-redis/cache-java-get-started
+    - text: Spring Data Reactive Redis
+      url: /azure/developer/java/spring-framework/configure-spring-boot-initializer-java-app-with-redis-cache

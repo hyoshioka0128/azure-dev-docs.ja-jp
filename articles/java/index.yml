@@ -1,0 +1,169 @@
+### YamlMime:Hub
+title: Java 開発者向け Azure ドキュメント
+summary: これらの Java 開発者向けのチュートリアルとツールを使用して、クラウドに対応したアプリの開発を開始しましょう。
+brand: azure
+metadata:
+  title: Java 開発者向け Azure ドキュメント
+  description: これらの Java 開発者向けのチュートリアルとツールを使用して、クラウドに対応したアプリの開発を開始しましょう。
+  ms.topic: hub-page
+  ms.date: 04/08/2020
+  ms.openlocfilehash: c037f46cd3cc03c366ef9a904c4a9178eebc5a0a
+  ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 04/21/2020
+  ms.locfileid: "81675228"
+conceptualContent:
+  items:
+  - title: Java 用 Azure クイック スタート
+    links:
+    - text: Java SE Web アプリを Linux にデプロイする
+      itemType: quickstart
+      url: /azure/developer/java/spring-framework/deploy-spring-boot-java-app-with-maven-plugin
+    - text: サーバーレス関数を作成して発行する
+      itemType: quickstart
+      url: /azure/azure-functions/functions-create-first-java-maven
+    - text: ストレージ BLOB を管理する
+      itemType: quickstart
+      url: /azure/storage/blobs/storage-quickstart-blobs-java
+    footerLink:
+      text: 詳細情報
+      url: quickstarts/index.yml
+  - title: ツール、IDE、およびサポートされている JDK
+    links:
+    - text: Java の長期サポート
+      itemType: get-started
+      url: fundamentals/java-jdk-long-term-support.md
+    - text: Java JDK のインストール
+      itemType: get-started
+      url: fundamentals/java-jdk-install.md
+    - text: Azure の Java Docker イメージ
+      itemType: get-started
+      url: fundamentals/java-jdk-docker-images.md
+    footerLink:
+      text: 詳細情報
+      url: fundamentals/index.yml
+  - title: Azure への移行
+    links:
+    - text: Spring から Azure App Service へ
+      itemType: how-to-guide
+      url: migration/migrate-java-se-to-java-se-app-service.md
+    - text: Tomcat から Azure App Service へ
+      itemType: how-to-guide
+      url: migration/migrate-tomcat-to-tomcat-app-service.md
+    - text: WebLogic から Azure Virtual Machines へ
+      itemType: how-to-guide
+      url: migration/migrate-weblogic-to-virtual-machines.md
+    footerLink:
+      text: 詳細情報
+      url: migration/index.yml
+  - title: Azure SDK for Java
+    links:
+    - text: Java を使用した Azure 開発
+      itemType: get-started
+      url: sdk/java-sdk-azure-get-started.md
+    - text: パターンとベスト プラクティス
+      itemType: learn
+      url: sdk/java-sdk-azure-concepts.md
+    - text: Java API ブラウザー
+      itemType: reference
+      url: /java/api/?view=azure-java
+    footerLink:
+      text: 詳細情報
+      url: sdk/index.yml
+  - title: Azure App Service
+    links:
+    - text: Java アプリを作成する
+      itemType: quickstart
+      url: /azure/app-service/containers/quickstart-java
+    - text: Java を構成する
+      itemType: how-to-guide
+      url: /azure/app-service/containers/configure-language-java
+    - text: MySQL での Spring アプリのデプロイ
+      itemType: tutorial
+      url: /azure/developer/java/spring-framework/spring-app-service-e2e
+  - title: Azure Spring Cloud
+    links:
+    - text: Azure Spring Cloud とは
+      itemType: overview
+      url: /azure/spring-cloud/spring-cloud-overview
+    - text: Azure CLI を使用して Spring アプリを起動する
+      itemType: quickstart
+      url: /azure/spring-cloud/spring-cloud-quickstart-launch-app-portal
+    - text: Spring アプリをデプロイ用に準備する
+      itemType: tutorial
+      url: /azure/spring-cloud/spring-cloud-tutorial-prepare-app-deployment
+    footerLink:
+      text: 詳細情報
+      url: /azure/spring-cloud
+  - title: Azure 上の Spring の統合
+    links:
+    - text: Spring Boot Starter
+      itemType: get-started
+      url: spring-framework/spring-boot-starters-for-azure.md
+    - text: Spring Data Azure Cosmos DB
+      itemType: how-to-guide
+      url: spring-framework/how-to-guides-spring-data-cosmosdb.md
+    - text: Spring Boot アプリのデプロイ
+      itemType: tutorial
+      url: spring-framework/deploy-spring-boot-java-app-with-maven-plugin.md
+    footerLink:
+      text: 詳細情報
+      url: spring-framework/index.yml
+  - title: Azure Functions
+    links:
+    - text: Azure Function の作成
+      itemType: quickstart
+      url: /azure/azure-functions/functions-create-first-function-vs-code?pivots=programming-language-java
+    - text: Spring Cloud 関数を作成する
+      itemType: tutorial
+      url: /azure/developer/java/spring-framework/getting-started-with-spring-cloud-function-in-azure
+    - text: 開発者ガイド
+      itemType: reference
+      url: /azure/azure-functions/functions-reference-java
+  - title: Java アプリの監視
+    links:
+    - text: Application Insights の概要
+      itemType: how-to-guide
+      url: /azure/azure-monitor/app/java-in-process-agent
+    - text: ELK の概要
+      itemType: tutorial
+      url: /azure/developer/java/java-get-started-with-logzio
+    - text: Spring アプリの監視
+      itemType: how-to-guide
+      url: /azure/spring-cloud/diagnostic-services
+  - title: Java アプリのセキュリティ保護
+    links:
+    - text: エンドユーザーの認証と承認の有効化
+      itemType: quickstart
+      url: /azure/active-directory/develop/quickstart-v2-java-webapp
+    - text: Microsoft Authentication Library を使用する
+      itemType: how-to-guide
+      url: /azure/active-directory/develop/migrate-adal-msal-java
+    - text: アプリ シークレットの管理
+      itemType: quickstart
+      url: /azure/key-vault/quick-create-java
+tools:
+  title: ツール
+  items:
+  - title: Azure Toolkit for IntelliJ
+    imageSrc: https://docs.microsoft.com/media/logos/logo_intellij.svg
+    url: toolkit-for-intellij/index.yml
+  - title: Azure Toolkit for Eclipse
+    imageSrc: https://docs.microsoft.com/media/logos/logo_eclipse.svg
+    url: toolkit-for-eclipse/index.yml
+  - title: Eclipse Microprofile
+    imageSrc: https://docs.microsoft.com/media/logos/logo_eclipse.svg
+    url: eclipse-microprofile/index.yml
+  - title: Visual Studio Code
+    imageSrc: https://docs.microsoft.com/media/logos/logo_vs-code.svg
+    url: https://code.visualstudio.com/docs
+  - title: Azure CLI
+    imageSrc: https://docs.microsoft.com/media/logos/logo_CLIgeneric.svg
+    url: /cli/azure
+  - title: Maven
+    imageSrc: https://docs.microsoft.com/media/logos/logo_maven.svg
+    url: /java/api/overview/azure/maven/README
+  - title: Azure 上の Jenkins
+    imageSrc: https://docs.microsoft.com/media/logos/logo_jenkins.svg
+    url: /jenkins

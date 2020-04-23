@@ -1,0 +1,37 @@
+### YamlMime:Landing
+title: Azure SDK for Java のドキュメント
+summary: Azure での Java を使用したクラウド開発。
+metadata:
+  title: Azure SDK for Java のドキュメント
+  description: Azure での Java を使用したクラウド開発
+  ms.date: 04/03/2020
+  ms.topic: landing-page
+  ms.openlocfilehash: 2380696b801927bc842278b1b8604825feda0984
+  ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 04/21/2020
+  ms.locfileid: "81675148"
+landingContent:
+- title: Java クラウド開発者向けの Azure
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: Java を使用した Azure 開発
+      url: java-sdk-azure-get-started.md
+  - linkListType: reference
+    links:
+    - text: Java API ブラウザー
+      url: /java/api/?view=azure-java
+  - linkListType: how-to-guide
+    links:
+    - text: ルート証明書を追加する
+      url: java-sdk-add-certificate-ca-store.md
+    - text: Authenticate
+      url: java-sdk-azure-authenticate.md
+    - text: ログの構成
+      url: java-sdk-azure-log.md
+  - linkListType: learn
+    links:
+    - text: パターンとベスト プラクティス
+      url: java-sdk-azure-concepts.md

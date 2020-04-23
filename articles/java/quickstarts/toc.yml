@@ -1,0 +1,25 @@
+- name: Java 用 Azure クイック スタート
+  href: /azure/developer/java/quickstarts
+  items:
+    - name: Compute Services
+      href: compute.md
+    - name: Data
+      href: data.md
+    - name: ストレージ
+      href: storage.md
+    - name: キャッシュ
+      href: caching.md
+    - name: シークレットと構成管理
+      href: secrets-and-configuration-management.md
+    - name: ディレクトリ
+      href: directories.md
+    - name: メッセージングとイベント
+      href: messaging-and-eventing.md
+    - name: ネットワーク
+      href: networking.md
+    - name: 監視
+      href: monitoring.md
+    - name: Cognitive Services
+      href: cognitive-services.md
+    - name: DevOps
+      href: devops.md

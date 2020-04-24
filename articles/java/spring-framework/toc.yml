@@ -94,10 +94,10 @@
         - name: Spring Framework
           href: 'https://spring.io/'
         - name: Spring を学習する
-          href: 'https://spring.io/docs'
+          href: 'https://spring.io/guides'
         - name: Spring Boot
           href: 'https://projects.spring.io/spring-boot/'
         - name: Spring プロジェクト リファレンス
-          href: 'https://spring.io/docs/reference'
+          href: 'https://spring.io/projects'
         - name: Azure 向けの Spring Boot Starter
           href: 'https://github.com/Microsoft/azure-spring-boot/'

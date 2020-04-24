@@ -7,12 +7,12 @@ metadata:
   description: これらの Java 開発者向けのチュートリアルとツールを使用して、クラウドに対応したアプリの開発を開始しましょう。
   ms.topic: hub-page
   ms.date: 04/08/2020
-  ms.openlocfilehash: c037f46cd3cc03c366ef9a904c4a9178eebc5a0a
-  ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+  ms.openlocfilehash: d828acd15a58db94370c3f807bd51d8712ef1e2c
+  ms.sourcegitcommit: 36e02e96b955ed0531f98b9c0f623f4acb508661
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 04/21/2020
-  ms.locfileid: "81675228"
+  ms.lasthandoff: 04/22/2020
+  ms.locfileid: "82026185"
 conceptualContent:
   items:
   - title: Java 用 Azure クイック スタート
@@ -20,7 +20,7 @@ conceptualContent:
     - text: Java SE Web アプリを Linux にデプロイする
       itemType: quickstart
       url: /azure/developer/java/spring-framework/deploy-spring-boot-java-app-with-maven-plugin
-    - text: サーバーレス関数を作成して発行する
+    - text: サーバーレス関数を作成する
       itemType: quickstart
       url: /azure/azure-functions/functions-create-first-java-maven
     - text: ストレージ BLOB を管理する
@@ -82,6 +82,9 @@ conceptualContent:
     - text: MySQL での Spring アプリのデプロイ
       itemType: tutorial
       url: /azure/developer/java/spring-framework/spring-app-service-e2e
+    footerLink:
+      text: App Service のドキュメントを見る
+      url: /azure/app-service/containers/
   - title: Azure Spring Cloud
     links:
     - text: Azure Spring Cloud とは
@@ -121,6 +124,9 @@ conceptualContent:
     - text: 開発者ガイド
       itemType: reference
       url: /azure/azure-functions/functions-reference-java
+    footerLink:
+      text: Azure Functions のドキュメントを見る
+      url: /azure/azure-functions
   - title: Java アプリの監視
     links:
     - text: Application Insights の概要
@@ -132,17 +138,23 @@ conceptualContent:
     - text: Spring アプリの監視
       itemType: how-to-guide
       url: /azure/spring-cloud/diagnostic-services
+    footerLink:
+      text: Azure Monitor のドキュメントを見る
+      url: /azure/azure-monitor
   - title: Java アプリのセキュリティ保護
     links:
-    - text: エンドユーザーの認証と承認の有効化
+    - text: エンドユーザー認証を有効にする
       itemType: quickstart
       url: /azure/active-directory/develop/quickstart-v2-java-webapp
-    - text: Microsoft Authentication Library を使用する
+    - text: Microsoft Authentication Library
       itemType: how-to-guide
       url: /azure/active-directory/develop/migrate-adal-msal-java
     - text: アプリ シークレットの管理
       itemType: quickstart
       url: /azure/key-vault/quick-create-java
+    footerLink:
+      text: Active Directory のドキュメントを見る
+      url: /azure/active-directory
 tools:
   title: ツール
   items:

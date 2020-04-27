@@ -4,20 +4,20 @@ description: Ansible を使用して Azure DevTest Labs でラボを構成する
 keywords: ansible, azure, devops, bash, プレイブック, devtest　labs
 ms.topic: tutorial
 ms.date: 04/30/2019
-ms.openlocfilehash: b6981ee94c4d82997c574db037befb9782465d08
-ms.sourcegitcommit: f89c59f772364ec717e751fb59105039e6fab60c
+ms.openlocfilehash: 832ff131822a5cd864c2b005c36480235a5e1971
+ms.sourcegitcommit: eabc9e3fb8ad0f067be5ed878c2eacebd461b6ce
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80741210"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81743671"
 ---
 # <a name="tutorial-configure-labs-in-azure-devtest-labs-using-ansible"></a>チュートリアル:Ansible を使用して Azure DevTest Labs でラボを構成する
 
-[!INCLUDE [ansible-28-note.md](../../includes/ansible-28-note.md)]
+[!INCLUDE [ansible-28-note.md](includes/ansible-28-note.md)]
 
 [Azure DevTest Labs](/azure/lab-services/devtest-lab-overview) により、開発者はアプリの VM 環境の作成を自動化できます。 これらの環境をアプリの開発、テスト、およびトレーニング用に構成することができます。 
 
-[!INCLUDE [ansible-tutorial-goals.md](../../includes/ansible-tutorial-goals.md)]
+[!INCLUDE [ansible-tutorial-goals.md](includes/ansible-tutorial-goals.md)]
 
 > [!div class="checklist"]
 >
@@ -35,9 +35,9 @@ ms.locfileid: "80741210"
 
 ## <a name="prerequisites"></a>前提条件
 
-[!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../../includes/open-source-devops-prereqs-azure-subscription.md)]
-[!INCLUDE [open-source-devops-prereqs-create-service-principal.md](../../includes/open-source-devops-prereqs-create-service-principal.md)]
-[!INCLUDE [ansible-prereqs-cloudshell-use-or-vm-creation2.md](../../includes/ansible-prereqs-cloudshell-use-or-vm-creation2.md)]
+[!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
+[!INCLUDE [open-source-devops-prereqs-create-service-principal.md](../includes/open-source-devops-prereqs-create-service-principal.md)]
+[!INCLUDE [ansible-prereqs-cloudshell-use-or-vm-creation2.md](includes/ansible-prereqs-cloudshell-use-or-vm-creation2.md)]
 
 ## <a name="create-resource-group"></a>リソース グループの作成
 

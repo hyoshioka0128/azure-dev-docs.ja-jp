@@ -3,19 +3,20 @@ title: チュートリアル - Ansible を使用して Azure Kubernetes Service 
 description: Ansible を使用して Azure Kubernetes Service (AKS) クラスターで kubenet ネットワークを構成する方法について説明します。
 keywords: ansible, azure, devops, bash, cloudshell, プレイブック, aks, コンテナー, aks, kubernetes
 ms.topic: tutorial
+ms.custom: fasttrack-edit
 ms.date: 10/23/2019
-ms.openlocfilehash: 1f15710de9ab6f2d058b72096f0265541c131d9f
-ms.sourcegitcommit: f89c59f772364ec717e751fb59105039e6fab60c
+ms.openlocfilehash: 7d1dc7b381c02c84b2da89c5c90d822e86a3cd1b
+ms.sourcegitcommit: 36e02e96b955ed0531f98b9c0f623f4acb508661
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80741690"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82026125"
 ---
 # <a name="tutorial-configure-kubenet-networking-in-azure-kubernetes-service-aks-using-ansible"></a>チュートリアル:Ansible を使用して Azure Kubernetes Service (AKS) で kubenet ネットワークを構成する
 
-[!INCLUDE [ansible-28-note.md](../../includes/ansible-28-note.md)]
+[!INCLUDE [ansible-28-note.md](includes/ansible-28-note.md)]
 
-[!INCLUDE [open-source-devops-intro-aks.md](../../includes/open-source-devops-intro-aks.md)]
+[!INCLUDE [open-source-devops-intro-aks.md](../includes/open-source-devops-intro-aks.md)]
 
 AKS を使用して、次のネットワーク モデルを使用するクラスターをデプロイできます。
 
@@ -24,7 +25,7 @@ AKS を使用して、次のネットワーク モデルを使用するクラス
 
 AKS のアプリケーションに対するネットワークの詳細については、「[Azure Kubernetes Service (AKS) でのアプリケーションに対するネットワークの概念](/azure/aks/concepts-network)」を参照してください。
 
-[!INCLUDE [ansible-tutorial-goals.md](../../includes/ansible-tutorial-goals.md)]
+[!INCLUDE [ansible-tutorial-goals.md](includes/ansible-tutorial-goals.md)]
 
 > [!div class="checklist"]
 >
@@ -33,9 +34,9 @@ AKS のアプリケーションに対するネットワークの詳細につい�
 
 ## <a name="prerequisites"></a>前提条件
 
-[!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../../includes/open-source-devops-prereqs-azure-subscription.md)]
-[!INCLUDE [open-source-devops-prereqs-create-service-principal.md](../../includes/open-source-devops-prereqs-create-service-principal.md)]
-[!INCLUDE [ansible-prereqs-cloudshell-use-or-vm-creation2.md](../../includes/ansible-prereqs-cloudshell-use-or-vm-creation2.md)]
+[!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
+[!INCLUDE [open-source-devops-prereqs-create-service-principal.md](../includes/open-source-devops-prereqs-create-service-principal.md)]
+[!INCLUDE [ansible-prereqs-cloudshell-use-or-vm-creation2.md](includes/ansible-prereqs-cloudshell-use-or-vm-creation2.md)]
 
 ## <a name="create-a-virtual-network-and-subnet"></a>仮想ネットワークとサブネットの作成
 
@@ -106,9 +107,9 @@ AKS のアプリケーションに対するネットワークの詳細につい�
 - `azure_rm_aks_version` モジュールを使用して、サポートされているバージョンを見つけます。
 - `vnet_subnet_id` は、前のセクションで作成したサブネットです。
 - `network_profile` は、kubenet ネットワーク プラグインのプロパティを定義します。
-- `service_cidr` は、AKS クラスター内の内部サービスを IP アドレスに割り当てるために使用します。 この IP アドレス範囲は、ネットワーク内の他の場所で使われていないアドレス空間でなければなりません。 
+- `service_cidr` は、AKS クラスター内の内部サービスを IP アドレスに割り当てるために使用します。 この IP アドレス範囲は、AKS クラスターの外部で使用されていないアドレス空間でなければなりません。 ただし、複数の AKS クラスターに対して同じサービス CIDR を再利用できます。 
 - `dns_service_ip` アドレスは、サービス IP アドレス範囲の ".10" アドレスにする必要があります。
-- `pod_cidr` は、ネットワーク環境の他の場所で使われていない大きいアドレス空間にする必要があります。 このアドレス範囲は、スケールアップ後に予想されるノードの数を格納するのに十分な大きさである必要があります。 このアドレス範囲は、クラスターをデプロイした後は変更できません。
+- `pod_cidr` は、ネットワーク環境の他の場所で使われていない大きいアドレス空間にする必要があります。 このアドレス範囲は、スケールアップ後に予想されるノードの数を格納するのに十分な大きさである必要があります。 このアドレス範囲は、クラスターをデプロイした後は変更できません。 サービス CIDR と同様、この IP 範囲は AKS クラスターの外部に存在するものであってはなりませんが、クラスター間で安全に再利用できます。
 - ポッドの IP アドレス範囲は、クラスター内の各ノードに /24 アドレス空間を割り当てるために使用されます。 次の例の `pod_cidr` の 192.168.0.0/16 では、1 番目のノードに 192.168.0.0/24 が、2 番目のノードに 192.168.1.0/24 が、3 番目のノードに 192.168.2.0/24 が、それぞれ割り当てられてます。
 - クラスターをスケーリングまたはアップグレードすると、Azure によって引き続き新しい各ノードにポッドの IP アドレス範囲が割り当てられます。
 - このプレイブックは `~/.ssh/id_rsa.pub` から `ssh_key` を読み込みます。 これを変更する場合は、"ssh-rsa" (引用符は除く) で始まる単一行形式を使用してください。

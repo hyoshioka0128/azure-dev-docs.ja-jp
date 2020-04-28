@@ -1,0 +1,109 @@
+### YamlMime:Landing
+title: Azure 上の Jenkins のドキュメント
+summary: Jenkins を使用して、Azure で継続的インテグレーションと継続的デリバリーを自動化する方法について説明します。
+metadata:
+  title: Azure 上の Jenkins のドキュメント
+  description: Jenkins を使用して、Azure で継続的インテグレーションと継続的デリバリーを自動化する方法について説明します。
+  services: azure
+  ms.service: jenkins
+  ms.topic: landing-page
+  author: TomArcherMsft
+  ms.author: tarcher
+  ms.date: 02/24/2020
+  ms.openlocfilehash: 82e0f99795f46347970b3a73d9c0b78787d05cd6
+  ms.sourcegitcommit: 9ff9b51ab21c93bfd61e480c6ff8e39c9d4bf02e
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 04/27/2020
+  ms.locfileid: "82172348"
+landingContent:
+- title: Azure 上の Jenkins について
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Azure 上の Jenkins について
+      url: overview.md
+  - linkListType: reference
+    links:
+    - text: Azure 用の Jenkins プラグイン
+      url: plug-ins-for-azure.md
+  - linkListType: architecture
+    links:
+    - text: Jenkins アーキテクチャ
+      url: /azure/architecture/reference-architectures/jenkins/
+- title: Jenkins をインストール､構成する
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Jenkins サーバーを作成する
+      url: configure-on-linux-vm.md
+  - linkListType: download
+    links:
+    - text: サンプルのジョブとスクリプト
+      url: https://github.com/azure/jenkins
+- title: Jenkins と Azure を使用したスケーリング
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Azure Container Instances でのスケーリング
+      url: azure-container-instances-as-jenkins-build-agent.md
+    - text: Azure VM エージェントでのスケーリング
+      url: scale-deployments-using-vm-agents.md
+- title: Azure Functions への CI/CD
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Azure Functions へのデプロイ
+      url: deploy-to-azure-functions.md
+- title: AKS への CI/CD
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: GitHub から AKS へのデプロイ
+      url: deploy-from-github-to-aks.md
+    - text: 青/緑パターンを使用した AKS へのデプロイ
+      url: deploy-to-aks-using-blue-green-deployment-pattern.md
+    - text: Azure Dev Spaces プラグインを使用したデプロイ
+      url: azure-dev-spaces-and-aks.md
+- title: App Service への CI/CD
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: パイプライン ジョブでの Azure リソースの作成
+      url: deploy-to-azure-app-service-using-azure-cli.md
+    - text: GitHub から App Service へのデプロイ
+      url: deploy-from-github-to-azure-app-service.md
+  - linkListType: how-to-guide
+    links:
+    - text: App Service プラグインを使用したデプロイ
+      url: deploy-to-azure-app-service-using-plugin.md
+- title: Azure DevOps への CI/CD
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Azure DevOps Services を使用した Linux VM へのデプロイ
+      url: deploy-to-linux-vm-using-azure-devops-services.md
+- title: Azure Storage への CI/CD
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Jenkins C/I ソリューションでの Azure Storage の使用
+      url: azure-storage-blobs-as-build-artifact-repository.md
+- title: Linux VM への CI/CD
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Linux VM での開発インフラストラクチャの作成
+      url: pipeline-with-github-and-docker.md
+- title: Service Fabric への CI/CD
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Azure Service Fabric アプリのビルドとデプロイ
+      url: deploy-to-service-fabric-cluster.md
+- title: Azure Spring Cloud への CI/CD
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Azure CLI を使用した Azure Spring Cloud へのデプロイ
+      url: deploy-to-azure-spring-cloud-using-azure-cli.md

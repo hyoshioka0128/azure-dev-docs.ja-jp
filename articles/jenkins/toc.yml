@@ -1,0 +1,76 @@
+- name: Azure 上の Jenkins
+  href: index.yml
+- name: 概要
+  items:
+    - name: Azure 上の Jenkins について
+      href: overview.md
+- name: クイックスタート
+  expanded: true
+  items:
+    - name: Jenkins サーバーを作成する
+      href: configure-on-linux-vm.md
+- name: チュートリアル
+  items:
+    - name: 構成
+      items:
+        - name: Azure Container Instances でのスケーリング
+          href: azure-container-instances-as-jenkins-build-agent.md
+          maintainContext: true
+        - name: Azure VM エージェントでのスケーリング
+          href: scale-deployments-using-vm-agents.md
+    - name: CI/CD の実装
+      items:
+        - name: Azure Spring Cloud
+          items:
+            - name: Azure CLI を使用した Azure Spring Cloud へのデプロイ
+              href: deploy-to-azure-spring-cloud-using-azure-cli.md
+        - name: AKS
+          items:
+            - name: Kubernetes への CI/CD
+              href: deploy-from-github-to-aks.md
+              maintainContext: true
+            - name: 青/緑パターンを使用した AKS へのデプロイ
+              href: deploy-to-aks-using-blue-green-deployment-pattern.md
+            - name: CI/CD と Azure Dev Spaces
+              href: azure-dev-spaces-and-aks.md
+        - name: App Service
+          items:
+            - name: パイプライン ジョブでの Azure リソースの作成
+              href: deploy-to-azure-app-service-using-azure-cli.md
+            - name: GitHub から App Service へのアプリのデプロイ
+              href: deploy-from-github-to-azure-app-service.md
+        - name: Azure DevOps での Jenkins の使用
+          href: deploy-to-linux-vm-using-azure-devops-services.md
+          maintainContext: true
+        - name: Azure Functions へのデプロイ
+          href: deploy-to-azure-functions.md
+        - name: Azure Storage に発行する
+          href: azure-storage-blobs-as-build-artifact-repository.md
+          maintainContext: true
+        - name: Linux VM への CI/CD
+          href: pipeline-with-github-and-docker.md
+          maintainContext: true
+        - name: Service Fabric への CI/CD
+          href: deploy-to-service-fabric-cluster.md
+          maintainContext: true
+- name: 操作方法
+  items:
+    - name: App Service プラグインの使用
+      href: deploy-to-azure-app-service-using-plugin.md
+- name: サンプル
+  items:
+    - name: サンプルのジョブとスクリプト
+      href: 'https://github.com/azure/jenkins'
+- name: リソース
+  items:
+    - name: Azure 用の Jenkins プラグイン
+      href: plug-ins-for-azure.md
+    - name: Azure のロードマップ
+      href: 'https://azure.microsoft.com/roadmap/'
+    - name: Jenkins ホーム
+      href: 'https://jenkins.io/'
+    - name: Jenkins X ホーム
+      href: 'https://jenkins-x.io'
+    - name: Jenkins アーキテクチャ
+      href: /azure/architecture/reference-architectures/jenkins/
+      maintainContext: true

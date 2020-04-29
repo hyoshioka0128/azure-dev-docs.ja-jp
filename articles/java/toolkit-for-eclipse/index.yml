@@ -6,12 +6,12 @@ metadata:
   description: Azure Toolkit for Eclipse プラグインが、クラウド アプリケーションの作成と Azure へのデプロイにどのように役立つかを説明します。
   ms.date: 03/13/2020
   ms.topic: landing-page
-  ms.openlocfilehash: 81a19bdaec147c918a95f3d53143fb0d5c403918
-  ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+  ms.openlocfilehash: 55ffc89edfd66944e242431e33999b89b0c71f52
+  ms.sourcegitcommit: 858b061ed9ac883821a0485054b8076e2e719821
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 04/21/2020
-  ms.locfileid: "81675308"
+  ms.lasthandoff: 04/28/2020
+  ms.locfileid: "82209755"
 landingContent:
 - title: ファースト ステップ ガイド
   linkLists:
@@ -40,7 +40,7 @@ landingContent:
   - linkListType: download
     links:
     - text: Azure および Azure Stack 用の Java
-      url: /azure/developer/java/jdk/
+      url: /java/azure/jdk/
 - title: ソース コード
   linkLists:
   - linkListType: reference

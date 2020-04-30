@@ -3,12 +3,12 @@ title: Visual Studio Code から静的 Node.js Web サイトを Azure にデプ�
 description: チュートリアル パート 1、概要と前提条件。
 ms.topic: conceptual
 ms.date: 09/23/2019
-ms.openlocfilehash: 4795d3a80be1ffa7516f64fa5563d4960f58a31b
-ms.sourcegitcommit: 36e02e96b955ed0531f98b9c0f623f4acb508661
+ms.openlocfilehash: c63ff76f3572a7815b385b08b05e223eb681fbbe
+ms.sourcegitcommit: e6cdb0ce11a8272195a0072c7c91cc9b7e89b0b6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "82026165"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82138768"
 ---
 # <a name="deploy-a-static-website-to-azure-from-visual-studio-code"></a>Visual Studio Code から静的 Web サイトを Azure にデプロイする
 
@@ -30,7 +30,7 @@ ms.locfileid: "82026165"
 - [Azure Storage の拡張機能](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurestorage)。
 - [Node.js と npm](https://nodejs.org/en/download)、Node.js パッケージ マネージャー。 (この要件は、サンプル プロジェクトを生成するためにのみ使用されます。 既にアプリ コードを持っている場合は、Node.js をインストールする必要はありません。)
 
-> <a class="tutorial-install-extension-btn" href="vscode:extension/ms-azuretools.vscode-azurestorage">Azure Storage 拡張機能をインストールする</a>
+> <a class="tutorial-install-extension-btn" href="https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurestorage">Azure Storage 拡張機能をインストールする</a>
 
 ### <a name="azure-subscription"></a>Azure サブスクリプション
 

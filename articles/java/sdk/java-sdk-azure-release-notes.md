@@ -5,12 +5,12 @@ keywords: Azure,  Java, API, リファレンス,  ノート,  更新, 非推奨
 ms.assetid: 1f128cf9-f747-4344-84e1-f9964709deb8
 ms.topic: reference
 ms.date: 3/06/2016
-ms.openlocfilehash: 2475d31deb25bd446c858484b0b2b9cb2b5816a8
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.openlocfilehash: 69c2c29935f9333dd1d31b26b0941e0446ca5504
+ms.sourcegitcommit: 3c69d7c3e5c5a00a01ee18e63b0659830c7d4ec0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81671938"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82105203"
 ---
 # <a name="release-notes"></a>リリース ノート 
 
@@ -20,7 +20,6 @@ ms.locfileid: "81671938"
 
 これらのサービスに関する以前のバージョンからの重大な変更には、@Beta という注釈が付いています。
 
-コードを 1.3.0 に移行する場合は、[こちらの注意事項](https://github.com/Azure/azure-sdk-for-java/blob/master/notes/prepare-for-1.3.0.md)を参照して、既存のコードを 1.3 バージョンに対応させてください。
 
 ### <a name="generally-available-in-v13"></a>V1.3 での一般提供
 

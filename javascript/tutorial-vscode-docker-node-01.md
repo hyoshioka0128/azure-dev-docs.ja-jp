@@ -3,12 +3,12 @@ title: Visual Studio Code から Docker コンテナーを Azure App Service に
 description: チュートリアル パート 1、概要と前提条件。
 ms.topic: conceptual
 ms.date: 09/20/2019
-ms.openlocfilehash: 1a14010d362ed3858d319a141fd24e5ea1b0e714
-ms.sourcegitcommit: f89c59f772364ec717e751fb59105039e6fab60c
+ms.openlocfilehash: bd4110bbbef5e5f65f76cd9329b194646431f91a
+ms.sourcegitcommit: e6cdb0ce11a8272195a0072c7c91cc9b7e89b0b6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/06/2020
-ms.locfileid: "80740571"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82138794"
 ---
 # <a name="deploy-containers-to-azure-app-service"></a>Azure App Service にコンテナーをデプロイする
 
@@ -24,14 +24,14 @@ ms.locfileid: "80740571"
 
 - [Azure サブスクリプション](#azure-subscription)。
 - [Visual Studio Code](https://code.visualstudio.com/)。
-- [Docker 拡張機能](vscode:extension/ms-azuretools.vscode-docker)。
-- [Azure App Service 拡張機能](vscode:extension/ms-azuretools.vscode-azureappservice)。
+- [Docker 拡張機能](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker)。
+- [Azure App Service 拡張機能](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azureappservice)。
 - [Node.js と npm](https://nodejs.org/en/download)、Node.js パッケージ マネージャー。
 - [Docker](https://www.docker.com/community-edition)。
 
-> <a class="tutorial-install-extension-btn" href="vscode:extension/ms-azuretools.vscode-docker">Docker 拡張機能をインストールする</a>
+> <a class="tutorial-install-extension-btn" href="https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker">Docker 拡張機能をインストールする</a>
 
-> <a class="tutorial-install-extension-btn" href="vscode:extension/ms-azuretools.vscode-azureappservice">Azure App Service 拡張機能をインストールする</a>
+> <a class="tutorial-install-extension-btn" href="https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azureappservice">Azure App Service 拡張機能をインストールする</a>
 
 ### <a name="azure-subscription"></a>Azure サブスクリプション
 

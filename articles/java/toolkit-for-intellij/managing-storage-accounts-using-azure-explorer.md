@@ -6,12 +6,12 @@ ms.date: 02/01/2018
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: 1a223c858874566c2fbfe7b02faec99179cd1e72
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.openlocfilehash: 762ac74b73a274e792ed19ac8ca7c2b68d98e778
+ms.sourcegitcommit: 3c69d7c3e5c5a00a01ee18e63b0659830c7d4ec0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81670528"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82105073"
 ---
 # <a name="manage-storage-accounts-by-using-the-azure-explorer-for-intellij"></a>Azure Explorer for IntelliJ を使用してストレージ アカウントを管理する
 
@@ -107,7 +107,7 @@ Azure ストレージ アカウント、サイズ、および料金の詳細に�
 <!-- URL List -->
 
 [Azure Toolkit for IntelliJ のサインイン手順]: ./sign-in-instructions.md
-[Microsoft Azure Storage の概要]: /azure/storage/storage-introduction
+[Microsoft Azure Storage の概要]: /azure/storage/common/storage-introduction
 [Azure ストレージ アカウントについて]: /azure/storage/storage-create-storage-account
 [Azure Storage のレプリケーション]: /azure/storage/storage-redundancy
 [Azure Storage のスケーラビリティおよびパフォーマンスのターゲット]: /azure/storage/storage-scalability-targets

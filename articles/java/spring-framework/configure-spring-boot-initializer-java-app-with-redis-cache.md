@@ -7,12 +7,12 @@ ms.date: 02/06/2020
 ms.service: cache
 ms.tgt_pltfrm: cache-redis
 ms.topic: conceptual
-ms.openlocfilehash: ca76df9f32980fd37f92a61951ee7270a7e0a9ff
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.openlocfilehash: ece597db7475d371c54664d61498d6a89f8c76cb
+ms.sourcegitcommit: 3c69d7c3e5c5a00a01ee18e63b0659830c7d4ec0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81669758"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82104833"
 ---
 # <a name="configure-a-spring-boot-initializer-app-to-use-redis-in-the-cloud-with-azure-redis-cache"></a>Azure Redis Cache によってクラウドで Redis を使用するように Spring Boot Initializer アプリを構成する
 
@@ -178,13 +178,13 @@ ms.locfileid: "81669758"
    mvn spring-boot:run
    ```
 
-1. Web ブラウザーを使用して http://localhost:8080 を参照することによって Web アプリをテストするか、または curl が使用可能な場合は次の例のような構文を使用します。
+1. Web ブラウザーを使用して `http://localhost:8080` を参照することによって Web アプリをテストするか、または curl が使用可能な場合は次の例のような構文を使用します。
 
    ```shell
    curl http://localhost:8080
    ```
 
-   "Hello World!" というメッセージがサンプル コントローラーから表示されることがわかります。これは、Redis cache から動的に取得されます。
+   "Hello World!"  というメッセージがサンプル コントローラーから表示されることがわかります。これは、Redis cache から動的に取得されます。
 
 ## <a name="next-steps"></a>次のステップ
 

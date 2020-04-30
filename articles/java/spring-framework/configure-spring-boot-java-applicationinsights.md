@@ -9,12 +9,12 @@ ms.date: 11/29/2019
 ms.service: azure-monitor
 ms.tgt_pltfrm: application-insights
 ms.topic: article
-ms.openlocfilehash: 4002ca79f2473026582bedea8f2b9a84cf3b15c4
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.openlocfilehash: 85da0b92bbc5780e923fc447c66e5a0d2518e737
+ms.sourcegitcommit: 3c69d7c3e5c5a00a01ee18e63b0659830c7d4ec0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81668298"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82104823"
 ---
 # <a name="configure-a-spring-boot-initializer-app-to-use-application-insights"></a>Application Insights を使用するように Spring Boot Initializer アプリを構成する
 
@@ -168,13 +168,13 @@ ms.locfileid: "81668298"
    mvn spring-boot:run
    ```
 
-1. Web ブラウザーを使用して http://localhost:8080/sample/hello を参照することによって Web アプリをテストするか、**curl** が使用可能な場合は次の例のような構文を使用します。
+1. Web ブラウザーを使用して `http://localhost:8080/sample/hello` を参照することによって Web アプリをテストするか、**curl** が使用可能な場合は次の例のような構文を使用します。
 
    ```shell
    curl http://localhost:8080/sample/hello
    ```
 
-   サンプル コントローラーからの "hello!" メッセージが表示されます。 Application Insights によって自動的にこの要求が収集され、テレメトリ項目として送信されます。その際、コントローラー ロジックで指定されている、この要求に関連付けられたカスタム イベント、カスタム メトリック、カスタム依存関係、およびカスタム トレースも送信されます。 
+   サンプル コントローラーからの "hello!"  メッセージが表示されます。 Application Insights によって自動的にこの要求が収集され、テレメトリ項目として送信されます。その際、コントローラー ロジックで指定されている、この要求に関連付けられたカスタム イベント、カスタム メトリック、カスタム依存関係、およびカスタム トレースも送信されます。 
 
    このデータは、数秒後に Azure に表示されます。 
 

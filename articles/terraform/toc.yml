@@ -1,0 +1,83 @@
+- name: Azure 上の Terraform のドキュメント
+  href: index.yml
+- name: 概要
+  items:
+    - name: Azure での Terraform について
+      href: overview.md
+- name: クイックスタート
+  expanded: true
+  items:
+    - name: Terraform のインストールと構成
+      href: install-configure.md
+    - name: Linux VM の作成
+      href: create-linux-virtual-machine-with-infrastructure.md
+- name: チュートリアル
+  items:
+    - name: セットアップと構成
+      items:
+        - name: Terraform 状態を Azure Storage に格納する
+          href: store-state-in-azure-storage.md
+    - name: App Service
+      items:
+        - name: Terraform および Azure プロバイダーのデプロイ スロット
+          href: provision-infrastructure-using-azure-deployment-slots.md
+    - name: Containers
+      items:
+        - name: AKS を使用して Kubernetes クラスターを作成する
+          href: create-k8s-cluster-with-tf-and-aks.md
+        - name: AKS で Application Gateway イングレス コントローラーを作成する
+          href: create-k8s-cluster-with-aks-applicationgateway-ingress.md
+    - name: データベース
+      items:
+        - name: Azure Cosmos DB をデプロイする
+          href: deploy-azure-cosmos-db-to-azure-container-instances.md
+    - name: インフラストラクチャ
+      items:
+        - name: Terraform モジュールを使用した VM クラスターの作成
+          href: create-vm-cluster-module.md
+        - name: Terraform と HCL を使用して VM クラスターを作成する
+          href: create-vm-cluster-with-infrastructure.md
+        - name: インフラストラクチャを使用した VM スケール セットのプロビジョニング
+          href: create-vm-scaleset-network-disks-hcl.md
+        - name: Packer カスタム イメージからの VM スケール セットのプロビジョニング
+          href: create-vm-scaleset-network-disks-using-packer-hcl.md
+    - name: ネットワーク
+      items:
+        - name: ハブとスポークのトポロジ
+          items:
+            - name: 1. ハブとスポークのトポロジの作成
+              href: hub-spoke-introduction.md
+            - name: 2. オンプレミス仮想ネットワークの作成
+              href: hub-spoke-on-prem.md
+            - name: 3. ハブ仮想ネットワークの作成
+              href: hub-spoke-hub-network.md
+            - name: 4. ハブ仮想ネットワーク アプライアンスの作成
+              href: hub-spoke-hub-nva.md
+            - name: 5. スポーク ネットワークの作成
+              href: hub-spoke-spoke-network.md
+            - name: 6. ネットワーク トポロジの接続の検証
+              href: hub-spoke-validation.md
+    - name: ツール
+      items:
+        - name: Terraform Visual Studio Code 拡張機能のインストール
+          href: configure-vs-code-extension-for-terraform.md
+        - name: Yeoman を使用して Terraform ベース テンプレートを作成する
+          href: create-a-base-template-using-yeoman.md
+        - name: Terratest を使用した Terraform モジュールのテスト
+          href: test-modules-using-terratest.md
+- name: サンプル
+  items:
+    - name: 構成テンプレート
+      href: 'https://github.com/terraform-providers/terraform-provider-azurerm/tree/master/examples'
+- name: リファレンス
+  items:
+    - name: Azure モジュールのレジストリ
+      href: 'https://registry.terraform.io/modules/Azure'
+    - name: Terraform Azure プロバイダー
+      href: 'https://aka.ms/terraform'
+- name: リソース
+  items:
+    - name: Azure と Terraform
+      href: 'https://azure.microsoft.com/solutions/devops/terraform/'
+    - name: Azure のロードマップ
+      href: 'https://azure.microsoft.com/roadmap/'

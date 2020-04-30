@@ -6,12 +6,12 @@ ms.date: 11/13/2018
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: f235ee5a011b230e995cc86424ed593c28c6f7de
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.openlocfilehash: 89e40ebd28ffc792430ba73b192a1aec1a7c49c3
+ms.sourcegitcommit: 858b061ed9ac883821a0485054b8076e2e719821
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81674638"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82209805"
 ---
 # <a name="manage-virtual-machines-by-using-the-azure-explorer-for-eclipse"></a>Azure Explorer for Eclipse を使用して仮想マシンを管理する
 
@@ -25,7 +25,7 @@ Azure Toolkit for Eclipse の一部である Azure Explorer は、Eclipse 統合
 
 Azure Explorer を使用して仮想マシンを作成するには、以下の手順を実行します。
 
-1. 「[Azure Toolkit for Eclipse のサインイン手順](/azure/developer/java/eclipse/sign-in-instructions)」を使用して Azure アカウントにサインインします。
+1. 「[Azure Toolkit for Eclipse のサインイン手順](/azure/developer/java/toolkit-for-eclipse/sign-in-instructions)」を使用して Azure アカウントにサインインします。
 
 2. **Azure Explorer** ビューで、 **[Azure]** ノードを展開し、 **[仮想マシン]** を右クリックし、 **[VM の作成]** をクリックします。
 

@@ -6,12 +6,12 @@ ms.date: 02/01/2018
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: 227a997c8b1268444f6165e800279410d0085953
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.openlocfilehash: 131cc95ce3b927ffc26ea7b08367b65dd434c0e4
+ms.sourcegitcommit: 858b061ed9ac883821a0485054b8076e2e719821
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81675098"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82209765"
 ---
 # <a name="manage-storage-accounts-by-using-the-azure-explorer-for-eclipse"></a>Azure Explorer for Eclipse を使用してストレージ アカウントを管理する
 
@@ -25,7 +25,7 @@ Azure Toolkit for Eclipse の一部である Azure Explorer は、Eclipse 統合
 
 Azure Explorer を使用してストレージ アカウントを作成するには、以下の手順を実行します。
 
-1. 「[Azure Toolkit for Eclipse のサインイン手順](/azure/developer/java/eclipse/sign-in-instructions)」を使用して Azure アカウントにサインインします。
+1. 「[Azure Toolkit for Eclipse のサインイン手順](/azure/developer/java/toolkit-for-eclipse/sign-in-instructions)」を使用して Azure アカウントにサインインします。
 
 1. **Azure Explorer** ビューで、 **[Azure]** ノードを展開し、 **[ストレージ アカウント]** を右クリックし、 **[ストレージ アカウントの作成]** をクリックします。
 
@@ -106,7 +106,7 @@ Azure ストレージ アカウント、サイズ、および料金の詳細に�
 
 <!-- URL List -->
 
-[Microsoft Azure Storage の概要]: /azure/storage/storage-introduction
+[Microsoft Azure Storage の概要]: /azure/storage/common/storage-introduction
 [Azure ストレージ アカウントについて]: /azure/storage/storage-create-storage-account
 [Azure Storage のレプリケーション]: /azure/storage/storage-redundancy
 [Azure Storage のスケーラビリティおよびパフォーマンスのターゲット]: /azure/storage/storage-scalability-targets

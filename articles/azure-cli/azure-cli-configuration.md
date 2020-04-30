@@ -8,12 +8,12 @@ ms.date: 06/11/2018
 ms.topic: conceptual
 ms.service: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: ff5f9f5a5add52bc05009a42aeb00855eb2703fa
-ms.sourcegitcommit: 36e02e96b955ed0531f98b9c0f623f4acb508661
+ms.openlocfilehash: fd37b633100d92a4126910a3fb9e8ad25b11423c
+ms.sourcegitcommit: 858b061ed9ac883821a0485054b8076e2e719821
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "82030844"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82209785"
 ---
 # <a name="azure-cli-configuration"></a>Azure CLI の構成
 
@@ -86,7 +86,7 @@ log_dir=/var/log/azure
 |---------|-----------|------|------------|
 | __core__ | output | string | 既定の出力形式。 `json`、`jsonc`、`tsv`、`table` のいずれかを指定できます。 |
 | | disable\_confirm\_prompt | boolean | 確認のプロンプトをオン/オフにします。 |
-| | collect\_telemetry | boolean | Microsoft による、CLI の使用に関する匿名データの収集を許可します。 プライバシー情報については、[Azure CLI の使用条件](https://aka.ms/AzureCliLegal)に関するページをご覧ください。 |
+| | collect\_telemetry | boolean | Microsoft による、CLI の使用に関する匿名データの収集を許可します。 プライバシー情報については、[Azure CLI の使用条件](https://github.com/Azure/azure-cli/blob/dev/LICENSE)に関するページをご覧ください。 |
 | __logging__ | enable\_log\_file | boolean | ログ記録をオン/オフにします。 |
 | | log\_dir | string | ログを書き込むディレクトリ。 この値の既定値は `${AZURE_CONFIG_DIR}/logs` です。 |
 | __storage__ | connection\_string | string | `az storage` コマンドに使用する既定の接続文字列。 |

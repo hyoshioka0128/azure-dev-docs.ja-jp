@@ -4,12 +4,12 @@ description: チュートリアル パート 2、サンプル アプリを作成
 ms.topic: conceptual
 ms.date: 09/24/2019
 ms.author: buhollan
-ms.openlocfilehash: 69c0e7d6f43829546e5f23ec63a4ac35b71d7e78
-ms.sourcegitcommit: 44d1abfb836f90b8731d7ea5d5a5af09245b2b89
+ms.openlocfilehash: 81593d61126b34f002513deb02d9bf634a7e9dd6
+ms.sourcegitcommit: 3c69d7c3e5c5a00a01ee18e63b0659830c7d4ec0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/17/2020
-ms.locfileid: "77422520"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82105133"
 ---
 # <a name="create-the-app"></a>アプリを作成する
 
@@ -42,7 +42,7 @@ ms.locfileid: "77422520"
     npm start
     ```
 
-1. ブラウザーを開いて [http://localhost:4200](http://localhost:4200) を参照し、アプリが実行されていることを確認します。
+1. ブラウザーを開いて `http://localhost:4200` を参照し、アプリが実行されていることを確認します。
 
     ![実行中のサンプル Angular アプリ](media/static-website/local-app-angular.png)
 
@@ -71,7 +71,7 @@ ms.locfileid: "77422520"
     npm start
     ```
 
-1. ブラウザーを開いて [http://localhost:3000](http://localhost:3000) を参照し、アプリが実行されていることを確認します。
+1. ブラウザーを開いて `http://localhost:3000` を参照し、アプリが実行されていることを確認します。
 
     ![実行中のサンプル React アプリ](media/static-website/local-app-react.png)
 
@@ -102,7 +102,7 @@ CLI によって構成に関する質問が表示された場合は、Enter キ�
      npm run serve
      ```
 
-1. ブラウザーを開いて [http://localhost:8080](http://localhost:8080) を参照し、アプリが実行されていることを確認します。
+1. ブラウザーを開いて `http://localhost:8080` を参照し、アプリが実行されていることを確認します。
 
     ![実行中のサンプル Vue アプリ](media/static-website/local-app-vue.png)
 
@@ -137,7 +137,7 @@ CLI によって構成に関する質問が表示された場合は、Enter キ�
      npm run dev
      ```
 
-1. ブラウザーを開いて [http://localhost:5000](http://localhost:5000) を参照し、アプリが実行されていることを確認します。
+1. ブラウザーを開いて `http://localhost:5000` を参照し、アプリが実行されていることを確認します。
 
     ![実行中のサンプル Vue アプリ](media/static-website/local-app-svelte.png)
 

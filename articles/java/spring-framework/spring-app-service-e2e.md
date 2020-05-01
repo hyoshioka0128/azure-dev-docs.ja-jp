@@ -6,12 +6,12 @@ ms.author: karler
 ms.date: 11/12/2019
 ms.service: app-service
 ms.topic: article
-ms.openlocfilehash: 4424cdb3f8ee01a10f892d38b84a42c820e95266
-ms.sourcegitcommit: 36e02e96b955ed0531f98b9c0f623f4acb508661
+ms.openlocfilehash: 229def19340c722949308a021c2e021615ce65ec
+ms.sourcegitcommit: 3c69d7c3e5c5a00a01ee18e63b0659830c7d4ec0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "82026105"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82105122"
 ---
 # <a name="deploy-a-spring-app-to-app-service-with-mysql"></a>MySQL を使用して Spring アプリを App Service にデプロイする
 
@@ -144,13 +144,13 @@ ${TOMCAT_HOME}/bin/catalina.sh run
 ```
 ---
 
-これで、ブラウザーで [http://localhost:8080](http://localhost:8080) に移動して実行中のアプリを表示し、動作を確認できるようになりました。 完了したら、Bash プロンプトで Ctrl + C キーを押して Tomcat を停止します。
+これで、ブラウザーで `http://localhost:8080` に移動して実行中のアプリを表示し、動作を確認できるようになりました。 完了したら、Bash プロンプトで Ctrl + C キーを押して Tomcat を停止します。
 
 ## <a name="deploy-to-azure-app-service"></a>Azure App Service にデプロイする
 
 ローカルで動作することを確認したので、次はアプリを Azure にデプロイします。
 
-まず、次の環境変数を設定します。 `REGION` については、`Central US` を使用するか、[こちら](https://azure.microsoft.com/global-infrastructure/services/?regions=all&products=app-service)で見つけることができる他のリージョンを使用します。
+まず、次の環境変数を設定します。 `REGION` については、`West US 2` を使用するか、[こちら](https://azure.microsoft.com/global-infrastructure/services/?regions=all&products=app-service)で見つけることができる他のリージョンを使用します。
 
 # <a name="bash"></a>[bash](#tab/bash)
 
@@ -468,7 +468,7 @@ mvn cargo:deploy
 ```
 ---
 
-これで、[http://localhost:8080](http://localhost:8080) のローカルでアプリを表示できるようになりました。 アプリは前と同様に動作しますが、HSQLDB ではなく Azure Database for MySQL を使用します。 完了したら、Bash プロンプトで Ctrl + C キーを押して Tomcat を停止します。
+これで、`http://localhost:8080` のローカルでアプリを表示できるようになりました。 アプリは前と同様に動作しますが、HSQLDB ではなく Azure Database for MySQL を使用します。 完了したら、Bash プロンプトで Ctrl + C キーを押して Tomcat を停止します。
 
 最後に、アプリを App Service にデプロイします。
 

@@ -8,12 +8,12 @@ ms.service: key-vault
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
-ms.openlocfilehash: 5c0dddfc8f6ef4b631c3ee999a3f8742921c1b9a
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.openlocfilehash: 2df574104376ec1900c7dc5cbd4f0a49ef1f4732
+ms.sourcegitcommit: e6cdb0ce11a8272195a0072c7c91cc9b7e89b0b6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81669858"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82138738"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-key-vault"></a>Azure Key Vault 用の Spring Boot Starter の使用方法
 
@@ -122,32 +122,16 @@ ms.locfileid: "81669858"
    }
    ```
 
-2. アプリケーション登録から Azure サービス プリンシパルを作成します。次に例を示します。
-   ```shell
-   az ad sp create-for-rbac --name "vgeduser"
-   ```
-   各値の説明:
-
-   | パラメーター | 説明 |
-   |---|---|
-   | `name` | Azure サービス プリンシパルの名前を指定します。 |
-
-   Azure CLI から JSON の状態メッセージが返されます。このメッセージに含まれている *appId* と *password* は、後でクライアント ID およびクライアント パスワードとして使用します。次に例を示します。
-
-   ```json
-   {
-     "appId": "iiiiiiii-iiii-iiii-iiii-iiiiiiiiiiii",
-     "displayName": "vgeduser",
-     "name": "http://vgeduser",
-     "password": "pppppppp-pppp-pppp-pppp-pppppppppppp",
-     "tenant": "tttttttt-tttt-tttt-tttt-tttttttttttt"
-   }
-   ```
-
-3. リソース グループに新しいキー コンテナーを作成します。次に例を示します。
+2. リソース グループに新しいキー コンテナーを作成します。次に例を示します。
 
    ```azurecli
-   az keyvault create --name vgedkeyvault --resource-group vged-rg2 --location westus --enabled-for-deployment true --enabled-for-disk-encryption true --enabled-for-template-deployment true --sku standard --query properties.vaultUri
+   az keyvault create --resource-group vged-rg2 \
+       --name vgedkeyvault \
+       --enabled-for-deployment true \
+       --enabled-for-disk-encryption true \
+       --enabled-for-template-deployment true \
+       --sku standard --query properties.vaultUri \
+       --location westus
    ```
 
    各値の説明:
@@ -155,56 +139,25 @@ ms.locfileid: "81669858"
    | パラメーター | 説明 |
    |---|---|
    | `name` | キー コンテナーの一意の名前を指定します。 |
-   | `location` | リソース グループをホストする [Azure リージョン](https://azure.microsoft.com/regions/)を指定します。 |
    | `enabled-for-deployment` | [キー コンテナーのデプロイ オプション](/cli/azure/keyvault)を指定します。 |
    | `enabled-for-disk-encryption` | [キー コンテナーの暗号化オプション](/cli/azure/keyvault)を指定します。 |
    | `enabled-for-template-deployment` | [キー コンテナーの暗号化オプション](/cli/azure/keyvault)を指定します。 |
    | `sku` | [キー コンテナーの SKU オプション](/cli/azure/keyvault)を指定します。 |
    | `query` | 応答から取得する値を指定します。これは、このチュートリアルを完了するために必要なキー コンテナーの URI です。 |
+   | `location` | リソース グループをホストする [Azure リージョン](https://azure.microsoft.com/regions/)を指定します。 |
 
    Azure CLI にキー コンテナーの URI が表示されます。この URI は後で使用します。次に例を示します。  
 
-   ```azurecli
+   ```output
    "https://vgedkeyvault.vault.azure.net"
-
    ```
 
-4. 前の手順で作成した Azure サービス プリンシパルのアクセス ポリシーを設定します。次に例を示します。
+3. 新しいキー コンテナーにシークレットを格納します。次に例を示します。
 
    ```azurecli
-   az keyvault set-policy --name vgedkeyvault --secret-permission set get list delete --spn "iiiiiiii-iiii-iiii-iiii-iiiiiiiiiiii"
-   ```
-
-   各値の説明:
-
-   | パラメーター | 説明 |
-   |---|---|
-   | `name` | 前の手順で作成したキー コンテナーの名前を指定します。 |
-   | `secret-permission` | キー コンテナーの[セキュリティ ポリシー](/cli/azure/keyvault)を指定します。 |
-   | `spn` | アプリケーションの登録時に取得した GUID を指定します。 |
-
-   Azure CLI にセキュリティ ポリシー作成の結果が表示されます。次に例を示します。  
-
-   ```json
-   {
-     "id": "/subscriptions/ssssssss-ssss-ssss-ssss-ssssssssssss/...",
-     "location": "westus",
-     "name": "vgedkeyvault",
-     "properties": {
-       ...
-       ... (A long list of values will be displayed here.)
-       ...
-     },
-     "resourceGroup": "vged-rg2",
-     "tags": {},
-     "type": "Microsoft.KeyVault/vaults"
-   }
-   ```
-
-5. 新しいキー コンテナーにシークレットを格納します。次に例を示します。
-
-   ```azurecli
-   az keyvault secret set --vault-name "vgedkeyvault" --name "connectionString" --value "jdbc:sqlserver://SERVER.database.windows.net:1433;database=DATABASE;"
+   az keyvault secret set --vault-name "vgedkeyvault" \
+       --name "connectionString" \
+       --value "jdbc:sqlserver://SERVER.database.windows.net:1433;database=DATABASE;"
    ```
 
    各値の説明:
@@ -250,8 +203,7 @@ ms.locfileid: "81669858"
 
    ```yaml
    azure.keyvault.uri=https://vgedkeyvault.vault.azure.net/
-   azure.keyvault.client-id=iiiiiiii-iiii-iiii-iiii-iiiiiiiiiiii
-   azure.keyvault.client-key=pppppppp-pppp-pppp-pppp-pppppppppppp
+   azure.keyvault.enabled=true
    ```
 
    各値の説明:
@@ -259,10 +211,8 @@ ms.locfileid: "81669858"
    |          パラメーター          |                                 説明                                 |
    |-----------------------------|-----------------------------------------------------------------------------|
    |    `azure.keyvault.uri`     |           キー コンテナーの作成時に取得した URI を指定します。           |
-   | `azure.keyvault.client-id`  |  サービス プリンシパルの作成時に取得した *appId* GUID を指定します。   |
-   | `azure.keyvault.client-key` | サービス プリンシパルの作成時に取得した *password* GUID を指定します。 |
-
-
+    
+    
 4. プロジェクトのメイン ソース コード ファイルに移動します (例: */src/main/java/com/vged/secrets*)。
 
 5. テキスト エディターでアプリケーションのメイン Java ファイルを開き(例: *SecretsApplication.java*)、ファイルに次の行を追加します。
@@ -274,8 +224,11 @@ ms.locfileid: "81669858"
    import org.springframework.boot.autoconfigure.SpringBootApplication;
    import org.springframework.beans.factory.annotation.Value;
    import org.springframework.boot.CommandLineRunner;
-
+   import org.springframework.web.bind.annotation.GetMapping;
+   import org.springframework.web.bind.annotation.RestController;
+   
    @SpringBootApplication
+   @RestController
    public class SecretsApplication implements CommandLineRunner {
 
       @Value("${connectionString}")
@@ -284,39 +237,104 @@ ms.locfileid: "81669858"
       public static void main(String[] args) {
          SpringApplication.run(SecretsApplication.class, args);
       }
-
+   
+      @GetMapping("get")
+      public String get() {
+         return connectionString;
+      }
+   
       public void run(String... varl) throws Exception {
          System.out.println(String.format("\nConnection String stored in Azure Key Vault:\n%s\n",connectionString));
       }
    }
    ```
-   このコード例では、キー コンテナーから接続文字列を取得し、コマンド ラインに表示します。
+   このコード例では、キー コンテナーから接続文字列を取得し、URL `https://{your-appservice-name}.azurewebsites.net/get` に表示します。
 
 6. Java ファイルを保存して閉じます。
 
-## <a name="build-and-test-your-app"></a>アプリのビルドとテスト
+7. テストを無効にし、Maven を使用して JAR ファイルをビルドします。
+    
+   ```bash
+   mvn clean package -Dmaven.test.skip=true
+   ```
 
-次の手順に従って、アプリケーションをテストします。
+## <a name="configure-maven-plugin-for-azure-app-service"></a>Azure App Service 用の Maven プラグインを構成する
 
-1. Spring Boot アプリの *pom.xml* ファイルがあるディレクトリに移動します。
+このセクションでは、Spring Boot プロジェクトを構成して、Azure App Service にアプリをデプロイできるようにする方法について説明します。
 
-1. Spring Boot アプリケーションを Maven でビルドします。次に例を示します。
+1.  リンクに従って [Azure App Service 用の Maven プラグインを構成する]します。
+    
+    このリンクにより、新しい Azure App Service が作成されます。 既存のものにアプリをデプロイする場合は、コマンド `mvn azure-webapp:config` でデプロイを再構成し、構成するアプリケーション パーツを選択することができます。
+    
+    ```bash
+    [INFO] Scanning for projects...                                                     
+    [INFO]                                                                              
+    [INFO] ----------------------< com.wingtiptoys:secrets >-----------------------     
+    [INFO] Building secrets 0.0.1-SNAPSHOT                                              
+    [INFO] --------------------------------[ jar ]---------------------------------     
+    [INFO]                                                                              
+    [INFO] --- azure-webapp-maven-plugin:1.9.0:config (default-cli) @ secrets ---       
+    Please choose which part to config                                                  
+    1. Application                                                                      
+    2. Runtime                                                                          
+    3. DeploymentSlot                                                                   
+    Enter index to use: 1                                                              
+    Define value for appName(Default: ********):                                      
+    Define value for resourceGroup(Default: ********):                                 
+    Define value for region(Default: ********):                                           
+    Define value for pricingTier(Default: P1v2):                                        
+    1. b1                                                                               
+    2. b2                                                                               
+    3. b3                                                                               
+    4. d1                                                                               
+    5. f1                                                                               
+    6. p1v2 [*]                                                                         
+    7. p2v2                                                                             
+    8. p3v2                                                                             
+    9. s1                                                                               
+    10. s2                                                                              
+    11. s3                                                                              
+    Enter index to use:                                                                 
+    Please confirm webapp properties                                                                                                          
+    ```
+    
+    また、*pom.xml*で `<azure-webapp-maven-plugin>` の `<configuration>` セクションを直接編集することもできます。 `<resourceGroup>`、`<appName>`、および `<region>` の値を特定の App Service に変更します。
+
+2. App Service に ID を割り当て、次の手順のために `principalId` を記録しておきます。
+
+   ```bash
+   az webapp identity assign --name your-appservice-name \
+      --resource-group vged-rg2
+   ```
+   
+3. MSI にアクセス許可を付与します。
+
+   ```bash
+   az keyvault set-policy --name vgedkeyvault \
+       --object-id your-managed-identity-objectId \
+       --secret-permissions get list
+   ```
+
+## <a name="deploy-the-app-to-azure-and-run-app-service"></a>アプリを Azure にデプロイして App Service を実行する
+
+これで、Web アプリを Azure にデプロイする準備ができました。 そのためには、次の手順を実行してください。
+
+1. *pom.xml* ファイルに変更を加えた場合は、Maven を使用して JAR ファイルをリビルドします。
 
    ```bash
    mvn clean package
    ```
-
-   Maven にビルドの結果が表示されます。
-
-   ![Spring Boot アプリケーションのビルドの状態][build-application-01]
-
-1. Maven で Spring Boot アプリケーションを実行します。アプリケーションによって、キー コンテナーから取得した接続文字列が表示されます。 次に例を示します。
+   
+2. Maven を使用して Azure にアプリをデプロイします。
 
    ```bash
-   mvn spring-boot:run
+   mvn azure-webapp:deploy
    ```
+   
+3. App Service を再起動します。
 
-   ![Spring Boot の実行時メッセージ][build-application-02]
+4. ブラウザーで URL `https://{your-appservice-name}.azurewebsites.net/get` を確認して `connectionString` を入手します。
+   
 
 ## <a name="summary"></a>まとめ
 
@@ -345,6 +363,8 @@ Azure での Spring Boot アプリケーションの使用の詳細について�
 
 Java での Azure の使用の詳細については、「[Java 開発者向けの Azure]」および「[Azure DevOps と Java の操作]」を参照してください。
 
+マネージド ID を使用した App Service の詳細については、[App Service のマネージド ID を使用する]に関する記事を参照してください。
+
 <!-- URL List -->
 
 [Key Vault のドキュメント]: /azure/key-vault/
@@ -356,6 +376,8 @@ Java での Azure の使用の詳細については、「[Java 開発者向け�
 [Spring Boot]: http://projects.spring.io/spring-boot/
 [Spring Initializr]: https://start.spring.io/
 [Spring Framework]: https://spring.io/
+[App Service のマネージド ID を使用する]: /azure/app-service/overview-managed-identity
+[Azure App Service 用の Maven プラグインを構成する]: /azure/developer/java/spring-framework/deploy-spring-boot-java-app-with-maven-plugin#configure-maven-plugin-for-azure-app-service
 
 <!-- IMG List -->
 

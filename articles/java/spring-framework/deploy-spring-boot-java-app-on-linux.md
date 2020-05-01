@@ -9,12 +9,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: mvc
-ms.openlocfilehash: 5e6204d773ee8e140832361ad587e850e36b75f6
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.openlocfilehash: 570b33614f32ef80e11ddf9d2c6774513248416e
+ms.sourcegitcommit: 9ff9b51ab21c93bfd61e480c6ff8e39c9d4bf02e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81668818"
+ms.lasthandoff: 04/27/2020
+ms.locfileid: "82166680"
 ---
 # <a name="deploy-a-spring-boot-application-to-linux-on-azure-app-service"></a>Spring Boot アプリケーションを Azure App Service の Linux にデプロイする
 
@@ -97,15 +97,11 @@ ms.locfileid: "81668818"
 
    ![Azure Container Registry を新しく作成する][AR01]
 
-1. **[コンテナー レジストリの作成]** ページが表示されたら、 **[レジストリ名]** 、 **[サブスクリプション]** 、 **[リソース グループ]** 、 **[場所]** を入力します。 **[管理者ユーザー]** で **[有効]** を選択します。 **[Create]** をクリックします。
+1. **[コンテナー レジストリの作成]** ページが表示されたら、 **[レジストリ名]** 、 **[サブスクリプション]** 、 **[リソース グループ]** 、 **[場所]** を入力します。 **[Create]** をクリックします。
 
    ![Azure Container Registry 設定を構成する][AR03]
 
-1. コンテナー レジストリが作成されたら、Azure portal でコンテナー レジストリに移動して、 **[アクセス キー]** をクリックします。 次の手順で使用するため、ユーザー名とパスワードをメモします。
-
-   ![Azure Container Registry のアクセス キー][AR04]
-
-## <a name="configure-maven-to-use-your-azure-container-registry-access-keys"></a>Azure Container Registry のアクセス キーを使用するために Maven を構成する
+## <a name="configure-maven-to-build-image-to-your-azure-container-registry"></a>Azure Container Registry にイメージをビルドするために Maven を構成する
 
 1. Spring Boot アプリケーションの完了プロジェクト ディレクトリ ("*C:\SpringBoot\gs-spring-boot-docker\complete*" や " */users/robert/SpringBoot/gs-spring-boot-docker/complete*" など) に移動し、*pom.xml* ファイルをテキスト エディターで開きます。
 
@@ -113,37 +109,29 @@ ms.locfileid: "81668818"
 
    ```xml
    <properties>
-      <jib-maven-plugin.version>1.7.0</jib-maven-plugin.version>
+      <jib-maven-plugin.version>2.2.0</jib-maven-plugin.version>
       <docker.image.prefix>wingtiptoysregistry.azurecr.io</docker.image.prefix>
       <java.version>1.8</java.version>
-      <username>wingtiptoysregistry</username>
-      <password>{put your Azure Container Registry access key here}</password>
    </properties>
    ```
 
-1. *pom.xml* ファイルの `<plugins>` コレクションに [jib-maven-plugin](https://github.com/GoogleContainerTools/jib/tree/master/jib-maven-plugin) を追加します。  この例では、バージョン1.8.0 を使用します。
+1. *pom.xml* ファイルの `<plugins>` コレクションに [jib-maven-plugin](https://github.com/GoogleContainerTools/jib/tree/master/jib-maven-plugin) を追加します。  この例では、バージョン 2.2.0 を使用します。
 
    `<from>/<image>` に基本イメージを指定します。ここでは `mcr.microsoft.com/java/jre:8-zulu-alpine` です。 基本イメージからビルドする最終イメージの名前を `<to>/<image>` に指定します。  
 
    認証 `{docker.image.prefix}` は、前に示したレジストリ ページの**ログイン サーバー**です。 `{project.artifactId}` は、プロジェクトの最初の Maven ビルドに由来する JAR ファイルの名前とバージョン番号です。
 
-   レジストリ ペインのユーザー名とパスワードを `<to>/<auth>` ノードに指定します。 次に例を示します。
-
    ```xml
    <plugin>
      <artifactId>jib-maven-plugin</artifactId>
      <groupId>com.google.cloud.tools</groupId>
-     <version>1.8.0</version>
+     <version>${jib-maven-plugin.version}</version>
      <configuration>
         <from>
             <image>mcr.microsoft.com/java/jre:8-zulu-alpine</image>
         </from>
         <to>
             <image>${docker.image.prefix}/${project.artifactId}</image>
-            <auth>
-               <username>${username}</username>
-               <password>${password}</password>
-            </auth>
         </to>
      </configuration>
    </plugin>
@@ -152,12 +140,12 @@ ms.locfileid: "81668818"
 1. Spring Boot アプリケーション用の完了プロジェクト ディレクトリに移動し、次のコマンドを実行してアプリケーションをリビルドし、コンテナーを Azure Container Registry にプッシュします。
 
    ```bash
-   mvn compile jib:build
+   az acr login -n wingtiptoysregistry && mvn compile jib:build
    ```
 
 > [!NOTE]
->
-> Jib を使ってイメージを Azure Container Registry にプッシュする場合、イメージは *Dockerfile* を使用しません。詳細については、[こちら](https://cloudplatform.googleblog.com/2018/07/introducing-jib-build-java-docker-images-better.html)のドキュメントをご覧ください。
+> 1. コマンド `az acr login ...` は Azure Container Registry へのログインを試行します。それ以外の場合は、jib-maven-plugin の `<username>` と `<password>` を指定する必要があります。詳細については、jib の[認証方法](https://github.com/GoogleContainerTools/jib/tree/master/jib-maven-plugin#authentication-methods)を参照してください。
+> 2. Jib を使ってイメージを Azure Container Registry にプッシュする場合、イメージは *Dockerfile* を使用しません。詳細については、[こちら](https://cloudplatform.googleblog.com/2018/07/introducing-jib-build-java-docker-images-better.html)のドキュメントをご覧ください。
 >
 
 ## <a name="create-a-web-app-on-linux-on-azure-app-service-using-your-container-image"></a>コンテナー イメージを使用して Azure App Service で Linux に Web アプリを作成する
@@ -300,7 +288,6 @@ Azure でカスタム Docker イメージを使用する方法に関するその
 [SB02]: media/deploy-spring-boot-java-app-on-linux/SB02.png
 [AR01]: media/deploy-spring-boot-java-app-on-linux/AR01.png
 [AR03]: media/deploy-spring-boot-java-app-on-linux/AR03.png
-[AR04]: media/deploy-spring-boot-java-app-on-linux/AR04.png
 [LX01]: media/deploy-spring-boot-java-app-on-linux/LX01.png
 [LX02]: media/deploy-spring-boot-java-app-on-linux/LX02.png
 [LX02-A]: media/deploy-spring-boot-java-app-on-linux/LX02-A.png

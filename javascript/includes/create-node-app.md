@@ -4,12 +4,12 @@ ms.service: app-service
 ms.topic: include
 ms.date: 03/31/2020
 ms.author: buhollan
-ms.openlocfilehash: 6cb841a9cf9563c3b7b3db86d907eac757c5d31d
-ms.sourcegitcommit: 36e02e96b955ed0531f98b9c0f623f4acb508661
+ms.openlocfilehash: c95177d6b4cb101b764acd8f8dad54f937a495eb
+ms.sourcegitcommit: 3c69d7c3e5c5a00a01ee18e63b0659830c7d4ec0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "82072667"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82109537"
 ---
 1. ターミナル コマンド プロンプトで、アプリ フォルダーを作成する場所に移動します。
 
@@ -37,7 +37,7 @@ ms.locfileid: "82072667"
     npm start
     ```
 
-1. ブラウザーを開き、[http://localhost:3000](http://localhost:3000) に移動して、アプリをテストします。 サイトは次のように表示されます。
+1. ブラウザーを開き、`http://localhost:3000` に移動して、アプリをテストします。 サイトは次のように表示されます。
 
     ![Express アプリケーションの実行](../media/deploy-azure/express.png)
 

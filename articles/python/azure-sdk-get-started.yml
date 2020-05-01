@@ -10,12 +10,12 @@ metadata:
   displayType: two-column
   interactive: azurecli
   ms.date: 10/18/2019
-  ms.openlocfilehash: e407f48295d2ed89f8df51a6fed46b1eecbab3ce
-  ms.sourcegitcommit: 1bd9ec6a4115e9162e33b76a933869788e6ab702
+  ms.openlocfilehash: 6f2e30a365ea27d62cc5b32b621d78ddc35bb367
+  ms.sourcegitcommit: 858b061ed9ac883821a0485054b8076e2e719821
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 03/31/2020
-  ms.locfileid: "80441807"
+  ms.lasthandoff: 04/28/2020
+  ms.locfileid: "82209815"
 items:
 - durationInMinutes: 1
   content: "このガイドでは、Azure SDK for Python のいくつかのライブラリの使用方法について説明します。  \n"
@@ -26,16 +26,16 @@ items:
 
     - [最新の Python 3.x インタープリター](https://www.python.org/downloads/)
 
-    - [Azure CLI 2.0](/azure/install-az-cli2) (ローカルで作業する場合) または [Azure Cloud Shell](/azure/cloud-shell/quickstart) (クラウド上でのみ作業する場合)。
+    - [Azure CLI](/cli/azure/install-azure-cli) (ローカルで作業する場合) または [Azure Cloud Shell](/azure/cloud-shell/quickstart) (クラウド上でのみ作業する場合)。
 - title: 認証の設定
   durationInMinutes: 5
   content: >
-    SDK では、CLI のアクティブなサブスクリプションを使用してクライアントを作成できます。 ただし運用環境では、[ADAL](https://github.com/AzureAD/azure-activedirectory-library-for-python) か独自の資格情報システムを使用してください。
+    SDK では、CLI のアクティブなサブスクリプションを使用してクライアントを作成できます。 ただし運用環境では、[MSAL](https://github.com/AzureAD/microsoft-authentication-library-for-python) か独自の資格情報システムを使用してください。
 
 
-    アクティブな資格情報を定義するには、[az login](/azure/authenticate-azure-cli) を使用します。
+    アクティブな資格情報を定義するには、[az login](/cli/azure/authenticate-azure-cli) を使用します。
 
-    既定のサブスクリプション ID は、1 つしかない場合はその値であり、そうでない場合は [az account](/azure/manage-azure-subscriptions-azure-cli) を使用して定義できます。
+    既定のサブスクリプション ID は、1 つしかない場合はその値であり、そうでない場合は [az account](/cli/azure/manage-azure-subscriptions-azure-cli) を使用して定義できます。
 
 
     ```python
@@ -50,38 +50,7 @@ items:
     ```
 - title: 仮想環境の作成
   durationInMinutes: 5
-  content: >
-    仮想環境では、SDK ライブラリがプロジェクト用の分離された場所に保持されるため、必要に応じて環境フォルダーを削除することで、SDK を簡単にアンインストールできます。
-
-
-    Bash (Linux または [Bash for Windows](https://msdn.microsoft.com/commandline/wsl/about)) で仮想環境を作成します。
-
-    ```bash
-
-    pip install virtualenv
-
-    virtualenv mytestenv
-
-    cd mytestenv
-
-    source ./bin/activate
-
-    ```
-
-
-    PowerShell での仮想環境の作成:
-
-    ```powershell
-
-    pip install virtualenv
-
-    virtualenv mytestenv
-
-    cd mytestenv
-
-    .\Scripts\activate
-
-    ```
+  content: "仮想環境では、SDK ライブラリがプロジェクト用の分離された場所に保持されるため、必要に応じて環境フォルダーを削除することで、SDK を簡単にアンインストールできます。\n\nBash (Linux または [Bash for Windows](https://msdn.microsoft.com/commandline/wsl/about)) で仮想環境を作成します。\n```bash\npip install virtualenv\nvirtualenv mytestenv\ncd mytestenv\nsource ./bin/activate\n```\n\nPowerShell での仮想環境の作成: \n```powershell\npip install virtualenv\nvirtualenv mytestenv\ncd mytestenv\n.\\Scripts\\activate\n```\n"
 - title: Linux 仮想マシンの作成
   durationInMinutes: 5
   content: >
@@ -240,7 +209,7 @@ items:
     ```
 
 
-    プログラムの実行が完了したら、サブスクリプション内の仮想マシンを Azure CLI 2.0 で確認します。
+    プログラムの実行が完了したら、サブスクリプション内の仮想マシンを Azure CLI で確認します。
 
 
     ```azurecli
@@ -266,7 +235,7 @@ items:
   content: "このコードは、リモート アクセスを許可するファイアウォール規則を使用して新しい SQL Database を作成し、Microsoft ODBC ドライバーを使用してそのデータベースに接続するものです。 pyodbc は、Linux 上で Microsoft ODBC Driver を使用して SQL データベースに接続します。 \n\n認証を行います。\n```azurecli\naz login\n```\nリソース グループを作成します。\n```azurecli\naz group create -l eastus -n azure-sample-group\n```\n\nSQL サーバーを作成します。\n```azurecli\naz sql server create --admin-password HusH_Sec4et --admin-user mysecretname -l eastus -n samplesqlserver123 -g azure-sample-group\n```\n\nファイアウォール規則を追加します。\n```azurecli\naz sql server firewall-rule create --end-ip-address 167.220.0.235 --name firewall_rule_name_123.123.123.123 --resource-group azure-sample-group --server samplesqlserver123 --start-ip-address 123.123.123.123\n```\n\nSQL Database を作成します。\n```azurecli\naz sql db create --name sample-db --resource-group azure-sample-group --server samplesqlserver123\n```\n\n```python\nfrom azure.mgmt.sql import SqlManagementClient\nfrom azure.common.client_factory import get_client_from_cli_profile\nimport pyodbc\n\nLOCATION = 'eastus'\nGROUP_NAME = 'azure-sample-group'\nSERVER_NAME = 'samplesqlserver123'\nDATABASE_NAME = 'sample-db'\nUSER_NAME ='mysecretname'\nPASSWORD='HusH_Sec4et'\n\n# authenticate\nsql_client = get_client_from_cli_profile(SqlManagementClient)\n\n\ndef run_example():\n# Get SQL Database\nprint('Get SQL Database')\ndatabase = sql_client.databases.get(\n    GROUP_NAME,\n    SERVER_NAME,\n    DATABASE_NAME\n)\nprint(database)\nprint(\"\\n\\n\")\n\n\ndef create_and_insert():\nserver = SERVER_NAME+'.database.windows.net'\ndatabase = DATABASE_NAME\nusername = USER_NAME\npassword = PASSWORD\ndriver = '{ODBC Driver 13 for SQL Server}'\ncnxn = pyodbc.connect(\n    'DRIVER=' + driver + ';PORT=1433;SERVER=' + server + ';PORT=1443;DATABASE=' + database + ';UID=' + username + ';PWD=' + password)\ncursor = cnxn.cursor()\ntsql = \"CREATE TABLE CLOUD (name varchar(255), code int);\"\ntsqlInsert = \"INSERT INTO CLOUD (name, code) VALUES ('Azure', 1); \"\nselectValues = \"SELECT * FROM CLOUD\"\nwith cursor.execute(tsql):\n    print('Successfully created table!')\nwith cursor.execute(tsqlInsert):\n    print('Successfully inserted data into table')\ncursor.execute(selectValues)\nrow = cursor.fetchone()\nwhile row:\n    print(str(row[0]) + \" \" + str(row[1]))\n    row = cursor.fetchone()\ncnxn.commit()\n\nif __name__ == \"__main__\":\nrun_example()\ncreate_and_insert()\n```\n\nコードが正しく動作することを確認したら、CLI を使用して SQL Database とそのリソースを削除します。\n\n```azurecli\naz group delete --name azure-sample-group\n```\n"
 - title: 新しいストレージ アカウントへの BLOB の書き込み
   durationInMinutes: 5
-  content: "認証を行います。\n```azurecli\naz login\n```\nリソース グループを作成します。\n```azurecli\naz group create -l eastus -n sampleStorageResourceGroup\n```\n\nストレージ アカウントを作成します。\n```azurecli\naz storage account create -n samplestorageaccountname -g sampleStorageResourceGroup -l eastus --sku Standard_RAGRS\n```\n\nこのコードは、[Azure Storage アカウント](https://docs.microsoft.com/azure/storage/storage-introduction)を作成し、Python 用 Azure Storage ライブラリを使用して新しい html ファイルをクラウドに作成するものです。 \n```python\nfrom azure.storage import CloudStorageAccount\nfrom azure.storage.blob import PublicAccess\nfrom azure.storage.blob.models import ContentSettings\nfrom azure.common.client_factory import get_client_from_cli_profile\nfrom azure.mgmt.storage import StorageManagementClient\n\nRESOURCE_GROUP = 'sampleStorageResourceGroup'\nSTORAGE_ACCOUNT_NAME = 'samplestorageaccountname'\nCONTAINER_NAME = 'samplecontainername'\n\n# log in\nstorage_client = get_client_from_cli_profile(StorageManagementClient)\n\n# create a public storage container to hold the file\nstorage_keys = storage_client.storage_accounts.list_keys(RESOURCE_GROUP, STORAGE_ACCOUNT_NAME)\nstorage_keys = {v.key_name: v.value for v in storage_keys.keys}\n\nstorage_client = CloudStorageAccount(STORAGE_ACCOUNT_NAME, storage_keys['key1'])\nblob_service = storage_client.create_block_blob_service()\n\nblob_service.create_container(CONTAINER_NAME, public_access=PublicAccess.Container)\n\nblob_service.create_blob_from_bytes(\n    CONTAINER_NAME,\n    'helloworld.html',\n    b'<center><h1>Hello World!</h1></center>',\n    content_settings=ContentSettings('text/html')\n)\n\nprint(blob_service.make_blob_url(CONTAINER_NAME, 'helloworld.html'))\n```\nコンテンツが正常にアップロードされたことを確認するには、出力された URL に移動します。 \n\nCLI で次のコマンドを入力して、ストレージ アカウントをクリーンアップします。\n```azurecli\naz group delete --name sampleStorageResourceGroup\n```\n"
+  content: "認証を行います。\n```azurecli\naz login\n```\nリソース グループを作成します。\n```azurecli\naz group create -l eastus -n sampleStorageResourceGroup\n```\n\nストレージ アカウントを作成します。\n```azurecli\naz storage account create -n samplestorageaccountname -g sampleStorageResourceGroup -l eastus --sku Standard_RAGRS\n```\n\nこのコードは、[Azure Storage アカウント](https://docs.microsoft.com/azure/storage/common/storage-introduction)を作成し、Python 用 Azure Storage ライブラリを使用して新しい html ファイルをクラウドに作成するものです。 \n```python\nfrom azure.storage import CloudStorageAccount\nfrom azure.storage.blob import PublicAccess\nfrom azure.storage.blob.models import ContentSettings\nfrom azure.common.client_factory import get_client_from_cli_profile\nfrom azure.mgmt.storage import StorageManagementClient\n\nRESOURCE_GROUP = 'sampleStorageResourceGroup'\nSTORAGE_ACCOUNT_NAME = 'samplestorageaccountname'\nCONTAINER_NAME = 'samplecontainername'\n\n# log in\nstorage_client = get_client_from_cli_profile(StorageManagementClient)\n\n# create a public storage container to hold the file\nstorage_keys = storage_client.storage_accounts.list_keys(RESOURCE_GROUP, STORAGE_ACCOUNT_NAME)\nstorage_keys = {v.key_name: v.value for v in storage_keys.keys}\n\nstorage_client = CloudStorageAccount(STORAGE_ACCOUNT_NAME, storage_keys['key1'])\nblob_service = storage_client.create_block_blob_service()\n\nblob_service.create_container(CONTAINER_NAME, public_access=PublicAccess.Container)\n\nblob_service.create_blob_from_bytes(\n    CONTAINER_NAME,\n    'helloworld.html',\n    b'<center><h1>Hello World!</h1></center>',\n    content_settings=ContentSettings('text/html')\n)\n\nprint(blob_service.make_blob_url(CONTAINER_NAME, 'helloworld.html'))\n```\nコンテンツが正常にアップロードされたことを確認するには、出力された URL に移動します。 \n\nCLI で次のコマンドを入力して、ストレージ アカウントをクリーンアップします。\n```azurecli\naz group delete --name sampleStorageResourceGroup\n```\n"
 - title: 次の手順
   content: >-
     「Python 用 Azure ライブラリの概要」を完了しました。

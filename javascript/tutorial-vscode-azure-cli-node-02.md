@@ -3,12 +3,12 @@ title: Node.js アプリを作成し、Azure CLI を使用して Azure にデプ
 description: チュートリアル パート 2、アプリ コードを作成する。
 ms.topic: conceptual
 ms.date: 09/24/2019
-ms.openlocfilehash: dba089c58cf6413263348b7bdeb975852c2e6a2f
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.openlocfilehash: 160b543abee59bdd7504aa356a3b11eb7bde3da8
+ms.sourcegitcommit: 3c69d7c3e5c5a00a01ee18e63b0659830c7d4ec0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/25/2019
-ms.locfileid: "74467183"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82105163"
 ---
 # <a name="create-the-app-code-using-express"></a>Express を使用してアプリ コードを作成する
 
@@ -35,7 +35,7 @@ ms.locfileid: "74467183"
     npm start
     ```
 
-1. ブラウザーを開いて [http://localhost:3000](http://localhost:3000) に移動し、実行中のアプリを表示します。
+1. ブラウザーを開いて `http://localhost:3000` に移動し、実行中のアプリを表示します。
 
     ![Express アプリをローカルで実行](media/azure-cli/local-app.png)
 

@@ -8,12 +8,12 @@ ms.service: active-directory
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
-ms.openlocfilehash: 655e536d1194370fb0ade4fbd6b06da9f36201fd
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.openlocfilehash: ff89152b5cbcd8c0abeff74ce75c4ba21528613e
+ms.sourcegitcommit: e6cdb0ce11a8272195a0072c7c91cc9b7e89b0b6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81671348"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82138826"
 ---
 # <a name="tutorial-secure-a-java-web-app-using-the-spring-boot-starter-for-azure-active-directory"></a>チュートリアル:Azure Active Directory 用の Spring Boot Starter を使用して Java Web アプリをセキュリティで保護する
 
@@ -63,11 +63,11 @@ Azure サブスクリプションをお持ちでない場合は、開始する�
 
    ![新しい Azure Active Directory インスタンスを作成する][create-directory-01]
 
-1. **組織名**と**初期ドメイン名**を入力します。 ディレクトリの完全な URL をコピーします。このチュートリアルでは後ほど、これを使用してユーザー アカウントを追加します (例: `wingtiptoysdirectory.onmicrosoft.com`)。 
+1. **組織名**と**初期ドメイン名**を入力します。 ディレクトリの完全な URL をコピーします。このチュートリアルでは後ほど、これを使用してユーザー アカウントを追加します  (例: `wingtiptoysdirectory.onmicrosoft.com`)。 
 
-ディレクトリの完全な URL をコピーします。このチュートリアルでは後ほど、これを使用してユーザー アカウントを追加します (例: wingtiptoysdirectory.onmicrosoft.com)。
+    ディレクトリの完全な URL をコピーします。このチュートリアルでは後ほど、これを使用してユーザー アカウントを追加します  (例: wingtiptoysdirectory.onmicrosoft.com)。
 
-操作が完了したら、 **[作成]** をクリックします。 新しいリソースの作成には数分かかります。
+    操作が完了したら、 **[作成]** をクリックします。 新しいリソースの作成には数分かかります。
 
    ![Azure Active Directory の名前を指定する][create-directory-02]
 
@@ -95,7 +95,7 @@ Azure サブスクリプションをお持ちでない場合は、開始する�
 
 1. 左側のナビゲーション ウィンドウで、 **[証明書とシークレット]** をクリックします。  次に、 **[新しいクライアント シークレット]** をクリックします。
 
-   ![アプリの登録キーを作成する][create-app-registration-03.5]
+   ![アプリの登録キーを作成する][create-app-registration-03-5]
 
 1. **説明**を追加し、 **[有効期限]** 一覧で期間を選択します。  **[追加]** をクリックします。 キーの値は自動的に入力されます。
 
@@ -103,11 +103,11 @@ Azure サブスクリプションをお持ちでない場合は、開始する�
 
 1. このチュートリアルの後の方で *application.properties* ファイルを構成するために、クライアント シークレットの値をコピーして保存します。 (この値は後で取得することはできません)。
 
-   ![アプリの登録キーのパラメーターを指定する][create-app-registration-04.5]
+   ![アプリの登録キーのパラメーターを指定する][create-app-registration-04-5]
 
 1. 左側のナビゲーション ウィンドウで **[API のアクセス許可]** をクリックします。 
 
-1. **[API のアクセス許可]** ページで、 **[管理者の同意を与える]** をクリックし、メッセージが表示されたら **[はい]** をクリックします。
+1. **[Microsoft Graph]** をクリックし、 **[サインインしたユーザーとしてディレクトリにアクセスします]** と **[サインインとユーザー プロファイルの読み取り]** をオンにします。 **[アクセス許可の付与]** をクリックし、プロンプトが表示されたら **[はい]** をクリックします。
 
    ![アクセス許可を付与する][create-app-registration-08]
 
@@ -147,7 +147,7 @@ Azure サブスクリプションをお持ちでない場合は、開始する�
 
 1. **[グループ]** をクリックして、アプリケーションの承認に使用する**新しいグループを作成**します。
 
-1. **[メンバーが選択されていません]** をクリックします (このチュートリアルでは、*users* という名前のグループを作成します)。前の手順で作成されたユーザーを検索します。  **[選択]** をクリックして、ユーザーをグループに追加します。  **[作成]** をクリックして、新しいグループを作成します。
+1. **[メンバーが選択されていません]** をクリックします  (このチュートリアルでは、*users* という名前のグループを作成します)。前の手順で作成されたユーザーを検索します。  **[選択]** をクリックして、ユーザーをグループに追加します。  **[作成]** をクリックして、新しいグループを作成します。
 
    ![グループのユーザーの選択][create-user-03]
 
@@ -377,9 +377,9 @@ Spring および Azure の詳細については、Azure ドキュメント セ�
 [create-app-registration-01]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/create-app-registration-01.png
 [create-app-registration-02]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/create-app-registration-02.png
 [create-app-registration-03]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/create-app-registration-03.png
-[create-app-registration-03.5]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/create-app-registration-03.5.png
+[create-app-registration-03-5]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/create-app-registration-03-5.png
 [create-app-registration-04]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/create-app-registration-04.png
-[create-app-registration-04.5]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/create-app-registration-04.5.png
+[create-app-registration-04-5]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/create-app-registration-04-5.png
 [create-app-registration-05]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/create-app-registration-05.png
 [create-app-registration-06]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/create-app-registration-06.png
 [create-app-registration-07]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/create-app-registration-07.png
@@ -397,3 +397,5 @@ Spring および Azure の詳細については、Azure ドキュメント セ�
 [build-application]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/build-application.png
 [hello-world]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/hello-world.png
 [update-password]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/update-password.png
+
+

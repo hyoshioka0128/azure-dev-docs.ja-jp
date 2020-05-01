@@ -11,12 +11,12 @@ ms.service: app-service
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
-ms.openlocfilehash: d24300d02df1fdd079c7ba3c5f2ef3370db3c5e8
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.openlocfilehash: 6ec30d83352984181caff4984769ff62d07e4164
+ms.sourcegitcommit: 3c69d7c3e5c5a00a01ee18e63b0659830c7d4ec0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81670578"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82105113"
 ---
 # <a name="deploy-a-java-based-microprofile-service-to-azure-web-app-for-containers"></a>Java ベースの MicroProfile サービスを Azure Web App for Containers にデプロイする
 
@@ -127,7 +127,7 @@ MicroProfile を使用してマイクロサービスを作成するのに必要�
 
 1. `docker run -it --rm -p 8080:8080 <docker.registry>/<docker.name>:latest` を実行します。たとえば、`docker.registry` が `jogilescr.azurecr.io`、`docker.name` が `samples/docker-helloworld` の場合は `docker run -it --rm -p 8080:8080 jogilescr.azurecr.io/samples/docker-helloworld:latest` となります。
 
-1. Web ブラウザーで [http://localhost:8080/microprofile/api/helloworld](http://localhost:8080/microprofile/api/helloworld) および [http://localhost:8080/health](http://localhost:8080/health) にアクセスしてみます。 想定どおりの "Hello, world!" 応答 (および [/health](http://localhost:8080/health) エンドポイントの正常性に関する情報) が表示された場合、MicroProfile アプリケーションはローカル コンピューターに正常に展開されています。
+1. Web ブラウザーで `http://localhost:8080/microprofile/api/helloworld` および `http://localhost:8080/health` にアクセスしてみます。 想定どおりの "Hello, world!"  応答 (および `/health` エンドポイントの正常性に関する情報) が表示された場合、MicroProfile アプリケーションはローカル コンピューターに正常に展開されています。
 
 ## <a name="pushing-to-the-azure-container-registry"></a>Azure コンテナー レジストリへのプッシュ
 

@@ -7,12 +7,12 @@ ms.service: mysql
 ms.tgt_pltfrm: multiple
 ms.author: judubois
 ms.topic: article
-ms.openlocfilehash: 62c151ba4c09b348c241658df985e1489908299f
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.openlocfilehash: 120f176b4cf781e99428d312d420731b83d62f02
+ms.sourcegitcommit: 858b061ed9ac883821a0485054b8076e2e719821
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81668548"
+ms.lasthandoff: 04/28/2020
+ms.locfileid: "82209845"
 ---
 # <a name="use-spring-data-r2dbc-with-azure-database-for-mysql"></a>Azure Database for MySQL で Spring Data R2DBC を使用する
 
@@ -115,7 +115,7 @@ az mysql db create \
 
 リアクティブ Spring Boot アプリケーションを作成するために、[Spring Initializr](https://start.spring.io/) を使用します。 作成するアプリケーションでは、以下が使用されます。
 
-- Spring Boot 2.3.0 M3。
+- Spring Boot 2.3.0 M4。
 - Java 8 (ただし、Java 11 などの新しいバージョンでも機能します)。
 - 次の依存関係: Spring Reactive Web (Spring WebFlux とも呼ばれる) およびSpring Data R2DBC。
 
@@ -124,7 +124,7 @@ az mysql db create \
 次のように入力して、コマン ドラインでアプリケーションを生成します。
 
 ```bash
-curl https://start.spring.io/starter.tgz -d dependencies=webflux,data-r2dbc -d baseDir=azure-r2dbc-workshop -d bootVersion=2.3.0.M3 -d javaVersion=8 | tar -xzvf -
+curl https://start.spring.io/starter.tgz -d dependencies=webflux,data-r2dbc -d baseDir=azure-r2dbc-workshop -d bootVersion=2.3.0.M4 -d javaVersion=8 | tar -xzvf -
 ```
 
 ### <a name="add-the-reactive-mysql-driver-implementation"></a>リアクティブ MySQL ドライバー実装を追加する
@@ -149,13 +149,16 @@ curl https://start.spring.io/starter.tgz -d dependencies=webflux,data-r2dbc -d b
 ```properties
 logging.level.org.springframework.data.r2dbc=DEBUG
 
-spring.r2dbc.url=r2dbc:mysql://$AZ_DATABASE_NAME.mysql.database.azure.com:3306/r2dbc
+spring.r2dbc.url=r2dbc:pool:mysql://$AZ_DATABASE_NAME.mysql.database.azure.com:3306/r2dbc
 spring.r2dbc.username=r2dbc@$AZ_DATABASE_NAME
 spring.r2dbc.password=$AZ_MYSQL_USERNAME
 ```
 
 - 2 つの `$AZ_DATABASE_NAME` 変数を、この記事の冒頭で構成した値に置き換えます。
 - `$AZ_MYSQL_USERNAME` 変数を、この記事の冒頭で構成した値で置き換えます。
+
+> [!NOTE]
+> パフォーマンスを向上させるために、`spring.r2dbc.url` プロパティは [r2dbc-pool](https://github.com/r2dbc/r2dbc-pool) を使用して接続プールを使用するように構成されています。
 
 これで、提供されている Maven Wrapper を使用してアプリケーションを起動できるようになりました。
 

@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.service: azure-cli
 ms.devlang: azurecli
 ms.openlocfilehash: 8e24a4740d97ddf67f81e60fef9217a4e72daab0
-ms.sourcegitcommit: 36e02e96b955ed0531f98b9c0f623f4acb508661
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "82031224"
 ---
 # <a name="select-clouds-with-the-azure-cli"></a>Azure CLI でクラウドを選択する
@@ -38,7 +38,7 @@ True        AzureCloud         latest
             AzureGermanCloud   latest
 ```
 
-現在アクティブなクラウドには `IsActive` 列に `True` と表示されます。 一度にアクティブにできるクラウドは 1 つのみです。 Azure サービスに使用するエンドポイントなど、クラウドに関するより詳細な情報を得るには、`cloud show` コマンドを使用します。
+現在アクティブなクラウドには `True` 列に `IsActive` と表示されます。 一度にアクティブにできるクラウドは 1 つのみです。 Azure サービスに使用するエンドポイントなど、クラウドに関するより詳細な情報を得るには、`cloud show` コマンドを使用します。
 
 ```azurecli-interactive
 az cloud show --name AzureChinaCloud --output json

@@ -8,10 +8,10 @@ ms.service: event-hubs
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.openlocfilehash: 53416d6f97e0b3e21559c39982ce57b265abf4d9
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81669578"
 ---
 # <a name="how-to-create-a-spring-cloud-stream-binder-application-with-azure-event-hubs"></a>Azure Event Hubs を使用する Spring Cloud Stream Binder アプリケーションを作成する方法
@@ -97,7 +97,7 @@ ms.locfileid: "81669578"
 
 次の手順では、Spring Boot アプリケーションを作成します。
 
-1. <https://start.spring.io/> を参照します。
+1. [https://www.microsoft.com](<https://start.spring.io/>) を参照します。
 
 1. 次のオプションを指定します。
 

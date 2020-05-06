@@ -6,10 +6,10 @@ ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 01/22/2019
 ms.openlocfilehash: 9576a3831afb00b10b9bec3531c2dbc1dc60f29f
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81672188"
 ---
 # <a name="migrate-executable-jar-web-applications-to-java-se-on-azure-app-service"></a>実行可能 JAR Web アプリケーションを Azure App Service 上の Java SE に移行する
@@ -147,7 +147,7 @@ App Service では、1 つのポートで 1 つの HTTP エンドポイントの
 
 すべての外部リソース座標 (データベース接続文字列など) およびその他のカスタマイズ可能な設定が環境変数から読み取れることを確認します。 Spring Boot アプリケーションを移行する場合は、すべての構成設定が既に外部化可能である必要があります。 詳細については、Spring Boot のドキュメントの「[Externalized Configuration](https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-features.html#boot-features-external-config)」を参照してください。
 
-*application.properties* ファイルから `SERVICEBUS_CONNECTION_STRING` 環境変数を参照する例を次に示します。
+`SERVICEBUS_CONNECTION_STRING`application.properties*ファイルから* 環境変数を参照する例を次に示します。
 
 ```properties
 spring.jms.servicebus.connection-string=${SERVICEBUS_CONNECTION_STRING}

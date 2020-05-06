@@ -7,10 +7,10 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.openlocfilehash: 48e1381761311a4ed9b5bd6f764af6f19f008fc1
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81670018"
 ---
 # <a name="spring-boot-starters-for-azure"></a>Azure 向けの Spring Boot Starter

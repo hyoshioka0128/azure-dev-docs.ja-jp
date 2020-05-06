@@ -7,10 +7,10 @@ ms.topic: include
 ms.prod: azure
 ms.technology: azure-cli
 ms.openlocfilehash: 676f33377a4e7122941bc789c51465b7f34aa1d3
-ms.sourcegitcommit: 36e02e96b955ed0531f98b9c0f623f4acb508661
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "82030884"
 ---
 プロキシのために外部リソースに接続できない場合、シェルに `HTTP_PROXY` および `HTTPS_PROXY` 変数を正しく設定していることを確認してください。 これらのプロキシ用にどのホストとポートを使用するかについては、システム管理者に問い合わせる必要があります。

@@ -13,10 +13,10 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.openlocfilehash: 25c46576e6c1c379d10cd5ce350ca73c5e28ab93
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81671018"
 ---
 # <a name="create-a-hello-world-web-app-for-azure-app-service-using-eclipse"></a>Eclipse を使用して Azure App Service 用の Hello World Web アプリを作成する
@@ -61,7 +61,7 @@ ms.locfileid: "81671018"
 
 ## <a name="creating-web-app-project"></a>Web アプリ プロジェクトの作成
 
-1. **[ファイル]** 、 **[新規]** 、 **[Dynamic Web Project]\(動的 Web プロジェクト\)** の順にクリックします ( **[ファイル]** と **[新規]** のクリック後、使用可能なプロジェクトとして **[Dynamic Web Project (動的 Web プロジェクト)]** が表示されない場合は、 **[ファイル]** 、 **[新規]** 、 **[プロジェクト]** の順にクリックし、 **[Web]** を展開して、 **[Dynamic Web Project (動的 Web プロジェクト)]** 、 **[次へ]** の順にクリックします)。
+1. **[ファイル]** 、 **[新規]** 、 **[Dynamic Web Project]\(動的 Web プロジェクト\)** の順にクリックします  ( **[ファイル]** と **[新規]** のクリック後、使用可能なプロジェクトとして **[Dynamic Web Project (動的 Web プロジェクト)]** が表示されない場合は、 **[ファイル]** 、 **[新規]** 、 **[プロジェクト]** の順にクリックし、 **[Web]** を展開して、 **[Dynamic Web Project (動的 Web プロジェクト)]** 、 **[次へ]** の順にクリックします)。
 
    ![新しい動的 Web プロジェクトの作成][file-new-dynamic-web-project]
 

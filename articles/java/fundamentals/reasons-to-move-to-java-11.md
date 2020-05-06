@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 11/19/2019
 ms.author: dagrieve
 ms.openlocfilehash: c0a2f46f8a3249f6c9580e823e102a86291e15e7
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81670638"
 ---
 # <a name="reasons-to-move-to-java-11"></a>Java 11 に移行する理由
@@ -83,7 +83,7 @@ GC を適切にチューニングするには、[Microsoft Java Engineering Grou
 
 #### <a name="g1gc"></a>G1GC
 
-Java 11 の既定のガベージ コレクターは、G1 ガベージ コレクター (G1GC) です。 G1GC の目的は、待機時間とスループットのバランスを取ることです。 G1 ガベージコレクターは、高い確率で一時停止時間の目標を満たすことで、高いスループットを達成しようとします。 G1GC は完全なコレクションを回避するように設計されていますが、同時実行コレクションがメモリの再利用を十分に高速に行うことができない場合は、フォールバックの完全な GC が発生します。 完全な GC では、young コレクションと混合コレクションと同じ数の並列ワーカー スレッドが使用されます。
+Java 11 の既定のガベージ コレクターは、G1 ガベージ コレクター (G1GC) です。 G1GC の目的は、待機時間とスループットのバランスを取ることです。 G1 ガベージコレクターは、高い確率で一時停止時間の目標を満たすことで、高いスループットを達成しようとします。 G1GC は完全なコレクションを回避するように設計されていますが、\'同時実行コレクションがメモリの再利用を十分に高速に行うことができない場合は、フォールバックの完全な GC が発生します。 完全な GC では、young コレクションと混合コレクションと同じ数の並列ワーカー スレッドが使用されます。
 
 #### <a name="parallel-gc"></a>パラレル GC
 

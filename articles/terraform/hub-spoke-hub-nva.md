@@ -4,10 +4,10 @@ description: 他のネットワーク間の共通接続ポイントとして機�
 ms.topic: tutorial
 ms.date: 10/26/2019
 ms.openlocfilehash: 6498010775fb4ee2d97041a04e80ff17c6bd2da8
-ms.sourcegitcommit: 9ff9b51ab21c93bfd61e480c6ff8e39c9d4bf02e
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "82170978"
 ---
 # <a name="tutorial-create-a-hub-virtual-network-appliance-in-azure-using-terraform"></a>チュートリアル:Terraform を使用して Azure でハブ仮想ネットワーク アプライアンスを作成する

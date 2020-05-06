@@ -11,7 +11,7 @@
       href: configure-on-linux-vm.md
 - name: チュートリアル
   items:
-    - name: 構成
+    - name: '[構成]'
       items:
         - name: Azure Container Instances でのスケーリング
           href: azure-container-instances-as-jenkins-build-agent.md

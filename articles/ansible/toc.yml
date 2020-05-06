@@ -81,7 +81,7 @@
           href: vm-configure-from-azure-shared-image-gallery.md
     - name: 仮想マシン スケール セット
       items:
-        - name: 構成
+        - name: '[構成]'
           href: vm-scale-set-configure.md
         - name: 配置
           href: vm-scale-set-deploy-app.md

@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.service: azure-cli
 ms.devlang: azurecli
 ms.openlocfilehash: fd37b633100d92a4126910a3fb9e8ad25b11423c
-ms.sourcegitcommit: 858b061ed9ac883821a0485054b8076e2e719821
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "82209785"
 ---
 # <a name="azure-cli-configuration"></a>Azure CLI の構成
@@ -60,8 +60,8 @@ CLI 構成ファイルには、CLI の動作の管理に使用されるその他
 
 ブール値は、大文字と小文字が区別されず、次の値によって表されます。
 
-* __True__:1、yes、true、on
-* __False__:0、no、false、off
+* __True__: 1、yes、true、on
+* __False__: 0、no、false、off
 
 次の例は、確認のプロンプトを無効にして、`/var/log/azure` ディレクトリへのログ記録を設定する CLI 構成ファイルです。
 
@@ -78,11 +78,11 @@ log_dir=/var/log/azure
 
 ## <a name="cli-configuration-values-and-environment-variables"></a>CLI 構成値と環境変数
 
-次の表は、構成ファイルで指定できるすべてのセクションとオプションの名前を示しています。 対応する環境変数は、`AZURE_{section}_{name}` のようにすべて大文字で設定できます。 たとえば、`batchai` の既定値 `storage_account` は、`AZURE_BATCHAI_STORAGE_ACCOUNT` 変数で設定されます。
+次の表は、構成ファイルで指定できるすべてのセクションとオプションの名前を示しています。 対応する環境変数は、`AZURE_{section}_{name}` のようにすべて大文字で設定できます。 たとえば、`storage_account` の既定値 `batchai` は、`AZURE_BATCHAI_STORAGE_ACCOUNT` 変数で設定されます。
 
 既定値を指定すると、その引数は任意のコマンドで不要になります。 代わりに、その既定値が使用されます。
 
-| Section | 名前      | Type | 説明|
+| Section | 名前      | 種類 | 説明|
 |---------|-----------|------|------------|
 | __core__ | output | string | 既定の出力形式。 `json`、`jsonc`、`tsv`、`table` のいずれかを指定できます。 |
 | | disable\_confirm\_prompt | boolean | 確認のプロンプトをオン/オフにします。 |
@@ -97,7 +97,7 @@ log_dir=/var/log/azure
 | | storage\_key | string | `az batchai` コマンドに使用する既定のストレージ キー。 |
 | __batch__ | account | string | `az batch` コマンドに使用する既定の Azure Batch アカウント名。 |
 | | access\_key | string | `az batch` コマンドに使用する既定のアクセス キー。 `aad` 承認でのみ使用されます。 |
-| | endpoint | string | `az batch` コマンドに対する既定の接続先エンドポイント。 |
+| | エンドポイント (endpoint) | string | `az batch` コマンドに対する既定の接続先エンドポイント。 |
 | | auth\_mode | string | `az batch` コマンドに使用する承認モード。 `shared_key` または `aad` を指定できます。 |
 | __cloud__ | name | string | すべての `az` コマンドの既定のクラウド。  値には `AzureCloud` (既定)、`AzureChinaCloud`、`AzureUSGovernment`、`AzureGermanCloud` があります。 クラウドを変更するには、`az cloud set –name` コマンドを使用します。  例については、[Azure CLI を使用したクラウドの管理](manage-clouds-azure-cli.md)に関するページを参照してください。 |
 

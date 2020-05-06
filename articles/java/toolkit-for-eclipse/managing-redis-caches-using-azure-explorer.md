@@ -7,10 +7,10 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.openlocfilehash: 80464f717dd50591c8cf3bbbdb7cd4fa569ba4a7
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81674428"
 ---
 # <a name="managing-redis-caches-using-the-azure-explorer-for-eclipse"></a>Azure Explorer for Eclipse を使用して Redis Cache を管理する
@@ -37,13 +37,13 @@ Azure Toolkit for Eclipse の一部である Azure Explorer は、Eclipse IDE �
 
    a. **[DNS 名]** : 新しい Redis Cache の DNS サブドメインを指定します。この名前は、".redis.cache.windows.net" の前に付加されます (例: *wingtiptoys.redis.cache.windows.net*)。
 
-   b. **サブスクリプション**:新しい Redis Cache に使う Azure サブスクリプションを指定します。
+   b. **[サブスクリプション]** : 新しい Redis Cache に使う Azure サブスクリプションを指定します。
 
-   c. **リソース グループ**:Redis Cache のリソース グループを指定します。以下のオプションのいずれかを選ぶ必要があります。
+   c. **[リソース グループ]** : Redis Cache のリソース グループを指定します。以下のオプションのいずれかを選ぶ必要があります。
       * **[新規作成]** : 新しいリソース グループを作成することを指定します。
-      * **[Use Existing]\(既存の使用\)** :Azure アカウントに関連付けられているリソース グループの一覧から選ぶことを指定します。
+      * **[既存のものを使用]** : Azure アカウントに関連付けられているリソース グループの一覧から選ぶことを指定します。
 
-   d. **[場所]** :Redis Cache を作成する場所を指定します (例: *米国西部*)。
+   d. **[場所]** : Redis Cache を作成する場所を指定します (例: *米国西部*)。
 
    e. **[価格レベル]** : Redis Cache が使う価格レベルを指定します。この設定により、クライアント接続の数が決まります。 詳しくは、「[Redis Cache の価格]」をご覧ください。
 

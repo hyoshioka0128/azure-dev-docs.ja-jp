@@ -5,10 +5,10 @@ keywords: Azure DevOps Terraform VM 仮想マシン クラスター
 ms.topic: tutorial
 ms.date: 03/09/2020
 ms.openlocfilehash: 7f19d28270f911cac7bc96a9159f1b927ceb0235
-ms.sourcegitcommit: 9ff9b51ab21c93bfd61e480c6ff8e39c9d4bf02e
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "82170478"
 ---
 # <a name="tutorial-create-an-azure-vm-cluster-with-terraform-and-hcl"></a>チュートリアル:Terraform と HCL を使用した Azure VM クラスターの作成

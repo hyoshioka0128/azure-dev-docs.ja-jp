@@ -7,10 +7,10 @@ ms.date: 12/19/2018
 ms.service: event-hubs
 ms.topic: article
 ms.openlocfilehash: 1141c54e613003f6fcc9396b11528765eaf3f8ad
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81669598"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-apache-kafka-with-azure-event-hubs"></a>Azure Event Hubs で Apache Kafka 用 Spring Boot Starter を使用する方法
@@ -72,7 +72,7 @@ ms.locfileid: "81669598"
 
 ## <a name="create-a-simple-spring-boot-application-with-the-spring-initializr"></a>Spring Initializr でシンプルな Spring Boot アプリケーションを作成する
 
-1. <https://start.spring.io/> を参照します。
+1. [https://www.microsoft.com](<https://start.spring.io/>) を参照します。
 
 1. 次のオプションを指定します。
 

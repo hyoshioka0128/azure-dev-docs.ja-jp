@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.service: azure-cli
 ms.devlang: azurecli
 ms.openlocfilehash: a98a51e4dc3ac85d27e27ef9b9164a7f98431d31
-ms.sourcegitcommit: 36e02e96b955ed0531f98b9c0f623f4acb508661
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "82031114"
 ---
 # <a name="install-azure-cli-with-yum"></a>yum での Azure CLI のインストール
@@ -76,7 +76,7 @@ $ scl enable rh-python36 bash
 
 [!INCLUDE[configure-proxy](includes/configure-proxy.md)]
 
-常にこのプロキシを使用するように `yum` を明示的に構成することが必要な場合もあります。 次の行が `/etc/yum.conf` の `[main]` セクションの下に表示されていることを確認してください。
+常にこのプロキシを使用するように `yum` を明示的に構成することが必要な場合もあります。 次の行が `[main]` の `/etc/yum.conf` セクションの下に表示されていることを確認してください。
 
 ```yum.conf
 [main]

@@ -10,10 +10,10 @@ ms.service: azure-functions
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.openlocfilehash: e91940e22aba03367493a23d4792db38d36f394f
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81673038"
 ---
 # <a name="getting-started-with-spring-cloud-function-in-azure"></a>Azure での Spring Cloud Function の概要
@@ -242,7 +242,7 @@ public class HelloHandler extends AzureSpringBootRequestHandler<User, Greeting> 
 
 この Java クラスは Azure 関数であり、次のような興味深い機能を備えています。
 
-- これによって、`AzureSpringBootRequestHandler` が拡張され、Azure Functions と Spring Cloud Function のリンクが行われます。 これは、`execute()` メソッドで使用される `handleRequest()` メソッドを提供します。
+- これによって、`AzureSpringBootRequestHandler` が拡張され、Azure Functions と Spring Cloud Function のリンクが行われます。 これは、`handleRequest()` メソッドで使用される `execute()` メソッドを提供します。
 - 関数の名前は、`@FunctionName("hello")` 注釈で定義されているように、前の手順で構成した Spring Bean (`hello`) と同じです。
 - これは本物の Azure 関数であるため、ここでは完全な Azure Functions API を使用できます。
 
@@ -325,7 +325,7 @@ curl http://localhost:7071/api/hello -d "{\"name\":\"Azure\"}"
 
 ## <a name="deploy-the-function-to-azure-functions"></a>関数を Azure Functions にデプロイする
 
-次に、Azure 関数を運用環境に発行します。 *pom.xml* で自分が定義した `<functionAppName>`、`<functionAppRegion>`、`<functionResourceGroup>` の各プロパティは、自分の関数を構成するために使用されることを覚えておいてください。
+次に、Azure 関数を運用環境に発行します。 `<functionAppName>`pom.xml`<functionAppRegion>` で自分が定義した `<functionResourceGroup>`、 *、* の各プロパティは、自分の関数を構成するために使用されることを覚えておいてください。
 
 > [!NOTE]
 > Maven プラグインでは Azure を使って認証を行う必要があります。Azure CLI がインストールされている場合は、続行する前に `az login` を使用してください。

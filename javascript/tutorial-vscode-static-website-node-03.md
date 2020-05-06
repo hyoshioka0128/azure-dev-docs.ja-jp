@@ -4,10 +4,10 @@ description: チュートリアル パート 3、Azure Storage アカウント�
 ms.topic: conceptual
 ms.date: 09/24/2019
 ms.openlocfilehash: 4adca67f850497777abce7d550e39532e59257d9
-ms.sourcegitcommit: a32ca0946275165ce24216c6fa243ec21d6c9193
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "80890849"
 ---
 # <a name="create-an-azure-storage-account"></a>Azure Storage アカウントの作成

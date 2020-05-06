@@ -5,10 +5,10 @@ ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: seo-python-october2019
 ms.openlocfilehash: f0e6eb808e25f3bb48eb2c849310747945e0d7f9
-ms.sourcegitcommit: 1bd9ec6a4115e9162e33b76a933869788e6ab702
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/31/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "80441867"
 ---
 # <a name="2-redeploy-a-container-to-azure-app-service-after-making-changes"></a>2:変更を加えた後に Azure App Service にコンテナーを再デプロイする
@@ -19,7 +19,7 @@ ms.locfileid: "80441867"
 
 アプリには必然的に変更を加えるため、最終的にコンテナーのリビルドと再デプロイは何回も実施することになります。 さいわい、このプロセスは単純です。
 
-1. アプリケーションに変更を加えて、ローカルでテストします (この手順と後続の 2 つの手順については、[VS Code での Python コンテナーの作成](https://code.visualstudio.com/docs/python/tutorial-create-containers)に関するチュートリアルで説明しています)。
+1. アプリケーションに変更を加えて、ローカルでテストします  (この手順と後続の 2 つの手順については、[VS Code での Python コンテナーの作成](https://code.visualstudio.com/docs/python/tutorial-create-containers)に関するチュートリアルで説明しています)。
 
 1. Docker イメージをリビルドします。 アプリのコードのみを変更する場合は、ビルドにかかる時間はわずか数秒です。
 

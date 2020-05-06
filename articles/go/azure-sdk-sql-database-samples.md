@@ -4,10 +4,10 @@ description: Azure SDK for Go から Azure SQL Database を操作するための
 ms.date: 09/05/2018
 ms.topic: sample
 ms.openlocfilehash: 49afc78c54c44aeb055b58405498cffb78b626b5
-ms.sourcegitcommit: 31f6d047f244f1e447faed6d503afcbc529bd28c
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "80319739"
 ---
 # <a name="azure-sdk-for-go-samples-for-azure-sql-database"></a>Azure SDK for Go のサンプル (Azure SQL Database)

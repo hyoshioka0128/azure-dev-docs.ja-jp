@@ -9,10 +9,10 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: data-services
 ms.openlocfilehash: f46988e75d3230455796b2472010c3d93bff5c57
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81669248"
 ---
 # <a name="how-to-use-the-spring-data-gremlin-starter-with-the-azure-cosmos-db-sql-api"></a>Azure Cosmos DB SQL API で Spring Data Gremlin Starter を使用する方法
@@ -90,7 +90,7 @@ Spring Data Gremlin Starter は、Apache の Gremlin クエリ言語に Spring D
 
 ## <a name="create-a-simple-spring-boot-application-with-the-spring-initializr"></a>Spring Initializr でシンプルな Spring Boot アプリケーションを作成する
 
-1. <https://start.spring.io/> を参照します。
+1. [https://www.microsoft.com](<https://start.spring.io/>) を参照します。
 
 1. **Java** で **Maven** プロジェクトを生成することを指定し、ご自身のアプリケーションの **[グループ]** と **[アーティファクト]** に名前を入力します。次に、お使いの **Spring Boot** バージョン (2.0 以上) を指定し、 **[プロジェクトの生成]** をクリックします。
 
@@ -509,13 +509,13 @@ Spring および Azure の詳細については、Azure ドキュメント セ�
 
 Gremlin および Graph API に対する Azure サポートの詳細については、次の記事をご覧ください。
 
-* [Azure Cosmos DB の概要:Graph API](/azure/cosmos-db/graph-introduction)
+* [Azure Cosmos DB の概要: Graph API](/azure/cosmos-db/graph-introduction)
 
 * [Azure Cosmos DB での Gremlin グラフのサポート](/azure/cosmos-db/gremlin-support)
 
-* [Azure Cosmos DB:Java と Azure portal を使用してグラフ データベースを作成する](/azure/cosmos-db/create-graph-java)
+* [Azure Cosmos DB: グラフ データベースを Java と Azure portal で作成する](/azure/cosmos-db/create-graph-java)
 
-* [チュートリアル:Gremlin を使って Azure Cosmos DB Graph API のクエリを実行する](/azure/cosmos-db/tutorial-query-graph)
+* [チュートリアル: Gremlin を使って Azure Cosmos DB Graph API を照会する](/azure/cosmos-db/tutorial-query-graph)
 
 * [Spring Data Gremlin Starter]
 
@@ -523,7 +523,7 @@ Azure Cosmos DB と Java の使用について詳しくは、次の記事をご�
 
 * [Azure Cosmos DB のドキュメント]。
 
-* [Azure Cosmos DB:Java と Azure portal を使用してドキュメント データベースを作成する][Build a SQL API app with Java]
+* [Azure Cosmos DB: ドキュメント データベースを Java と Azure portal で作成する][Build a SQL API app with Java]
 
 * [Azure Cosmos DB SQL API の Spring Data]
 

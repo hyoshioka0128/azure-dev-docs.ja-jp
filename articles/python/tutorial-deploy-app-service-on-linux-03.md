@@ -5,10 +5,10 @@ ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: seo-python-october2019
 ms.openlocfilehash: dea4ace359c8d072af8ab9ed33451bc8077249b7
-ms.sourcegitcommit: 1bd9ec6a4115e9162e33b76a933869788e6ab702
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/31/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "80441917"
 ---
 # <a name="3-create-the-app-service-from-visual-studio-code"></a>3:Visual Studio Code から App Service を作成する
@@ -42,7 +42,7 @@ ms.locfileid: "80441917"
 
 ## <a name="optional-upload-an-environment-variable-definitions-file"></a>(省略可) 環境変数定義ファイルをアップロードする
 
-環境変数定義ファイルがある場合は、そのファイルを使用して App Service Environment を構成することもできます (一般的に *.env* 拡張子が付いているこのようなファイルの詳細については、[Visual Studio Code での Python 環境](https://code.visualstudio.com/docs/python/environments#environment-variable-definitions-file)に関するページを参照してください)。
+環境変数定義ファイルがある場合は、そのファイルを使用して App Service Environment を構成することもできます  (一般的に *.env* 拡張子が付いているこのようなファイルの詳細については、[Visual Studio Code での Python 環境](https://code.visualstudio.com/docs/python/environments#environment-variable-definitions-file)に関するページを参照してください)。
 
 1. **[Azure: App Service]** エクスプローラーで、目的の App Service のノードを展開し、 **[Application Settings]\(アプリケーション設定\)** ノードを右クリックして **[Upload Local Settings]\(ローカル設定のアップロード\)** を選択します。
 

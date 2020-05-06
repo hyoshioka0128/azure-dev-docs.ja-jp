@@ -4,10 +4,10 @@ description: チュートリアル パート 2、アプリ コードを作成す
 ms.topic: conceptual
 ms.date: 09/24/2019
 ms.openlocfilehash: 160b543abee59bdd7504aa356a3b11eb7bde3da8
-ms.sourcegitcommit: 3c69d7c3e5c5a00a01ee18e63b0659830c7d4ec0
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "82105163"
 ---
 # <a name="create-the-app-code-using-express"></a>Express を使用してアプリ コードを作成する

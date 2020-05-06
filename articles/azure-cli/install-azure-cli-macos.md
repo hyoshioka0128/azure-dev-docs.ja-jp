@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.service: azure-cli
 ms.devlang: azurecli
 ms.openlocfilehash: 862ebf9144d7e81be6dda550eba108198f38d397
-ms.sourcegitcommit: 36e02e96b955ed0531f98b9c0f623f4acb508661
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "82031064"
 ---
 # <a name="install-azure-cli-on-macos"></a>macOS での Azure CLI のインストール
@@ -49,7 +49,7 @@ Homebrew を使用した CLI のインストール時に問題が発生した場
 
 ### <a name="completion-is-not-working"></a>補完が機能していません
 
-Azure CLI の Homebrew formula では、Homebrew によって管理される補完ディレクトリ (既定の場所は `/usr/local/etc/bash_completion.d/`) に `az` という名前の補完ファイルがインストールされます。 補完を有効にするには、Homebrew の指示 ([ここ](https://docs.brew.sh/Shell-Completion)) に従ってしてください。
+Azure CLI の Homebrew formula では、Homebrew によって管理される補完ディレクトリ (既定の場所は `az`) に `/usr/local/etc/bash_completion.d/` という名前の補完ファイルがインストールされます。 補完を有効にするには、Homebrew の指示 ([ここ](https://docs.brew.sh/Shell-Completion)) に従ってしてください。
 
 ### <a name="unable-to-find-python-or-installed-packages"></a>Python またはインストールされているパッケージが見つかりません
 

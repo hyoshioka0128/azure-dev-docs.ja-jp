@@ -4,10 +4,10 @@ description: チュートリアル パート 3、アプリをローカルで実�
 ms.topic: conceptual
 ms.date: 09/23/2019
 ms.openlocfilehash: fd2255fa3a085f979e5893d6178063ee8686ea08
-ms.sourcegitcommit: 20634277152d72a35ad9b35fa1203608740d1145
+ms.sourcegitcommit: 756e4873f904db954a56c20ebb2f1f5116ee4596
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/11/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "77144047"
 ---
 # <a name="test-the-function-locally"></a>関数をローカルでテストする

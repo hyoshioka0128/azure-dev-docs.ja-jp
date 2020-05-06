@@ -7,10 +7,10 @@ ms.topic: article
 ms.date: 3/30/2017
 ms.reviewer: asirveda
 ms.openlocfilehash: 90bf21232ed5ac8b4f98122951b6cfe4aed2eb4c
-ms.sourcegitcommit: 3c69d7c3e5c5a00a01ee18e63b0659830c7d4ec0
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "82104983"
 ---
 # <a name="manage-azure-virtual-machines-from-your-java-applications"></a>Azure 仮想マシンを Java アプリケーションから管理する
@@ -150,11 +150,11 @@ azure.virtualMachines().deleteByResourceGroup(rgName,windowsVmName);
 
 サンプルでは、この 2 つの仮想マシンについての情報をログに記録します。どちらのログも完了前に削除されます。
 
-| サンプルで使われているクラス | Notes
+| サンプルで使われているクラス | メモ
 |-------|-------|
 | [VirtualMachine](/java/api/com.microsoft.azure.management.compute.virtualmachine) | 仮想マシンのプロパティを照会したり、仮想マシンの状態を管理したりすることができます。 `azure.virtualMachines().list()` を使ってリスト形式で取得するか、`azure.virtualMachines().getByResourceGroup()` で名前または ID を使って取得します。
 | [VirtualMachineSizeTypes](/java/api/com.microsoft.azure.management.compute.virtualmachinesizetypes) | [仮想マシン サイズのオプション](https://azure.microsoft.com/pricing/details/virtual-machines/linux/)に対応した静的な値を保持するクラスです。VM に割り当てるリソースを `withSize()`メソッドで定義する際に使用します。
-| [ディスク](/java/api/com.microsoft.azure.management.compute.disk) | ディスクを定義する際、データを格納するためのディスクは `withData()` で作成し、オペレーティング システム イメージを格納するためのディスクは、`withLinux` または `withWindows` のどちらか適切なメソッドで作成します。 仮想マシンへのディスクのアタッチは、作成時に (`using withNewDataDisk` または `withExistingDataDisk`) 行うか、作成後に VirtualMachine オブジェクトの `update()..apply()` で行います。
+| [Disk](/java/api/com.microsoft.azure.management.compute.disk) | ディスクを定義する際、データを格納するためのディスクは `withData()` で作成し、オペレーティング システム イメージを格納するためのディスクは、`withLinux` または `withWindows` のどちらか適切なメソッドで作成します。 仮想マシンへのディスクのアタッチは、作成時に (`using withNewDataDisk` または `withExistingDataDisk`) 行うか、作成後に VirtualMachine オブジェクトの `update()..apply()` で行います。
 | [DiskSkuTypes](/java/api/com.microsoft.azure.management.compute.diskskutypes) | Standard または [Premium](/azure/storage/storage-premium-storage) のストレージ プランでディスクを定義するための静的な値を保持するクラスです。
 | [KnownLinuxVirtualMachineImage](/java/api/com.microsoft.azure.management.compute.knownlinuxvirtualmachineimage) | 仮想マシンを定義するときに `withPopularLinuxImage()` メソッドで使用する一連の Linux 仮想マシン オプションを保持するクラスです。
 | [KnownWindowsVirtualMachineImage](/java/api/com.microsoft.azure.management.compute.knownwindowsvirtualmachineimage) | 仮想マシンを定義するときに `withPopularWindowsImage()` メソッドで使用する一連の Windows 仮想マシン イメージ オプションを保持するクラスです。

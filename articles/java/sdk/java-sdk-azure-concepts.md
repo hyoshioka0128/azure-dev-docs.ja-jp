@@ -9,10 +9,10 @@ ms.service: multiple
 ms.assetid: f452468b-7aae-4944-abad-0b1aaf19170d
 ms.custom: seo-java-july2019, seo-java-september2019
 ms.openlocfilehash: 202b34a6b64d75e814a4fb586a44e471a9a9f118
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81673918"
 ---
 # <a name="patterns-and-best-practices-for-development-with-the-azure-libraries-for-java"></a>Java 用 Azure ライブラリを使用した開発のパターンとベスト プラクティス 
@@ -53,7 +53,7 @@ SqlServer sqlServer = azure.sqlServers().define(sqlServerName)
 
 それぞれのリソース コレクションには、そのリソースのすべてのインスタンスを現在のサブスクリプションから返す `list()` メソッドがあります。 たとえば、`azure.sqlServers().list()` とした場合、そのサブスクリプションに存在する SQL データベースがすべて返されます。
 
-取得するリストの範囲を特定の [Azure リソース グループ](/azure/azure-resource-manager/resource-group-overview#resource-groups)に限定するには、`listByResourceGroup(String groupname)` メソッドを使用します。  
+取得するリストの範囲を特定の `listByResourceGroup(String groupname)`Azure リソース グループ[に限定するには、](/azure/azure-resource-manager/resource-group-overview#resource-groups) メソッドを使用します。  
 
 返された `PagedList<T>` コレクションは、通常の `List<T>` とまったく同じように、検索したり反復処理を行ったりすることができます。
 
@@ -68,9 +68,9 @@ for (VirtualMachine vm : vms) {
 
 管理ライブラリは、クエリ結果の構造に基づく特定のコレクション型を返します。
 
-- `List<T>`:順序付けされていないデータで、検索と反復処理を簡単に行うことができます。
-- `Map<T>`:Map はキー/値のペアです。一意のキーを持ちますが、値が一意であるとは限りません。 Map の例としては、App Service Web Apps のアプリケーション設定があります。
-- `Set<T>`:Set は、一意のキーと値を持ちます。 たとえば仮想マシンにアタッチされたネットワークは Set であり、一意の識別子 (キー) と一意のネットワーク構成 (値) の両方を持ちます。
+- `List<T>`: 順序付けされていないデータで、検索と反復処理を簡単に行うことができます。
+- `Map<T>`: Map はキー/値のペアです。一意のキーを持ちますが、値が一意であるとは限りません。 Map の例としては、App Service Web Apps のアプリケーション設定があります。
+- `Set<T>`: Set は、一意のキーと値を持ちます。 たとえば仮想マシンにアタッチされたネットワークは Set であり、一意の識別子 (キー) と一意のネットワーク構成 (値) の両方を持ちます。
 
 ## <a name="actionable-verbs"></a>アクション可能な動詞
 
@@ -78,7 +78,7 @@ for (VirtualMachine vm : vms) {
 
 | 動詞   |  使用例 |
 |--------|---------------|
-| create | `azure.virtualMachines().create(listOfVMCreatables)` |
+| 作成 | `azure.virtualMachines().create(listOfVMCreatables)` |
 | apply  | `virtualMachineScaleSet.update().withCapacity(6).apply()` |
 | delete | `azure.disks().deleteById(id)` | 
 | list   | `azure.sqlServers().list()` | 
@@ -87,9 +87,9 @@ for (VirtualMachine vm : vms) {
 >[!NOTE]
 > `define()` と `update()` は動詞ですが、その後に `create()` または `apply()` が続かない限り、他の処理がブロックされることはありません。
  
-いくつかのメソッドには、[Reactive 拡張機能](https://github.com/ReactiveX/RxJava)を使った非同期版が存在し、`Async` というサフィックスが付きます。 
+いくつかのメソッドには、`Async`Reactive 拡張機能[を使った非同期版が存在し、](https://github.com/ReactiveX/RxJava) というサフィックスが付きます。 
 
-一部のオブジェクトには、他にも、Azure のリソースの状態を変更するメソッドが存在します。 たとえば `VirtualMachine` の `restart()` があります。
+一部のオブジェクトには、他にも、Azure のリソースの状態を変更するメソッドが存在します。 たとえば `restart()` の `VirtualMachine` があります。
 
 ```java
 VirtualMachine vmToRestart = azure.getVirtualMachines().getById(id);
@@ -126,7 +126,7 @@ Creatable<VirtualMachine> vmCreatable = azure.virtualMachines().define("creatabl
 CreatedResources<VirtualMachine> virtualMachine = azure.virtualMachines().create(vmCreatable);
 ```
 
-`create()` の呼び出しに `Creatable<T>` を渡すと、単一のリソース オブジェクトではなく `CreatedResources` オブジェクトが返されます。  `CreatedResources<T>` オブジェクトを使用すると、`create()` の呼び出しで作成された (呼び出しの中で型指定したリソースだけでなく) すべてのリソースにアクセスすることができます。 前の例で作成した仮想マシンの、Azure で作成されたパブリック IP アドレスにアクセスするには、次のコードを使用します。
+`Creatable<T>` の呼び出しに `create()` を渡すと、単一のリソース オブジェクトではなく `CreatedResources` オブジェクトが返されます。  `CreatedResources<T>` オブジェクトを使用すると、`create()` の呼び出しで作成された (呼び出しの中で型指定したリソースだけでなく) すべてのリソースにアクセスすることができます。 前の例で作成した仮想マシンの、Azure で作成されたパブリック IP アドレスにアクセスするには、次のコードを使用します。
 
 ```java
 PublicIPAddress pip = (PublicIPAddress) virtualMachine.createdRelatedResource(publicIPAddressCreatable.key());
@@ -134,7 +134,7 @@ PublicIPAddress pip = (PublicIPAddress) virtualMachine.createdRelatedResource(pu
 
 ## <a name="exception-handling"></a>例外処理
 
-管理ライブラリの Exception クラスは `com.microsoft.rest.RestException` を拡張したものです。 管理ライブラリによって生成された例外は、対応する `try` ステートメントに続く `catch (RestException exception)` ブロックでキャッチします。
+管理ライブラリの Exception クラスは `com.microsoft.rest.RestException` を拡張したものです。 管理ライブラリによって生成された例外は、対応する `catch (RestException exception)` ステートメントに続く `try` ブロックでキャッチします。
 
 ## <a name="logs-and-trace"></a>ログとトレース
 
@@ -148,4 +148,4 @@ PublicIPAddress pip = (PublicIPAddress) virtualMachine.createdRelatedResource(pu
 | com.microsoft.rest.LogLevel.HEADERS | BASIC の全出力内容に加えて、REST 呼び出しの要求と応答のヘッダーがログに記録されます
 | com.microsoft.rest.LogLevel.BODY_AND_HEADERS | BODY と HEADERS の両ログ レベルの全出力内容が記録されます
 
-[Log4J 2](https://logging.apache.org/log4j/2.x/) などのログ記録フレームワークに出力する必要がある場合は、[SLF4J のログ記録の実装](https://www.slf4j.org/manual.html)をバインドしてください。
+[Log4J 2](https://www.slf4j.org/manual.html) などのログ記録フレームワークに出力する必要がある場合は、[SLF4J のログ記録の実装](https://logging.apache.org/log4j/2.x/)をバインドしてください。

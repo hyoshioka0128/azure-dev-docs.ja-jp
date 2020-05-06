@@ -4,13 +4,13 @@ description: Azure SDK for Go を使用して仮想マシンをデプロイし�
 ms.date: 09/05/2018
 ms.topic: quickstart
 ms.openlocfilehash: d339681fc4eed55046f5a7c8fa45fffc948fa3bc
-ms.sourcegitcommit: 31f6d047f244f1e447faed6d503afcbc529bd28c
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "80319769"
 ---
-# <a name="quickstart-deploy-an-azure-virtual-machine-from-a-template-with-the-azure-sdk-for-go"></a>クイック スタート:Azure SDK for Go を使用してテンプレートから Azure 仮想マシンをデプロイする
+# <a name="quickstart-deploy-an-azure-virtual-machine-from-a-template-with-the-azure-sdk-for-go"></a>クイック スタート: Azure SDK for Go を使用してテンプレートから Azure 仮想マシンをデプロイする
 
 このクイック スタートでは、Azure SDK for Go を使用して Azure Resource Manager テンプレートからリソースをデプロイする方法を示します。 テンプレートは、[Azure リソース グループ](/azure/azure-resource-manager/resource-group-overview)内のすべてのリソースのスナップショットです。 この過程で、SDK の機能と規則について理解を深めます。
 
@@ -74,7 +74,7 @@ az group delete -n GoVMQuickstart
 az ad sp delete --id ${CLIENT_ID_VALUE}
 ```
 
-ここに `quickstart.auth` の `CLIENT_ID_VALUE` の値を指定します。
+ここに `CLIENT_ID_VALUE` の `quickstart.auth` の値を指定します。
 
 > [!WARNING]
 > このアプリケーションのサービス プリンシパルの削除に失敗すると、アプリケーションは Azure Active Directory テナントでアクティブなままになります。
@@ -135,7 +135,7 @@ func init() {
 }
 ```
 
-まず、[auth.NewAuthorizerFromFile](https://godoc.org/github.com/Azure/go-autorest/autorest/azure/auth#NewAuthorizerFromFile) が呼び出され、`AZURE_AUTH_LOCATION` にあるファイルから認証情報が読み込まれます。 次に、`readJSON` 関数によってこのファイルが手動で読み込まれ (ここでは省略)、プログラムの残りの部分を実行するために必要な 2 つの値がプルされます (クライアントのサブスクリプション ID と、VM のパスワードにも使用されるサービス プリンシパルのシークレット)。
+まず、[auth.NewAuthorizerFromFile](https://godoc.org/github.com/Azure/go-autorest/autorest/azure/auth#NewAuthorizerFromFile) が呼び出され、`AZURE_AUTH_LOCATION` にあるファイルから認証情報が読み込まれます。 次に、`readJSON` 関数によってこのファイルが手動で読み込まれ (ここでは省略)、プログラムの残りの部分を実行するために必要な 2 つの値 (クライアントのサブスクリプション ID と、VM のパスワードにも使用されるサービス プリンシパルのシークレット) が取得されます。
 
 > [!WARNING]
 > このクイック スタートをシンプルに保つために、サービス プリンシパルのパスワードが再利用されます。 運用環境では、Azure リソースにアクセスするためのパスワードを__再利用しない__ように注意してください。
@@ -248,7 +248,7 @@ func createDeployment() (deployment resources.DeploymentExtended, err error) {
 このメソッドは、リソース グループの対応するメソッドと同じ名前 (`CreateOrUpdate`) です。 このパターンは SDK 全体で見られます。
 同様の処理を実行するメソッドは、通常、同じ名前です。
 
-最も大きな違いは、`deploymentsClient.CreateOrUpdate` メソッドの戻り値にあります。 この値は、[Future 設計パターン](https://en.wikipedia.org/wiki/Futures_and_promises)に従う [Future](https://godoc.org/github.com/Azure/go-autorest/autorest/azure#Future) 型です。 Future は、ポーリング、取り消し、または完了のブロックが可能な、Azure での実行時間の長い操作を表します。
+最も大きな違いは、`deploymentsClient.CreateOrUpdate` メソッドの戻り値にあります。 この値は、[Future 設計パターン](https://godoc.org/github.com/Azure/go-autorest/autorest/azure#Future)に従う [Future](https://en.wikipedia.org/wiki/Futures_and_promises) 型です。 Future は、ポーリング、取り消し、または完了のブロックが可能な、Azure での実行時間の長い操作を表します。
 
 ```go
         //...
@@ -260,7 +260,7 @@ func createDeployment() (deployment resources.DeploymentExtended, err error) {
 }
 ```
 
-この例では、一番良いのは操作が完了するまで待つことです。 将来のある時点まで待つには、[コンテキスト オブジェクト](https://blog.golang.org/context)と、`Future` オブジェクトを作成したクライアントの両方が必要です。 ここではエラー ソースとして次の 2 つが考えられます。メソッドを呼び出そうとしたときにクライアント側で発生したエラーと、サーバーからのエラー応答です。 後者は、`deploymentFuture.Result` 呼び出しの一部として返されます。
+この例では、一番良いのは操作が完了するまで待つことです。 将来のある時点まで待つには、[コンテキスト オブジェクト](https://blog.golang.org/context)と、`Future` オブジェクトを作成したクライアントの両方が必要です。 ここではエラー ソースとして、メソッドを呼び出そうとしたときにクライアント側で発生したエラーと、サーバーからのエラー応答の 2 つが考えられます。 後者は、`deploymentFuture.Result` 呼び出しの一部として返されます。
 
 ### <a name="get-the-assigned-ip-address"></a>割り当てられた IP アドレスの取得
 

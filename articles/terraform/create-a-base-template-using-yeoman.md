@@ -4,10 +4,10 @@ description: Azure で Yeoman を使用して Terraform ベース テンプレ�
 ms.topic: tutorial
 ms.date: 04/25/2020
 ms.openlocfilehash: ed030d6685666e49a01b4a7d1dded1981012d778
-ms.sourcegitcommit: 9ff9b51ab21c93bfd61e480c6ff8e39c9d4bf02e
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "82171418"
 ---
 # <a name="tutorial-create-a-terraform-base-template-in-azure-using-yeoman"></a>チュートリアル:Azure で Yeoman を使用して Terraform ベース テンプレートを作成する

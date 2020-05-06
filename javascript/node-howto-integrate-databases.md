@@ -4,17 +4,17 @@ description: Azure には、Web アプリや他の Node.js アプリと組み合
 ms.topic: article
 ms.date: 08/20/2019
 ms.openlocfilehash: 6eb7dcb97d78504c49f2ea39f5d39750dfec7215
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.sourcegitcommit: 756e4873f904db954a56c20ebb2f1f5116ee4596
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/25/2019
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "74467283"
 ---
 # <a name="how-to-integrate-azure-databases-in-nodejs-apps"></a>Azure のデータベースを Node.js アプリに統合する方法
 
 次の表は、Node.js で Azure のデータベースに接続して使用する方法を説明した各種記事へのリンク一覧です。 各種データベース オプションを比較した一覧については、「[データベース - フル マネージドのインテリジェント データベース サービス](https://azure.microsoft.com/product-categories/databases/)」を参照してください。
 
-| Service | クイック スタート | サンプル |
+| サービス | クイック スタート | サンプル |
 | --- | --- | --- |
 | **Cosmos DB** | [Node.js Azure Cosmos DB Web アプリの作成](/azure/cosmos-db/create-sql-api-nodejs) | [サンプル](https://docs.microsoft.com/samples/browse/?languages=javascript%2Cnodejs&products=azure-cosmos-db) |
 | **MongoDB** | [Node.js の MongoDB Web アプリの作成](/azure/app-service-web/app-service-web-tutorial-nodejs-mongodb-app) | [サンプル](https://docs.microsoft.com/samples/browse/?languages=javascript%2Cnodejs&term=Mongo%20DB) |
@@ -25,7 +25,7 @@ ms.locfileid: "74467283"
 
 ファイル (BLOB)、テーブル、キュー (メッセージ) のストレージには、Azure Storage を使用することもできます。
 
-| Service | クイック スタート |
+| サービス | クイック スタート |
 | --- | --- |
 | **BLOB** | [Azure Storage v10 SDK for JavaScript を使用して BLOB のアップロード、ダウンロード、一覧表示、削除を行う](/azure/storage/blobs/storage-quickstart-blobs-nodejs-v10) |
 | **キュー** | [Node.js から Queue ストレージを使用する方法](/azure/storage/queues/storage-nodejs-how-to-use-queues) |

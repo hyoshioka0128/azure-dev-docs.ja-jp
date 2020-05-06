@@ -6,10 +6,10 @@ ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 1/20/2020
 ms.openlocfilehash: c6586f0ba2e651445e95fa3606daa35ee566df87
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81673478"
 ---
 # <a name="migrate-tomcat-applications-to-tomcat-on-azure-app-service"></a>Tomcat アプリケーションを Azure App Service 上の Tomcat に 移行する
@@ -78,7 +78,7 @@ Tomcat の組み込みの [PersistentManager](https://tomcat.apache.org/tomcat-9
 
 [Tomcat クラスタリング](https://tomcat.apache.org/tomcat-9.0-doc/cluster-howto.html) は Azure App Service ではサポートされていません。 代わりに、Tomcat 固有の機能を使用せずに Azure App Service によってスケーリングと負荷分散を構成して管理できます。 セッション状態を別の場所に保持して、レプリカの間で使用できるようにすることができます。 詳細については、「[ID セッションの永続化メカニズム](#identify-session-persistence-mechanism)」を参照してください。
 
-アプリケーションでクラスタリングが使用されているかどうかを判断するには、*server.xml* ファイルの `<Host>` または `<Engine>` 要素内で `<Cluster>` 要素を探します。
+アプリケーションでクラスタリングが使用されているかどうかを判断するには、`<Cluster>`server.xml`<Host>` ファイルの `<Engine>` または *要素内で* 要素を探します。
 
 #### <a name="identify-all-outside-processesdaemons-running-on-the-production-servers"></a>実稼働サーバーで実行されているすべての外部プロセス/デーモンを識別する
 
@@ -88,13 +88,13 @@ Tomcat の組み込みの [PersistentManager](https://tomcat.apache.org/tomcat-9
 
 App Service では、1 つの HTTP コネクタのみがサポートされます。 アプリケーションで AJP コネクタなどの追加のコネクタが必要な場合は、App Service を使用しないでください。
 
-アプリケーションによって使用されている HTTP コネクタを特定するには、Tomcat 構成の *server.xml* ファイル内で `<Connector>` 要素を探します。
+アプリケーションによって使用されている HTTP コネクタを特定するには、Tomcat 構成の `<Connector>`server.xml*ファイル内で* 要素を探します。
 
 #### <a name="determine-whether-memoryrealm-is-used"></a>MemoryRealm が使用されているかどうかを判断する
 
 [MemoryRealm](https://tomcat.apache.org/tomcat-9.0-doc/api/org/apache/catalina/realm/MemoryRealm.html) には、永続化された XML ファイルが必要です。 Azure AppService では、このファイルを */home* ディレクトリかそのサブディレクトリ、またはマウントされたストレージにアップロードする必要があります。 `pathName` パラメーターは適宜変更する必要があります。
 
-`MemoryRealm` が現在使用されているかどうかを確認するには、*server.xml* および *context.xml* ファイルを調べ、`className` 属性が `org.apache.catalina.realm.MemoryRealm` に設定されている `<Realm>` 要素を検索します。
+`MemoryRealm` が現在使用されているかどうかを確認するには、*server.xml* および *context.xml* ファイルを調べ、`<Realm>` 属性が `className` に設定されている `org.apache.catalina.realm.MemoryRealm` 要素を検索します。
 
 #### <a name="determine-whether-ssl-session-tracking-is-used"></a>SSL セッションの追跡が使用されているかどうかを判断する
 
@@ -180,7 +180,7 @@ Web アプリが作成されたら、[利用可能なデプロイ メカニズ�
 
 ### <a name="migrate-data-sources-libraries-and-jndi-resources"></a>データソース、ライブラリ、および JNDI リソースを移行する
 
-データ ソースの構成手順については、「[Azure App Service 向けの Linux Java アプリを構成する](/azure/app-service/containers/configure-language-java)」の「[データ ソース](/azure/app-service/containers/configure-language-java#data-sources)」セクションを参照してください。
+データ ソースの構成手順については、「[Azure App Service 向けの Linux Java アプリを構成する](/azure/app-service/containers/configure-language-java#data-sources)」の「[データ ソース](/azure/app-service/containers/configure-language-java)」セクションを参照してください。
 
 [!INCLUDE[Tomcat datasource additional instructions](includes/tomcat-datasource-additional-instructions.md)]
 

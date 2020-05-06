@@ -11,10 +11,10 @@ ms.topic: article
 ms.workload: web
 ms.custom: seo-java-july2019, seo-java-august2019, seo-java-september2019
 ms.openlocfilehash: 75e9926c80dbd25a5a94de7a32d5ecd2e9996fbb
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81668358"
 ---
 # <a name="use-maven-for-azure-web-apps-to-deploy-a-spring-boot-app-in-azure-container-registry-to-azure-app-service"></a>Azure Web Apps 用の Maven を使用して Azure Container Registry の Spring Boot アプリを Azure App Service にデプロイする
@@ -212,7 +212,7 @@ ms.locfileid: "81668358"
    |   `<client>`    |                                                             サービス プリンシパルの `appId` 値が含まれています。                                                             |
    |   `<tenant>`    |                                                            サービス プリンシパルの `tenant` 値が含まれています。                                                             |
    |     `<key>`     |                                                           サービス プリンシパルの `password` 値が含まれています。                                                            |
-   | `<environment>` | ターゲットの Azure クラウド環境を定義します。この例では `AZURE` です (環境の全リストは、「[Maven Plugin for Azure Web Apps (Azure Web Apps 用の Maven プラグイン)]」のドキュメントに記載しています) |
+   | `<environment>` | ターゲットの Azure クラウド環境を定義します。この例では `AZURE` です  (環境の全リストは、「[Maven Plugin for Azure Web Apps (Azure Web Apps 用の Maven プラグイン)]」のドキュメントに記載しています) |
 
 
 4. *settings.xml* ファイルを保存して閉じます。
@@ -317,8 +317,8 @@ Maven プラグイン用に変更できる値は複数あります。これら�
 | `<version>` | [Maven Plugin for Azure Web Apps (Azure Web Apps 用の Maven プラグイン)]のバージョンを指定します。 最新バージョンを使用していることを確認するために、[Maven Central Respository](https://search.maven.org/#search%7Cga%7C1%7Ca%3A%22azure-webapp-maven-plugin%22) で一覧表示されているバージョンを確認してください。 |
 | `<authentication>` | Azure の認証情報を指定します。この例では `azure-auth` を含む `<serverId>` 要素が認証情報です。Maven はこの値を、この記事の前のセクションで定義した Maven の*settings.xml* ファイル内にある Azure サービス プリンシパルを見つけるために使います。 |
 | `<resourceGroup>` | ターゲット リソース グループを指定します。この例では `wingtiptoysresources` です。 リソース グループが存在しない場合は、デプロイ中に新しいリソース グループが作成されます。 |
-| `<appName>` | Web アプリのターゲット名を指定します。 この例では、ターゲット名は `maven-linux-app-${maven.build.timestamp}` です。混乱を避けるため、この例ではサフィックスの `${maven.build.timestamp}` を追加しています (タイムスタンプは省略可能です。アプリ名には一意の文字列を指定できます)。 |
-| `<region>` | ターゲット リージョンを指定します。この例では `westus` です (完全なリストについては、「[Maven Plugin for Azure Web Apps (Azure Web Apps 用の Maven プラグイン)]」 をご覧ください)。 |
+| `<appName>` | Web アプリのターゲット名を指定します。 この例では、ターゲット名は `maven-linux-app-${maven.build.timestamp}` です。混乱を避けるため、この例ではサフィックスの `${maven.build.timestamp}` を追加しています  (タイムスタンプは省略可能です。アプリ名には一意の文字列を指定できます)。 |
+| `<region>` | ターゲット リージョンを指定します。この例では `westus` です  (完全なリストについては、「[Maven Plugin for Azure Web Apps (Azure Web Apps 用の Maven プラグイン)]」 をご覧ください)。 |
 | `<containerSettings>` | コンテナーの名前を含むプロパティと URL を含むプロパティを指定します。 |
 | `<appSettings>` | Azure に Web アプリをデプロイするときに使用するために、Maven 用の一意の設定を指定します。 この例では、`<property>` 要素には、アプリのポートを指定する子要素の名前と値のペアが含まれています。 |
 

@@ -10,10 +10,10 @@ ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azurecli
 ms.openlocfilehash: aaf9969030512668b22c1b5bbfbd2a9a7d7ae47d
-ms.sourcegitcommit: 36e02e96b955ed0531f98b9c0f623f4acb508661
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "82030964"
 ---
 # <a name="azure-services-the-azure-cli-can-manage"></a>Azure CLI で管理できる Azure サービス
@@ -60,7 +60,7 @@ Azure CLI は多くの Azure サービスで利用でき、Azure リソースを
 ||[Azure DevOps](/azure/devops/)
 ||[Azure IoT Edge](/azure/iot-edge/)
 ||[Azure SQL Database](/azure/sql-database/)
-|[ID](popular-articles-using-the-azure-cli.md)|[Azure Active Directory (AD)](/azure/active-directory/)
+|[[ID]](popular-articles-using-the-azure-cli.md)|[Azure Active Directory (AD)](/azure/active-directory/)
 |[統合](popular-articles-using-the-azure-cli.md)|[Event Grid](/azure/event-grid/)
 ||[Service Bus](/azure/service-bus/)
 |[モノのインターネット (IoT)](/cli/azure/popular-articles-using-the-azure-cli?#internet-of-things)|[Azure Cosmos DB](/azure/cosmos-db/)
@@ -81,7 +81,7 @@ Azure CLI は多くの Azure サービスで利用でき、Azure リソースを
 ||[Load Balancer](/azure/load-balancer/)
 ||[Traffic Manager](/azure/traffic-manager/)
 ||[Virtual Network](/azure/virtual-network/)
-|[Security](/cli/azure/popular-articles-using-the-azure-cli?#security)|[Azure Active Directory (AD)](/azure/active-directory/)
+|[セキュリティ](/cli/azure/popular-articles-using-the-azure-cli?#security)|[Azure Active Directory (AD)](/azure/active-directory/)
 ||[Key Vault](/azure/key-vault/)
 |[Storage](/cli/azure/popular-articles-using-the-azure-cli?#storage)|[Azure Backup](/azure/backup/)
 ||[Azure Data Lake Storage](/azure/storage/blobs/data-lake-storage-introduction/)
@@ -92,7 +92,7 @@ Azure CLI は多くの Azure サービスで利用でき、Azure リソースを
 ||[Azure Spring Cloud](/azure/spring-cloud/)
 ||[Notification Hubs](/azure/notification-hubs/)
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [Azure CLI の概要](get-started-with-azure-cli.md)
 - [Azure CLI の完全なコマンド リファレンス一覧](/cli/azure/reference-index)

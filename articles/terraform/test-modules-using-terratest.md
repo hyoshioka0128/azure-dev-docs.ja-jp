@@ -4,10 +4,10 @@ description: Terratest を使用して Terraform モジュールをテストす�
 ms.topic: tutorial
 ms.date: 10/26/2019
 ms.openlocfilehash: 75462d5aec46ea647d4a6ddd1d2c47ba40c6fa32
-ms.sourcegitcommit: 9ff9b51ab21c93bfd61e480c6ff8e39c9d4bf02e
+ms.sourcegitcommit: 756e4873f904db954a56c20ebb2f1f5116ee4596
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "82172058"
 ---
 # <a name="tutorial-test-terraform-modules-in-azure-using-terratest"></a>チュートリアル:Terratest を使用して Azure で Terraform モジュールをテストする

@@ -7,10 +7,10 @@ ms.author: seal
 ms.date: 08/21/2019
 ms.topic: article
 ms.openlocfilehash: d997b679d1a608351748b67f99977d48d95febe2
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81674298"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-service-bus-jms"></a>Azure Service Bus JMS 用の Spring Boot スターターの使用方法
@@ -202,7 +202,7 @@ Azure Service Bus JMS 用の Spring Boot スターターを使用すると、Spr
     }
     ```
 
-    Spring フレームワークで `JmsTemplate` の `send` メソッドを使用するために、`Serializable` が実装されます。 それ以外の場合は、テキスト形式の json に内容をシリアル化するために、カスタマイズした `MessageConverter` bean を定義する必要があります。 `MessageConverter` の詳細については、公式の [Spring JMS スターター プロジェクト](https://spring.io/guides/gs/messaging-jms/)を参照してください。
+    Spring フレームワークで `Serializable` の `send` メソッドを使用するために、`JmsTemplate` が実装されます。 それ以外の場合は、テキスト形式の json に内容をシリアル化するために、カスタマイズした `MessageConverter` bean を定義する必要があります。 `MessageConverter` の詳細については、公式の [Spring JMS スターター プロジェクト](https://spring.io/guides/gs/messaging-jms/)を参照してください。
 
 1. *User.java* ファイルを保存して閉じます。
 

@@ -5,15 +5,15 @@ ms.topic: article
 ms.date: 08/20/2019
 ms.custom: seo-javascript-september2019
 ms.openlocfilehash: 6c804185859611f4534d5fa4e62b8e2585d14aa5
-ms.sourcegitcommit: e77f8f652128b798dbf972078a7b460ed21fb5f8
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/25/2019
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "74467246"
 ---
 # <a name="build-jamstack-static-site-web-apps-on-azure-with-nodejs"></a>Node.js を使用して Azure で JAMstack (静的サイト) Web アプリを作成する
 
-優れた Web アプリは、*JavaScript* フロント エンドと *API* (サーバーレス コードとして作成されたサードパーティまたはカスタムの API)、そして、静的ページとして返されるテンプレート化された "*マークアップ*" (HTML と CSS) とを組み合わせて生産的に作成、保守することができます。 JAMstack としても知られるこの組み合わせを利用すれば、Web ページを返す複雑なバック エンド コードを書かずに済みます。 システムから返されるのは静的ページ (HTML、CSS、JavaScript) のみであり、サーバー側の処理用の API は、それらのページから要求されます。 それらの API は、自動でスケーリングするサーバーレス技術を使って記述できるため、標準的な常時稼動のサーバーや Web ホストを使用するのに伴うコストやセキュリティ上の懸念は一切ありません (詳細については、[jamstack.org](https://jamstack.org/) を参照)。
+優れた Web アプリは、*JavaScript* フロント エンドと *API* (サーバーレス コードとして作成されたサードパーティまたはカスタムの API)、そして、静的ページとして返されるテンプレート化された "*マークアップ*" (HTML と CSS) とを組み合わせて生産的に作成、保守することができます。 JAMstack としても知られるこの組み合わせを利用すれば、Web ページを返す複雑なバック エンド コードを書かずに済みます。 システムから返されるのは静的ページ (HTML、CSS、JavaScript) のみであり、サーバー側の処理用の API は、それらのページから要求されます。 それらの API は、自動でスケーリングするサーバーレス技術を使って記述できるため、標準的な常時稼動のサーバーや Web ホストを使用するのに伴うコストやセキュリティ上の懸念は一切ありません  (詳細については、[jamstack.org](https://jamstack.org/) を参照)。
 
 Azure で静的 (JAMstack) サイトを実装するには、さまざまなツールとサービスを使用します。
 

@@ -5,10 +5,10 @@ keywords: jenkins, azure, devops, portal, linux, 仮想マシン, ソリュー�
 ms.topic: quickstart
 ms.date: 03/03/2020
 ms.openlocfilehash: 2ea038dad2294784804f45026ea26198a9b12d79
-ms.sourcegitcommit: 9ff9b51ab21c93bfd61e480c6ff8e39c9d4bf02e
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "82170338"
 ---
 # <a name="quickstart-create-a-jenkins-server-on-an-azure-linux-vm"></a>クイック スタート:Azure Linux VM に Jenkins サーバーを作成する

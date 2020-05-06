@@ -5,10 +5,10 @@ keywords: azure、chef、devops、仮想マシン、概要、自動化
 ms.date: 02/22/2020
 ms.topic: article
 ms.openlocfilehash: 94cfe5d57673db151d53133fb8b2ef66c5629b93
-ms.sourcegitcommit: a32ca0946275165ce24216c6fa243ec21d6c9193
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "80892991"
 ---
 # <a name="using-chef-with-azure"></a>Azure で Chef を使用する
@@ -19,7 +19,7 @@ ms.locfileid: "80892991"
 
 ## <a name="chef-extension-on-azure"></a>Azure での Chef 拡張機能
 
-[Azure portal](https://go.microsoft.com/fwlink/p/?LinkID=525040) 上の [Chef 拡張機能](https://docs.microsoft.com/azure/chef/chef-extension-portal)でバックグラウンド サービスとして実行されている Chef Client を使用して仮想マシンをプロビジョニングします。 プロビジョニングが済むと、これらの仮想マシンは Chef サーバーで管理できるようになります。
+[Azure portal](https://docs.microsoft.com/azure/chef/chef-extension-portal) 上の [Chef 拡張機能](https://go.microsoft.com/fwlink/p/?LinkID=525040)でバックグラウンド サービスとして実行されている Chef Client を使用して仮想マシンをプロビジョニングします。 プロビジョニングが済むと、これらの仮想マシンは Chef サーバーで管理できるようになります。
 
 ## <a name="chef-cloud-shell"></a>Chef Cloud Shell
 

@@ -11,10 +11,10 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: data-services
 ms.openlocfilehash: eb13be08f7fc5eb7b907360571fbc1db1abf0d26
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81669168"
 ---
 # <a name="how-to-use-the-spring-boot-starter-with-the-azure-cosmos-db-sql-api"></a>Azure Cosmos DB SQL API で Spring Boot Starter を使用する方法
@@ -58,9 +58,9 @@ Azure Cosmos DB は、開発者が SQL、MongoDB、Graph、Table API などの�
 
 ## <a name="create-a-simple-spring-boot-application-with-the-spring-initializr"></a>Spring Initializr でシンプルな Spring Boot アプリケーションを作成する
 
-次の手順を使用して、Azure サポートで新しい Spring Boot アプリケーション プロジェクトを作成します。 別の方法として、[azure-spring-boot](https://github.com/microsoft/azure-spring-boot)リポジトリの [azure-cosmosdb-spring-boot-sample](https://github.com/microsoft/azure-spring-boot/tree/master/azure-spring-boot-samples/azure-cosmosdb-spring-boot-sample) サンプルを使用することもできます。 その後、そのまま「[アプリのビルドとテスト](#build-and-test-your-app)」に進むことができます。
+次の手順を使用して、Azure サポートで新しい Spring Boot アプリケーション プロジェクトを作成します。 別の方法として、[azure-spring-boot](https://github.com/microsoft/azure-spring-boot/tree/master/azure-spring-boot-samples/azure-cosmosdb-spring-boot-sample)リポジトリの [azure-cosmosdb-spring-boot-sample](https://github.com/microsoft/azure-spring-boot) サンプルを使用することもできます。 その後、そのまま「[アプリのビルドとテスト](#build-and-test-your-app)」に進むことができます。
 
-1. <https://start.spring.io/> を参照します。
+1. [https://www.microsoft.com](<https://start.spring.io/>) を参照します。
 
 1. **Java** で **Maven プロジェクト**を生成することを指定し、**Spring Boot** のバージョンを指定して、アプリケーションの **[グループ]** と **[アーティファクト]** に名前を入力します。依存関係に **Azure サポート**を追加してから、 **[プロジェクトの生成]** のボタンをクリックします。
 
@@ -412,7 +412,7 @@ Azure Cosmos DB と Java の使用について詳しくは、次の記事をご�
 
 * [Azure Cosmos DB のドキュメント]。
 
-* [Azure Cosmos DB:Java と Azure portal を使用してドキュメント データベースを作成する][Build a SQL API app with Java]
+* [Azure Cosmos DB: ドキュメント データベースを Java と Azure portal で作成する][Build a SQL API app with Java]
 
 * [Azure Cosmos DB SQL API の Spring Data]
 

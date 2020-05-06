@@ -4,10 +4,10 @@ description: チュートリアル パート 5、リソースをクリーンア�
 ms.topic: conceptual
 ms.date: 03/04/2020
 ms.openlocfilehash: 1c3b277270bf6f8f7cb5884b7bb56ce2c9b3368c
-ms.sourcegitcommit: 56e5f51daf6f671f7b6e84d4c6512473b35d31d2
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/07/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "78894211"
 ---
 # <a name="clean-up-resources"></a>リソースをクリーンアップする

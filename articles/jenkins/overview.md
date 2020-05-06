@@ -5,10 +5,10 @@ keywords: Jenkins, Azure, 開発, 概要
 ms.topic: overview
 ms.date: 10/23/2019
 ms.openlocfilehash: f630dd601cc384588ae4d3af1a051b5c706de0b6
-ms.sourcegitcommit: 9ff9b51ab21c93bfd61e480c6ff8e39c9d4bf02e
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "82171128"
 ---
 # <a name="azure-and-jenkins"></a>Azure と Jenkins
@@ -33,7 +33,7 @@ Azure Jenkins のデプロイは、[Azure Monitor ログ](/azure/log-analytics/l
 
 [Azure サービス プリンシパル](/azure/azure-resource-manager/resource-group-overview)で構成したら、Jenkins のジョブとパイプラインでは、その資格情報を使用することで次が実現します。
 
-- [Azure Storage プラグイン](https://plugins.jenkins.io/windows-azure-storage)を使用して、ビルド アーティファクトを [Azure Storage](/azure/storage/common/storage-introduction) に安全に格納およびアーカイブする。 詳細については、[Jenkins ストレージの操作方法](azure-storage-blobs-as-build-artifact-repository.md)に関するページをご覧ください。
+- [Azure Storage プラグイン](/azure/storage/common/storage-introduction)を使用して、ビルド アーティファクトを [Azure Storage](https://plugins.jenkins.io/windows-azure-storage) に安全に格納およびアーカイブする。 詳細については、[Jenkins ストレージの操作方法](azure-storage-blobs-as-build-artifact-repository.md)に関するページをご覧ください。
 - [Azure CLI](/azure/jenkins/deploy-to-azure-app-service-using-azure-cli) を使用して Azure リソースを管理および構成する。
 
 ## <a name="deploy-your-code-into-azure-services"></a>Azure サービスにコードをデプロイする

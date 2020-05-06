@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.service: azure-cli
 ms.devlang: azurecli
 ms.openlocfilehash: 26112c9a7f338a7f178dc627d89f6e1f33d97714
-ms.sourcegitcommit: 36e02e96b955ed0531f98b9c0f623f4acb508661
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "82030864"
 ---
 # <a name="sign-in-with-azure-cli"></a>Azure CLI を使用してサインインする 
@@ -42,7 +42,7 @@ az login -u <username> -p <password>
 ```
 
 > [!IMPORTANT]
-> `az login` を対話形式で使用しているときに、コンソールにパスワードが表示されないようにするには、`bash` では `read -s` コマンドを使用します。
+> `az login` を対話形式で使用しているときに、コンソールにパスワードが表示されないようにするには、`read -s` では `bash` コマンドを使用します。
 >
 > ```bash
 > read -sp "Azure password: " AZ_PASS && echo && az login -u <username> -p $AZ_PASS
@@ -78,7 +78,7 @@ az login --service-principal -u <app-url> -p <password-or-cert> --tenant <tenant
 ```
 
 > [!IMPORTANT]
-> `az login` を対話形式で使用しているときに、コンソールにパスワードが表示されないようにするには、`bash` では `read -s` コマンドを使用します。
+> `az login` を対話形式で使用しているときに、コンソールにパスワードが表示されないようにするには、`read -s` では `bash` コマンドを使用します。
 >
 > ```bash
 > read -sp "Azure password: " AZ_PASS && echo && az login --service-principal -u <app-url> -p $AZ_PASS --tenant <tenant>

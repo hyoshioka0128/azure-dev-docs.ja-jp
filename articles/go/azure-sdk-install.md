@@ -4,10 +4,10 @@ description: Azure SDK for Go のインストール、ベンダリング、構�
 ms.date: 03/14/2018
 ms.topic: conceptual
 ms.openlocfilehash: 55b841101f2307e869a57193ce6d678f298b8e6e
-ms.sourcegitcommit: 31f6d047f244f1e447faed6d503afcbc529bd28c
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "80319799"
 ---
 # <a name="install-the-azure-sdk-for-go"></a>Azure SDK for Go のインストール
@@ -30,7 +30,7 @@ Azure SDK for Go へようこそ。 この SDK を使用すると、Go アプリ
 
 ## <a name="vendor-the-azure-sdk-for-go"></a>Azure SDK for Go をベンダリングする
 
-Azure SDK for Go は、[dep](https://github.com/golang/dep) を使用してベンダリングできます。 安定性のため、ベンダリングすることをお勧めします。 独自のプロジェクトで `dep` を使用するには、`github.com/Azure/azure-sdk-for-go` を `Gopkg.toml` の `[[constraint]]` セクションに追加します。 たとえば、バージョン `14.0.0` でベンダリングするには、次のエントリを追加します。
+Azure SDK for Go は、[dep](https://github.com/golang/dep) を使用してベンダリングできます。 安定性のため、ベンダリングすることをお勧めします。 独自のプロジェクトで `dep` を使用するには、`github.com/Azure/azure-sdk-for-go` を `[[constraint]]` の `Gopkg.toml` セクションに追加します。 たとえば、バージョン `14.0.0` でベンダリングするには、次のエントリを追加します。
 
 ```toml
 [[constraint]]

@@ -4,10 +4,10 @@ description: チュートリアル パート 3、Web サイトをデプロイす
 ms.topic: conceptual
 ms.date: 03/04/2020
 ms.openlocfilehash: 7e7a6c765b79878ca3ddc86bd16349694cb7ded6
-ms.sourcegitcommit: 0cf7703a8b26469bb58840853ce9135b5adf4417
+ms.sourcegitcommit: 756e4873f904db954a56c20ebb2f1f5116ee4596
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/18/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "79510600"
 ---
 # <a name="deploy-the-app-to-azure"></a>Azure にアプリケーションをデプロイする
@@ -40,7 +40,7 @@ ms.locfileid: "79510600"
     - **[Enter a globally unique name]\(グローバルに一意の名前を入力する\)** に、Azure 全体で一意の名前を入力します。 英数字 ('A-Z'、'a-z'、および '0-9') とハイフン ('-') のみを使用します。
     - **[新しいリソース グループの作成]** を選択して、`AppServiceTutorial-rg` のような名前を指定します。
     - オペレーティング システム (Windows または Linux) を選択します。
-    - Linux のみ: Node.js バージョンを選択します (Windows の場合、後でアプリ設定を使ってバージョンを設定します)。
+    - Linux のみ: Node.js バージョンを選択します  (Windows の場合、後でアプリ設定を使ってバージョンを設定します)。
     - **[Create a new App Service plan]\(新しい App Service プランの作成\)** を選択して、`AppServiceTutorial-plan` のような名前を指定し、 **[F1 Free]** 価格レベルを選択します。
     - Application Insights リソースに対して **[Skip for now]\(今はしない\)** を選択します。
     - お近くの場所を選択します。

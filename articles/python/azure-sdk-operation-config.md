@@ -5,10 +5,10 @@ ms.date: 03/07/2018
 ms.topic: conceptual
 ms.custom: seo-python-october2019
 ms.openlocfilehash: b0aaaf5bcd51bce42ab38830d5dbce508db226b1
-ms.sourcegitcommit: 1bd9ec6a4115e9162e33b76a933869788e6ab702
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/31/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "80441697"
 ---
 # <a name="parameters-for-operation-configuration"></a>操作の構成用のパラメーター
@@ -19,7 +19,7 @@ Azure SDK for Python では、操作のメソッドに追加のパラメータ�
 
 操作の構成のオプションは次のとおりです。
 
-|パラメーター名|Type|Role|
+|パラメーター名|種類|Role|
 |----------------------|------|---------------|
 | 確認 |`bool`|SSL 証明書を確認するかどうか。 既定値は True です。|
 |  cert |`str`| クライアント側で確認するためのローカル証明書へのパス。|

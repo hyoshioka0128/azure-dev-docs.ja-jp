@@ -5,10 +5,10 @@ keywords: ansible, azure, devops, bash, プレイブック, 仮想マシン, 仮
 ms.topic: tutorial
 ms.date: 04/30/2019
 ms.openlocfilehash: fedd2cff7d9e4a51c681d06e86899ef9e8227454
-ms.sourcegitcommit: eabc9e3fb8ad0f067be5ed878c2eacebd461b6ce
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81743845"
 ---
 # <a name="tutorial-configure-virtual-machine-scale-sets-in-azure-using-ansible"></a>チュートリアル:Ansible を使用して Azure 内に仮想マシン スケール セットを構成する

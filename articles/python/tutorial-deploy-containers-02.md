@@ -5,10 +5,10 @@ ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: seo-python-october2019
 ms.openlocfilehash: 8005ba428d99051d9b5b86ed4f5222c1cd9ba673
-ms.sourcegitcommit: 1bd9ec6a4115e9162e33b76a933869788e6ab702
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/31/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "80441347"
 ---
 # <a name="2-deploy-a-container-image-to-azure-app-service"></a>2:コンテナー イメージを Azure App Service にデプロイする
@@ -29,9 +29,9 @@ ms.locfileid: "80441347"
 
     ![イメージを作成して Azure App Service にデプロイする](media/deploy-containers/deploy-image-to-azure-app-service.gif)
 
-    **リソース グループ**は、アプリを構成するさまざまなリソースの名前付きコレクションです。 アプリのリソースすべてを 1 つのグループに割り当てることで、それらのリソースを 1 つのユニットとして簡単に管理できます (詳細については、Azure ドキュメントの「[Azure Resource Manager の概要](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview)」を参照してください)。
+    **リソース グループ**は、アプリを構成するさまざまなリソースの名前付きコレクションです。 アプリのリソースすべてを 1 つのグループに割り当てることで、それらのリソースを 1 つのユニットとして簡単に管理できます  (詳細については、Azure ドキュメントの「[Azure Resource Manager の概要](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview)」を参照してください)。
 
-    **App Service プラン**は、実行中のコンテナーをホストする物理リソース (基になる仮想マシン) を定義します。 このチュートリアルでは、B1 が、Docker コンテナーをサポートする最も低コストのプランです (詳細については、Azure ドキュメントの [App Service プランの概要](https://docs.microsoft.com/azure/app-service/azure-web-sites-web-hosting-plans-in-depth-overview)に関する記事を参照してください)。
+    **App Service プラン**は、実行中のコンテナーをホストする物理リソース (基になる仮想マシン) を定義します。 このチュートリアルでは、B1 が、Docker コンテナーをサポートする最も低コストのプランです  (詳細については、Azure ドキュメントの [App Service プランの概要](https://docs.microsoft.com/azure/app-service/azure-web-sites-web-hosting-plans-in-depth-overview)に関する記事を参照してください)。
 
     App Service の名前は Azure 全体で一意である必要があるため、通常は会社名または個人名を使用します。 運用サイトでは、通常、App Service を構成する際に、個別に登録されたドメイン名を使用します。
 

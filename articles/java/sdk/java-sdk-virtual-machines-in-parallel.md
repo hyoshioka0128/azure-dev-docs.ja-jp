@@ -7,10 +7,10 @@ ms.topic: article
 ms.date: 03/30/2017
 ms.reviewer: asirveda
 ms.openlocfilehash: 7e50a18346eb9bd2bee50bf2ea2d65cd94381292
-ms.sourcegitcommit: 3c69d7c3e5c5a00a01ee18e63b0659830c7d4ec0
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "82104973"
 ---
 # <a name="create-virtual-machines-across-multiple-regions-from-your-java-applications"></a>Java アプリケーションから複数のリージョンに対して仮想マシンを作成する
@@ -147,7 +147,7 @@ for (String publicIpCreatableKey : publicIpCreatableKeys) {
 
 `azure.virtualMachines().create(creatableVirtualMachines)` の呼び出しによって、`creatableVirtualMachines` リストに定義されているすべての仮想マシンが複数のリージョンに対して同時に作成されます。
 
-これによって取得した `CreatedResources<VirtualMachine>` オブジェクトを使用すると、返された `VirtualMachine` 型だけでなく、`create()` メソッドの実行時に Azure サブスクリプションに作成されたすべてのリソースにアクセスできます。 返された値は、`createdRelatedResources()` から適切な型にキャストします。 
+これによって取得した `CreatedResources<VirtualMachine>` オブジェクトを使用すると、返された `create()` 型だけでなく、`VirtualMachine` メソッドの実行時に Azure サブスクリプションに作成されたすべてのリソースにアクセスできます。 返された値は、`createdRelatedResources()` から適切な型にキャストします。 
 
 `Creatable<T>` と `CreatedResources` の使い方について詳しくは、[ライブラリの概念に関する記事](java-sdk-azure-concepts.md)を参照してください。
 
@@ -183,7 +183,7 @@ finally {
 
 万一エラーが発生した場合でも、`finally` ブロックで、Azure サブスクリプションからリソースが削除されます。
 
-| サンプルで使われているクラス | Notes
+| サンプルで使われているクラス | メモ
 |-------|-------|
 | [VirtualMachine](/java/api/com.microsoft.azure.management.compute.virtualmachine) | 仮想マシンのプロパティを照会したり、仮想マシンの状態を管理したりすることができます。 `azure.virtualMachines().list()` からリスト形式で取得するか、`azure.virtualMachines().getByResourceGroup()` から名前または ID で取得します。
 | [VirtualMachineSizeTypes](/java/api/com.microsoft.azure.management.compute.virtualmachinesizetypes) | [仮想マシン サイズのオプション](https://azure.microsoft.com/pricing/details/virtual-machines/linux/)に対応する静的な値です。仮想マシンを定義するときに、`withSize()` に渡すパラメーターとして使用されます。

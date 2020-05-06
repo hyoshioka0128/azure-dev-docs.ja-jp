@@ -8,10 +8,10 @@ ms.service: cache
 ms.tgt_pltfrm: cache-redis
 ms.topic: conceptual
 ms.openlocfilehash: ece597db7475d371c54664d61498d6a89f8c76cb
-ms.sourcegitcommit: 3c69d7c3e5c5a00a01ee18e63b0659830c7d4ec0
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "82104833"
 ---
 # <a name="configure-a-spring-boot-initializer-app-to-use-redis-in-the-cloud-with-azure-redis-cache"></a>Azure Redis Cache によってクラウドで Redis を使用するように Spring Boot Initializer アプリを構成する
@@ -28,7 +28,7 @@ ms.locfileid: "82104833"
 
 ## <a name="create-a-custom-application-using-the-spring-initializr"></a>Spring Initializr を使用してカスタム アプリケーションを作成する
 
-1. <https://start.spring.io/> を参照します。
+1. [https://www.microsoft.com](<https://start.spring.io/>) を参照します。
 
 1. **Java** で **Maven** プロジェクトを生成することを指定し、アプリケーションの **[グループ]** と **[アーティファクト]** に名前を入力します。
 

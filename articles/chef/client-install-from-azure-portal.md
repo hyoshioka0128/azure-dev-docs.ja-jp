@@ -5,10 +5,10 @@ keywords: azure、chef、devops、クライアント、インストール、ポ�
 ms.date: 02/22/2020
 ms.topic: article
 ms.openlocfilehash: b5dd158bd06511bf440228d4ae0948596bca0612
-ms.sourcegitcommit: a32ca0946275165ce24216c6fa243ec21d6c9193
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "80892901"
 ---
 # <a name="install-the-chef-client-from-the-azure-portal"></a>Azure portal から Chef クライアントをインストールする
@@ -16,9 +16,9 @@ Azure portal から Linux または Windows マシンに直接、Chef クライ�
 
 ## <a name="prerequisites"></a>前提条件
 
-- **Azure サブスクリプション**:Azure サブスクリプションをお持ちでない場合は、開始する前に [無料アカウント](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio) を作成してください。
+- **Azure サブスクリプション**: Azure サブスクリプションをお持ちでない場合は、開始する前に[無料アカウント](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio)を作成してください。
 
-- **Chef**:有効な Chef アカウントを持っていない場合は、[Hosted Chef の無料試用版](https://manage.chef.io/signup)にサインアップします。 この記事の指示に従って進めるには、Chef アカウントから次の値が必要になります。
+- **Chef**: 有効な Chef アカウントを持っていない場合は、[Hosted Chef の無料試用版](https://manage.chef.io/signup)にサインアップします。 この記事の指示に従って進めるには、Chef アカウントから次の値が必要になります。
   - organization_validation キー
   - rb
   - run_list

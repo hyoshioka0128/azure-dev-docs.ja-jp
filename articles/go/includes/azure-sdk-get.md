@@ -2,10 +2,10 @@
 ms.date: 09/05/2018
 ms.technology: azure-cli
 ms.openlocfilehash: af03f2efbb74e55dfcd14b6a2ac894a74eba321f
-ms.sourcegitcommit: 31f6d047f244f1e447faed6d503afcbc529bd28c
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/26/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "80319749"
 ---
 [Azure SDK for Go](https://github.com/Azure/azure-sdk-for-go) は、Go バージョン 1.8 以上と互換性があります。 [Azure Stack プロファイル](/azure/azure-stack/user/azure-stack-version-profiles-go)を使用している環境では、Go バージョン 1.9 が最小要件となります。

@@ -7,10 +7,10 @@ ms.topic: article
 ms.date: 3/30/2017
 ms.reviewer: asirveda
 ms.openlocfilehash: a048cded2659c1cee15b2e26a5f3c80df79e895c
-ms.sourcegitcommit: 3c69d7c3e5c5a00a01ee18e63b0659830c7d4ec0
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "82105003"
 ---
 # <a name="create-and-manage-azure-virtual-networks-from-your-java-apps"></a>Java アプリによる Azure 仮想ネットワークの作成と管理
@@ -171,7 +171,7 @@ azure.networks().deleteByResourceGroup(rgName,vnetName1);
 
 このサンプルでは、それぞれ 1 つの仮想マシンを含んだ 2 つのサブネットから成る仮想ネットワークを作成します。 バック サブネットは、パブリック インターネットから切り離します。 外部に公開されたフロント サブネットは、インターネットからの受信方向の HTTP トラフィックを受け入れます。 仮想ネットワーク内の 2 つの仮想マシンは、既定のネットワーク セキュリティ グループの規則に従って互いに通信を行います。
 
-| サンプルで使われているクラス | Notes
+| サンプルで使われているクラス | メモ
 |-------|-------|
 | [Network](/java/api/com.microsoft.azure.management.network.network) | `azure.networks().define()...create()` から作成された仮想ネットワークのローカル オブジェクトを表します。 `update()...apply()` という fluent チェーンを使用して、既存の仮想ネットワークを更新します。
 | [サブネット](/java/api/com.microsoft.azure.management.network.subnet) | 仮想ネットワーク上のサブネットは、そのネットワークを定義または更新するときに、`withSubnet()` を使って作成します。 サブネットのオブジェクト表現は、`Network.subnets().get()` または `Network.subnets().entrySet()` から取得します。 これらのオブジェクトには、サブネットのプロパティを照会するためのメソッドが用意されています。

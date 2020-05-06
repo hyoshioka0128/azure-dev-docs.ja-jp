@@ -10,10 +10,10 @@ ms.topic: article
 ms.workload: web
 ms.custom: seo-java-july2019, seo-java-august2019
 ms.openlocfilehash: b926b0bd1cb401f12f927abfea112e6004988812
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81668398"
 ---
 # <a name="use-maven-for-azure-web-apps-to-deploy-a-containerized-spring-boot-app-to-azure"></a>Azure Web Apps 用の Maven を使用して、コンテナー化された Spring Boot アプリを Azure にデプロイする
@@ -83,7 +83,7 @@ ms.locfileid: "81668398"
    curl http://localhost:8080
    ```
 
-1. 次のメッセージが表示されます。**Hello Docker World**
+1. 次のメッセージが表示されるはずです。**Hello Docker World**
 
 ## <a name="create-an-azure-service-principal"></a>Azure サービス プリンシパルを作成する
 
@@ -135,7 +135,7 @@ ms.locfileid: "81668398"
    * `%ProgramFiles%\apache-maven\3.5.0\conf\settings.xml`
    * `$HOME/.m2/settings.xml`
 
-2. このチュートリアルの前のセクションで説明した Azure サービス プリンシパルの設定を、次の例のように *settings.xml* ファイルの `<servers>` コレクションに追加します。
+2. このチュートリアルの前のセクションで説明した Azure サービス プリンシパルの設定を、次の例のように `<servers>`settings.xml*ファイルの* コレクションに追加します。
 
    ```xml
    <servers>
@@ -158,18 +158,18 @@ ms.locfileid: "81668398"
    |   `<client>`    |                                                             サービス プリンシパルの `appId` 値が含まれています。                                                             |
    |   `<tenant>`    |                                                            サービス プリンシパルの `tenant` 値が含まれています。                                                             |
    |     `<key>`     |                                                           サービス プリンシパルの `password` 値が含まれています。                                                            |
-   | `<environment>` | ターゲットの Azure クラウド環境を定義します。この例では `AZURE` です (環境の全リストは、「[Maven Plugin for Azure Web Apps (Azure Web Apps 用の Maven プラグイン)]」のドキュメントに記載しています) |
+   | `<environment>` | ターゲットの Azure クラウド環境を定義します。この例では `AZURE` です  (環境の全リストは、「[Maven Plugin for Azure Web Apps (Azure Web Apps 用の Maven プラグイン)]」のドキュメントに記載しています) |
 
 
 3. *settings.xml* ファイルを保存して閉じます。
 
-## <a name="optional-deploy-your-local-docker-file-to-docker-hub"></a>省略可能:ローカルの Docker ファイルを Docker Hub にデプロイします
+## <a name="optional-deploy-your-local-docker-file-to-docker-hub"></a>省略可能: ローカルの Docker ファイルを Docker Hub にデプロイします
 
 Docker アカウントがあれば、Docker コンテナー イメージをローカルで構築して Docker Hub にプッシュできます。 そのためには、次の手順に従います。
 
 1. Spring Boot アプリケーションの `pom.xml` ファイルをテキスト エディターで開きます。
 
-1. `<containerSettings>` 要素の `<imageName>` 子要素を見つけます。
+1. `<imageName>` 要素の `<containerSettings>` 子要素を見つけます。
 
 1. `${docker.image.prefix}` の値を Docker アカウント名に更新します。
    ```xml
@@ -191,9 +191,9 @@ Docker アカウントがあれば、Docker コンテナー イメージをロ�
       mvn clean package docker:build -DpushImage
       ```
 
-## <a name="optional-customize-your-pomxml-before-deploying-your-container-to-azure"></a>省略可能:コンテナーを Azure にデプロイする前に pom.xml をカスタマイズします
+## <a name="optional-customize-your-pomxml-before-deploying-your-container-to-azure"></a>省略可能: コンテナーを Azure にデプロイする前に pom.xml をカスタマイズします
 
-Spring Boot アプリケーションの `pom.xml` ファイルをテキスト エディターで開き、`azure-webapp-maven-plugin` の `<plugin>` 要素を見つけます。 この要素は次の例のようになっています。
+Spring Boot アプリケーションの `pom.xml` ファイルをテキスト エディターで開き、`<plugin>` の `azure-webapp-maven-plugin` 要素を見つけます。 この要素は次の例のようになっています。
 
    ```xml
    <plugin>
@@ -225,10 +225,10 @@ Maven プラグイン用に変更できる値は複数あります。これら�
 | 要素 | 説明 |
 |---|---|
 | `<version>` | [Maven Plugin for Azure Web Apps (Azure Web Apps 用の Maven プラグイン)]のバージョンを指定します。 [Maven Central Repository](https://search.maven.org/#search%7Cga%7C1%7Ca%3A%22azure-webapp-maven-plugin%22) に表示されているバージョンを確認して、最新バージョンを使用していることを確認してください。 |
-| `<authentication>` | Azure の認証情報を指定します。この例では `azure-auth` を含む `<serverId>` 要素が認証情報です。Maven はこの値を、この記事の前のセクションで定義した Maven の*settings.xml* ファイル内にある Azure サービス プリンシパルを見つけるために使います。 |
+| `<authentication>` | Azure の認証情報を指定します。この例では `<serverId>` を含む `azure-auth` 要素が認証情報です。Maven はこの値を、この記事の前のセクションで定義した Maven の*settings.xml* ファイル内にある Azure サービス プリンシパルを見つけるために使います。 |
 | `<resourceGroup>` | ターゲット リソース グループを指定します。この例では `maven-plugin` です。 リソース グループが存在しない場合は、デプロイ中に新しいリソース グループが作成されます。 |
-| `<appName>` | Web アプリのターゲット名を指定します。 この例では、ターゲット名は `maven-linux-app-${maven.build.timestamp}` です。混乱を避けるため、この例ではサフィックスの `${maven.build.timestamp}` を追加しています (タイムスタンプは省略可能です。アプリ名には一意の文字列を指定できます)。 |
-| `<region>` | ターゲット リージョンを指定します。この例では `westus` です (完全なリストについては、「[Maven Plugin for Azure Web Apps (Azure Web Apps 用の Maven プラグイン)]」 をご覧ください)。 |
+| `<appName>` | Web アプリのターゲット名を指定します。 この例では、ターゲット名は `maven-linux-app-${maven.build.timestamp}` です。混乱を避けるため、この例ではサフィックスの `${maven.build.timestamp}` を追加しています  (タイムスタンプは省略可能です。アプリ名には一意の文字列を指定できます)。 |
+| `<region>` | ターゲット リージョンを指定します。この例では `westus` です  (完全なリストについては、「[Maven Plugin for Azure Web Apps (Azure Web Apps 用の Maven プラグイン)]」 をご覧ください)。 |
 | `<appSettings>` | Azure に Web アプリをデプロイするときに使用するために、Maven 用の一意の設定を指定します。 この例では、`<property>` 要素には、アプリのポートを指定する子要素の名前と値のペアが含まれています。 |
 
 > [!NOTE]
@@ -254,7 +254,7 @@ Maven が Web アプリを Azure にデプロイします。Web アプリが存�
 
 > [!NOTE]
 >
-> デプロイ開始時に、*pom.xml* ファイルの `<region>` 要素で指定したリージョンに十分な数の使用可能なサーバーがない場合は、次の例のようなエラーが表示されることがあります。
+> デプロイ開始時に、`<region>`pom.xml*ファイルの* 要素で指定したリージョンに十分な数の使用可能なサーバーがない場合は、次の例のようなエラーが表示されることがあります。
 >
 > ```xml
 > [INFO] Start deploying to Web App maven-linux-app-20170804...

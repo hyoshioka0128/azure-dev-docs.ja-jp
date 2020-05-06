@@ -8,10 +8,10 @@ author: tomarchermsft
 ms.author: tarcher
 ms.date: 02/22/2020
 ms.openlocfilehash: 17fc56cbf3aaed573cead58eb8d436d99efa391b
-ms.sourcegitcommit: a32ca0946275165ce24216c6fa243ec21d6c9193
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "80893051"
 ---
 # <a name="quickstart---configure-a-windows-virtual-machine-in-azure-using-chef"></a>クイックスタート - Chef を使用して Azure で Windows 仮想マシンを構成する
@@ -71,7 +71,7 @@ SubscriptionID、TenantID、ClientID、およびクライアント シークレ�
 Chef サーバーを使用していない場合は、次の手順を実行できます。
 
 * [Hosted Chef](https://manage.chef.io/signup) をサインアップします。これは、Chef を開始する最も簡単な方法です。
-* [Chef ドキュメント](https://docs.chef.io/)の[インストール手順](https://docs.chef.io/install_server.html)に従って、Linux ベースのマシンにスタンドアロン Chef サーバーをインストールします。
+* [Chef ドキュメント](https://docs.chef.io/install_server.html)の[インストール手順](https://docs.chef.io/)に従って、Linux ベースのマシンにスタンドアロン Chef サーバーをインストールします。
 
 ### <a name="create-a-hosted-chef-account"></a>ホストされる Chef アカウントの作成
 
@@ -99,7 +99,7 @@ Chef サーバーを使用していない場合は、次の手順を実行でき
 
 `chef-starter\chef-repo\.chef` の下にあるすべてのファイルを `c:\chef` ディレクトリにコピーします。
 
-`organization-validator.pem` ファイルが `c:\Downloads` に保存されている場合は、そのファイルを `c:\chef` にコピーします。
+`organization-validator.pem` ファイルが `c:\chef` に保存されている場合は、そのファイルを `c:\Downloads` にコピーします。
 
 これでディレクトリは次の例のようになります。
 
@@ -273,7 +273,7 @@ C:\chef\cookbooks\webserver\recipes\default.rb ファイルを変更し、次の
 
 ## <a name="deploy-a-virtual-machine-with-knife-azure"></a>Knife Azure で仮想マシンをデプロイする
 
-Azure 仮想マシンをデプロイし、`knife` コマンドを使用して `Webserver` クックブックを適用します。
+Azure 仮想マシンをデプロイし、`Webserver` コマンドを使用して `knife` クックブックを適用します。
 
 `knife` コマンドを実行すると、IIS Web サービスと既定の Web ページもインストールされます。
 

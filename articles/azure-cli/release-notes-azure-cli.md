@@ -9,10 +9,10 @@ ms.topic: article
 ms.service: azure-cli
 ms.devlang: azurecli
 ms.openlocfilehash: 10dfdc316ba00f8a7019f0724aab231e344c1c6d
-ms.sourcegitcommit: 36e02e96b955ed0531f98b9c0f623f4acb508661
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "82031314"
 ---
 # <a name="azure-cli-release-notes"></a>Azure CLI リリース ノート
@@ -247,7 +247,7 @@ ms.locfileid: "82031314"
 ### <a name="network"></a>ネットワーク
 
 * az network application-gateway waf-policy managed-rule rule-set add: Microsoft_BotManagerRuleSet をサポートします
-* network watcher flow-log show:
+* network watcher flow-log show: 
 * Application Gateway リスナーでホスト名をサポートします
 * az network nat gateway: パブリック IP またはパブリック IP プレフィックスなしの空のリソースの作成をサポートします
 * VPN ゲートウェイの世代をサポートします
@@ -5029,7 +5029,7 @@ vm (2.0.6)
 
 * 基になるファイルシステム SDK のバージョンが更新され、サーバー側スロットル処理への対応が強化されました
 * パッケージ読み込みとコマンド実行のパフォーマンスが向上しています ([#2819](https://github.com/Azure/azure-cli/issues/2819))
-* access show のヘルプがなかったため、 追加しました ([#2743](https://github.com/Azure/azure-cli/issues/2743))
+* access show のヘルプがなかったため、 追加しました  ([#2743](https://github.com/Azure/azure-cli/issues/2743))
 
 ### <a name="find"></a>Find
 
@@ -5090,9 +5090,9 @@ vm (2.0.6)
 * managedapp と managedapp の定義コマンドが追加されました ([#2985](https://github.com/Azure/azure-cli/issues/2985))
 * "provider operation" コマンドに対応するようになりました ([#2908](https://github.com/Azure/azure-cli/issues/2908))
 * 汎用リソースの作成に対応するようになりました ([#2606](https://github.com/Azure/azure-cli/issues/2606))
-* リソース解析および API バージョンの検索が修正されました ([#2781](https://github.com/Azure/azure-cli/issues/2781))
-* az lock update のドキュメントが追加されました ([#2702](https://github.com/Azure/azure-cli/issues/2702))
-* 存在しないグループのリソースの一覧を表示しようとするとエラーが出力されます ([#2769](https://github.com/Azure/azure-cli/issues/2769))
+* リソース解析および API バージョンの検索が修正されました  ([#2781](https://github.com/Azure/azure-cli/issues/2781))
+* az lock update のドキュメントが追加されました  ([#2702](https://github.com/Azure/azure-cli/issues/2702))
+* 存在しないグループのリソースの一覧を表示しようとするとエラーが出力されます  ([#2769](https://github.com/Azure/azure-cli/issues/2769))
 * [コンピューティング] VMSS と VM の可用性セットの更新に関する問題が修正されました。 ([#2773](https://github.com/Azure/azure-cli/issues/2773))
 * parent-resource-path が None の場合のロックの作成と削除が修正されました ([#2742](https://github.com/Azure/azure-cli/issues/2742))
 
@@ -5170,16 +5170,16 @@ vm (2.0.2)
 * ログイン: 既定のサブスクリプションを "Enabled" の状態のサブスクリプションに設定 ([#2575](https://github.com/Azure/azure-cli/pull/2575))
 * wait コマンドと --no-wait のサポートをより多くのコマンドに追加 ([#2524](https://github.com/Azure/azure-cli/pull/2524))
 * コア: 証明書を持つサービス プリンシパルを使用したログインをサポート ([#2457](https://github.com/Azure/azure-cli/pull/2457))
-* 不足しているテンプレート パラメーターの指定を求めるメッセージを追加 ([#2364](https://github.com/Azure/azure-cli/pull/2364))
+* 不足しているテンプレート パラメーターの指定を求めるメッセージを追加  ([#2364](https://github.com/Azure/azure-cli/pull/2364))
 * 既定のリソース グループ、既定の Web、既定の VM など、一般的な引数の既定値の設定をサポート
 * 特定のテナントへのログインをサポート
 
 ### <a name="acs"></a>ACS
 
 * [ACS] 既定の ACS クラスターを構成するためのサポートを追加 ([#2554](https://github.com/Azure/azure-cli/pull/2554))
-* ssh キー パスワードの入力要求のサポートを追加 ([#2044](https://github.com/Azure/azure-cli/pull/2044))
-* Windows クラスターのためのサポートを追加 ([#2211](https://github.com/Azure/azure-cli/pull/2211))
-* 所有者から共同作成者へのロールの切り替え ([#2321](https://github.com/Azure/azure-cli/pull/2321))
+* ssh キー パスワードの入力要求のサポートを追加  ([#2044](https://github.com/Azure/azure-cli/pull/2044))
+* Windows クラスターのためのサポートを追加  ([#2211](https://github.com/Azure/azure-cli/pull/2211))
+* 所有者から共同作成者へのロールの切り替え  ([#2321](https://github.com/Azure/azure-cli/pull/2321))
 
 ### <a name="appservice"></a>AppService
 

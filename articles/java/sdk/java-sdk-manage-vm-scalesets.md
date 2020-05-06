@@ -7,15 +7,15 @@ ms.topic: article
 ms.date: 3/30/2017
 ms.reviewer: asirveda
 ms.openlocfilehash: 36fdd387653462e56ce2c93553e51da68e9d6d95
-ms.sourcegitcommit: 3c69d7c3e5c5a00a01ee18e63b0659830c7d4ec0
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "82105013"
 ---
 # <a name="manage-azure-virtual-machine-scale-sets-from-your-java-applications"></a>Azure 仮想マシン スケール セットを Java アプリケーションから管理する
 
-[このサンプル](https://github.com/Azure-Samples/compute-java-manage-virtual-machine-scale-sets)では、[Java 管理ライブラリ](https://github.com/Azure/azure-sdk-for-java)を使って[仮想マシン スケール セット](/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-overview)を作成します。 
+[このサンプル](https://github.com/Azure-Samples/compute-java-manage-virtual-machine-scale-sets)では、[Java 管理ライブラリ](/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-overview)を使って[仮想マシン スケール セット](https://github.com/Azure/azure-sdk-for-java)を作成します。 
 
 ## <a name="run-the-sample"></a>サンプルを実行する
 
@@ -224,7 +224,7 @@ virtualMachineScaleSet.update()
 
 [このサンプル コード](https://github.com/Azure-Samples/compute-java-manage-virtual-machine-scale-sets/blob/master/src/main/java/com/microsoft/azure/management/compute/samples/ManageVirtualMachineScaleSet.java)ではまず、スケール セットの仮想マシン間の通信に使用する仮想ネットワークを作成し、トラフィックを仮想マシン間で分散するためのロード バランサーを作成します。 Apache Web サーバーを実行する 3 つの Linux インスタンスから成るスケール セットが、`azure.virtualMachineScaleSets().define()...create()` メソッド チェーンによって作成されます。    
    
-| サンプルで使われているクラス | Notes
+| サンプルで使われているクラス | メモ
 |-------|-------|
 | [VirtualMachineScaleSet](/java/api/com.microsoft.azure.management.compute.virtualmachinescaleset) | スケール セットに含まれるすべての仮想マシンを対象に、照会、起動、停止、更新、削除を実行します。
 | [VirtualMachineScaleSetVM](/java/api/com.microsoft.azure.management.compute.virtualmachinescalesetvm) | `virtualMachineScaleSet.virtualMachines().get()` または `list()` から取得して、スケール セットの仮想マシンを対象に、照会、起動、停止、構成、削除を実行できます。

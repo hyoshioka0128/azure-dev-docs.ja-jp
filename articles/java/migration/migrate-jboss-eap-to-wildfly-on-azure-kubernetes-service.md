@@ -6,10 +6,10 @@ ms.author: manriem
 ms.topic: conceptual
 ms.date: 3/16/2020
 ms.openlocfilehash: a1ebbee2127c283e990021da0b395e9fbb7d883c
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81672838"
 ---
 # <a name="migrate-jboss-eap-applications-to-wildfly-on-azure-kubernetes-service"></a>JBoss EAP アプリケーションを Azure Kubernetes Service 上の WildFly に移行する

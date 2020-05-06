@@ -4,10 +4,10 @@ description: Node.js 用の Azure モジュールを使用した認証および�
 ms.date: 06/17/2017
 ms.topic: conceptual
 ms.openlocfilehash: 600c10c052a3aa95eb4dc04de0166a6974ede060
-ms.sourcegitcommit: aa2c66b0fecce51862cc9115f68d39c770f0b2ae
+ms.sourcegitcommit: 756e4873f904db954a56c20ebb2f1f5116ee4596
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "77709899"
 ---
 # <a name="get-started-with-the-azure-modules-for-nodejs"></a>Node.js 用 Azure モジュールの概要
@@ -36,7 +36,7 @@ npm install --save azure ms-rest-azure azure-arm-compute azure-arm-network azure
 
 このガイドのサンプル コードを実行する Node.js アプリケーションには、Azure サブスクリプションの読み取りと作成のアクセス許可が必要です。 サービス プリンシパルを作成し、その資格情報で動作するようにアプリケーションを構成してください。 サービス プリンシパルは、自分の ID に関連付けられた非対話型のアカウントです。アプリの実行に必要な権限だけを付与することができます。
 
-[Azure CLI 2.0 を使ってサービス プリンシパルを作成](/cli/azure/create-an-azure-service-principal-azure-cli)し、その出力をキャプチャしてください。 password 引数には、`MY_SECURE_PASSWORD` ではなく、[セキュリティで保護されたパスワード](/azure/active-directory/active-directory-passwords-policy)を指定する必要があります。
+[Azure CLI 2.0 を使ってサービス プリンシパルを作成](/cli/azure/create-an-azure-service-principal-azure-cli)し、その出力をキャプチャしてください。 password 引数には、[ ではなく、](/azure/active-directory/active-directory-passwords-policy)セキュリティで保護されたパスワード`MY_SECURE_PASSWORD`を指定する必要があります。
 
 ```azurecli
 az ad sp create-for-rbac --name AzureNodeTest --password MY_SECURE_PASSWORD

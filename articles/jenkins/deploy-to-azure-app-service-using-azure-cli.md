@@ -5,10 +5,10 @@ keywords: Jenkins, Azure, 開発, App Service, CLI
 ms.topic: tutorial
 ms.date: 04/25/2020
 ms.openlocfilehash: 03eb896717350a242fb2f504a4da9b57ecc8a209
-ms.sourcegitcommit: 9ff9b51ab21c93bfd61e480c6ff8e39c9d4bf02e
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "82169888"
 ---
 # <a name="tutorial-deploy-to-azure-app-service-with-jenkins-and-the-azure-cli"></a>チュートリアル:Jenkins と Azure CLI を使用して Azure App Service にデプロイする

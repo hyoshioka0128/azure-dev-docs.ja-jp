@@ -4,23 +4,23 @@ description: Node.js 用 Azure 管理モジュールへの認証にサービス 
 ms.topic: article
 ms.date: 06/17/2017
 ms.openlocfilehash: 76233fb6e6d15829783ff98b3af672abc7eba226
-ms.sourcegitcommit: 5c65d22b5203b0c17806463d349a6ede93a99fa0
+ms.sourcegitcommit: 756e4873f904db954a56c20ebb2f1f5116ee4596
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/12/2019
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "75010516"
 ---
 # <a name="authenticate-with-the-azure-modules-for-nodejs"></a>Node.js 用 Azure モジュールを使った認証
 
 すべてのサービス API は、インスタンス化する際に、`credentials` オブジェクトを介して認証を行う必要があります。 必要な資格情報を Azure SDK for Node.js で認証したり作成したりするには、次の 3 とおりの方法があります。 
 
-- 基本認証
+- [基本認証]
 - 対話型ログイン
 - サービス プリンシパルの認証
 
 [!INCLUDE [chrome-note](includes/chrome-note.md)]
 
-## <a name="basic-authentication"></a>基本認証
+## <a name="basic-authentication"></a>[基本認証]
 
 Azure アカウントの資格情報を使ってプログラムで認証するには、`loginWithUsernamePassword` 関数を使用します。 次の JavaScript コード スニペットは、環境変数として格納された資格情報を使った基本認証の方法を示したものです。 
 

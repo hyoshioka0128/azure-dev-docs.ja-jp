@@ -5,10 +5,10 @@ keywords: jenkins, azure, devops, ストレージ, cicd, ビルド成果物
 ms.topic: article
 ms.date: 08/13/2019
 ms.openlocfilehash: ac2ccc974c13a9dc19e1098d95ec484458377304
-ms.sourcegitcommit: 9ff9b51ab21c93bfd61e480c6ff8e39c9d4bf02e
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "82170168"
 ---
 # <a name="tutorial-use-azure-storage-for-build-artifacts"></a>チュートリアル:ビルド成果物に Azure Storage を使用する

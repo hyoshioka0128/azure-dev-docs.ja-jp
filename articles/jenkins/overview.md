@@ -4,12 +4,12 @@ description: Azure で Jenkins ビルドをホストし、オートメーショ�
 keywords: Jenkins, Azure, 開発, 概要
 ms.topic: overview
 ms.date: 10/23/2019
-ms.openlocfilehash: f630dd601cc384588ae4d3af1a051b5c706de0b6
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 19bacd6e1b3d4ddee4e6fef27b2183f4a33545d6
+ms.sourcegitcommit: 8309822d57f784a9c2ca67428ad7e7330bb5e0d6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82171128"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82861305"
 ---
 # <a name="azure-and-jenkins"></a>Azure と Jenkins
 
@@ -34,7 +34,7 @@ Azure Jenkins のデプロイは、[Azure Monitor ログ](/azure/log-analytics/l
 [Azure サービス プリンシパル](/azure/azure-resource-manager/resource-group-overview)で構成したら、Jenkins のジョブとパイプラインでは、その資格情報を使用することで次が実現します。
 
 - [Azure Storage プラグイン](/azure/storage/common/storage-introduction)を使用して、ビルド アーティファクトを [Azure Storage](https://plugins.jenkins.io/windows-azure-storage) に安全に格納およびアーカイブする。 詳細については、[Jenkins ストレージの操作方法](azure-storage-blobs-as-build-artifact-repository.md)に関するページをご覧ください。
-- [Azure CLI](/azure/jenkins/deploy-to-azure-app-service-using-azure-cli) を使用して Azure リソースを管理および構成する。
+- [Azure CLI](deploy-to-azure-app-service-using-azure-cli.md) を使用して Azure リソースを管理および構成する。
 
 ## <a name="deploy-your-code-into-azure-services"></a>Azure サービスにコードをデプロイする
 

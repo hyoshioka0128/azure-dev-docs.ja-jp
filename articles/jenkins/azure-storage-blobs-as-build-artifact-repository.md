@@ -4,12 +4,12 @@ description: Jenkins 継続的インテグレーション ソリューション�
 keywords: jenkins, azure, devops, ストレージ, cicd, ビルド成果物
 ms.topic: article
 ms.date: 08/13/2019
-ms.openlocfilehash: ac2ccc974c13a9dc19e1098d95ec484458377304
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: ceed42326faee6dcfab3790fd3af739b2f48d3da
+ms.sourcegitcommit: 8309822d57f784a9c2ca67428ad7e7330bb5e0d6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82170168"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82861205"
 ---
 # <a name="tutorial-use-azure-storage-for-build-artifacts"></a>チュートリアル:ビルド成果物に Azure Storage を使用する
 
@@ -47,7 +47,7 @@ Blob service を使用してアジャイル開発のビルド アーティファ
      
       通常の Jenkins CI ソリューションであればサービスとして実行されるように設定しますが、このチュートリアルではコマンド ラインで Jenkins.war を実行するだけで十分です。
 * Azure アカウント。 Azure アカウントには、<https://www.azure.com> でサインアップできます。
-* Azure ストレージ アカウント。 まだストレージ アカウントを取得していない場合には、「 [ストレージ アカウントを作成する](/azure/storage/common/storage-account-create.md)」に記載の手順に従って作成できます。
+* Azure ストレージ アカウント。 まだストレージ アカウントを取得していない場合には、「 [ストレージ アカウントを作成する](/azure/storage/common/storage-account-create)」に記載の手順に従って作成できます。
 * 以降では、Jenkins CI のビルド アーティファクトで Blob service をリポジトリとして使用するうえで必要な手順を、基本的な例を使って説明しています。Jenkins CI ソリューションにある程度習熟していることが望ましいものの、必須ではありません。
 
 ## <a name="how-to-use-the-blob-service-with-jenkins-ci"></a>Jenkins CI で Blob service を使用する方法
@@ -96,10 +96,10 @@ Jenkins で Blob service を使用するには、Azure Storage プラグイン�
 6. **[Storage Account Name]** では、使用するストレージ アカウントを選択します。
 7. **[Container name]** では、コンテナー名を指定します(コンテナーは、ビルド アーティファクトをアップロードする時点で存在していなければ、自動で作成されます)。 (コンテナーは、ビルド アーティファクトをアップロードする時点で存在していなければ、自動で作成されます)。環境変数を使用することもできます。この例では、コンテナー名に「`${JOB_NAME}`」と入力します。
    
-    **ヒント**
-   
-    **[Execute Windows batch command (Windows バッチ コマンドの実行)]** にスクリプトを入力した **[Command (コマンド)]** セクションの下には、Jenkins が認識できる環境変数へのリンクがあります。 環境変数の名前および説明を確認するには、リンクを選択します。 **BUILD_URL** など、特殊文字が含まれる環境変数は、コンテナー名および共通仮想パスに使用できません。
-8. この例では、 **[Make new container public by default]\(新しいコンテナーを既定でパブリックにする\)** を選択します。 (プライベート コンテナーを使用する場合は、Shared Access Signature を作成してアクセスを許可する必要があります。ただし、これについてはこの記事では扱いません。 Shared Access Signature の詳細については、「[Shared Access Signatures (SAS) の使用](/azure//storage/common/storage-sas-overview.md)」を参照してください。)
+    > [!TIP]
+    > **[Execute Windows batch command (Windows バッチ コマンドの実行)]** にスクリプトを入力した **[Command (コマンド)]** セクションの下には、Jenkins が認識できる環境変数へのリンクがあります。 環境変数の名前および説明を確認するには、リンクを選択します。 **BUILD_URL** など、特殊文字が含まれる環境変数は、コンテナー名および共通仮想パスに使用できません。
+    
+8. この例では、 **[Make new container public by default]\(新しいコンテナーを既定でパブリックにする\)** を選択します。 (プライベート コンテナーを使用する場合は、Shared Access Signature を作成してアクセスを許可する必要があります。ただし、これについてはこの記事では扱いません。 Shared Access Signature の詳細については、「[Shared Access Signatures (SAS) の使用](/azure/storage/common/storage-sas-overview)」を参照してください。)
 9. (省略可能) ビルド アーティファクトをアップロードする前にコンテナーの内容をクリアする場合、 **[Clean container before uploading]\(アップロードの前にコンテナーをクリーンアップする\)** をオンにします (コンテナーの内容をクリアしない場合は、チェック ボックスをオフにします)。
 10. **[List of Artifacts to upload]\(アップロードするアーティファクトのリスト\)** には、「`text/*.txt`」と入力します。
 11. このチュートリアルでは、 **[Common virtual path for uploaded artifacts]\(アップロードされたアーティファクトの共通仮想パス\)** に「`${BUILD\_ID}/${BUILD\_NUMBER}`」と入力します。

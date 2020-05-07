@@ -4,12 +4,12 @@ description: Jenkins を使用した Service Fabric Linux アプリケーショ�
 keywords: jenkins, azure, devops, cicd, linux, service fabric, クラスター
 ms.topic: tutorial
 ms.date: 07/31/2018
-ms.openlocfilehash: 0a1efc187b4080c4e0c1a992890203e954f81e06
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: eca6b1b446cda07c35f453f17d688a5e8708b8e7
+ms.sourcegitcommit: 8309822d57f784a9c2ca67428ad7e7330bb5e0d6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82171098"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82861275"
 ---
 # <a name="tutorial-deploy-to-a-service-fabric-cluster"></a>チュートリアル:Service Fabric クラスターへのデプロイ
 
@@ -35,9 +35,9 @@ ms.locfileid: "82171098"
 
 Service Fabric プラグインを既存の Jenkins 環境に追加する場合は、次の手順を実行する必要があります。
 
-- [Service Fabric CLI (sfctl)](/azure/service-fabric/service-fabric-cli.md)。 Jenkins で CLI コマンドを実行できるよう、CLI は、ユーザー レベルではなくシステム レベルでインストールしてください。 
-- Java アプリケーションをデプロイするには、[Gradle および Open JDK 8.0](/azure/service-fabric/service-fabric-get-started-linux.md#set-up-java-development) の両方をインストールします。 
-- .NET Core 2.0 アプリケーションをデプロイするには、[.NET Core 2.0 SDK](/azure/service-fabric/service-fabric-get-started-linux.md#set-up-net-core-20-development) をインストールします。 
+- [Service Fabric CLI (sfctl)](/azure/service-fabric/service-fabric-cli)。 Jenkins で CLI コマンドを実行できるよう、CLI は、ユーザー レベルではなくシステム レベルでインストールしてください。 
+- Java アプリケーションをデプロイするには、[Gradle および Open JDK 8.0](/azure/service-fabric/service-fabric-get-started-linux#set-up-java-development) の両方をインストールします。 
+- .NET Core 2.0 アプリケーションをデプロイするには、[.NET Core 2.0 SDK](/azure/service-fabric/service-fabric-get-started-linux#set-up-net-core-20-development) をインストールします。 
 
 環境に必要な前提条件をインストールした後は、Jenkins Marketplace で Azure Service Fabric プラグインを検索してインストールすることができます。
 
@@ -199,13 +199,13 @@ Jenkins をセットアップした後は、次のセクション、「[Jenkins 
 1. **[Source Code Management (ソース コードの管理)]** タブで **[Git]** を選択します。 Jenkins CI/CD フローと統合する Service Fabric Java アプリケーションをホストするリポジトリの URL を指定します (例: `https://github.com/{your-github-account}/service-fabric-java-getting-started`)。 ビルドする分岐を指定することもできます (例: `/master`)。
 1. Jenkins と対話するように *GitHub* リポジトリを構成します。
 
-   a. GitHub リポジトリのページで **[Settings (設定)]**  >  **[Integrations and Services (統合とサービス)]** の順に移動します。
+   1. GitHub リポジトリのページで **[Settings (設定)]**  >  **[Integrations and Services (統合とサービス)]** の順に移動します。
 
-   b. **[Add Service (サービスの追加)]** を選択して「**Jenkins**」と入力し、 **[Jenkins-GitHub plugin (Jenkins-GitHub プラグイン)]** を選択します。
+   1. **[Add Service (サービスの追加)]** を選択して「**Jenkins**」と入力し、 **[Jenkins-GitHub plugin (Jenkins-GitHub プラグイン)]** を選択します。
 
-   c. Jenkins webhook の URL を入力します (既定では、`http://<PublicIPorFQDN>:8081/github-webhook/` です)。 **[Add service (サービスの追加)] または [Update service (サービスの更新)]** をクリックします。
+   1. Jenkins webhook の URL を入力します (既定では、`http://<PublicIPorFQDN>:8081/github-webhook/` です)。 **[Add service (サービスの追加)] または [Update service (サービスの更新)]** をクリックします。
 
-   d. テスト イベントが Jenkins インスタンスに送信されます。 GitHub で webhook の側に緑色のチェック マークが表示され、プロジェクトがビルドされます。
+   1. テスト イベントが Jenkins インスタンスに送信されます。 GitHub で webhook の側に緑色のチェック マークが表示され、プロジェクトがビルドされます。
 
 1. Jenkins の **[Build Triggers (ビルド トリガー)]** タブで、目的のビルド オプションを選択します。 この例では、リポジトリへのプッシュが行われるたびにビルドがトリガーされるようにします。そのため、 **[GitHub hook trigger for GITScm polling (GITScm ポーリングの GitHub フック トリガー)]** を選択します。 (以前、このオプションの名前は **[Build when a change is pushed to GitHub (変更が GitHub にプッシュされたときにビルド)]** でした)。
 1. **[ビルド]** タブで、Java アプリケーションまたは .NET Core アプリケーションのどちらをビルドするかに応じて、次のいずれかを実行します。

@@ -4,16 +4,16 @@ description: Azure App Service Jenkins プラグインを使用して、Jenkins 
 keywords: Jenkins, Azure, 開発, App Service
 ms.topic: tutorial
 ms.date: 07/31/2018
-ms.openlocfilehash: 6ba1f2d4673e8a99425d07a24ba55500d1b43f02
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 6d5287a3e5ff9500b1a734bd5546cd6af4b3f967
+ms.sourcegitcommit: 8309822d57f784a9c2ca67428ad7e7330bb5e0d6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82169838"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82861225"
 ---
 # <a name="tutorial-deploy-to-azure-app-service-using-the-jenkins-plugin"></a>チュートリアル:Jenkins プラグインを使用した Azure App Service へのデプロイ
 
-Java Web アプリを Azure にデプロイするには、[Jenkins パイプライン](/azure/jenkins/deploy-to-azure-app-service-using-azure-cli)で Azure CLI を使用するか、[Azure App Service Jenkins プラグイン](https://plugins.jenkins.io/azure-app-service)を使用します。 Jenkins プラグイン バージョン 1.0 では、次のツールを介して Azure App Service の Web Apps 機能を使用することで継続的なデプロイをサポートします。
+Java Web アプリを Azure にデプロイするには、[Jenkins パイプライン](deploy-to-azure-app-service-using-azure-cli.md)で Azure CLI を使用するか、[Azure App Service Jenkins プラグイン](https://plugins.jenkins.io/azure-app-service)を使用します。 Jenkins プラグイン バージョン 1.0 では、次のツールを介して Azure App Service の Web Apps 機能を使用することで継続的なデプロイをサポートします。
 * ファイルのアップロード。
 * Web Apps on Linux 用 Docker
 
@@ -133,7 +133,7 @@ Web Apps on Linux では、Git やファイルのアップロードなどの従�
 
 Jenkins でジョブを設定するには、Linux 上の Web アプリが必要です。 また、プライベート Docker コンテナー イメージを保存し、管理するためのコンテナー レジストリも必要です。 コンテナー レジストリは、DockerHub を使用して作成できます。 この例では、Azure Container Registry を使用します。
 
-* [Linux 上の Web アプリを作成](/azure/app-service/containers/quickstart-nodejs.md)します。
+* [Linux 上の Web アプリを作成](/azure/app-service/containers/quickstart-nodejs)します。
 * Azure Container Registry は、オープン ソースの Docker Registry バージョン 2.0 に基づく管理された [Docker レジストリ](https://docs.docker.com/registry/)サービスです。 [Azure コンテナー レジストリを作成](/azure/container-registry/container-registry-get-started-azure-cli)します。 DockerHub を使用することもできます。
 
 ### <a name="set-up-the-jenkins-job-for-docker"></a>Docker の Jenkins ジョブを設定する

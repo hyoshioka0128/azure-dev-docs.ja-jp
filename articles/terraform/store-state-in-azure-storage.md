@@ -3,12 +3,12 @@ title: チュートリアル - Terraform 状態を Azure Storage に格納する
 description: Terraform 状態を Azure Storage に格納する方法について説明します。
 ms.topic: tutorial
 ms.date: 11/07/2019
-ms.openlocfilehash: f2180a8e12632c0693dcf491d621121168fa99c8
-ms.sourcegitcommit: 756e4873f904db954a56c20ebb2f1f5116ee4596
+ms.openlocfilehash: e61787a80905507c16a5ac7f23cfe9ed852f6708
+ms.sourcegitcommit: 8309822d57f784a9c2ca67428ad7e7330bb5e0d6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82169698"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82861245"
 ---
 # <a name="tutorial-store-terraform-state-in-azure-storage"></a>チュートリアル:Terraform 状態を Azure Storage に格納する
 
@@ -73,7 +73,7 @@ Terraform 状態バックエンドは、`terraform init` コマンドを実行�
 export ARM_ACCESS_KEY=<storage access key>
 ```
 
-Azure ストレージ アカウントのアクセス キーをさらに保護するには、これを Azure Key Vault に格納します。 環境変数は、次のようなコマンドを使用して設定できます。 Azure Key Vault の詳細については、[Azure Key Vault のドキュメント](/azure/key-vault/secrets/quick-create-cli.md)を参照してください。
+Azure ストレージ アカウントのアクセス キーをさらに保護するには、これを Azure Key Vault に格納します。 環境変数は、次のようなコマンドを使用して設定できます。 Azure Key Vault の詳細については、[Azure Key Vault のドキュメント](/azure/key-vault/secrets/quick-create-cli)を参照してください。
 
 ```bash
 export ARM_ACCESS_KEY=$(az keyvault secret show --name terraform-backend-key --vault-name myKeyVault --query value -o tsv)
@@ -124,7 +124,7 @@ Azure portal または他の Azure 管理ツールを使用して BLOB を調べ
 
 Azure BLOB の格納データは、永続化される前に暗号化されます。 必要に応じて、Terraform はバックエンドから状態を取得し、ローカル メモリに格納します。 このパターンを使用すると、状態はローカル ディスクに書き込まれません。
 
-Azure Storage 暗号化の詳細については、[保存データに対する Azure Storage Service Encryption](/azure/storage/common/storage-service-encryption.md) に関するページをご覧ください。
+Azure Storage 暗号化の詳細については、[保存データに対する Azure Storage Service Encryption](/azure/storage/common/storage-service-encryption) に関するページをご覧ください。
 
 ## <a name="next-steps"></a>次のステップ
 

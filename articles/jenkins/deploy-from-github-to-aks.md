@@ -4,12 +4,12 @@ description: GitHub からの継続的インテグレーション (CI) と Azure
 keywords: jenkins, azure, devops, aks, azure kubernetes service, github
 ms.topic: article
 ms.date: 01/09/2019
-ms.openlocfilehash: 99c46e62e0d841d9ec6668fd5bcafdfa2cb6ba3a
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: cbde97c7796a7f89bfb8ec0cbe530e84bd750e04
+ms.sourcegitcommit: 8309822d57f784a9c2ca67428ad7e7330bb5e0d6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82170398"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82861185"
 ---
 # <a name="tutorial-deploy-from-github-to-azure-kubernetes-service-using-jenkins"></a>チュートリアル:Jenkins を使用して GitHub から Azure Kubernetes Service にデプロイする
 
@@ -30,9 +30,9 @@ ms.locfileid: "82170398"
 
 - Kubernetes、Git、CI/CD、およびコンテナーのイメージについての基本的な理解
 
-- [AKS クラスター](/azure/aks/kubernetes-walkthrough.md)、および [AKS クラスターの資格情報](/cli/azure/aks#az-aks-get-credentials)で構成されています `kubectl`。
+- [AKS クラスター](/azure/aks/kubernetes-walkthrough)、および [AKS クラスターの資格情報](/cli/azure/aks#az-aks-get-credentials)で構成されています `kubectl`。
 
-- [ACR レジストリで認証を行う](/azure/aks/cluster-container-registry-integration.md) ために構成されている [Azure Container Registry (ACR) レジストリ](/azure/container-registry/container-registry-get-started-azure-cli.md)、ACR ログイン サーバー名、および AKS クラスター。
+- [ACR レジストリで認証を行う](/azure/aks/cluster-container-registry-integration) ために構成されている [Azure Container Registry (ACR) レジストリ](/azure/container-registry/container-registry-get-started-azure-cli)、ACR ログイン サーバー名、および AKS クラスター。
 
 - インストールおよび構成済みの Azure CLI バージョン 2.0.46 以降。 バージョンを確認するには、 `az --version` を実行します。 インストールまたはアップグレードする必要がある場合は、「 [Azure CLI のインストール](/cli/azure/install-azure-cli)」を参照してください。
 

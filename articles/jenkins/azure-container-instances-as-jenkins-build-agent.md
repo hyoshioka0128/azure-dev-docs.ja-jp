@@ -4,18 +4,18 @@ description: Azure Container Instances でビルド ジョブをオンデマン�
 keywords: jenkins, azure, devops, container instances, ビルド エージェント
 ms.topic: article
 ms.date: 08/31/2018
-ms.openlocfilehash: 117e2a7cb8e67f33244eb82140c7166d72172e87
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 0fa994657412190ce1860f7bd30915cc8bb2bc91
+ms.sourcegitcommit: 8309822d57f784a9c2ca67428ad7e7330bb5e0d6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82209745"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82861285"
 ---
 # <a name="tutorial-use-azure-container-instances-as-a-jenkins-build-agent"></a>チュートリアル:Azure Container Instances を Jenkins ビルド エージェントとして使用する
 
 Azure Container Instances (ACI) は、コンテナー化ワークロードを実行するためのバースト対応のオンデマンド分離環境を提供します。 これらの特性により、ACI は大規模な環境で Jenkins ビルド ジョブを実行するための優れたプラットフォームを作成します。 この記事では、ビルド ターゲットとして ACI で事前に構成されている Jenkins サーバーの展開と使用の手順について説明します。
 
-Azure Container Instances の詳細については、「[Azure Container Instances について](/azure/container-instances/container-instances-overview.md)」を参照してください。
+Azure Container Instances の詳細については、「[Azure Container Instances について](/azure/container-instances/container-instances-overview)」を参照してください。
 
 ## <a name="deploy-a-jenkins-server"></a>Jenkins サーバーを展開する
 
@@ -44,7 +44,7 @@ Azure Container Instances の詳細については、「[Azure Container Instanc
 
    ![Jenkins ポータル展開の追加設定](./media/azure-container-instances-as-jenkins-build-agent/jenkins-portal-02.png)
 
-4. サービス プリンシパル統合では、 **[Auto(MSI)]\(自動 (MSI)\)** を選んで、[Azure リソースのマネージド ID](/azure/active-directory/managed-identities-azure-resources/overview.md) が Jenkins インスタンスの認証 ID を自動的に作成するようにします。 独自のサービス プリンシパル資格情報を提供するには **[手動]** を選びます。
+4. サービス プリンシパル統合では、 **[Auto(MSI)]\(自動 (MSI)\)** を選んで、[Azure リソースのマネージド ID](/azure/active-directory/managed-identities-azure-resources/overview) が Jenkins インスタンスの認証 ID を自動的に作成するようにします。 独自のサービス プリンシパル資格情報を提供するには **[手動]** を選びます。
 
 5. クラウド エージェントは、Jenkins ビルド ジョブのクラウドベース プラットフォームを構成します。 この記事では、 **[ACI]** を選びます。 ACI クラウド エージェントでは、各 Jenkins ビルド ジョブはコンテナー インスタンス内で実行されます。
 

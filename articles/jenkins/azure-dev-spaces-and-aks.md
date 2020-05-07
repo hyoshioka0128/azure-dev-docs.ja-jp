@@ -4,12 +4,12 @@ description: 継続的インテグレーション パイプラインで Azure De
 keywords: jenkins, azure, devops, azure dev spaces, aks, azure kubernetes service
 ms.topic: tutorial
 ms.date: 10/23/2019
-ms.openlocfilehash: 427b53642b4159a82dba699c631da8948a6b744b
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 2528d362a9c95aecd00b938fdeed2756c8643fd4
+ms.sourcegitcommit: 8309822d57f784a9c2ca67428ad7e7330bb5e0d6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82170288"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82861255"
 ---
 # <a name="tutorial-use-azure-dev-spaces-with-azure-kubernetes-service"></a>チュートリアル:Azure Kubernetes Service で Azure Dev Spaces を使用する
 
@@ -58,7 +58,7 @@ Azure Dev Spaces では、Azure Kubernetes Service (AKS) で実行されるマ�
     az group create --name MyResourceGroup --location westus2
     ```
 
-2. AKS クラスターを作成します。 [Dev Spaces がサポートされるリージョン](/azure/dev-spaces/about.md#supported-regions-and-configurations)で AKS クラスターを作成します。
+2. AKS クラスターを作成します。 [Dev Spaces がサポートされるリージョン](/azure/dev-spaces/about#supported-regions-and-configurations)で AKS クラスターを作成します。
 
     ```azurecli
     az aks create --resource-group MyResourceGroup --name MyAKS --location westus2 --kubernetes-version 1.11.9 --enable-addons http_application_routing --generate-ssh-keys --node-count 1 --node-vm-size Standard_D1_v2
@@ -344,7 +344,7 @@ Jenkins パイプラインの構成と Jenkinsfile では、CI パイプライ�
 
 2. Jenkins にサインインしてパイプライン名を選択してから、 **[Build Now]\(今すぐビルド\)** を選択します。 
 
-    *Webhook* を設定して Jenkins パイプラインを自動的にトリガーすることもできます。 pull request が入力されると、GitHub によって Jenkins への POST が発行され、パイプラインがトリガーされます。 Webhook の設定の詳細については、[GitHub への Jenkins の接続](https://github.com/MicrosoftDocs/azure-docs/blob/master/articles/jenkins/deploy-from-github-to-azure-app-service.md#connect-jenkins-to-github)に関するページを参照してください。
+    *Webhook* を設定して Jenkins パイプラインを自動的にトリガーすることもできます。 pull request が入力されると、GitHub によって Jenkins への POST が発行され、パイプラインがトリガーされます。 Webhook の設定の詳細については、[GitHub への Jenkins の接続](deploy-from-github-to-azure-app-service.md#connect-jenkins-to-github)に関するページを参照してください。
 
 3. 変更を現在の共有バージョンと比較します。
 

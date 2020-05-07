@@ -4,12 +4,12 @@ description: Azure CLI を使用して Java Web アプリを Jenkins パイプ�
 keywords: Jenkins, Azure, 開発, App Service, CLI
 ms.topic: tutorial
 ms.date: 04/25/2020
-ms.openlocfilehash: 03eb896717350a242fb2f504a4da9b57ecc8a209
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 242986ca95b36d95393b7ff688ebf60bb95985fa
+ms.sourcegitcommit: 8309822d57f784a9c2ca67428ad7e7330bb5e0d6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82169888"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82861235"
 ---
 # <a name="tutorial-deploy-to-azure-app-service-with-jenkins-and-the-azure-cli"></a>チュートリアル:Jenkins と Azure CLI を使用して Azure App Service にデプロイする
 
@@ -183,7 +183,7 @@ Web アプリに WAR ファイルが正常にデプロイされたことを確�
 
 Jenkins パイプライン内で Azure CLI を使用したら、スクリプトを変更して Linux 上の Azure Web アプリにデプロイします。 Linux の Web Apps では、Docker がサポートされています。 そのため、Web アプリとサービス ランタイムを Docker イメージにパッケージ化する Dockerfile を用意します。 プラグインによりイメージがビルドされて Docker レジストリにプッシュされ、Web アプリにイメージがデプロイされます。
 
-1. [Linux で実行される Azure Web アプリの作成](/azure/app-service/containers/quickstart-nodejs.md)
+1. [Linux で実行される Azure Web アプリの作成](/azure/app-service/containers/quickstart-nodejs)
 
 1. [Jenkins に Docker をインストールする](https://docs.docker.com/engine/installation/linux/ubuntu/).
 

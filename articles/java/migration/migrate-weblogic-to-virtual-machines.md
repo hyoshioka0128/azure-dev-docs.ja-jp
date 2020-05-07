@@ -6,10 +6,10 @@ ms.author: edburns
 ms.topic: conceptual
 ms.date: 1/27/2020
 ms.openlocfilehash: 10edb96e4e0781945da85d5a872b14178db3122f
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81673518"
 ---
 # <a name="migrate-weblogic-applications-to-azure-virtual-machines"></a>WebLogic アプリケーションを Azure Virtual Machines に移行する
@@ -158,4 +158,4 @@ CI/CD パイプラインまたは手動デプロイ システムからのアク�
 
 * WebLogic の Java EE 認証と承認を Azure Active Directory と統合します。 詳細については、[Azure Active Directory の統合のファースト ステップ ガイド](/azure/active-directory/manage-apps/plan-an-application-integration)に関する記事を参照してください。
 
-* Azure Key Vault を使用して、"シークレット" として機能するすべての情報を格納します。 詳細については、「[Azure Key Vault の基本的な概念](/azure/key-vault/basic-concepts)」を参照してください。
+* Azure Key Vault を使用して、"シークレット" として機能するすべての情報を格納します。 詳細については、「[Azure Key Vault の基本的な概念](/azure/key-vault/basic-concepts)」をご覧ください。

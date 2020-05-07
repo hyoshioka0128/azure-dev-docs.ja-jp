@@ -9,10 +9,10 @@ ms.service: multiple
 ms.assetid: 10f457e3-578b-4655-8cd1-51339226ee7d
 ms.custom: seo-java-september2019
 ms.openlocfilehash: 744d0194958fd0bd5bb96e6a03a70a8ce126d7c5
-ms.sourcegitcommit: 0af39ee9ff27c37ceeeb28ea9d51e32995989591
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81670258"
 ---
 # <a name="authenticate-with-the-azure-libraries-for-java"></a>Java 用 Azure ライブラリを使った認証
@@ -111,7 +111,7 @@ authURL=https\://login.windows.net/
 graphURL=https\://graph.windows.net/
 ```
 
-- subscription: Azure CLI 2.0 の `az account show` から得られる *id* 値を使用します。
+- subscription: Azure CLI 2.0 の *から得られる*id`az account show` 値を使用します。
 - client: アプリケーションを実行するために作成したサービス プリンシパルの出力から得られる *appId* 値を使用します。 アプリのサービス プリンシパルがない場合は、[Azure CLI 2.0 で作成](/cli/azure/create-an-azure-service-principal-azure-cli)してください。
 - key: サービス プリンシパル作成 CLI の出力から得られる *password* 値を使用します。
 - tenant: サービス プリンシパル作成 CLI の出力から得られる *tenant* 値を使用します。

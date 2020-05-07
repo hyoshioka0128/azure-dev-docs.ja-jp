@@ -3,13 +3,13 @@ title: クイックスタート - Terraform を使用した Azure での Linux V
 description: Terraform を使用して、Azure で完全な Linux 仮想マシン環境を作成して管理する方法について説明します。
 keywords: Azure DevOps Terraform Linux VM 仮想マシン
 ms.topic: quickstart
-ms.date: 04/26/2020
-ms.openlocfilehash: bfc9766022e0f52a73d2badbc0977e2b2aa1fc11
-ms.sourcegitcommit: 9ff9b51ab21c93bfd61e480c6ff8e39c9d4bf02e
+ms.date: 05/04/2020
+ms.openlocfilehash: d6763118179251c224e0ec3ae6e05a630cae7cde
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "82171518"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82801890"
 ---
 # <a name="quickstart-create-a-linux-vm-with-infrastructure-in-azure-using-terraform"></a>クイック スタート:Terraform を使用して Azure に Linux VM とインフラストラクチャを作成する
 
@@ -57,7 +57,7 @@ resource "azurerm_resource_group" "myterraformgroup" {
 }
 ```
 
-追加のセクションでは、`${azurerm_resource_group.myterraformgroup.name}` でリソース グループを参照します。
+追加のセクションでは、`azurerm_resource_group.myterraformgroup.name` でリソース グループを参照します。
 
 ## <a name="create-virtual-network"></a>Create virtual network
 
@@ -146,9 +146,9 @@ resource "azurerm_network_interface" "myterraformnic" {
 
     ip_configuration {
         name                          = "myNicConfiguration"
-        subnet_id                     = "${azurerm_subnet.myterraformsubnet.id}"
+        subnet_id                     = "azurerm_subnet.myterraformsubnet.id"
         private_ip_address_allocation = "Dynamic"
-        public_ip_address_id          = "${azurerm_public_ip.myterraformpublicip.id}"
+        public_ip_address_id          = "azurerm_public_ip.myterraformpublicip.id"
     }
 
     tags = {

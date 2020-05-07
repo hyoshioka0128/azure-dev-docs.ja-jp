@@ -7,10 +7,10 @@ ms.topic: article
 ms.date: 3/30/2017
 ms.reviewer: asirveda
 ms.openlocfilehash: 1bc80d0f4c6ad0beff86bfa22fec59b3389ced03
-ms.sourcegitcommit: 3c69d7c3e5c5a00a01ee18e63b0659830c7d4ec0
+ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "82105033"
 ---
 # <a name="manage-azure-sql-databases-in-elastic-pools-from-your-java-applications"></a>Java アプリケーションからエラスティック プールの Azure SQL データベースを管理する
@@ -72,7 +72,7 @@ SqlDatabase anotherDatabase = sqlServer.databases().define(anotherDatabaseName).
 elasticPool.update().withExistingDatabase(anotherDatabase).apply();            
 ```
 
-この API は、先頭のステートメントで、[S0 レベル](/azure/sql-database/sql-database-service-tiers)の `anotherDatabase` を作成しています。 `anotherDatabase` をエラスティック プールに移動すると、そのプールの設定に基づいて、データベース リソースが割り当てられます。
+この API は、先頭のステートメントで、`anotherDatabase`S0 レベル[の ](/azure/sql-database/sql-database-service-tiers) を作成しています。 `anotherDatabase` をエラスティック プールに移動すると、そのプールの設定に基づいて、データベース リソースが割り当てられます。
 
 ## <a name="remove-a-database-from-an-elastic-pool"></a>エラスティック プールからのデータベースの削除
 ```java
@@ -83,7 +83,7 @@ anotherDatabase = anotherDatabase.update()
                      .apply();
 ```
 
-`withEdition()` に渡す値については、[DatabaseEditions クラスのリファレンス](/java/api/com.microsoft.azure.management.sql.databaseeditions)を参照してください。
+[ に渡す値については、](/java/api/com.microsoft.azure.management.sql.databaseeditions)DatabaseEditions クラスのリファレンス`withEdition()`を参照してください。
 
 ## <a name="list-current-database-activities-in-an-elastic-pool"></a>エラスティック プールにおける現在のデータベース アクティビティの列挙
 ```java
@@ -121,7 +121,7 @@ sqlServer.elasticPools().delete(elasticPoolName);
 
 このサンプルで作成したリソースは、終了前にすべて削除されます。
 
-| サンプルで使われているクラス | Notes |
+| サンプルで使われているクラス | メモ |
 |-------|-------|
 | [SqlServer](/java/api/com.microsoft.azure.management.sql.sqlserver) | Azure における SQL DB サーバー。`azure.sqlServers().define()...create()` という fluent チェーンによって作成されます。 エラスティック プールやデータベースを作成したり操作したりするためのメソッドが備わっています。 
 | [SqlDatabase](/java/api/com.microsoft.azure.management.sql.sqldatabase) | SQL データベースを表すクライアント側オブジェクト。 `sqlServer().define()...create()` を使って作成します。 

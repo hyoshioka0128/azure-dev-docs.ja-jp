@@ -4,10 +4,10 @@ description: 'チュートリアル ステップ 6: コンテナー イメージ
 ms.topic: conceptual
 ms.date: 09/20/2019
 ms.openlocfilehash: 7920bc9ddb2b9b7cc06f936fb97400a5c1d9dd7d
-ms.sourcegitcommit: f89c59f772364ec717e751fb59105039e6fab60c
+ms.sourcegitcommit: 756e4873f904db954a56c20ebb2f1f5116ee4596
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/06/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "80740650"
 ---
 # <a name="make-changes-and-redeploy"></a>変更を加えて再デプロイする
@@ -16,7 +16,7 @@ ms.locfileid: "80740650"
 
 アプリには必然的に変更を加えるため、最終的にコンテナーのリビルドと再デプロイは何回も実施することになります。 さいわい、このプロセスは単純です。
 
-1. アプリケーションに変更を加えて、ローカルでテストします
+1. アプリケーションに変更を加えて、ローカルでテストします 
 
 1. Visual Studio Code で**コマンド パレット**を開き (**F1**)、**Docker Images:Build Image** を実行してイメージをリビルドします。 アプリのコードのみを変更する場合は、ビルドにかかる時間はわずか数秒です。
 

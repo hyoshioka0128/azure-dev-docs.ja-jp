@@ -4,12 +4,12 @@ description: コード コミットのたびに GitHub から新しい Docker �
 keywords: Jenkins, Azure, DevOps, パイプライン, CICD, Docker
 ms.topic: tutorial
 ms.date: 03/27/2017
-ms.openlocfilehash: c584d6bbd18c36bde7730180a69194b23cd2c180
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 29c5d8926fe60eeb2e3603f0e3248e1d94763b6c
+ms.sourcegitcommit: 8309822d57f784a9c2ca67428ad7e7330bb5e0d6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82169688"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82861295"
 ---
 # <a name="tutorial-create-a-jenkins-pipeline-using-github-and-docker"></a>チュートリアル:GitHub と Docker を使用して Jenkins パイプラインを作成する
 
@@ -28,7 +28,7 @@ ms.locfileid: "82169688"
 CLI をローカルにインストールして使用する場合、このチュートリアルでは、Azure CLI バージョン 2.0.30 以降を実行していることが要件です。 バージョンを確認するには、`az --version` を実行します。 インストールまたはアップグレードする必要がある場合は、[Azure CLI のインストール]( /cli/azure/install-azure-cli)に関するページを参照してください。
 
 ## <a name="create-jenkins-instance"></a>Jenkins インスタンスを作成する
-[Linux 仮想マシンを初回起動時にカスタマイズする方法](/azure/virtual-machines/linux/tutorial-automate-vm-deployment.md)に関する先行のチュートリアルで、cloud-init を使用して VM のカスタマイズを自動化する方法を学習しました。 このチュートリアルでは、cloud-init ファイルを使用して、Jenkins と Docker を VM にインストールします。 Jenkins は、広く普及しているオープンソースのオートメーション サーバーで、Azure とシームレスに統合することで、継続的インテグレーション (CI) と継続的デリバリー (CD) が可能になります。 Jenkins の使用方法に関する詳しいチュートリアルについては、[Azure ハブでの Jenkins](https://docs.microsoft.com/azure/jenkins/) に関する記事をご覧ください。
+[Linux 仮想マシンを初回起動時にカスタマイズする方法](/azure/virtual-machines/linux/tutorial-automate-vm-deployment)に関する先行のチュートリアルで、cloud-init を使用して VM のカスタマイズを自動化する方法を学習しました。 このチュートリアルでは、cloud-init ファイルを使用して、Jenkins と Docker を VM にインストールします。 Jenkins は、広く普及しているオープンソースのオートメーション サーバーで、Azure とシームレスに統合することで、継続的インテグレーション (CI) と継続的デリバリー (CD) が可能になります。 Jenkins の使用方法に関する詳しいチュートリアルについては、[Azure ハブでの Jenkins](https://docs.microsoft.com/azure/jenkins/) に関する記事をご覧ください。
 
 現在のシェルで、*cloud-init-jenkins.txt* というファイルを作成し、次の構成を貼り付けます。 たとえば、ローカル コンピューター上にない Cloud Shell でファイルを作成します。 `sensible-editor cloud-init-jenkins.txt` を入力し、ファイルを作成して使用可能なエディターの一覧を確認します。 cloud-init ファイル全体 (特に最初の行) が正しくコピーされたことを確認してください。
 
@@ -153,8 +153,8 @@ GitHub との統合を構成するには､Azures サンプル リポジトリ�
 Jenkins Web サイトのホームページから **[Create new jobs]** を選択します。
 
 - ジョブ名として *HelloWorld* を入力します｡ **Freestyle プロジェクト**を選択し､ **[OK]** をクリックします｡
-- **[General]\(一般\)** セクションから **[GitHub project]\(GitHub プロジェクト\)** を選択し、フォークしたリポジトリの URL (例: *https://github.com/cynthn/nodejs-docs-hello-world* ) を入力します
-- **[Source code management]\(ソース コードの管理\)** セクションで **[Git]** を選択し、フォークしたリポジトリの *.git* の URL を入力します (例: *https://github.com/cynthn/nodejs-docs-hello-world.git* )
+- **[General]\(一般\)** セクションから **[GitHub project]\(GitHub プロジェクト\)** を選択し、フォークしたリポジトリの URL (例: `https://github.com/cynthn/nodejs-docs-hello-world`) を入力します
+- **[Source code management]\(ソース コードの管理\)** セクションで **[Git]** を選択し、フォークしたリポジトリの *.git* の URL を入力します (例: `https://github.com/cynthn/nodejs-docs-hello-world.git`)
 - **[Build Triggers]** セクションから **GitHub hook trigger for GITscm polling** を選択します｡
 - **[ビルド]** セクションで **[ビルド ステップの追加]** をクリックします｡ **[Execute shell]** を選択し、コマンド ウィンドウに `echo "Test"` を入力します。
 - ジョブ ウィンドウの下部にある **[保存]** を選択します。

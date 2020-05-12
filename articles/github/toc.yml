@@ -1,0 +1,13 @@
+- name: Azure と GitHub の連携
+  href: index.yml
+  items:
+    - name: Azure 向けの GitHub Actions
+      href: github-actions.md
+    - name: GitHub から Azure にアプリをデプロイする
+      href: deploy-to-azure.md
+    - name: GitHub Actions 用のツール統合
+      href: deploy-with-visual-studio.md
+    - name: Azure DevOps と GitHub の統合
+      href: integrate-azure-devops.md
+    - name: Azure から GitHub への接続
+      href: connect-from-azure.md

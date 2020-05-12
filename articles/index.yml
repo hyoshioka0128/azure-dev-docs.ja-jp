@@ -10,12 +10,12 @@ metadata:
   ms.author: barbkess
   manager: barbkess
   ms.date: 04/15/2020
-  ms.openlocfilehash: 1068b2917cef3052b6753e0c563cbcaf9af3f542
-  ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+  ms.openlocfilehash: 2afe0deb03a1aff2b40c2d739f873bd6a2bbcf0c
+  ms.sourcegitcommit: 226ebca0d0e3b918928f58a3a7127be49e4aca87
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 05/05/2020
-  ms.locfileid: "82209795"
+  ms.lasthandoff: 05/08/2020
+  ms.locfileid: "82988706"
 productDirectory:
   items:
   - title: Python
@@ -124,9 +124,9 @@ additionalContent:
     - title: Azure DevOps
       summary: Azure DevOps を使用して、作業の計画、コード開発での共同作業、アプリケーションのビルドおよびデプロイを行います。
       url: https://docs.microsoft.com/azure/devops/?view=azure-devops
-    - title: GitHub のアクション
-      summary: GitHub Actions を使用して、リポジトリ内からソフトウェア開発ワークフローを自動化、カスタマイズ、実行します。
-      url: https://help.github.com/en/actions
+    - title: Azure と GitHub の連携
+      summary: GitHub と GitHub Actions を使用して、リポジトリ内からソフトウェア開発ワークフローを自動化、カスタマイズ、実行します。
+      url: https://docs.microsoft.com/azure/developer/github
     - title: Jenkins
       summary: Jenkins を使用して、ソフトウェア プロジェクトの継続的インテグレーションとデリバリー (CI/CD) を自動化します。
       url: https://docs.microsoft.com/azure/jenkins/

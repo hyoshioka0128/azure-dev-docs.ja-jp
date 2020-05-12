@@ -1,0 +1,48 @@
+### YamlMime:Landing
+title: GitHub と Azure の連携
+summary: GitHub と Azure を連携してアプリのビルドとデプロイを行う方法について説明します。
+metadata:
+  title: GitHub と Azure の連携
+  description: GitHub と Azure を連携してアプリのビルドとデプロイを行う方法について説明します。
+  ms.service: azure
+  ms.topic: landing-page
+  author: KathrynEE
+  ms.author: kaelli
+  ms.date: 05/05/2020
+  ms.openlocfilehash: ea8d295dcd5c5a51261cbcbe223a5b89400740ba
+  ms.sourcegitcommit: 226ebca0d0e3b918928f58a3a7127be49e4aca87
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 05/08/2020
+  ms.locfileid: "82990364"
+landingContent:
+- title: Azure 向けの GitHub Actions
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: GitHub Actions を使用して Azure にデプロイする
+      url: github-actions.md
+- title: Deploy to Azure (Azure へのデプロイ)
+  linkLists:
+  - linkListType: deploy
+    links:
+    - text: GitHub から Azure にアプリをデプロイする
+      url: deploy-to-azure.md
+- title: Visual Studio と Visual Studio Code
+  linkLists:
+  - linkListType: deploy
+    links:
+    - text: Visual Studio または Visual Studio Code を使用して GitHub からアプリをデプロイする
+      url: deploy-with-visual-studio.md
+- title: Azure DevOps と GitHub の統合
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Azure DevOps と GitHub の操作
+      url: integrate-azure-devops.md
+- title: Azure から GitHub への接続
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: Azure およびその他のサービスから GitHub に接続する
+      url: connect-from-azure.md

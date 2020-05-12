@@ -3,8 +3,12 @@
   items:
     - name: 概要
       href: migration-overview.md
-    - name: Spring から Azure App Service へ
-      href: migrate-java-se-to-java-se-app-service.md
+    - name: Spring Boot から Azure App Service へ
+      href: migrate-spring-boot-to-app-service.md
+    - name: Spring Boot から AKS へ
+      href: migrate-spring-boot-to-azure-kubernetes-service.md
+    - name: Spring Cloud から Azure Spring Cloud へ
+      href: migrate-spring-cloud-to-azure-spring-cloud.md
     - name: Tomcat から Azure App Service へ
       href: migrate-tomcat-to-tomcat-app-service.md
     - name: Tomcat から AKS のコンテナーへ

@@ -4,12 +4,12 @@ description: 継続的インテグレーション パイプラインで Azure De
 keywords: jenkins, azure, devops, azure dev spaces, aks, azure kubernetes service
 ms.topic: tutorial
 ms.date: 10/23/2019
-ms.openlocfilehash: 2528d362a9c95aecd00b938fdeed2756c8643fd4
-ms.sourcegitcommit: 8309822d57f784a9c2ca67428ad7e7330bb5e0d6
+ms.openlocfilehash: acc4fba8bc12c631f395bf980ca6ee8b42dc8f49
+ms.sourcegitcommit: a631b36ec1277ee9397a860c597ffdd5495d88e7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82861255"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83369939"
 ---
 # <a name="tutorial-use-azure-dev-spaces-with-azure-kubernetes-service"></a>チュートリアル:Azure Kubernetes Service で Azure Dev Spaces を使用する
 
@@ -202,7 +202,7 @@ Azure Dev Spaces の使用、および Azure Dev Spaces を使用したマルチ
 
 ### <a name="add-credentials-to-jenkins"></a>資格情報を Jenkins に追加する
 
-1. Jenkins で Azure リソースに対する認証とアクセスを行うには、Azure サービス プリンシパルが必要です。 サービス プリンシパルを作成するには、Azure App Service へのデプロイに関するチュートリアルの「 [サービス プリンシパルの作成](https://docs.microsoft.com/azure/jenkins/deploy-from-github-to-azure-app-service#create-service-principal) 」セクションを参照してください。 `create-for-rbac` の出力のコピーを保存しておいてください。次の手順を完了するために、この情報が必要なためです。 出力は次のようになります。
+1. Jenkins で Azure リソースに対する認証とアクセスを行うには、Azure サービス プリンシパルが必要です。 サービス プリンシパルを作成するには、Azure App Service へのデプロイに関するチュートリアルの「 [サービス プリンシパルの作成](deploy-from-github-to-azure-app-service.md#create-service-principal) 」セクションを参照してください。 `create-for-rbac` の出力のコピーを保存しておいてください。次の手順を完了するために、この情報が必要なためです。 出力は次のようになります。
 
     ```json
     {
@@ -220,7 +220,7 @@ Azure Dev Spaces の使用、および Azure Dev Spaces を使用したマルチ
 
     ![サービス プリンシパルの資格情報を Jenkins に追加する](media/azure-dev-spaces-and-aks/add-service-principal-credentials.png)
 
-    **[Description]\(説明\)** は省略可能です。 より詳細な手順については、Azure App Service へのデプロイに関するチュートリアルの「[Jenkins へのサービス プリンシパルの追加](https://docs.microsoft.com/azure/jenkins/deploy-from-github-to-azure-app-service#add-service-principal-to-jenkins) 」セクションを参照してください。 
+    **[Description]\(説明\)** は省略可能です。 より詳細な手順については、Azure App Service へのデプロイに関するチュートリアルの「[Jenkins へのサービス プリンシパルの追加](deploy-from-github-to-azure-app-service.md#add-service-principal-to-jenkins) 」セクションを参照してください。 
 
 
 

@@ -3,12 +3,12 @@ title: チュートリアル - Terraform を使用して Azure 仮想マシン �
 description: Terraform を使用して Azure 仮想マシン スケール セットを構成し、バージョンを管理する方法について説明します。
 ms.topic: tutorial
 ms.date: 11/07/2019
-ms.openlocfilehash: e2b60c4b0aa35f85c7799e8c2ef065d26549fd7f
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: bb6175c92d0487bd5707b721ebc39ce4b727fed6
+ms.sourcegitcommit: aa417af8b5f00cbc056666e481250ef45c661d52
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82171658"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83153725"
 ---
 # <a name="tutorial-create-an-azure-virtual-machine-scale-set-using-terraform"></a>チュートリアル:Terraform を使用して Azure 仮想マシン スケール セットを作成する
 
@@ -82,7 +82,7 @@ Azure Cloud Shell 内で、次の手順を実行します。
 
    variable "tags" {
     description = "A map of the tags to use for the resources that are deployed"
-    type        = "map"
+    type        = map
 
     default = {
       environment = "codelab"

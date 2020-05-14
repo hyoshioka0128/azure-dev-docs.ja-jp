@@ -6,12 +6,12 @@ ms.date: 12/19/2018
 ms.service: postgresql
 ms.tgt_pltfrm: multiple
 ms.topic: conceptual
-ms.openlocfilehash: 77addcc8b35dc15fe6bc64722e0a5d61b67bd4a5
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 723d98afd5f82a733011db207f8f462888c95e57
+ms.sourcegitcommit: a631b36ec1277ee9397a860c597ffdd5495d88e7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81668958"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83369794"
 ---
 # <a name="how-to-use-spring-data-jpa-with-azure-postgresql"></a>Azure PostgreSQL で Spring Data JPA を使用する方法
 
@@ -93,7 +93,7 @@ ms.locfileid: "81668958"
    | パラメーター | 説明 |
    |---|---|
    | `host` | この記事の前半の完全修飾 PostgreSQL サーバー名を指定します。 |
-   | `host` | PostgreSQL サーバー ポートを指定します。既定では `5432` です。 |
+   | `port` | PostgreSQL サーバー ポートを指定します。既定では `5432` です。 |
    | `username` | この記事の前半の PostgreSQL 管理者と短縮サーバー名を指定します。 |
    | `dbname` | 差し当たり既定の `postgres` データベースを使用することを指定します。 |
 

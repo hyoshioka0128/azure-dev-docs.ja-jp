@@ -1,15 +1,31 @@
 - name: Python 開発者向けの Azure
   href: index.yml
-- name: 概要
+- name: Azure を使用したクラウド開発
   items:
-    - name: Python SDK について
+    - name: Azure とは
+      href: cloud-development-overview.md
+    - name: リソースのプロビジョニング、アクセス、管理
+      href: cloud-development-provisioning.md
+    - name: Azure 開発フロー
+      href: cloud-development-flow.md
+- name: Azure 用の開発環境をセットアップする
+  href: configure-local-development-environment.md
+- name: Azure SDK for Python を使ってみる
+  items:
+    - name: 概要
       href: azure-sdk-overview.md
-    - name: 開発者ツール
-      href: azure-tools.md
-- name: クイックスタート
+    - name: SDK ライブラリのインストール
+      href: azure-sdk-install.md
+    - name: '例:リソース グループを作成する'
+      href: azure-sdk-example-resource-group.md
+    - name: '例:Azure ストレージの使用'
+      href: azure-sdk-example-storage.md
+    - name: '例:コードを使用して Web アプリをプロビジョニングする'
+      href: azure-sdk-example-web-app.md
+    - name: '例:仮想マシンのプロビジョニング'
+      href: azure-sdk-example-virtual-machines.md
+- name: Azure サービスのクイックスタート
   items:
-    - name: Python SDK
-      href: azure-sdk-get-started.yml
     - name: アプリ ホスティング
       href: quickstarts-app-hosting.md
     - name: データ ソリューション
@@ -22,9 +38,9 @@
       href: quickstarts-messaging.md
     - name: セキュリティと統合
       href: quickstarts-security-integration.md
-- name: チュートリアル
+- name: シナリオ固有のチュートリアル
   items:
-    - name: VS Code で App Service にデプロイする
+    - name: VS Code を使用して Web アプリをデプロイする
       items:
         - name: 1 概要と前提条件
           href: tutorial-deploy-app-service-on-linux-01.md
@@ -52,7 +68,7 @@
           href: tutorial-deploy-containers-04.md
         - name: 5 リソースのクリーンアップ
           href: tutorial-deploy-containers-05.md
-    - name: VS Code で Azure Functions をデプロイする
+    - name: VS Code でサーバーレス Azure Functions をデプロイする
       items:
         - name: 1 概要と前提条件
           href: tutorial-vs-code-serverless-python-01.md
@@ -72,11 +88,13 @@
           href: tutorial-vs-code-serverless-python-08.md
 - name: 操作方法ガイド
   items:
-    - name: SDK のインストール
-      href: azure-sdk-install.md
-    - name: 認証
+    - name: Azure によるアプリの認証
       href: azure-sdk-authenticate.md
-    - name: 操作の構成
+    - name: サービス プリンシパルを管理する
+      href: how-to-manage-service-principals.md
+    - name: セキュリティ プリンシパルにロールのアクセス許可を割り当てる
+      href: how-to-assign-role-permissions.md
+    - name: REST API の引数を構成する
       href: azure-sdk-operation-config.md
     - name: マルチクラウド開発
       href: azure-sdk-multi-cloud.md

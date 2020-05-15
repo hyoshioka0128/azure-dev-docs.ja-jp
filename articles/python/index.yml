@@ -4,36 +4,44 @@ summary: >
   Azure では、アプリ ホスティング、ストレージ、mySQL や PostgreSQL などのオープンソース データベース、データ サイエンス、機械学習、AI など、Python 開発者向けの広範なサービスを提供しています。 Azure SDK for Python は、開発者がこれらのサービスを使用するときの生産性を高めるのに役立ちます。
 metadata:
   title: Python 開発者向けの Azure
-  description: Python と Azure for Python を使用した開発を始めましょう。
+  description: Python と Azure を使用した開発を始める
   author: kraigb
   ms.author: kraigb
-  ms.date: 10/11/2019
+  ms.date: 05/04/2020
   ms.topic: landing-page
   ms.collection: collection
   ms.technology: azure
   ms.service: multiple
   ms.devlang: python
-  ms.openlocfilehash: d874f84249ed67a6597574d7ccc6c8e02d3066f0
-  ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+  ms.openlocfilehash: ef9b2de52a63454d89a74698852fc68118ccfdf2
+  ms.sourcegitcommit: 2cdf597e5368a870b0c51b598add91c129f4e0e2
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 05/05/2020
-  ms.locfileid: "80442227"
+  ms.lasthandoff: 05/14/2020
+  ms.locfileid: "83403549"
 landingContent:
-- title: Azure SDK for Python を使ってみる
+- title: Azure での Python の概要
   linkLists:
+  - linkListType: overview
+    links:
+    - text: Azure を使用したクラウド開発
+      url: cloud-development-overview.md
+  - linkListType: how-to-guide
+    links:
+    - text: ローカル開発環境のセットアップ
+      url: configure-local-development-environment.md
   - linkListType: overview
     links:
     - text: Azure SDK for Python について
       url: azure-sdk-overview.md
-  - linkListType: download
-    links:
-    - text: SDK のインストール
-      url: azure-sdk-install.md
   - linkListType: how-to-guide
     links:
-    - text: アプリケーションの認証
-      url: azure-sdk-authenticate.md
+    - text: SDK ライブラリのインストール
+      url: azure-sdk-install.md
+  - linkListType: tutorial
+    links:
+    - text: コードから Azure SDK を使用する
+      url: azure-sdk-example-resource-group.md
   - linkListType: reference
     links:
     - text: Azure SDK for Python API のリファレンス

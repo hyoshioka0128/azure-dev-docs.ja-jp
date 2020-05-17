@@ -38,7 +38,7 @@ True        AzureCloud         latest
             AzureGermanCloud   latest
 ```
 
-現在アクティブなクラウドには `True` 列に `IsActive` と表示されます。 一度にアクティブにできるクラウドは 1 つのみです。 Azure サービスに使用するエンドポイントなど、クラウドに関するより詳細な情報を得るには、`cloud show` コマンドを使用します。
+現在アクティブなクラウドには `IsActive` 列に `True` と表示されます。 一度にアクティブにできるクラウドは 1 つのみです。 Azure サービスに使用するエンドポイントなど、クラウドに関するより詳細な情報を得るには、`cloud show` コマンドを使用します。
 
 ```azurecli-interactive
 az cloud show --name AzureChinaCloud --output json

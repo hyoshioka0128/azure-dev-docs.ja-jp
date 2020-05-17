@@ -39,7 +39,7 @@ Azure クラシック CLI をインストールした後、`azure login` に接�
 npm install -g azure-cli
 ```
 
-Linux ディストリビューションの場合、`sudo` コマンドを正常に実行するには、次のように `npm` の使用が必要になる場合があります。
+Linux ディストリビューションの場合、`npm` コマンドを正常に実行するには、次のように `sudo` の使用が必要になる場合があります。
 
 ```bash
 sudo npm install -g azure-cli

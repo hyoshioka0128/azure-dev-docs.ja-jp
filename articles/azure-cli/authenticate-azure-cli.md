@@ -42,7 +42,7 @@ az login -u <username> -p <password>
 ```
 
 > [!IMPORTANT]
-> `az login` を対話形式で使用しているときに、コンソールにパスワードが表示されないようにするには、`read -s` では `bash` コマンドを使用します。
+> `az login` を対話形式で使用しているときに、コンソールにパスワードが表示されないようにするには、`bash` では `read -s` コマンドを使用します。
 >
 > ```bash
 > read -sp "Azure password: " AZ_PASS && echo && az login -u <username> -p $AZ_PASS
@@ -78,7 +78,7 @@ az login --service-principal -u <app-url> -p <password-or-cert> --tenant <tenant
 ```
 
 > [!IMPORTANT]
-> `az login` を対話形式で使用しているときに、コンソールにパスワードが表示されないようにするには、`read -s` では `bash` コマンドを使用します。
+> `az login` を対話形式で使用しているときに、コンソールにパスワードが表示されないようにするには、`bash` では `read -s` コマンドを使用します。
 >
 > ```bash
 > read -sp "Azure password: " AZ_PASS && echo && az login --service-principal -u <app-url> -p $AZ_PASS --tenant <tenant>

@@ -19,7 +19,7 @@ ms.locfileid: "80892991"
 
 ## <a name="chef-extension-on-azure"></a>Azure での Chef 拡張機能
 
-[Azure portal](https://docs.microsoft.com/azure/chef/chef-extension-portal) 上の [Chef 拡張機能](https://go.microsoft.com/fwlink/p/?LinkID=525040)でバックグラウンド サービスとして実行されている Chef Client を使用して仮想マシンをプロビジョニングします。 プロビジョニングが済むと、これらの仮想マシンは Chef サーバーで管理できるようになります。
+[Azure portal](https://go.microsoft.com/fwlink/p/?LinkID=525040) 上の [Chef 拡張機能](https://docs.microsoft.com/azure/chef/chef-extension-portal)でバックグラウンド サービスとして実行されている Chef Client を使用して仮想マシンをプロビジョニングします。 プロビジョニングが済むと、これらの仮想マシンは Chef サーバーで管理できるようになります。
 
 ## <a name="chef-cloud-shell"></a>Chef Cloud Shell
 

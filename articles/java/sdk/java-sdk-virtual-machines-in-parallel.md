@@ -147,7 +147,7 @@ for (String publicIpCreatableKey : publicIpCreatableKeys) {
 
 `azure.virtualMachines().create(creatableVirtualMachines)` の呼び出しによって、`creatableVirtualMachines` リストに定義されているすべての仮想マシンが複数のリージョンに対して同時に作成されます。
 
-これによって取得した `CreatedResources<VirtualMachine>` オブジェクトを使用すると、返された `create()` 型だけでなく、`VirtualMachine` メソッドの実行時に Azure サブスクリプションに作成されたすべてのリソースにアクセスできます。 返された値は、`createdRelatedResources()` から適切な型にキャストします。 
+これによって取得した `CreatedResources<VirtualMachine>` オブジェクトを使用すると、返された `VirtualMachine` 型だけでなく、`create()` メソッドの実行時に Azure サブスクリプションに作成されたすべてのリソースにアクセスできます。 返された値は、`createdRelatedResources()` から適切な型にキャストします。 
 
 `Creatable<T>` と `CreatedResources` の使い方について詳しくは、[ライブラリの概念に関する記事](java-sdk-azure-concepts.md)を参照してください。
 

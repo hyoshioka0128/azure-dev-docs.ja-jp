@@ -184,7 +184,7 @@ ms.locfileid: "82104833"
    curl http://localhost:8080
    ```
 
-   "Hello World!"  というメッセージがサンプル コントローラーから表示されることがわかります。これは、Redis cache から動的に取得されます。
+   "Hello World!" というメッセージがサンプル コントローラーから表示されることがわかります。これは、Redis cache から動的に取得されます。
 
 ## <a name="next-steps"></a>次のステップ
 

@@ -33,7 +33,7 @@ Azure Jenkins のデプロイは、[Azure Monitor ログ](/azure/log-analytics/l
 
 [Azure サービス プリンシパル](/azure/azure-resource-manager/resource-group-overview)で構成したら、Jenkins のジョブとパイプラインでは、その資格情報を使用することで次が実現します。
 
-- [Azure Storage プラグイン](/azure/storage/common/storage-introduction)を使用して、ビルド アーティファクトを [Azure Storage](https://plugins.jenkins.io/windows-azure-storage) に安全に格納およびアーカイブする。 詳細については、[Jenkins ストレージの操作方法](azure-storage-blobs-as-build-artifact-repository.md)に関するページをご覧ください。
+- [Azure Storage プラグイン](https://plugins.jenkins.io/windows-azure-storage)を使用して、ビルド アーティファクトを [Azure Storage](/azure/storage/common/storage-introduction) に安全に格納およびアーカイブする。 詳細については、[Jenkins ストレージの操作方法](azure-storage-blobs-as-build-artifact-repository.md)に関するページをご覧ください。
 - [Azure CLI](deploy-to-azure-app-service-using-azure-cli.md) を使用して Azure リソースを管理および構成する。
 
 ## <a name="deploy-your-code-into-azure-services"></a>Azure サービスにコードをデプロイする

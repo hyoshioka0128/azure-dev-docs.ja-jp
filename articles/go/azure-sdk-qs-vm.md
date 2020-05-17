@@ -74,7 +74,7 @@ az group delete -n GoVMQuickstart
 az ad sp delete --id ${CLIENT_ID_VALUE}
 ```
 
-ここに `CLIENT_ID_VALUE` の `quickstart.auth` の値を指定します。
+ここに `quickstart.auth` の `CLIENT_ID_VALUE` の値を指定します。
 
 > [!WARNING]
 > このアプリケーションのサービス プリンシパルの削除に失敗すると、アプリケーションは Azure Active Directory テナントでアクティブなままになります。
@@ -248,7 +248,7 @@ func createDeployment() (deployment resources.DeploymentExtended, err error) {
 このメソッドは、リソース グループの対応するメソッドと同じ名前 (`CreateOrUpdate`) です。 このパターンは SDK 全体で見られます。
 同様の処理を実行するメソッドは、通常、同じ名前です。
 
-最も大きな違いは、`deploymentsClient.CreateOrUpdate` メソッドの戻り値にあります。 この値は、[Future 設計パターン](https://godoc.org/github.com/Azure/go-autorest/autorest/azure#Future)に従う [Future](https://en.wikipedia.org/wiki/Futures_and_promises) 型です。 Future は、ポーリング、取り消し、または完了のブロックが可能な、Azure での実行時間の長い操作を表します。
+最も大きな違いは、`deploymentsClient.CreateOrUpdate` メソッドの戻り値にあります。 この値は、[Future 設計パターン](https://en.wikipedia.org/wiki/Futures_and_promises)に従う [Future](https://godoc.org/github.com/Azure/go-autorest/autorest/azure#Future) 型です。 Future は、ポーリング、取り消し、または完了のブロックが可能な、Azure での実行時間の長い操作を表します。
 
 ```go
         //...

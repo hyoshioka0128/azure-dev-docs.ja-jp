@@ -15,7 +15,7 @@ ms.locfileid: "82105013"
 ---
 # <a name="manage-azure-virtual-machine-scale-sets-from-your-java-applications"></a>Azure 仮想マシン スケール セットを Java アプリケーションから管理する
 
-[このサンプル](https://github.com/Azure-Samples/compute-java-manage-virtual-machine-scale-sets)では、[Java 管理ライブラリ](/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-overview)を使って[仮想マシン スケール セット](https://github.com/Azure/azure-sdk-for-java)を作成します。 
+[このサンプル](https://github.com/Azure-Samples/compute-java-manage-virtual-machine-scale-sets)では、[Java 管理ライブラリ](https://github.com/Azure/azure-sdk-for-java)を使って[仮想マシン スケール セット](/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-overview)を作成します。 
 
 ## <a name="run-the-sample"></a>サンプルを実行する
 

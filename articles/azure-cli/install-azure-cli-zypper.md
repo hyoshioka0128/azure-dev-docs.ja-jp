@@ -84,7 +84,7 @@ $ sudo rpm -ivh --nodeps azure-cli-$AZ_VERSION.x86_64.rpm
 
 [!INCLUDE[configure-proxy](includes/configure-proxy.md)]
 
-常にこのプロキシを使用するように `zypper` (`yast2` 経由) を明示的に構成することが必要な場合もあります。 このためには、`yast2 proxy` コマンドをスーパーユーザーとして実行し、フォームに提示された情報を入力します。 システムでウィンドウ マネージャーを使用できる場合、`Network Services > Proxy` で `YaST Control Center` ウィンドウを使用することもできます。
+常にこのプロキシを使用するように `zypper` (`yast2` 経由) を明示的に構成することが必要な場合もあります。 このためには、`yast2 proxy` コマンドをスーパーユーザーとして実行し、フォームに提示された情報を入力します。 システムでウィンドウ マネージャーを使用できる場合、`YaST Control Center` で `Network Services > Proxy` ウィンドウを使用することもできます。
 
 詳細な構成やその他の情報については、[OpenSUSE プロキシの構成に関するドキュメント](https://www.suse.com/documentation/slms1/book_slms/data/sec_wy_config_updates_proxy.html)をご覧ください。
 

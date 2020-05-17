@@ -16,4 +16,4 @@ Azure Cloud Shell は、Azure 上で実行される対話型シェルです。 �
 |-----------------------------------------------|---|
 | コード ブロックの右上隅にある **[使ってみる]** をクリックします。 | ![この記事の Cloud Shell](../media/cloud-shell-try-it/cli-try-it.png) |
 | ブラウザーで Cloud Shell を開きます。 | [![https://shell.azure.com/bash](../media/cloud-shell-try-it/launchcloudshell.png)](https://shell.azure.com/bash) |
-| **Azure Portal** の右上のメニューの [[Cloud Shell]](https://portal.azure.com) ボタンをクリックします。 | ![ポータルの Cloud Shell](../media/cloud-shell-try-it/cloud-shell-menu.png) |
+| [Azure Portal](https://portal.azure.com) の右上のメニューの **[Cloud Shell]** ボタンをクリックします。 | ![ポータルの Cloud Shell](../media/cloud-shell-try-it/cloud-shell-menu.png) |

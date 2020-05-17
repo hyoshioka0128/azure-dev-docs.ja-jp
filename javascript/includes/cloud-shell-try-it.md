@@ -8,7 +8,7 @@ ms.locfileid: "68285923"
 ---
 ## <a name="launch-azure-cloud-shell"></a>Azure Cloud Shell を起動する
 
-Azure Cloud Shell は、Azure Portal 内で直接実行できる無料の bash シェルです。 Azure CLI が事前にインストールされており、アカウントで使用できるように構成されています。 **Azure Portal** の右上のメニューの [[Cloud Shell]](https://portal.azure.com) ボタンをクリックします。
+Azure Cloud Shell は、Azure Portal 内で直接実行できる無料の bash シェルです。 Azure CLI が事前にインストールされており、アカウントで使用できるように構成されています。 [Azure Portal](https://portal.azure.com) の右上のメニューの **[Cloud Shell]** ボタンをクリックします。
 
 [![Cloud Shell](../media/cloud-shell-try-it/cloud-shell-menu.png)](https://portal.azure.com)
 

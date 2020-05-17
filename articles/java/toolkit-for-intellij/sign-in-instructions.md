@@ -15,7 +15,7 @@ ms.locfileid: "81673988"
 ---
 # <a name="sign-in-instructions-for-the-azure-toolkit-for-intellij"></a>Azure Toolkit for IntelliJ のサインイン手順
 
-[Azure Toolkit for IntelliJ](https://www.jetbrains.com/help/idea/managing-plugins.html) では、[インストール](https://plugins.jetbrains.com/plugin/8053)後に、Azure アカウントにサインインするための方法が 2 つ提供されます。
+[Azure Toolkit for IntelliJ](https://plugins.jetbrains.com/plugin/8053) では、[インストール](https://www.jetbrains.com/help/idea/managing-plugins.html)後に、Azure アカウントにサインインするための方法が 2 つ提供されます。
 
   - [[Device Login]\(デバイスのログイン\) によって Azure アカウントにサインインする](#sign-in-to-your-azure-account-by-device-login)
   - [[サービス プリンシパル] によって Azure アカウントにサインインする](#sign-in-to-your-azure-account-by-service-principal)

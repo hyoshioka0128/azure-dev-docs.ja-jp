@@ -78,7 +78,7 @@ log_dir=/var/log/azure
 
 ## <a name="cli-configuration-values-and-environment-variables"></a>CLI 構成値と環境変数
 
-次の表は、構成ファイルで指定できるすべてのセクションとオプションの名前を示しています。 対応する環境変数は、`AZURE_{section}_{name}` のようにすべて大文字で設定できます。 たとえば、`storage_account` の既定値 `batchai` は、`AZURE_BATCHAI_STORAGE_ACCOUNT` 変数で設定されます。
+次の表は、構成ファイルで指定できるすべてのセクションとオプションの名前を示しています。 対応する環境変数は、`AZURE_{section}_{name}` のようにすべて大文字で設定できます。 たとえば、`batchai` の既定値 `storage_account` は、`AZURE_BATCHAI_STORAGE_ACCOUNT` 変数で設定されます。
 
 既定値を指定すると、その引数は任意のコマンドで不要になります。 代わりに、その既定値が使用されます。
 

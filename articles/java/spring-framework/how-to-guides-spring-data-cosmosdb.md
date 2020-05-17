@@ -30,7 +30,7 @@ Spring Data Cosmos DB SDK は、GitHub の [spring-data-cosmosdb](https://github
 
 ### <a name="crudrepository-and-reactivecrudrepository-support"></a>CrudRepository と ReactiveCrudRepository のサポート
 
-Spring Data Cosmos DB SDK には、Spring Data の `CosmosRepository` および `ReactiveCosmosRepository` インターフェイスを拡張する `CrudRepository` および `ReactiveCrudRepository` インターフェイスが用意されています。
+Spring Data Cosmos DB SDK には、Spring Data の `CrudRepository` および `ReactiveCrudRepository` インターフェイスを拡張する `CosmosRepository` および `ReactiveCosmosRepository` インターフェイスが用意されています。
 
 次の例は、これらのインターフェイスの拡張方法を示しています。
 
@@ -221,7 +221,7 @@ public CosmosDBConfig getConfig() {
 
 Spring Data Cosmos DB SDK のバージョン 2.2.x では、応答診断文字列とクエリ メトリックがサポートされています。
 
-クエリ メトリックを有効にするには、`populateQueryMetrics` ファイルで **フラグを**true`application.properties` に設定します。 次に、`ResponseDiagnosticsProcessor` インターフェイスを拡張し、`processResponseDiagnostics` メソッドを実装して診断情報をログに記録します。 最後に、実装のインスタンスを `CosmosDbConfig.setResponseDiagnosticsProcessor` メソッドに渡します。 次のコードでは、実装例を示します。
+クエリ メトリックを有効にするには、`application.properties` ファイルで `populateQueryMetrics` フラグを **true** に設定します。 次に、`ResponseDiagnosticsProcessor` インターフェイスを拡張し、`processResponseDiagnostics` メソッドを実装して診断情報をログに記録します。 最後に、実装のインスタンスを `CosmosDbConfig.setResponseDiagnosticsProcessor` メソッドに渡します。 次のコードでは、実装例を示します。
 
 ```java
 @Configuration

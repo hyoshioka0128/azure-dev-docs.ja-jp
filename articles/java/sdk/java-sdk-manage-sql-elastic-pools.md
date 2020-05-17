@@ -72,7 +72,7 @@ SqlDatabase anotherDatabase = sqlServer.databases().define(anotherDatabaseName).
 elasticPool.update().withExistingDatabase(anotherDatabase).apply();            
 ```
 
-この API は、先頭のステートメントで、`anotherDatabase`S0 レベル[の ](/azure/sql-database/sql-database-service-tiers) を作成しています。 `anotherDatabase` をエラスティック プールに移動すると、そのプールの設定に基づいて、データベース リソースが割り当てられます。
+この API は、先頭のステートメントで、[S0 レベル](/azure/sql-database/sql-database-service-tiers)の `anotherDatabase` を作成しています。 `anotherDatabase` をエラスティック プールに移動すると、そのプールの設定に基づいて、データベース リソースが割り当てられます。
 
 ## <a name="remove-a-database-from-an-elastic-pool"></a>エラスティック プールからのデータベースの削除
 ```java
@@ -83,7 +83,7 @@ anotherDatabase = anotherDatabase.update()
                      .apply();
 ```
 
-[ に渡す値については、](/java/api/com.microsoft.azure.management.sql.databaseeditions)DatabaseEditions クラスのリファレンス`withEdition()`を参照してください。
+`withEdition()` に渡す値については、[DatabaseEditions クラスのリファレンス](/java/api/com.microsoft.azure.management.sql.databaseeditions)を参照してください。
 
 ## <a name="list-current-database-activities-in-an-elastic-pool"></a>エラスティック プールにおける現在のデータベース アクティビティの列挙
 ```java

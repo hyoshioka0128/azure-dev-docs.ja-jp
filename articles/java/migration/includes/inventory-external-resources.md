@@ -15,15 +15,15 @@ ms.locfileid: "81671628"
 
 #### <a name="inside-your-application"></a>アプリケーション内
 
-*META-INF/context.xml* ファイルを調べます。 `<Resource>` 要素内の `<Context>` 要素を探します。
+*META-INF/context.xml* ファイルを調べます。 `<Context>` 要素内の `<Resource>` 要素を探します。
 
 #### <a name="on-the-application-servers"></a>アプリケーション サーバー上
 
 *$CATALINA_BASE/conf/context.xml* および *$CATALINA_BASE/conf/server.xml* ファイルと、 *$CATALINA_BASE/conf/[engine-name]/[host-name]* ディレクトリにある *.xml*ファイルを調べます。
 
-*context.xml*ファイルでは、JNDI リソースは、最上位の `<Resource>` 要素内の `<Context>` 要素で記述されます。
+*context.xml*ファイルでは、JNDI リソースは、最上位の `<Context>` 要素内の `<Resource>` 要素で記述されます。
 
-*server.xml* ファイルでは、JNDI リソースは `<Resource>` 要素内の `<GlobalNamingResources>` 要素で記述されます。
+*server.xml* ファイルでは、JNDI リソースは `<GlobalNamingResources>` 要素内の `<Resource>` 要素で記述されます。
 
 #### <a name="datasources"></a>データソース
 

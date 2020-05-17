@@ -202,7 +202,7 @@ Azure Service Bus JMS 用の Spring Boot スターターを使用すると、Spr
     }
     ```
 
-    Spring フレームワークで `Serializable` の `send` メソッドを使用するために、`JmsTemplate` が実装されます。 それ以外の場合は、テキスト形式の json に内容をシリアル化するために、カスタマイズした `MessageConverter` bean を定義する必要があります。 `MessageConverter` の詳細については、公式の [Spring JMS スターター プロジェクト](https://spring.io/guides/gs/messaging-jms/)を参照してください。
+    Spring フレームワークで `JmsTemplate` の `send` メソッドを使用するために、`Serializable` が実装されます。 それ以外の場合は、テキスト形式の json に内容をシリアル化するために、カスタマイズした `MessageConverter` bean を定義する必要があります。 `MessageConverter` の詳細については、公式の [Spring JMS スターター プロジェクト](https://spring.io/guides/gs/messaging-jms/)を参照してください。
 
 1. *User.java* ファイルを保存して閉じます。
 

@@ -53,7 +53,7 @@ SqlServer sqlServer = azure.sqlServers().define(sqlServerName)
 
 それぞれのリソース コレクションには、そのリソースのすべてのインスタンスを現在のサブスクリプションから返す `list()` メソッドがあります。 たとえば、`azure.sqlServers().list()` とした場合、そのサブスクリプションに存在する SQL データベースがすべて返されます。
 
-取得するリストの範囲を特定の `listByResourceGroup(String groupname)`Azure リソース グループ[に限定するには、](/azure/azure-resource-manager/resource-group-overview#resource-groups) メソッドを使用します。  
+取得するリストの範囲を特定の [Azure リソース グループ](/azure/azure-resource-manager/resource-group-overview#resource-groups)に限定するには、`listByResourceGroup(String groupname)` メソッドを使用します。  
 
 返された `PagedList<T>` コレクションは、通常の `List<T>` とまったく同じように、検索したり反復処理を行ったりすることができます。
 
@@ -87,9 +87,9 @@ for (VirtualMachine vm : vms) {
 >[!NOTE]
 > `define()` と `update()` は動詞ですが、その後に `create()` または `apply()` が続かない限り、他の処理がブロックされることはありません。
  
-いくつかのメソッドには、`Async`Reactive 拡張機能[を使った非同期版が存在し、](https://github.com/ReactiveX/RxJava) というサフィックスが付きます。 
+いくつかのメソッドには、[Reactive 拡張機能](https://github.com/ReactiveX/RxJava)を使った非同期版が存在し、`Async` というサフィックスが付きます。 
 
-一部のオブジェクトには、他にも、Azure のリソースの状態を変更するメソッドが存在します。 たとえば `restart()` の `VirtualMachine` があります。
+一部のオブジェクトには、他にも、Azure のリソースの状態を変更するメソッドが存在します。 たとえば `VirtualMachine` の `restart()` があります。
 
 ```java
 VirtualMachine vmToRestart = azure.getVirtualMachines().getById(id);
@@ -126,7 +126,7 @@ Creatable<VirtualMachine> vmCreatable = azure.virtualMachines().define("creatabl
 CreatedResources<VirtualMachine> virtualMachine = azure.virtualMachines().create(vmCreatable);
 ```
 
-`Creatable<T>` の呼び出しに `create()` を渡すと、単一のリソース オブジェクトではなく `CreatedResources` オブジェクトが返されます。  `CreatedResources<T>` オブジェクトを使用すると、`create()` の呼び出しで作成された (呼び出しの中で型指定したリソースだけでなく) すべてのリソースにアクセスすることができます。 前の例で作成した仮想マシンの、Azure で作成されたパブリック IP アドレスにアクセスするには、次のコードを使用します。
+`create()` の呼び出しに `Creatable<T>` を渡すと、単一のリソース オブジェクトではなく `CreatedResources` オブジェクトが返されます。  `CreatedResources<T>` オブジェクトを使用すると、`create()` の呼び出しで作成された (呼び出しの中で型指定したリソースだけでなく) すべてのリソースにアクセスすることができます。 前の例で作成した仮想マシンの、Azure で作成されたパブリック IP アドレスにアクセスするには、次のコードを使用します。
 
 ```java
 PublicIPAddress pip = (PublicIPAddress) virtualMachine.createdRelatedResource(publicIPAddressCreatable.key());
@@ -134,7 +134,7 @@ PublicIPAddress pip = (PublicIPAddress) virtualMachine.createdRelatedResource(pu
 
 ## <a name="exception-handling"></a>例外処理
 
-管理ライブラリの Exception クラスは `com.microsoft.rest.RestException` を拡張したものです。 管理ライブラリによって生成された例外は、対応する `catch (RestException exception)` ステートメントに続く `try` ブロックでキャッチします。
+管理ライブラリの Exception クラスは `com.microsoft.rest.RestException` を拡張したものです。 管理ライブラリによって生成された例外は、対応する `try` ステートメントに続く `catch (RestException exception)` ブロックでキャッチします。
 
 ## <a name="logs-and-trace"></a>ログとトレース
 
@@ -148,4 +148,4 @@ PublicIPAddress pip = (PublicIPAddress) virtualMachine.createdRelatedResource(pu
 | com.microsoft.rest.LogLevel.HEADERS | BASIC の全出力内容に加えて、REST 呼び出しの要求と応答のヘッダーがログに記録されます
 | com.microsoft.rest.LogLevel.BODY_AND_HEADERS | BODY と HEADERS の両ログ レベルの全出力内容が記録されます
 
-[Log4J 2](https://www.slf4j.org/manual.html) などのログ記録フレームワークに出力する必要がある場合は、[SLF4J のログ記録の実装](https://logging.apache.org/log4j/2.x/)をバインドしてください。
+[Log4J 2](https://logging.apache.org/log4j/2.x/) などのログ記録フレームワークに出力する必要がある場合は、[SLF4J のログ記録の実装](https://www.slf4j.org/manual.html)をバインドしてください。

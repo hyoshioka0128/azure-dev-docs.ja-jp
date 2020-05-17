@@ -76,7 +76,7 @@ $ scl enable rh-python36 bash
 
 [!INCLUDE[configure-proxy](includes/configure-proxy.md)]
 
-常にこのプロキシを使用するように `yum` を明示的に構成することが必要な場合もあります。 次の行が `[main]` の `/etc/yum.conf` セクションの下に表示されていることを確認してください。
+常にこのプロキシを使用するように `yum` を明示的に構成することが必要な場合もあります。 次の行が `/etc/yum.conf` の `[main]` セクションの下に表示されていることを確認してください。
 
 ```yum.conf
 [main]

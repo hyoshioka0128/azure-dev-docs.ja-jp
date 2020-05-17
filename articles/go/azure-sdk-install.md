@@ -30,7 +30,7 @@ Azure SDK for Go へようこそ。 この SDK を使用すると、Go アプリ
 
 ## <a name="vendor-the-azure-sdk-for-go"></a>Azure SDK for Go をベンダリングする
 
-Azure SDK for Go は、[dep](https://github.com/golang/dep) を使用してベンダリングできます。 安定性のため、ベンダリングすることをお勧めします。 独自のプロジェクトで `dep` を使用するには、`github.com/Azure/azure-sdk-for-go` を `[[constraint]]` の `Gopkg.toml` セクションに追加します。 たとえば、バージョン `14.0.0` でベンダリングするには、次のエントリを追加します。
+Azure SDK for Go は、[dep](https://github.com/golang/dep) を使用してベンダリングできます。 安定性のため、ベンダリングすることをお勧めします。 独自のプロジェクトで `dep` を使用するには、`github.com/Azure/azure-sdk-for-go` を `Gopkg.toml` の `[[constraint]]` セクションに追加します。 たとえば、バージョン `14.0.0` でベンダリングするには、次のエントリを追加します。
 
 ```toml
 [[constraint]]

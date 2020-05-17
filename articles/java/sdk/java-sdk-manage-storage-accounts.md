@@ -15,7 +15,7 @@ ms.locfileid: "82104993"
 ---
 # <a name="manage-azure-storage-accounts-from-your-java-applications"></a>Java アプリケーションから Azure ストレージ アカウントを管理する
 
-[このサンプル](https://github.com/Azure-Samples/storage-java-manage-storage-accounts)では、[Java 管理ライブラリ](/azure/storage/common/storage-introduction)を使用して、[Azure ストレージ](https://github.com/Azure/azure-sdk-for-java) アカウントを作成し、アカウント アクセス キーを操作します。 
+[このサンプル](https://github.com/Azure-Samples/storage-java-manage-storage-accounts)では、[Java 管理ライブラリ](https://github.com/Azure/azure-sdk-for-java)を使用して、[Azure ストレージ](/azure/storage/common/storage-introduction) アカウントを作成し、アカウント アクセス キーを操作します。 
 
 ## <a name="run-the-sample"></a>サンプルを実行する
 
@@ -101,7 +101,7 @@ azure.storageAccounts().deleteByResourceGroup(rgName,accountName);
 | サンプルで使われているクラス | メモ
 |-------|-------|
 | [StorageAccount](/java/api/com.microsoft.azure.management.storage.storageaccount)  | Azure ストレージ アカウントを表します。 ストレージ アカウントに関する情報は、このクラスのメソッドを使って取得します。
-| [StorageAccountKey](/java/api/com.microsoft.azure.management.storage.storageaccountkey) | `StorageAccount.getKeys()` は、ストレージ アカウント キーを返します。 キーを更新するには、`regenerateKey` の `StorageAccount` メソッドを使用します。
+| [StorageAccountKey](/java/api/com.microsoft.azure.management.storage.storageaccountkey) | `StorageAccount.getKeys()` は、ストレージ アカウント キーを返します。 キーを更新するには、`StorageAccount` の `regenerateKey` メソッドを使用します。
 
 ## <a name="next-steps"></a>次のステップ
 

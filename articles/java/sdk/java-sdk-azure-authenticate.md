@@ -111,7 +111,7 @@ authURL=https\://login.windows.net/
 graphURL=https\://graph.windows.net/
 ```
 
-- subscription: Azure CLI 2.0 の *から得られる*id`az account show` 値を使用します。
+- subscription: Azure CLI 2.0 の `az account show` から得られる *id* 値を使用します。
 - client: アプリケーションを実行するために作成したサービス プリンシパルの出力から得られる *appId* 値を使用します。 アプリのサービス プリンシパルがない場合は、[Azure CLI 2.0 で作成](/cli/azure/create-an-azure-service-principal-azure-cli)してください。
 - key: サービス プリンシパル作成 CLI の出力から得られる *password* 値を使用します。
 - tenant: サービス プリンシパル作成 CLI の出力から得られる *tenant* 値を使用します。

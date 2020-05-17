@@ -37,7 +37,7 @@ Docker を使用して、Azure CLI がプレインストールされたスタン
 > docker run -it -v ${HOME}/.ssh:/root/.ssh mcr.microsoft.com/azure-cli
 > ```
 
-CLI は、`az` の `/usr/local/bin` コマンドとしてイメージにインストールされます。 サインインするには、[az login](/cli/azure/reference-index#az-login) コマンドを実行します。
+CLI は、`/usr/local/bin` の `az` コマンドとしてイメージにインストールされます。 サインインするには、[az login](/cli/azure/reference-index#az-login) コマンドを実行します。
 
 [!INCLUDE [interactive-login](includes/interactive-login.md)]
 

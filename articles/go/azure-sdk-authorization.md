@@ -136,7 +136,7 @@ authorizer, err := NewAuthorizerFromFile(azure.PublicCloud.ResourceManagerEndpoi
 
 ユーザーが対話形式でサインインできるようにする場合、最良の方法は、デバイス トークン認証を使用することです。 この認証フローでは、Microsoft サインイン サイトに貼り付けるトークンをユーザーに渡し、ユーザーはこのサイトで Azure Active Directory (AAD) アカウントで認証します。 標準のユーザー名/パスワード認証とは異なり、この認証方法では多要素認証が有効になっているアカウントがサポートされます。
 
-デバイス トークン認証を使用するには、[NewDeviceFlowConfig](https://godoc.org/github.com/Azure/go-autorest/autorest/azure/auth#DeviceFlowConfig) 関数で [DeviceFlowConfig](https://godoc.org/github.com/Azure/go-autorest/autorest/azure/auth#NewDeviceFlowConfig) Authorizer を作成します。 作成されたオブジェクトで [Authorizer](https://godoc.org/github.com/Azure/go-autorest/autorest/azure/auth#DeviceFlowConfig.Authorizer) を呼び出して認証プロセスを開始します。 デバイス認証フローでは、認証フロー全体が完了するまでプログラムの実行がブロックされます。
+デバイス トークン認証を使用するには、[NewDeviceFlowConfig](https://godoc.org/github.com/Azure/go-autorest/autorest/azure/auth#NewDeviceFlowConfig) 関数で [DeviceFlowConfig](https://godoc.org/github.com/Azure/go-autorest/autorest/azure/auth#DeviceFlowConfig) Authorizer を作成します。 作成されたオブジェクトで [Authorizer](https://godoc.org/github.com/Azure/go-autorest/autorest/azure/auth#DeviceFlowConfig.Authorizer) を呼び出して認証プロセスを開始します。 デバイス認証フローでは、認証フロー全体が完了するまでプログラムの実行がブロックされます。
 
 ```go
 import "github.com/Azure/go-autorest/autorest/azure/auth"

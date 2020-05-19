@@ -5,18 +5,20 @@ author: edburns
 ms.author: edburns
 ms.topic: conceptual
 ms.date: 1/27/2020
-ms.openlocfilehash: 10edb96e4e0781945da85d5a872b14178db3122f
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: b9d9a4ea8ef81af5c67b91281e892b4626f42f62
+ms.sourcegitcommit: 226ebca0d0e3b918928f58a3a7127be49e4aca87
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81673518"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82988881"
 ---
 # <a name="migrate-weblogic-applications-to-azure-virtual-machines"></a>WebLogic アプリケーションを Azure Virtual Machines に移行する
 
 このガイドでは、既存の WebLogic アプリケーションを移行して Azure Virtual Machines で実行する場合に知っておくべきことについて説明します。
 
 ## <a name="pre-migration"></a>移行前
+
+移行を確実に成功させるには、開始する前に、次のセクションで説明する評価とインベントリの手順を完了します。
 
 ### <a name="define-what-you-mean-by-migration-complete"></a>"移行の完了" が意味することを定義する
 
@@ -40,11 +42,11 @@ Oracle と Microsoft は提携して、Azure ソリューション テンプレ�
 
 [!INCLUDE [inventory-all-certificates](includes/inventory-all-certificates.md)]
 
-[!INCLUDE [validate-that-the-supported-java-version-works-correctly](includes/validate-that-the-supported-java-version-works-correctly.md)]
+[!INCLUDE [validate-that-the-supported-java-version-works-correctly-weblogic](includes/validate-that-the-supported-java-version-works-correctly-weblogic.md)]
 
 [!INCLUDE [inventory-jndi-resources](includes/inventory-jndi-resources.md)]
 
-[!INCLUDE [domain-configuration](includes/domain-configuration.md)]
+[!INCLUDE [inspect-your-domain-configuration](includes/inspect-your-domain-configuration.md)]
 
 [!INCLUDE [determine-whether-session-replication-is-used](includes/determine-whether-session-replication-is-used.md)]
 
@@ -74,7 +76,11 @@ Oracle と Microsoft は提携して、Azure ソリューション テンプレ�
 
 [!INCLUDE [determine-whether-wlst-is-used](includes/determine-whether-wlst-is-used.md)]
 
-[!INCLUDE [validate-whether-and-how-the-file-system-is-used](includes/validate-whether-and-how-the-file-system-is-used.md)]
+### <a name="determine-whether-and-how-the-file-system-is-used"></a>ファイル システムが使用されているかどうかとその使用方法を判断する
+
+VM ファイルシステムは、永続化、スタートアップ、およびシャットダウンに関して、オンプレミスのファイルシステムと同じように動作します。 それでも、ファイルシステムのニーズを認識し、VM のストレージ サイズとパフォーマンスが十分に確保されていることを確認することが重要です。
+
+[!INCLUDE [static-content](includes/static-content.md)]
 
 [!INCLUDE [determine-the-network-topology](includes/determine-the-network-topology.md)]
 
@@ -158,4 +164,4 @@ CI/CD パイプラインまたは手動デプロイ システムからのアク�
 
 * WebLogic の Java EE 認証と承認を Azure Active Directory と統合します。 詳細については、[Azure Active Directory の統合のファースト ステップ ガイド](/azure/active-directory/manage-apps/plan-an-application-integration)に関する記事を参照してください。
 
-* Azure Key Vault を使用して、"シークレット" として機能するすべての情報を格納します。 詳細については、「[Azure Key Vault の基本的な概念](/azure/key-vault/basic-concepts)」をご覧ください。
+* Azure Key Vault を使用して、"シークレット" として機能するすべての情報を格納します。 詳細については、「[Azure Key Vault の基本的な概念](/azure/key-vault/basic-concepts)」を参照してください。

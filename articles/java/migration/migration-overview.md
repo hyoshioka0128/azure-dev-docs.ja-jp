@@ -1,16 +1,16 @@
 ---
 title: Java アプリケーションを Azure に移行する
-description: このトピックでは、Java アプリケーションを Azure に移行する場合に推奨されている方法について概要を示します。
+description: このトピックでは、Java アプリケーションを Azure に移行するために推奨されている方法の概要を示します。
 author: yevster
 ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 1/20/2020
-ms.openlocfilehash: e6215502b54bedf62f40a024f9e7b3acc01cdc1f
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 1eeb7d6a17bb21963f3203d484387c0aae6c402f
+ms.sourcegitcommit: 226ebca0d0e3b918928f58a3a7127be49e4aca87
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81670608"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82988698"
 ---
 # <a name="migrate-java-applications-to-azure"></a>Java アプリケーションを Azure に移行する
 
@@ -80,7 +80,7 @@ Java EE 仕様によって提供される機能のみに依存するアプリケ
 
 |   |アプリ<br>サービス<br>Java SE|アプリ<br>サービス<br>Tomcat|Azure<br>Spring<br>クラウド|AKS|Virtual Machines|
 |---|---|---|---|---|---|---|
-| Spring Boot/JAR アプリケーション                                    |&#x2714;|        |        |&#x2714;|&#x2714;|
+| Spring Boot/JAR アプリケーション                                    |&#x2714;|        |&#x2714;|&#x2714;|&#x2714;|
 | Spring Cloud/マイクロサービス                                      |        |        |&#x2714;|&#x2714;|&#x2714;|
 | Web アプリケーション                                                  |        |&#x2714;|        |&#x2714;|&#x2714;|
 | Java EE アプリケーション                                              |        |        |        |&#x2714;|&#x2714;|
@@ -88,6 +88,8 @@ Java EE 仕様によって提供される機能のみに依存するアプリケ
 | ローカル ファイル システムでの長期保存                         |&#x2714;|&#x2714;|        |&#x2714;|&#x2714;|
 | アプリケーション サーバー レベルのクラスタリング                               |        |        |        |&#x2714;|&#x2714;|
 | バッチ/スケジュールされたジョブ                                            |        |        |&#x2714;|&#x2714;|&#x2714;|
+| VNet 統合/ハイブリッド接続                              |プレビュー |プレビュー |        |&#x2714;|&#x2714;|
+| Azure リージョンの利用可能性                | [詳細][10] | [詳細][10] | [詳細][11] |[詳細][12]|[詳細][13]|
 
 ### <a name="ongoing-responsibility-grid"></a>継続的な役割グリッド
 
@@ -98,14 +100,14 @@ Java EE 仕様によって提供される機能のみに依存するアプリケ
 > [!NOTE]
 > これは、すべての役割を網羅したリストではありません。
 
-|   | App Service | Azure Spring Cloud | AKS | Virtual Machines |
+|                                                                       | App Service | Azure Spring Cloud | AKS | Virtual Machines |
 |---|---|---|---|---|
 | ライブラリを更新する<br>(脆弱性の修復を含む)                 | &#x1F449;   | &#x1F449;   | &#x1F449;   | &#x1F449; |
 | アプリケーション サーバーを更新する<br>(脆弱性の修復を含む)    | ![Azure][1] | ![Azure][1] | &#x1F449;   | &#x1F449; |
 | Java ランタイムを更新する<br>(脆弱性の修復を含む)          | ![Azure][1] | ![Azure][1] | &#x1F449;   | &#x1F449; |
-| Kubernetes の更新をトリガーする<br>(手動トリガーを使用して Azure によって実行) | 該当なし         | 該当なし         | &#x1F449;   | 該当なし       |
-| 下位互換性のない Kubernetes API の変更を調整する                  | 該当なし         | 該当なし         | &#x1F449;   | 該当なし       |
-| コンテナーの基本イメージを更新する<br>(脆弱性の修復を含む)      | 該当なし         | 該当なし         | &#x1F449;   | 該当なし       |
+| Kubernetes の更新をトリガーする<br>(手動トリガーを使用して Azure によって実行) | 該当なし         | ![Azure][1] | &#x1F449;   | 該当なし       |
+| 下位互換性のない Kubernetes API の変更を調整する                  | 該当なし         | ![Azure][1] | &#x1F449;   | 該当なし       |
+| コンテナーの基本イメージを更新する<br>(脆弱性の修復を含む)      | 該当なし         | ![Azure][1] | &#x1F449;   | 該当なし       |
 | オペレーティング システムを更新する<br>(脆弱性の修復を含む)      | ![Azure][1] | ![Azure][1] | ![Azure][1] | &#x1F449; |
 | 失敗したインスタンスを検出して再起動する                                   | ![Azure][1] | ![Azure][1] | ![Azure][1] | &#x1F449; |
 | 更新のためのドレインとローリング再起動を実施する                       | ![Azure][1] | ![Azure][1] | ![Azure][1] | &#x1F449; |
@@ -138,8 +140,8 @@ Tomcat 上の Web アプリを Azure Spring Cloud に移行する場合は、ま
 
 |移行先&nbsp;→<br><br>アプリケーションの&nbsp;種類&nbsp;↓|アプリ<br>サービス<br>Java SE|アプリ<br>サービス<br>Tomcat|Azure<br>Spring<br>クラウド|AKS|Virtual Machines|
 |---|---|---|---|---|---|---|
-| Spring Boot/<br>JAR アプリケーション | [ガイダンス][5] | ガイダンス<br>予定 | ガイダンス<br>予定 | ガイダンス<br>予定 | ガイダンス<br>予定 |
-| Spring Cloud/<br>マイクロサービス   | 該当なし           | 該当なし                 | ガイダンス<br>予定 | ガイダンス<br>予定 | ガイダンス<br>予定 |
+| Spring Boot/<br>JAR アプリケーション | [ガイダンス][5] | ガイダンス<br>予定 | ガイダンス<br>予定 | [ガイダンス][14]      | ガイダンス<br>予定 |
+| Spring Cloud/<br>マイクロサービス   | 該当なし           | 該当なし                 | [ガイダンス][15]      | ガイダンス<br>予定 | ガイダンス<br>予定 |
 | Web アプリケーション<br>(Tomcat 上)     | 該当なし           | [ガイダンス][2]       | 該当なし                 | [ガイダンス][3]       | ガイダンス<br>予定 |
 
 **Java EE アプリケーション**
@@ -158,8 +160,14 @@ Tomcat 上の Web アプリを Azure Spring Cloud に移行する場合は、ま
 [2]: migrate-tomcat-to-tomcat-app-service.md
 [3]: migrate-tomcat-to-containers-on-azure-kubernetes-service.md
 [4]: migrate-weblogic-to-virtual-machines.md
-[5]: migrate-java-se-to-java-se-app-service.md
+[5]: migrate-spring-boot-to-app-service.md
 [6]: migrate-weblogic-to-wildfly-on-azure-kubernetes-service.md
 [7]: migrate-websphere-to-wildfly-on-azure-kubernetes-service.md
 [8]: migrate-jboss-eap-to-wildfly-on-azure-kubernetes-service.md
 [9]: migrate-wildfly-to-wildfly-on-azure-kubernetes-service.md
+[10]: https://azure.microsoft.com/global-infrastructure/services/?products=app-service-linux
+[11]: https://azure.microsoft.com/global-infrastructure/services/?products=spring-cloud
+[12]: https://azure.microsoft.com/global-infrastructure/services/?products=kubernetes-service
+[13]: https://azure.microsoft.com/global-infrastructure/services/?products=virtual-machines
+[14]: migrate-spring-boot-to-azure-kubernetes-service.md
+[15]: migrate-spring-cloud-to-azure-spring-cloud.md

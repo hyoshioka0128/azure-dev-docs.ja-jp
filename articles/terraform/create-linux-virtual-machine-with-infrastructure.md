@@ -3,13 +3,13 @@ title: クイックスタート - Terraform を使用した Azure での Linux V
 description: Terraform を使用して、Azure で完全な Linux 仮想マシン環境を作成して管理する方法について説明します。
 keywords: Azure DevOps Terraform Linux VM 仮想マシン
 ms.topic: quickstart
-ms.date: 05/04/2020
-ms.openlocfilehash: d6763118179251c224e0ec3ae6e05a630cae7cde
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.date: 05/11/2020
+ms.openlocfilehash: 3485e899deaf84a63a2cf2d8085ac34b43f6fca9
+ms.sourcegitcommit: aa417af8b5f00cbc056666e481250ef45c661d52
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82801890"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83153710"
 ---
 # <a name="quickstart-create-a-linux-vm-with-infrastructure-in-azure-using-terraform"></a>クイック スタート:Terraform を使用して Azure に Linux VM とインフラストラクチャを作成する
 
@@ -146,9 +146,9 @@ resource "azurerm_network_interface" "myterraformnic" {
 
     ip_configuration {
         name                          = "myNicConfiguration"
-        subnet_id                     = "azurerm_subnet.myterraformsubnet.id"
+        subnet_id                     = azurerm_subnet.myterraformsubnet.id
         private_ip_address_allocation = "Dynamic"
-        public_ip_address_id          = "azurerm_public_ip.myterraformpublicip.id"
+        public_ip_address_id          = azurerm_public_ip.myterraformpublicip.id
     }
 
     tags = {
@@ -412,6 +412,9 @@ resource "azurerm_linux_virtual_machine" "myterraformvm" {
 }
 ```
 
+**注:**
+
+- `admin_ssh_key` ブロックに関して、Azure VM エージェントでは SSH キーをパス `/home/{username}/.ssh/authorized_keys` に書き込む必要があります。 Windows でこのサンプルを実行するには、このディレクトリ構造が存在することを確認する必要があります。 `admin_ssh_key` ブロックの詳細については、[Terraform.io の azurerm_linux_virtual_machine のドキュメント](https://www.terraform.io/docs/providers/azurerm/r/linux_virtual_machine.html)を参照してください。
 
 ## <a name="build-and-deploy-the-infrastructure"></a>インフラストラクチャをビルドし、デプロイする
 

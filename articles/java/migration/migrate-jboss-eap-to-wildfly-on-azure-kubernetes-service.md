@@ -5,18 +5,20 @@ author: mriem
 ms.author: manriem
 ms.topic: conceptual
 ms.date: 3/16/2020
-ms.openlocfilehash: a1ebbee2127c283e990021da0b395e9fbb7d883c
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 4ab902e61703d5abc093dc508a370777b69632ff
+ms.sourcegitcommit: 226ebca0d0e3b918928f58a3a7127be49e4aca87
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81672838"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82988942"
 ---
 # <a name="migrate-jboss-eap-applications-to-wildfly-on-azure-kubernetes-service"></a>JBoss EAP アプリケーションを Azure Kubernetes Service 上の WildFly に移行する
 
 このガイドでは、既存の JBoss EAP アプリケーションを移行して Azure Kubernetes Service コンテナーの WildFly 上で実行する場合に知っておくべきことについて説明します。
 
 ## <a name="pre-migration"></a>移行前
+
+移行を確実に成功させるには、開始する前に、次のセクションで説明する評価とインベントリの手順を完了します。
 
 [!INCLUDE [inventory-server-capacity-aks](includes/inventory-server-capacity-aks.md)]
 
@@ -28,17 +30,7 @@ ms.locfileid: "81672838"
 
 [!INCLUDE [inventory-all-certificates](includes/inventory-all-certificates.md)]
 
-### <a name="validate-that-the-supported-java-version-works-correctly"></a>サポートされている Java バージョンが正しく動作することを検証する
-
-Azure Kubernetes Service で WildFly を使用するには、特定のバージョンの Java が必要です。 したがって、そのサポートされているバージョンを使用してアプリケーションを正常に実行できることを検証する必要があります。 現在のサーバーでサポートされていない JDK (Oracle JDK や IBM OpenJ9 など) を使用している場合、この検証が特に重要です。
-
-現在のバージョンを取得するには、実稼働サーバーにサインインし、次のコマンドを実行します。
-
-```bash
-java -version
-```
-
-WildFly の実行に使用するバージョンのガイダンスについては、「[Requirements](http://docs.wildfly.org/19/Getting_Started_Guide.html#requirements)」を参照してください。
+[!INCLUDE [validate-that-the-supported-java-version-works-correctly-wildfly](includes/validate-that-the-supported-java-version-works-correctly-wildfly.md)]
 
 ### <a name="inventory-jndi-resources"></a>JNDI リソースをインベントリする
 
@@ -50,7 +42,7 @@ WildFly の実行に使用するバージョンのガイダンスについては
 
 #### <a name="inside-your-application"></a>アプリケーション内
 
-ファイル *WEB-INF/jboss-web.xml* または *WEB-INF/web.xml*、あるいはその両方を調べます。
+*WEB-INF/jboss-web.xml* または *WEB-INF/web.xml*、あるいはその両方のファイルを調べます。
 
 ### <a name="document-datasources"></a>データソースの文書化
 
@@ -66,17 +58,9 @@ WildFly の実行に使用するバージョンのガイダンスについては
 
 アプリケーション サーバーでファイル システムを使用する場合は、再構成や、まれにアーキテクチャの変更が必要になります。 ファイル システムは、JBoss EAP モジュールまたはアプリケーション コードによって使用される場合があります。 次のセクションに記載された一部または全部のシナリオを確認できます。
 
-#### <a name="read-only-static-content"></a>読み取り専用の静的コンテンツ
+[!INCLUDE [static-content](includes/static-content.md)]
 
-現在、アプリケーションで静的コンテンツを提供している場合は、そのための別の場所が必要になります。 静的コンテンツを Azure Blob Storage に移動し、グローバルな高速ダウンロードのために Azure CDN を追加することを検討できます。 詳細については、「[Azure Storage での静的 Web サイト ホスティング](/azure/storage/blobs/storage-blob-static-website)」と[「クイック スタート:Azure ストレージ アカウントと Azure CDN との統合](/azure/cdn/cdn-create-a-storage-account-with-cdn)」を参照してください。
-
-#### <a name="dynamically-published-static-content"></a>動的に公開される静的コンテンツ
-
-アプリケーションによってアップロードまたは生成されるが、作成後に変更できない静的コンテンツをアプリケーションで許可する場合は、前述のように Azure Blob Storage と Azure CDN を使用し、Azure Function でアップロードと CDN の更新を処理します。 「[Azure Functions を使用した静的コンテンツのアップロードと CDN の事前読み込み](https://github.com/Azure-Samples/functions-java-push-static-contents-to-cdn)」で、ご利用いただけるサンプルの実装を提供しています。
-
-#### <a name="dynamic-or-internal-content"></a>動的または内部のコンテンツ
-
-アプリケーションで頻繁に書き込みおよび読み取りされるファイル (一時データ ファイルなど) や、アプリケーションでのみ表示できる静的ファイルには、Azure Storage 共有を永続ボリュームとしてマウントできます。 詳細については、「[Azure Kubernetes Service で Azure Files を含む永続ボリュームを動的に作成して使用する](/azure/aks/azure-files-dynamic-pv)」を参照してください。
+[!INCLUDE [dynamic-or-internal-content-aks](includes/dynamic-or-internal-content-aks.md)]
 
 [!INCLUDE [determine-whether-your-application-relies-on-scheduled-jobs](includes/determine-whether-your-application-relies-on-scheduled-jobs.md)]
 
@@ -98,7 +82,7 @@ WildFly の実行に使用するバージョンのガイダンスについては
 
 ### <a name="determine-whether-jca-connectors-are-in-use"></a>JCA コネクタが使用されているかどうかを判断する
 
-アプリケーションで JCA コネクタを使用する場合は、WildFly で JCA コネクタを使用できることを確認する必要があります。 JCA の実装が JBoss EAP に関連付けられている場合は、その依存関係を削除するようにアプリケーションをリファクタリングする必要があります。 コネクタを使用できる場合は、JAR をサーバーのクラスパスに追加し、必要な構成ファイルを WildFly サーバー ディレクトリ内の適切な場所に配置して使用できるようにする必要があります。
+アプリケーションで JCA コネクタを使用する場合は、WildFly で JCA コネクタを使用できることを確認する必要があります。 JCA の実装が JBoss EAP に関連付けられている場合は、その依存関係を削除するようにアプリケーションをリファクタリングする必要があります。 WildFly で JCA コネクタを使用できる場合は、JAR をサーバーのクラスパスに追加し、必要な構成ファイルを WildFly サーバー ディレクトリ内の適切な場所に配置して使用できるようにする必要があります。
 
 [!INCLUDE [determine-whether-jaas-is-in-use](includes/determine-whether-jaas-is-in-use.md)]
 

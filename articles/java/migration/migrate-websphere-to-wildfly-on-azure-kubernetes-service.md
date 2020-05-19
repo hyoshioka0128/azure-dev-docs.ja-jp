@@ -5,18 +5,20 @@ author: mriem
 ms.author: manriem
 ms.topic: conceptual
 ms.date: 2/28/2020
-ms.openlocfilehash: 279051f626c09e63637fdf99b323857f2751b813
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 8f9dfe5168246dff64192ec802651a7fba022fc6
+ms.sourcegitcommit: 226ebca0d0e3b918928f58a3a7127be49e4aca87
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81673318"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82988817"
 ---
 # <a name="migrate-websphere-applications-to-wildfly-on-azure-kubernetes-service"></a>WebSphere アプリケーションを Azure Kubernetes Service 上の WildFly に移行する
 
 このガイドでは、既存の WebSphere アプリケーションを移行して Azure Kubernetes Service コンテナーの WildFly 上で実行する場合に知っておくべきことについて説明します。
 
 ## <a name="pre-migration"></a>移行前
+
+移行を確実に成功させるには、開始する前に、次のセクションで説明する評価とインベントリの手順を完了します。
 
 [!INCLUDE [inventory-server-capacity-aks](includes/inventory-server-capacity-aks.md)]
 
@@ -26,15 +28,7 @@ ms.locfileid: "81673318"
 
 [!INCLUDE [inventory-all-certificates](includes/inventory-all-certificates.md)]
 
-### <a name="validate-that-the-supported-java-version-works-correctly"></a>サポートされている Java バージョンが正しく動作することを検証する
-
-Azure Kubernetes Service で WildFly を使用するには、特定のバージョンの Java が必要です。 したがって、そのサポートされているバージョンを使用してアプリケーションを正常に実行できることを検証する必要があります。 現在のサーバーでサポートされていない JDK (Oracle JDK や IBM OpenJ9 など) を使用している場合、この検証が特に重要です。
-
-現在のバージョンを取得するには、実稼働サーバーにサインインし、次のコマンドを実行します。
-
-```bash
-java -version
-```
+[!INCLUDE [validate-that-the-supported-java-version-works-correctly-wildfly](includes/validate-that-the-supported-java-version-works-correctly-wildfly.md)]
 
 ### <a name="inventory-jndi-resources"></a>JNDI リソースをインベントリする
 
@@ -58,17 +52,9 @@ java -version
 
 アプリケーション サーバーでファイル システムを使用する場合は、再構成や、まれにアーキテクチャの変更が必要になります。 ファイル システムは、WebSphere モジュールまたはアプリケーション コードによって使用される場合があります。 次のセクションに記載された一部または全部のシナリオを確認できます。
 
-#### <a name="read-only-static-content"></a>読み取り専用の静的コンテンツ
+[!INCLUDE [static-content](includes/static-content.md)]
 
-現在、アプリケーションで静的コンテンツを提供している場合は、そのための別の場所が必要になります。 静的コンテンツを Azure Blob Storage に移動し、グローバルな高速ダウンロードのために Azure CDN を追加することを検討できます。 詳細については、「[Azure Storage での静的 Web サイト ホスティング](/azure/storage/blobs/storage-blob-static-website)」と[「クイック スタート:Azure ストレージ アカウントと Azure CDN との統合](/azure/cdn/cdn-create-a-storage-account-with-cdn)」を参照してください。
-
-#### <a name="dynamically-published-static-content"></a>動的に公開される静的コンテンツ
-
-アプリケーションによってアップロードまたは生成されるが、作成後に変更できない静的コンテンツをアプリケーションで許可する場合は、前述のように Azure Blob Storage と Azure CDN を使用し、Azure Function でアップロードと CDN の更新を処理します。 「[Azure Functions を使用した静的コンテンツのアップロードと CDN の事前読み込み](https://github.com/Azure-Samples/functions-java-push-static-contents-to-cdn)」で、ご利用いただけるサンプルの実装を提供しています。
-
-#### <a name="dynamic-or-internal-content"></a>動的または内部のコンテンツ
-
-アプリケーションで頻繁に書き込みおよび読み取りされるファイル (一時データ ファイルなど) や、アプリケーションでのみ表示できる静的ファイルには、Azure Storage 共有を永続ボリュームとしてマウントできます。 詳細については、「[Azure Kubernetes Service で Azure Files を含む永続ボリュームを動的に作成して使用する](/azure/aks/azure-files-dynamic-pv)」を参照してください。
+[!INCLUDE [dynamic-or-internal-content-aks](includes/dynamic-or-internal-content-aks.md)]
 
 [!INCLUDE [determine-whether-your-application-relies-on-scheduled-jobs](includes/determine-whether-your-application-relies-on-scheduled-jobs.md)]
 

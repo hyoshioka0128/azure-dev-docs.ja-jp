@@ -11,12 +11,12 @@ ms.service: active-directory-b2c
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
-ms.openlocfilehash: 71bc7e2e7677ce3f53c70bd68e5e73765070bd06
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: c06c1205d1ef1f8dc7eec674c846cf53c6a2e5e8
+ms.sourcegitcommit: 996212c5a141d724d26f3899e91d194b08b2dc0b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82104863"
+ms.lasthandoff: 05/08/2020
+ms.locfileid: "82985181"
 ---
 # <a name="tutorial-secure-a-java-web-app-using-the-spring-boot-starter-for-azure-active-directory-b2c"></a>チュートリアル:Azure Active Directory B2C 用の Spring Boot Starter を使用して Java Web アプリをセキュリティで保護する
 
@@ -88,15 +88,16 @@ Azure サブスクリプションをお持ちでない場合は、開始する�
 
    ![アプリケーションのリダイレクト URI を追加する](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/b2c2-n.png)
 
-3. ご使用のアプリケーションから **[証明書とシークレット]** を選択し、 **[キーの生成]** をクリックして `${your-client-secret}` を生成してから **[保存]** をクリックします。
+3. **[証明書とシークレット]** を選択し、 **[新しいクライアント シークレット]** をクリックしてキーを生成します。
 
    ![ユーザー フローの作成](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/b2c3-n.png)
 
-4. 左側の **[ユーザー フロー]** を選択し、**[新しいユーザー フロー]** を**クリック**します。
+4. 左側の **[ユーザー フロー]** を選択し、 **[新しいユーザー フロー]** をクリックします。
 
-5. **[サインアップまたはサインイン]** 、 **[Profile editing]\(プロファイル編集\)** 、 **[パスワードのリセット]** を選択し、それぞれユーザー フローを作成します。 ユーザー フローの **[名前]** と **[ユーザー属性と要求]** を指定し、 **[作成]** をクリックします。
+5. **[サインアップまたはサインイン]** 、 **[Profile editing]\(プロファイル編集\)** 、 **[パスワードのリセット]** を選択し、ユーザー フローを作成します。 詳細については、「[チュートリアル:Azure Active Directory B2C 内にユーザー フローを作成する](/azure/active-directory-b2c/tutorial-create-user-flows)」を参照してください。 AAD B2C は、ローカル アカウントとソーシャル ID プロバイダーをサポートしています。 GitHub ID プロバイダーを作成する例については、「[Azure Active Directory B2C を使用して GitHub アカウントでのサインアップおよびサインインを設定する](/azure/active-directory-b2c/identity-provider-github)」を参照してください。
+要求トークンに含まれるように **[表示名]** を必ず選択してください。
 
-   ![ユーザー フローの構成](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/b2c4-n.png)
+   ![ユーザー フローの作成](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/b2c-create-userflow.png)
 
 ## <a name="configure-and-compile-your-app"></a>アプリの構成およびコンパイル
 
@@ -110,7 +111,7 @@ Azure サブスクリプションをお持ちでない場合は、開始する�
    <dependency>
        <groupId>com.microsoft.azure</groupId>
        <artifactId>azure-active-directory-b2c-spring-boot-starter</artifactId>
-       <version>2.1.6.M2</version>
+       <version>2.2.4</version>
    </dependency>
    <dependency>
        <groupId>org.springframework.boot</groupId>
@@ -132,10 +133,10 @@ Azure サブスクリプションをお持ちでない場合は、開始する�
    azure:
      activedirectory:
        b2c:
-         tenant: ${your-tenant-name}
+         tenant: ${your-tenant-name} # This is also the first part of your domain name before "onmicrosoft.com".
          client-id: ${your-client-id}
          client-secret: ${your-client-secret}
-         reply-url: ${your-redirect-uri-from-aad} # should be absolute url.
+         reply-url: ${your-redirect-uri-from-aad} # This should be an absolute URL.
          logout-success-url: ${you-logout-success-url}
          user-flows:
            sign-up-or-sign-in: ${your-sign-up-or-in-user-flow}

@@ -7,12 +7,12 @@ ms.service: mysql
 ms.tgt_pltfrm: multiple
 ms.author: judubois
 ms.topic: article
-ms.openlocfilehash: 5dd4f1d41f73f177d99068fc0d981270f0134bb8
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: d4da0f60df8d4c6e1da89ad24c893387cdda6be9
+ms.sourcegitcommit: a631b36ec1277ee9397a860c597ffdd5495d88e7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82801870"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83369913"
 ---
 # <a name="use-spring-data-r2dbc-with-azure-database-for-mysql"></a>Azure Database for MySQL で Spring Data R2DBC を使用する
 
@@ -20,111 +20,18 @@ ms.locfileid: "82801870"
 
 [R2DBC](https://r2dbc.io/) は、従来のリレーショナル データベースにリアクティブ API を提供します。 これを Spring WebFlux と共に使用すると、非ブロッキング API を使用する完全にリアクティブな Spring Boot アプリケーションを作成できます。 "接続ごとに 1 つのスレッド" という従来の手法よりも優れたスケーラビリティが実現されます。
 
-## <a name="prerequisites"></a>前提条件
+[!INCLUDE [spring-data-prerequisites.md](includes/spring-data-prerequisites.md)]
 
-- Azure アカウント。 所有していない場合は、[無料試用版を入手](https://azure.microsoft.com/free/)してください。
-- [Azure Cloud Shell](/azure/cloud-shell/quickstart) または [Azure CLI](/cli/azure/install-azure-cli)。 Azure Cloud Shell をお勧めします。これにより、自動的にログインし、必要なすべてのツールにアクセスできるようになります。
-- [Java 8](https://www.azul.com/downloads/zulu/) (Azure Cloud Shell に付属)。
-- [cURL](https://curl.haxx.se) または機能をテストするための類似の HTTP ユーティリティ。
+[!INCLUDE [spring-data-mysql-setup.md](includes/spring-data-mysql-setup.md)]
 
-## <a name="prepare-the-working-environment"></a>作業環境を準備する
-
-まず、次のコマンドを使用して、いくつかの環境変数を設定します。
-
-```bash
-AZ_RESOURCE_GROUP=r2dbc-workshop
-AZ_DATABASE_NAME=<YOUR_DATABASE_NAME>
-AZ_LOCATION=<YOUR_AZURE_REGION>
-AZ_MYSQL_USERNAME=r2dbc
-AZ_MYSQL_PASSWORD=<YOUR_MYSQL_PASSWORD>
-AZ_LOCAL_IP_ADDRESS=<YOUR_LOCAL_IP_ADDRESS>
-```
-
-プレースホルダーは、この記事全体で使用される次の値に置き換えてください。
-
-- `<YOUR_DATABASE_NAME>`:MySQL サーバーの名前。 Azure 全体で一意である必要があります。
-- `<YOUR_AZURE_REGION>`:使用する Azure リージョン。 既定で `eastus` を使用できますが、居住地に近いリージョンを構成することをお勧めします。 「`az account list-locations`」を入力すると、使用可能なリージョンの完全な一覧を表示できます。
-- `<YOUR_MYSQL_PASSWORD>`:MySQL データベース サーバーのパスワード。 パスワードは 8 文字以上にする必要があります。 これには、英大文字、英小文字、数字 (0 から 9)、英数字以外の文字 (!、$、#、% など) のうち、3 つのカテゴリの文字が含まれている必要があります。
-- `<YOUR_LOCAL_IP_ADDRESS>`:ローカル コンピューターの IP アドレス。そこから、Spring Boot アプリケーションを実行します。 これを確認する簡単な方法は、ブラウザーで [whatismyip.akamai.com](http://whatismyip.akamai.com/)にアクセスすることです。
-
-次に、リソース グループを作成します。
-
-```azurecli
-az group create \
-    --name $AZ_RESOURCE_GROUP \
-    --location $AZ_LOCATION \
-    | jq
-```
-
-> [!NOTE]
-> JSON データを表示して読みやすくするために [Azure Cloud Shell](https://shell.azure.com/) に既定でインストールされている `jq` ユーティリティを使用します。
-> このツールを使用しない場合は、使用するすべてのコマンドの `| jq` の部分を削除しても問題ありません。
-
-## <a name="create-an-azure-database-for-mysql-instance"></a>Azure Database for MySQL インスタンスを作成する
-
-最初に作成するのは、マネージド MySQL サーバーです。
-
-> [!NOTE]
-> MySQL サーバーの作成に関する詳細については、「[Azure portal を使用した Azure Database for MySQL サーバーの作成](/azure/mysql/quickstart-create-mysql-server-database-using-azure-portal)」を参照してください。
-
-[Azure Cloud Shell](https://shell.azure.com/) で次のスクリプトを実行します。
-
-```azurecli
-az mysql server create \
-    --resource-group $AZ_RESOURCE_GROUP \
-    --name $AZ_DATABASE_NAME \
-    --location $AZ_LOCATION \
-    --sku-name B_Gen5_1 \
-    --storage-size 5120 \
-    --admin-user $AZ_MYSQL_USERNAME \
-    --admin-password $AZ_MYSQL_PASSWORD \
-    | jq
-```
-
-このコマンドにより、小規模な MySQL サーバーが作成されます。
-
-### <a name="configure-a-firewall-rule-for-your-mysql-server"></a>MySQL サーバーのファイアウォール規則を構成する
-
-Azure Database for MySQL インスタンスは、既定でセキュリティ保護されています。 受信接続を一切許可しないファイアウォールがあります。 データベースを使用できるようにするには、データベース サーバーにアクセスするためのローカル IP アドレスを許可するファイアウォール規則を追加する必要があります。
-
-この記事の冒頭でローカル IP アドレスを構成したので、次を実行してサーバーのファイアウォールを開くことができます。
-
-```azurecli
-az mysql server firewall-rule create \
-    --resource-group $AZ_RESOURCE_GROUP \
-    --name $AZ_DATABASE_NAME-database-allow-local-ip \
-    --server $AZ_DATABASE_NAME \
-    --start-ip-address $AZ_LOCAL_IP_ADDRESS \
-    --end-ip-address $AZ_LOCAL_IP_ADDRESS \
-    | jq
-```
-
-### <a name="configure-a-mysql-database"></a>MySQL データベースを構成する
-
-先ほど作成した MySQL サーバーは空です。 Spring Boot アプリケーションで使用できるデータベースはありません。 `r2dbc` という新しいデータベースを作成します。
-
-```azurecli
-az mysql db create \
-    --resource-group $AZ_RESOURCE_GROUP \
-    --name r2dbc \
-    --server-name $AZ_DATABASE_NAME \
-    | jq
-```
-
-## <a name="create-a-reactive-spring-boot-application"></a>リアクティブ Spring Boot アプリケーションを作成する
-
-リアクティブ Spring Boot アプリケーションを作成するために、[Spring Initializr](https://start.spring.io/) を使用します。 作成するアプリケーションでは、以下が使用されます。
-
-- Spring Boot 2.3.0 M4。
-- Java 8 (ただし、Java 11 などの新しいバージョンでも機能します)。
-- 次の依存関係: Spring Reactive Web (Spring WebFlux とも呼ばれる) およびSpring Data R2DBC。
+[!INCLUDE [spring-data-create-reactive.md](includes/spring-data-create-reactive.md)]
 
 ### <a name="generate-the-application-by-using-spring-initializr"></a>Spring Initializr を使用してアプリケーションを生成する
 
 次のように入力して、コマン ドラインでアプリケーションを生成します。
 
 ```bash
-curl https://start.spring.io/starter.tgz -d dependencies=webflux,data-r2dbc -d baseDir=azure-r2dbc-workshop -d bootVersion=2.3.0.M4 -d javaVersion=8 | tar -xzvf -
+curl https://start.spring.io/starter.tgz -d dependencies=webflux,data-r2dbc -d baseDir=azure-database-workshop -d bootVersion=2.3.0.RC1 -d javaVersion=8 | tar -xzvf -
 ```
 
 ### <a name="add-the-reactive-mysql-driver-implementation"></a>リアクティブ MySQL ドライバー実装を追加する
@@ -149,8 +56,8 @@ curl https://start.spring.io/starter.tgz -d dependencies=webflux,data-r2dbc -d b
 ```properties
 logging.level.org.springframework.data.r2dbc=DEBUG
 
-spring.r2dbc.url=r2dbc:pool:mysql://$AZ_DATABASE_NAME.mysql.database.azure.com:3306/r2dbc
-spring.r2dbc.username=r2dbc@$AZ_DATABASE_NAME
+spring.r2dbc.url=r2dbc:pool:mysql://$AZ_DATABASE_NAME.mysql.database.azure.com:3306/demo
+spring.r2dbc.username=spring@$AZ_DATABASE_NAME
 spring.r2dbc.password=$AZ_MYSQL_PASSWORD
 ```
 
@@ -172,27 +79,14 @@ spring.r2dbc.password=$AZ_MYSQL_PASSWORD
 
 ### <a name="create-the-database-schema"></a>データベース スキーマを作成する
 
-`DemoApplication` メイン クラス内で、データベース スキーマを作成する新しい Spring Bean を構成します。
-
-```java
-    @Bean
-    public ConnectionFactoryInitializer initializer(ConnectionFactory connectionFactory) {
-        ConnectionFactoryInitializer initializer = new ConnectionFactoryInitializer();
-        initializer.setConnectionFactory(connectionFactory);
-        ResourceDatabasePopulator populator = new ResourceDatabasePopulator(new ClassPathResource("schema.sql"));
-        initializer.setDatabasePopulator(populator);
-        return initializer;
-    }
-```
-
-この Spring Bean では *schema.sql* というファイルが使用されるので、*src/main/resources* フォルダーにそのファイルを作成します。
+[!INCLUDE [spring-data-r2dbc-create-schema.md](includes/spring-data-r2dbc-create-schema.md)]
 
 ```sql
 DROP TABLE IF EXISTS todo;
 CREATE TABLE todo (id SERIAL PRIMARY KEY, description VARCHAR(255), details VARCHAR(4096), done BOOLEAN);
 ```
 
-次のコマンドを使用して、アプリケーションを停止してから再実行します。 これで、アプリケーションは、先ほど作成した `r2dbc` データベースを使用し、その中に `todo` テーブルを作成します。
+実行中のアプリケーションを停止して再起動します。 これで、アプリケーションは、先ほど作成した `demo` データベースを使用し、その中に `todo` テーブルを作成します。
 
 ```bash
 ./mvnw spring-boot:run
@@ -206,151 +100,7 @@ CREATE TABLE todo (id SERIAL PRIMARY KEY, description VARCHAR(255), details VARC
 
 次に、R2DBC を使用して MySQL サーバーにデータを格納および取得する Java コードを追加します。
 
-`DemoApplication` クラスの横に新しい `Todo` Java クラスを作成します。
-
-```java
-package com.example.demo;
-
-import org.springframework.data.annotation.Id;
-
-public class Todo {
-
-    public Todo() {
-    }
-
-    public Todo(String description, String details, boolean done) {
-        this.description = description;
-        this.details = details;
-        this.done = done;
-    }
-
-    @Id
-    private Long id;
-
-    private String description;
-
-    private String details;
-
-    private boolean done;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getDetails() {
-        return details;
-    }
-
-    public void setDetails(String details) {
-        this.details = details;
-    }
-
-    public boolean isDone() {
-        return done;
-    }
-
-    public void setDone(boolean done) {
-        this.done = done;
-    }
-}
-```
-
-このクラスは、先ほど作成した `todo` テーブルにマップされるドメイン モデルです。
-
-このクラスを管理するには、リポジトリが必要です。 同じパッケージ内に新しい `TodoRepository` インターフェイスを定義します。
-
-```java
-package com.example.demo;
-
-import org.springframework.data.repository.reactive.ReactiveCrudRepository;
-
-public interface TodoRepository extends ReactiveCrudRepository<Todo, Long> {
-}
-```
-
-このリポジトリは、Spring Data R2DBC によって管理されるリアクティブ リポジトリです。
-
-データを格納および取得できるコントローラーを作成して、アプリケーションを完成させます。 同じパッケージに `TodoController` クラスを実装し、次のコードを追加します。
-
-```java
-package com.example.demo;
-
-import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.*;
-import reactor.core.publisher.Flux;
-import reactor.core.publisher.Mono;
-
-@RestController
-@RequestMapping("/")
-public class TodoController {
-
-    private final TodoRepository todoRepository;
-
-    public TodoController(TodoRepository todoRepository) {
-        this.todoRepository = todoRepository;
-    }
-
-    @PostMapping("/")
-    @ResponseStatus(HttpStatus.CREATED)
-    public Mono<Todo> createTodo(@RequestBody Todo todo) {
-        return todoRepository.save(todo);
-    }
-
-    @GetMapping("/")
-    public Flux<Todo> getTodos() {
-        return todoRepository.findAll();
-    }
-}
-```
-
-最後に、アプリケーションを停止して再起動します。
-
-```bash
-./mvnw spring-boot:run
-```
-
-## <a name="test-the-application"></a>アプリケーションをテストする
-
-アプリケーションをテストするには、cURL を使用します。
-
-まず、データベースに新しい "todo" 項目を作成します。
-
-```bash
-curl  --header "Content-Type: application/json" \
-          --request POST \
-          --data '{"description":"configuration","details":"congratulations, you have set up R2DBC correctly!","done": "true"}' \
-          http://127.0.0.1:8080
-```
-
-次のコマンドを実行すると、作成した項目が返されます。
-
-```json
-{"id":1,"description":"configuration","details":"congratulations, you have set up R2DBC correctly!","done":true}
-```
-
-次に、新しい cURL 要求を使用してデータを取得します。
-
-```bash
-curl http://127.0.0.1:8080
-```
-
-このコマンドを実行すると、作成した項目を含む "todo" 項目の一覧が返されます。
-
-```json
-[{"id":1,"description":"configuration","details":"congratulations, you have set up R2DBC correctly!","done":true}]
-```
+[!INCLUDE [spring-data-r2dbc-create-application.md](includes/spring-data-r2dbc-create-application.md)]
 
 これらの cURL 要求のスクリーンショットを次に示します。
 
@@ -358,25 +108,10 @@ curl http://127.0.0.1:8080
 
 お疲れさまでした。 R2DBC を使用して Azure Database for MySQL にデータを格納および取得する、完全なリアクティブ Spring Boot アプリケーションを作成しました。
 
-## <a name="clean-up-resources"></a>リソースをクリーンアップする
-
-このクイックスタートで使用したすべてのリソースをクリーンアップするには、リソース グループを削除します。
-
-```azurecli
-az group delete \
-    --name $AZ_RESOURCE_GROUP \
-    --yes
-```
-
-## <a name="next-steps"></a>次のステップ
-
-Spring および Azure の詳細については、Azure ドキュメント センターで引き続き Spring に関するドキュメントをご確認ください。
-
-> [!div class="nextstepaction"]
-> [Azure の Spring](/azure/developer/java/spring-framework)
+[!INCLUDE [spring-data-conclusion.md](includes/spring-data-conclusion.md)]
 
 ### <a name="additional-resources"></a>その他のリソース
 
-Spring Data R2DBC の詳細については、Spring の「[リファレンス ドキュメント](https://docs.spring.io/spring-data/r2dbc/docs/1.0.x/reference/html/#reference)」を参照してください。
+Spring Data R2DBC の詳細については、Spring の「[リファレンス ドキュメント](https://docs.spring.io/spring-data/r2dbc/docs/current/reference/html/#reference)」を参照してください。
 
 Java での Azure の使用の詳細については、「[Java 開発者向けの Azure](/azure/developer/java/)」および [Azure DevOps と Java の操作](/azure/devops/)に関するページを参照してください。

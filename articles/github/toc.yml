@@ -1,4 +1,4 @@
-- name: Azure と GitHub の連携
+- name: Azure と GitHub の統合
   href: index.yml
   items:
     - name: Azure 向けの GitHub Actions

@@ -32,7 +32,7 @@ Azure Pipelines コンテナー化プロセスでは初めに、Docker イメー
 
 1. [Azure portal](https://portal.azure.com) で [Azure Container Registry](https://azure.microsoft.com/services/container-registry) のインスタンスを作成します。
    
-1. Azure portal で [Azure Web App for Containers](https://azure.microsoft.com/services/app-service/containers/) のインスタンスを作成します。 **OS** には **Linux** を選択し、 **[コンテナーの構成]** の **[イメージのソース]** で **[クイック スタート]** を選択します。  
+1. Azure portal で [Azure Web App for Containers](https://azure.microsoft.com/services/app-service/containers/) のインスタンスを作成します。 **OS** には **Linux** を選択し、**[コンテナーの構成]** の **[イメージのソース]** で **[クイック スタート]** を選択します。  
    
 1. クローン URL をサンプル GitHub リポジトリ ([https://github.com/Azure-Samples/microprofile-hello-azure](https://github.com/Azure-Samples/microprofile-hello-azure)) からコピーして保存します。
    
@@ -73,7 +73,7 @@ Azure Pipelines の継続的インテグレーション ビルド パイプラ�
 
 Azure Pipelines での Docker イメージ作成に使用される Dockerfile では、Payara Micro からのベース イメージが指定されています。  
 
-1. **[タスク]** タブを選択し、 **[エージェント ジョブ 1]** の横にあるプラス記号 ( **+** ) を選択してタスクを追加します。
+1. **[タスク]** タブを選択し、**[エージェント ジョブ 1]** の横にあるプラス記号 (**+**) を選択してタスクを追加します。
    
    ![新しいタスクを追加する](media/cicd-microprofile/add-task.png)
    
@@ -97,11 +97,11 @@ Azure Pipelines での Docker イメージ作成に使用される Dockerfile �
    ![Docker レジストリ サービス接続を追加する](media/cicd-microprofile/dockerconnection.png)
    
    > [!NOTE]
-   > Docker Hub または別のレジストリを使用する場合は、 **[レジストリの種類]** で **[Azure Container Registry]** の代わりに **[Docker Hub]** または **[その他]** を選択します。 使用するコンテナー レジストリの資格情報と接続情報を入力してください。
+   > Docker Hub または別のレジストリを使用する場合は、**[レジストリの種類]** で **[Azure Container Registry]** の代わりに **[Docker Hub]** または **[その他]** を選択します。 使用するコンテナー レジストリの資格情報と接続情報を入力してください。
    
 1. **[コマンド]** の下の **[コマンド]** ドロップダウンで **[build]** を選択します。
    
-1. **[Dockerfile]** フィールドの横の省略記号 ( **...** ) を選択し、GitHub リポジトリの内容の一覧から **[Dockerfile]** を選択して **[OK]** をクリックします。 
+1. **[Dockerfile]** フィールドの横の省略記号 (**...**) を選択し、GitHub リポジトリの内容の一覧から **[Dockerfile]** を選択して **[OK]** をクリックします。 
    
    ![Dockerfile を選択する](media/cicd-microprofile/selectdockerfile.png)
    
@@ -113,7 +113,7 @@ Azure Pipelines での Docker イメージ作成に使用される Dockerfile �
 
 Azure Pipelines によって Docker イメージが Azure Container Registry にプッシュされ、これを使用して MicroProfile API アプリがコンテナー化 Java Web アプリとして実行されます。
 
-1. Docker を Azure Pipelines で使用するので、「[Docker ビルド イメージを作成する](#create-a-docker-build-image)」の手順をもう一度実行して Docker テンプレートをもう 1 つ作成します。 今回は、 **[コマンド]** ドロップダウンで **[push]** を選択します。
+1. Docker を Azure Pipelines で使用するので、「[Docker ビルド イメージを作成する](#create-a-docker-build-image)」の手順をもう一度実行して Docker テンプレートをもう 1 つ作成します。 今回は、**[コマンド]** ドロップダウンで **[push]** を選択します。
    
 1. **[保存してキューに登録]** のドロップダウンを選択し、 **[保存してキューに登録]** を選択します。 
    
@@ -179,7 +179,7 @@ Azure Pipelines の継続的リリース パイプラインでは、ビルドが
    
 1. **[タスク]** タブで、左側のウィンドウの **[Azure App Service に War を配置]** を選択します。 
    
-1. 右側のウィンドウで、 **[アプリケーションと構成の設定]** を展開し、 **[アプリ設定]** フィールドの横にある省略記号 ( **...** ) を選択します。
+1. 右側のウィンドウで、**[アプリケーションと構成の設定]** を展開し、**[アプリ設定]** フィールドの横にある省略記号 (**...**) を選択します。
    
 1. **[アプリ設定]** ポップアップで、 **[追加]** を選択してアプリ設定の変数を定義し、割り当てます。
    

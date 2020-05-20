@@ -19,7 +19,7 @@ ms.locfileid: "81671628"
 
 #### <a name="on-the-application-servers"></a>アプリケーション サーバー上
 
-*$CATALINA_BASE/conf/context.xml* および *$CATALINA_BASE/conf/server.xml* ファイルと、 *$CATALINA_BASE/conf/[engine-name]/[host-name]* ディレクトリにある *.xml*ファイルを調べます。
+*$CATALINA_BASE/conf/context.xml* および *$CATALINA_BASE/conf/server.xml* ファイルと、*$CATALINA_BASE/conf/[engine-name]/[host-name]* ディレクトリにある *.xml*ファイルを調べます。
 
 *context.xml*ファイルでは、JNDI リソースは、最上位の `<Context>` 要素内の `<Resource>` 要素で記述されます。
 

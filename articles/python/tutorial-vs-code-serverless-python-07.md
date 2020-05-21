@@ -2,14 +2,14 @@
 title: 手順 7:VS Code を使用して Python で Azure Functions のストレージ バインドを追加する
 description: チュートリアルの手順 7、メッセージを Azure Storage に書き込むバインドを Python で追加する。
 ms.topic: conceptual
-ms.date: 09/02/2019
+ms.date: 05/19/2020
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 4ed8fee52e466643ac73a96ef1529bf492418256
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: f374e3155adc2d8681d8d39a579e0bd9fb3f5370
+ms.sourcegitcommit: 089b87e1631a9db145583eb274edac6f80d16367
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "80442187"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83708606"
 ---
 # <a name="7-add-a-storage-binding-for-azure-functions-in-python"></a>7:Python で Azure Functions のストレージ バインドを追加する
 

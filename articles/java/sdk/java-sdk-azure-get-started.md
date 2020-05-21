@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: multiple
 ms.assetid: b1e10b79-f75e-4605-aecd-eed64873e2d3
 ms.custom: seo-java-august2019
-ms.openlocfilehash: c03e458f9a91d13a3ed1c375e0b6cb0fefe15a3d
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 80e83873150356b53c826d7920df1163e51f2636
+ms.sourcegitcommit: 486b55521d7c27666dbb8035bc46fb60d1cbcf0a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82105213"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "83550933"
 ---
 # <a name="get-started-with-cloud-development-using-java-on-azure"></a>Azure での Java を使用したクラウド開発の開始
 
@@ -158,7 +158,7 @@ Web アプリや API をプログラムでデプロイする予定でも、そ�
 
 - **[Help]\(ヘルプ\)** メニューを選択し、 **[Install New software]\(新しいソフトウェアのインストール\)** を選択します。
 
-- **[Work with:]\(処理:\)** フィールドに「`http://dl.microsoft.com/eclipse`」と入力し、Enter キーを押します。
+- **[Work with:]\(処理:\)** フィールドに「`http://dl.microsoft.com/eclipse/`」と入力し、Enter キーを押します。
 
 - 次に、 **[Azure Toolkit for Java]** の横のチェック ボックスをオンにし、 **[Contact all update sites during install to find required software]\(インストール中にすべての更新サイトに接続して必要なソフトウェアを見つける\)** のチェック ボックスをオフにします。 [Next]\(次へ\) をクリックします。
 

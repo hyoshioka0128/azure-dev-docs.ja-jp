@@ -12,7 +12,7 @@
   href: configure-local-development-environment.md
 - name: Azure SDK for Python を使ってみる
   items:
-    - name: 概要
+    - name: 概要と使用パターン
       href: azure-sdk-overview.md
     - name: SDK ライブラリのインストール
       href: azure-sdk-install.md

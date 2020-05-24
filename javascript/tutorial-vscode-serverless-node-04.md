@@ -14,7 +14,7 @@ ms.locfileid: "80329928"
 
 [前の手順:関数をローカルでテストする](tutorial-vscode-serverless-node-03.md)
 
-1. VS Code で、Azure ロゴを選択して **Azure エクスプローラーを**を開き、次に、 **[Functions]\(関数\)** で青い上向き矢印を選択してアプリをデプロイします。
+1. VS Code で、Azure ロゴを選択して **Azure エクスプローラー**を開き、次に、 **[Functions]\(関数\)** で青い上向き矢印を選択してアプリをデプロイします。
 
     ![Azure Functions にデプロイするコマンド](media/functions-extension/deploy-app.png)
 

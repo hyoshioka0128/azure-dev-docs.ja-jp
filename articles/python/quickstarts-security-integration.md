@@ -1,14 +1,14 @@
 ---
 title: Azure の Python アプリでのセキュリティと統合のクイックスタート
 description: Python アプリのセキュリティ保護に関する Azure ドキュメントの概要に関する資料の一覧です。
-ms.date: 03/17/2020
+ms.date: 05/12/2020
 ms.topic: conceptual
-ms.openlocfilehash: c5b2a6d2e2a4b6486674711204871216a7fa6416
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 275f723861ebde4ddbd3419eaa88fb51d4669ca4
+ms.sourcegitcommit: 2cdf597e5368a870b0c51b598add91c129f4e0e2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "80441977"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83403713"
 ---
 # <a name="security-and-integration-for-python-apps-on-azure"></a>Azure の Python アプリでのセキュリティと統合
 

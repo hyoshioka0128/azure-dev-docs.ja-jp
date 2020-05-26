@@ -4,12 +4,12 @@ description: チュートリアルの手順 2、アプリケーションの設�
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: b53b774cb7747b8f6cca10d493f820bef5306fcc
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: bb515e1d785aa0e8a38e4fc1014915db56b89d94
+ms.sourcegitcommit: fbbc341a0b9e17da305bd877027b779f5b0694cc
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "80441947"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83631725"
 ---
 # <a name="2-prepare-your-app-for-deployment-to-azure-app-service"></a>2:Azure App Service にデプロイするためにアプリを準備する
 
@@ -17,7 +17,7 @@ ms.locfileid: "80441947"
 
 この記事では、このチュートリアルの Azure App Service にデプロイするアプリを準備します。 既存のアプリを使用することも、アプリを作成またはダウンロードすることもできます。
 
-作業対象のアプリが既にある場合は、フレームワーク (Flask、Django など) を含む依存関係を記述した *requirements.txt* ファイルがあることを確認してください。
+作業対象のアプリが既にある場合は、フレームワーク (Flask、Django など) を含む依存関係を記述した *requirements.txt* ファイルがあることを確認してください。 任意のフレームワークを使用できます。
 
 まだアプリがない場合は、次のいずれかの方法を使用します。 アプリがローカルで動作することを確認してください。
 
@@ -58,7 +58,7 @@ ms.locfileid: "80441947"
     $env:FLASK_APP = "hello:myapp"
     ```
 
-    # <a name="cmd"></a>[Cmd](#tab/cmd)
+    # <a name="cmd"></a>[cmd](#tab/cmd)
 
     ```bash
     set FLASK_APP=hello:myapp

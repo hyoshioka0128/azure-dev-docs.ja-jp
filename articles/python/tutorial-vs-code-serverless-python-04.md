@@ -2,14 +2,14 @@
 title: 手順 4:VS Code を使用して Azure Functions の Python コードをローカルでデバッグする
 description: チュートリアルの手順 4、VS Code デバッガーをローカルで実行して Python コードをチェックする。
 ms.topic: conceptual
-ms.date: 09/02/2019
+ms.date: 05/19/2020
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 51ef666bd529194670279deaae51ee073633fd3a
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 167e1c2be4d379f7457d35f2e6fe4a226092ac08
+ms.sourcegitcommit: 089b87e1631a9db145583eb274edac6f80d16367
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "80441597"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83708572"
 ---
 # <a name="4-debug-the-azure-functions-python-code-locally"></a>4:Azure Functions の Python コードをローカルでデバッグする
 
@@ -61,9 +61,14 @@ Visual Studio Code で Azure Functions の Python コードをローカルでデ
 
     あるいは、`{"name":"Visual Studio Code"}` を含む "*data.json*" のようなファイルを作成し、コマンド `curl --header "Content-Type: application/json" --request POST --data @data.json http://localhost:7071/api/HttpExample` を使用します。
 
-1. 関数のデバッグをテストするには、`name = req.params.get('name')` と記されている行にブレークポイントを設定し、URL に再度要求を行います。 Visual Studio Code デバッガーはその行で停止するはずです。変数を調べ、コードをステップ実行できます  (基本的なデバッグの簡単なチュートリアルは、[Visual Studio Code チュートリアルのデバッガーの構成と実行](https://code.visualstudio.com/docs/python/python-tutorial#configure-and-run-the-debugger)に関するセクションにあります)。
+1. 関数のデバッグをテストするには、`name = req.params.get('name')` と記されている行にブレークポイントを設定し、URL に再度要求を行います。 Visual Studio Code デバッガーはその行で停止するはずです。変数を調べ、コードをステップ実行できます (基本的なデバッグの簡単なチュートリアルは、[Visual Studio Code チュートリアルのデバッガーの構成と実行](https://code.visualstudio.com/docs/python/python-tutorial#configure-and-run-the-debugger)に関するセクションにあります)。
 
 1. 関数をローカルで徹底的にテストできたら、デバッガーを停止します ( **[デバッグ]**  >  **[デバッグの停止]** メニュー コマンドを使用するか、デバッグ ツールバーで **Disconnect** コマンドを使用します)。
+
+> [!NOTE]
+> ""local.settings.json" に指定されている "AzureWebJobsStorage" 接続を確認できませんでした。" というエラーが発生した場合は、プロジェクト内の *local.settings.json* ファイルに `"AzureWebJobsStorage": "UseDevelopmentStorage=true"` という行が含まれています。 この行は、デバッガーが Azure ストレージ エミュレーターをローカルで使用することが想定されているのに、これがインストールされていないことを示しています。 この場合は、[Azure ストレージ エミュレーターをインストールして](/azure/storage/common/storage-use-emulator#get-the-storage-emulator)、[エミュレーターを起動および初期化し](/azure/storage/common/storage-use-emulator#start-and-initialize-the-storage-emulator)、デバッガーを再起動することができます。
+>
+> または、JSON ファイル内のこの行を `"AzureWebJobsStorage": ""` に変更し、デバッガーを再起動します。
 
 > [!div class="nextstepaction"]
 > [デバッガーをローカルで実行しました - 手順 5 に進む >>>](tutorial-vs-code-serverless-python-05.md)

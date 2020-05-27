@@ -2,14 +2,14 @@
 title: 手順 3:VS Code で Azure Functions の Python コード ファイルを調べる
 description: チュートリアルの手順 3、Azure Functions が提供するテンプレートの Python コードを理解する。
 ms.topic: conceptual
-ms.date: 09/02/2019
+ms.date: 05/19/2020
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 77dc4cb44158ded1dd5c6d1e19afb48272177a12
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 84e438cf1aaf94c1341964d17e17055d066140d6
+ms.sourcegitcommit: 089b87e1631a9db145583eb274edac6f80d16367
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "80441337"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83708536"
 ---
 # <a name="3-examine-the-python-code-files-in-visual-studio-code"></a>3:Visual Studio Code で Python コード ファイルを調べる
 
@@ -75,11 +75,11 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
             name = req_body.get('name')
 
     if name:
-        return func.HttpResponse(f"Hello {name}!")
+        return func.HttpResponse(f"Hello, {name}. This HTTP triggered function executed successfully.")
     else:
         return func.HttpResponse(
-             "Please pass a name on the query string or in the request body",
-             status_code=400
+             "This HTTP triggered function executed successfully. Pass a name in the query string or in the request body for a personalized response.",
+             status_code=200
         )
 ```
 
@@ -88,7 +88,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
 - `azure.functions` モジュールをインポートする必要があります。ログ記録モジュールのインポートは任意ですが、お勧めします。
 - 必須の `main` Python 関数は、`req` という名前の `func.HttpRequest` オブジェクトを受け取り、`func.HttpResponse` 型の値を返します。 これらのオブジェクトの機能については、[func.HttpRequest](/python/api/azure-functions/azure.functions.httprequest?view=azure-python) と [func.HttpResponse](/python/api/azure-functions/azure.functions.httpresponse?view=azure-python) のリファレンスで詳細を確認できます。
 - 次に、`main` の本文で要求が処理され、応答が生成されます。 今回のコードでは、URL の `name` パラメーターを探します。 見つからなかった場合、要求本文に JSON が含まれるかどうかが確認され (`func.HttpRequest.get_json` を使用)、また、JSON に `name` 値が含まれることが確認されます (`get_json` によって返される JSON オブジェクトの `get` メソッドを使用)。
-- コードにより、名前が見つかった場合は、文字列 "Hello" の後ろに名前が追加されて返され、見つからなかった場合は、エラー メッセージが返されます。
+- 名前が見つかった場合は、コードにより、後ろに名前が追加された文字列 "Hello" が返され、見つからなかった場合は汎用メッセージが返されます。
 
 > [!div class="nextstepaction"]
 > [コード ファイルを確認しました - 手順 4 に進む >>>](tutorial-vs-code-serverless-python-04.md)

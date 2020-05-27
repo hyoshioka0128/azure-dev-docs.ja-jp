@@ -2,14 +2,14 @@
 title: 手順 5:VS Code を使用して Python で Azure Functions をデプロイする
 description: チュートリアルの手順 5、Python の関数コードを Azure にデプロイし、ローカル プロジェクトと Azure の間でのログのストリーム配信や設定の同期の方法を学習する。
 ms.topic: conceptual
-ms.date: 09/02/2019
+ms.date: 05/19/2020
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 425fb745cec74672cfabc6c3c5eab96821a43224
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 3e51760f6f779ef244d5788a3df852bc98924946
+ms.sourcegitcommit: 089b87e1631a9db145583eb274edac6f80d16367
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "80441167"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83708616"
 ---
 # <a name="5-deploy-azure-functions-in-python"></a>5:Python で Azure Functions をデプロイする
 
@@ -25,9 +25,11 @@ ms.locfileid: "80441167"
 
 1. プロンプトが表示されたら、 **[Create New Function App in Azure\(Azure で新しい関数アプリを作成する\)]** を選択し、Azure 全体で一意となる名前を指定します (通常、個人の名前か社名を他の一意の識別子と共に使用します。文字、数字、ハイフンを使用できます)。 前に Function App を作成した場合、その名前はこのオプション一覧に表示されます。
 
+1. プロンプトが表示されたら、Python のバージョンと Azure の場所を選択します。
+
 1. 拡張機能により次のアクションが実行されますが、それらは Visual Studio Code のポップアップ メッセージと **[出力]** ウィンドウで確認できます (処理には数分かかります)。
 
-    - 与えた名前でリソース グループを作成します (ハイフンを除きます)。
+    - 指定した名前 (ハイフンは除く) を使用して、選択した場所にリソース グループを作成します。
     - そのリソース グループで、ストレージ アカウント、ホスティング プラン、関数アプリを作成します。 既定では、[従量課金プラン](/azure/azure-functions/functions-scale#consumption-plan)が作成されます。 専用プランで関数を実行するには、[拡張作成オプションを使用して発行を有効にする](/azure/azure-functions/functions-develop-vs-code)必要があります。
     - 関数アプリにコードをデプロイします。
 
@@ -39,9 +41,9 @@ ms.locfileid: "80441167"
 
     ![デプロイの成功と追加のアクションを示すメッセージ](media/tutorial-vs-code-serverless-python/azure-functions-deployment-success-with-additional-actions.png)
 
-    **[Stream logs]\(ログをストリーミング\)** と **[Upload settings]\(設定をアップロード\)** については、次のセクションを参照してください。 **[View output]\(出力を表示\)** については、後続の手順 5 をご覧ください。
+    **[Stream logs]\(ログをストリーミング\)** と **[Upload settings]\(設定をアップロード\)** については、次のセクションを参照してください。
 
-1. デプロイ後、 **[出力]** ウィンドウには Azure のパブリック エンドポイントも表示されます (特定のエンドポイントの URL は、関数アプリに指定した名前と一致します)。
+1. **[View output]\(出力を表示\)** を選択して、 **[出力]** ウィンドウに切り替えます。 出力には、Azure のパブリック エンドポイントが表示されます (特定のエンドポイントの URL は、関数アプリに指定した名前と一致します)。
 
     <pre>
     HTTP Trigger Urls:

@@ -2,14 +2,14 @@
 title: チュートリアル:VS Code を使用して Python でサーバーレスの Azure Functions を作成してデプロイする
 description: チュートリアルの手順 1、概要と前提条件。
 ms.topic: conceptual
-ms.date: 09/02/2019
+ms.date: 05/19/2020
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 509e62b5bb8b23365dc30781b6f658a39894d56d
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: fcb9a520e10036d5059f060dedf49e8f222af184
+ms.sourcegitcommit: 089b87e1631a9db145583eb274edac6f80d16367
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "80441237"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83708586"
 ---
 # <a name="tutorial-create-and-deploy-serverless-azure-functions-in-python-with-visual-studio-code"></a>チュートリアル:Visual Studio Code を使用して Python でサーバーレスの Azure Functions を作成してデプロイする
 
@@ -42,7 +42,7 @@ Node.js をインストールする場合は、既定のオプションを使用
 
 次のソフトウェアをインストールします。
 
-- Azure Functions で必要な Python 3.7 または Python 3.6。 [Python 3.7.5](https://www.python.org/downloads/release/python-375/) と [Python 3.6.8](https://www.python.org/downloads/release/python-368/) は互換性のある最新バージョンです。 これらのページを下にスクロールして、インストーラーを見つけます。 インストール時に、 **[Add Python 3.x to PATH]\(Python 3.x を PATH に追加\)** を選択し、 **[今すぐインストール]** オプションを選択して既定のオプションを使用します。 Windows では、プロセスの終了時に **[Disable Path length limit]\(パスの長さの制限を無効にする\)** も選択します。
+- Azure Functions で必要な Python 3.6、3.7、または 3.8。 [python.org](https://www.python.org/downloads) から Python をインストールします。インストール時に、 **[Add Python 3.x to PATH]\(Python 3.x を PATH に追加\)** を選択し、 **[今すぐインストール]** オプションを選択して既定のオプションを使用します。 Windows では、プロセスの終了時に **[Disable Path length limit]\(パスの長さの制限を無効にする\)** も選択します。
 - [Visual Studio Code](https://code.visualstudio.com/)。
 - [Python 拡張機能](https://marketplace.visualstudio.com/items?itemName=ms-python.python)。[Visual Studio Code Python チュートリアルの前提条件](https://code.visualstudio.com/docs/python/python-tutorial)に説明があります。
 - [Azure Functions 拡張機能](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions)。 全般的な情報については、[vscode-azurefunctions GitHub リポジトリ](https://github.com/Microsoft/vscode-azurefunctions)をご覧ください。

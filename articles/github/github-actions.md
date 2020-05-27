@@ -1,27 +1,33 @@
 ---
 title: GitHub Actions を使用して Azure にデプロイする
 description: リポジトリ内にワークフローを作成し、Azure へのビルド、テスト、パッケージ化、リリース、およびデプロイを行います。
-ms.author: kaelli
-author: KathrynEE
+author: N-Usha
+ms.author: ushan
 ms.topic: conceptual
 ms.service: azure
 ms.date: 05/05/2020
-ms.openlocfilehash: 16ebc2d8013b2199911c0648f4bb8364c4d6de06
-ms.sourcegitcommit: a631b36ec1277ee9397a860c597ffdd5495d88e7
+ms.openlocfilehash: 1b3906eeacf48e2561f49dc8480ce83565aeca3a
+ms.sourcegitcommit: fbbc341a0b9e17da305bd877027b779f5b0694cc
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83369921"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83631677"
 ---
 # <a name="deploy-to-azure-using-github-actions"></a>GitHub Actions を使用して Azure にデプロイする
 
-Azure 向けの GitHub Actions を使用して、Azure にデプロイするワークフローを自動化します。 開始するには、次の GitHub Actions を参照してください。 
+開発者は、[GitHub Actions](https://help.github.com/articles/about-github-actions) を使用することで、自動化されたソフトウェア開発ライフサイクル ワークフローを構築できます。  
 
-- Azure Web Apps と Azure Web App for Containers にデプロイするための [Azure/webapps-deploy](https://github.com/Azure/webapps-deploy) アクション 
-- Azure WebApp (Windows または Linux) またはそのデプロイ スロットで JSON 構文を使用して、アプリ設定、接続文字列、その他の一般的な設定を一括して構成する [Azure/appservice-settings](https://github.com/Azure/appservice-settings)
+Azure 用 GitHub Actions を使用すると、ビルド、テスト、パッケージ化、リリース、および Azure への**デプロイ**を行うために設定可能なワークフローをリポジトリ内に作成できます。 [Azure との他のすべての統合の詳細については、こちらを参照してください](https://aka.ms/GitHubonAzure)。
+
+[無料の Azure アカウント](https://azure.com/free/open-source)を使用して今すぐ始めましょう。
 
 > [!NOTE]   
 > この記事に記載されているリンクは、GitHub の記事または GitHub リポジトリにリンクしています。 
+
+- Azure Web Apps と Azure Web App for Containers にデプロイするための [Azure/webapps-deploy アクション](https://github.com/Azure/webapps-deploy) 
+- Azure WebApp (Windows または Linux) またはそのデプロイ スロットで JSON 構文を使用して、アプリ設定、接続文字列、その他の一般的な設定を一括して構成する [Azure/appservice-settings](https://github.com/Azure/appservice-settings)
+
+
 
 ## <a name="key-concepts"></a>主要な概念
 
@@ -39,9 +45,11 @@ GitHub Actions には事前構成されたテンプレートと Marketplace ア�
 - [GitHub Marketplace からのアクションを使用する](https://help.github.com/en/actions/getting-started-with-github-actions/using-actions-from-github-marketplace)  
 - [GitHub Marketplace アクション、Azure へのデプロイ](https://github.com/marketplace?type=actions&query=Azure)  
   
-Azure 向けのすべての GitHub Actions へのリンクについては、次のページを参照してください。 
+Azure 用 GitHub Actions については、次のページを参照してください。 
    
 - [Azure のアクション](https://github.com/marketplace?query=Azure&type=actions)  
+- [Azure にデプロイするためのスターター アクション ワークフロー](https://github.com/Azure/actions-workflow-samples)
+
 
 ## <a name="connect-to-azure"></a>Azure に接続する
 
@@ -51,9 +59,9 @@ Azure に接続するサンプル ワークフローについては、次の Git
 - [Azure CLI](https://github.com/Azure/CLI)  
 
 
-## <a name="starter-templates-and-end-to-end-cicd-workflow-samples"></a>スターター テンプレートとエンドツーエンドの CI/CD ワークフローのサンプル 
+## <a name="sample-apps-with-cicd-workflow-samples"></a>CI/CD ワークフロー サンプルを使用したサンプル アプリ 
 
-次のサンプルには、Web アプリを Azure にデプロイするためのエンドツーエンドのワークフローが用意されています。 
+次のサンプルでは、任意の言語、任意のエコシステムの Web アプリをビルドして Azure にデプロイするためのエンド ツー エンドのワークフローが提供されています。 
 
 - [ASP.NET サポートを使用して Web アプリをデプロイする](https://github.com/Azure-Samples/dotnet-sample)  
 - [ASP.NET Core アプリをデプロイする](https://github.com/Azure-Samples/dotnet_core_sample)  
@@ -67,6 +75,8 @@ Azure に接続するサンプル ワークフローについては、次の Git
 ## <a name="deploy-a-web-app"></a>Web アプリをデプロイする
 
 - [Azure Web アプリ](https://github.com/Azure/webapps-deploy)  
+次のアクションを使用して、アプリ設定と接続文字列を構成します。
+
 - [Azure Web App for Containers](https://github.com/Azure/webapps-container-deploy)  
 - [Azure App Service 設定](https://github.com/Azure/appservice-settings)  
 
@@ -78,6 +88,7 @@ Azure に接続するサンプル ワークフローについては、次の Git
 ## <a name="build-and-deploy-containerized-apps"></a>コンテナー化されたアプリのビルドとデプロイ
 
 - [Docker ログイン](https://github.com/Azure/docker-login)  
+- [Azure Container Instances へのデプロイ](https://github.com/Azure/aci-deploy)
 
 ## <a name="deploy-to-kubernetes"></a>Kubernetes へのデプロイ
 
@@ -100,6 +111,10 @@ Azure に接続するサンプル ワークフローについては、次の Git
 - [Azure SQL データベース](https://github.com/Azure/sql-action)  
 - [Azure MySQL アクション](https://github.com/Azure/mysql-action)  
 
+## <a name="deploy-machine-learning-models"></a>Machine Learning モデルのデプロイ
+
+- [Azure Machine Learning のデプロイ](https://github.com/Azure/aml-deploy)  
+
 ## <a name="trigger-a-run-in-azure-pipelines"></a>Azure Pipelines での実行のトリガー
 
 - [Azure Pipelines](https://github.com/Azure/pipelines)  
@@ -113,6 +128,6 @@ Azure に接続するサンプル ワークフローについては、次の Git
 
 GitHub を使用した Azure へのアプリのデプロイをサポートするには、次の GitHub リソースを使用できます。  
 
-- [Azure Marketplace 向けの GitHub Actions](https://github.com/marketplace?query=Azure&type=actions)
+- [Azure 用 GitHub Actions のマーケットプレース](https://github.com/marketplace?query=Azure&type=actions)
 - [学習ラボ、Azure を使用した継続的デリバリー](https://lab.github.com/githubtraining/github-actions:-continuous-delivery-with-azure)
 - [Azure にデプロイするためのスターター アクション ワークフロー](https://github.com/Azure/actions-workflow-samples)

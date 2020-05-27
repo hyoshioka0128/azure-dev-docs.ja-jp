@@ -1,14 +1,14 @@
 ---
 title: Azure SDK for Python ライブラリをインストールする
 description: pip を使用して Azure SDK または Python ライブラリをインストール、アンインストール、および検証する方法。 特定のバージョンおよびプレビュー パッケージをインストールする方法の詳細も含まれています。
-ms.date: 04/23/2020
+ms.date: 05/13/2020
 ms.topic: conceptual
-ms.openlocfilehash: 172091bcdff5ba55ccc7c2f13c60f3c7d645efc1
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 302d17211480f9c8793d7be1de20a6ab5dec3c95
+ms.sourcegitcommit: 2cdf597e5368a870b0c51b598add91c129f4e0e2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82138748"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83403670"
 ---
 # <a name="install-azure-sdk-for-python-libraries"></a>Azure SDK for Python ライブラリをインストールする
 
@@ -20,47 +20,53 @@ SDK 内の他のすべてのライブラリは、既にプロビジョニング�
 
 ## <a name="install-the-latest-version-of-a-library"></a>ライブラリの最新バージョンをインストールする
 
-`pip install` を実行すると、最新バージョンのライブラリが現在の Python 環境にインストールされます。
-
 ```bash
 pip install azure-storage-blob
 ```
+
+`pip install` を実行すると、ライブラリの最新バージョンが現在の Python 環境にインストールされます。
 
 Linux システムでは、SDK は `sudo pip install` を使用してすべてのユーザーにライブラリをインストールすることをサポートしていません。 各ユーザーは `pip install` を個別に使用する必要があります。
 
 ## <a name="install-specific-library-versions"></a>特定のライブラリ バージョンをインストールする
 
-特定のバージョンのライブラリをインストールする必要がある場合は、コマンド ラインでバージョンを指定します。
-
 ```bash
 pip install azure-storage-blob==12.0.0
 ```
 
+`pip install` を使用して、コマンド ラインでバージョンを指定します。
+
 ## <a name="install-preview-packages"></a>プレビュー パッケージをインストールする
-
-Microsoft では、今後予定されている機能をサポートするプレビュー SDK ライブラリを定期的にリリースしています。ライブラリは変更される可能性があるため、実稼働プロジェクトでは使用できません。
-
-ライブラリの最新のプレビューをインストールするには、コマンド ラインで `--pre` フラグを含めます。
 
 ```bash
 pip install --pre azure-storage-blob
 ```
 
-## <a name="verify-a-library-installation"></a>ライブラリのインストールの確認
+ライブラリの最新のプレビューをインストールするには、コマンド ラインで `--pre` フラグを含めます。
 
-`pip show <library>` を使用して、ライブラリがインストールされていることを確認します。 ライブラリがインストールされている場合は、このコマンドによってバージョンとその他の概要情報が表示されます。それ以外の場合、コマンドでは何も表示されません。
+Microsoft では、今後予定されている機能をサポートするプレビュー SDK ライブラリを定期的にリリースしています。ライブラリは変更される可能性があるため、実稼働プロジェクトでは使用できません。
+
+## <a name="verify-a-library-installation"></a>ライブラリのインストールの確認
 
 ```bash
 pip show azure-storage-blob
 ```
 
+`pip show <library>` を使用して、ライブラリがインストールされていることを確認します。 ライブラリがインストールされている場合は、このコマンドによってバージョンとその他の概要情報が表示されます。それ以外の場合、コマンドでは何も表示されません。
+
 `pip freeze` または `pip list` を使用して、現在の Python 環境にインストールされているすべてのライブラリを表示することもできます。
 
 ## <a name="uninstall-a-library"></a>ライブラリをアンインストールする
+
+```bash
+pip uninstall azure-storage-blob
+```
 
 ライブラリをアンインストールするには、`pip uninstall <library>` を使用します。
 
 ## <a name="next-steps"></a>次のステップ
 
+これで、コードを記述して実行する準備ができました。これは、次の例のいずれかを使用して実行できます。
+
 > [!div class="nextstepaction"]
-> [SDK の使用方法を確認](azure-sdk-get-started.yml)
+> [例:リソース グループを作成する >>>](azure-sdk-example-resource-group.md)

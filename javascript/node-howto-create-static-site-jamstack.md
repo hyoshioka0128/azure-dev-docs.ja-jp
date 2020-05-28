@@ -4,12 +4,12 @@ description: Azure を使用して JAMstack アプリ (JavaScript、API、Markup
 ms.topic: article
 ms.date: 08/20/2019
 ms.custom: seo-javascript-september2019
-ms.openlocfilehash: 6c804185859611f4534d5fa4e62b8e2585d14aa5
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: abe56482d616a5dfcc3dc25a8ab7949bc5164fe0
+ms.sourcegitcommit: 9330d5af796b4b114466bbe75b8e18a9206f218e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "74467246"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83862795"
 ---
 # <a name="build-jamstack-static-site-web-apps-on-azure-with-nodejs"></a>Node.js を使用して Azure で JAMstack (静的サイト) Web アプリを作成する
 
@@ -22,7 +22,7 @@ Azure で静的 (JAMstack) サイトを実装するには、さまざまなツ�
 - フロントエンド開発に使用したいライブラリを選択します (Angular など)。 次に、それらの静的な HTML、CSS、JavaScript ファイルを Azure Blob Storage にアップロードすれば、それがビルトインの Web サーバーとなります。
 - すべてのトラフィックが 1 つの URL ドメインを経由するようにリバース プロキシを作成します。
 
-//build 2019 セッション「[JavaScript、Visual Studio Code、Azure を使用した生産的なフロントエンド開発](https://mybuild.techcommunity.microsoft.com/sessions/77038?source=sessions#top-anchor)」で、このプロセスのデモンストレーションを視聴できます。
+//build 2019 セッション「[JavaScript、Visual Studio Code、Azure を使用した生産的なフロントエンド開発](https://azure.microsoft.com/resources/videos/build-2019-productive-front-end-development-with-javascript-visual-studio-code-and-azure/)」で、このプロセスのデモンストレーションを視聴できます。
 
 > [!VIDEO https://medius.studios.ms/Embed/Video-nc/B19-BRK3021?latestplayer=true]
 

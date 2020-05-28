@@ -3,12 +3,12 @@ title: Azure SDK for Python を使用して仮想マシンをプロビジョニ�
 description: Python と Azure SDK の管理ライブラリを使用して Azure 仮想マシンをプロビジョニングする方法。
 ms.date: 05/12/2020
 ms.topic: conceptual
-ms.openlocfilehash: 816419d99647ed23173d6c9ff707c256b384968f
-ms.sourcegitcommit: 2cdf597e5368a870b0c51b598add91c129f4e0e2
+ms.openlocfilehash: f21495cc42f3bb228e460f1c591c9aa037dd8123
+ms.sourcegitcommit: 9330d5af796b4b114466bbe75b8e18a9206f218e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83404985"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83862785"
 ---
 # <a name="example-use-the-azure-sdk-to-provision-a-virtual-machine"></a>例:Azure SDK を使用して仮想マシンをプロビジョニングする
 
@@ -35,7 +35,7 @@ ms.locfileid: "83404985"
     azure-mgmt-resource
     azure-mgmt-network
     azure-mgmt-compute
-    azure-core-cli
+    azure-cli-core
     ```
 
 1. 仮想環境がアクティブになっているターミナルまたはコマンド プロンプトで、*requirements.txt* にリストされている管理ライブラリをインストールします。

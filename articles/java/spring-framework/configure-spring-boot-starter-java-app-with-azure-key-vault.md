@@ -8,12 +8,12 @@ ms.service: key-vault
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
-ms.openlocfilehash: 2df574104376ec1900c7dc5cbd4f0a49ef1f4732
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: a43b951fddfea01c4678fca3174f15a3b3d714f9
+ms.sourcegitcommit: 9330d5af796b4b114466bbe75b8e18a9206f218e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82138738"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83862815"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-key-vault"></a>Azure Key Vault 用の Spring Boot Starter の使用方法
 
@@ -202,8 +202,10 @@ ms.locfileid: "82138738"
 3. このチュートリアルで既に完了した手順で取得した値を使用して、キー コンテナーの値を追加します。次に例を示します。
 
    ```yaml
-   azure.keyvault.uri=https://vgedkeyvault.vault.azure.net/
    azure.keyvault.enabled=true
+   azure.keyvault.uri=Your-Keyvault-uri
+   azure.keyvault.client-id=Your-Client-ID
+   azure.keyvault.tenant-id=Your-Tenant-ID
    ```
 
    各値の説明:

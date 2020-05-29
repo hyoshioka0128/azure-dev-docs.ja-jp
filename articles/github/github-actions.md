@@ -6,12 +6,12 @@ ms.author: ushan
 ms.topic: conceptual
 ms.service: azure
 ms.date: 05/05/2020
-ms.openlocfilehash: 1b3906eeacf48e2561f49dc8480ce83565aeca3a
-ms.sourcegitcommit: fbbc341a0b9e17da305bd877027b779f5b0694cc
+ms.openlocfilehash: 3e6f6d447da93873a1278eaa42882a9d08a94d57
+ms.sourcegitcommit: 9330d5af796b4b114466bbe75b8e18a9206f218e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83631677"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83862805"
 ---
 # <a name="deploy-to-azure-using-github-actions"></a>GitHub Actions を使用して Azure にデプロイする
 
@@ -23,11 +23,6 @@ Azure 用 GitHub Actions を使用すると、ビルド、テスト、パッケ�
 
 > [!NOTE]   
 > この記事に記載されているリンクは、GitHub の記事または GitHub リポジトリにリンクしています。 
-
-- Azure Web Apps と Azure Web App for Containers にデプロイするための [Azure/webapps-deploy アクション](https://github.com/Azure/webapps-deploy) 
-- Azure WebApp (Windows または Linux) またはそのデプロイ スロットで JSON 構文を使用して、アプリ設定、接続文字列、その他の一般的な設定を一括して構成する [Azure/appservice-settings](https://github.com/Azure/appservice-settings)
-
-
 
 ## <a name="key-concepts"></a>主要な概念
 
@@ -53,10 +48,11 @@ Azure 用 GitHub Actions については、次のページを参照してくだ�
 
 ## <a name="connect-to-azure"></a>Azure に接続する
 
-Azure に接続するサンプル ワークフローについては、次の GitHub アクションを参照してください。  
+Azure に接続し、Az CLI または Az PowerShell に基づいてスクリプトを実行するサンプル ワークフローについては、次の GitHub アクションを使用します。  
 
 - [Azure ログイン](https://github.com/Azure/login)  
-- [Azure CLI](https://github.com/Azure/CLI)  
+- [Azure CLI](https://github.com/Azure/CLI)
+- [Azure PowerShell](https://github.com/Azure/powershell)
 
 
 ## <a name="sample-apps-with-cicd-workflow-samples"></a>CI/CD ワークフロー サンプルを使用したサンプル アプリ 
@@ -69,15 +65,22 @@ Azure に接続するサンプル ワークフローについては、次の Git
 - [Java Web アプリをデプロイする](https://github.com/Azure-Samples/java-spring-petclinic)  
 - [Java Spring アプリをデプロイする](https://github.com/Azure-Samples/Java-application-petstore-ee7)  
 - [Python Web アプリをデプロイする](https://github.com/Azure-Samples/pythonSample_thecatsaidno)  
-- [Docker を使用してデプロイする](https://github.com/Azure-Samples/Node_express_container)  
+- [Docker を使用してコンテナー化された Web アプリをデプロイする](https://github.com/Azure-Samples/Node_express_container)
 
 
 ## <a name="deploy-a-web-app"></a>Web アプリをデプロイする
 
-- [Azure Web アプリ](https://github.com/Azure/webapps-deploy)  
+Azure Web Apps および Azure Web App for Containers にデプロイする:
+
+- [Azure/webapps-deploy アクション](https://github.com/Azure/webapps-deploy)
+
+静的 Web アプリをデプロイする:
+- [Azure/static-web-apps-deploy](https://docs.microsoft.com/azure/static-web-apps/getting-started?tabs=angular)
+
+
 次のアクションを使用して、アプリ設定と接続文字列を構成します。
 
-- [Azure Web App for Containers](https://github.com/Azure/webapps-container-deploy)  
+- [Azure/appservice-settings](https://github.com/Azure/appservice-settings) 
 - [Azure App Service 設定](https://github.com/Azure/appservice-settings)  
 
 ## <a name="deploy-a-serverless-app"></a>サーバーレス アプリのデプロイ

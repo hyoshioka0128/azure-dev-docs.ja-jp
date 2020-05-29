@@ -7,12 +7,12 @@ ms.date: 12/19/2018
 ms.service: storage
 ms.topic: article
 ms.workload: storage
-ms.openlocfilehash: e9546d2e65d198fe9ab92e5d588df8797fd97e16
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 7375373696b59320100e8109b75cb1fdef6ed64b
+ms.sourcegitcommit: 5322c817033e6e20064f53f0fbedcf1f455f54d0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81669238"
+ms.lasthandoff: 05/25/2020
+ms.locfileid: "83825198"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-storage"></a>Azure Storage 用の Spring Boot Starter の使用方法
 
@@ -64,7 +64,7 @@ ms.locfileid: "81669238"
 
 次の手順では、Spring Boot アプリケーションを作成します。
 
-1. [https://www.microsoft.com](<https://start.spring.io/>) を参照します。
+1. <https://start.spring.io/> を参照します。
 
 1. 次のオプションを指定します。
 
@@ -105,11 +105,9 @@ ms.locfileid: "81669238"
    <dependency>
       <groupId>com.microsoft.azure</groupId>
       <artifactId>spring-azure-starter-storage</artifactId>
-      <version>1.0.0.M2</version>
+      <version>1.2.5</version>
    </dependency>
    ```
-
-   ![pom.xml ファイルを編集する][SI03]
 
 1. *pom.xml* ファイルを保存して閉じます。
 
@@ -207,8 +205,9 @@ ms.locfileid: "81669238"
    ```yaml
    spring.cloud.azure.credential-file-path=my.azureauth
    spring.cloud.azure.resource-group=wingtiptoysresources
-   spring.cloud.azure.region=West US
+   spring.cloud.azure.region=westUS
    spring.cloud.azure.storage.account=wingtiptoysstorage
+   blob=azure-blob://containerName/blobName
    ```
    各値の説明:
 
@@ -218,8 +217,8 @@ ms.locfileid: "81669238"
    |    `spring.cloud.azure.resource-group`    |           Azure ストレージ アカウントを含む Azure リソース グループを指定します。            |
    |        `spring.cloud.azure.region`        | Azure ストレージ アカウントの作成時に指定した地理的リージョンを指定します。 |
    |   `spring.cloud.azure.storage.account`    |            このチュートリアルで作成した Azure ストレージ アカウントを指定します。             |
-
-
+   |                   `blob`                  |           データを格納するコンテナーと BLOB の名前を指定します。         |
+    
 3. *application.properties* ファイルを保存して閉じます。
 
 ## <a name="add-sample-code-to-implement-basic-azure-storage-functionality"></a>Azure Storage の基本的な機能を実装するサンプル コードを追加する
@@ -254,17 +253,17 @@ ms.locfileid: "81669238"
 
 1. メイン アプリケーションの Java ファイルを保存して閉じます。
 
-### <a name="add-a-web-controller-class"></a>Web コントローラー クラスを追加する
+### <a name="add-a-blob-controller-class"></a>BLOB コントローラー クラスを追加する
 
-1. アプリのパッケージ ディレクトリに、*WebController.java* という名前の新しい Java ファイルを作成します。次に例を示します。
+1. アプリのパッケージ ディレクトリに、*BlobController.java* という名前の新しい Java ファイルを作成します。次に例を示します。
 
-   `C:\SpringBoot\storage\src\main\java\com\wingtiptoys\storage\WebController.java`
+   `C:\SpringBoot\storage\src\main\java\com\wingtiptoys\storage\BlobController.java`
 
    または
 
-   `/users/example/home/storage/src/main/java/com/wingtiptoys/storage/WebController.java`
+   `/users/example/home/storage/src/main/java/com/wingtiptoys/storage/BlobController.java`
 
-1. テキスト エディターで Web コントローラー Java ファイルを開き、ファイルに次の行を追加します。  *wingtiptoys* を実際のリソース グループに変更し、*storage* を実際の成果物名に変更します。
+1. テキスト エディターで BLOB コントローラー Java ファイルを開き、ファイルに次の行を追加します。  *wingtiptoys* を実際のリソース グループに変更し、*storage* を実際の成果物名に変更します。
 
    ```java
    package com.wingtiptoys.storage;
@@ -273,41 +272,37 @@ ms.locfileid: "81669238"
    import org.springframework.core.io.Resource;
    import org.springframework.core.io.WritableResource;
    import org.springframework.util.StreamUtils;
-   import org.springframework.web.bind.annotation.GetMapping;
-   import org.springframework.web.bind.annotation.PostMapping;
-   import org.springframework.web.bind.annotation.RequestBody;
-   import org.springframework.web.bind.annotation.RestController;
+   import org.springframework.web.bind.annotation.*;
 
    import java.io.IOException;
    import java.io.OutputStream;
    import java.nio.charset.Charset;
 
    @RestController
-   public class WebController {
-
-      @Value("blob://test/myfile.txt")
-      private Resource blobFile;
-
-      @GetMapping(value = "/")
-      public String readBlobFile() throws IOException {
-         return StreamUtils.copyToString(
-            this.blobFile.getInputStream(),
-            Charset.defaultCharset()) + "\n";
-      }
-
-      @PostMapping(value = "/")
-      public String writeBlobFile(@RequestBody String data) throws IOException {
-         try (OutputStream os = ((WritableResource) this.blobFile).getOutputStream()) {
-            os.write(data.getBytes());
-         }
-         return "File was updated.\n";
-      }
+   @RequestMapping("blob")
+   public class BlobController {
+   
+       @Value("${blob}")
+       private Resource blobFile;
+   
+       @GetMapping
+       public String readBlobFile() throws IOException {
+           return StreamUtils.copyToString(
+                   this.blobFile.getInputStream(),
+                   Charset.defaultCharset());
+       }
+   
+       @PostMapping
+       public String writeBlobFile(@RequestBody String data) throws IOException {
+           try (OutputStream os = ((WritableResource) this.blobFile).getOutputStream()) {
+               os.write(data.getBytes());
+           }
+           return "file was updated";
+       }
    }
    ```
 
-   `@Value("blob://[container]/[blob]")` 構文では、データを格納するコンテナーと BLOB の名前をそれぞれ定義します。
-
-1. Web コントローラー Java ファイルを保存して閉じます。
+1. BLOB コントローラー Java ファイルを保存して閉じます。
 
 1. コマンド プロンプトを開き、ディレクトリを *pom.xml* ファイルが置かれているフォルダーに変更します。次に例を示します。
 
@@ -329,7 +324,7 @@ ms.locfileid: "81669238"
    a. POST 要求を送信して、ファイルの内容を更新します。
 
       ```shell
-      curl -X POST -H "Content-Type: text/plain" -d "Hello World" http://localhost:8080/
+      curl -d 'new message' -H 'Content-Type: text/plain' localhost:8080/blob
       ```
 
       ファイルが更新されたことを示す応答が表示されます。
@@ -373,4 +368,3 @@ Spring Boot アプリケーションから呼び出すことができるその�
 
 [SI01]: media/configure-spring-boot-starter-java-app-with-azure-storage/create-project-01.png
 [SI02]: media/configure-spring-boot-starter-java-app-with-azure-storage/create-project-02.png
-[SI03]: media/configure-spring-boot-starter-java-app-with-azure-storage/create-project-03.png

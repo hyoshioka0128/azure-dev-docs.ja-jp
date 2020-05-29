@@ -3,12 +3,12 @@ title: Azure SDK for Python で Azure Storage をプロビジョニングして�
 description: Azure SDK for Python ライブラリを使用して、Azure Storage アカウントに BLOB コンテナーをプロビジョニングし、そのコンテナーにファイルをアップロードします。
 ms.date: 05/12/2020
 ms.topic: conceptual
-ms.openlocfilehash: 9b26dd4c5708231c807ea57979bed6bdcd9de25f
-ms.sourcegitcommit: 2cdf597e5368a870b0c51b598add91c129f4e0e2
+ms.openlocfilehash: 904ca66f6e4c065fa0705d2e35b8a7bb46396a0d
+ms.sourcegitcommit: b69db02c3358ce7899cef105508e3d17fafc84b2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83405105"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83759945"
 ---
 # <a name="example-use-the-azure-sdk-with-azure-storage"></a>例:Azure Storage で Azure SDK を使用する
 
@@ -282,7 +282,7 @@ az storage container create --account-name pythonsdkstorage12345 -n blob-contain
         blob_client.upload_blob(data)
     ```
 
-1. コードの実行を試みます。
+1. コードを実行しようとします (意図的に失敗します)。
 
     ```bash
     python use_blob_auth.py
@@ -312,11 +312,11 @@ az storage container create --account-name pythonsdkstorage12345 -n blob-contain
 
     `--scope` 引数は、対象となるロールの割り当て先を指定するものです。 この例では、"ストレージ BLOB データ共同作成者" ロールを、"blob-container-01" という名前の "*特定*" のコンテナーに付与しています。
 
-    `pythonsdkstorage12345` は、ストレージ アカウントの正確な名前に置き換えてください。 必要であれば、リソース グループと BLOB コンテナーの名前を調整することもできます。 間違った名前を使用すると、"ネストされたリソースに対して要求された操作を実行できません。親リソース 'pythonsdkstorage12345' が見つかりません" というエラーが表示されます。 Parent resource 'pythonsdkstorage12345' not found."
+    `pythonsdkstorage12345` は、ストレージ アカウントの正確な名前に置き換えてください。 必要であれば、リソース グループと BLOB コンテナーの名前を調整することもできます。 間違った名前を使用すると、"ネストされたリソースに対して要求された操作を実行できません。親リソース 'pythonsdkstorage12345' が見つかりません" というエラーが表示されます 。
 
     このコマンドの `--scope` 引数には、AZURE_CLIENT_ID と AZURE_SUBSCRIPTION_ID という環境変数が使用されています。これらは、「[Azure 用のローカル Python 開発環境を構成する](configure-local-development-environment.md)」に従い、ローカル環境でサービス プリンシパルに設定したものです。
 
-1. もう一度コードを実行して、今度は正しく機能することを確認します。 アクセス許可エラーが再び表示された場合は、アクセス許可が伝播されるまで数分待ってから、コードの実行を再試行してください。
+1. アクセス許可が反映されるまで 1、2 分待機した後、コードをもう一度実行して、今度は動作することを確認します。 アクセス許可のエラーが再度表示された場合は、もう少し待ってから、もう一度コードを試してください。
 
 スコープとロールの割り当てについて詳しくは、[ロールのアクセス許可を割り当てる方法](how-to-assign-role-permissions.md)に関するページを参照してください。
 

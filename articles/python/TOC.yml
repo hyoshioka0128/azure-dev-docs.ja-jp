@@ -8,36 +8,38 @@
       href: cloud-development-provisioning.md
     - name: Azure 開発フロー
       href: cloud-development-flow.md
-- name: Azure 用の開発環境をセットアップする
-  href: configure-local-development-environment.md
-- name: Azure SDK for Python を使ってみる
+- name: Python で Azure を使ってみる
   items:
-    - name: 概要と使用パターン
+    - name: Azure ライブラリの概要
       href: azure-sdk-overview.md
-    - name: SDK ライブラリのインストール
-      href: azure-sdk-install.md
-    - name: '例:リソース グループを作成する'
+    - name: 開発環境を設定する
+      href: configure-local-development-environment.md
+    - name: ライブラリの使用パターン
+      href: azure-sdk-library-usage-patterns.md
+    - name: '例:リソース グループをプロビジョニングする'
       href: azure-sdk-example-resource-group.md
-    - name: '例:Azure ストレージの使用'
+    - name: '例:Azure ストレージのプロビジョニングと使用'
       href: azure-sdk-example-storage.md
-    - name: '例:コードを使用して Web アプリをプロビジョニングする'
+    - name: '例:Web アプリのプロビジョニングとデプロイ'
       href: azure-sdk-example-web-app.md
     - name: '例:仮想マシンのプロビジョニング'
       href: azure-sdk-example-virtual-machines.md
-- name: Azure サービスのクイックスタート
+- name: 特定の Azure サービスを調べる
   items:
     - name: アプリ ホスティング
       href: quickstarts-app-hosting.md
     - name: データ ソリューション
       href: quickstarts-data-solutions.md
+    - name: ID とセキュリティ
+      href: quickstarts-identity-security.md
     - name: 機械学習
       href: quickstarts-machine-learning.md
-    - name: Azure Cognitive Services
+    - name: AI (Cognitive Services)
       href: quickstarts-cognitive-services.md
-    - name: メッセージング
-      href: quickstarts-messaging.md
-    - name: セキュリティと統合
-      href: quickstarts-security-integration.md
+    - name: Messaging と IoT
+      href: quickstarts-messaging-iot.md
+    - name: その他のサービス
+      href: quickstarts-other-services.md
 - name: シナリオ固有のチュートリアル
   items:
     - name: VS Code を使用して Web アプリをデプロイする
@@ -88,6 +90,8 @@
           href: tutorial-vs-code-serverless-python-08.md
 - name: 操作方法ガイド
   items:
+    - name: ライブラリ パッケージをインストールする
+      href: azure-sdk-install.md
     - name: Azure によるアプリの認証
       href: azure-sdk-authenticate.md
     - name: サービス プリンシパルを管理する
@@ -128,7 +132,5 @@
       href: 'https://docs.microsoft.com/samples/browse/?languages=python&products=azure-search'
     - name: すべてのサンプル
       href: 'https://docs.microsoft.com/samples/browse/?languages=python'
-- name: リファレンス
-  items:
-    - name: Azure SDK
-      href: sdk.md
+- name: ライブラリ API リファレンス
+  href: sdk-library-api-reference.md

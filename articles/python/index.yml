@@ -1,7 +1,7 @@
 ### YamlMime:Landing
 title: Python 開発者向けの Azure
 summary: >
-  Azure では、アプリ ホスティング、ストレージ、mySQL や PostgreSQL などのオープンソース データベース、データ サイエンス、機械学習、AI など、Python 開発者向けの広範なサービスを提供しています。 Azure SDK for Python は、開発者がこれらのサービスを使用するときの生産性を高めるのに役立ちます。
+  Azure では、アプリ ホスティング、ストレージ、mySQL や PostgreSQL などのオープンソース データベース、データ サイエンス、機械学習、AI など、Python 開発者向けの広範なサービスを提供しています。 Python 用の Azure ライブラリ (SDK) は、開発者がこれらのサービスを使用するときの生産性を高めるのに役立ちます。
 metadata:
   title: Python 開発者向けの Azure
   description: Python と Azure を使用した開発を始める
@@ -13,12 +13,12 @@ metadata:
   ms.technology: azure
   ms.service: multiple
   ms.devlang: python
-  ms.openlocfilehash: ef9b2de52a63454d89a74698852fc68118ccfdf2
-  ms.sourcegitcommit: 2cdf597e5368a870b0c51b598add91c129f4e0e2
+  ms.openlocfilehash: 4f128432052206091b1cced8447bd64c4e288133
+  ms.sourcegitcommit: 79890367158a9931909f11da1c894daa11188cba
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 05/14/2020
-  ms.locfileid: "83403549"
+  ms.lasthandoff: 05/28/2020
+  ms.locfileid: "84146050"
 landingContent:
 - title: Azure での Python の概要
   linkLists:
@@ -32,42 +32,20 @@ landingContent:
       url: configure-local-development-environment.md
   - linkListType: overview
     links:
-    - text: Azure SDK for Python について
+    - text: Python 用 Azure ライブラリについて
       url: azure-sdk-overview.md
   - linkListType: how-to-guide
     links:
-    - text: SDK ライブラリのインストール
+    - text: Python ライブラリを使用する
       url: azure-sdk-install.md
   - linkListType: tutorial
     links:
-    - text: コードから Azure SDK を使用する
+    - text: コードで Azure ライブラリを使用する
       url: azure-sdk-example-resource-group.md
   - linkListType: reference
     links:
-    - text: Azure SDK for Python API のリファレンス
-      url: /python/api?view=azure-python
-- title: Azure 内でのアプリケーションのホスト
-  linkLists:
-  - linkListType: quickstart
-    links:
-    - text: Visual Studio Code を使用して HTTP 要求用のサーバーレス関数を作成する
-      url: tutorial-vs-code-serverless-python-01.md
-    - text: Azure CLI を使用して HTTP 要求用のサーバーレス関数を作成する
-      url: /azure/azure-functions/functions-create-first-azure-function-azure-cli?pivots=programming-language-python
-    - text: Azure App Service on Linux で Python アプリを作成する
-      url: /azure/app-service/containers/quickstart-python
-    - text: Azure Kubernetes Service にコンテナー化されたアプリをデプロイする
-      url: /azure/aks/kubernetes-walkthrough
-    - text: Azure CLI を使用してコンテナー インスタンスを Azure にデプロイする
-      url: /azure/container-instances/container-instances-quickstart
-    - text: Azure Pipelines を使用して Python アプリを構築およびデプロイする
-      url: /azure/devops/pipelines/languages/python-webapp
-    - text: Python Web アプリケーションに Microsoft でサインインを追加する
-      url: /azure/active-directory/develop/quickstart-v2-python-webapp
-  - linkListType: overview
-    links:
-    - text: Azure App Service on Linux の概要
-      url: /azure/app-service/containers/app-service-linux-intro
+    - text: Python 用の Azure ライブラリ API リファレンス
+      url: sdk-library-api-reference.md
 - title: 開発者ツールを使ってみる
   linkLists:
   - linkListType: overview
@@ -90,6 +68,28 @@ landingContent:
       url: /cli/azure/install-azure-cli?view=azure-cli-latest
     - text: さまざまなディストリビューションを使用して、Linux アプリケーションを Windows 10 上でネイティブに実行する
       url: /windows/wsl/install-win10
+- title: Azure 内でのアプリケーションのホスト
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Visual Studio Code を使用して HTTP 要求用のサーバーレス関数を作成する
+      url: tutorial-vs-code-serverless-python-01.md
+    - text: Azure CLI を使用して HTTP 要求用のサーバーレス関数を作成する
+      url: /azure/azure-functions/functions-create-first-azure-function-azure-cli?pivots=programming-language-python
+    - text: Azure App Service on Linux で Python アプリを作成する
+      url: /azure/app-service/containers/quickstart-python
+    - text: Azure Kubernetes Service にコンテナー化されたアプリをデプロイする
+      url: /azure/aks/kubernetes-walkthrough
+    - text: Azure CLI を使用してコンテナー インスタンスを Azure にデプロイする
+      url: /azure/container-instances/container-instances-quickstart
+    - text: Azure Pipelines を使用して Python アプリを構築およびデプロイする
+      url: /azure/devops/pipelines/languages/python-webapp
+    - text: Python Web アプリケーションに Microsoft でサインインを追加する
+      url: /azure/active-directory/develop/quickstart-v2-python-webapp
+  - linkListType: overview
+    links:
+    - text: Azure App Service on Linux の概要
+      url: /azure/app-service/containers/app-service-linux-intro
 - title: データ サイエンス、AI、機械学習のためのサービス
   linkLists:
   - linkListType: overview

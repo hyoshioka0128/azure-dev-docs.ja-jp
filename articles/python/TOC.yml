@@ -18,8 +18,10 @@
       href: azure-sdk-library-usage-patterns.md
     - name: '例:リソース グループをプロビジョニングする'
       href: azure-sdk-example-resource-group.md
-    - name: '例:Azure ストレージのプロビジョニングと使用'
+    - name: '例:Azure ストレージをプロビジョニングする'
       href: azure-sdk-example-storage.md
+    - name: '例:Azure ストレージの使用'
+      href: azure-sdk-example-storage-use.md
     - name: '例:Web アプリのプロビジョニングとデプロイ'
       href: azure-sdk-example-web-app.md
     - name: '例:仮想マシンのプロビジョニング'

@@ -3,12 +3,12 @@ title: Azure で Terraform を使用する
 description: Terraform を使用して、Azure にインフラストラクチャをデプロイし、バージョンを管理する方法について説明します。
 ms.topic: overview
 ms.date: 10/26/2019
-ms.openlocfilehash: 63f17be153d8c1683eb6aff98552834cc88b8f03
-ms.sourcegitcommit: 756e4873f904db954a56c20ebb2f1f5116ee4596
+ms.openlocfilehash: ca5602d83ef1e8e4f201c6ae058dbdc004cb8fdb
+ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82171108"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84329420"
 ---
 # <a name="terraform-with-azure"></a>Azure での Terraform
 
@@ -40,6 +40,6 @@ Terraform は、複数のクラウド プロバイダーへのインフラスト
 
 これで Terraform の概要と利点に関する説明は終了です。推奨する次の手順は、以下のとおりです。
 
-- [Azure を使用するために Terraform をインストールして構成する](install-configure.md)ことから始める
+- [Azure を使用するために Terraform をインストールして構成する](getting-started-cloud-shell.md)ことから始める
 - [Terraform を使用して Azure 仮想マシンを作成する](create-linux-virtual-machine-with-infrastructure.md)
 - [Terraform 用の Azure Resource Manager モジュールを探索する](https://www.terraform.io/docs/providers/azurerm/) 

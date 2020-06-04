@@ -3,12 +3,12 @@ title: チュートリアル - Azure Terraform Visual Studio Code 拡張機能�
 description: Visual Studio Code で Azure Terraform 拡張機能をインストールして使用する方法を説明します。
 ms.topic: tutorial
 ms.date: 10/26/2019
-ms.openlocfilehash: c33006fc2be87bfce42f15a6fc123c9c8326aa42
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 9fd6d6b93537795109117198aa20063b556b8368
+ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82171258"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84329570"
 ---
 # <a name="tutorial-configure-the-azure-terraform-visual-studio-code-extension"></a>チュートリアル:Azure Terraform Visual Studio Code 拡張機能の構成
 
@@ -25,7 +25,7 @@ Azure Terraform Visual Studio Code 拡張機能を使用すると、エディタ
 ## <a name="prerequisites"></a>前提条件
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
-- **Terraform**:[Terraform をインストールして構成します](install-configure.md)。
+- **Terraform**:[Terraform をインストールして構成します](getting-started-cloud-shell.md)。
 - **Visual Studio Code**:ご利用の環境に適したバージョンの [Visual Studio Code](https://code.visualstudio.com/download) をインストールしてください。
 
 ## <a name="prepare-your-dev-environment"></a>開発環境の準備
@@ -234,13 +234,13 @@ Terraform *plan* の結果に満足したら、*apply* コマンドを実行で�
 
 この演習では、Terraform *compute* モジュールを Visual Studio Code 環境に読み込む方法について説明します。
 
-### <a name="clone-the-terraform-azurerm-compute-module"></a>terraform-azurerm-compute モジュールのクローン
+### <a name="clone-the-terraform-azurerm-compute-module"></a>terraform-azurerm-compute モジュールの複製
 
 1. [こちらのリンク](https://github.com/Azure/terraform-azurerm-compute)を使用して、GitHub 上の Terraform Azure Rm Compute モジュールにアクセスします。
 
-1. **[Clone or download]\(複製またはダウンロード\)** を選択します。
+1. **[複製またはダウンロード]** を選択します。
 
-    ![クローンまたはダウンロード](media/configure-vs-code-extension-for-terraform/tf-clone-with-https.png)
+    ![複製またはダウンロード](media/configure-vs-code-extension-for-terraform/tf-clone-with-https.png)
 
     >[!NOTE]
     >この例では、使用するフォルダーに *terraform azurerm-compute* という名前が付けられています。

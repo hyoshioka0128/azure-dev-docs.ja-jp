@@ -4,12 +4,12 @@ description: Azure Kubernetes Service と Terraform を使用して Kubernetes �
 keywords: Azure DevOps Terraform AKS Kubernetes
 ms.topic: tutorial
 ms.date: 03/09/2020
-ms.openlocfilehash: 45a27dcd8751484f71c7a89f08109d2303ea121e
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 01355f79f4c50d8599bf1c9cfab7c72257860f25
+ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82171148"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84329620"
 ---
 # <a name="tutorial-create-a-kubernetes-cluster-with-azure-kubernetes-service-using-terraform"></a>チュートリアル:Terraform を使用して Azure Kubernetes Service で Kubernetes クラスターを作成する
 
@@ -28,7 +28,7 @@ ms.locfileid: "82171148"
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
 
-- **Terraform の構成**:[Terraform および Azure へのアクセスの構成](install-configure.md)に関する記事の指示に従ってください
+- **Terraform の構成**:[Terraform および Azure へのアクセスの構成](getting-started-cloud-shell.md)に関する記事の指示に従ってください
 
 - **Azure サービス プリンシパル**:「[Azure CLI で Azure サービス プリンシパルを作成する](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest)」の「**サービス プリンシパルを作成する**」の指示に従ってください。 appId、displayName、password、および tenant の値を書き留めます。
 

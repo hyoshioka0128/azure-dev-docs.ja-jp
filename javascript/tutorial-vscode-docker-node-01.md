@@ -3,12 +3,12 @@ title: Visual Studio Code から Docker コンテナーを Azure App Service に
 description: チュートリアル パート 1、概要と前提条件。
 ms.topic: conceptual
 ms.date: 09/20/2019
-ms.openlocfilehash: bd4110bbbef5e5f65f76cd9329b194646431f91a
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 816228d73ac6b21c2c3e144c3f7783de0377e73e
+ms.sourcegitcommit: a9b9157bb3a802ecfe3699854788d010a3f08d7e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82138794"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84202871"
 ---
 # <a name="deploy-containers-to-azure-app-service"></a>Azure App Service にコンテナーをデプロイする
 
@@ -18,7 +18,7 @@ ms.locfileid: "82138794"
 
 この記事の内容の完全なチュートリアルについては、こちらのビデオをご覧ください。
 
-> [!VIDEO https://channel9.msdn.com/Shows/Docs-Azure/Deploy-containers-to-Azure-App-Service/player]
+> [!VIDEO https://channel9.msdn.com/Shows/Docs-Azure/Deploy-containers-Azure-App-Service/player]
 
 ## <a name="prerequisites"></a>前提条件
 

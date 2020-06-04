@@ -3,12 +3,12 @@ title: Visual Studio Code から Node.js で Azure Functions をデプロイす�
 description: チュートリアル パート 1、概要と前提条件。
 ms.topic: conceptual
 ms.date: 09/23/2019
-ms.openlocfilehash: 23eff2eb672b7221ed74fc8085515647392d8525
-ms.sourcegitcommit: 756e4873f904db954a56c20ebb2f1f5116ee4596
+ms.openlocfilehash: eaf8ea2c121319693c4007d8301c95c9b9d3a6c1
+ms.sourcegitcommit: a9b9157bb3a802ecfe3699854788d010a3f08d7e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82138778"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84202911"
 ---
 # <a name="deploy-azure-functions-from-visual-studio-code"></a>Visual Studio Code から Azure Functions をデプロイする
 
@@ -18,7 +18,7 @@ ms.locfileid: "82138778"
 
 この記事の内容の完全なチュートリアルについては、こちらのビデオをご覧ください。
 
-> [!VIDEO https://channel9.msdn.com/Shows/Docs-Azure/Deploy-Azure-Functions-from-Visual-Studio-Code/player]
+> [!VIDEO https://channel9.msdn.com/Shows/Docs-Azure/Deploy-Azure-Functions-Visual-Studio-Code/player]
 
 ## <a name="prerequisites"></a>前提条件
 

@@ -4,12 +4,12 @@ description: チュートリアルの手順 2、アプリケーションの設�
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: seo-python-october2019
-ms.openlocfilehash: bb515e1d785aa0e8a38e4fc1014915db56b89d94
-ms.sourcegitcommit: fbbc341a0b9e17da305bd877027b779f5b0694cc
+ms.openlocfilehash: 6e19c53bcb7c1db1764e5f317776743103a98b59
+ms.sourcegitcommit: efab6be74671ea4300162e0b30aa8ac134d3b0a9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83631725"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84256397"
 ---
 # <a name="2-prepare-your-app-for-deployment-to-azure-app-service"></a>2:Azure App Service にデプロイするためにアプリを準備する
 
@@ -46,10 +46,10 @@ ms.locfileid: "83631725"
 
 1. アプリ オブジェクトの検索先を Flask に指示する FLASK_APP 環境変数を設定します。
 
-   # <a name="bash"></a>[bash](#tab/bash)
+    # <a name="cmd"></a>[cmd](#tab/cmd)
 
-    ```bash
-    export FLASK_APP=hello:myapp
+    ```cmd
+    set FLASK_APP=hello:myapp
     ```
 
     # <a name="powershell"></a>[PowerShell](#tab/powershell)
@@ -58,10 +58,10 @@ ms.locfileid: "83631725"
     $env:FLASK_APP = "hello:myapp"
     ```
 
-    # <a name="cmd"></a>[cmd](#tab/cmd)
+   # <a name="bash"></a>[bash](#tab/bash)
 
     ```bash
-    set FLASK_APP=hello:myapp
+    export FLASK_APP=hello:myapp
     ```
 
     ---

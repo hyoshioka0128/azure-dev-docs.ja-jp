@@ -7,10 +7,8 @@
 - name: クイックスタート
   expanded: true
   items:
-    - name: Terraform のインストールと構成
-      href: install-configure.md
-    - name: Linux VM の作成
-      href: create-linux-virtual-machine-with-infrastructure.md
+    - name: はじめに - Cloud Shell
+      href: getting-started-cloud-shell.md
 - name: チュートリアル
   items:
     - name: セットアップと構成
@@ -31,16 +29,6 @@
       items:
         - name: Azure Cosmos DB をデプロイする
           href: deploy-azure-cosmos-db-to-azure-container-instances.md
-    - name: インフラストラクチャ
-      items:
-        - name: Terraform モジュールを使用した VM クラスターの作成
-          href: create-vm-cluster-module.md
-        - name: Terraform と HCL を使用して VM クラスターを作成する
-          href: create-vm-cluster-with-infrastructure.md
-        - name: インフラストラクチャを使用した VM スケール セットのプロビジョニング
-          href: create-vm-scaleset-network-disks-hcl.md
-        - name: Packer カスタム イメージからの VM スケール セットのプロビジョニング
-          href: create-vm-scaleset-network-disks-using-packer-hcl.md
     - name: ネットワーク
       items:
         - name: ハブとスポークのトポロジ
@@ -62,9 +50,21 @@
         - name: Terraform Visual Studio Code 拡張機能のインストール
           href: configure-vs-code-extension-for-terraform.md
         - name: Yeoman を使用して Terraform ベース テンプレートを作成する
-          href: create-a-base-template-using-yeoman.md
+          href: create-base-template-using-yeoman.md
         - name: Terratest を使用した Terraform モジュールのテスト
           href: test-modules-using-terratest.md
+    - name: 仮想マシン
+      items:
+        - name: 仮想マシンとインフラストラクチャ
+          href: create-linux-virtual-machine-with-infrastructure.md
+        - name: 仮想マシン クラスターと Terraform モジュール
+          href: create-vm-cluster-module.md
+        - name: 仮想マシン クラスターと Terraform および HCL
+          href: create-vm-cluster-with-infrastructure.md
+        - name: 仮想マシン スケール セットとインフラストラクチャ
+          href: create-vm-scaleset-network-disks-hcl.md
+        - name: Packer イメージからの仮想マシン スケール セット
+          href: create-vm-scaleset-network-disks-using-packer-hcl.md
 - name: サンプル
   items:
     - name: 構成テンプレート

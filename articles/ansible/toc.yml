@@ -7,13 +7,13 @@
 - name: クイックスタート
   expanded: true
   items:
+    - name: はじめに - Cloud Shell
+      href: getting-started-cloud-shell.md
     - name: Ansible ソリューション テンプレートを CentOS にデプロイする
       href: solution-template-deploy.md
     - name: Ansible を Linux 仮想マシンにインストールする
       href: install-on-linux-vm.md
       maintainContext: true
-    - name: Cloud Shell でプレイブックを実行する
-      href: cloudshell-run-playbook.md
     - name: Linux Virtual Machines の操作
       expanded: true
       items:
@@ -81,7 +81,7 @@
           href: vm-configure-from-azure-shared-image-gallery.md
     - name: 仮想マシン スケール セット
       items:
-        - name: '[構成]'
+        - name: 構成
           href: vm-scale-set-configure.md
         - name: 配置
           href: vm-scale-set-deploy-app.md

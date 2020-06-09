@@ -7,6 +7,8 @@
       href: migrate-spring-boot-to-app-service.md
     - name: Spring Boot から AKS へ
       href: migrate-spring-boot-to-azure-kubernetes-service.md
+    - name: Spring Boot から Azure Spring Cloud へ
+      href: migrate-spring-boot-to-azure-spring-cloud.md
     - name: Spring Cloud から Azure Spring Cloud へ
       href: migrate-spring-cloud-to-azure-spring-cloud.md
     - name: Tomcat から Azure App Service へ

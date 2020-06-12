@@ -4,12 +4,12 @@ description: Azure Key Vault を使って VM セキュリティを構成する�
 keywords: ansible、azure、devops、キー コンテナー、セキュリティ、資格情報、シークレット、キー、証明書、azure 用 ansible モジュール、リソース グループ、azure_rm_resourcegroup、
 ms.topic: tutorial
 ms.date: 04/20/2020
-ms.openlocfilehash: ce9adb7ea121425d410665e1f4cc225cfdb82bd8
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 84ed514e742c8a8fa3a9acc9328fc71743dfc5cb
+ms.sourcegitcommit: 79890367158a9931909f11da1c894daa11188cba
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81755235"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84145970"
 ---
 # <a name="tutorial-use-azure-key-vault-with-a-linux-virtual-machine-in-ansible"></a>チュートリアル:Ansible で Linux 仮想マシンと共に Azure Key Vault を使用する
 
@@ -216,7 +216,7 @@ tasks:
 **注:**
 
 - キー コンテナーのシークレットを作成するために、[azure_rm_keyvaultsecret モジュール](https://docs.ansible.com/ansible/latest/modules/azure_rm_keyvaultsecret_module.html)を使用します。
-- わかりやすくするために、このデモには `secret_name` と `secret_value` が含まれています。 ただし、プレイブックは、プロジェクトのソース コードと同様に、コードとしてのインフラストラクチャ (AiC) ファイルです。 そのため、このような値は、運用環境で使用する場合には、プレーンテキスト ファイルに保存しないでください。
+- わかりやすくするために、このデモには `secret_name` と `secret_value` が含まれています。 ただし、プレイブックは、プロジェクトのソース コードと同様に、コードとしてのインフラストラクチャ (IaC) ファイルです。 そのため、このような値は、運用環境で使用する場合には、プレーンテキスト ファイルに保存しないでください。
 - このコードを実行すると、キー コンテナーの **[シークレット]** タブに、`testsecret` という名前の新しく追加されたシークレットが一覧表示されます。 これを表示するには、シークレットを選択し、現在のバージョンを選択し、 **[シークレット値を表示する]** を選択します。
 
 ## <a name="get-a-key-vault-secret"></a>キー コンテナーのシークレットを取得する
@@ -242,7 +242,7 @@ tasks:
 
 - キー コンテナーのシークレットを取得するために、**azure_rm_keyvaultsecret_info モジュール**を使用します。 このモジュールは、Azure モジュールの Ansible コレクションを使用する場合にのみ使用できます。 
 - このスニペットの実行中にエラーが発生した場合は、[「前提条件」セクション](#prerequisites)のすべての説明に従っていることを確認してください。
-- わかりやすくするために、このデモには `secret_name` と `secret_value` が含まれています。 ただし、プレイブックは、プロジェクトのソース コードと同様に、コードとしてのインフラストラクチャ (AiC) ファイルです。 そのため、このような値は、運用環境で使用する場合には、プレーンテキスト ファイルに保存しないでください。
+- わかりやすくするために、このデモには `secret_name` と `secret_value` が含まれています。 ただし、プレイブックは、プロジェクトのソース コードと同様に、コードとしてのインフラストラクチャ (IaC) ファイルです。 そのため、このような値は、運用環境で使用する場合には、プレーンテキスト ファイルに保存しないでください。
 
 ## <a name="run-the-complete-playbook"></a>完全なプレイブックを実行する
 

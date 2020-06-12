@@ -1,21 +1,21 @@
 ---
 title: Azure サービスを使用して Python アプリケーションを認証する方法
-description: Azure 管理 SDK ライブラリを使用して、Azure サービスを使って Python アプリを認証します
+description: Azure ライブラリを使用して、Azure サービスで Python アプリを認証するために必要な資格情報オブジェクトを取得する方法
 ms.date: 05/12/2020
 ms.topic: conceptual
-ms.openlocfilehash: 8dd434c0a18c0a263573188e04a54f48afcf2b0d
-ms.sourcegitcommit: 2cdf597e5368a870b0c51b598add91c129f4e0e2
+ms.openlocfilehash: 5a882a6cc18ef20a8a26650bacaa7bfe94e90771
+ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83403691"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84329430"
 ---
 # <a name="how-to-authenticate-python-apps-with-azure-services"></a>Azure サービスを使用して Python アプリを認証する方法
 
-Azure SDK for Python を使用してアプリのコードを記述するときは、次のパターンを使用して Azure リソースにアクセスします。
+Python 用 Azure ライブラリを使用してアプリのコードを記述するときは、次のパターンを使用して Azure リソースにアクセスします。
 
 1. 資格情報を取得します (通常は 1 回限りの操作)。
-1. その資格情報を使用して、特定のリソース用に SDK が提供しているクライアント オブジェクトを取得します。
+1. その資格情報を使用して、リソースに適したクライアント オブジェクトを取得します。
 1. そのクライアント オブジェクトを介してリソースにアクセスしたり変更を加えたりしようとすると、リソースの REST API に対する HTTP 要求が生成されます。
 
 この REST API への要求の時点で、資格情報オブジェクトによって表されたアプリの ID が Azure によって認証されます。 その後 Azure は、要求された操作の実行がその ID に承認されているかどうかをチェックします。 承認されていない場合、操作は失敗します。 (アクセス許可の付与は、Azure Key Vault、Azure Storage など、リソースの種類によって異なります。詳細については、リソースの種類に対応するドキュメントを参照してください。)
@@ -33,10 +33,15 @@ import os
 from azure.identity import DefaultAzureCredential
 from azure.keyvault.secrets import SecretClient
 
-# Obtain the credential object
+# Obtain the credential object. When run locally, DefaultAzureCredential relies
+# on environment variables named AZURE_CLIENT_ID, AZURE_CLIENT_SECRET, and AZURE_TENANT_ID.
 credential = DefaultAzureCredential()
 
-# Create the SDK client object to access Key Vault secrets.
+# Create the client object using the credential
+#
+# **NOTE**: SecretClient here is only an example; the same process
+# applies to all other Azure client libraries.
+
 vault_url = os.environ["KEY_VAULT_URL"]
 secret_client = SecretClient(vault_url=vault_url, credential=credential)
 
@@ -137,17 +142,11 @@ print(subscription.subscription_id)
     4 つのプレースホルダーは、Azure サブスクリプション ID、テナント ID、クライアント ID、クライアント シークレットに置き換えてください。
 
     > [!TIP]
-    > [ローカル開発環境の構成](configure-local-development-environment.md#create-a-service-principal-for-development)に関するセクションで説明されているように、[az ad sp create-for-rbac](/cli/azure/ad/sp?view=azure-cli-latest#az-ad-sp-create-for-rbac) コマンドに `--sdk-auth` パラメーターを指定することで、この JSON 形式をすぐに生成できます。
+    > [ローカル開発環境の構成](configure-local-development-environment.md#create-a-service-principal-and-environment-variables-for-development)に関するセクションで説明されているように、[az ad sp create-for-rbac](/cli/azure/ad/sp?view=azure-cli-latest#az-ad-sp-create-for-rbac) コマンドに `--sdk-auth` パラメーターを指定することで、この JSON 形式をすぐに生成できます。
 
 1. ファイルに名前 (*credentials.json* など) を付けて、コードからアクセスできる安全な場所に保存します。 資格情報の安全性を確保するため、このファイルはソース管理から除外し、他の開発者と共有しないようにしてください。 つまり、サービス プリンシパルのテナント ID、クライアント ID、クライアント シークレットは、常に自分の開発ワークステーションで隔離されている必要があります。
 
 1. JSON ファイルのパスを値とする `AZURE_AUTH_LOCATION` という名前の環境変数を作成します。
-
-    # <a name="bash"></a>[bash](#tab/bash)
-
-    ```bash
-    AZURE_AUTH_LOCATION="../credentials.json"
-    ```
 
     # <a name="cmd"></a>[cmd](#tab/cmd)
 
@@ -155,9 +154,16 @@ print(subscription.subscription_id)
     set AZURE_AUTH_LOCATION=../credentials.json
     ```
 
-    この例では、JSON ファイルが *credentials.json* という名前でプロジェクトの親フォルダーに格納されていることを想定しています。
+    # <a name="bash"></a>[bash](#tab/bash)
+
+    ```bash
+    AZURE_AUTH_LOCATION="../credentials.json"
+    ```
 
     ---
+
+    この例では、JSON ファイルが *credentials.json* という名前でプロジェクトの親フォルダーに格納されていることを想定しています。
+
 
 1. [get_client_from_auth_file](/python/api/azure-common/azure.common.client_factory?view=azure-python#get-client-from-auth-file-client-class--auth-path-none----kwargs-) メソッドを使用してクライアント オブジェクトを作成します。
 
@@ -211,7 +217,7 @@ subscription = next(subscription_client.subscriptions.list())
 print(subscription.subscription_id)
 ```
 
-前のセクションで説明したように、ファイルを使用する代わりに、必要な JSON データを変数に作成し、[get_client_from_json_dict](/python/api/azure-common/azure.common.client_factory?view=azure-python#get-client-from-json-dict-client-class--config-dict----kwargs-) を呼び出すことができます。 このコードは、[ローカル開発環境の構成](configure-local-development-environment.md#create-a-service-principal-for-development)に関するセクションで説明されている環境変数が作成済みであることを想定しています。 クラウドにデプロイされるコードの場合、これらの環境変数をサーバー VM 上に作成できるほか、Azure App Service や Azure Functions などのプラットフォーム サービスを使用しているときは、アプリケーション設定として作成することができます。
+前のセクションで説明したように、ファイルを使用する代わりに、必要な JSON データを変数に作成し、[get_client_from_json_dict](/python/api/azure-common/azure.common.client_factory?view=azure-python#get-client-from-json-dict-client-class--config-dict----kwargs-) を呼び出すことができます。 このコードは、[ローカル開発環境の構成](configure-local-development-environment.md#create-a-service-principal-and-environment-variables-for-development)に関するセクションで説明されている環境変数が作成済みであることを想定しています。 クラウドにデプロイされるコードの場合、これらの環境変数をサーバー VM 上に作成できるほか、Azure App Service や Azure Functions などのプラットフォーム サービスを使用しているときは、アプリケーション設定として作成することができます。
 
 または、環境変数を使わずに、値を Azure Key Vault に格納して実行時に取得してもかまいません。
 
@@ -236,7 +242,7 @@ subscription = next(subscription_client.subscriptions.list())
 print(subscription.subscription_id)
 ```
 
-この方法では、Azure Key Vault や環境変数など、安全な記憶域から取得した資格情報を使用して [`ServicePrincipalCredentials`](/python/api/msrestazure/msrestazure.azure_active_directory.serviceprincipalcredentials?view=azure-python) オブジェクトを作成します。 前のコードは、[ローカル開発環境の構成](configure-local-development-environment.md#create-a-service-principal-for-development)に関するセクションで説明されている環境変数が作成済みであることを想定しています。
+この方法では、Azure Key Vault や環境変数など、安全な記憶域から取得した資格情報を使用して [`ServicePrincipalCredentials`](/python/api/msrestazure/msrestazure.azure_active_directory.serviceprincipalcredentials?view=azure-python) オブジェクトを作成します。 前のコードは、[ローカル開発環境の構成](configure-local-development-environment.md#create-a-service-principal-and-environment-variables-for-development)に関するセクションで説明されている環境変数が作成済みであることを想定しています。
 
 この方法を使用した場合は、クライアント オブジェクトに `base_url` 引数を指定することで、Azure パブリック クラウドではなく [Azure ソブリン クラウド (国内クラウド)](/azure/active-directory/develop/authentication-national-cloud) を使用できます。
 
@@ -320,4 +326,8 @@ SDK では既定のサブスクリプション ID が使用されます。また
 ## <a name="see-also"></a>関連項目
 
 - [Azure 用のローカル Python 開発環境を構成する](configure-local-development-environment.md)
-- [例:Azure Storage で Azure SDK を使用する](azure-sdk-example-storage.md)
+- [例:リソース グループをプロビジョニングする](azure-sdk-example-resource-group.md)
+- [例:Azure Storage をプロビジョニングして使用する](azure-sdk-example-storage.md)
+- [例:Web アプリをプロビジョニングしてコードをデプロイする](azure-sdk-example-web-app.md)
+- [例:MySQL データベースをプロビジョニングして使用する](azure-sdk-example-database.md)
+- [例:仮想マシンをプロビジョニングする](azure-sdk-example-virtual-machines.md)

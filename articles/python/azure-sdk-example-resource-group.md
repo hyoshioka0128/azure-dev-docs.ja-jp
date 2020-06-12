@@ -1,18 +1,18 @@
 ---
-title: Azure SDK for Python を使用してリソース グループをプロビジョニングする
+title: Python 用 Azure ライブラリを使用してリソース グループをプロビジョニングする
 description: Azure SDK for Python のリソース管理ライブラリを使用して、Python コードからリソース グループを作成します。
-ms.date: 05/12/2020
+ms.date: 05/29/2020
 ms.topic: conceptual
-ms.openlocfilehash: 99b2f721cf2c215d2ba9ea97cf78250fc65f165a
-ms.sourcegitcommit: fbbc341a0b9e17da305bd877027b779f5b0694cc
+ms.openlocfilehash: 0d0ff5bf8a2417e38f9fd066b226ed26da87322b
+ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83631573"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84329680"
 ---
-# <a name="example-use-the-azure-sdk-to-provision-a-resource-group"></a>例:Azure SDK を使用してリソース グループをプロビジョニングする
+# <a name="example-use-the-azure-libraries-to-provision-a-resource-group"></a>例:Azure ライブラリを使用してリソース グループをプロビジョニングする
 
-この例では、Python スクリプトで Azure SDK の管理ライブラリを使用してリソース グループをプロビジョニングする方法について説明します。
+この例では、Python スクリプトで Azure SDK の管理ライブラリを使用してリソース グループをプロビジョニングする方法について説明します。 ([同等の Azure CLI コマンド](#for-reference-equivalent-azure-cli-commands)については、この記事の後半で説明します。)
 
 特に記載のない限り、この記事で使用されているコマンドはいずれも、Linux と Mac OS の bash および Windows のコマンド シェルで同じように動作します。
 
@@ -22,7 +22,7 @@ ms.locfileid: "83631573"
 
 必ず、ローカル開発用のサービス プリンシパルを作成し、このプロジェクト用の仮想環境を作成してアクティブ化してください。
 
-## <a name="2-install-the-resource-management-library"></a>2:リソース管理ライブラリをインストールする
+## <a name="2-install-the-azure-library-packages"></a>2:Azure ライブラリ パッケージをインストールする
 
 *requirements.txt* という名前のファイルを作成し、内容を次のようにします。
 
@@ -33,7 +33,7 @@ azure-cli-core
 
 仮想環境をアクティブ化し、ターミナルまたはコマンド プロンプトで要件をインストールします。
 
-```bash
+```cmd
 pip install -r requirements.txt
 ```
 
@@ -52,7 +52,7 @@ resource_client = get_client_from_cli_profile(ResourceManagementClient)
 
 # Provision the resource group.
 rg_result = resource_client.resource_groups.create_or_update(
-    "PythonSDKExample-ResourceGroup-rg",
+    "PythonAzureExample-ResourceGroup-rg",
     {
         "location": "centralus"
     }
@@ -75,16 +75,20 @@ print(f"Provisioned resource group {rg_result.name} in the {rg_result.location} 
 # provisioned by the time the call returns.
 
 # Optional line to delete the resource group
-#resource_client.resource_groups.delete("PythonSDKExample-ResourceGroup-rg")
+#resource_client.resource_groups.delete("PythonAzureExample-ResourceGroup-rg")
 ```
 
 このコードは、Azure CLI で直接認証を行う場合の操作をデモンストレーションしているため、CLI ベースの認証方法 (`get_client_from_cli_profile`) を使用しています。 どちらの場合も、同じ ID を認証に使用することになります。
 
 そのようなコードを本番スクリプトで使用する場合は、代わりに `DefaultAzureCredential` (推奨) またはサービス プリンシパル ベースの方法を使用してください (「[Azure サービスを使用して Python アプリを認証する方法](azure-sdk-authenticate.md)」を参照)。
 
+### <a name="reference-links-for-classes-used-in-the-code"></a>コードで使用されているクラスの参照リンク
+
+- [ResourceManagementClient (azure.mgmt.resource)](/python/api/azure-mgmt-resource/azure.mgmt.resource.resourcemanagementclient?view=azure-python)
+
 ## <a name="4-run-the-script"></a>4:スクリプトを実行する
 
-```bash
+```cmd
 python provision_rg.py
 ```
 
@@ -97,13 +101,13 @@ python provision_rg.py
 - Azure CLI: 次のコマンドを実行します。
 
     ```azurecli
-    az group show -n PythonSDKExample-ResourceGroup-rg
+    az group show -n PythonAzureExample-ResourceGroup-rg
     ```
 
 ## <a name="6-clean-up-resources"></a>6: リソースをクリーンアップする
 
 ```azurecli
-az group delete -n PythonSDKExample-ResourceGroup-rg
+az group delete -n PythonAzureExample-ResourceGroup-rg
 ```
 
 この例でプロビジョニングしたリソース グループを残す必要がなければ、このコマンドを実行してください。 リソース グループの料金がサブスクリプションに課金され続けることはありませんが、実際に使用していないグループは普段からクリーンアップするようにしておきましょう。
@@ -115,10 +119,13 @@ az group delete -n PythonSDKExample-ResourceGroup-rg
 次の Azure CLI コマンドは、Python スクリプトと同じプロビジョニング手順を実行するものです。
 
 ```azurecli
-az group create -n PythonSDKExample-ResourceGroup-rg -l centralus
+az group create -n PythonAzureExample-ResourceGroup-rg -l centralus
 ```
 
-## <a name="next-step"></a>次のステップ
+## <a name="see-also"></a>関連項目
 
-> [!div class="nextstepaction"]
-> [例:Azure Storage の使用 >>>](azure-sdk-example-storage.md)
+- [例:Azure Storage をプロビジョニングする](azure-sdk-example-storage.md)
+- [例:Azure Storage を使用する](azure-sdk-example-storage-use.md)
+- [例:Web アプリをプロビジョニングしてコードをデプロイする](azure-sdk-example-web-app.md)
+- [例:MySQL データベースをプロビジョニングして使用する](azure-sdk-example-database.md)
+- [例:仮想マシンをプロビジョニングする](azure-sdk-example-virtual-machines.md)

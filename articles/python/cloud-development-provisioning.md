@@ -1,14 +1,14 @@
 ---
 title: Azure でのリソースのプロビジョニング、アクセス、管理
-description: Azure リソースの操作に用いられる方法 (Azure portal、Azure CLI、Azure SDK など) の概要。
-ms.date: 05/12/2020
+description: Azure リソースの操作に用いられる方法 (Azure portal、Azure CLI、Azure ライブラリ (SDK) など) の概要。
+ms.date: 05/27/2020
 ms.topic: conceptual
-ms.openlocfilehash: a56ea9c3f0165a15933d78ca7a049033b6e75fa9
-ms.sourcegitcommit: b69db02c3358ce7899cef105508e3d17fafc84b2
+ms.openlocfilehash: 7482b3ae29210c02382ddd20ee2f29b874e18ab5
+ms.sourcegitcommit: 79890367158a9931909f11da1c894daa11188cba
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83759925"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84146206"
 ---
 # <a name="provisioning-accessing-and-managing-resources-on-azure"></a>Azure でのリソースのプロビジョニング、アクセス、管理
 
@@ -26,7 +26,10 @@ ms.locfileid: "83759925"
 
 必要な Azure リソースが何であれ、その作成、構成、管理は、これら相補的な方法のいずれかまたはすべてを使用して行うことができます。 実際、開発プロジェクトの過程では、3 つの方法をすべて使用するのが一般的であり、時間がかかっても、それぞれの方法に慣れておく価値はあります。
 
-ポータルの使い方は、個々のサービスのドキュメントで詳しく取り上げられているため、このデベロッパー センターでは主に、Azure SDK を使った Python コードと CLI の使用法を紹介します。
+ポータルの使い方は、個々のサービスのドキュメントで詳しく取り上げられているため、このデベロッパー センターでは主に、Azure ライブラリ を使った Python コードと CLI の使用法を紹介します。
+
+> [!NOTE]
+> Python 用 Azure ライブラリは、Azure SDK for Python と呼ばれることもあります。 ただし、Python パッケージ マネージャーである PIP を通じて取得するライブラリ以外の SDK コンポーネントはありません。
 
 ## <a name="azure-portal"></a>Azure portal
 
@@ -48,11 +51,11 @@ ms.locfileid: "83759925"
 
 ローカルの CLI や PowerShell の代わりに、[https://shell.azure.com/](https://shell.azure.com/) から直接 Azure Cloud Shell を使用することもできます。 ただし、Cloud Shell はローカル環境ではないため、自動化よりは、1 回限りの操作の方が適しています。
 
-## <a name="azure-rest-api-and-azure-sdk"></a>Azure REST API と Azure SDK
+## <a name="azure-rest-api-and-azure-libraries"></a>Azure REST API と Azure ライブラリ
 
 [Azure REST API](/rest/api/?view=Azure) は、Azure のプログラマティック インターフェイスです。Azure のデータ センターはすべて本質的にインターネットに接続されているため、安全な REST over HTTP で提供されます。 すべてのリソースにはそれぞれ、厳重な認証プロトコルとアクセス ポリシーの下で、そのリソース固有の API をサポートする一意の URL が割り当てられます。 (実際、Azure portal と Azure CLI の処理は、結局のところ REST API を通じて実行されます。)
 
-[Azure SDK](https://azure.microsoft.com/downloads/) には、開発者向けに、REST API の機能を、はるかに便利なプログラミングのパラダイム (クラス、オブジェクトなど) に変換する言語固有のライブラリが用意されています。 Python の場合は、`pip install` を使用することで、個々の SDK ライブラリをいつでもインストールでき、SDK 全体をインストールする必要はありません。
+Azure ライブラリには、開発者向けに、REST API の機能を、はるかに便利なプログラミングのパラダイム (クラス、オブジェクトなど) に変換する言語固有のライブラリが用意されています。 Python の場合は、`pip install` を使用することで、個々のライブラリをいつでもインストールでき、スタンドアロンの SDK 全体をインストールする必要はありません。 (その他の言語については、[Azure SDK のダウンロード](https://azure.microsoft.com/downloads/)に関するページを参照してください。)
 
 **長所:** :あらゆる操作を細かく制御できます。たとえば、ある操作の出力を別の操作の入力として使用するという、他のどの方法よりもはるかに直接的な手段が利用できます。 Python の開発者は、CLI を使わずに、使い慣れた言語パラダイム内で作業できます。 アプリケーション コードから使用して、管理のシナリオを自動化することもできます。
   

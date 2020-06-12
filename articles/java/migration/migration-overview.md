@@ -5,12 +5,12 @@ author: yevster
 ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 1/20/2020
-ms.openlocfilehash: 1eeb7d6a17bb21963f3203d484387c0aae6c402f
-ms.sourcegitcommit: 226ebca0d0e3b918928f58a3a7127be49e4aca87
+ms.openlocfilehash: bbc7dd44e975fd47b52df41baa1ec526ac1908f8
+ms.sourcegitcommit: a9b9157bb3a802ecfe3699854788d010a3f08d7e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82988698"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84202831"
 ---
 # <a name="migrate-java-applications-to-azure"></a>Java アプリケーションを Azure に移行する
 
@@ -74,9 +74,9 @@ Java EE 仕様によって提供される機能のみに依存するアプリケ
 
 以降のセクションでは、どのサービス移行先がアプリケーションの要件を満たしているか、およびどのような役割が必要になるかを示します。
 
-### <a name="feature-grid"></a>機能グリッド
+### <a name="hosting-options-grid"></a>ホスティング オプション グリッド
 
-次のグリッドを使用して、必要なアプリケーションの種類と機能をサポートする移行先を特定してください。
+次のグリッドを使用して、アプリケーションの種類で考えられる宛先を特定します。 ご覧のとおり、AKS と Virtual Machines ではすべてのアプリケーションの種類がサポートされますが、次のセクションで示すように、チームはより多くの責任を担う必要があります。
 
 |   |アプリ<br>サービス<br>Java SE|アプリ<br>サービス<br>Tomcat|Azure<br>Spring<br>クラウド|AKS|Virtual Machines|
 |---|---|---|---|---|---|---|

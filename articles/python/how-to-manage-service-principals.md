@@ -3,12 +3,12 @@ title: Azure 開発のためのローカル サービス プリンシパルの�
 description: Azure portal または Azure CLI を使用して、ローカル開発のために作成されたサービス プリンシパルを管理する方法。
 ms.date: 05/12/2020
 ms.topic: conceptual
-ms.openlocfilehash: b2e0c913b08c98994226d7a9de39ae83ae50ec21
-ms.sourcegitcommit: 2cdf597e5368a870b0c51b598add91c129f4e0e2
+ms.openlocfilehash: ffb526a0073667f5ea53631925f2565215f60787
+ms.sourcegitcommit: 79890367158a9931909f11da1c894daa11188cba
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83404885"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84146190"
 ---
 # <a name="how-to-manage-service-principals"></a>サービス プリンシパルを管理する方法
 
@@ -18,7 +18,7 @@ ms.locfileid: "83404885"
 
 ## <a name="basics-of-azure-authorization"></a>Azure 承認の基礎
 
-コードで (Azure SDK のクラスを介して) Azure リソースに対してなんらかの操作を実行しようとすると、Azure によって、アプリケーションがそのアクションを実行する権限を持っていることが確認されます。 特定のロールベースまたはリソースベースのアクセス許可をアプリケーションの ID に付与するには、[Azure portal](https://portal.azure.com) または Azure CLI を使用します (この手順により、アプリケーションのセキュリティが侵害された場合に悪用される可能性のあるアプリケーションに対して過度なアクセス許可が付与されることを回避できます)。
+コードが Azure リソースに対して何らかの操作 (Azure ライブラリのクラスを通じて行われる) を実行しようとするたびに、Azure によって、そのアクションを実行する権限がアプリケーションにあることが確認されます。 特定のロールベースまたはリソースベースのアクセス許可をアプリケーションの ID に付与するには、[Azure portal](https://portal.azure.com) または Azure CLI を使用します (この手順により、アプリケーションのセキュリティが侵害された場合に悪用される可能性のあるアプリケーションに対して過度なアクセス許可が付与されることを回避できます)。
 
 Azure にデプロイされた場合、アプリケーションの ID は、通常、それをホストしているサービス (マネージド ID が有効な場合の Azure App Service、Azure Functions、仮想マシンなど) 内でアプリに付けた名前と同じになります。 ただし、コードをローカルで実行する場合、そのようなホスティング サービスは使用されないため、適切な代わりのものを Azure に示す必要があります。
 
@@ -51,4 +51,4 @@ Azure CLI を使用すると、Azure portal を通じて実行できる操作の
 
 関連項目:
 
-- [Azure SDK を使用した Azure での認証](azure-sdk-authenticate.md)
+- [Azure ライブラリを使った Azure での認証](azure-sdk-authenticate.md)

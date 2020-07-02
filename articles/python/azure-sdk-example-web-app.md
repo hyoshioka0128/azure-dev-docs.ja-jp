@@ -3,12 +3,12 @@ title: Azure SDK ライブラリを使用して Web アプリをプロビジョ�
 description: Python 用 Azure SDK ライブラリ内の管理ライブラリを使用して Web アプリをプロビジョニングし、GitHub リポジトリからアプリ コードをデプロイします。
 ms.date: 05/29/2020
 ms.topic: conceptual
-ms.openlocfilehash: 8196e86b4a4311b48b47975fd47bb04f11a1fe23
-ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
+ms.openlocfilehash: f09775fbd5eda59e9e4a687d63acca052429b8e1
+ms.sourcegitcommit: 5ebbc1c06f98e29a146764661efbf34957020fe8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84329640"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84716080"
 ---
 # <a name="example-use-the-azure-libraries-to-provision-and-deploy-a-web-app"></a>例:Azure ライブラリを使用して Web アプリをプロビジョニングしてデプロイする
 
@@ -215,13 +215,13 @@ az appservice plan create -n PythonAzureExample-WebApp-plan --is-linux --sku F1
 az webapp create -g PythonAzureExample-WebApp-rg -n PythonAzureExample-WebApp-12345 ^
     --plan PythonAzureExample-WebApp-plan --runtime "python|3.8"
 
-# You can use --deployment-source-url with the first create command. It's shown here
-# to match the sequence of the Python code.
+rem You can use --deployment-source-url with the first create command. It's shown here
+rem to match the sequence of the Python code.
 
 az webapp create -n PythonAzureExample-WebApp-12345 --plan PythonAzureExample-WebApp-plan ^
     --deployment-source-url https://github.com/<your_fork>/python-docs-hello-world
 
-# Replace <your_fork> with the specific URL of your forked repository.
+rem Replace <your_fork> with the specific URL of your forked repository.
 ```
 
 # <a name="bash"></a>[bash](#tab/bash)

@@ -5,12 +5,12 @@ author: yevster
 ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 01/22/2019
-ms.openlocfilehash: e4a12380521828ac69aead376ae7ff5797e300ab
-ms.sourcegitcommit: 226ebca0d0e3b918928f58a3a7127be49e4aca87
+ms.openlocfilehash: 46fa281fdbaf53e35a73701fa2c17ae2ed3e2d90
+ms.sourcegitcommit: 81577378a4c570ced1e9c6765f4a9eee8453c889
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82990304"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84507638"
 ---
 # <a name="migrate-spring-boot-applications-to-azure-app-service"></a>Spring Boot アプリケーションを Azure App Service に移行する
 
@@ -33,15 +33,19 @@ App Service では、特定のバージョンの Java SE が提供されてい�
 
 ### <a name="inventory-external-resources"></a>外部リソースをインベントリする
 
-データ ソース、JMS メッセージ ブローカー、その他のサービスの URL などの外部リソースを特定します。 Spring Boot アプリケーションでは、一般に、このようなリソースの構成は、*src/main/ ディレクトリ*内にある通常 *application.properties* または *application.yml* と呼ばれるファイル内にあります。 さらに、実稼働環境デプロイの環境変数で、関連する構成設定を確認します。
+データ ソース、JMS メッセージ ブローカー、その他のサービスの URL などの外部リソースを特定します。 Spring Boot アプリケーションでは、一般にこのようなリソースの構成は、*src/main/directory* フォルダー内にある通常 *application.properties* または *application.yml* と呼ばれるファイル内にあります。 さらに、実稼働環境デプロイの環境変数で、関連する構成設定を確認します。
 
 [!INCLUDE [inventory-databases-spring-boot](includes/inventory-databases-spring-boot.md)]
 
 [!INCLUDE [identify-jms-brokers-in-spring](includes/identify-jms-brokers-in-spring.md)]
 
-使用されているブローカーを特定したら、対応する設定を見つけます。これは通常、Spring Boot の *application.properties* や *application.yml* ファイル内にあります。
+使用中のブローカーを特定したら、対応する設定を見つけます。 Spring Boot アプリケーションでは、これらは通常、アプリケーション ディレクトリの *application.properties* および *application.yml* ファイル内にあります。
 
 [!INCLUDE [jms-broker-settings-examples-in-spring](includes/jms-broker-settings-examples-in-spring.md)]
+
+[!INCLUDE [identify-external-caches-azure-spring-cloud](includes/identify-external-caches-azure-spring-cloud.md)]
+
+[!INCLUDE [inventory-identity-providers-spring-boot](includes/inventory-identity-providers-spring-boot.md)]
 
 #### <a name="all-other-external-resources"></a>その他のすべての外部リソース
 
@@ -53,9 +57,7 @@ App Service では、特定のバージョンの Java SE が提供されてい�
 
 すべてのシークレット文字列とパスワードについて、実稼働デプロイ上のすべてのプロパティおよび構成ファイルとすべての環境変数を確認します。 Spring Boot アプリケーションでは、多くの場合、このような文字列は *application.properties* または *application.yml* で見つかります。
 
-#### <a name="inventory-certificates"></a>証明書をインベントリする
-
-[!INCLUDE [inventory-certificates](includes/inventory-certificates.md)]
+[!INCLUDE [inventory-certificates-h4](includes/inventory-certificates-h4.md)]
 
 [!INCLUDE [determine-whether-and-how-the-file-system-is-used](includes/determine-whether-and-how-the-file-system-is-used.md)]
 
@@ -146,6 +148,8 @@ Web アプリが作成されたら、[利用可能なデプロイ メカニズ�
 ![App Service アプリケーションの構成](media/migrate-spring-boot-to-app-service/app-service-parameterized-spring-boot-app-settings.png)
 
 [!INCLUDE [migrate-scheduled-jobs](includes/migrate-scheduled-jobs.md)]
+
+[!INCLUDE [migrate-identity-provider-app-service.md](includes/migrate-identity-provider-app-service.md)]
 
 ### <a name="restart-and-smoke-test"></a>再起動とスモーク テスト
 

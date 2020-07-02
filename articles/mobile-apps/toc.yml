@@ -1,7 +1,6 @@
 - name: モバイル開発者向けの Azure のドキュメント
   href: index.yml
 - name: 概要
-  expanded: true
   items:
     - name: モバイル開発フレームワークを選択する
       href: choose-mobile-framework.md

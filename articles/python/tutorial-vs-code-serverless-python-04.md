@@ -4,12 +4,12 @@ description: チュートリアルの手順 4、VS Code デバッガーをロー
 ms.topic: conceptual
 ms.date: 05/19/2020
 ms.custom: seo-python-october2019
-ms.openlocfilehash: 8d6b27b9390f347a464b9daded05b9c3b9a3352c
-ms.sourcegitcommit: efab6be74671ea4300162e0b30aa8ac134d3b0a9
+ms.openlocfilehash: 761ffab12712f5c90127665addb65201016be2c8
+ms.sourcegitcommit: 0d492c9cc9b5295285ab75da55e5ab0577576287
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84256407"
+ms.lasthandoff: 06/25/2020
+ms.locfileid: "85370693"
 ---
 # <a name="4-debug-the-azure-functions-python-code-locally"></a>4:Azure Functions の Python コードをローカルでデバッグする
 
@@ -34,7 +34,7 @@ Visual Studio Code で Azure Functions の Python コードをローカルでデ
     > [!TIP]
     > この URL にアクセスできず、企業プロキシの内側で実行している (`HTTP_PROXY` および `HTTPS_PROXY` 環境変数が設定されている可能性が高い) 場合は、`NO_PROXY` という環境変数を `localhost,127.0.0.1` に設定して、もう一度お試しください。
 
-1. それでは、`http://localhost:7071/api/HttpExample?name=VS%20Code` のように、使用する name パラメーターを追加してみましょう。ブラウザー ウィンドウに "Hello Visual Studio Code!" というメッセージが表示され、そのコード パスを実行したことがわかります。
+1. それでは、`http://localhost:7071/api/HttpExample?name=Visual%20Studio%20Code` のように、使用する name パラメーターを追加してみましょう。ブラウザー ウィンドウに "Hello Visual Studio Code!" というメッセージが表示され、そのコード パスを実行したことがわかります。
 
 1. JSON 要求本文で名前値を渡すには、JSON インラインで curl のようなツールを使用できます。
 

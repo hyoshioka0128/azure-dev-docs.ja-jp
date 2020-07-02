@@ -4,12 +4,12 @@ description: イングレス コントローラーとして Application Gateway 
 keywords: Azure DevOps Terraform アプリケーション ゲートウェイ イングレス AKS Kubernetes
 ms.topic: tutorial
 ms.date: 03/09/2020
-ms.openlocfilehash: 60036b7ba4071d900a86835889501a932d48e7fe
-ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
+ms.openlocfilehash: 433cf2e73e4672d73e036ebc1e25b6c1cc98795e
+ms.sourcegitcommit: fb0564696f8067e6dfa8b9eaf819fadf321c2884
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84329630"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85327213"
 ---
 # <a name="tutorial-create-an-application-gateway-ingress-controller-in-azure-kubernetes-service"></a>チュートリアル:Azure Kubernetes Service で Application Gateway イングレス コントローラーを作成する
 
@@ -225,7 +225,7 @@ Azure プロバイダーを宣言する Terraform 構成ファイルを作成し
       default     = "~/.ssh/id_rsa.pub"
     }
 
-    variable "tags" = {
+    variable "tags" {
       type = map(string)
 
       default = {

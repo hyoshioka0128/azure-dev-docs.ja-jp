@@ -8,12 +8,12 @@ tags: java
 ms.topic: article
 ms.date: 11/19/2019
 ms.author: dagrieve
-ms.openlocfilehash: c0a2f46f8a3249f6c9580e823e102a86291e15e7
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 8f35aea0447f8681fb4f456dbafe500a608f6420
+ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81670638"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85790785"
 ---
 # <a name="reasons-to-move-to-java-11"></a>Java 11 に移行する理由
 
@@ -168,7 +168,7 @@ JVM に対する次の変更は、パフォーマンスに直接影響します�
 (オンライン)。 参照先: http://openjdk.java.net/jeps/318. (2019 年 11 月 13 日にアクセス)。
 
 <a id="ref12">\[12\]</a> Oracle Corporatio、\"JDK-8146115:Docker コンテナーの検出とリソース構成の使用の改善\"、2019 年 9 月 16 日。
-(オンライン)。 参照先: https://bugs.java.com/bugdatabase/view\_bug.do?bug\_id=JDK-8146115.
+(オンライン)。 参照先: https://bugs.java.com/bugdatabase/view_bug.do?bug_id=JDK-8146115.
 (2019 年 11 月 13 日にアクセス)。
 
 <a id="ref13">\[13\]</a> Oracle Corporation、\"JEP 238:マルチリリース jar ファイル\"、2017 年 6 月 22 日。 (オンライン)。 参照先: http://openjdk.java.net/jeps/238. (2019 年 11 月 13 日にアクセス)。
@@ -184,7 +184,7 @@ JVM に対する次の変更は、パフォーマンスに直接影響します�
 <a id="ref17">\[17\]</a> Oracle Corporation、\"JEP 312:スレッドローカル ハンドシェイク\"、2019 年 8 月 21 日。
 (オンライン)。 参照先: https://openjdk.java.net/jeps/312. (2019 年 11 月 13 日にアクセス)。
 
-<a id="ref18">\[18\]</a> Oracle Corporation、\"JDK-8198756:コンパイラ スレッドのレイジー割り当て\"、2018 年 10 月 29 日。 (オンライン)。 参照先: https://bugs.java.com/bugdatabase/view\_bug.do?bug\_id=8198756.
+<a id="ref18">\[18\]</a> Oracle Corporation、\"JDK-8198756:コンパイラ スレッドのレイジー割り当て\"、2018 年 10 月 29 日。 (オンライン)。 参照先: https://bugs.java.com/bugdatabase/view_bug.do?bug_id=8198756.
 (2019 年 11 月 13 日にアクセス)。
 
 <a id="ref19">\[19\]</a> Oracle Corporation、\"JEP 193:変数ハンドル\"、2017 年 8 月 17 日。 (オンライン)。 参照先: https://openjdk.java.net/jeps/193. (2019 年 11 月 13 日にアクセス)。

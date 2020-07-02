@@ -5,12 +5,12 @@ author: mriem
 ms.author: manriem
 ms.topic: conceptual
 ms.date: 4/10/2020
-ms.openlocfilehash: 6c2781914e65d28a57f2f80ed287921eab3b76ae
-ms.sourcegitcommit: a631b36ec1277ee9397a860c597ffdd5495d88e7
+ms.openlocfilehash: bb355fdd8436d6483ebd1ffeead4c522c9895e16
+ms.sourcegitcommit: 81577378a4c570ced1e9c6765f4a9eee8453c889
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83369986"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84507679"
 ---
 # <a name="migrate-spring-boot-applications-to-azure-kubernetes-service"></a>Azure Kubernetes Service に Spring Boot アプリケーションを移行する
 
@@ -64,7 +64,7 @@ Spring Boot 1.x を使用しているアプリケーションの場合は、「[
 
 ### <a name="inventory-external-resources"></a>外部リソースをインベントリする
 
-データ ソース、JMS メッセージ ブローカー、その他のサービスの URL などの外部リソースを特定します。 Spring Boot アプリケーションでは、一般にこのようなリソースの構成は、*src/main/directory* フォルダー内にある通常 *application.properties* または *application.yml* と呼ばれるファイル内にあります。
+データ ソース、JMS メッセージ ブローカー、その他のサービスの URL などの外部リソースを特定します。 Spring Boot アプリケーションでは、一般にこのようなリソースの構成は、*src/main/directory* フォルダー内にある通常 *application.properties* または *application.yml* と呼ばれるファイル内にあります。 さらに、実稼働環境デプロイの環境変数で、関連する構成設定を確認します。
 
 [!INCLUDE [inventory-databases-spring-boot](includes/inventory-databases-spring-boot.md)]
 
@@ -234,7 +234,7 @@ Spring Boot アプリケーションのいずれかで認証または認可が�
 
 アプリケーションを AKS に移行したので、期待どおりに動作することを確認する必要があります。 これを完了したら、アプリケーションをよりクラウドネイティブにするための推奨事項がいくつかあります。
 
-### <a name="recommendations"></a>Recommendations
+### <a name="recommendations"></a>推奨事項
 
 * イングレス コントローラーまたはアプリケーション ロード バランサーに割り当てられた IP アドレスに DNS 名を追加することを検討してください。 詳細については、「[AKS で静的パブリック IP アドレスを使用してイングレス コントローラーを作成する](/azure/aks/ingress-static-ip)」を参照してください。
 

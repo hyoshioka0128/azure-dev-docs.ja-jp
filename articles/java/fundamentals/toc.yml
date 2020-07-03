@@ -12,7 +12,7 @@
           href: java-jdk-install.md
         - name: Azure の Java Docker イメージ
           href: java-jdk-docker-images.md
-        - name: Java Flight Recorder と Mission Control
+        - name: Zulu Flight Recorder と Mission Control
           href: java-jdk-flight-recorder-and-mission-control.md
         - name: Java 11 に移行する理由
           href: reasons-to-move-to-java-11.md

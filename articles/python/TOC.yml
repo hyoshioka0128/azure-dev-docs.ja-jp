@@ -16,6 +16,8 @@
       href: configure-local-development-environment.md
     - name: ライブラリの使用パターン
       href: azure-sdk-library-usage-patterns.md
+    - name: ライブラリのパッケージ インデックス
+      href: azure-sdk-library-package-index.md
     - name: 例
       items:
         - name: リソース グループをプロビジョニングする
@@ -106,10 +108,10 @@
       href: how-to-assign-role-permissions.md
     - name: ログの構成
       href: azure-sdk-logging.md
-    - name: REST API の引数を構成する
-      href: azure-sdk-operation-config.md
-    - name: マルチクラウド開発
-      href: azure-sdk-multi-cloud.md
+    - name: プロキシを構成する
+      href: azure-sdk-configure-proxy.md
+    - name: ソブリン ドメインを使用する
+      href: azure-sdk-sovereign-domain.md
 - name: サンプル
   items:
     - name: Web アプリとサーバーレス

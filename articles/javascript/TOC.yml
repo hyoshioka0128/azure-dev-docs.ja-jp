@@ -1,6 +1,10 @@
 - name: JavaScript および Node.js 開発者向けの Azure
   href: index.yml
   items:
+    - name: JavaScript を使用した Azure の概要
+      items:
+        - name: 開発環境を設定する
+          href: configure-local-development-environment.md
     - name: クイックスタート
       expanded: true
       items:

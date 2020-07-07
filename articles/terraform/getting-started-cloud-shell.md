@@ -1,29 +1,28 @@
 ---
-title: クイックスタート - Terraform の使用を開始する - Azure Cloud Shell
+title: クイックスタート - Azure Cloud Shell を使用して Terraform の使用を開始する
 description: このクイックスタートでは、Azure リソースを作成するために Terraform をインストールして構成する方法について説明します。
 keywords: Azure DevOps Terraform インストール 構成 Cloud Shell 初期化 プラン 適用 実行 portal ログイン RBAC サービス プリンシパル 自動スクリプト
 ms.topic: quickstart
-ms.date: 06/01/2020
-ms.openlocfilehash: 184d2720e3e2259a6c909d0775ffee20c0f30419
-ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
-ms.translationtype: HT
+ms.date: 06/11/2020
+ms.openlocfilehash: 4b0f6802673d886cecdc9523d99886c19fbad94a
+ms.sourcegitcommit: 2d6c9687b39e33a6b5e980d9a375c9f8f1f2cab7
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84329910"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84779664"
 ---
-# <a name="quickstart-getting-started-with-terraform---azure-cloud-shell"></a>クイック スタート:Terraform の使用を開始する - Azure Cloud Shell
+# <a name="quickstart-getting-started-with-terraform-using-azure-cloud-shell"></a>クイック スタート:Azure Cloud Shell を使用して Terraform の使用を開始する
  
 [!INCLUDE [terraform-intro.md](includes/terraform-intro.md)]
 
-この記事では、[Azure Cloud Shell](/azure/cloud-shell/overview) 環境から Terraform の使用を開始する方法について説明します。
+この記事では、[Azure Cloud Shell](/azure/cloud-shell/overview) 環境から [Azure で Terraform](https://www.terraform.io/docs/providers/azurerm/index.html) の使用を開始する方法について説明します。
 
 [!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
-## <a name="configure-your-environment"></a>環境を構成する
+## <a name="prerequisites"></a>前提条件
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
 
-## <a name="open-cloud-shell"></a>Cloud Shell を開く
+## <a name="configure-azure-cloud-shell"></a>Azure Cloud Shell を構成する
 
 1. [Azure ポータル](https://portal.azure.com)にアクセスします。
 
@@ -35,43 +34,54 @@ ms.locfileid: "84329910"
 
 1. Cloud Shell を以前に使用したことがない場合は、環境とストレージの設定を構成します。 この記事では、Bash 環境を使用します。
 
-## <a name="log-into-your-microsoft-account"></a>Microsoft アカウントにログインする
+## <a name="log-into-azure"></a>Azure にログインする
 
-Cloud Shell は、Azure portal へのログインに使用した Microsoft アカウントで自動的に認証されます。 ただし、Azure サブスクリプションで複数の Microsoft アカウントを使用している場合は、[az login](/cli/azure/reference-index?view=azure-cli-latest#az-login) を使用して、これらのアカウントのいずれかにログインできます。 `az login` コマンドを使用する 2 つの例を次に示します。
+Cloud Shell は、Azure portal へのログインに使用した Microsoft アカウントで自動的に認証されます。
 
-実際のシナリオに基づいて、次のいずれかの経路を選択します。
+また、Microsoft アカウントにログインすると、そのアカウントの既定の Azure サブスクリプションに自動的にログインされます。 現在の Microsoft アカウントが正しく、サブスクリプションを切り替えたい場合は、「[現在の Azure サブスクリプションを指定する](#specify-the-current-azure-subscription)」セクションを参照してください。
+
+Azure サブスクリプションで複数の Microsoft アカウントを使用している場合は、次のいずれかのオプションを使用して、これらのアカウントのいずれかにログインできます。
+
+- [Microsoft アカウントにログインする](#log-into-your-microsoft-account)
+- [Azure サービス プリンシパルを使用してログインする](#log-into-azure-using-an-azure-service-principal)
+
+### <a name="log-into-your-microsoft-account"></a>Microsoft アカウントにログインする
+
+パラメーターを指定せずに `az login` を呼び出すと、URL とコードが表示されます。 URL を参照してコードを入力し、指示に従って、ご自身の Microsoft アカウントを使用して Azure にログインします。 ログインしたら、ポータルに戻ります。
+
+```azurecli
+az login
+```
+
+注:
+- ログインが成功すると、`az login` により、ログインした Microsoft アカウントに関連付けられている Azure サブスクリプションの一覧が表示されます。
+- 使用可能な Azure サブスクリプションごとにプロパティの一覧が表示されます。 `isDefault` プロパティは、使用している Azure サブスクリプションを識別します。 別の Azure サブスクリプションに切り替える方法については、「[現在の Azure サブスクリプションを指定する](#specify-the-current-azure-subscription)」セクションを参照してください。
+
+### <a name="log-into-azure-using-an-azure-service-principal"></a>Azure サービス プリンシパルを使用して Azure にログインする
+
+**Azure サービス プリンシパルを作成する**:サービス プリンシパルを使用して Azure サブスクリプションにログインするには、まずサービス プリンシパルへのアクセスが必要です。 サービス プリンシパルを既にお持ちの場合は、セクションのこの部分を省略できます。
+
+Azure サービスをデプロイまたは使用する自動化ツール (Terraform など) のアクセス許可は、常に制限されている必要があります。 完全な特権を持つユーザーとしてアプリケーションをログインさせる代わりに、Azure にはサービス プリンシパルが用意されています。 しかし、ログインに使用するサービス プリンシパルがない場合はどうすればよいでしょうか。 そのようなシナリオの場合、ユーザー資格情報を使用してログインしてから、サービス プリンシパルを作成できます。 サービス プリンシパルが作成されると、その情報を今後のログイン試行に使用できるようになります。
+
+[Azure CLI でサービス プリンシパルを作成](/cli/azure/create-an-azure-service-principal-azure-cli?)するときは、多くのオプションがあります。 この記事では、[az ad sp create-for-rbac](/cli/azure/ad/sp?#az-ad-sp-create-for-rbac) を作成して、**共同作成者**ロールを持つサービス プリンシパルを作成します。 **共同作成者**ロール (既定) には、Azure アカウントに対して読み取りと書き込みを行うための完全なアクセス許可があります。 ロールベースのアクセス制御 (RBAC) とロールの詳細については、[RBAC の組み込みのロール](/azure/active-directory/role-based-access-built-in-roles)に関するページをご覧ください。
+
+次のコマンドを入力します。`<subscription_id>` を、使用するサブスクリプションアカウントの ID に置き換えます。
     
-- **ユーザーとしてログインする場合**: パラメーターを指定せずに `az login` コマンドを実行すると、URL とコードが表示されます。 URL を参照してコードを入力し、指示に従って、ご自身の Microsoft アカウントを使用して Azure にログインします。 コマンドでログインしたら、ポータルに戻ります。
+```azurecli
+az ad sp create-for-rbac --role="Contributor" --scopes="/subscriptions/<subscription_id>"
+```
 
-    ```azurecli-interactive
-    az login
-    ```
-
-    **注**:
-    - ログインが成功すると、`az login` コマンドにより、ログインした Microsoft アカウントに関連付けられている Azure サブスクリプションの一覧が表示されます。
-    - 使用可能な Azure サブスクリプションごとにプロパティの一覧が表示されます。 `isDefault` プロパティは、使用している Azure サブスクリプションを識別します。 別の Azure サブスクリプションに切り替える方法については、「[現在の Azure サブスクリプションを指定する](#specify-the-current-azure-subscription)」セクションを参照してください。
-
-- **サービス プリンシパルを使用したいが、まだ持っていない場合**: Azure サービスをデプロイまたは使用する自動化ツール (Terraform など) のアクセス許可は、常に制限されている必要があります。 完全な特権を持つユーザーとしてアプリケーションをログインさせる代わりに、Azure にはサービス プリンシパルが用意されています。 しかし、ログインに使用するサービス プリンシパルがない場合はどうすればよいでしょうか。 そのようなシナリオの場合、ユーザー資格情報を使用してログインしてから、サービス プリンシパルを作成できます。 サービス プリンシパルが作成されると、その情報を今後のログイン試行に使用できるようになります。
-
-    [サービス プリンシパルを作成](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest)するときは、多くのオプションがあります。 この記事では、**共同作成者**ロール (既定のロール) を使用してサービス プリンシパルを作成します。 **共同作成者**ロールには、Azure アカウントに対して読み取りと書き込みを行うための完全なアクセス許可があります。 ロールベースのアクセス制御 (RBAC) とロールの詳細については、[RBAC の組み込みのロール](/azure/active-directory/role-based-access-built-in-roles)に関するページをご覧ください。 
+注:
+- 正常に完了すると、`az ad sp create-for-rbac` によって、自動生成されたパスワードなどのいくつかの値が表示されます。 このパスワードは、紛失した場合、取得できません。 したがって、パスワードは安全な場所に保管してください。 パスワードを忘れた場合は、[サービス プリンシパルの資格情報をリセット](/cli/azure/create-an-azure-service-principal-azure-cli#reset-credentials)する必要があります。
     
-    [az ad sp create-for-rbac](/cli/azure/ad/sp?view=azure-cli-latest#az-ad-sp-create-for-rbac) コマンドを使用して、`<subscription_id>` を、使用するサブスクリプション アカウントの ID に置き換えます。
-    
-    ```azurecli-interactive
-    az ad sp create-for-rbac --role="Contributor" --scopes="/subscriptions/<subscription_id>"
-    ```
+**Azure サービス プリンシパルを使用してログインする**: 次の `az login` への呼び出しで、プレースホルダーをご自身のサービス プリンシパルの情報に置き換えます。
 
-    **注**:
-    - 正常に完了すると、`az ad sp create-for-rbac` コマンドによって、自動生成されたパスワードなどのいくつかの値が表示されます。 このパスワードは、紛失した場合、取得できません。 したがって、パスワードは安全な場所に保管してください。 パスワードを忘れた場合は、[サービス プリンシパルの資格情報をリセット](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest#reset-credentials)する必要があります。
-    
-- **Azure サービス プリンシパルを使用してログインする**: 次の `az login` コマンドのプレースホルダーを、ご自身のサービス プリンシパルの情報に置き換えます。
+```azurecli
+az login --service-principal -u <service_principal_name> -p "<service_principal_password>" --tenant "<service_principal_tenant>"
+```
 
-    ```azurecli-interactive
-    az login --service-principal -u <service_principal_name> -p "<service_principal_password>" --tenant "<service_principal_tenant>"
-    ```
-
-    **注**:
-    - ログインが成功すると、`az login` コマンドにより、`id` や `name` など、Azure サブスクリプションのさまざまなプロパティが表示されます。
+注:
+- ログインが成功すると、`az login` により、`id` や `name` など、Azure サブスクリプションのさまざまなプロパティが表示されます。
 
 ## <a name="specify-the-current-azure-subscription"></a>現在の Azure サブスクリプションを指定する
 
@@ -82,34 +92,38 @@ Cloud Shell は、Azure portal へのログインに使用した Microsoft ア�
 
 以下の手順は最初のシナリオに対応しています。ここでは、次のタスクを実行します。
 
-- 現在の Azure サブスクリプションを確認する
+- 現在の Azure サブスクリプションを表示する
 - 現在の Microsoft アカウントで使用可能なすべての Azure サブスクリプションを一覧表示する
 - 別の Azure サブスクリプションに切り替える
 
-1. 現在の Azure サブスクリプションを確認するには、[az account show](/cli/azure/account#az-account-show) コマンドを使用します。
+1. 現在の Azure サブスクリプションを表示するには、[az account show](/cli/azure/account#az-account-show) を使用します。
 
-    ```azurecli-interactive
+    ```azurecli
     az account show
     ```
     
 1. 複数の利用可能な Azure サブスクリプションにアクセスできる場合は、[az account list](/cli/azure/account#az-account-list) を使用して、サブスクリプション名 ID の値の一覧を表示します。
 
-    ```azurecli-interactive
+    ```azurecli
     az account list --query "[].{name:name, subscriptionId:id}"
     ```
 
-1. 現在の Cloud Shell セッションで特定の Azure サブスクリプションを使用するには、[az account set](/cli/azure/account#az-account-set) コマンドを使用します。 `<subscription_id>` プレースホルダーを、使用するサブスクリプションの ID (または名前) に置き換えます。
+1. 現在の Cloud Shell セッションで特定の Azure サブスクリプションを使用するには、[az account set](/cli/azure/account#az-account-set) を使用します。 `<subscription_id>` プレースホルダーを、使用するサブスクリプションの ID (または名前) に置き換えます。
 
-    ```azurecli-interactive
+    ```azurecli
     az account set --subscription="<subscription_id>"
     ```
 
-    **注**:
-    - `az account set` コマンドは、指定された Azure サブスクリプションに切り替えた結果を表示しません。 ただし、`az account show` コマンドを使用して、現在の Azure サブスクリプションが変更されたことを確認できます。
+    注:
+    - `az account set` を呼び出すと、指定した Azure サブスクリプションに切り替えた結果が表示されません。 ただし、`az account show` を使用して、現在の Azure サブスクリプションが変更されたことを確認できます。
+
+## <a name="configure-terraform"></a>Terraform を構成する
+
+Cloud Shell には、Terraform の最新バージョンが自動的にインストールされます。 また、Terraform は、現在の Azure サブスクリプションの情報を自動的に使用します。 そのため、インストールや構成は必要ありません。
 
 ## <a name="create-a-terraform-configuration-file"></a>Terraform 構成ファイルを作成する
 
-このセクションでは、[Cloud Shell エディター](/azure/cloud-shell/using-cloud-shell-editor)を使用して、Terraform 構成ファイルを定義します。
+このセクションでは、Azure リソース グループを作成する Terraform 構成ファイルを作成する方法について説明します。
 
 1. Cloud Shell での作業内容が保存されている、マウントされたファイル共有にディレクトリを変更します。 Cloud Shell でのファイルの保存方法の詳細については、「[Microsoft Azure Files ストレージの接続](/azure/cloud-shell/overview#connect-your-microsoft-azure-files-storage)」を参照してください。
     
@@ -129,7 +143,7 @@ Cloud Shell は、Azure portal へのログインに使用した Microsoft ア�
     cd QuickstartTerraformTest
     ```
 
-1. 任意のエディターを使用して、Terraform 構成ファイルを作成します。 この記事では、組み込みの Cloud Shell エディターを使用します。
+1. 任意のエディターを使用して、Terraform 構成ファイルを作成します。 この記事では、組み込みの [Cloud Shell エディター](/azure/cloud-shell/using-cloud-shell-editor)を使用します。
 
     ```bash
     code QuickstartTerraformTest.tf
@@ -150,7 +164,7 @@ Cloud Shell は、Azure portal へのログインに使用した Microsoft ア�
     }
     ```
 
-    **注**:
+    注:
     - `provider` ブロックは、[Azure プロバイダー (`azurerm`)](https://www.terraform.io/docs/providers/azurerm/index.html) が使用されることを指定しています。
     - `azurerm` プロバイダー ブロック内には、`version` と `features` 属性が設定されています。 コメントに記載されているように、その使用方法はバージョン固有です。 ご使用環境に合わせてこれらの属性を設定する方法の詳細については、[AzureRM プロバイダーの v2.0](https://www.terraform.io/docs/providers/azurerm/guides/2.0-upgrade-guide.html) に関するページを参照してください。
     - 唯一の[リソース宣言](https://www.terraform.io/docs/configuration/resources.html)は、[azurerm_resource_group](https://www.terraform.io/docs/providers/azurerm/r/resource_group.html) のリソースの種類に対するものです。 `azure_resource_group` に必要な 2 つの引数は `name` と `location` です。
@@ -161,14 +175,14 @@ Cloud Shell は、Azure portal へのログインに使用した Microsoft ア�
 
 ## <a name="create-and-apply-a-terraform-execution-plan"></a>Terraform 実行プランを作成して適用する
 
-Cloud Shell には、Terraform の最新バージョンが自動的にインストールされます。 また、Terraform は、現在の Azure サブスクリプションの情報を自動的に使用します。 そのため、インストールや構成は必要ありません。 構成ファイルを作成したら、いくつかの Terraform コマンドを実行するだけで、実行プランが作成されます。 実行プランを作成したら、それを確認してデプロイできます。
+構成ファイルを作成したら、このセクションでは、"*実行プラン*" を作成し、それをクラウド インフラストラクチャに適用する方法について説明します。
 
 1. [terraform init](https://www.terraform.io/docs/commands/init.html) を使用して Terraform のデプロイを初期化します。 この手順によって、Azure リソース グループを作成するために必要な Azure モジュールがダウンロードされます。
 
     ```bash
     terraform init
     ```
-    
+
 1. Terraform では、[terraform plan](https://www.terraform.io/docs/commands/plan.html) を使用して、完了する予定のアクションをプレビューできます。
 
     ```bash
@@ -185,16 +199,16 @@ Cloud Shell には、Terraform の最新バージョンが自動的にインス�
     ```bash
     terraform apply
     ```
-    
+
 1. Terraform は、実行プランを適用した場合に何が起こるかを示し、その実行を確認するよう求めます。 `yes` を入力し、**Enter** キーを押して、コマンドを確認します。
 
-1. 再生の実行を確認したら、[az group show](/cli/azure/group?view=azure-cli-latest#az-group-show) を使用して、リソース グループが正常に作成されたことをテストします。
+1. 再生の実行を確認したら、[az group show](/cli/azure/group?#az-group-show) を使用して、リソース グループが正常に作成されたことをテストします。
 
-    ```azurecli-interactive
+    ```azurecli
     az group show -n "QuickstartTerraformTest-rg"
     ```
 
-    成功すると、コマンドにより、新しく作成されたリソース グループのさまざまなプロパティが表示されます。
+    成功すると、`az group show` により、新しく作成されたリソース グループのさまざまなプロパティが表示されます。
 
 ## <a name="persist-an-execution-plan-for-later-deployment"></a>後のデプロイのために実行プランを保存する
 
@@ -224,7 +238,7 @@ Cloud Shell には、Terraform の最新バージョンが自動的にインス�
     terraform apply QuickstartTerraformTest.tfplan
     ```
 
-**注**:
+注:
 - 自動化での使用を有効にするために、`terraform apply <filename>` の実行で確認が求められることはありません。
 - この機能を使用する場合は、[セキュリティ警告セクション](https://www.terraform.io/docs/commands/plan.html#security-warning)を参照してください。
 
@@ -238,16 +252,16 @@ Cloud Shell には、Terraform の最新バージョンが自動的にインス�
     terraform destroy
     ```
 
-1. Terraform は、実行プランを破棄すると何が起こるかを示し、確認するよう求めます。 `yes` を入力し、**Enter** キーを押して、コマンドを確認します。
+1. Terraform は、実行プランを破棄すると何が起こるかを示し、確認するよう求めます。 `yes` を入力し、**Enter** キーを押して、確認します。
 
-1. 再生の実行を確認すると、出力は次の例のようになります。[az group show](/cli/azure/group?view=azure-cli-latest#az-group-show) を使用して、リソース グループが削除されたことを確認します。
+1. 再生の実行を確認すると、出力は次の例のようになります。[az group show](/cli/azure/group?#az-group-show) を使用して、リソース グループが削除されたことを確認します。
 
-    ```azurecli-interactive
+    ```azurecli
     az group show -n "QuickstartTerraformTest-rg"
     ```
 
-    **注**:
-    - 成功すると、`az group show` コマンドにより、リソース グループが存在しないという事実が表示されます。
+    注:
+    - 成功すると、`az group show` により、リソース グループが存在しないという事実が表示されます。
 
 1. ディレクトリを親ディレクトリに変更し、demo ディレクトリを削除します。 `-r` パラメーターを指定すると、ディレクトリが削除される前にディレクトリの内容が削除されます。 ディレクトリの内容には、前に作成した構成ファイルと Terraform の状態ファイルが含まれています。
 

@@ -2,16 +2,15 @@
 author: yevster
 ms.author: yebronsh
 ms.date: 4/15/2020
-ms.openlocfilehash: b53308d4a9db52a25665d0daa74be678e726c499
-ms.sourcegitcommit: 226ebca0d0e3b918928f58a3a7127be49e4aca87
-ms.translationtype: HT
+ms.openlocfilehash: 3ff76d977c231b4b238f9dbec7f3bfaddfe5e484
+ms.sourcegitcommit: 81577378a4c570ced1e9c6765f4a9eee8453c889
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82990184"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84507606"
 ---
 ### <a name="ensure-console-logging-and-configure-diagnostic-settings"></a>コンソール ログを確認して診断設定を構成する
 
-Azure Spring Cloud のすべてのアプリケーションが、ファイルではなくコンソールに記録されるようにログ記録を構成します。
+すべての出力がファイルではなく、コンソールに送られるようにログ記録を構成します。
 
 アプリケーションが Azure Spring Cloud にデプロイされたら、[診断設定を追加して](/azure/spring-cloud/diagnostic-services)、たとえば Azure Monitor Log Analytics を使用して、ログに記録されたイベントを使用できるようにします。
 

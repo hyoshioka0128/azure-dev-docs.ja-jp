@@ -6,12 +6,11 @@ ms.author: karler
 ms.date: 11/12/2019
 ms.service: app-service
 ms.topic: article
-ms.openlocfilehash: 7e90cd39bb50f5e83ee9bc3551252fe12086e750
-ms.sourcegitcommit: 8309822d57f784a9c2ca67428ad7e7330bb5e0d6
-ms.translationtype: HT
+ms.openlocfilehash: 19eb7a5633f51400e139ba8dd7ad0a1f5999a213
+ms.sourcegitcommit: 81577378a4c570ced1e9c6765f4a9eee8453c889
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82861195"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84507448"
 ---
 # <a name="deploy-a-spring-app-to-app-service-with-mysql"></a>MySQL を使用して Spring アプリを App Service にデプロイする
 
@@ -86,7 +85,7 @@ set TOMCAT_HOME=<Tomcat install directory>
 ```
 ---
 
-次に、*pom.xml* ファイルを更新して、Tomcat WAR ファイルのデプロイ用に Maven を構成します。 次の XML を既存の `<plugins>` 要素の子として追加します。 必要に応じて、`1.7.11` を [Cargo Maven 2 プラグイン](https://mvnrepository.com/artifact/org.codehaus.cargo/cargo-maven2-plugin)の最新バージョンに変更します。
+次に、WAR ファイルをデプロイするための *pom.xml* ファイルを更新します。 次の XML を既存の `<plugins>` 要素の子として追加します。 必要に応じて、`1.7.11` を [Cargo Maven 2 プラグイン](https://mvnrepository.com/artifact/org.codehaus.cargo/cargo-maven2-plugin)の最新バージョンに変更します。
 
 ```xml
 <plugin>

@@ -3,12 +3,11 @@ title: Azure を使用したクラウド開発 - Azure とは
 description: Microsoft Azure でのクラウド アプリケーションの開発の概要。データ センター、サービス、リソースの関係から始めます。
 ms.date: 05/12/2020
 ms.topic: conceptual
-ms.openlocfilehash: 815da765aaed1e8364c37f621f17f279212bf77f
-ms.sourcegitcommit: 2cdf597e5368a870b0c51b598add91c129f4e0e2
-ms.translationtype: HT
+ms.openlocfilehash: 25b3e45dbc885dea4dd75a60ea0b7866f28e1710
+ms.sourcegitcommit: 0d492c9cc9b5295285ab75da55e5ab0577576287
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83404955"
+ms.lasthandoff: 06/25/2020
+ms.locfileid: "85370713"
 ---
 # <a name="cloud-development-on-azure"></a>Azure でのクラウド開発
 
@@ -16,7 +15,7 @@ ms.locfileid: "83404955"
 
 ## <a name="what-is-azure-data-centers-services-and-resources"></a>Azure とは データ センター、サービス、およびリソース
 
-Microsoft の CEO である Satya Nadella は、Azure を "世界のコンピューター" と呼ぶことがよくあります。 ご存知のとおり、コンピューターは、オペレーティング システムによって管理されるハードウェアの集まりであり、ユーザーがシステムのコンピューティング能力をさまざまなタスクに適用するのに役立つソフトウェアを構築するためのプラットフォームを提供します (これが、"アプリケーション" という言葉でこのようなソフトウェアを表す理由です)。
+Microsoft の CEO である Satya Nadella は、Azure を "世界のコンピューター" と呼ぶことがよくあります。 ご存知のとおり、コンピューターは、オペレーティング システムによって管理されるハードウェアの集まりであり、ユーザーがシステムのコンピューティング能力をさまざまなタスクに適用するのに役立つソフトウェアを構築するためのプラットフォームが提供されます (これが、"アプリケーション" という言葉でこのようなソフトウェアを表す理由です)。
 
 Azure の場合、コンピューターのハードウェアは 1 台のマシンではなく、[世界中の数十の大規模なデータ センター](https://azure.microsoft.com/global-infrastructure/regions/)に含まれる仮想化されたサーバー コンピューターの巨大なプールです。 Azure の "オペレーティング システム" は、アプリケーションが必要とするときに、リソース プールのさまざまな部分を動的に割り当てたり割り当て解除したりする "*サービス*" で構成されます。 各割り当て &mdash; コンピューティング能力 (CPU コアとメモリ)、ストレージ、データベース、ネットワークなど &mdash; は、"*リソース*" と呼ばれます。 また、それぞれの個別リソースには、一意の "*オブジェクト識別子*" (GUID) と一意の URL が割り当てられます。
 

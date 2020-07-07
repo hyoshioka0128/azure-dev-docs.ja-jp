@@ -2,14 +2,13 @@
 author: judubois
 ms.date: 05/06/2020
 ms.author: judubois
-ms.openlocfilehash: d4b9becdce2b78e928b97b7d980024eac5871df2
-ms.sourcegitcommit: a631b36ec1277ee9397a860c597ffdd5495d88e7
-ms.translationtype: HT
+ms.openlocfilehash: e1bd45413368abe253ff4ac7733bbdcd3d0a4cc3
+ms.sourcegitcommit: 81577378a4c570ced1e9c6765f4a9eee8453c889
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83369825"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84507512"
 ---
-`DemoApplication` クラスの横に新しい `Todo` Java クラスを作成します。
+次のコードを使用し、`DemoApplication` クラスの横に新しい `Todo` Java クラスを作成します。
 
 ```java
 package com.example.demo;
@@ -72,7 +71,7 @@ public class Todo {
 
 このクラスは、先ほど作成した `todo` テーブルにマップされるドメイン モデルです。
 
-このクラスを管理するには、リポジトリが必要です。 同じパッケージ内に新しい `TodoRepository` インターフェイスを定義します。
+このクラスを管理するには、リポジトリが必要です。 次のコードを使用し、同じパッケージ内に新しい `TodoRepository` インターフェイスを定義します。
 
 ```java
 package com.example.demo;
@@ -118,7 +117,7 @@ public class TodoController {
 }
 ```
 
-最後に、アプリケーションを停止して再起動します。
+最後に、次のコマンドを使用して、アプリケーションを停止して再起動します。
 
 ```bash
 ./mvnw spring-boot:run
@@ -128,28 +127,28 @@ public class TodoController {
 
 アプリケーションをテストするには、cURL を使用します。
 
-まず、データベースに新しい "todo" 項目を作成します。
+まず、次のコマンドを使用して、データベースに新しい "todo" 項目を作成します。
 
 ```bash
-curl  --header "Content-Type: application/json" \
-          --request POST \
-          --data '{"description":"configuration","details":"congratulations, you have set up R2DBC correctly!","done": "true"}' \
-          http://127.0.0.1:8080
+curl --header "Content-Type: application/json" \
+    --request POST \
+    --data '{"description":"configuration","details":"congratulations, you have set up R2DBC correctly!","done": "true"}' \
+    http://127.0.0.1:8080
 ```
 
-次のコマンドを実行すると、作成した項目が返されます。
+このコマンドからは、ここに示すように、作成された項目が返されるはずです。
 
 ```json
 {"id":1,"description":"configuration","details":"congratulations, you have set up R2DBC correctly!","done":true}
 ```
 
-次に、新しい cURL 要求を使用してデータを取得します。
+次に、次のコマンドを使用し、新しい cURL 要求を使用してデータを取得します。
 
 ```bash
 curl http://127.0.0.1:8080
 ```
 
-このコマンドを実行すると、作成した項目を含む "todo" 項目の一覧が返されます。
+このコマンドからは、ここに示すように、作成した項目を含む "todo" 項目の一覧が返されます。
 
 ```json
 [{"id":1,"description":"configuration","details":"congratulations, you have set up R2DBC correctly!","done":true}]

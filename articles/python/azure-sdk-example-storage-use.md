@@ -1,14 +1,13 @@
 ---
-title: Azure SDK for Python で Azure Storage をプロビジョニングして使用する
+title: Azure SDK for Python で Azure Storage を使用する
 description: Azure SDK for Python ライブラリを使用して、Azure Storage アカウントの事前にプロビジョニングされた BLOB コンテナーにアクセスし、そのコンテナーにファイルをアップロードします。
-ms.date: 05/29/2020
+ms.date: 06/15/2020
 ms.topic: conceptual
-ms.openlocfilehash: 50d9b781e0ec3a1a9f752a9ec193720d99b88f4d
-ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
-ms.translationtype: HT
+ms.openlocfilehash: 9015017b1e0b2839e4a3986950625fb8a498717e
+ms.sourcegitcommit: 74ff4dec3b0556201c243e8c2302555b08dd79e9
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84329660"
+ms.lasthandoff: 06/16/2020
+ms.locfileid: "84812672"
 ---
 # <a name="example-use-the-azure-libraries-with-azure-storage"></a>例:Azure Storage で Azure ライブラリを使用する
 
@@ -47,11 +46,11 @@ Hello there, Azure Storage. I'm a friendly file ready to be stored in a blob.
 
 ## <a name="4-use-blob-storage-from-app-code"></a>4:アプリ コードから Blob Storage を使用する
 
-次のセクション (番号 4a と 4b) では、BLOB コンテナーにアクセスする 2 つの方法を示します。
+以降のセクション (番号 4a と 4b) では、[例: Azure Storage をプロビジョニングする](azure-sdk-example-storage.md) でプロビジョニングされた BLOB コンテナーにアクセスする 2 つの方法を示します。
 
-[1 つ目の方法 (4a)](#4a-use-blob-storage-with-authentication) は、[Python アプリの認証方法](azure-sdk-authenticate.md#authenticate-with-defaultazurecredential)に関する記事で説明されている `DefaultAzureCredential` を使用してアプリを認証します。 この方法では最初に、アプリの ID に適切なアクセス許可を割り当てる必要があります。これが、推奨されるプラクティスです。
+[1 つ目の方法 (以下のセクション 4a)](#4a-use-blob-storage-with-authentication) は、[Python アプリの認証方法](azure-sdk-authenticate.md#authenticate-with-defaultazurecredential)に関する記事で説明されている `DefaultAzureCredential` を使用してアプリを認証します。 この方法では最初に、アプリの ID に適切なアクセス許可を割り当てる必要があります。これが、推奨されるプラクティスです。
 
-[2 つ目の方法 (4b)](#4b-use-blob-storage-with-a-connection-string) は、接続文字列を使用してストレージ アカウントに直接アクセスします。 こちらの方法の方が一見シンプルに見えますが、大きな欠点が 2 つあります。
+[2 つ目の方法 (以下のセクション 4b)](#4b-use-blob-storage-with-a-connection-string) は、接続文字列を使用してストレージ アカウントに直接アクセスします。 こちらの方法の方が一見シンプルに見えますが、大きな欠点が 2 つあります。
 
 - 接続文字列は本質的に、接続元のエージェントをストレージ "*アカウント*" に対して認証するものであり、そのアカウント内の個々のリソースに対して認証を行うものではありません。 そのため、接続文字列では、許可する承認の範囲が必要以上に広くなってしまう可能性があります。
 
@@ -114,9 +113,9 @@ Hello there, Azure Storage. I'm a friendly file ready to be stored in a blob.
     python use_blob_auth.py
     ```
 
-    使用しているローカル サービス プリンシパルには、BLOB コンテナーへのアクセス許可がないため、"この要求にはこのアクセス許可を使用してこの操作を実行する権限がありません" という内容のエラーが表示されます。
+    使用しているローカル サービス プリンシパルには、BLOB コンテナーへのアクセス許可がないため、"This request is not authorized to perform this operation using this permission." (この要求にはこのアクセス許可を使用してこの操作を実行する権限がありません) という内容のエラーが表示されます。
 
-1. サービス プリンシパルにコンテナーのアクセス許可を付与するために、Azure CLI コマンド [az role assignment create](/cli/azure/role/assignment?view=azure-cli-latest#az-role-assignment-create) を使用します。コマンドが長いので注意してください。
+1. Azure CLI コマンド [az role assignment create](/cli/azure/role/assignment?view=azure-cli-latest#az-role-assignment-create) を使用して、サービス プリンシパルにコンテナーのアクセス許可を付与します。コマンドが長いのでご注意ください。
 
     # <a name="cmd"></a>[cmd](#tab/cmd)
 
@@ -138,7 +137,7 @@ Hello there, Azure Storage. I'm a friendly file ready to be stored in a blob.
 
     `--scope` 引数は、対象となるロールの割り当て先を指定するものです。 この例では、"ストレージ BLOB データ共同作成者" ロールを、"blob-container-01" という名前の "*特定*" のコンテナーに付与しています。
 
-    `pythonazurestorage12345` は、ストレージ アカウントの正確な名前に置き換えてください。 必要であれば、リソース グループと BLOB コンテナーの名前を調整することもできます。 間違った名前を使用すると、"ネストされたリソースに対して要求された操作を実行できません。親リソース 'pythonazurestorage12345' が見つかりません" というエラーが表示されます。 Parent resource 'pythonazurestorage12345' not found."
+    `pythonazurestorage12345` は、ストレージ アカウントの正確な名前に置き換えてください。 必要であれば、リソース グループと BLOB コンテナーの名前を調整することもできます。 間違った名前を使用すると、"Can not perform requested operation on nested resource. Parent resource 'pythonazurestorage12345' not found." (ネストされたリソースに対して要求された操作を実行できません。親リソース 'pythonazurestorage12345' が見つかりません) というエラーが表示されます。
 
     このコマンドの `--scope` 引数には、AZURE_CLIENT_ID と AZURE_SUBSCRIPTION_ID という環境変数が使用されています。これらは、「[Azure 用のローカル Python 開発環境を構成する](configure-local-development-environment.md)」に従い、ローカル環境でサービス プリンシパルに設定したものです。
 
@@ -199,5 +198,5 @@ az group delete -n PythonAzureExample-Storage-rg
 - [例:リソース グループをプロビジョニングする](azure-sdk-example-resource-group.md)
 - [例:Web アプリをプロビジョニングしてコードをデプロイする](azure-sdk-example-web-app.md)
 - [例:Azure Storage をプロビジョニングする](azure-sdk-example-storage.md)
-- [例:MySQL データベースをプロビジョニングして使用する](azure-sdk-example-database.md)
+- [例:データベースをプロビジョニングしてクエリを実行する](azure-sdk-example-database.md)
 - [例:仮想マシンをプロビジョニングする](azure-sdk-example-virtual-machines.md)

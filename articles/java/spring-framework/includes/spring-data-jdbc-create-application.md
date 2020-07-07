@@ -2,14 +2,13 @@
 author: judubois
 ms.date: 05/06/2020
 ms.author: judubois
-ms.openlocfilehash: a1ba753cb0c5c3b9c07f9597df71bc7e53394eae
-ms.sourcegitcommit: a631b36ec1277ee9397a860c597ffdd5495d88e7
-ms.translationtype: HT
+ms.openlocfilehash: 012043df3cf07de098d1a7f3a6715374814d1d9b
+ms.sourcegitcommit: 81577378a4c570ced1e9c6765f4a9eee8453c889
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83369969"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84507713"
 ---
-`DemoApplication` クラスの横に新しい `Todo` Java クラスを作成します。
+`DemoApplication` クラスの横に新しい `Todo` Java クラスを作成し、以下のコードを追加します。
 
 ```java
 package com.example.demo;
@@ -116,7 +115,7 @@ public class TodoController {
 }
 ```
 
-最後に、アプリケーションを停止して再起動します。
+最後に、次のコマンドを使用して、アプリケーションを停止して再起動します。
 
 ```bash
 ./mvnw spring-boot:run
@@ -126,28 +125,28 @@ public class TodoController {
 
 アプリケーションをテストするには、cURL を使用します。
 
-まず、データベースに新しい "todo" 項目を作成します。
+まず、次のコマンドを使用して、データベースに新しい "todo" 項目を作成します。
 
 ```bash
-curl  --header "Content-Type: application/json" \
-          --request POST \
-          --data '{"description":"configuration","details":"congratulations, you have set up JDBC correctly!","done": "true"}' \
-          http://127.0.0.1:8080
+curl --header "Content-Type: application/json" \
+    --request POST \
+    --data '{"description":"configuration","details":"congratulations, you have set up JDBC correctly!","done": "true"}' \
+    http://127.0.0.1:8080
 ```
 
-次のコマンドを実行すると、作成した項目が返されます。
+このコマンドからは、次のように、作成された項目が返されるはずです。
 
 ```json
 {"id":1,"description":"configuration","details":"congratulations, you have set up JDBC correctly!","done":true}
 ```
 
-次に、新しい cURL 要求を使用してデータを取得します。
+次に、以下のように、新しい cURL 要求を使用してデータを取得します。
 
 ```bash
 curl http://127.0.0.1:8080
 ```
 
-このコマンドを実行すると、作成した項目を含む "todo" 項目の一覧が返されます。
+このコマンドからは、次のように、作成した項目を含む "todo" 項目の一覧が返されます。
 
 ```json
 [{"id":1,"description":"configuration","details":"congratulations, you have set up JDBC correctly!","done":true}]

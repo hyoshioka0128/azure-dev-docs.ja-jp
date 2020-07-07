@@ -3,12 +3,11 @@ title: Python 用 Azure SDK ライブラリを使用して仮想マシンをプ�
 description: Python と Azure SDK の管理ライブラリを使用して Azure 仮想マシンをプロビジョニングする方法。
 ms.date: 05/29/2020
 ms.topic: conceptual
-ms.openlocfilehash: 297e45b2d694d723b84f84f6457577503155a598
-ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
-ms.translationtype: HT
+ms.openlocfilehash: 4b11caa66eb297225b4b61000575a8a9c48edb19
+ms.sourcegitcommit: 5ebbc1c06f98e29a146764661efbf34957020fe8
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84329650"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84716090"
 ---
 # <a name="example-use-the-azure-libraries-to-provision-a-virtual-machine"></a>例:Azure ライブラリを使用して仮想マシンをプロビジョニングする
 
@@ -227,28 +226,28 @@ python provision_vm.py
 # <a name="cmd"></a>[cmd](#tab/cmd)
 
 ```azurecli
-# Provision the resource group
+rem Provision the resource group
 
 az group create -n PythonAzureExample-VM-rg -l centralus
 
-# Provision a virtual network and subnet
+rem Provision a virtual network and subnet
 
 az network vnet create -g PythonAzureExample-VM-rg -n python-example-vnet ^
     --address-prefix 10.0.0.0/16 --subnet-name python-example-subnet ^
     --subnet-prefix 10.0.0.0/24
 
-# Provision a public IP address
+rem Provision a public IP address
 
 az network public-ip create -g PythonAzureExample-VM-rg -n python-example-ip ^
     --allocation-method Dynamic --version IPv4
 
-# Provision a network interface client
+rem Provision a network interface client
 
 az network nic create -g PythonAzureExample-VM-rg --vnet-name python-example-vnet ^
     --subnet python-example-subnet -n python-example-nic ^
     --public-ip-address python-example-ip
 
-# Provision the virtual machine
+rem Provision the virtual machine
 
 az vm create -g PythonAzureExample-VM-rg -n ExampleVM -l "centralus" ^
     --nics python-example-nic --image UbuntuLTS ^
@@ -303,7 +302,7 @@ az group delete -n PythonAzureExample-VM-rg
 - [例:Azure Storage をプロビジョニングする](azure-sdk-example-storage.md)
 - [例:Azure Storage を使用する](azure-sdk-example-storage-use.md)
 - [例:Web アプリをプロビジョニングしてコードをデプロイする](azure-sdk-example-web-app.md)
-- [例:MySQL データベースをプロビジョニングして使用する](azure-sdk-example-database.md)
+- [例:データベースをプロビジョニングしてクエリを実行する](azure-sdk-example-database.md)
 
 次のリソースには、Python を使用して仮想マシンを作成する例が、より広範囲にわたって紹介されています。
 

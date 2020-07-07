@@ -2,13 +2,12 @@
 title: チュートリアル - Azure で Yeoman を使用して Terraform ベース テンプレートを作成する
 description: Azure で Yeoman を使用して Terraform ベース テンプレートを作成する方法について説明します。
 ms.topic: tutorial
-ms.date: 04/25/2020
-ms.openlocfilehash: 1c60af3f4ebdac75dc5c4c56b76ee271002f29d6
-ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
-ms.translationtype: HT
+ms.date: 05/25/2020
+ms.openlocfilehash: 3278b1abb16275eb325964a3e0d78a2d61230dd4
+ms.sourcegitcommit: bbfa6e0dfb3c8e66e5f47b080590105787a6e74b
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84329950"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85418220"
 ---
 # <a name="tutorial-create-a-terraform-base-template-in-azure-using-yeoman"></a>チュートリアル:Azure で Yeoman を使用して Terraform ベース テンプレートを作成する
 
@@ -168,7 +167,7 @@ Docker が実際に実行されていることを確認するには、`docker in
 
 1. コマンド プロンプトに 入力します
 
-    `docker build --build-arg BUILD_ARM_SUBSCRIPTION_ID= --build-arg BUILD_ARM_CLIENT_ID= --build-arg BUILD_ARM_CLIENT_SECRET= --build-arg BUILD_ARM_TENANT_ID= -t terra-mod-example .`
+    `docker build --build-arg BUILD_ARM_SUBSCRIPTION_ID= --build-arg BUILD_ARM_CLIENT_ID= --build-arg BUILD_ARM_CLIENT_SECRET= --build-arg BUILD_ARM_TENANT_ID= -t terra-mod-example .`.
 
     メッセージ**正常にビルドされました**が表示されます。
 
@@ -282,7 +281,7 @@ Docker が実際に実行されていることを確認するには、`docker in
 
     ![Rake ビルド](media/create-a-base-template-using-yeoman/ymg-rake-build.png)
 
-1. 次のコマンドを実行して、テストを実行します。
+1. 次のコマンドを実行してテストを実行します。
 
     ```bash
     rake e2e

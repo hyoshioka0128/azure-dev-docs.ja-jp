@@ -3,15 +3,14 @@ title: チュートリアル - Terraform を使用して Azure に Linux VM と�
 description: Terraform を使用して、Azure で完全な Linux 仮想マシン環境を作成して管理する方法について説明します。
 keywords: Azure DevOps Terraform Linux VM 仮想マシン
 ms.topic: tutorial
-ms.date: 05/31/2020
-ms.openlocfilehash: 40dfe97d2311e251e23468b5d7a6eede778d7b8e
-ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
-ms.translationtype: HT
+ms.date: 06/14/2020
+ms.openlocfilehash: 97b4381c45e67458e01093d735f9b32e97584149
+ms.sourcegitcommit: 2d6c9687b39e33a6b5e980d9a375c9f8f1f2cab7
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84329440"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84779654"
 ---
-# <a name="tutorial--create-a-linux-vm-with-infrastructure-in-azure-using-terraform"></a>チュートリアル : Terraform を使用して Azure に Linux VM とインフラストラクチャを作成する
+# <a name="tutorial-create-a-linux-vm-with-infrastructure-in-azure-using-terraform"></a>チュートリアル:Terraform を使用して Azure に Linux VM とインフラストラクチャを作成する
 
 Terraform を利用すれば、Azure で完全なインフラストラクチャ デプロイを定義し、作成できます。 整合性があり、再現可能な方法で Azure リソースを作成し、構成する Terraform テンプレートを人間が読める形式でビルドします。 この記事では、Terraform を使用して、完全な Linux 環境とサポート リソースを作成する方法を示します。 [Terraform をインストールし、構成する](getting-started-cloud-shell.md)方法についても説明します。
 
@@ -463,10 +462,10 @@ Plan: 7 to add, 0 to change, 0 to destroy.
 terraform apply
 ```
 
-Terraform が完了すると、VM インフラストラクチャが準備完了となります。 [az vm show](/cli/azure/vm) で VM のパブリック IP アドレスを取得します。
+Terraform が完了すると、VM インフラストラクチャが準備完了となります。 [az vm show](/cli/azure/vm#az-vm-show) で VM のパブリック IP アドレスを取得します。
 
 ```azurecli-interactive
-az vm show --resource-group myResourceGroup --name myVM -d --query [publicIps] --o tsv
+az vm show --resource-group myResourceGroup --name myVM -d --query [publicIps] -o tsv
 ```
 
 VM に SSH 接続できます。

@@ -3,12 +3,11 @@ title: Azure で開発するためのローカル Python 環境を構成する
 description: Visual Studio Code、Azure SDK ライブラリ、ライブラリ認証に必要な資格情報など、Azure で作業するためのローカル Python 開発環境を設定する方法。
 ms.date: 05/29/2020
 ms.topic: conceptual
-ms.openlocfilehash: e3eb03182a45f3ceacc8b3ea09abca47d8fa2e81
-ms.sourcegitcommit: efab6be74671ea4300162e0b30aa8ac134d3b0a9
-ms.translationtype: HT
+ms.openlocfilehash: cf87c90bd36594ffa4e1f3837133238f89a77836
+ms.sourcegitcommit: 43e4b50f6f6f5806b2f162ca39367face0779ff6
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84256457"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84421498"
 ---
 # <a name="configure-your-local-python-dev-environment-for-azure"></a>Azure 用のローカル Python 開発環境を構成する
 
@@ -21,6 +20,8 @@ ms.locfileid: "84256457"
 - プロジェクトごとに、[Python 仮想環境を使用する](#use-python-virtual-environments)プロセスを確認します。
 
 ワークステーションを構成しておけば、このデベロッパー センターや Azure のドキュメントで紹介されているさまざまなクイックスタートやチュートリアルを完了するために必要な追加構成を最小限に抑えることができます。
+
+ローカル開発のこのセットアップは、Azure でアプリケーションの "*クラウド環境*" を構成する[プロビジョニング リソース](cloud-development-flow.md)とは別のものです。 開発プロセスでは、それらのクラウド リソースにアクセスできるローカル開発環境でコードを実行しますが、コードはクラウドで[適切なホスティング サービス](quickstarts-app-hosting.md)にまだデプロイされていません。 [Azure 開発フロー](cloud-development-flow.md)記事で説明されているように、その開発手順は後で行われます。
 
 ## <a name="install-components"></a>コンポーネントをインストールする
 

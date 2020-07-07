@@ -7,12 +7,11 @@ ms.service: multiple
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 11/13/2018
-ms.openlocfilehash: 5377aed7ee541f1954a95f992ffee03a7cb569a7
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
-ms.translationtype: HT
+ms.openlocfilehash: 0dc5459ab4898deecebbc199e62f5dccc8ee6f7d
+ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81672808"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85790738"
 ---
 # <a name="adding-a-root-certificate-to-the-java-ca-certificates-store"></a>ルート証明書を Java CA 証明書ストアに追加する方法
 
@@ -44,7 +43,7 @@ Baltimore 証明書が cacerts ストアに既にインストールされてい�
 
 ## <a name="to-add-a-root-certificate-to-the-cacerts-store"></a>ルート証明書を cacerts ストアに追加するには
 
-1. Baltimore CyberTrust ルート証明書を <https://cacert.omniroot.com/bc2025.crt> からダウンロードし、*jdk \jre\lib\security* フォルダー内のローカル ファイルとしてファイル名拡張子 *.cer* を付けて保存でします。 この例では、Baltimore CyberTrust ルート証明書ファイルを *bc2025.cer* としてダウンロードしたものと想定しています。
+1. Baltimore CyberTrust ルート証明書を <https://cacert.omniroot.com/bc2025.crt> からダウンロードし、*jdk \jre\lib\security* フォルダー内のローカル ファイルとしてファイル名拡張子 *.crt* を付けて保存でします。 この例では、Baltimore CyberTrust ルート証明書ファイルを *bc2025.crt* としてダウンロードしたものと想定しています。
 
    > [!NOTE]
    > Baltimore CyberTrust ルート証明書には、シリアル番号 `02:00:00:b9` と SHA1 拇印 `d4:de:20:d0:5e:66:fc:53:fe:1a:50:88:2c:78:db:28:52:ca:e4:74` があります。
@@ -52,7 +51,7 @@ Baltimore 証明書が cacerts ストアに既にインストールされてい�
 2. 次のコマンドを使用して、この証明書を cacerts ストアにインポートします。
 
    ```shell
-   keytool -keystore cacerts -importcert -alias bc2025ca -file bc2025.cer
+   keytool -keystore cacerts -importcert -alias bc2025ca -file bc2025.crt
    ```
 
    各値の説明:

@@ -3,12 +3,11 @@ title: Python 用 Azure ライブラリを使用してリソース グループ�
 description: Azure SDK for Python のリソース管理ライブラリを使用して、Python コードからリソース グループを作成します。
 ms.date: 05/29/2020
 ms.topic: conceptual
-ms.openlocfilehash: 0d0ff5bf8a2417e38f9fd066b226ed26da87322b
-ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
-ms.translationtype: HT
+ms.openlocfilehash: 38c2f87511c040a04040844fb512fd436d566c15
+ms.sourcegitcommit: 499f7275446f006fa43c4eff3b1f0d001e9a98d9
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84329680"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84453703"
 ---
 # <a name="example-use-the-azure-libraries-to-provision-a-resource-group"></a>例:Azure ライブラリを使用してリソース グループをプロビジョニングする
 
@@ -127,5 +126,5 @@ az group create -n PythonAzureExample-ResourceGroup-rg -l centralus
 - [例:Azure Storage をプロビジョニングする](azure-sdk-example-storage.md)
 - [例:Azure Storage を使用する](azure-sdk-example-storage-use.md)
 - [例:Web アプリをプロビジョニングしてコードをデプロイする](azure-sdk-example-web-app.md)
-- [例:MySQL データベースをプロビジョニングして使用する](azure-sdk-example-database.md)
+- [例:データベースをプロビジョニングしてクエリを実行する](azure-sdk-example-database.md)
 - [例:仮想マシンをプロビジョニングする](azure-sdk-example-virtual-machines.md)

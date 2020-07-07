@@ -6,12 +6,11 @@ ms.author: ushan
 ms.topic: conceptual
 ms.service: azure
 ms.date: 05/05/2020
-ms.openlocfilehash: a7bcf09da47e9af41f404bfdd2454b25f94eb7b4
-ms.sourcegitcommit: a9b9157bb3a802ecfe3699854788d010a3f08d7e
-ms.translationtype: HT
+ms.openlocfilehash: 15d839ff8c05dbe4ffb990e31a883794c30d5649
+ms.sourcegitcommit: b3e506c6f140d91e6fdd9dcadf22ab1aa67f6978
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84202851"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84942401"
 ---
 # <a name="deploy-to-azure-using-github-actions"></a>GitHub Actions を使用して Azure にデプロイする
 
@@ -92,6 +91,7 @@ Azure Web Apps および Azure Web App for Containers にデプロイする:
 
 - [Docker ログイン](https://github.com/Azure/docker-login)  
 - [Azure Container Instances へのデプロイ](https://github.com/Azure/aci-deploy)
+- [コンテナーのスキャン操作](https://github.com/Azure/container-scan)
 
 ## <a name="deploy-to-kubernetes"></a>Kubernetes へのデプロイ
 

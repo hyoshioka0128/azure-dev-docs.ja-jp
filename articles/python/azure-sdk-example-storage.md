@@ -3,18 +3,17 @@ title: Python 用 Azure ライブラリを使用して Azure Storage をプロ�
 description: Azure SDK for Python ライブラリを使用して、Azure Storage アカウントに BLOB コンテナーをプロビジョニングし、そのコンテナーにファイルをアップロードします。
 ms.date: 05/29/2020
 ms.topic: conceptual
-ms.openlocfilehash: ffc65746be0a7e002263010df4fe3048e0c321d1
-ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
-ms.translationtype: HT
+ms.openlocfilehash: 74f6e21b80505cd0b63061a76f4811b0c687d1a9
+ms.sourcegitcommit: 5ebbc1c06f98e29a146764661efbf34957020fe8
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84329670"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84716100"
 ---
 # <a name="example-use-the-azure-libraries-with-azure-storage"></a>例:Azure Storage で Azure ライブラリを使用する
 
 この記事では、Python スクリプトで Azure 管理ライブラリを使用して、Azure Storage アカウントと Blob Storage コンテナーを含むリソース グループをプロビジョニングする方法について説明します。 ([同等の Azure CLI コマンド](#for-reference-equivalent-azure-cli-commands)については、この記事の後半で説明します。)
 
-リソースをプロビジョニングしたら、[例:Azure Storage の使用](azure-sdk-example-storage-use.md)に関する記事を参照して、Python アプリケーション コードで Azure クライアント ライブラリを使用して、Blob Storage コンテナーにファイルをアップロードします。
+リソースのプロビジョニング後、[Azure Storage の使用例](azure-sdk-example-storage-use.md)に関するページを参照し、Python アプリケーション コードで Azure クライアント ライブラリを使用し、Blob Storage コンテナーにファイルをアップロードします。
 
 特に記載のない限り、この記事で使用されているコマンドはいずれも、Linux と Mac OS の bash および Windows のコマンド シェルで同じように動作します。
 
@@ -154,7 +153,7 @@ python provision_blob.py
 
     ![ストレージ アカウントの Azure portal ページに表示される BLOB コンテナー](media/azure-sdk-example-storage/portal-show-blob-containers.png)
 
-1. これらのプロビジョニングされたリソースをアプリケーション コードから使用する場合は、[例:Azure Storage の使用](azure-sdk-example-storage-use.md)を続行してください。
+1. これらのプロビジョニングされたリソースをアプリケーション コードから使用する場合は、引き続き、[Azure Storage の使用例](azure-sdk-example-storage-use.md)に関するページを参照してください。
 
 Azure Storage の管理ライブラリを使用するその他の例については、[Python でのストレージ管理のサンプル](https://docs.microsoft.com/samples/azure-samples/storage-python-manage/storage-python-manage/)を参照してください。
 
@@ -165,22 +164,22 @@ Azure Storage の管理ライブラリを使用するその他の例について
 # <a name="cmd"></a>[cmd](#tab/cmd)
 
 ```azurecli
-# Provision the resource group
+rem Provision the resource group
 
 az group create -n PythonAzureExample-Storage-rg -l centralus
 
-# Provision the storage account
+rem Provision the storage account
 
 az storage account create -g PythonAzureExample-Storage-rg -l centralus ^
     -n pythonazurestorage12345 --kind StorageV2 --sku Standard_LRS
 
-# Retrieve the connection string
+rem Retrieve the connection string
 
 az storage account show-connection-string -g PythonAzureExample-Storage-rg ^
     -n pythonazurestorage12345
 
-# Provision the blob container; NOTE: this command assumes you have an environment variable
-# named AZURE_STORAGE_CONNECTION_STRING with the connection string for the storage account.
+rem Provision the blob container; NOTE: this command assumes you have an environment variable
+rem named AZURE_STORAGE_CONNECTION_STRING with the connection string for the storage account.
 
 set AZURE_STORAGE_CONNECTION_STRING=<connection_string>
 az storage container create --account-name pythonazurestorage12345 -n blob-container-01
@@ -214,7 +213,7 @@ az storage container create --account-name pythonazurestorage12345 -n blob-conta
 
 ## <a name="6-clean-up-resources"></a>6: リソースをクリーンアップする
 
-[例:Azure Storage の使用](azure-sdk-example-storage-use.md)に関する記事に従ってこれらのリソースをアプリ コードで使用する場合は、リソースをそのままにしておいてください。
+[Azure Storage の使用例](azure-sdk-example-storage-use.md)に関する記事を参照してアプリ コードでこれらのリソースを使用する場合は、リソースは残しておきます。
 
 それ以外の場合は、次のコマンドを実行して、サブスクリプションでの継続的な課金を回避します。
 
@@ -229,5 +228,5 @@ az group delete -n PythonAzureExample-Storage-rg
 - [例:Azure Storage を使用する](azure-sdk-example-storage-use.md)
 - [例:リソース グループをプロビジョニングする](azure-sdk-example-resource-group.md)
 - [例:Web アプリをプロビジョニングしてコードをデプロイする](azure-sdk-example-web-app.md)
-- [例:MySQL データベースをプロビジョニングして使用する](azure-sdk-example-database.md)
+- [例:データベースをプロビジョニングしてクエリを実行する](azure-sdk-example-database.md)
 - [例:仮想マシンをプロビジョニングする](azure-sdk-example-virtual-machines.md)

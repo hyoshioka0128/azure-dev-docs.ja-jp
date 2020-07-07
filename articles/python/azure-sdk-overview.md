@@ -3,24 +3,27 @@ title: Python 用 Azure ライブラリ (SDK) を使用する
 description: Azure リソースのプロビジョニング、使用、管理を行う際に開発者の生産性を向上させる、Python 用 Azure ライブラリの機能の概要。
 ms.date: 05/26/2020
 ms.topic: conceptual
-ms.openlocfilehash: 056c290883984c4abfacb3b7cef9e67f09e800c7
-ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
-ms.translationtype: HT
+ms.openlocfilehash: ffa626db0518967e2659eeb5b89ece4bc15c1ce2
+ms.sourcegitcommit: 7474de4884bce076ce33ca77ae3584ba1598bbc6
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84329610"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "85069387"
 ---
 # <a name="use-the-azure-libraries-sdk-for-python"></a>Python 用 Azure ライブラリ (SDK) を使用する
 
-オープンソースである Python 用 Azure ライブラリは、Python アプリケーション コードからの Azure リソースのプロビジョニング、管理、使用を容易にします。
+オープンソースである Python 用 Azure ライブラリによって、Python アプリケーション コードからの Azure リソースのプロビジョニング、管理、使用が容易になります。
 
 ## <a name="the-details-you-really-want-to-know"></a>重要情報
 
-- この ライブラリは Python 2.7 と Python 3.5.3 以降をサポートし、PyPy 5.4 以降でもテストされています。
+- Azure ライブラリは、ローカルまたはクラウドで実行する Python コード "*から*" の Azure サービスとの通信手段です (特定のサービスのスコープ内で Python コードを実行できるかどうかは、そのサービス自体で Python がサポートされるかどうかによります)。
+
+- このライブラリでは Python 2.7 と Python 3.5.3 以降がサポートされており、PyPy 5.4 以降でもテストされています。
 
 - Azure SDK for Python は、特定の Azure サービスに関連した 180 を超える個別の Python ライブラリのみで構成されています。 "SDK" には他のツールはありません。
 
-- 必要なライブラリ パッケージは、`pip install <library_name>` を使ってインストールします ([リリース リスト](https://azure.github.io/azure-sdk/releases/latest/all/python.html)にあるライブラリ名を使用)。 詳細については、[Azure ライブラリのインストール](azure-sdk-install.md)に関するページを参照してください。
+- コードをローカルで実行する場合、Azure による認証は、[ローカル開発環境の構成](configure-local-development-environment.md)に関するページで説明されている環境変数に依存します。 
+
+- 必要なライブラリ パッケージは、`pip install <library_name>` を使ってインストールします ([Python SDK パッケージ インデックス](azure-sdk-library-package-index.md)に関するページにあるライブラリ名を使用)。 詳細については、[Azure ライブラリのインストール](azure-sdk-install.md)に関するページを参照してください。
 
 - "管理" と "クライアント" という別個のライブラリが存在します ("管理プレーン" ライブラリおよび "データ プレーン" ライブラリと呼ばれることもあります)。 各セットはさまざまな目的を果たし、さまざまな種類のコードで使用されます。 詳細については、この記事の次のセクションを参照してください。
   - [管理ライブラリを使用して Azure リソースをプロビジョニングし、管理する](#provision-and-manage-azure-resources-with-management-libraries)
@@ -28,7 +31,9 @@ ms.locfileid: "84329610"
 
 - ライブラリのドキュメントは、[Azure for Python のリファレンス](/python/api/overview/azure/?view=azure-python) (Azure サービスごとに編成) または [Python API ブラウザー](/python/api/?view=azure-python) (パッケージ名ごとに編成) でご覧いただけます。 現時点では、多くの場合、目的のクラスやメソッドにたどりつくために多数のレイヤーをクリックしなければなりません。 ご不便をおかけして申し訳ありません。 改善に向けて取り組んでまいります。
 
-- 自分でライブラリを試すには、まず、[ローカルの開発環境を設定する](configure-local-development-environment.md)ことをお勧めします。 その後、次のいずれかのスタンドアロンの例を (任意の順序) で試すことができます。[例:リソース グループをプロビジョニングする](azure-sdk-example-resource-group.md)、[例:Azure Storage をプロビジョニングして使用する](azure-sdk-example-storage.md)、[例:Web アプリをプロビジョニングしてコードをデプロイする](azure-sdk-example-web-app.md)、[例:MySQL データベースをプロビジョニングして使用する](azure-sdk-example-database.md)、および [例:仮想マシンをプロビジョニングする](azure-sdk-example-virtual-machines.md)。
+- 自分でライブラリを試すには、まず、[ローカルの開発環境を設定する](configure-local-development-environment.md)ことをお勧めします。 その後、次のいずれかのスタンドアロンの例を (任意の順序) で試すことができます。[例:リソース グループをプロビジョニングする](azure-sdk-example-resource-group.md)、[例: Azure Storage をプロビジョニングして使用する](azure-sdk-example-storage.md)、[例: Web アプリをプロビジョニングしてコードをデプロイする](azure-sdk-example-web-app.md)、[例: MySQL データベースをプロビジョニングして使用する](azure-sdk-example-database.md)、および[例: 仮想マシンをプロビジョニングする](azure-sdk-example-virtual-machines.md)。
+
+- デモ ビデオについては、仮想 PyCon 2020 の「<a href="https://www.youtube.com/watch?v=M1pVxItg2Mg&feature=youtu.be&ocid=AID3006292" target="_blank">Using Azure SDKs to interact with Azure resource</a>」 (Azure SDK を使用して Azure リソースを操作する) (youtube.com) をご覧ください。
 
 ### <a name="non-essential-but-still-interesting-details"></a>必須ではないが興味深い詳細情報
 
@@ -46,7 +51,7 @@ ms.locfileid: "84329610"
 
   - この共有機能は、[azure-core](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/core/azure-core) ライブラリに含まれています。
 
-  - Core ライブラリで現在動作しているライブラリは、[Azure SDK for Python の最新リリース](https://azure.github.io/azure-sdk/releases/latest/#python) ページに記載されています。 これらのライブラリ (主にクライアント ライブラリ) は、"track 2" と呼ばれることがあります。
+  - Core ライブラリで現在動作しているライブラリは、[Azure SDK for Python の最新リリース](azure-sdk-library-package-index.md#libraries-using-azurecore) ページに記載されています。 これらのライブラリ (主にクライアント ライブラリ) は、"track 2" と呼ばれることがあります。
 
   - 管理ライブラリと、まだ更新されていないその他のものは、"track 1" と呼ばれることがあります。
 

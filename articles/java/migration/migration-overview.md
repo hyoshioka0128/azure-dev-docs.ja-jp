@@ -5,12 +5,11 @@ author: yevster
 ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 1/20/2020
-ms.openlocfilehash: bbc7dd44e975fd47b52df41baa1ec526ac1908f8
-ms.sourcegitcommit: a9b9157bb3a802ecfe3699854788d010a3f08d7e
-ms.translationtype: HT
+ms.openlocfilehash: 51babfacd133ed0ba0d9b5bc728c4373e137022c
+ms.sourcegitcommit: 81577378a4c570ced1e9c6765f4a9eee8453c889
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84202831"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84507468"
 ---
 # <a name="migrate-java-applications-to-azure"></a>Java アプリケーションを Azure に移行する
 
@@ -78,7 +77,7 @@ Java EE 仕様によって提供される機能のみに依存するアプリケ
 
 次のグリッドを使用して、アプリケーションの種類で考えられる宛先を特定します。 ご覧のとおり、AKS と Virtual Machines ではすべてのアプリケーションの種類がサポートされますが、次のセクションで示すように、チームはより多くの責任を担う必要があります。
 
-|   |アプリ<br>サービス<br>Java SE|アプリ<br>サービス<br>Tomcat|Azure<br>Spring<br>クラウド|AKS|Virtual Machines|
+|   |アプリ<br>サービス<br>Java SE|アプリ<br>サービス<br>Tomcat|Azure<br>Spring<br>クラウド|AKS|仮想<br>マシン|
 |---|---|---|---|---|---|---|
 | Spring Boot/JAR アプリケーション                                    |&#x2714;|        |&#x2714;|&#x2714;|&#x2714;|
 | Spring Cloud/マイクロサービス                                      |        |        |&#x2714;|&#x2714;|&#x2714;|
@@ -100,7 +99,7 @@ Java EE 仕様によって提供される機能のみに依存するアプリケ
 > [!NOTE]
 > これは、すべての役割を網羅したリストではありません。
 
-|                                                                       | App Service | Azure Spring Cloud | AKS | Virtual Machines |
+|                                                                       | アプリ<br>サービス | Azure<br>Spring<br>クラウド | AKS | 仮想<br>マシン |
 |---|---|---|---|---|
 | ライブラリを更新する<br>(脆弱性の修復を含む)                 | &#x1F449;   | &#x1F449;   | &#x1F449;   | &#x1F449; |
 | アプリケーション サーバーを更新する<br>(脆弱性の修復を含む)    | ![Azure][1] | ![Azure][1] | &#x1F449;   | &#x1F449; |
@@ -140,9 +139,9 @@ Tomcat 上の Web アプリを Azure Spring Cloud に移行する場合は、ま
 
 |移行先&nbsp;→<br><br>アプリケーションの&nbsp;種類&nbsp;↓|アプリ<br>サービス<br>Java SE|アプリ<br>サービス<br>Tomcat|Azure<br>Spring<br>クラウド|AKS|Virtual Machines|
 |---|---|---|---|---|---|---|
-| Spring Boot/<br>JAR アプリケーション | [ガイダンス][5] | ガイダンス<br>予定 | ガイダンス<br>予定 | [ガイダンス][14]      | ガイダンス<br>予定 |
-| Spring Cloud/<br>マイクロサービス   | 該当なし           | 該当なし                 | [ガイダンス][15]      | ガイダンス<br>予定 | ガイダンス<br>予定 |
-| Web アプリケーション<br>(Tomcat 上)     | 該当なし           | [ガイダンス][2]       | 該当なし                 | [ガイダンス][3]       | ガイダンス<br>予定 |
+| Spring Boot/<br>JAR アプリケーション | [ガイダンス][5] | ガイダンス<br>予定 | [ガイダンス][16] | [ガイダンス][14]      | ガイダンス<br>予定 |
+| Spring Cloud/<br>マイクロサービス   | 該当なし           | 該当なし                 | [ガイダンス][15] | ガイダンス<br>予定 | ガイダンス<br>予定 |
+| Web アプリケーション<br>(Tomcat 上)     | 該当なし           | [ガイダンス][2]       | 該当なし            | [ガイダンス][3]       | ガイダンス<br>予定 |
 
 **Java EE アプリケーション**
 
@@ -171,3 +170,4 @@ Tomcat 上の Web アプリを Azure Spring Cloud に移行する場合は、ま
 [13]: https://azure.microsoft.com/global-infrastructure/services/?products=virtual-machines
 [14]: migrate-spring-boot-to-azure-kubernetes-service.md
 [15]: migrate-spring-cloud-to-azure-spring-cloud.md
+[16]: migrate-spring-boot-to-azure-spring-cloud.md

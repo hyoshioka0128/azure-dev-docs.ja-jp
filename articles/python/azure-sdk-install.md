@@ -3,16 +3,15 @@ title: Python 用 Azure SDK ライブラリ パッケージをインストール
 description: pip を使用して Azure SDK または Python ライブラリをインストール、アンインストール、および検証する方法。 特定のバージョンおよびプレビュー パッケージをインストールする方法の詳細も含まれています。
 ms.date: 05/26/2020
 ms.topic: conceptual
-ms.openlocfilehash: f50de734ab1d007c9e5efac8cd6559a2c03d83f5
-ms.sourcegitcommit: efab6be74671ea4300162e0b30aa8ac134d3b0a9
-ms.translationtype: HT
+ms.openlocfilehash: 9dbe783f9f91431b684e7e4a6c2ea5b9ff5a6a2a
+ms.sourcegitcommit: 39da5bec7ef824a34aa04514afc1141b75466547
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84256257"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84741444"
 ---
 # <a name="how-to-install-azure-library-packages-for-python"></a>Python 用 Azure ライブラリ パッケージをインストールする方法
 
-Azure SDK for Python は、[Azure SDK for Python のインデックス ページ](https://azure.github.io/azure-sdk/releases/latest/all/python.html)に記載されている多数の個別ライブラリのみで構成されています。 `pip install` を使用して、プロジェクトに必要な特定のライブラリ パッケージをインストールします。
+Azure SDK for Python は、[パッケージ インデックス](azure-sdk-library-package-index.md)に記載されている多数の個別ライブラリから構成されています。 `pip install` を使用して、プロジェクトに必要な特定のライブラリ パッケージをインストールします。
 
 これらのライブラリを使用すると、(名前に `-mgmt` が付いた管理ライブラリを使用して) Azure サービス上のリソースをプロビジョニングして管理し、(クライアント ライブラリを使用して) アプリ コードからそれらのリソースに接続できます。
 
@@ -77,3 +76,4 @@ pip uninstall azure-storage-blob
 ```
 
 ライブラリをアンインストールするには、`pip uninstall <library>` を使用します。
+

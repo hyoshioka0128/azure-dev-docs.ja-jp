@@ -19,7 +19,7 @@ ms.locfileid: "84741432"
 1. ログ ストリームのハンドラーを登録します。
 1. `logging_enable=True` パラメーターをクライアント オブジェクト コンストラクターまたは特定のメソッドに渡して、ログを有効にします。
 
-原則として、ライブラリ内のログの使用状況を理解するための最適なリソースは、[github.com/Azure/azure-sdk-for-python](https://github.com/Azure/azure-sdk-for-python) で SDK ソース コードを参照することです。 次のセクションで提案しているように、必要に応じて詳細を簡単に検索できるように、このリポジトリをローカルに複製することをお勧めします。
+原則として、ライブラリ内のログの使用状況を理解するための最適なリソースは、[github.com/Azure/azure-sdk-for-python](https://github.com/Azure/azure-sdk-for-python) で SDK ソース コードを参照することです。 次のセクションで提案しているように、必要に応じて詳細を簡単に検索できるように、このリポジトリをローカルにクローンすることをお勧めします。
 
 ## <a name="set-logging-levels"></a>ログ レベルの設定
 

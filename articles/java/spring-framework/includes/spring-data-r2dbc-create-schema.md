@@ -2,15 +2,34 @@
 author: judubois
 ms.date: 05/06/2020
 ms.author: judubois
-ms.openlocfilehash: fa66c4e9db481e31853c8e67816a14b6ee753fd2
-ms.sourcegitcommit: 81577378a4c570ced1e9c6765f4a9eee8453c889
+ms.openlocfilehash: a94dbf3d29863b1a4ac6909db839c451bbf482fd
+ms.sourcegitcommit: e9accb9d82b5c633dffffd148974911398f2d096
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84507511"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "86018571"
 ---
 `DemoApplication` メイン クラス内で、次のコードを使用し、データベース スキーマを作成する新しい Spring Bean を構成します。
 
 ```java
+package com.example.demo;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.data.r2dbc.connectionfactory.init.ConnectionFactoryInitializer;
+import org.springframework.data.r2dbc.connectionfactory.init.ResourceDatabasePopulator;
+
+import io.r2dbc.spi.ConnectionFactory;
+
+@SpringBootApplication
+public class DemoApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(DemoApplication.class, args);
+    }
+
     @Bean
     public ConnectionFactoryInitializer initializer(ConnectionFactory connectionFactory) {
         ConnectionFactoryInitializer initializer = new ConnectionFactoryInitializer();
@@ -19,6 +38,7 @@ ms.locfileid: "84507511"
         initializer.setDatabasePopulator(populator);
         return initializer;
     }
+}
 ```
 
 この Spring Bean では *schema.sql* というファイルが使用されるので、*src/main/resources* フォルダーにそのファイルを作成し、次のテキストを追加します。

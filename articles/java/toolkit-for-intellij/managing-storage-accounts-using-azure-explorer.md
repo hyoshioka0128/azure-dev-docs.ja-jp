@@ -6,12 +6,12 @@ ms.date: 02/01/2018
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
-ms.openlocfilehash: 762ac74b73a274e792ed19ac8ca7c2b68d98e778
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 051704a83e0535a6754c3c4dbd82eb8dfcf8e3c4
+ms.sourcegitcommit: 7be67fb768fb5e19f7de573068cc1376b3d90d1f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82105073"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85906439"
 ---
 # <a name="manage-storage-accounts-by-using-the-azure-explorer-for-intellij"></a>Azure Explorer for IntelliJ を使用してストレージ アカウントを管理する
 
@@ -35,47 +35,23 @@ Azure Explorer を使用してストレージ アカウントを作成するに�
 
    ![[新しいストレージ アカウントの作成] ダイアログ ボックス][CS02]
 
-   * **[名前]** : 新しいストレージ アカウントの名前を指定します。
+   * **Name**:新しいストレージ アカウントの名前を指定します。
 
    * **[アカウントの種類]** : 作成するストレージ アカウントの種類 ("Blob Storage" など) を指定します。 詳細については、「[Azure ストレージ アカウントについて]」を参照してください。 
 
-   * **[パフォーマンス]** : 選択された発行元からどのストレージ アカウント サービスを使用するかを指定します ("Premium" など)。 詳細については、「[Azure Storage のスケーラビリティおよびパフォーマンスのターゲット]」を参照してください。 
+   * **パフォーマンス**: 選択された発行元からどのストレージ アカウント サービスを使用するかを指定します ("Premium" など)。 詳細については、「[Azure Storage のスケーラビリティおよびパフォーマンスのターゲット]」を参照してください。 
 
-   * **[レプリケーション]** : ストレージ アカウントのレプリケーション ("ゾーン冗長" など) を指定します。 詳細については、「[Azure Storage のレプリケーション]」を参照してください。 
+   * **[Replication]\(レプリケーション\)** :ストレージ アカウントのレプリケーション ("ゾーン冗長" など) を指定します。 詳細については、「[Azure Storage のレプリケーション]」を参照してください。 
 
-   * **[サブスクリプション]** : 新しいストレージ アカウントに使用する Azure サブスクリプションを指定します。
+   * **サブスクリプション**:新しいストレージ アカウントに使用する Azure サブスクリプションを指定します。
 
-   * **[場所]** : ストレージ アカウントを作成する場所を指定します ("米国西部" など)。
+   * **[場所]** :ストレージ アカウントが作成される場所 ("米国西部" など) を指定します。
 
-   * **[リソース グループ]** : 仮想マシン用のリソース グループを指定します。 以下のオプションの 1 つを選択します。
-      * **[新規作成]** : 新しいリソース グループを作成することを指定します。
-      * **[Use Existing\(既存の使用\)]** : Azure アカウントに関連付けられているリソース グループの一覧から選択することを指定します。
+   * **リソース グループ**:仮想マシン用のリソース グループを指定します。 以下のオプションの 1 つを選択します。
+      * **新規作成**: 新しいリソース グループを作成することを指定します。
+      * **[Use Existing]\(既存の使用\)** : Azure アカウントに関連付けられているリソース グループの一覧から選択することを指定します。
 
 4. 上記のオプションをすべて指定したら、 **[OK]** をクリックします。
-
-## <a name="create-a-storage-container-in-intellij"></a>IntelliJ にストレージ コンテナーを作成する
-
-Azure Explorer を使用してストレージ コンテナーを作成するには、以下の手順を実行します。
-
-1. Azure Explorer ビューで、コンテナーを作成するストレージ アカウントを右クリックし、 **[BLOB コンテナーの作成]** をクリックします。
-
-   ![[BLOB コンテナーを作成する] コマンド][CC01]
-
-2. **[BLOB コンテナーを作成する]** ダイアログ ボックスで、コンテナーの名前を指定し、 **[OK]** をクリックします。 ストレージ コンテナーの名前付けの詳細については、「[コンテナー、BLOB、メタデータの名前付けと参照]」を参照してください。
-
-   ![[BLOB コンテナーの作成] ダイアログ ボックス][CC02]
-
-## <a name="delete-a-storage-container-in-intellij"></a>IntelliJ でストレージ コンテナーを削除する
-
-Azure Explorer を使用してストレージ コンテナーを削除するには、以下の手順を実行します。
-
-1. Azure Explorer ビューで、ストレージ コンテナーを右クリックし、 **[削除]** をクリックします。
-
-   ![[ストレージ コンテナーの削除] コマンド][DC01]
-
-2. 確認ウィンドウで **[はい]** をクリックします。
-
-   ![[ストレージ コンテナーの削除] 確認ウィンドウ][DC02]
 
 ## <a name="delete-a-storage-account-in-intellij"></a>IntelliJ でストレージ アカウントを削除する
 
@@ -111,7 +87,7 @@ Azure ストレージ アカウント、サイズ、および料金の詳細に�
 [Azure ストレージ アカウントについて]: /azure/storage/storage-create-storage-account
 [Azure Storage のレプリケーション]: /azure/storage/storage-redundancy
 [Azure Storage のスケーラビリティおよびパフォーマンスのターゲット]: /azure/storage/storage-scalability-targets
-[コンテナー、BLOB、メタデータの名前付けと参照]: https://go.microsoft.com/fwlink/?LinkId=255555
+[Naming and referencing containers, blobs, and metadata]: https://go.microsoft.com/fwlink/?LinkId=255555
 
 [Azure の Windows ストレージ アカウントのサイズ]: /azure/virtual-machines/virtual-machines-windows-sizes
 [Azure の Linux ストレージ アカウントのサイズ]: /azure/virtual-machines/virtual-machines-linux-sizes

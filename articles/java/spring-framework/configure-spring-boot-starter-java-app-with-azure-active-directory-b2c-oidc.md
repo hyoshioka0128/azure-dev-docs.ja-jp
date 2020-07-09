@@ -11,11 +11,12 @@ ms.service: active-directory-b2c
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
-ms.openlocfilehash: 4a6463df852511ab37af772598f9ae525d8a02e9
-ms.sourcegitcommit: 7474de4884bce076ce33ca77ae3584ba1598bbc6
+ms.openlocfilehash: dfd5dc1e81a5d25f1bb08f373bafae7e3c2fe61e
+ms.sourcegitcommit: e9accb9d82b5c633dffffd148974911398f2d096
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "85069422"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "86018634"
 ---
 # <a name="tutorial-secure-a-java-web-app-using-the-spring-boot-starter-for-azure-active-directory-b2c"></a>チュートリアル:Azure Active Directory B2C 用の Spring Boot Starter を使用して Java Web アプリをセキュリティで保護する
 
@@ -230,7 +231,7 @@ AAD B2C インスタンスといくつかのユーザー フローを作成し�
     >         password-reset: # optional
     > ```
     >
-    > *application.yml* ファイルは、GitHub の [Azure Active Directory B2C Spring Boot のサンプル](https://github.com/microsoft/azure-spring-boot/blob/master/azure-spring-boot-samples/azure-active-directory-b2c-oidc-spring-boot-sample/src/main/resources/application.yml)で入手できます。
+    > *application.yml* ファイルは、GitHub の [Azure Active Directory B2C Spring Boot のサンプル](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/spring/azure-spring-boot-samples/azure-spring-boot-sample-active-directory-b2c-oidc/src/main/resources/application.yml)で入手できます。
 
 7. *application.yml* ファイルを保存して閉じます。
 
@@ -322,7 +323,7 @@ AAD B2C インスタンスといくつかのユーザー フローを作成し�
     }
     ```
 
-14. *greeting.html* および *home.html* ファイルを [Azure AD B2C Spring Boot Sample](https://github.com/Microsoft/azure-spring-boot/tree/master/azure-spring-boot-samples/azure-active-directory-b2c-oidc-spring-boot-sample/src/main/resources/templates) から *src/main/resources/templates* にコピーし、`${your-profile-edit-user-flow}` と `${your-password-reset-user-flow}` を、前に作成したユーザー フローの名前に置き換えます。
+14. *greeting.html* および *home.html* ファイルを [Azure AD B2C Spring Boot Sample](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/spring/azure-spring-boot-samples/azure-spring-boot-sample-active-directory-b2c-oidc/src/main/resources/templates) から *src/main/resources/templates* にコピーし、`${your-profile-edit-user-flow}` と `${your-password-reset-user-flow}` を、前に作成したユーザー フローの名前に置き換えます。
 
 ## <a name="build-and-test-your-app"></a>アプリのビルドとテスト
 

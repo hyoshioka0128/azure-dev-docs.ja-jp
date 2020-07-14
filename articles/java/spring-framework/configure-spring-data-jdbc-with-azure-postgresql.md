@@ -7,11 +7,12 @@ ms.service: postgresql
 ms.tgt_pltfrm: multiple
 ms.author: judubois
 ms.topic: article
-ms.openlocfilehash: 91bcd54783e82ca598b4b64da261338ceae6b463
-ms.sourcegitcommit: 81577378a4c570ced1e9c6765f4a9eee8453c889
+ms.openlocfilehash: 91cb38146b123f8d05eb9ca89b88af9e776f74f6
+ms.sourcegitcommit: e9accb9d82b5c633dffffd148974911398f2d096
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84507750"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "86018519"
 ---
 # <a name="use-spring-data-jdbc-with-azure-database-for-postgresql"></a>Azure Database for PostgreSQL で Spring Data JDBC を使用する
 
@@ -21,6 +22,10 @@ ms.locfileid: "84507750"
 
 [!INCLUDE [spring-data-prerequisites.md](includes/spring-data-prerequisites.md)]
 
+## <a name="sample-application"></a>サンプル アプリケーション
+
+この記事では、サンプル アプリケーションをコーディングします。 より早く進めたい場合は、このアプリケーションは既にコーディングされており、[https://github.com/Azure-Samples/quickstart-spring-data-jdbc-postgresql](https://github.com/Azure-Samples/quickstart-spring-data-jdbc-postgresql) で入手できます。
+
 [!INCLUDE [spring-data-postgresql-setup.md](includes/spring-data-postgresql-setup.md)]
 
 ### <a name="generate-the-application-by-using-spring-initializr"></a>Spring Initializr を使用してアプリケーションを生成する
@@ -28,7 +33,7 @@ ms.locfileid: "84507750"
 以下のコマンドを使用して、コマンド ラインでアプリケーションを生成します。
 
 ```bash
-curl https://start.spring.io/starter.tgz -d dependencies=web,data-jdbc,postgresql -d baseDir=azure-database-workshop -d bootVersion=2.3.0.RELEASE -d javaVersion=8 | tar -xzvf -
+curl https://start.spring.io/starter.tgz -d dependencies=web,data-jdbc,postgresql -d baseDir=azure-database-workshop -d bootVersion=2.3.1.RELEASE -d javaVersion=8 | tar -xzvf -
 ```
 
 ### <a name="configure-spring-boot-to-use-azure-database-for-postgresql"></a>Azure Database for PostgreSQL を使用するように Spring Boot を構成する

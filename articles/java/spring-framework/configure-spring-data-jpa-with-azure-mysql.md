@@ -7,11 +7,12 @@ ms.service: mysql
 ms.tgt_pltfrm: multiple
 ms.author: judubois
 ms.topic: article
-ms.openlocfilehash: af4239b1757051a01be5625ff815aa189d42bbbc
-ms.sourcegitcommit: 7da78b35a847db9929554962dfcc47860f472fb9
+ms.openlocfilehash: d0ef85081b6a085c7d2c56079e8ccdc0d772fb43
+ms.sourcegitcommit: e9accb9d82b5c633dffffd148974911398f2d096
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85133675"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "86018563"
 ---
 # <a name="use-spring-data-jpa-with-azure-database-for-mysql"></a>Azure Database for MySQL で Spring Data JPA を使用する
 
@@ -21,6 +22,10 @@ ms.locfileid: "85133675"
 
 [!INCLUDE [spring-data-prerequisites.md](includes/spring-data-prerequisites.md)]
 
+## <a name="sample-application"></a>サンプル アプリケーション
+
+この記事では、サンプル アプリケーションをコーディングします。 より早く進めたい場合は、このアプリケーションは既にコーディングされており、[https://github.com/Azure-Samples/quickstart-spring-data-jpa-mysql](https://github.com/Azure-Samples/quickstart-spring-data-jpa-mysql) で入手できます。
+
 [!INCLUDE [spring-data-mysql-setup.md](includes/spring-data-mysql-setup.md)]
 
 ### <a name="generate-the-application-by-using-spring-initializr"></a>Spring Initializr を使用してアプリケーションを生成する
@@ -28,7 +33,7 @@ ms.locfileid: "85133675"
 次のように入力して、コマン ドラインでアプリケーションを生成します。
 
 ```bash
-curl https://start.spring.io/starter.tgz -d dependencies=web,data-jpa,mysql -d baseDir=azure-database-workshop -d bootVersion=2.3.0.RELEASE -d javaVersion=8 | tar -xzvf -
+curl https://start.spring.io/starter.tgz -d dependencies=web,data-jpa,mysql -d baseDir=azure-database-workshop -d bootVersion=2.3.1.RELEASE -d javaVersion=8 | tar -xzvf -
 ```
 
 ### <a name="configure-spring-boot-to-use-azure-database-for-mysql"></a>Azure Database for MySQL を使用するように Spring Boot を構成する

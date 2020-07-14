@@ -7,11 +7,12 @@ ms.service: sql-database
 ms.tgt_pltfrm: multiple
 ms.author: judubois
 ms.topic: article
-ms.openlocfilehash: 3d46e9954c9b9d21dd50368b27c7dde3d4a7efbf
-ms.sourcegitcommit: 81577378a4c570ced1e9c6765f4a9eee8453c889
+ms.openlocfilehash: cd0823246482f37822fab6326628e9aab01ebfbd
+ms.sourcegitcommit: e9accb9d82b5c633dffffd148974911398f2d096
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84507714"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "86018513"
 ---
 # <a name="use-spring-data-jdbc-with-azure-sql-database"></a>Azure SQL Database で Spring Data JDBC を使用する
 
@@ -21,6 +22,10 @@ ms.locfileid: "84507714"
 
 [!INCLUDE [spring-data-prerequisites.md](includes/spring-data-prerequisites.md)]
 
+## <a name="sample-application"></a>サンプル アプリケーション
+
+この記事では、サンプル アプリケーションをコーディングします。 より早く進めたい場合は、このアプリケーションは既にコーディングされており、[https://github.com/Azure-Samples/quickstart-spring-data-jdbc-sql-server](https://github.com/Azure-Samples/quickstart-spring-data-jdbc-sql-server) で入手できます。
+
 [!INCLUDE [spring-data-sql-server-setup.md](includes/spring-data-sql-server-setup.md)]
 
 ### <a name="generate-the-application-by-using-spring-initializr"></a>Spring Initializr を使用してアプリケーションを生成する
@@ -28,7 +33,7 @@ ms.locfileid: "84507714"
 以下のコマンドを実行し、コマンド ラインでアプリケーションを生成します。
 
 ```bash
-curl https://start.spring.io/starter.tgz -d dependencies=web,data-jdbc,sqlserver -d baseDir=azure-database-workshop -d bootVersion=2.3.0.RELEASE -d javaVersion=8 | tar -xzvf -
+curl https://start.spring.io/starter.tgz -d dependencies=web,data-jdbc,sqlserver -d baseDir=azure-database-workshop -d bootVersion=2.3.1.RELEASE -d javaVersion=8 | tar -xzvf -
 ```
 
 ### <a name="configure-spring-boot-to-use-azure-sql-database"></a>Azure SQL Database を使用するように Spring Boot を構成する

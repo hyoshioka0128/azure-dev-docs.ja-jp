@@ -7,11 +7,12 @@ ms.service: sql-database
 ms.tgt_pltfrm: multiple
 ms.author: judubois
 ms.topic: article
-ms.openlocfilehash: fbde7d54010bc68bf89ea757f08432a46e8f6fbb
-ms.sourcegitcommit: 81577378a4c570ced1e9c6765f4a9eee8453c889
+ms.openlocfilehash: 64316322d509d588f94185452d5c21fdee6e9ef1
+ms.sourcegitcommit: e9accb9d82b5c633dffffd148974911398f2d096
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84507769"
+ms.lasthandoff: 07/06/2020
+ms.locfileid: "86018651"
 ---
 # <a name="use-spring-data-r2dbc-with-azure-sql-database"></a>Azure SQL Database で Spring Data R2DBC を使用する
 
@@ -20,6 +21,10 @@ ms.locfileid: "84507769"
 [R2DBC](https://r2dbc.io/) は、従来のリレーショナル データベースにリアクティブ API を提供します。 これを Spring WebFlux と共に使用すると、非ブロッキング API を使用する完全にリアクティブな Spring Boot アプリケーションを作成できます。 "接続ごとに 1 つのスレッド" という従来の手法よりも優れたスケーラビリティが実現されます。
 
 [!INCLUDE [spring-data-prerequisites.md](includes/spring-data-prerequisites.md)]
+
+## <a name="sample-application"></a>サンプル アプリケーション
+
+この記事では、サンプル アプリケーションをコーディングします。 より早く進めたい場合は、このアプリケーションは既にコーディングされており、[https://github.com/Azure-Samples/quickstart-spring-data-r2dbc-sql-server](https://github.com/Azure-Samples/quickstart-spring-data-r2dbc-sql-server) で入手できます。
 
 [!INCLUDE [spring-data-sql-server-setup.md](includes/spring-data-sql-server-setup.md)]
 
@@ -30,7 +35,7 @@ ms.locfileid: "84507769"
 以下のコマンドを実行し、コマンド ラインでアプリケーションを生成します。
 
 ```bash
-curl https://start.spring.io/starter.tgz -d dependencies=webflux,data-r2dbc -d baseDir=azure-database-workshop -d bootVersion=2.3.0.RELEASE -d javaVersion=8 | tar -xzvf -
+curl https://start.spring.io/starter.tgz -d dependencies=webflux,data-r2dbc -d baseDir=azure-database-workshop -d bootVersion=2.3.1.RELEASE -d javaVersion=8 | tar -xzvf -
 ```
 
 ### <a name="add-the-reactive-azure-sql-database-driver-implementation"></a>リアクティブ Azure SQL Database ドライバーの実装を追加する

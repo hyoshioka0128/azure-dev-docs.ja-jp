@@ -1,13 +1,14 @@
 ---
-ms.openlocfilehash: 5d005f5a4906e5e2a55189d073383ab77f6c1860
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: a6e51b3fca9e2ae633a69b6372d7f622d2697812
+ms.sourcegitcommit: c6642cae6fdb5e3025ed66fcd4ef89792c3b436a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81674188"
+ms.lasthandoff: 07/15/2020
+ms.locfileid: "86405753"
 ---
-| **仮想マシンの作成** || 
+| サンプル  | 説明 |
 |---|---|
+| **仮想マシンの作成** ||
 | [仮想マシンの管理][1] | 仮想マシンを作成、変更、開始、停止、削除します。 |
 | [カスタム イメージからの仮想マシンの作成][2] | 仮想マシンのカスタム イメージを作成し、そのイメージを使用して新しい仮想マシンを作成します。 | 
 | [スナップショットから特殊化された VHD を使って仮想マシンを作成する][3] | 仮想マシンの OS とデータ ディスクからスナップショットを作成し、そのスナップショットからマネージド ディスクを作成した後、マネージド ディスクをアタッチすることにより仮想マシンを作成します。 |  

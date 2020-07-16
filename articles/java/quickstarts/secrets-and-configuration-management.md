@@ -3,12 +3,13 @@ title: Azure 上の Java アプリのシークレットと構成管理のクイ�
 description: Java アプリのシークレットと構成管理に関する Azure ドキュメントの概要に関する資料の一覧です。
 ms.date: 04/09/2020
 ms.topic: conceptual
-ms.openlocfilehash: 572472c5fabb0de053e50718f81b01d625ba9f98
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-java
+ms.openlocfilehash: 940f84400f4352c339eb1de6501aee7906d39831
+ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81669748"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86379606"
 ---
 # <a name="secrets-and-configuration-management-for-java-apps-on-azure"></a>Azure 上の Java アプリのシークレットと構成管理
 

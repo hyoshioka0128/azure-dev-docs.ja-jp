@@ -3,13 +3,13 @@ title: Azure Java 開発用の JDK で Docker イメージを使用する
 description: コマンド ライン インターフェイスを使用して Azure 用の Java Development Kit (JDK) で Docker イメージを使用する方法について説明します。
 ms.date: 04/09/2019
 ms.topic: conceptual
-ms.custom: seo-java-august2019, seo-java-september2019
-ms.openlocfilehash: b3a046563fa51efae32fd45e6154901539a8f4c8
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: seo-java-august2019, seo-java-september2019, devx-track-java
+ms.openlocfilehash: d1e66ac7e00f23fa4376d9dccddd301bbbe07bfd
+ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81670738"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86379826"
 ---
 # <a name="use-docker-with-a-java-development-kit-jdk-for-azure"></a>Docker を Azure 用 Java Development Kit (JDK) と共に使用する
 

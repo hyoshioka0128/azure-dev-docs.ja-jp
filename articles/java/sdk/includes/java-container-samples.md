@@ -1,12 +1,12 @@
 ---
-ms.openlocfilehash: ae3443ca54dc37e54b9c0bc5151cf35f5220a7ea
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 2f95eecf230db14292c6e449ab419af6f0c338c0
+ms.sourcegitcommit: c6642cae6fdb5e3025ed66fcd4ef89792c3b436a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81671658"
+ms.lasthandoff: 07/15/2020
+ms.locfileid: "86407948"
 ---
-|  |  |
+| サンプル  | 説明 |
 |---------|---------|
 | [Azure Container Registry を管理する][1] | Azure Container Registry を新しく作成し、新しいイメージを追加します。 | 
 | [Azure Container Service を管理する][2] | Kubernetes オーケストレーションを使用して Azure Container Service を作成します。 | 

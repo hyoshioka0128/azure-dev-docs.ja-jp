@@ -5,12 +5,13 @@ author: yevster
 ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 2/12/2020
-ms.openlocfilehash: c9b05ea7f7e7d181150e11afb7e145740fc5ab5a
-ms.sourcegitcommit: 81577378a4c570ced1e9c6765f4a9eee8453c889
+ms.custom: devx-track-java
+ms.openlocfilehash: fb6a7c108f99081eeeb2bd41f1366f4c38865fe6
+ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84507608"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86379736"
 ---
 # <a name="migrate-spring-cloud-applications-to-azure-spring-cloud"></a>Spring Cloud アプリケーションを Azure Spring Cloud に移行する
 
@@ -216,7 +217,7 @@ Spring Cloud アプリケーションのいずれかで認証または認可が�
 
 * アプリケーションのパフォーマンスおよび相互作用を監視するために、[分散トレースと Azure App Insights の使用](/azure/spring-cloud/spring-cloud-tutorial-distributed-tracing)を検討します。
 
-* 異常な状態を迅速に検出して対処するために、Azure Monitor のアラート ルールおよびアクション グループを追加することを検討します。 詳細については、「[チュートリアル:アラートとアクション グループを使用して Spring Cloud のリソースを監視する](/azure/spring-cloud/spring-cloud-tutorial-alerts-action-groups)」を参照してください。
+* 異常な状態を迅速に検出して対処するために、Azure Monitor のアラート ルールおよびアクション グループを追加することを検討します。 詳細については、[アラートとアクション グループを使用して Spring Cloud のリソースを監視する](/azure/spring-cloud/spring-cloud-tutorial-alerts-action-groups)」を参照してください。
 
 * 待機時間を短くし、信頼性とフォールト トレランスを高めるために、別のリージョンに Azure Spring Cloud デプロイをレプリケートすることを検討します。 [Azure Traffic Manager](/azure/traffic-manager) を使用してデプロイ間で負荷を分散するか、[Azure Front Door](/azure/frontdoor) を使用して SSL オフロードと DDoS 保護付きの Web アプリケーション ファイアウォールを追加します。
 

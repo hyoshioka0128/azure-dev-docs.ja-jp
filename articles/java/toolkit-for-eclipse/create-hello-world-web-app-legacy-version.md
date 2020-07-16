@@ -8,12 +8,13 @@ ms.service: app-service
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
-ms.openlocfilehash: 252ef1e31a71d996cb9e3856b48232ba24b66903
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-java
+ms.openlocfilehash: 55f980785ea8cf4988c6a82dfa700beef18e2dfc
+ms.sourcegitcommit: c6642cae6fdb5e3025ed66fcd4ef89792c3b436a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81671188"
+ms.lasthandoff: 07/15/2020
+ms.locfileid: "86405763"
 ---
 # <a name="create-a-hello-world-web-app-for-azure-using-the-legacy-toolkit-for-eclipse"></a>Eclipse 用のレガシ ツールキットを使用して Azure 用の Hello World Web アプリを作成する
 
@@ -117,10 +118,10 @@ Java Web アプリケーションを Azure にデプロイする方法はいく�
        ![[New Resource Group (新しいリソース グループ)] ダイアログ ボックス][08]
    * **[Name (名前)]** テキスト ボックスに、新しいリソース グループの名前を入力します。
    * **[Region (リージョン)]** ドロップダウン メニューで、リソース グループに適した Azure データ センターの場所を選択します。
-   * オプション: 既定では、Java 8 の最新の配布は、Azure によって Web アプリ コンテナーに JVM として自動的にデプロイされます。 ただし、Web アプリで必要な場合は、JVM の別のバージョンと配布を指定できます。 Web アプリの JDK を指定するには、 **[JDK]** タブをクリックし、次のオプションのいずれかを選択します。
-     * **[Deploy the default JDK offered by Azure Web Apps service (Azure Web Apps サービスによって提供される既定の JDK をデプロイする)]** : Java の最新の配布がデプロイされます。
-     * **[Deploy a 3rd party JDK available on Azure (Azure で利用できるサード パーティの JDK をデプロイする)]** : Microsoft Azure によって提供される JDK のリストから選択できます。
-     * **[Deploy my own JDK from this download location (このダウンロード場所から独自の JDK をデプロイする)]** : 独自の JDK 配布を指定できます。JDK 配布は、ZIP ファイルとしてパッケージ化し、公開されているダウンロード場所またはアクセスできる Azure Storage アカウントにアップロードする必要があります。
+   * 省略可能:既定では、Java 8 の最新のディストリビューションは、Azure によってお客様の Web アプリ コンテナーに JVM として自動的にデプロイされます。 ただし、Web アプリで必要な場合は、JVM の別のバージョンと配布を指定できます。 Web アプリの JDK を指定するには、 **[JDK]** タブをクリックし、次のオプションのいずれかを選択します。
+     * **Azure Web Apps サービスによって提供される既定の JDK をデプロイする**: このオプションでは、Java の最新のディストリビューションがデプロイされます。
+     * **[Deploy a 3rd party JDK available on Azure]\(Azure で利用できるサード パーティの JDK をデプロイする\)** : このオプションでは、Microsoft Azure によって提供される JDK のリストから選択できます。
+     * **[Deploy my own JDK from this download location]\(このダウンロード場所から独自の JDK をデプロイする\)** : このオプションでは独自の JDK ディストリビューションを指定できます。これは、ZIP ファイルとしてパッケージ化し、公開されているダウンロード場所またはアクセスできる Azure Storage アカウントにアップロードする必要があります。
           
        ![[New Web App Container (新しい Web アプリ コンテナー)] ダイアログ ボックス][07b]
 
@@ -128,7 +129,7 @@ Java Web アプリケーションを Azure にデプロイする方法はいく�
 
    h. **[App Service Plan (App Service プラン)]** ドロップダウン メニューには、選択したリソース グループに関連付けられた App Service プランが表示されます。 (App Service プランでは、Web アプリの場所、価格レベル、コンピューティング インスタンス サイズなどの情報を指定します。 単一の App Service プランを複数の Web Apps に使用できます。そのため、App Service プランは、特定の Web アプリのデプロイとは別に保持されます。)
       
-       You can select an existing App Service Plan (if you have any) and skip to step h below, or use the following these steps to create a new App Service Plan:
+      (所有している場合は) 既存の App Service プランを選択して、下記のステップ h にスキップするか、以下のステップに従って、新しい App Service プランを作成します。
       
       * **[New (新規)]**
       * **[New App Service Plan (新しい App Service プラン)]** ダイアログ ボックスが表示されます。

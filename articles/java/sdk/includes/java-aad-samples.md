@@ -1,12 +1,12 @@
 ---
-ms.openlocfilehash: 7efca5bce2ffeaaa9930bb91d0787b8643391f4a
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: d19bb343e8db9e80f3919264944b9d526e698f0f
+ms.sourcegitcommit: c6642cae6fdb5e3025ed66fcd4ef89792c3b436a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81671898"
+ms.lasthandoff: 07/15/2020
+ms.locfileid: "86407960"
 ---
-|  |  |
+| サンプル  | 説明 |
 |---------|---------|
 | [Java Web アプリケーションへの Azure AD の統合][1] | Java Web アプリで OAuth2 認証を設定します。
 | [Web アプリケーションでの Azure AD Graph API の呼び出し][2] | ディレクトリ データを読み取り、Azure AD Graph API からクエリを実行します。 |

@@ -3,15 +3,16 @@ title: JavaScript 用 Azure モジュール
 description: JavaScript 用 Azure 管理/サービス モジュールの概要
 ms.date: 06/17/2017
 ms.topic: article
-ms.openlocfilehash: 193e2d3c92a9c2b8e3970e7a130246947a7cc4da
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.openlocfilehash: 2d01dcc2095bc91fb9695c0299b603b86c4719f0
+ms.sourcegitcommit: a7f2019727a954836b803493807664d4e4574ee3
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85792562"
+ms.lasthandoff: 07/13/2020
+ms.locfileid: "86286449"
 ---
 # <a name="azure-modules-for-javascript"></a>JavaScript 用 Azure モジュール
 
-JavaScript アプリケーションから JavaScript 用 Azure モジュールを使用して Azure リソースを管理し、サービスに接続します。 このコードは、プロジェクト内で [npm モジュール](/api/?view=azure-node-latest.md) として使用することができます。
+JavaScript アプリケーションから JavaScript 用 Azure モジュールを使用して Azure リソースを管理し、サービスに接続します。 このコードは、プロジェクト内で [npm モジュール](https://docs.microsoft.com/javascript/api/overview/azure/sql?view=azure-node-latest)として使用することができます。
 
 ## <a name="manage-azure-resources"></a>Azure のリソースを管理する
 
@@ -74,7 +75,7 @@ msRestAzure.loginWithServicePrincipalSecret(clientId, secret, domain, function (
 });
 ```
 
-モジュールの全一覧については[インストール手順](/api/?view=azure-node-latest)を参照してください。また、自分の Azure サブスクリプションに対して認証を設定したり、リソースの作成や更新を行うサンプル コードを実行したりする方法については、[概要の記事](../index.yml)を参照してください。
+モジュールの全一覧については[インストール手順](https://docs.microsoft.com/javascript/api/overview/azure/sql?view=azure-node-latest)を参照してください。また、自分の Azure サブスクリプションに対して認証を設定したり、リソースの作成や更新を行うサンプル コードを実行したりする方法については、[概要の記事](../index.yml)を参照してください。
 
 ## <a name="connect-to-azure-services"></a>Azure サービスへの接続
 

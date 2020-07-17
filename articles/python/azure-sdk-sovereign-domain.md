@@ -1,14 +1,15 @@
 ---
 title: Python 用 Azure ライブラリを使用してすべてのリージョンに接続する - マルチクラウド
 description: msrestazure の azure_cloud モジュールを使用して、さまざまなソブリン リージョンで Azure に接続する方法
-ms.date: 06/09/2020
+ms.date: 07/13/2020
 ms.topic: conceptual
 ms.custom: seo-python-october2019
-ms.openlocfilehash: c8dc34260f4a37090af8c8408f7da70cf1de1f23
-ms.sourcegitcommit: b3e506c6f140d91e6fdd9dcadf22ab1aa67f6978
+ms.openlocfilehash: 25e8851a8812782712ff65ec4627a0d2ead848ae
+ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84947510"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86377906"
 ---
 # <a name="multi-cloud-connect-to-all-regions-with-the-azure-libraries-for-python"></a>マルチクラウド:Python 用 Azure ライブラリを使用してすべてのリージョンに接続する
 
@@ -16,9 +17,18 @@ Python 用 Azure ライブラリを使用して、Azure が[利用可能な](htt
 
 既定では、Azure ライブラリはグローバル Azure に接続するように構成されています。
 
-## <a name="using-pre-declared-cloud-definition"></a>事前に宣言されているクラウド定義の使用
+## <a name="using-pre-defined-sovereign-cloud-constants"></a>ソブリン クラウドの定義済み定数の使用
 
-`msrestazure` (0.4.11 以降) の `azure_cloud` モジュールを使用します。
+ソブリン クラウドの定義済み定数は、`msrestazure` (0.4.11+) の `azure_cloud` モジュールによって提供されます。
+
+- `AZURE_PUBLIC_CLOUD`
+- `AZURE_CHINA_CLOUD`
+- `AZURE_US_GOV_CLOUD`
+- `AZURE_GERMAN_CLOUD`
+
+定数をコード全体に適用するには、上記の一覧のいずれかの値を使用して `AZURE_CLOUD` という名前の環境変数を定義します (`AZURE_PUBLIC_CLOUD` が既定値です)。
+
+特定の操作内に定数を適用するには、`msrest.azure_cloud` から目的の定数をインポートし、資格情報とクライアント オブジェクトを作成するときにそれを使用します。
 
 ```python
 from msrestazure.azure_cloud import AZURE_CHINA_CLOUD
@@ -32,16 +42,9 @@ client = ResourceManagementClient(credentials,
     subscription_id, base_url=AZURE_CHINA_CLOUD.endpoints.resource_manager)
 ```
   
-使用可能なクラウド定義は次のとおりです。
-
-- `AZURE_PUBLIC_CLOUD`
-- `AZURE_CHINA_CLOUD`
-- `AZURE_US_GOV_CLOUD`
-- `AZURE_GERMAN_CLOUD`
-
 ## <a name="using-your-own-cloud-definition"></a>独自のクラウド定義の使用
 
-このコードでは、プライベート クラウド (たとえば、Azure Stack 上に構築されたもの) の Azure Resource Manager エンドポイントで `get_cloud_from_metadata_endpoint` を使用します。
+次のコードでは、プライベート クラウド (たとえば、Azure Stack 上に構築されたもの) の Azure Resource Manager エンドポイントで `get_cloud_from_metadata_endpoint` を使用します。
 
 ```python
 from msrestazure.azure_cloud import get_cloud_from_metadata_endpoint
@@ -58,7 +61,7 @@ client = ResourceManagementClient(credentials, subscription_id,
 
 ## <a name="using-adal"></a>ADAL の使用
 
-別のリージョンに接続するには、いくつかの点を考慮する必要があります。
+別のリージョンに接続する場合は、次の事項を考慮してください。
 
 - どのエンドポイントにトークンを要求するか (認証)
 - そのトークンをどのエンドポイントで使用するか (使用法)

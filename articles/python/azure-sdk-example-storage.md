@@ -3,13 +3,14 @@ title: Python 用 Azure ライブラリを使用して Azure Storage をプロ�
 description: Azure SDK for Python ライブラリを使用して、Azure Storage アカウントに BLOB コンテナーをプロビジョニングし、そのコンテナーにファイルをアップロードします。
 ms.date: 05/29/2020
 ms.topic: conceptual
-ms.openlocfilehash: 74f6e21b80505cd0b63061a76f4811b0c687d1a9
-ms.sourcegitcommit: 5ebbc1c06f98e29a146764661efbf34957020fe8
+ms.openlocfilehash: 648abeb105f1c575d5454af09cd2279c059d7b98
+ms.sourcegitcommit: c6642cae6fdb5e3025ed66fcd4ef89792c3b436a
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84716100"
+ms.lasthandoff: 07/15/2020
+ms.locfileid: "86405723"
 ---
-# <a name="example-use-the-azure-libraries-with-azure-storage"></a>例:Azure Storage で Azure ライブラリを使用する
+# <a name="example-provision-azure-storage-using-the-azure-libraries-for-python"></a>例:Python 用 Azure ライブラリを使用して Azure Storage をプロビジョニングする
 
 この記事では、Python スクリプトで Azure 管理ライブラリを使用して、Azure Storage アカウントと Blob Storage コンテナーを含むリソース グループをプロビジョニングする方法について説明します。 ([同等の Azure CLI コマンド](#for-reference-equivalent-azure-cli-commands)については、この記事の後半で説明します。)
 

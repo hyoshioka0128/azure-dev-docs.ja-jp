@@ -10,12 +10,13 @@ ms.service: cosmos-db
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: data-services
-ms.openlocfilehash: eb13be08f7fc5eb7b907360571fbc1db1abf0d26
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-java
+ms.openlocfilehash: 85d0ff61efef01049fd17ae0a30fd67ff28109d8
+ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81669168"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86379176"
 ---
 # <a name="how-to-use-the-spring-boot-starter-with-the-azure-cosmos-db-sql-api"></a>Azure Cosmos DB SQL API で Spring Boot Starter を使用する方法
 
@@ -58,17 +59,16 @@ Azure Cosmos DB は、開発者が SQL、MongoDB、Graph、Table API などの�
 
 ## <a name="create-a-simple-spring-boot-application-with-the-spring-initializr"></a>Spring Initializr でシンプルな Spring Boot アプリケーションを作成する
 
-次の手順を使用して、Azure サポートで新しい Spring Boot アプリケーション プロジェクトを作成します。 別の方法として、[azure-spring-boot](https://github.com/microsoft/azure-spring-boot)リポジトリの [azure-cosmosdb-spring-boot-sample](https://github.com/microsoft/azure-spring-boot/tree/master/azure-spring-boot-samples/azure-cosmosdb-spring-boot-sample) サンプルを使用することもできます。 その後、そのまま「[アプリのビルドとテスト](#build-and-test-your-app)」に進むことができます。
+次の手順を使用して、Azure サポートで新しい Spring Boot アプリケーション プロジェクトを作成します。 別の方法として、[azure-sdk-for-java](https://github.com/Azure/azure-sdk-for-java)リポジトリの [azure-spring-boot-sample-cosmosdb](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/spring/azure-spring-boot-samples/azure-spring-boot-sample-cosmosdb) サンプルを使用することもできます。 その後、そのまま「[アプリのビルドとテスト](#build-and-test-your-app)」に進むことができます。
 
-1. [https://www.microsoft.com](<https://start.spring.io/>) を参照します。
+1. <https://start.spring.io/> を参照します。
 
 1. **Java** で **Maven プロジェクト**を生成することを指定し、**Spring Boot** のバージョンを指定して、アプリケーションの **[グループ]** と **[アーティファクト]** に名前を入力します。依存関係に **Azure サポート**を追加してから、 **[プロジェクトの生成]** のボタンをクリックします。
 
     ![基本的な Spring Initializr オプション][SI01]
 
     > [!NOTE]
-    >
-    > Spring Initializr では、 **[グループ]** と **[アーティファクト]** の名前を使用してパッケージ名を作成します (例: *com.example.wintiptoysdata*)。
+    > Spring Initializr では、 **[グループ]** と **[アーティファクト]** の名前を使用してパッケージ名を作成します (例: *com.example.wingtiptoysdata*)。
 
 1. メッセージが表示されたら、ローカル コンピューター上のパスにプロジェクトをダウンロードして、ファイルを抽出します。
 
@@ -412,7 +412,7 @@ Azure Cosmos DB と Java の使用について詳しくは、次の記事をご�
 
 * [Azure Cosmos DB のドキュメント]。
 
-* [Azure Cosmos DB: ドキュメント データベースを Java と Azure portal で作成する][Build a SQL API app with Java]
+* [Azure Cosmos DB:Java と Azure portal を使用してドキュメント データベースを作成する][Build a SQL API app with Java]
 
 * [Azure Cosmos DB SQL API の Spring Data]
 
@@ -432,9 +432,9 @@ Java での Azure の使用の詳細については、「[Java 開発者向け�
 
 [Azure Cosmos DB のドキュメント]: /azure/cosmos-db/
 [Java 開発者向けの Azure]: /azure/developer/java/
-[Build a SQL API app with Java]: /azure/cosmos-db/create-sql-api-java 
+[Build a SQL API app with Java]: /azure/cosmos-db/create-sql-api-java
 [Azure Cosmos DB SQL API の Spring Data]: https://azure.microsoft.com/blog/spring-data-azure-cosmos-db-nosql-data-access-on-azure/
-[Azure の Spring Boot Cosmos DB Starter]: https://github.com/microsoft/azure-spring-boot/tree/master/azure-spring-boot-starters/azure-cosmosdb-spring-boot-starter
+[Azure の Spring Boot Cosmos DB Starter]: https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/spring/azure-spring-boot-starter-cosmosdb
 [無料の Azure アカウント]: https://azure.microsoft.com/pricing/free-trial/
 [Azure DevOps と Java の操作]: https://azure.microsoft.com/services/devops/java/
 [MSDN サブスクライバーの特典]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/

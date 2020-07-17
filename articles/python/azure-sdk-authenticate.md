@@ -3,12 +3,12 @@ title: Azure サービスを使用して Python アプリケーションを認�
 description: Azure ライブラリを使用して、Azure サービスで Python アプリを認証するために必要な資格情報オブジェクトを取得する方法
 ms.date: 05/12/2020
 ms.topic: conceptual
-ms.openlocfilehash: 5a882a6cc18ef20a8a26650bacaa7bfe94e90771
-ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
+ms.openlocfilehash: 337c520ba163c4029c4352c10d6ca865caf34755
+ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84329430"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86377996"
 ---
 # <a name="how-to-authenticate-python-apps-with-azure-services"></a>Azure サービスを使用して Python アプリを認証する方法
 
@@ -86,13 +86,15 @@ subscription = next(subscription_client.subscriptions.list())
 print(subscription.subscription_id)
 ```
 
-現在、`DefaultAzureCredential` の使用は、Azure SDK クライアント ("データ プレーン") ライブラリに限定されます。このコード例に示したような、名前が `azure-mgmt` で始まる Azure SDK 管理ライブラリでは正しく機能しません。 `subscription_client.subscriptions.list()` を呼び出すと、"'DefaultAzureCredential' オブジェクトに属性 'signed_session' が存在しない" という内容のかなり不明瞭なエラーが発生します。 現在の SDK 管理ライブラリは、資格情報オブジェクトに `signed_session` プロパティが存在することを前提としていますが、`DefaultAzureCredential` にはこのプロパティが欠落しています。このエラーが発生するのは、そのためです。
+現在、`DefaultAzureCredential` が動作するのは、Azure SDK クライアント ("データ プレーン") ライブラリと、このコード例で示したような (名前が `azure-mgmt` で始まる) Azure SDK 管理ライブラリのプレビュー バージョンのみです。 つまり、現在のリリース ライブラリでは、`subscription_client.subscriptions.list()` を呼び出すと、"'DefaultAzureCredential' オブジェクトに属性 'signed_session' が存在しない" という内容のかなり不明瞭なエラーが発生します。 現在の SDK 管理ライブラリは、資格情報オブジェクトに `signed_session` プロパティが存在することを前提としていますが、`DefaultAzureCredential` にはこのプロパティが欠落しています。このエラーが発生するのは、そのためです。
 
-今後 2020 年内にこれらのライブラリが更新されるまでは、次の 2 とおりの方法でエラーを回避してください。
+このエラーは、「[Azure 管理ライブラリへの新しいプレビューの導入](https://devblogs.microsoft.com/azure-sdk/introducing-new-previews-for-azure-management-libraries/)」というブログ記事で説明されているように、プレビュー管理ライブラリを使用することで回避できます。
+
+または、次の方法を使用できます。
 
 1. この記事の後続のセクションで取り上げる他のいずれかの認証方法を使用します。SDK 管理ライブラリ "*のみ*" を使用し、なおかつクラウドにデプロイされないコードであれば、これらの認証方法がうまく機能します。この場合、利用できるのはローカルのサービス プリンシパルのみです。
 
-1. Azure SDK エンジニアリング チームのメンバーから提供されている [CredentialWrapper クラス (cred_wrapper.py)](https://gist.github.com/lmazuel/cc683d82ea1d7b40208de7c9fc8de59d) を `DefaultAzureCredential` の代わりに使用します。 更新された管理ライブラリが Microsoft からリリースされたら、`DefaultAzureCredential` に戻すだけで済みます。 この方法の利点は、SDK クライアントと管理ライブラリの両方で同じ資格情報を使用できる点、またローカルでもクラウドでも使用できる点です。
+1. Azure SDK エンジニアリング チームのメンバーから提供されている [CredentialWrapper クラス (cred_wrapper.py)](https://gist.github.com/lmazuel/cc683d82ea1d7b40208de7c9fc8de59d) を `DefaultAzureCredential` の代わりに使用します。 更新された管理ライブラリがプレビューから移行したら、`DefaultAzureCredential` に戻すだけで済みます。 この方法の利点は、SDK クライアントと管理ライブラリの両方で同じ資格情報を使用できる点、またローカルでもクラウドでも使用できる点です。
 
     プロジェクト フォルダーに *cred_wrapper.py* のコピーがダウンロード済みである場合、先ほどのコードは次のようになります。
 
@@ -106,7 +108,7 @@ print(subscription.subscription_id)
     print(subscription.subscription_id)
     ```
 
-    管理ライブラリが更新されたら、`DefaultAzureCredential` を直接使用できます。
+    繰り返しますが、管理ライブラリがプレビューから移行したら、`DefaultAzureCredential` を直接使用できます。
 
 ## <a name="other-authentication-methods"></a>その他の認証方法
 

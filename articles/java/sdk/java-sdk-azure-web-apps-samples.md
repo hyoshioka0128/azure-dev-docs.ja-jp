@@ -7,25 +7,26 @@ ms.date: 04/16/2017
 ms.topic: article
 ms.service: multiple
 ms.assetid: 43633e5c-9fb1-4807-ba63-e24c126754e2
-ms.custom: seo-java-august2019, seo-java-september2019
-ms.openlocfilehash: 30884958dd4c829cf7b268715de7c79f3a786724
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: seo-java-august2019, seo-java-september2019, devx-track-java
+ms.openlocfilehash: 585cb33b6eabc5e353ddda37f687bcf0bacc6901
+ms.sourcegitcommit: c6642cae6fdb5e3025ed66fcd4ef89792c3b436a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81674178"
+ms.lasthandoff: 07/15/2020
+ms.locfileid: "86405703"
 ---
 # <a name="azure-management-libraries-for-java---web-app-samples"></a>Azure Management Libraries for Java - Web アプリ サンプル 
 
 次の表は、Web アプリの作成と構成に利用できる Java ソースへのリンク集です。
 
-| **アプリの作成** ||
+| サンプル | 説明 |
 |---|---|
+| **アプリの作成** ||
 | [Web アプリを作成して FTP または GitHub からデプロイする][1] | ローカル Git、FTP、GitHub の継続的インテグレーションから Web アプリをデプロイします。 |
 | [Web アプリを作成してデプロイ スロットを管理する][2] | Web アプリを作成してステージング スロットにデプロイした後、スロット間でデプロイをスワップします。 |
-| **アプリケーションの構成** ||
+| **アプリを構成する** ||
 | [Web アプリを作成してカスタム ドメインを構成する][3] | カスタム ドメインと自己署名 SSL 証明書を使った Web アプリを作成します。 |
-| **アプリのスケール** ||
+| **アプリのスケーリング** ||
 | [複数のリージョンにわたる高可用性によって Web アプリをスケーリングする][4] | 3 つの異なる地理的リージョンに Web アプリをスケーリングし、Azure Traffic Manager を使用して、1 つのエンドポイントを介して利用できるようにします。 | 
 | **アプリのリソースへの接続** ||
 | [Web アプリをストレージ アカウントに接続する][5] | Azure ストレージ アカウントを作成し、そのストレージ アカウントの接続文字列をアプリケーション設定に追加します。 |

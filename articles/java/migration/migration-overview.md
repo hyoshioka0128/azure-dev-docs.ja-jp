@@ -5,11 +5,13 @@ author: yevster
 ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 1/20/2020
-ms.openlocfilehash: 51babfacd133ed0ba0d9b5bc728c4373e137022c
-ms.sourcegitcommit: 81577378a4c570ced1e9c6765f4a9eee8453c889
+ms.custom: devx-track-java
+ms.openlocfilehash: 3487cc326222a013c7f0acec396ed343c8bd9621
+ms.sourcegitcommit: c6642cae6fdb5e3025ed66fcd4ef89792c3b436a
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84507468"
+ms.lasthandoff: 07/15/2020
+ms.locfileid: "86405713"
 ---
 # <a name="migrate-java-applications-to-azure"></a>Java アプリケーションを Azure に移行する
 
@@ -77,7 +79,7 @@ Java EE 仕様によって提供される機能のみに依存するアプリケ
 
 次のグリッドを使用して、アプリケーションの種類で考えられる宛先を特定します。 ご覧のとおり、AKS と Virtual Machines ではすべてのアプリケーションの種類がサポートされますが、次のセクションで示すように、チームはより多くの責任を担う必要があります。
 
-|   |アプリ<br>サービス<br>Java SE|アプリ<br>サービス<br>Tomcat|Azure<br>Spring<br>クラウド|AKS|仮想<br>マシン|
+|移行先&nbsp;→<br><br>アプリケーションの&nbsp;種類&nbsp;↓|アプリ<br>サービス<br>Java SE|アプリ<br>サービス<br>Tomcat|Azure<br>Spring<br>クラウド|AKS|仮想<br>マシン|
 |---|---|---|---|---|---|---|
 | Spring Boot/JAR アプリケーション                                    |&#x2714;|        |&#x2714;|&#x2714;|&#x2714;|
 | Spring Cloud/マイクロサービス                                      |        |        |&#x2714;|&#x2714;|&#x2714;|
@@ -94,12 +96,12 @@ Java EE 仕様によって提供される機能のみに依存するアプリケ
 
 次のグリッドを使用して、移行後に各移行先によってチームに課せられる役割を把握してください。
 
-チームは、"&#x1F449;" で示されるタスクを継続的に担います。 これらすべての役割を果たすために、堅牢で高度に自動化されたプロセスを実装することをお勧めします。 
+チームは、"&#x1F449;" で示されるタスクを継続的に担います。 これらすべての役割を果たすために、堅牢で高度に自動化されたプロセスを実装することをお勧めします。
 
 > [!NOTE]
 > これは、すべての役割を網羅したリストではありません。
 
-|                                                                       | アプリ<br>サービス | Azure<br>Spring<br>クラウド | AKS | 仮想<br>マシン |
+|移行先&nbsp;→<br><br>タスク&nbsp;↓                            | アプリ<br>サービス | Azure<br>Spring<br>クラウド | AKS | 仮想<br>マシン |
 |---|---|---|---|---|
 | ライブラリを更新する<br>(脆弱性の修復を含む)                 | &#x1F449;   | &#x1F449;   | &#x1F449;   | &#x1F449; |
 | アプリケーション サーバーを更新する<br>(脆弱性の修復を含む)    | ![Azure][1] | ![Azure][1] | &#x1F449;   | &#x1F449; |

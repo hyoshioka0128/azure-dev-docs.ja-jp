@@ -3,15 +3,16 @@ title: Azure SDK for Python で Azure Storage を使用する
 description: Azure SDK for Python ライブラリを使用して、Azure Storage アカウントの事前にプロビジョニングされた BLOB コンテナーにアクセスし、そのコンテナーにファイルをアップロードします。
 ms.date: 06/15/2020
 ms.topic: conceptual
-ms.openlocfilehash: 9015017b1e0b2839e4a3986950625fb8a498717e
-ms.sourcegitcommit: 74ff4dec3b0556201c243e8c2302555b08dd79e9
+ms.openlocfilehash: 41c2c586678084e30f9f5b2bff3c773b46f5463d
+ms.sourcegitcommit: c6642cae6fdb5e3025ed66fcd4ef89792c3b436a
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/16/2020
-ms.locfileid: "84812672"
+ms.lasthandoff: 07/15/2020
+ms.locfileid: "86405733"
 ---
-# <a name="example-use-the-azure-libraries-with-azure-storage"></a>例:Azure Storage で Azure ライブラリを使用する
+# <a name="example-access-azure-storage-using-the-azure-libraries-for-pyhon"></a>例:Python 用 Azure ライブラリを使用して Azure Storage にアクセスする
 
-この例では、Python アプリケーション コードで Azure クライアント ライブラリを使用して、その Blob Storage コンテナーにファイルをアップロードする方法を示しています。 この例は、[例:Azure Storage のプロビジョニング](azure-sdk-example-storage.md)に示されているリソースをプロビジョニングしていることを前提としています。
+この例では、Python アプリケーション コードで Azure クライアント ライブラリを使用して、その Blob Storage コンテナーにファイルをアップロードする方法を示しています。 この例は、[Azure Storage のプロビジョニングの例](azure-sdk-example-storage.md)に示されているリソースをプロビジョニングしていることを前提としています。
 
 特に記載のない限り、この記事で使用されているコマンドはいずれも、Linux と Mac OS の bash および Windows のコマンド シェルで同じように動作します。
 
@@ -46,7 +47,7 @@ Hello there, Azure Storage. I'm a friendly file ready to be stored in a blob.
 
 ## <a name="4-use-blob-storage-from-app-code"></a>4:アプリ コードから Blob Storage を使用する
 
-以降のセクション (番号 4a と 4b) では、[例: Azure Storage をプロビジョニングする](azure-sdk-example-storage.md) でプロビジョニングされた BLOB コンテナーにアクセスする 2 つの方法を示します。
+以降のセクション (番号 4a と 4b) では、[Azure Storage のプロビジョニングの例](azure-sdk-example-storage.md)に関するページでプロビジョニングされた BLOB コンテナーにアクセスする 2 つの方法を示します。
 
 [1 つ目の方法 (以下のセクション 4a)](#4a-use-blob-storage-with-authentication) は、[Python アプリの認証方法](azure-sdk-authenticate.md#authenticate-with-defaultazurecredential)に関する記事で説明されている `DefaultAzureCredential` を使用してアプリを認証します。 この方法では最初に、アプリの ID に適切なアクセス許可を割り当てる必要があります。これが、推奨されるプラクティスです。
 

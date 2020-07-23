@@ -8,18 +8,18 @@ ms.tgt_pltfrm: multiple
 ms.author: judubois
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: a30f06798591b0c76b84ab523961e9b4847f1132
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 481b3fce5d7d5f62cf4639d53d86c092e364a74f
+ms.sourcegitcommit: 04ee2325e3efd9b7797102b4cd9d5db009c38a42
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86378956"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86945810"
 ---
 # <a name="use-spring-data-jdbc-with-azure-database-for-mysql"></a>Azure Database for MySQL で Spring Data JDBC を使用する
 
 このトピックでは、[Spring Data JDBC](https://spring.io/projects/spring-data-jdbc) を使って [Azure Database for MySQL](https://docs.microsoft.com/azure/mysql/) から情報を格納および取得するサンプル アプリケーションを作成する方法を説明します。
 
-[JDBC](https://en.wikipedia.org/wiki/Java_Database_Connectivity) は、従来のリレーショナル データベースに接続するための標準の Java API です。
+[JDBC](https://jcp.org/en/jsr/detail?id=221) は、従来のリレーショナル データベースに接続するための標準の Java API です。
 
 [!INCLUDE [spring-data-prerequisites.md](includes/spring-data-prerequisites.md)]
 

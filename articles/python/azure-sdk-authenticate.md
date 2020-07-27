@@ -3,12 +3,12 @@ title: Azure サービスを使用して Python アプリケーションを認�
 description: Azure ライブラリを使用して、Azure サービスで Python アプリを認証するために必要な資格情報オブジェクトを取得する方法
 ms.date: 05/12/2020
 ms.topic: conceptual
-ms.openlocfilehash: 337c520ba163c4029c4352c10d6ca865caf34755
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 1694f85b2ad41a12865bb3d367b1b8498ab474bb
+ms.sourcegitcommit: 04ee2325e3efd9b7797102b4cd9d5db009c38a42
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86377996"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86945820"
 ---
 # <a name="how-to-authenticate-python-apps-with-azure-services"></a>Azure サービスを使用して Python アプリを認証する方法
 
@@ -69,7 +69,7 @@ retrieved_secret = client.get_secret("secret-name-01")
 ### <a name="using-defaultazurecredential-with-sdk-management-libraries"></a>SDK 管理ライブラリで DefaultAzureCredential を使用する
 
 ```python
-# WARNING: this code presently fails!
+# WARNING: this code presently fails with current release libraries!
 
 from azure.identity import DefaultAzureCredential
 
@@ -86,7 +86,7 @@ subscription = next(subscription_client.subscriptions.list())
 print(subscription.subscription_id)
 ```
 
-現在、`DefaultAzureCredential` が動作するのは、Azure SDK クライアント ("データ プレーン") ライブラリと、このコード例で示したような (名前が `azure-mgmt` で始まる) Azure SDK 管理ライブラリのプレビュー バージョンのみです。 つまり、現在のリリース ライブラリでは、`subscription_client.subscriptions.list()` を呼び出すと、"'DefaultAzureCredential' オブジェクトに属性 'signed_session' が存在しない" という内容のかなり不明瞭なエラーが発生します。 現在の SDK 管理ライブラリは、資格情報オブジェクトに `signed_session` プロパティが存在することを前提としていますが、`DefaultAzureCredential` にはこのプロパティが欠落しています。このエラーが発生するのは、そのためです。
+現在、`DefaultAzureCredential` が動作するのは、Azure SDK クライアント ("データ プレーン") ライブラリと、このコード例で示したような Azure SDK 管理ライブラリのプレビュー バージョン (つまり、名前が `azure-mgmt` で始まるライブラリの最新のプレビュー バージョン) のみです。 つまり、現在のリリース ライブラリでは、`subscription_client.subscriptions.list()` を呼び出すと、"'DefaultAzureCredential' オブジェクトに属性 'signed_session' が存在しない" という内容のかなり不明瞭なエラーが発生します。 現在の SDK 管理ライブラリは、資格情報オブジェクトに `signed_session` プロパティが存在することを前提としていますが、`DefaultAzureCredential` にはこのプロパティが欠落しています。このエラーが発生するのは、そのためです。
 
 このエラーは、「[Azure 管理ライブラリへの新しいプレビューの導入](https://devblogs.microsoft.com/azure-sdk/introducing-new-previews-for-azure-management-libraries/)」というブログ記事で説明されているように、プレビュー管理ライブラリを使用することで回避できます。
 

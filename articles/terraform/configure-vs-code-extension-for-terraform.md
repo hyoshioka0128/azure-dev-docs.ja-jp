@@ -234,11 +234,11 @@ Terraform *plan* の結果に満足したら、*apply* コマンドを実行で�
 
 この演習では、Terraform *compute* モジュールを Visual Studio Code 環境に読み込む方法について説明します。
 
-### <a name="clone-the-terraform-azurerm-compute-module"></a>terraform-azurerm-compute モジュールの複製
+### <a name="clone-the-terraform-azurerm-compute-module"></a>terraform-azurerm-compute モジュールのクローン
 
 1. [こちらのリンク](https://github.com/Azure/terraform-azurerm-compute)を使用して、GitHub 上の Terraform Azure Rm Compute モジュールにアクセスします。
 
-1. **[複製またはダウンロード]** を選択します。
+1. **[Clone or download]\(クローンまたはダウンロード\)** を選択します。
 
     ![複製またはダウンロード](media/configure-vs-code-extension-for-terraform/tf-clone-with-https.png)
 

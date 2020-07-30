@@ -3,12 +3,12 @@ title: チュートリアル - Terraform を使用して Azure でハブ スポ�
 description: Azure で Terraform を使用して、ハイブリッド ネットワーク参照アーキテクチャ全体を作成する方法について説明します。
 ms.topic: tutorial
 ms.date: 10/26/2019
-ms.openlocfilehash: 8e9a120168f922194f903cc9a6f4be7c933ee62b
-ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
+ms.openlocfilehash: 4c85ef46ed6fc5d6002f8eb0d1b0dc0e47992e6d
+ms.sourcegitcommit: 8cd0ddf1651c3b64bb72dedc2890108c2cfe3bcb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84329350"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87334317"
 ---
 # <a name="tutorial-create-a-hub-and-spoke-hybrid-network-topology-in-azure-using-terraform"></a>チュートリアル:Terraform を使用して Azure でハブ スポーク ハイブリッド ネットワーク トポロジを作成する
 
@@ -32,7 +32,7 @@ ms.locfileid: "84329350"
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
 
-- **Terraform のインストールと構成**: Azure 上に VM とその他のインフラストラクチャをプロビジョニングするには、[Terraform をインストールして構成](getting-started-cloud-shell.md)します。
+- **Terraform のインストールと構成**: Azure 上に VM とその他のインフラストラクチャをプロビジョニングするには、[Terraform をインストールして構成](get-started-cloud-shell.md)します。
 
 ## <a name="hub-and-spoke-topology-architecture"></a>ハブ スポーク トポロジ アーキテクチャ
 

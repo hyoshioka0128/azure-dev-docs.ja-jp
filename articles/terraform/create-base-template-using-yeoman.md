@@ -3,11 +3,12 @@ title: チュートリアル - Azure で Yeoman を使用して Terraform ベー
 description: Azure で Yeoman を使用して Terraform ベース テンプレートを作成する方法について説明します。
 ms.topic: tutorial
 ms.date: 05/25/2020
-ms.openlocfilehash: 3278b1abb16275eb325964a3e0d78a2d61230dd4
-ms.sourcegitcommit: bbfa6e0dfb3c8e66e5f47b080590105787a6e74b
+ms.openlocfilehash: 8e9c4444d95f052fc5872565b316ec15e033be82
+ms.sourcegitcommit: 8cd0ddf1651c3b64bb72dedc2890108c2cfe3bcb
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85418220"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87334467"
 ---
 # <a name="tutorial-create-a-terraform-base-template-in-azure-using-yeoman"></a>チュートリアル:Azure で Yeoman を使用して Terraform ベース テンプレートを作成する
 
@@ -26,7 +27,7 @@ ms.locfileid: "85418220"
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
 - **Visual Studio Code**:お使いのプラットフォーム向けの [Visual Studio Code をダウンロードします](https://code.visualstudio.com/download)。
-- **Terraform**:Yeoman で作成したモジュールを実行するために、[Terraform をインストールします](getting-started-cloud-shell.md)。
+- **Terraform**:Yeoman で作成したモジュールを実行するために、[Terraform をインストールします](get-started-cloud-shell.md)。
 - **Docker**:Yeoman ジェネレーターによって作成されたモジュールを実行するために、[Docker をインストールします](https://www.docker.com/get-started)。
 - **Go プログラミング言語**: Yeoman で生成されるテスト ケースは Go 言語を使用したコードであるため、[Go をインストールします](https://golang.org/)。
 
@@ -140,7 +141,7 @@ Yeoman テンプレートは、現在のディレクトリ内にファイルを�
     - テスト ケースは Go で述されています。
     - テストのすべてのコードは、エンド ツー エンド テストです。
     - エンド ツー エンド テストでは、`fixture` で定義されているすべての項目のプロビジョニングを試行します。 `template_output.go` ファイルの結果は、事前定義された想定値と比較されます。
-    - `Gopkg.lock` および `Gopkg.toml`:依存関係を定義します。 
+    - `Gopkg.lock` および `Gopkg.toml`:依存関係を定義します。
 
 Azure 用の Yeoman ジェネレーター (https://github.com/Azure/generator-az-terra-module ) の詳細については、[Terratest のドキュメント](https://terratest.gruntwork.io/docs/)を参照してください。
 

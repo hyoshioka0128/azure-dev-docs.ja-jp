@@ -4,15 +4,16 @@ description: Terraform を使用して、Azure で完全な Linux 仮想マシ�
 keywords: Azure DevOps Terraform Linux VM 仮想マシン
 ms.topic: tutorial
 ms.date: 06/14/2020
-ms.openlocfilehash: 97b4381c45e67458e01093d735f9b32e97584149
-ms.sourcegitcommit: 2d6c9687b39e33a6b5e980d9a375c9f8f1f2cab7
+ms.openlocfilehash: 53580815deaaef30512ca9ccd2c506908d2192ca
+ms.sourcegitcommit: 8cd0ddf1651c3b64bb72dedc2890108c2cfe3bcb
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84779654"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87334437"
 ---
 # <a name="tutorial-create-a-linux-vm-with-infrastructure-in-azure-using-terraform"></a>チュートリアル:Terraform を使用して Azure に Linux VM とインフラストラクチャを作成する
 
-Terraform を利用すれば、Azure で完全なインフラストラクチャ デプロイを定義し、作成できます。 整合性があり、再現可能な方法で Azure リソースを作成し、構成する Terraform テンプレートを人間が読める形式でビルドします。 この記事では、Terraform を使用して、完全な Linux 環境とサポート リソースを作成する方法を示します。 [Terraform をインストールし、構成する](getting-started-cloud-shell.md)方法についても説明します。
+Terraform を利用すれば、Azure で完全なインフラストラクチャ デプロイを定義し、作成できます。 整合性があり、再現可能な方法で Azure リソースを作成し、構成する Terraform テンプレートを人間が読める形式でビルドします。 この記事では、Terraform を使用して、完全な Linux 環境とサポート リソースを作成する方法を示します。 [Terraform をインストールし、構成する](get-started-cloud-shell.md)方法についても説明します。
 
 [!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
@@ -24,7 +25,7 @@ Terraform を利用すれば、Azure で完全なインフラストラクチャ 
 
 それでは、Terraform テンプレートの各セクションに進みましょう。 [Terraform テンプレート](#complete-terraform-script)の完全版も表示できます。それをコピーし、貼り付けることができます。
 
-`provider` セクションは、Azure プロバイダーを使用するように Terraform に伝えます。 `subscription_id`、`client_id`、`client_secret`、`tenant_id` の値を取得するには、[Terraform のインストールと構成](getting-started-cloud-shell.md)に関するページを参照してください。
+`provider` セクションは、Azure プロバイダーを使用するように Terraform に伝えます。 `subscription_id`、`client_id`、`client_secret`、`tenant_id` の値を取得するには、[Terraform のインストールと構成](get-started-cloud-shell.md)に関するページを参照してください。
 
 > [!TIP]
 > これらの値の環境変数を作成する場合や、[Azure Cloud Shell Bash エクスペリエンス](/azure/cloud-shell/overview)を使用している場合は、このセクションに変数の宣言を含める必要はありません。

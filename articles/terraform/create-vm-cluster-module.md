@@ -4,12 +4,12 @@ description: Terraform モジュールを使用して Azure で Windows 仮想�
 keywords: Azure DevOps Terraform VM 仮想マシン クラスター モジュール レジストリ
 ms.topic: tutorial
 ms.date: 03/09/2020
-ms.openlocfilehash: c6561f2e5ba98be4906f480ff8ac7970eae6e408
-ms.sourcegitcommit: db56786f046a3bde1bd9b0169b4f62f0c1970899
+ms.openlocfilehash: ad318237dcefd6586211c45fb79e51baa05549c4
+ms.sourcegitcommit: 8cd0ddf1651c3b64bb72dedc2890108c2cfe3bcb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84329490"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87334387"
 ---
 # <a name="tutorial-create-an-azure-vm-cluster-with-terraform-using-the-module-registry"></a>チュートリアル:モジュール レジストリを使用した Terraform での Azure VM クラスターの作成
 
@@ -30,9 +30,9 @@ ms.locfileid: "84329490"
 ## <a name="set-up-authentication-with-azure"></a>Azure で認証を設定する
 
 > [!TIP]
-> [Terraform 環境変数を使用する](getting-started-cloud-shell.md)か、または [Azure Cloud Shell](/azure/cloud-shell/overview) でこのチュートリアルを実行する場合は、この手順を省略します。
+> [Terraform 環境変数を使用する](get-started-cloud-shell.md)か、または [Azure Cloud Shell](/azure/cloud-shell/overview) でこのチュートリアルを実行する場合は、この手順を省略します。
 
- Azure サービス プリンシパルを作成するには、「[Install Terraform and configure access to Azure (Terraform のインストールおよび Azure へのアクセスの構成)](getting-started-cloud-shell.md)」を確認してください。 このサービス プリンシパルを使用して、空のディレクトリ内の新しいファイル `azureProviderAndCreds.tf` に次のコードを入力します。
+ Azure サービス プリンシパルを作成するには、「[Install Terraform and configure access to Azure (Terraform のインストールおよび Azure へのアクセスの構成)](get-started-cloud-shell.md)」を確認してください。 このサービス プリンシパルを使用して、空のディレクトリ内の新しいファイル `azureProviderAndCreds.tf` に次のコードを入力します。
 
 ```hcl
 variable subscription_id {}

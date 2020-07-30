@@ -10,12 +10,12 @@ metadata:
   ms.author: barbkess
   manager: barbkess
   ms.date: 04/15/2020
-  ms.openlocfilehash: 408483ef614ca546e8f0af2331d126ff35148ed0
-  ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+  ms.openlocfilehash: 60455122c0ab21dc646938661c4f9489c969bd0d
+  ms.sourcegitcommit: 6e4c1b2d960b3089b8b4537a7e754ed41751ceca
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 07/01/2020
-  ms.locfileid: "85790607"
+  ms.lasthandoff: 07/28/2020
+  ms.locfileid: "87260389"
 productDirectory:
   items:
   - title: Python
@@ -37,17 +37,17 @@ productDirectory:
     imageSrc: https://docs.microsoft.com/media/logos/logo_js.svg
     links:
     - url: https://docs.microsoft.com/azure/developer/javascript/tutorial-vscode-static-website-node-01?tabs=bash
-      text: 静的な Web サイトを作成してデプロイする
+      text: 静的な Web サイトを開発する
     - url: https://docs.microsoft.com/azure/developer/javascript/tutorial-vscode-azure-app-service-node-01?tabs=bash
-      text: Node.js アプリを Azure App Service にデプロイする
+      text: Azure App Service にデプロイする
     - url: https://docs.microsoft.com/azure/developer/javascript/tutorial-vscode-serverless-node-01?tabs=bash
-      text: Azure Functions アプリケーションをデプロイする
+      text: サーバーレス アプリケーションをデプロイする
     - url: https://docs.microsoft.com/azure/developer/javascript/tutorial-vscode-docker-node-01?tabs=bash
-      text: Docker コンテナーを使用して Node.js アプリをデプロイする
+      text: Docker コンテナーをデプロイする
     - url: https://docs.microsoft.com/azure/cosmos-db/create-mongodb-nodejs?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-      text: MongoDB Web アプリを Azure Cosmos DB に移行する
+      text: MongoDB アプリを Azure Cosmos DB に移行する
     - url: https://docs.microsoft.com/azure/developer/javascript/
-      text: JavaScript デベロッパー センターで詳細を見る
+      text: デベロッパー センターで詳細を見る
   - title: Java
     imageSrc: https://docs.microsoft.com/media/logos/logo_java.svg
     links:

@@ -7,8 +7,10 @@
 - name: クイックスタート
   expanded: true
   items:
-    - name: はじめに - Cloud Shell
-      href: getting-started-cloud-shell.md
+    - name: 作業の開始 - Cloud Shell
+      href: get-started-cloud-shell.md
+    - name: 作業の開始 - PowerShell
+      href: get-started-powershell.md
 - name: チュートリアル
   items:
     - name: セットアップと構成

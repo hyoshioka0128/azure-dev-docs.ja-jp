@@ -50,7 +50,9 @@
       href: quickstarts-other-services.md
 - name: シナリオ固有のチュートリアル
   items:
-    - name: VS Code を使用して Web アプリをデプロイする
+    - name: Web アプリとデータベースをデプロイする (ポータル)
+      href: tutorial-python-postgresql-app-portal.md
+    - name: Web アプリをデプロイする (VS Code)
       items:
         - name: 1 概要と前提条件
           href: tutorial-deploy-app-service-on-linux-01.md
@@ -66,7 +68,7 @@
           href: tutorial-deploy-app-service-on-linux-06.md
         - name: 7 リソースのクリーンアップ
           href: tutorial-deploy-app-service-on-linux-07.md
-    - name: VS Code を使用したコンテナーのデプロイ
+    - name: コンテナーをデプロイする (VS Code)
       items:
         - name: 1 概要と前提条件
           href: tutorial-deploy-containers-01.md
@@ -78,7 +80,7 @@
           href: tutorial-deploy-containers-04.md
         - name: 5 リソースのクリーンアップ
           href: tutorial-deploy-containers-05.md
-    - name: VS Code でサーバーレス Azure Functions をデプロイする
+    - name: サーバーレス関数のデプロイ (VS Code)
       items:
         - name: 1 概要と前提条件
           href: tutorial-vs-code-serverless-python-01.md

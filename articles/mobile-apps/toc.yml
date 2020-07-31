@@ -43,7 +43,15 @@
         - name: リアルタイムのエラー報告
           href: diagnostics.md
     - name: プッシュ通知
-      href: push-notifications.md
+      items:
+        - name: プッシュ通知の送信でユーザーを引き付ける
+          href: push-notifications.md
+        - name: Azure Notification Hubs を使用して Xamarin.Forms アプリにプッシュ通知を送信する
+          href: notification-hubs-backend-service-xamarin-forms.md
+        - name: Azure Notification Hubs を使用して React Native アプリにプッシュ通知を送信する
+          href: notification-hubs-backend-service-react-native.md
+        - name: Azure Notification Hubs を使用して Flutter アプリにプッシュ通知を送信する
+          href: notification-hubs-backend-service-flutter.md
     - name: 機械学習
       items:
         - name: Azure Cognitive Services

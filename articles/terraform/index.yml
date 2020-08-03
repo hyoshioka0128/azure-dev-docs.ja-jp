@@ -8,13 +8,13 @@ metadata:
   author: TomArcherMsft
   ms.author: tarcher
   ms.topic: landing-page
-  ms.date: 04/26/2020
-  ms.openlocfilehash: c85e77d0e2cebd0cc8c5b9a0485e6002cb3014ee
-  ms.sourcegitcommit: 8cd0ddf1651c3b64bb72dedc2890108c2cfe3bcb
+  ms.date: 07/31/2020
+  ms.openlocfilehash: 40e1650488552387f5a62cf02a754dde89fed773
+  ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 07/28/2020
-  ms.locfileid: "87334507"
+  ms.lasthandoff: 07/31/2020
+  ms.locfileid: "87478542"
 landingContent:
 - title: Azure での Terraform について
   linkLists:
@@ -30,21 +30,33 @@ landingContent:
   linkLists:
   - linkListType: get-started
     links:
-    - text: Cloud Shell と Azure CLI
+    - text: 作業の開始 - Azure Cloud Shell
       url: get-started-cloud-shell.md
-    - text: Windows と PowerShell
+    - text: 作業の開始 - Windows と PowerShell
       url: get-started-powershell.md
-  - linkListType: tutorial
+  - linkListType: how-to-guide
     links:
     - text: Terraform Visual Studio Code 拡張機能のインストール
       url: configure-vs-code-extension-for-terraform.md
     - text: Yeoman を使用して Terraform ベース テンプレートを作成する
       url: create-base-template-using-yeoman.md
-    - text: Terratest を使用した Terraform モジュールのテスト
-      url: test-modules-using-terratest.md
+- title: Terraform プロジェクトのテスト
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Terraform のテストの概要
+      url: best-practices-testing-overview.md
+  - linkListType: tutorial
+    links:
+    - text: 統合テスト
+      url: best-practices-integration-testing.md
+    - text: コンプライアンス テスト
+      url: best-practices-compliance-testing.md
+    - text: エンド ツー エンドのテスト
+      url: best-practices-end-to-end-testing.md
 - title: AKS の管理
   linkLists:
-  - linkListType: tutorial
+  - linkListType: how-to-guide
     links:
     - text: AKS を使用して Kubernetes クラスターを作成する
       url: create-k8s-cluster-with-tf-and-aks.md
@@ -56,7 +68,7 @@ landingContent:
     links:
     - text: Linux VM の作成
       url: create-linux-virtual-machine-with-infrastructure.md
-  - linkListType: tutorial
+  - linkListType: how-to-guide
     links:
     - text: Terraform モジュールを使用した VM クラスターの作成
       url: create-vm-cluster-module.md
@@ -84,7 +96,7 @@ landingContent:
       url: hub-spoke-validation.md
 - title: データベースの管理
   linkLists:
-  - linkListType: tutorial
+  - linkListType: how-to-guide
     links:
     - text: Azure Cosmos DB をデプロイする
       url: deploy-azure-cosmos-db-to-azure-container-instances.md

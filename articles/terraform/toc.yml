@@ -7,16 +7,12 @@
 - name: クイックスタート
   expanded: true
   items:
-    - name: 作業の開始 - Cloud Shell
+    - name: 作業の開始 - Azure Cloud Shell
       href: get-started-cloud-shell.md
-    - name: 作業の開始 - PowerShell
+    - name: 作業の開始 - Windows と PowerShell
       href: get-started-powershell.md
-- name: チュートリアル
+- name: 操作方法ガイド
   items:
-    - name: セットアップと構成
-      items:
-        - name: Terraform 状態を Azure Storage に格納する
-          href: store-state-in-azure-storage.md
     - name: App Service
       items:
         - name: Terraform および Azure プロバイダーのデプロイ スロット
@@ -31,6 +27,30 @@
       items:
         - name: Azure Cosmos DB をデプロイする
           href: deploy-azure-cosmos-db-to-azure-container-instances.md
+    - name: ツール
+      items:
+        - name: Terraform Visual Studio Code 拡張機能のインストール
+          href: configure-vs-code-extension-for-terraform.md
+        - name: Yeoman を使用して Terraform ベース テンプレートを作成する
+          href: create-base-template-using-yeoman.md
+    - name: 仮想マシン
+      items:
+        - name: 仮想マシンとインフラストラクチャ
+          href: create-linux-virtual-machine-with-infrastructure.md
+        - name: 仮想マシン クラスターと Terraform モジュール
+          href: create-vm-cluster-module.md
+        - name: 仮想マシン クラスターと Terraform および HCL
+          href: create-vm-cluster-with-infrastructure.md
+        - name: 仮想マシン スケール セットとインフラストラクチャ
+          href: create-vm-scaleset-network-disks-hcl.md
+        - name: Packer イメージからの仮想マシン スケール セット
+          href: create-vm-scaleset-network-disks-using-packer-hcl.md
+- name: チュートリアル
+  items:
+    - name: セットアップと構成
+      items:
+        - name: Terraform 状態を Azure Storage に格納する
+          href: store-state-in-azure-storage.md
     - name: ネットワーク
       items:
         - name: ハブとスポークのトポロジ
@@ -47,26 +67,16 @@
               href: hub-spoke-spoke-network.md
             - name: 6. ネットワーク トポロジの接続の検証
               href: hub-spoke-validation.md
-    - name: ツール
+    - name: Terraform プロジェクトのテスト
       items:
-        - name: Terraform Visual Studio Code 拡張機能のインストール
-          href: configure-vs-code-extension-for-terraform.md
-        - name: Yeoman を使用して Terraform ベース テンプレートを作成する
-          href: create-base-template-using-yeoman.md
-        - name: Terratest を使用した Terraform モジュールのテスト
-          href: test-modules-using-terratest.md
-    - name: 仮想マシン
-      items:
-        - name: 仮想マシンとインフラストラクチャ
-          href: create-linux-virtual-machine-with-infrastructure.md
-        - name: 仮想マシン クラスターと Terraform モジュール
-          href: create-vm-cluster-module.md
-        - name: 仮想マシン クラスターと Terraform および HCL
-          href: create-vm-cluster-with-infrastructure.md
-        - name: 仮想マシン スケール セットとインフラストラクチャ
-          href: create-vm-scaleset-network-disks-hcl.md
-        - name: Packer イメージからの仮想マシン スケール セット
-          href: create-vm-scaleset-network-disks-using-packer-hcl.md
+        - name: 1. Terraform のテストの概要
+          href: best-practices-testing-overview.md
+        - name: 2. 統合テスト
+          href: best-practices-integration-testing.md
+        - name: 3. コンプライアンス テスト
+          href: best-practices-compliance-testing.md
+        - name: 4. エンド ツー エンドのテスト
+          href: best-practices-end-to-end-testing.md
 - name: サンプル
   items:
     - name: 構成テンプレート

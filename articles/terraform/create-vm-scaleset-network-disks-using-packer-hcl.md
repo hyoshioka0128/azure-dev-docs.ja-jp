@@ -1,14 +1,14 @@
 ---
 title: チュートリアル- Terraform を使用して Packer カスタム イメージから Azure 仮想マシン スケール セットを作成する
-description: Terraform を使用して、Packer で生成されたカスタム イメージ (仮想ネットワークおよび接続された管理ディスクを含む) から Azure 仮想マシン スケール セットを構成し、バージョンを管理する方法について説明します。
+description: Terraform を使用して、Packer で生成されたカスタム イメージから Azure 仮想マシン スケール セットを構成し、バージョンを管理する方法について説明します
 ms.topic: tutorial
 ms.date: 11/07/2019
-ms.openlocfilehash: d9db8f47cdb4c295ef5625450980938ff348b5fb
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.openlocfilehash: f72d8ab828259e4408ceb78528ce310a214e05ad
+ms.sourcegitcommit: 8cd0ddf1651c3b64bb72dedc2890108c2cfe3bcb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85790836"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87334397"
 ---
 # <a name="tutorial-create-an-azure-virtual-machine-scale-set-from-a-packer-custom-image-by-using-terraform"></a>チュートリアル:Terraform を使用して Packer カスタム イメージから Azure 仮想マシン スケール セットを作成する
 
@@ -29,7 +29,7 @@ ms.locfileid: "85790836"
 ## <a name="prerequisites"></a>前提条件
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
-- **Terraform**:[Terraform をインストールし、Azure へのアクセスを構成します](getting-started-cloud-shell.md)。
+- **Terraform**:[Terraform をインストールし、Azure へのアクセスを構成します](get-started-cloud-shell.md)。
 - **SSH キーの組**:[SSH キーの組を作成します](/azure/virtual-machines/linux/mac-create-ssh-keys)。
 - **Packer**:[Packer をインストールします](https://learn.hashicorp.com/packer/getting-started/install)。
 

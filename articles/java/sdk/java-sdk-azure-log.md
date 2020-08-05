@@ -8,12 +8,12 @@ ms.date: 03/25/2020
 ms.topic: article
 ms.service: multiple
 ms.custom: devx-track-java
-ms.openlocfilehash: 5dbe0235143621587b111f4537a49b36f88115f1
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 5bb7f711eae230a08893d2f94c242a06af809f88
+ms.sourcegitcommit: cf23d382eee2431a3958b1c87c897b270587bde0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379446"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87400620"
 ---
 # <a name="configure-logging-with-the-azure-sdk-for-java"></a>Azure SDK for Java でのログ記録の構成
 
@@ -26,17 +26,30 @@ Azure SDK for Java クライアント ライブラリでは、[Simple Logging Fa
 
 ## <a name="declare-a-logging-framework"></a>ログ記録フレームワークを宣言する
 
-これらのロガーを実装する前に、関連するフレームワークをプロジェクトの依存関係として宣言する必要があります。 詳細については、[SLF4J のユーザー マニュアル](http://www.slf4j.org/manual.html#projectDep)を参照してください。
+これらのロガーを実装する前に、関連するフレームワークをプロジェクトの依存関係として宣言する必要があります。 詳細については、[SLF4J のユーザー マニュアル](https://www.slf4j.org/manual.html#projectDep)を参照してください。
 
-## <a name="configure-log4j-or-log4j-2"></a>Log4j または Log4j 2 を構成する
+次のセクションでは、一般的なログ記録フレームワークの構成例を示します。
 
-プロパティ ファイルまたは XML ファイルで Log4j およびLog4j 2 ログ記録を構成できます。 Log4j およびLog4j 2 ログ記録の詳細情報については、[Apache Log4j 2 のマニュアル](https://logging.apache.org/log4j/2.x/manual/configuration.html)を参照してください。
+## <a name="use-log4j"></a>Log4j を使用する
 
-### <a name="use-a-properties-file"></a>プロパティ ファイルを使用する
+次の例は、Log4j ログ記録フレームワークの構成を示しています。 詳細については、[Log4j のドキュメント](https://logging.apache.org/log4j/1.2/)を参照してください。
 
-プロジェクトの *./src/main/resource* ディレクトリに、*log4j.properties* または *log4j2.properties* という名前の新しいファイルを作成します (後者が Logj4 2 用)。 以下の例を使用して作業を開始します。
+**Maven の依存関係を追加して Log4j を有効にする**
 
-Log4j の例:
+自分のプロジェクトの *pom.xml* ファイルに以下を追加します。
+
+```xml
+<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-log4j12 -->
+<dependency>
+    <groupId>org.slf4j</groupId>
+    <artifactId>slf4j-log4j12</artifactId>
+    <version>[1.0,)</version> <!-- Version number 1.0 and above -->
+</dependency>
+```
+
+**プロパティ ファイルを使用して Log4j を有効にする**
+
+自分のプロジェクトの *./src/main/resource* ディレクトリに *log4j.properties* ファイルを作成し、次の内容を追加します。
 
 ```properties
 log4j.rootLogger=INFO, A1
@@ -46,47 +59,70 @@ log4j.appender.A1.layout.ConversionPattern=%m%n
 log4j.logger.com.azure.core=ERROR
 ```
 
-Log4j2 の例:
+**XML ファイルを使用して Log4j を有効にする**
 
-```properties
-appender.console.type = Console
-appender.console.name = LogToConsole
-appender.console.layout.type = PatternLayout
-appender.console.layout.pattern = %msg%n
-logger.app.name=com.azure.core
-logger.app.level=ERROR
-```
-
-### <a name="use-an-xml-file"></a>XML ファイルを使用する
-
-あるいは、XML ファイルを使用して Log4j と Log4j2 を構成することもできます。 プロジェクトの *./src/main/resource* ディレクトリに、*log4j.xml* または *log4j2.xml* という名前の新しいファイルを作成します (後者が Logj4 2 用)。 以下の例を使用して作業を開始します。
-
-Log4j の例:
+自分のプロジェクトの *./src/main/resource* ディレクトリに *log4j.xml* ファイルを作成し、次の内容を追加します。
 
 ```xml
 <!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
 <log4j:configuration debug="true" xmlns:log4j='http://jakarta.apache.org/log4j/'>
 
-  <appender name="console" class="org.apache.log4j.ConsoleAppender">
-    <param name="Target" value="System.out"/>
-    <layout class="org.apache.log4j.PatternLayout">
-    <param name="ConversionPattern" value="%m%n" />
-    </layout>
-  </appender>
-  <logger name="com.azure.core" additivity="true">
-    <level value="ERROR" />
-    <appender-ref ref="console" />
-  </logger>
+    <appender name="console" class="org.apache.log4j.ConsoleAppender">
+        <param name="Target" value="System.out"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%m%n" />
+        </layout>
+    </appender>
+    <logger name="com.azure.core">
+        <level value="ERROR" />
+        <appender-ref ref="console" />
+    </logger>
 
-  <root>
-    <priority value ="info"></priority>
-    <appender-ref ref="console"></appender>
-  </root>
+    <root>
+        <level value="info" />
+        <appender-ref ref="console" />
+    </root>
 
 </log4j:configuration>
 ```
 
-Log4j2 の例:
+## <a name="use-log4j-2"></a>Log4j 2 を使用する
+
+次の例は、Log4j 2 ログ記録フレームワークの構成を示しています。 詳細については、[Log4j 2 のドキュメント](https://logging.apache.org/log4j/2.x/manual/configuration.html)を参照してください。
+
+**Maven の依存関係を追加して Log4j 2 を有効にする**
+
+自分のプロジェクトの *pom.xml* ファイルに以下を追加します。
+
+```
+<!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-slf4j-impl -->
+<dependency>
+    <groupId>org.apache.logging.log4j</groupId>
+    <artifactId>log4j-slf4j-impl</artifactId>
+    <version>[2.0,)</version> <!-- Version number 2.0 and above -->
+</dependency>
+```
+
+**プロパティ ファイルを使用して Log4j 2 を有効にする**
+
+自分のプロジェクトの *./src/main/resource* ディレクトリに *log4j2.properties* ファイルを作成し、次の内容を追加します。
+
+```properties
+appender.console.type = Console
+appender.console.name = STDOUT
+appender.console.layout.type = PatternLayout
+appender.console.layout.pattern = %msg%n
+logger.app.name=com.azure.core
+logger.app.level=ERROR
+
+rootLogger.level = info
+rootLogger.appenderRefs = stdout
+rootLogger.appenderRef.stdout.ref = STDOUT
+```
+
+**XML ファイルを使用して Log4j 2 を有効にする**
+
+自分のプロジェクトの *./src/main/resource* ディレクトリに *log4j2.xml* ファイルを作成し、次の内容を追加します。
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -108,14 +144,28 @@ Log4j2 の例:
 </Configuration>
 ```
 
-## <a name="configure-logback"></a>Logback を構成する
+## <a name="use-logback"></a>Logback を使用する
 
-[Logback](https://logback.qos.ch/manual/introduction.html) は、よく使用されるログ記録フレームワークの 1 つであり、SLF4J のネイティブ実装です。 Logback を構成するには、プロジェクトの *./src/main/resources* ディレクトリに *logback.xml* という名前の新しい XML ファイルを作成します。 構成オプションの詳細情報については、[Logback プロジェクトの Web サイト](https://logback.qos.ch/manual/configuration.html)で確認できます。
+次の例は、Logback ログ記録フレームワークの基本構成を示しています。 詳細については、[Logback のドキュメント](https://logback.qos.ch/manual/configuration.html)を参照してください。
 
-Logback の構成例を次に示します。
+**Maven の依存関係を追加して Logback を有効にする**
+
+自分のプロジェクトの *pom.xml* ファイルに以下を追加します。
+
+```
+<!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-classic -->
+<dependency>
+    <groupId>ch.qos.logback</groupId>
+    <artifactId>logback-classic</artifactId>
+    <version>[0.2.5,)</version> <!-- Version number 0.2.5 and above -->
+</dependency>
+```
+
+**XML ファイルを使用して Logback を有効にする**
+
+自分のプロジェクトの *./src/main/resource* ディレクトリに *logback.xml* ファイルを作成し、次の内容を追加します。
 
 ```xml
-<?xml version="1.0" encoding="UTF-8"?>
 <configuration>
   <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
     <encoder>
@@ -131,9 +181,19 @@ Logback の構成例を次に示します。
 </configuration>
 ```
 
-コンソールへのログ記録用の単純な Logback 構成を次に示します。
+## <a name="use-logback-in-a-spring-boot-application"></a>Spring Boot アプリケーションで Logback を使用する
 
-```xml
+次の例では、Spring で Logback を使用するための構成をいくつか示します。 通常、自分のプロジェクトの *./src/main/resources* ディレクトリ内の *logback.xml* ファイルにログ記録の構成を追加します。 Spring では、ログ記録などのさまざまな構成について、このファイルが参照されます。 詳細については、[Logback のドキュメント](https://logback.qos.ch/manual/configuration.html)を参照してください。
+
+任意のファイルから Logback 構成を読み取るようにアプリケーションを構成できます。 *logback.xml* ファイルを Spring アプリケーションにリンクするには、自分のプロジェクトの *./src/main/resources* ディレクトリに *application.properties* ファイルを作成し、次の内容を追加します。
+
+```properties
+logging.config=classpath:logback.xml
+```
+
+コンソールにログを記録するための Logback 構成を作成するには、次の内容を *logback.xml* ファイルに追加します。
+
+```xml 
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
   <appender name="Console"
@@ -151,7 +211,7 @@ Logback の構成例を次に示します。
 </configuration>
 ```
 
-1 時間ごとにロールオーバーされ、GZIP ファイル形式でアーカイブされるファイルへのログ記録の構成を次に示します。
+1 時間ごとにロールオーバーされ、gzip 形式でアーカイブされるファイルへのログ記録を構成するには、次の内容を *logback.xml* ファイルに追加します。
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -177,17 +237,9 @@ Logback の構成例を次に示します。
 </configuration>
 ```
 
-### <a name="configure-logback-for-a-spring-boot-application"></a>Spring Boot アプリケーション用に Logback を構成する
-
-Spring は、 *./src/main/resources* ディレクトリにある *application.properties*ファイルで、ログ記録などのプロジェクトの構成を検索します。 *application.properties* ファイルに次の行を追加して、*logback.xml*を Spring Boot アプリケーションにリンクします。
-
-```properties
-logging.config=classpath:logback.xml
-```
-
 ## <a name="configure-fallback-logging-for-temporary-debugging"></a>一時的なデバッグ用のファールバック ログ記録を構成する
 
-SLF4J でアプリケーションを再デプロイできない場合は、Azure Core 1.3.0 以降の Java 用 Azure クライアント ライブラリに組み込まれているフォールバック ロガーを使用できます。 このロガーを有効にするには、まず SLF4J がないことを確認してから (これが優先されるため)、`AZURE_LOG_LEVEL` 環境変数を設定します。 この環境変数を設定した後に、アプリケーションを再起動してログの生成を開始します。
+SLF4J ロガーでアプリケーションを再デプロイできない場合は、Azure Core 1.3.0 以降の Java 用 Azure クライアント ライブラリに組み込まれているフォールバック ロガーを使用できます。 このロガーを有効にするには、まず SLF4J がないことを確認してから (これが優先されるため)、`AZURE_LOG_LEVEL` 環境変数を設定します。 この環境変数を設定した後に、アプリケーションを再起動してログの生成を開始します。
 
 次の表は、この環境変数に使用できる値を示しています。
 
@@ -198,8 +250,8 @@ SLF4J でアプリケーションを再デプロイできない場合は、Azure
 |WARNING     |"warn"、"warning"       |
 |ERROR    |"err"、"error"  |
 
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次の手順
 
-- [Azure App Service でのアプリの診断ログの有効化](/azure/app-service/troubleshoot-diagnostic-logs) 
+- [Azure App Service のアプリの診断ログの有効化](/azure/app-service/troubleshoot-diagnostic-logs) 
 - [Azure のセキュリティ ログと監査のオプションを確認する](/azure/security/fundamentals/log-audit)
 - [Azure プラットフォーム ログを操作する方法を確認する](/azure/azure-monitor/platform/platform-logs-overview)

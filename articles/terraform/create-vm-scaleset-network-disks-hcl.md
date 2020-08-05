@@ -3,12 +3,12 @@ title: チュートリアル - Terraform を使用して Azure 仮想マシン �
 description: Terraform を使用して Azure 仮想マシン スケール セットを構成し、バージョンを管理する方法について説明します。
 ms.topic: tutorial
 ms.date: 11/07/2019
-ms.openlocfilehash: ce6922fe8bb5671afece009cd0228e8a3ff191da
-ms.sourcegitcommit: fb0564696f8067e6dfa8b9eaf819fadf321c2884
+ms.openlocfilehash: 057fbec811c842b27823395735186120612bc6c5
+ms.sourcegitcommit: 8cd0ddf1651c3b64bb72dedc2890108c2cfe3bcb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85327201"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87334407"
 ---
 # <a name="tutorial-create-an-azure-virtual-machine-scale-set-using-terraform"></a>チュートリアル:Terraform を使用して Azure 仮想マシン スケール セットを作成する
 
@@ -32,7 +32,7 @@ ms.locfileid: "85327201"
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
 
-- **Terraform のインストール**:[Terraform および Azure へのアクセスの構成](getting-started-cloud-shell.md)に関する記事の指示に従ってください
+- **Terraform のインストール**:[Terraform および Azure へのアクセスの構成](get-started-cloud-shell.md)に関する記事の指示に従ってください
 
 - **SSH キー ペアの作成**:詳細については、「[Azure に Linux VM 用の SSH 公開キーと秘密キーのペアを作成して使用する方法](/azure/virtual-machines/linux/mac-create-ssh-keys)」を参照してください。
 
@@ -192,7 +192,7 @@ Azure Cloud Shell 内で、次の手順を実行します。
    terraform apply
    ```
 
-   `location` 変数は `variables.tf` で定義されていますが設定されていないため、Terraform により `location` の値の入力を求められます。 "米国西部" などの任意の有効な場所を入力でき、続いて Enter キーを押します  (スペースを含む値はかっこで囲みます)。
+   `location` 変数は `variables.tf` で定義されていますが設定されていないため、Terraform により `location` の値の入力を求められます。 "米国西部" などの任意の有効な場所を入力でき、続いて Enter キーを押します (スペースを含む値はかっこで囲みます)。
 
 1. Terraform は、`output.tf` ファイルでの定義に従って出力します。 次のスクリーンショットに示すように、FQDN の形式は `<ID>.<location>.cloudapp.azure.com` になります。 ID は計算された値であり、location は Terraform の実行時に指定した値です。
 
@@ -378,7 +378,7 @@ Cloud Shell で、次の手順を実行します。
 
 1. ファイルを保存し ( **&lt;Ctrl> + S** キー)、エディターを終了します ( **&lt;Ctrl> + Q** キー)。
 
-1. Terraform プランを作成して、仮想マシン スケール セットのデプロイを視覚化します  (選択したパスワードと、リソースの場所を指定する必要があります)。
+1. Terraform プランを作成して、仮想マシン スケール セットのデプロイを視覚化します (パスワードとリソースの場所を指定する必要があります)。
 
     ```bash
     terraform plan

@@ -4,12 +4,12 @@ description: イングレス コントローラーとして Application Gateway 
 keywords: Azure DevOps Terraform アプリケーション ゲートウェイ イングレス AKS Kubernetes
 ms.topic: tutorial
 ms.date: 03/09/2020
-ms.openlocfilehash: 433cf2e73e4672d73e036ebc1e25b6c1cc98795e
-ms.sourcegitcommit: fb0564696f8067e6dfa8b9eaf819fadf321c2884
+ms.openlocfilehash: a98d9af5c8d3bd63451f007f66a8793d9f38a61d
+ms.sourcegitcommit: 8cd0ddf1651c3b64bb72dedc2890108c2cfe3bcb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85327213"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87334452"
 ---
 # <a name="tutorial-create-an-application-gateway-ingress-controller-in-azure-kubernetes-service"></a>チュートリアル:Azure Kubernetes Service で Application Gateway イングレス コントローラーを作成する
 
@@ -32,11 +32,11 @@ ms.locfileid: "85327213"
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
 
-- **Terraform の構成**:[Terraform および Azure へのアクセスの構成](getting-started-cloud-shell.md)に関する記事の指示に従ってください
+- **Terraform の構成**:[Terraform および Azure へのアクセスの構成](get-started-cloud-shell.md)に関する記事の指示に従ってください
 
 - **Azure リソース グループ**:デモに使用する Azure リソース グループがない場合は、[Azure リソース グループを作成してください](/azure/azure-resource-manager/manage-resource-groups-portal#create-resource-groups)。 リソース グループの名前と場所がデモで使用されるため、それらの値をメモしてください。
 
-- **Azure サービス プリンシパル**:「[Azure CLI で Azure サービス プリンシパルを作成する](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest)」の「**サービス プリンシパルを作成する**」セクションの指示に従ってください。 appId、displayName、および password の値を書き留めます。
+- **Azure サービス プリンシパル**:「[Azure CLI で Azure サービス プリンシパルを作成する](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest)」の「**サービス プリンシパルを作成する**」セクションの指示に従ってください。 `appId`、`displayName`、`password` の各値をメモします。
 
 - **サービス プリンシパル オブジェクト ID を取得する**:Cloud Shell で次のコマンドを実行します。`az ad sp list --display-name <displayName>`
 

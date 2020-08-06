@@ -1,17 +1,17 @@
 ---
-title: チュートリアル - Terraform を使用して Azure デプロイ スロットでインフラストラクチャをプロビジョニングする
+title: Terraform を使用して Azure デプロイ スロットでインフラストラクチャをプロビジョニングする
 description: Azure プロバイダーのデプロイ スロットで Terraform を使用する方法について説明します。
 keywords: Azure DevOps Terraform デプロイ スロット
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/09/2020
-ms.openlocfilehash: 8f5597684a9d61474685f8117fa584405fa0979e
-ms.sourcegitcommit: 756e4873f904db954a56c20ebb2f1f5116ee4596
+ms.openlocfilehash: 8ae9f51b82f7868e4df11f1586664f203aa5403b
+ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82171958"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87478486"
 ---
-# <a name="tutorial-provision-infrastructure-with-azure-deployment-slots-using-terraform"></a>チュートリアル:Terraform を使用して Azure デプロイ スロットでインフラストラクチャをプロビジョニングする
+# <a name="provision-infrastructure-with-azure-deployment-slots-using-terraform"></a>Terraform を使用して Azure デプロイ スロットでインフラストラクチャをプロビジョニングする
 
 [Azure デプロイ スロット](/azure/app-service/deploy-staging-slots)を使用し、アプリの異なるバージョン間をスワップできます。 この機能によって、デプロイ分断の影響が最小限に抑えられます。 
 

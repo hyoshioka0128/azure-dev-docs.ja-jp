@@ -6,12 +6,12 @@ ms.service: mobile-services
 ms.topic: tutorial
 ms.date: 07/27/2020
 ms.author: miparker
-ms.openlocfilehash: 2949f71649df692baabe16975882f93d3c6829ce
-ms.sourcegitcommit: cf23d382eee2431a3958b1c87c897b270587bde0
+ms.openlocfilehash: 85b8bbc6e0a84e7da47b11eef4f22714912af72f
+ms.sourcegitcommit: b224b276a950b1d173812f16c0577f90ca2fbff4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87401660"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87810665"
 ---
 # <a name="tutorial-send-push-notifications-to-xamarinforms-apps-using-azure-notification-hubs-via-a-backend-service"></a>チュートリアル:バックエンド サービス経由で Azure Notification Hubs を使用して Xamarin.Forms アプリにプッシュ通知を送信する  
 
@@ -64,7 +64,7 @@ iOS の場合は次のものが必要です。
 * [Apple Developer ポータル](https://developer.apple.com)
 * [ASP.NET Core](https://docs.microsoft.com/aspnet/core/introduction-to-aspnet-core?view=aspnetcore-3.1)
 * [Google Firebase Console](https://console.firebase.google.com/u/0/)
-* [Microsoft Azure](https://portal.azure.com) と、[Azure Notification Hubs を使用して iOS アプリにプッシュ通知を送信すること](/azure/notification-hubs/ios-sdk-get-started.md)。
+* [Microsoft Azure](https://portal.azure.com) と、[Azure Notification Hubs を使用して iOS アプリにプッシュ通知を送信すること](https://docs.microsoft.com/azure/notification-hubs/ios-sdk-get-started)。
 * [Xamarin](https://dotnet.microsoft.com/apps/xamarin) と [Xamarin.Forms](https://dotnet.microsoft.com/apps/xamarin/xamarin-forms)。
 
 示される手順は [Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac/) を対象としていますが、[Visual Studio 2019](https://visualstudio.microsoft.com/vs) を使用して進めることができます。
@@ -117,15 +117,15 @@ iOS の場合は次のものが必要です。
 
 ## <a name="related-links"></a>関連リンク
 
-* [Azure Notification Hubs の概要](/azure/notification-hubs/notification-hubs-push-notification-overview.md)
+* [Azure Notification Hubs の概要](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-push-notification-overview)
 * [Visual Studio for Mac のインストール](https://docs.microsoft.com/visualstudio/mac/installation?view=vsmac-2019)
 * [Windows への Xamarin のインストール](https://docs.microsoft.com/xamarin/get-started/installation/windows)
 * [バックエンド操作用の Notification Hubs SDK](https://www.nuget.org/packages/Microsoft.Azure.NotificationHubs/)
 * [GitHub 上の Notification Hubs SDK](https://github.com/Azure/azure-notificationhubs)
-* [アプリケーション バックエンドへの登録](/azure/notification-hubs/notification-hubs-ios-aspnet-register-user-from-backend-to-push-notification.md)
-* [登録管理](/azure/notification-hubs/notification-hubs-push-notification-registration-management.md)
-* [タグの使用](/azure/notification-hubs/notification-hubs-tags-segment-push-message.md)
-* [カスタム テンプレートの使用](/azure/notification-hubs/notification-hubs-templates-cross-platform-push-messages.md)
+* [アプリケーション バックエンドへの登録](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-ios-aspnet-register-user-from-backend-to-push-notification)
+* [登録管理](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-push-notification-registration-management)
+* [タグの使用](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-tags-segment-push-message)
+* [カスタム テンプレートの使用](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-templates-cross-platform-push-messages)
 
 ## <a name="next-steps"></a>次のステップ
 

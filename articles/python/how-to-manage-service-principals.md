@@ -3,12 +3,13 @@ title: Azure 開発のためのローカル サービス プリンシパルの�
 description: Azure portal または Azure CLI を使用して、ローカル開発のために作成されたサービス プリンシパルを管理する方法。
 ms.date: 05/12/2020
 ms.topic: conceptual
-ms.openlocfilehash: ffb526a0073667f5ea53631925f2565215f60787
-ms.sourcegitcommit: 79890367158a9931909f11da1c894daa11188cba
+ms.custom: devx-track-azurecli
+ms.openlocfilehash: e29ee999472d0d9d141cfad728e62f1fe518e85b
+ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84146190"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87478361"
 ---
 # <a name="how-to-manage-service-principals"></a>サービス プリンシパルを管理する方法
 

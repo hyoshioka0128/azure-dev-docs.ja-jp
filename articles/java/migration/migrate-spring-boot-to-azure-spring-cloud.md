@@ -6,12 +6,12 @@ ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 5/26/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: c779a85f49ccd7507882fbd123a329addca60a7c
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 7bc4a5188181f3b4b6d98b5308a5027a42bbac5e
+ms.sourcegitcommit: b224b276a950b1d173812f16c0577f90ca2fbff4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379746"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87810585"
 ---
 # <a name="migrate-spring-boot-applications-to-azure-spring-cloud"></a>Spring Boot アプリケーションを Azure Spring Cloud に移行する
 
@@ -134,7 +134,7 @@ Spring Cloud Gateway を使用しているか、使用する予定であれば�
 
 * Spring Cloud レジストリと連動するようにアプリケーションを有効にすることを検討してください。 これにより、デプロイされた他のマイクロサービスやクライアントでアプリケーションを動的に検出できます。 詳細については、[Java Spring アプリをデプロイ用に準備する](/azure/spring-cloud/spring-cloud-tutorial-prepare-app-deployment)」を参照してください。 次に、Spring Client ロード バランサーを使用するようにアプリケーション クライアントを変更します。 これにより、クライアントでは実行中のすべてのアプリケーション インスタンスのアドレスを取得し、別のインスタンスが壊れたか、応答しなくなった場合に動作するインスタンスを見つけることができます。 詳細については、Spring ブログの「[Spring Tips:Spring Cloud Loadbalancer](https://spring.io/blog/2020/03/25/spring-tips-spring-cloud-loadbalancer)」(Spring に関するヒント: Spring Cloud ロード バランサー) を参照してください。
 
-* アプリケーションをパブリックにする代わりに、[Spring Cloud Gateway](https://cloud.spring.io/spring-cloud-static/spring-cloud-gateway/current/reference/html/) インスタンスの追加を検討してください。 Spring Cloud Gateway は、Azure Spring Cloud インスタンスにデプロイされたすべてのアプリケーションまたはマイクロサービスの単一エンドポイントとなります。 Spring Cloud Gateway が既にデプロイされている場合は、確実に新しくデプロイされたアプリケーションにトラフィックを送信するように構成します。
+* アプリケーションをパブリックにする代わりに、[Spring Cloud Gateway](https://cloud.spring.io/spring-cloud-gateway/reference/html/) インスタンスの追加を検討してください。 Spring Cloud Gateway は、Azure Spring Cloud インスタンスにデプロイされたすべてのアプリケーションまたはマイクロサービスの単一エンドポイントとなります。 Spring Cloud Gateway が既にデプロイされている場合は、確実に新しくデプロイされたアプリケーションにトラフィックを送信するように構成します。
 
 * Spring Cloud Config サーバーを追加し、すべての Spring Cloud マイクロサービスの構成を、バージョン管理も含め、一元的に管理することを検討してください。 まず、構成を格納するための Git リポジトリを作成し、それを使用するように Azure Spring Cloud インスタンスを構成します。 詳細については、[自分のサービス向けに Spring Cloud Config Server インスタンスを設定する](/azure/spring-cloud/spring-cloud-tutorial-config-server)」を参照してください。 次に、以下の手順で構成を移行します。
 

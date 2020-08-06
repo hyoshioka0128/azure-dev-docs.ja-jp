@@ -6,12 +6,12 @@ ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 2/12/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: fb6a7c108f99081eeeb2bd41f1366f4c38865fe6
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: c52326b29aca3b12310f8a1a0acd86566c45ecf8
+ms.sourcegitcommit: b224b276a950b1d173812f16c0577f90ca2fbff4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379736"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87810635"
 ---
 # <a name="migrate-spring-cloud-applications-to-azure-spring-cloud"></a>Spring Cloud アプリケーションを Azure Spring Cloud に移行する
 
@@ -94,7 +94,7 @@ ext {
 
 認証や認可を必要とするすべての ID プロバイダーおよびすべての Spring Cloud アプリケーションを特定します。 ID プロバイダーの構成方法については、次を参照してください。
 
-* OAuth2 の構成については、[Spring Cloud Security のクイックスタート](https://cloud.spring.io/spring-cloud-static/spring-cloud-security/current/reference/html/#_quickstart)を参照してください。
+* OAuth2 の構成については、[Spring Cloud Security のクイックスタート](https://cloud.spring.io/spring-cloud-security/2.1.x/multi/multi__quickstart.html#_quickstart)を参照してください。
 * Auth0 の Spring Security の構成については、[Auth0 の Spring Security のドキュメント](https://auth0.com/docs/quickstart/backend/java-spring-security5/01-authorization)を参照してください。
 * PingFederate の Spring Security の構成については、[Auth0 の PingFederate の手順](https://auth0.com/authenticate/java-spring-security/ping-federate/)を参照してください。
 

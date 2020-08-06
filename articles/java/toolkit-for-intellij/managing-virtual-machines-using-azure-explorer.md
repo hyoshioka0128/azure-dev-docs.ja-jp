@@ -7,12 +7,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: d05e5f5c6680e4a33bfd66289437d6967fe34e88
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 65f0c827fec68bc6a11d7dcaf380738967e16a92
+ms.sourcegitcommit: 300251b3d866bac9c7d2dfc3133efaaea8e0ce04
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86378066"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87438476"
 ---
 # <a name="manage-virtual-machines-by-using-the-azure-explorer-for-intellij"></a>Azure Explorer for IntelliJ を使用して仮想マシンを管理する
 
@@ -150,8 +150,8 @@ Azure 仮想マシンのサイズと料金について詳しくは、次のリ�
 <!-- URL List -->
 
 [Azure Toolkit for IntelliJ のサインイン手順]: ./sign-in-instructions.md
-[Azure の Windows 仮想マシンのサイズ]: /azure/virtual-machines/virtual-machines-windows-sizes
-[Azure の Linux 仮想マシンのサイズ]: /azure/virtual-machines/virtual-machines-linux-sizes
+[Azure の Windows 仮想マシンのサイズ]: https://docs.microsoft.com/azure/virtual-machines/sizes
+[Azure の Linux 仮想マシンのサイズ]: https://docs.microsoft.com/azure/virtual-machines/sizes
 [Windows 仮想マシンの料金]: https://azure.microsoft.com/pricing/details/virtual-machines/windows/
 [Linux 仮想マシンの料金]: https://azure.microsoft.com/pricing/details/virtual-machines/linux/
 

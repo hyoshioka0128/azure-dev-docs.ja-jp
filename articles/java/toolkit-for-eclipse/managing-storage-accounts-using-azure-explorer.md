@@ -7,12 +7,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 19f529b6d04e73c18648b77b2ac83a31ca1a455f
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: b3772c4d51852f9d77f63b2c998983a43cf00f4e
+ms.sourcegitcommit: 300251b3d866bac9c7d2dfc3133efaaea8e0ce04
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86378136"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87438336"
 ---
 # <a name="manage-storage-accounts-by-using-the-azure-explorer-for-eclipse"></a>Azure Explorer for Eclipse を使用してストレージ アカウントを管理する
 
@@ -113,8 +113,8 @@ Azure ストレージ アカウント、サイズ、および料金の詳細に�
 [Azure Storage のスケーラビリティおよびパフォーマンスのターゲット]: /azure/storage/storage-scalability-targets
 [コンテナー、BLOB、メタデータの名前付けと参照]: https://go.microsoft.com/fwlink/?LinkId=255555
 
-[Azure の Windows ストレージ アカウントのサイズ]: /azure/virtual-machines/virtual-machines-windows-sizes
-[Azure の Linux ストレージ アカウントのサイズ]: /azure/virtual-machines/virtual-machines-linux-sizes
+[Azure の Windows ストレージ アカウントのサイズ]: https://docs.microsoft.com/azure/virtual-machines/sizes
+[Azure の Linux ストレージ アカウントのサイズ]: https://docs.microsoft.com/azure/virtual-machines/sizes
 [Windows ストレージ アカウントの料金]: https://azure.microsoft.com/pricing/details/virtual-machines/windows/
 [Linux ストレージ アカウントの料金]: https://azure.microsoft.com/pricing/details/virtual-machines/linux/
 

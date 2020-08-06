@@ -1,17 +1,17 @@
 ---
-title: チュートリアル - Terraform を使用して Azure に Linux VM とインフラストラクチャを作成する
+title: Terraform を使用して Azure に Linux VM とインフラストラクチャを作成する
 description: Terraform を使用して、Azure で完全な Linux 仮想マシン環境を作成して管理する方法について説明します。
 keywords: Azure DevOps Terraform Linux VM 仮想マシン
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 06/14/2020
-ms.openlocfilehash: 53580815deaaef30512ca9ccd2c506908d2192ca
-ms.sourcegitcommit: 8cd0ddf1651c3b64bb72dedc2890108c2cfe3bcb
+ms.openlocfilehash: 518e5f619e142b3bed0ff539ff2b448c6f3e5b48
+ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87334437"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87478352"
 ---
-# <a name="tutorial-create-a-linux-vm-with-infrastructure-in-azure-using-terraform"></a>チュートリアル:Terraform を使用して Azure に Linux VM とインフラストラクチャを作成する
+# <a name="create-a-linux-vm-with-infrastructure-in-azure-using-terraform"></a>Terraform を使用して Azure に Linux VM とインフラストラクチャを作成する
 
 Terraform を利用すれば、Azure で完全なインフラストラクチャ デプロイを定義し、作成できます。 整合性があり、再現可能な方法で Azure リソースを作成し、構成する Terraform テンプレートを人間が読める形式でビルドします。 この記事では、Terraform を使用して、完全な Linux 環境とサポート リソースを作成する方法を示します。 [Terraform をインストールし、構成する](get-started-cloud-shell.md)方法についても説明します。
 

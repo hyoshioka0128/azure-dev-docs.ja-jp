@@ -1,20 +1,20 @@
 ---
-title: チュートリアル - Terraform を使用して Azure 仮想マシン スケール セットを作成する
+title: Terraform を使用して Azure 仮想マシン スケール セットを作成する
 description: Terraform を使用して Azure 仮想マシン スケール セットを構成し、バージョンを管理する方法について説明します。
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 11/07/2019
-ms.openlocfilehash: 057fbec811c842b27823395735186120612bc6c5
-ms.sourcegitcommit: 8cd0ddf1651c3b64bb72dedc2890108c2cfe3bcb
+ms.openlocfilehash: 75481c04038b13d81fa273e53bd1950c84fa5053
+ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87334407"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87478502"
 ---
-# <a name="tutorial-create-an-azure-virtual-machine-scale-set-using-terraform"></a>チュートリアル:Terraform を使用して Azure 仮想マシン スケール セットを作成する
+# <a name="create-an-azure-virtual-machine-scale-set-using-terraform"></a>Terraform を使用して Azure 仮想マシン スケール セットを作成する
 
 [Azure 仮想マシン スケール セット](/azure/virtual-machine-scale-sets)を使用すると、同一の VM を構成できます。 VM インスタンスの数は、需要またはスケジュールに基づいて調整できます。 詳細については、「[Azure Portal で仮想マシン スケール セットを自動的にスケーリングする](/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-autoscale-portal)」を参照してください。
 
-このチュートリアルでは、以下の内容を学習します。
+この記事では、次の方法について説明します。
 
 > [!div class="checklist"]
 > * Terraform デプロイを設定する
@@ -512,7 +512,7 @@ SSH "*ジャンプボックス*" は、ネットワーク上の他のサーバ�
 
 ## <a name="environment-cleanup"></a>環境のクリーンアップ
 
-このチュートリアルで作成された Terraform リソースを削除するには、Cloud Shell に次のコマンドを入力します。
+この記事で作成された Terraform リソースを削除するには、Cloud Shell に次のコマンドを入力します。
 
 ```bash
 terraform destroy

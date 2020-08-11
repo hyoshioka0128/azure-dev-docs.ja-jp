@@ -1,18 +1,18 @@
 ---
-title: チュートリアル - Azure で Yeoman を使用して Terraform ベース テンプレートを作成する
+title: Azure で Yeoman を使用して Terraform ベース テンプレートを作成する
 description: Azure で Yeoman を使用して Terraform ベース テンプレートを作成する方法について説明します。
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 05/25/2020
-ms.openlocfilehash: 8e9c4444d95f052fc5872565b316ec15e033be82
-ms.sourcegitcommit: 8cd0ddf1651c3b64bb72dedc2890108c2cfe3bcb
+ms.openlocfilehash: e43c28232009f3dec274ad2c1749d9ab5d88957b
+ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87334467"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87478532"
 ---
-# <a name="tutorial-create-a-terraform-base-template-in-azure-using-yeoman"></a>チュートリアル:Azure で Yeoman を使用して Terraform ベース テンプレートを作成する
+# <a name="create-a-terraform-base-template-in-azure-using-yeoman"></a>Azure で Yeoman を使用して Terraform ベース テンプレートを作成する
 
-このチュートリアルでは、[Terraform](/azure/terraform/) と [Yeoman](https://yeoman.io/) を組み合わせて使用する方法について説明します。 Terraform は、Azure でインフラストラクチャを作成するためのツールです。 Yeoman を使用すると、Terraform モジュールを簡単に作成できます。
+この記事では、[Terraform](/azure/terraform/) と [Yeoman](https://yeoman.io/) を組み合わせて使用する方法について説明します。 Terraform は、Azure でインフラストラクチャを作成するためのツールです。 Yeoman を使用すると、Terraform モジュールを簡単に作成できます。
 
 この記事では、次のタスクを行う方法について説明します。
 > [!div class="checklist"]
@@ -32,7 +32,7 @@ ms.locfileid: "87334467"
 - **Go プログラミング言語**: Yeoman で生成されるテスト ケースは Go 言語を使用したコードであるため、[Go をインストールします](https://golang.org/)。
 
 >[!NOTE]
->このチュートリアルの手順のほとんどには、コマンド ライン インターフェイスが含まれます。 説明する手順は、すべてのオペレーティング システムおよびコマンド ライン ツールに適用されます。 この例では、ローカル環境には PowerShell が選択され、Cloud Shell 環境には Git Bash が選択されています。
+>この記事の手順のほとんどには、コマンド ライン インターフェイスが含まれます。 説明する手順は、すべてのオペレーティング システムおよびコマンド ライン ツールに適用されます。 この例では、ローカル環境には PowerShell が選択され、Cloud Shell 環境には Git Bash が選択されています。
 
 ## <a name="prepare-your-environment"></a>環境を準備する
 

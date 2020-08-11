@@ -1,21 +1,21 @@
 ---
-title: チュートリアル - Terraform を使用して Azure Kubernetes Service (AKS) で Kubernetes クラスターを作成する
+title: Terraform を使用して Azure Kubernetes Service (AKS) で Kubernetes クラスターを作成する
 description: Azure Kubernetes Service と Terraform を使用して Kubernetes クラスターを作成する方法について説明します。
 keywords: Azure DevOps Terraform AKS Kubernetes
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/09/2020
-ms.openlocfilehash: 6056b6990e820d863404eea7394adc483de0cd3c
-ms.sourcegitcommit: 8cd0ddf1651c3b64bb72dedc2890108c2cfe3bcb
+ms.openlocfilehash: 0f0d8eb512f4ba6d2e4245ad61dcb41d969cf4b8
+ms.sourcegitcommit: da9fab1b718c71e40c7cbe0a08526c316dcdd6df
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87334455"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87525807"
 ---
-# <a name="tutorial-create-a-kubernetes-cluster-with-azure-kubernetes-service-using-terraform"></a>チュートリアル:Terraform を使用して Azure Kubernetes Service で Kubernetes クラスターを作成する
+# <a name="create-a-kubernetes-cluster-with-azure-kubernetes-service-using-terraform"></a>Terraform を使用して Azure Kubernetes Service で Kubernetes クラスターを作成する
 
 [Azure Kubernetes Service (AKS)](/azure/aks/) では、ホストされている Kubernetes 環境を管理します。 AKS では、コンテナー オーケストレーションの専門知識がなくても、コンテナー化されたアプリケーションをデプロイして管理できます。 また、AKS を使用すると、アプリをオフラインにすることなく、多くの一般的なメンテナンス操作を実行できます。 これらの操作には、必要に応じたリソースのプロビジョニング、アップグレード、スケーリングなどが含まれます。
 
-このチュートリアルでは、次のタスクを実施する方法について説明します。
+この記事では、次のタスクを行う方法について説明します。
 
 > [!div class="checklist"]
 > * HCL (HashiCorp 言語) を使用した Kubernetes クラスターの定義
@@ -147,7 +147,7 @@ Kubernetes クラスターのリソースを宣言する Terraform 構成ファ�
         default_node_pool {
             name            = "agentpool"
             node_count      = var.agent_count
-            vm_size         = "Standard_DS1_v2"
+            vm_size         = "Standard_D2_v2"
         }
 
         service_principal {
@@ -160,6 +160,11 @@ Kubernetes クラスターのリソースを宣言する Terraform 構成ファ�
             enabled                    = true
             log_analytics_workspace_id = azurerm_log_analytics_workspace.test.id
             }
+        }
+        
+        network_profile {
+        load_balancer_sku = "Standard"
+        network_plugin = "kubenet"
         }
 
         tags = {
@@ -334,7 +339,7 @@ Terraform は `terraform.tfstate` ファイルを介して状態をローカル�
 
     !["terraform plan" の結果例](./media/create-k8s-cluster-with-tf-and-aks/terraform-plan-complete.png)
 
-1. `terraform apply` コマンドを実行して、プランを適用し、Kubernetes クラスターを作成します。 Kubernetes クラスターを作成するプロセスに数分間かかり、Cloud Shell セッションがタイムアウトになる場合があります。Cloud Shell セッションがタイムアウトした場合は、「Cloud Shell タイムアウトから復旧する」セクションの手順に従ってチュートリアルを完了できます。
+1. `terraform apply` コマンドを実行して、プランを適用し、Kubernetes クラスターを作成します。 Kubernetes クラスターを作成するプロセスに数分間かかり、Cloud Shell セッションがタイムアウトになる場合があります。Cloud Shell セッションがタイムアウトした場合は、「Cloud Shell タイムアウトから復旧する」セクションの手順に従ってプロセスを完了できます。
 
     ```bash
     terraform apply out.plan

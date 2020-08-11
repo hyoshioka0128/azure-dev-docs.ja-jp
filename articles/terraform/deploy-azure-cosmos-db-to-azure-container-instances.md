@@ -1,18 +1,18 @@
 ---
-title: チュートリアル - Azure Container Instances への Azure Cosmos DB のデプロイ
+title: Azure Container Instances への Azure Cosmos DB のデプロイ
 description: Terraform を使用して、Azure Container Instances に Azure Cosmos DB をデプロイする方法について説明します
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 04/26/2020
-ms.openlocfilehash: d0a175d3b465de640c151bd2b8ce339f0b5ade5b
-ms.sourcegitcommit: 8cd0ddf1651c3b64bb72dedc2890108c2cfe3bcb
+ms.openlocfilehash: 4534de7d57b86adefee36f5f6c0f455126a033c3
+ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87334367"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87478602"
 ---
-# <a name="tutorial-deploy-an-azure-cosmos-db-to-azure-container-instances"></a>チュートリアル:Azure Container Instances への Azure Cosmos DB のデプロイ
+# <a name="deploy-an-azure-cosmos-db-to-azure-container-instances"></a>Azure Container Instances への Azure Cosmos DB のデプロイ
 
-このチュートリアルでは、Terraform を使用して Azure リソースを作成します。 このアーティクルの手順では、次のリソースを作成する方法について説明します。
+この記事では、Terraform を使用して Azure リソースを作成します。 このアーティクルの手順では、次のリソースを作成する方法について説明します。
 
 > [!div class="checklist"]
 > * Azure Cosmos DB インスタンス
@@ -170,7 +170,7 @@ ms.locfileid: "87334367"
 
 この記事で作成したリソースが不要になったら、削除してください。
 
-このチュートリアルで作成した Azure リソースを削除するには、[terraform destroy](https://www.terraform.io/docs/commands/destroy.html) コマンドを実行します。
+この記事で作成した Azure リソースを削除するには、[terraform destroy](https://www.terraform.io/docs/commands/destroy.html) コマンドを実行します。
 
 ```bash
 terraform destroy -auto-approve

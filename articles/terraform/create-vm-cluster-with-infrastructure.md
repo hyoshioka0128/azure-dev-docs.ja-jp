@@ -1,19 +1,19 @@
 ---
-title: チュートリアル - Terraform と HCL を使用した Azure VM クラスターの作成
+title: Terraform と HCL を使用した Azure VM クラスターの作成
 description: Terraform と HCL を使用して、Azure でロード バランサ―を備えた Linux 仮想マシン クラスターを作成する方法について説明します。
 keywords: Azure DevOps Terraform VM 仮想マシン クラスター
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/09/2020
-ms.openlocfilehash: 7f19d28270f911cac7bc96a9159f1b927ceb0235
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: f970bdd0f3d37d32cae9e556094c199cfb82df2e
+ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82170478"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87478491"
 ---
-# <a name="tutorial-create-an-azure-vm-cluster-with-terraform-and-hcl"></a>チュートリアル:Terraform と HCL を使用した Azure VM クラスターの作成
+# <a name="create-an-azure-vm-cluster-with-terraform-and-hcl"></a>Terraform と HCL を使用した Azure VM クラスターの作成
 
-このチュートリアルでは、[HCL](https://www.terraform.io/docs/configuration/syntax.html) を使用して小規模なコンピューティング クラスターを作成する方法について説明します。 
+この記事では、[HCL](https://www.terraform.io/docs/configuration/syntax.html) を使用して小規模なコンピューティング クラスターを作成する方法について説明します。 
 
 次のタスクを実行する方法について説明します。
 
@@ -236,7 +236,7 @@ Terraform は、構成ファイルに指定された状態を実現するため�
 
 ## <a name="4-apply-the-terraform-execution-plan"></a>4.Terraform 実行プランを適用する
 
-最後のステップでは、[terraform apply コマンド](https://www.terraform.io/docs/commands/apply.html)を使って、`terraform plan` コマンドによって生成されたアクションのセットを適用します。
+この記事の最後のステップでは、[terraform apply コマンド](https://www.terraform.io/docs/commands/apply.html)を使って、`terraform plan` コマンドによって生成されたアクションのセットを適用します。
 
 最新の実行プランを適用する場合は、次のコマンドを実行します。
 

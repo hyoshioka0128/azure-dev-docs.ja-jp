@@ -1,19 +1,19 @@
 ---
-title: チュートリアル - モジュール レジストリを使用した Terraform での Azure VM クラスターの作成
+title: モジュール レジストリを使用した Terraform での Azure VM クラスターの作成
 description: Terraform モジュールを使用して Azure で Windows 仮想マシン クラスターを作成する方法について説明します。
 keywords: Azure DevOps Terraform VM 仮想マシン クラスター モジュール レジストリ
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 03/09/2020
-ms.openlocfilehash: ad318237dcefd6586211c45fb79e51baa05549c4
-ms.sourcegitcommit: 8cd0ddf1651c3b64bb72dedc2890108c2cfe3bcb
+ms.openlocfilehash: 771f8a1ce86aa36f7dfa9cf3f97f50e41ca23efa
+ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87334387"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87478452"
 ---
-# <a name="tutorial-create-an-azure-vm-cluster-with-terraform-using-the-module-registry"></a>チュートリアル:モジュール レジストリを使用した Terraform での Azure VM クラスターの作成
+# <a name="create-an-azure-vm-cluster-with-terraform-using-the-module-registry"></a>モジュール レジストリを使用した Terraform での Azure VM クラスターの作成
 
-この記事では、Terraform [Azure コンピューティング モジュール](https://registry.terraform.io/modules/Azure/compute/azurerm/1.0.2)を使用した小さな VM クラスターの作成について説明します。 このチュートリアルで学習する内容は次のとおりです。 
+この記事では、Terraform [Azure コンピューティング モジュール](https://registry.terraform.io/modules/Azure/compute/azurerm/1.0.2)を使用した小さな VM クラスターの作成について説明します。 この記事では、次の方法について説明します。
 
 > [!div class="checklist"]
 > * Azure で認証を設定する
@@ -30,7 +30,7 @@ ms.locfileid: "87334387"
 ## <a name="set-up-authentication-with-azure"></a>Azure で認証を設定する
 
 > [!TIP]
-> [Terraform 環境変数を使用する](get-started-cloud-shell.md)か、または [Azure Cloud Shell](/azure/cloud-shell/overview) でこのチュートリアルを実行する場合は、この手順を省略します。
+> [Terraform 環境変数を使用する](get-started-cloud-shell.md)か、または [Azure Cloud Shell](/azure/cloud-shell/overview) でこの例を実行する場合は、この手順を省略します。
 
  Azure サービス プリンシパルを作成するには、「[Install Terraform and configure access to Azure (Terraform のインストールおよび Azure へのアクセスの構成)](get-started-cloud-shell.md)」を確認してください。 このサービス プリンシパルを使用して、空のディレクトリ内の新しいファイル `azureProviderAndCreds.tf` に次のコードを入力します。
 

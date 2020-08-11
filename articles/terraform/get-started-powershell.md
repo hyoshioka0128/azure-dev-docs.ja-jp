@@ -1,17 +1,17 @@
 ---
-title: クイック スタート - PowerShell を使用して Terraform の使用を開始する
+title: クイック スタート - Windows と PowerShell を使用して Terraform の使用を開始する
 description: このクイックスタートでは、Azure リソースを作成するために Terraform をインストールして構成する方法について説明します。
 keywords: Azure DevOps Terraform インストール 構成 Windows 初期化 プラン 適用 実行 ログイン RBAC サービス プリンシパル 自動スクリプト PowerShell
 ms.topic: quickstart
 ms.date: 07/27/2020
-ms.openlocfilehash: 40663f23d79066354cb7a78318eba7a8998676c5
-ms.sourcegitcommit: cf23d382eee2431a3958b1c87c897b270587bde0
+ms.openlocfilehash: 055d3fcdbe095ddc3e5e1f5b90efcbd4950d43f6
+ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87400660"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87478582"
 ---
-# <a name="quickstart-get-started-with-terraform-using-powershell"></a>クイック スタート:PowerShell を使用して Terraform の使用を開始する
+# <a name="quickstart-get-started-with-terraform-using-windows-and-powershell"></a>クイック スタート:Windows と PowerShell を使用して Terraform の使用を開始する
  
 [!INCLUDE [terraform-intro.md](includes/terraform-intro.md)]
 

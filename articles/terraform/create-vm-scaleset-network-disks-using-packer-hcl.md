@@ -1,20 +1,20 @@
 ---
-title: チュートリアル- Terraform を使用して Packer カスタム イメージから Azure 仮想マシン スケール セットを作成する
+title: Terraform を使用して Packer カスタム イメージから Azure 仮想マシン スケール セットを作成する
 description: Terraform を使用して、Packer で生成されたカスタム イメージから Azure 仮想マシン スケール セットを構成し、バージョンを管理する方法について説明します
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 11/07/2019
-ms.openlocfilehash: f72d8ab828259e4408ceb78528ce310a214e05ad
-ms.sourcegitcommit: 8cd0ddf1651c3b64bb72dedc2890108c2cfe3bcb
+ms.openlocfilehash: 541d294a3098e2da7c76855de4db0c425b408e0e
+ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87334397"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87478472"
 ---
-# <a name="tutorial-create-an-azure-virtual-machine-scale-set-from-a-packer-custom-image-by-using-terraform"></a>チュートリアル:Terraform を使用して Packer カスタム イメージから Azure 仮想マシン スケール セットを作成する
+# <a name="create-an-azure-virtual-machine-scale-set-from-a-packer-custom-image-by-using-terraform"></a>Terraform を使用して Packer カスタム イメージから Azure 仮想マシン スケール セットを作成する
 
 [Azure 仮想マシン スケール セット](/azure/virtual-machine-scale-sets)を使用すると、同一の VM を構成できます。 VM インスタンスの数は、需要またはスケジュールに基づいて調整できます。 詳細については、「[Azure Portal で仮想マシン スケール セットを自動的にスケーリングする](/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-autoscale-portal)」を参照してください。
 
-このチュートリアルでは、以下の内容を学習します。
+この記事では、次のことについて説明します。
 
 > [!div class="checklist"]
 > * Terraform デプロイを設定します。
@@ -158,14 +158,14 @@ terraform apply
 
 
 ## <a name="create-an-azure-image-by-using-packer"></a>Packer を使用して Azure イメージを作成する
-チュートリアル「[Packer を使用して Azure に Linux 仮想マシンのイメージを作成する方法](/azure/virtual-machines/linux/build-image-with-packer)」の手順に従って、カスタム Linux イメージを作成します。
+記事「[Packer を使用して Azure に Linux 仮想マシンのイメージを作成する方法](/azure/virtual-machines/linux/build-image-with-packer)」の手順に従って、カスタム Linux イメージを作成します。
  
-チュートリアルに従って、Nginx がインストールされているプロビジョニング解除済みの Ubuntu イメージを作成します。
+記事に従って、Nginx がインストールされているプロビジョニング解除済みの Ubuntu イメージを作成します。
 
 ![Packer イメージを作成すると、イメージが準備できます](./media/create-vm-scaleset-network-disks-using-packer-hcl/packerimagecreated.png)
 
 > [!NOTE]
-> このチュートリアルのために、Packer イメージ内でコマンドを実行して Nginx をインストールします。 作成時に独自のスクリプトを実行することもできます。
+> この記事のために、Packer イメージ内でコマンドを実行して Nginx をインストールします。 作成時に独自のスクリプトを実行することもできます。
 
 ## <a name="edit-the-infrastructure-to-add-the-virtual-machine-scale-set"></a>インフラストラクチャを編集して仮想マシン スケール セットを追加する
 
@@ -442,7 +442,7 @@ terraform apply
 
 ## <a name="clean-up-the-environment"></a>環境のクリーンアップ
 
-次のコマンドは、このチュートリアルで作成したリソースを削除します。
+次のコマンドは、この記事で作成したリソースを削除します。
 
 ```bash
 terraform destroy

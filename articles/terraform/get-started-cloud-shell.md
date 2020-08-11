@@ -4,12 +4,12 @@ description: このクイックスタートでは、Azure リソースを作成�
 keywords: Azure DevOps Terraform インストール 構成 Cloud Shell 初期化 プラン 適用 実行 portal ログイン RBAC サービス プリンシパル 自動スクリプト
 ms.topic: quickstart
 ms.date: 07/26/2020
-ms.openlocfilehash: 381313edf386ac33dca137191c9eefef48f92931
-ms.sourcegitcommit: 8cd0ddf1651c3b64bb72dedc2890108c2cfe3bcb
+ms.openlocfilehash: dbe290fbb7909d116d2ff0cec8e01a3b145ded30
+ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87335269"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87478592"
 ---
 # <a name="quickstart-get-started-with-terraform-using-azure-cloud-shell"></a>クイック スタート:Azure Cloud Shell を使用して Terraform の使用を開始する
  
@@ -35,7 +35,7 @@ ms.locfileid: "87335269"
 
 1. Cloud Shell を以前に使用したことがない場合は、環境とストレージの設定を構成します。 この記事では、Bash 環境を使用します。
 
-注:
+**注**:
 - Cloud Shell には、Terraform の最新バージョンが自動的にインストールされます。 また、Terraform は、現在の Azure サブスクリプションの情報を自動的に使用します。 そのため、インストールや構成は必要ありません。
 
 ## <a name="authenticate-to-azure"></a>Azure に対して認証します
@@ -55,7 +55,7 @@ Terraform では、Azure に対して認証を行うためのオプションが�
 az login
 ```
 
-注:
+**注**:
 
 - ログインが成功すると、`az login` により、ログインした Microsoft アカウントに関連付けられている Azure サブスクリプションの一覧が表示されます。
 - 使用可能な Azure サブスクリプションごとにプロパティの一覧が表示されます。 `isDefault` プロパティは、使用している Azure サブスクリプションを識別します。 別の Azure サブスクリプションに切り替える方法については、「[現在の Azure サブスクリプションを設定する](#set-the-current-azure-subscription)」セクションを参照してください。
@@ -74,7 +74,7 @@ Azure サービスをデプロイまたは使用する自動化ツール (Terraf
 az ad sp create-for-rbac --role="Contributor" --scopes="/subscriptions/<subscription_id>"
 ```
 
-注:
+**注**:
 
 - 正常に完了すると、`az ad sp create-for-rbac` によっていくつかの値が表示されます。 `name`、`password`、および `tenant` の値は、次のステップで使用します。
 - このパスワードは、紛失した場合、取得できません。 したがって、パスワードは安全な場所に保管してください。 パスワードを忘れた場合は、[サービス プリンシパルの資格情報をリセット](/cli/azure/create-an-azure-service-principal-azure-cli#reset-credentials)する必要があります。
@@ -107,7 +107,7 @@ Microsoft アカウントは、複数の Azure サブスクリプションに関
     az account set --subscription="<subscription_id>"
     ```
 
-    注:
+    **注**:
 
     - `az account set` を呼び出すと、指定した Azure サブスクリプションに切り替えた結果が表示されません。 ただし、`az account show` を使用して、現在の Azure サブスクリプションが変更されたことを確認できます。
 
@@ -154,7 +154,7 @@ Microsoft アカウントは、複数の Azure サブスクリプションに関
     }
     ```
 
-    注:
+    **注**:
 
     - `provider` ブロックは、[Azure プロバイダー (`azurerm`)](https://www.terraform.io/docs/providers/azurerm/index.html) が使用されることを指定しています。
     - `azurerm` プロバイダー ブロック内には、`version` と `features` 属性が設定されています。 コメントに記載されているように、その使用方法はバージョン固有です。 ご使用環境に合わせてこれらの属性を設定する方法の詳細については、[AzureRM プロバイダーの v2.0](https://www.terraform.io/docs/providers/azurerm/guides/2.0-upgrade-guide.html) に関するページを参照してください。
@@ -174,13 +174,13 @@ Microsoft アカウントは、複数の Azure サブスクリプションに関
     terraform init
     ```
 
-1. Terraform では、[terraform plan](https://www.terraform.io/docs/commands/plan.html) を使用して、完了する予定のアクションをプレビューできます。
+1. [terraform plan](https://www.terraform.io/docs/commands/plan.html) を実行して、実行プランを作成し、その結果をプレビューします。
 
     ```bash
     terraform plan
     ```
 
-    注:
+    **注**:
 
     - `terraform plan` コマンドは、実行プランを作成しますが、実行はしません。 代わりに、構成ファイルに指定された構成を作成するために必要なアクションを決定します。
     - `terraform plan` コマンドを使用すると、実際のリソースに変更を加える前に、実行プランが自分が期待しているものと一致しているかどうかを確認できます。
@@ -200,7 +200,7 @@ Microsoft アカウントは、複数の Azure サブスクリプションに関
     az group show -n "QuickstartTerraformTest-rg"
     ```
 
-    注:
+    **注**:
 
     - 成功すると、`az group show` により、新しく作成されたリソース グループのさまざまなプロパティが表示されます。
 
@@ -232,11 +232,11 @@ Microsoft アカウントは、複数の Azure サブスクリプションに関
     terraform apply QuickstartTerraformTest.tfplan
     ```
 
-注:
-
-- 自動化での使用を有効にするために、`terraform apply <filename>` の実行で確認が求められることはありません。
-- この機能を使用する場合は、[セキュリティ警告セクション](https://www.terraform.io/docs/commands/plan.html#security-warning)を参照してください。
-
+    **注**:
+    
+    - 自動化での使用を有効にするために、`terraform apply <filename>` の実行で確認が求められることはありません。
+    - この機能を使用する場合は、[セキュリティ警告セクション](https://www.terraform.io/docs/commands/plan.html#security-warning)を参照してください。
+    
 ## <a name="clean-up-resources"></a>リソースをクリーンアップする
 
 この記事で作成したリソースが不要になったら、削除してください。
@@ -247,7 +247,7 @@ Microsoft アカウントは、複数の Azure サブスクリプションに関
     terraform plan -destroy -out QuickstartTerraformTest.destroy.tfplan
     ```
 
-    **注:**
+    **注**:
     - `terraform plan` コマンドは、実行プランを作成しますが、実行はしません。 代わりに、構成ファイルに指定された構成を作成するために必要なアクションを決定します。 これにより、実際のリソースに変更を加える前に、実行プランが自分の想定と一致しているかどうかを確認できます。
     - `-destroy` パラメーターを指定すると、リソースを破棄するプランが生成されます。
     - 省略可能な `-out` パラメーターを使用すると、プランの出力ファイルを指定できます。 `-out` パラメーターは必ず使用してください。これにより、レビューしたプランが適用内容とまったく同じであることが確実になるためです。

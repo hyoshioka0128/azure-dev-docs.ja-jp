@@ -20,8 +20,10 @@
       items:
         - name: WebLogic から Azure Virtual Machines へ
           href: migrate-weblogic-to-virtual-machines.md
-        - name: AAD を使用して WebLogic から Azure へ (LDAP 経由)
+        - name: AAD を使用した WebLogic (LDAP 経由)
           href: migrate-weblogic-with-aad-ldap.md
+        - name: App Gateway を使用した WebLogic
+          href: migrate-weblogic-with-app-gateway.md
     - name: WildFly から AKS の WildFly へ
       href: migrate-wildfly-to-wildfly-on-azure-kubernetes-service.md
     - name: WebLogic から AKS 上の WildFly へ

@@ -4,12 +4,13 @@ description: 継続的インテグレーションおよびデプロイ パイプ
 keywords: jenkins, azure, devops, azure sping クラウド, azure cli
 ms.topic: tutorial
 ms.date: 01/07/2020
-ms.openlocfilehash: c9341ef89e43f14111b6e656daebadcd4790322d
-ms.sourcegitcommit: 8309822d57f784a9c2ca67428ad7e7330bb5e0d6
+ms.custom: devx-track-azurecli
+ms.openlocfilehash: 0135dbfa67f1de2b0602ae06b7ab970c2b560d59
+ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82861215"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87478312"
 ---
 # <a name="tutorial-deploy-apps-to-azure-spring-cloud-using-jenkins-and-the-azure-cli"></a>チュートリアル:Jenkins と Azure CLI を使用して Azure Spring Cloud にアプリをデプロイする
 
@@ -191,7 +192,7 @@ ms.locfileid: "82861215"
 ## <a name="create-a-jenkinsfile"></a>Jenkinsfile を作成する
 1. 自分のリポジトリ (https://github.com/&lt ;対象の GitHub ID&gt; /piggymetrics) で、ルートに **Jenkinsfile** を作成します。
 
-2. ファイルを次のように更新します。 **\<resource group name>** および **\<service name>** の値を必ず置き換えてください。 Jenkins で資格情報を追加したときに別の値を使用する場合は、**azure_service_principal** を適切な ID に置き換えます。 
+2. ファイルを次のように更新します。 必ず **\<resource group name>** と **\<service name>** の値を置き換えます。 Jenkins で資格情報を追加したときに別の値を使用する場合は、**azure_service_principal** を適切な ID に置き換えます。 
 
    ```groovy
        node {

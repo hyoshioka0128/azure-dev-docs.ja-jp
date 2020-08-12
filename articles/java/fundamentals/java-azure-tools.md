@@ -42,8 +42,8 @@ Azure 2.0 CLI は、Azure リソースをコマンド ラインから管理す�
 
 [Azure CLI 2.0 の概要](/cli/azure/get-started-with-azure-cli)
 
-## <a name="azure-storage-explorer"></a>Azure ストレージ エクスプローラー
+## <a name="azure-storage-explorer"></a>Azure Storage Explorer
 
-Azure ストレージ アカウント、コンテナー、BLOB/ファイルをデスクトップから管理します。 Azure ストレージ エクスプローラーは現在プレビュー段階であり、Windows、macOS、Linux で動作します。
+Azure ストレージ アカウント、コンテナー、BLOB/ファイルをデスクトップから管理します。 Azure Storage Explorer は現在プレビュー段階であり、Windows、macOS、Linux で動作します。
 
-[Azure ストレージ エクスプローラーの概要](/azure/vs-azure-tools-storage-manage-with-storage-explorer)
+[Azure Storage Explorer の概要](/azure/vs-azure-tools-storage-manage-with-storage-explorer)

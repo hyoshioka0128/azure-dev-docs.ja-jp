@@ -3,11 +3,13 @@ title: Azure ライブラリを使用する場合のプロキシの構成
 description: HTTP[S]_PROXY 環境変数を使用して、スクリプトまたはアプリ全体のプロキシを定義したり、クライアント コンストラクターまたは操作メソッドに対して省略可能な名前付き引数を使用したりします。
 ms.date: 06/16/2020
 ms.topic: conceptual
-ms.openlocfilehash: c24ad2f5cd58e6cee9b9f61cb216e949ddd446ef
-ms.sourcegitcommit: b3e506c6f140d91e6fdd9dcadf22ab1aa67f6978
+ms.custom: devx-track-python
+ms.openlocfilehash: 86eaa5b8dc0ddfb529643a5c015938344582e62b
+ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84947507"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87982704"
 ---
 # <a name="how-to-configure-proxies-for-the-azure-libraries"></a>Azure ライブラリ用にプロキシを構成する方法
 

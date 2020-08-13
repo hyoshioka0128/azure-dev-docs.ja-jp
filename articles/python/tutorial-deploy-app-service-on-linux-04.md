@@ -3,13 +3,13 @@ title: 手順 4:Azure App Service on Linux の Python アプリ用のカスタ�
 description: チュートリアルの手順 4. では、Web アプリの起動方法を App Service に指定します (Django や Flask などのフレームワークごとの手順を含む)。
 ms.topic: conceptual
 ms.date: 05/19/2020
-ms.custom: seo-python-october2019
-ms.openlocfilehash: 1e724fa7d35c1b3488dbe6738a4840e20bbfbf96
-ms.sourcegitcommit: efab6be74671ea4300162e0b30aa8ac134d3b0a9
+ms.custom: devx-track-python, seo-python-october2019
+ms.openlocfilehash: 5de5f7f52fbf8c88bf05c7cb300952aee81a8439
+ms.sourcegitcommit: 5051b25ad32be891800b23fc7ae12a4ca85cbb73
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84256447"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88147383"
 ---
 # <a name="4-configure-a-custom-startup-file-for-python-apps-on-azure-app-service"></a>4:Azure App Service の Python アプリ用のカスタム スタートアップ ファイルを構成する
 
@@ -17,7 +17,7 @@ ms.locfileid: "84256447"
 
 この記事では、Azure App Service で Python アプリのカスタム スタートアップ ファイルを構成する必要があることについて説明します。
 
-アプリを構築した方法によっては、Azure Docs の [App Service on Linux 向けの Python アプリの構成](https://docs.microsoft.com/azure/app-service/containers/how-to-configure-python)に関するページで説明されているように、そのアプリ用にカスタム スタートアップ コマンド ファイルを作成することが必要になる場合があります。
+アプリを構築した方法によっては、Azure Docs の [App Service on Linux 向けの Python アプリの構成](/azure/app-service/configure-language-python)に関するページで説明されているように、そのアプリ用にカスタム スタートアップ コマンド ファイルを作成することが必要になる場合があります。
 
 カスタム スタートアップ コマンドの具体的なユース ケースは次のとおりです。
 

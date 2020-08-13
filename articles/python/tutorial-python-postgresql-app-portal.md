@@ -4,17 +4,17 @@ description: Azure で Web アプリと PostgreSQL データベースをプロ�
 ms.devlang: python
 ms.topic: tutorial
 ms.date: 07/23/2020
-ms.custom: tracking-python
-ms.openlocfilehash: f3c667ab720a3e8c82b59dc439b8033697b4fc2a
-ms.sourcegitcommit: b224b276a950b1d173812f16c0577f90ca2fbff4
+ms.custom: devx-track-python
+ms.openlocfilehash: 0e9785871eba8866b5d225bb9ac1339becc172a3
+ms.sourcegitcommit: 5051b25ad32be891800b23fc7ae12a4ca85cbb73
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87810595"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88147393"
 ---
 # <a name="tutorial-deploy-a-django-web-app-with-postgresql-using-the-azure-portal"></a>チュートリアル:Azure portal を使用して PostgreSQL で Django Web アプリをデプロイする
 
-Azure portal を使用して、データ ドリブンの Python [Django](https://www.djangoproject.com/) Web アプリを [Azure App Service](/azure/app-service/containers/app-service-linux-intro) にデプロイし、それを [Azure Database for PostgreSQL](/azure/postgresql/) データベースに接続できます。 Free 価格レベルで始めて、後からいつでもスケールアップすることができます。
+Azure portal を使用して、データ ドリブンの Python [Django](https://www.djangoproject.com/) Web アプリを [Azure App Service](/azure/app-service/overview#app-service-on-linux) にデプロイし、それを [Azure Database for PostgreSQL](/azure/postgresql/) データベースに接続できます。 Free 価格レベルで始めて、後からいつでもスケールアップすることができます。
 
 この場合の Web アプリ コードは、GitHub リポジトリから取得されます。GitHub からの継続的なデプロイのために Web アプリを構成します。 構成の完了後、ローカル コンピューターでさらに開発を行い、変更をリポジトリにコミットできます。 Azure の Web アプリは、これらの変更を自動的にデプロイします。
 
@@ -27,7 +27,7 @@ Azure portal を使用して、データ ドリブンの Python [Django](https:/
 > - 診断ログを表示する
 > - Azure portal で Web アプリを管理する
 
-[このチュートリアルの Azure CLI ベースのバージョン](/azure/app-service/containers/tutorial-python-postgresql-app?tabs=bash%2Cclone)も使用できます。
+[このチュートリアルの Azure CLI ベースのバージョン](/azure/app-service/tutorial-python-postgresql-app)も使用できます。
 
 ## <a name="fork-the-sample-repository"></a>サンプル リポジトリをフォークする
 
@@ -137,7 +137,7 @@ Azure portal を使用して、データ ドリブンの Python [Django](https:/
 
 ## <a name="connect-the-database"></a>データベースに接続する
 
-このセクションでは、`pollsdb` データベースに接続するために必要な Web アプリの設定を作成します。 これらの設定は、環境変数としてアプリ コードに出現します (詳細については、「[環境変数へのアクセス](/azure/app-service/containers/how-to-configure-python#access-environment-variables)」を参照してください)。
+このセクションでは、`pollsdb` データベースに接続するために必要な Web アプリの設定を作成します。 これらの設定は、環境変数としてアプリ コードに出現します (詳細については、「[環境変数へのアクセス](/azure/app-service/configure-language-python#access-environment-variables)」を参照してください)。
 
 1. 前のセクションで作成した Web アプリのブラウザー タブまたはウィンドウに戻ります。
 
@@ -182,7 +182,7 @@ Azure portal を使用して、データ ドリブンの Python [Django](https:/
 
 1. **[続行]** を選択してリポジトリを選択し、 **[完了]** を選択します。 Azure で、数秒以内にコードがデプロイされ、アプリが開始されます。
 
-    App Service では、各サブフォルダー内で *wsgi.py* ファイルを探すことにより、Django プロジェクトが検出されます。 App Service でそのファイルが見つかると、Django Web アプリが読み込まれます。 詳細については、[組み込み Python イメージの構成](/azure/app-service/containers/how-to-configure-python)に関する記事を参照してください。
+    App Service では、各サブフォルダー内で *wsgi.py* ファイルを探すことにより、Django プロジェクトが検出されます。 App Service でそのファイルが見つかると、Django Web アプリが読み込まれます。 詳細については、[組み込み Python イメージの構成](/azure/app-service/configure-language-python)に関する記事を参照してください。
 
 [問題がある場合は、お知らせください。](https://aka.ms/DjangoPortalTutorialHelp)
 
@@ -279,4 +279,4 @@ Azure portal の Web アプリのページで、(左側の **[監視]** の下�
 App Service で Python アプリが実行される方法を確認する:
 
 > [!div class="nextstepaction"]
-> [Python アプリの構成](https://docs.microsoft.com/azure/app-service/containers/how-to-configure-python)
+> [Python アプリの構成](/azure/app-service/configure-language-python)

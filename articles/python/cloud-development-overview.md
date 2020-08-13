@@ -3,11 +3,13 @@ title: Azure を使用したクラウド開発 - Azure とは
 description: Microsoft Azure でのクラウド アプリケーションの開発の概要。データ センター、サービス、リソースの関係から始めます。
 ms.date: 05/12/2020
 ms.topic: conceptual
-ms.openlocfilehash: 25b3e45dbc885dea4dd75a60ea0b7866f28e1710
-ms.sourcegitcommit: 0d492c9cc9b5295285ab75da55e5ab0577576287
+ms.custom: devx-track-python
+ms.openlocfilehash: e776ce3aa84921dcfcb1be1e8613ae7332fe61a8
+ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2020
-ms.locfileid: "85370713"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87983177"
 ---
 # <a name="cloud-development-on-azure"></a>Azure でのクラウド開発
 

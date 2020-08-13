@@ -3,12 +3,13 @@ title: Azure での Python アプリのホスティングの概要
 description: Python アプリ コードをホスティングするための Azure ドキュメントの概要に関する資料のインデックス。
 ms.date: 05/28/2020
 ms.topic: conceptual
-ms.openlocfilehash: f4e880901b057b7ad4c958c4acf3239d2ef79db5
-ms.sourcegitcommit: efab6be74671ea4300162e0b30aa8ac134d3b0a9
+ms.custom: devx-track-python
+ms.openlocfilehash: 1fa1f47355c6dac81d94f2a10f92b65c471be432
+ms.sourcegitcommit: 5051b25ad32be891800b23fc7ae12a4ca85cbb73
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84256247"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88147353"
 ---
 # <a name="hosting-python-apps-on-azure"></a>Azure での Python アプリのホスティング
 
@@ -21,8 +22,8 @@ ms.locfileid: "84256247"
   - [Visual Studio Code を使用して Azure Functions を Azure Storage に接続する](/azure/azure-functions/functions-add-output-binding-storage-queue-vs-code?pivots=programming-language-python)
   
 - **Web アプリのホスティングと監視**:
-  - [Azure App Service on Linux で Python アプリを作成する](/azure/app-service/containers/quickstart-python)
-  - [Azure App Service 向けの Linux Python アプリを構成する](/azure/app-service/containers/how-to-configure-python)
+  - [Azure App Service on Linux で Python アプリを作成する](/azure/app-service/quickstart-python)
+  - [Azure App Service 向けの Linux Python アプリを構成する](/azure/app-service/configure-language-python)
   - [Python アプリケーション用に Azure Monitor をセットアップする](/azure/azure-monitor/app/opencensus-python)
 
 - **コンテナーのホスティング**:

@@ -3,13 +3,13 @@ title: 手順 2:Visual Studio Code を使用してコンテナー イメージ�
 description: チュートリアルの手順 2、実際の Docker イメージをコンテナー レジストリから Azure App Service にデプロイする。
 ms.topic: conceptual
 ms.date: 09/12/2019
-ms.custom: seo-python-october2019
-ms.openlocfilehash: 8005ba428d99051d9b5b86ed4f5222c1cd9ba673
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-python, seo-python-october2019
+ms.openlocfilehash: 1a8afac614f930e3d26424d5d776ff5d97019324
+ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "80441347"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87983534"
 ---
 # <a name="2-deploy-a-container-image-to-azure-app-service"></a>2:コンテナー イメージを Azure App Service にデプロイする
 

@@ -3,11 +3,13 @@ title: Azure 開発フロー
 description: プロビジョニング、コーディング、テスト、デプロイ、管理を伴う Azure でのクラウド開発サイクルの概要。
 ms.date: 06/04/2020
 ms.topic: conceptual
-ms.openlocfilehash: 644cafc60619a1920e256c4c4f32f1b3308caa83
-ms.sourcegitcommit: 499f7275446f006fa43c4eff3b1f0d001e9a98d9
+ms.custom: devx-track-python
+ms.openlocfilehash: 1f3ba98815f572dc6efe6ea0c4195142e204478e
+ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84453743"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87983234"
 ---
 # <a name="the-azure-development-flow-provision-code-test-deploy-and-manage"></a>Azure の開発フロー: プロビジョニング、コーディング、テスト、デプロイ、管理
 

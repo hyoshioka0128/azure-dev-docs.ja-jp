@@ -3,13 +3,13 @@ title: 手順 5:VS Code を使用して Azure App Service on Linux に Python We
 description: チュートリアルの手順 5、Web アプリのコードをデプロイする
 ms.topic: conceptual
 ms.date: 09/12/2019
-ms.custom: seo-python-october2019
-ms.openlocfilehash: 3f17fe3190857d1cc4faca84c9319e1c514cea4c
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-python, seo-python-october2019
+ms.openlocfilehash: b1c6fba45520e3e327f4b15d60d28000091ad016
+ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "80441207"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87983617"
 ---
 # <a name="5-deploy-your-python-web-app-to-azure-app-service-on-linux"></a>5:Azure App Service on Linux に Python Web アプリをデプロイする
 

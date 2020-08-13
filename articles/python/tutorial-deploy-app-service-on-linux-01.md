@@ -3,12 +3,13 @@ title: チュートリアル:Visual Studio Code から Azure App Service on Linu
 description: チュートリアルの手順 1、概要、前提条件、Azure にサインインする。
 ms.topic: conceptual
 ms.date: 09/12/2019
-ms.custom: seo-python-october2019
-ms.openlocfilehash: 444dd9737d52de58f71ef9a01aeca6a203e97a92
-ms.sourcegitcommit: 7474de4884bce076ce33ca77ae3584ba1598bbc6
+ms.custom: devx-track-python, seo-python-october2019
+ms.openlocfilehash: 88335c081375e0a3830de7676e137f5b1038a98c
+ms.sourcegitcommit: 5051b25ad32be891800b23fc7ae12a4ca85cbb73
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "85069379"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88147403"
 ---
 # <a name="tutorial-deploy-python-apps-to-azure-app-service-on-linux-from-visual-studio-code"></a>チュートリアル:Visual Studio Code から Azure App Service on Linux に Python アプリをデプロイする
 
@@ -19,7 +20,7 @@ ms.locfileid: "85069379"
 デモ ビデオについては、仮想 PyCon 2020 の <a href="https://www.youtube.com/watch?v=dNVvFttc-sA&feature=youtu.be&ocid=AID3006292" target="_blank">VS Code と Azure App Service での WebApps のビルド</a>に関する動画 (youtube.com 2020) をご覧ください。
 
 > [!TIP]
-> [Azure App Service on Linux](https://docs.microsoft.com/azure/app-service/containers/app-service-linux-intro) は、定義済みの Docker コンテナーでソース コードを実行します。 そのコンテナーでは、Python 3.7 と [Gunicorn](https://gunicorn.org) Web サーバーを使用してアプリが実行されます。 このコンテナーの特性は、[App Service on Linux 向けの Python アプリの構成](https://docs.microsoft.com/azure/app-service/containers/how-to-configure-python)に関するページで説明されています。 コンテナーの定義自体は [github.com/Azure-App-Service/python](https://github.com/Azure-App-Service/python/tree/master/3.7) にあります。
+> [Azure App Service on Linux](/azure/app-service/overview#app-service-on-linux) は、定義済みの Docker コンテナーでソース コードを実行します。 そのコンテナーでは、Python 3.7 と [Gunicorn](https://gunicorn.org) Web サーバーを使用してアプリが実行されます。 このコンテナーの特性は、[App Service on Linux 向けの Python アプリの構成](/azure/app-service/configure-language-python)に関するページで説明されています。 コンテナーの定義自体は [github.com/Azure-App-Service/python](https://github.com/Azure-App-Service/python/tree/master/3.7) にあります。
 
 ## <a name="prerequisites"></a>前提条件
 

@@ -3,11 +3,13 @@ title: Azure で開発するためのローカル Python 環境を構成する
 description: Visual Studio Code、Azure SDK ライブラリ、ライブラリ認証に必要な資格情報など、Azure で作業するためのローカル Python 開発環境を設定する方法。
 ms.date: 05/29/2020
 ms.topic: conceptual
-ms.openlocfilehash: cf87c90bd36594ffa4e1f3837133238f89a77836
-ms.sourcegitcommit: 43e4b50f6f6f5806b2f162ca39367face0779ff6
+ms.custom: devx-track-python
+ms.openlocfilehash: 8d20960df802dc4671f6b432173a56f6dc88c38c
+ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84421498"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87983144"
 ---
 # <a name="configure-your-local-python-dev-environment-for-azure"></a>Azure 用のローカル Python 開発環境を構成する
 

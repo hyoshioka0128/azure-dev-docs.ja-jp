@@ -3,13 +3,13 @@ title: 手順 5:Azure リソースをクリーンアップする
 description: チュートリアルの手順 5、引き続き料金を請求されないように Azure リソースをクリーンアップする。
 ms.topic: conceptual
 ms.date: 09/12/2019
-ms.custom: seo-python-october2019
-ms.openlocfilehash: df785e68de26fe4414430289800fdabfa8757eef
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-python, seo-python-october2019
+ms.openlocfilehash: cf19f0a5a1fabeed8a1858c07098dc38a84911ef
+ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "80441857"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87982926"
 ---
 # <a name="5-clean-up-azure-resources"></a>5:Azure リソースをクリーンアップする
 

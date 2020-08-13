@@ -3,12 +3,13 @@ title: Azure の Python アプリ向けデータ ソリューションの概要
 description: Python アプリ向けデータ ソリューションに関する Azure ドキュメント内の概要資料のインデックス。
 ms.date: 05/28/2020
 ms.topic: conceptual
-ms.openlocfilehash: 9880025bcbe2d019d04469e6cff0b415cbbdc744
-ms.sourcegitcommit: a9b9157bb3a802ecfe3699854788d010a3f08d7e
+ms.custom: devx-track-python
+ms.openlocfilehash: bdd55f180b6ba72386bee64fb8f6bfd0b916af02
+ms.sourcegitcommit: 5051b25ad32be891800b23fc7ae12a4ca85cbb73
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84202891"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88147343"
 ---
 # <a name="data-solutions-for-python-apps-on-azure"></a>Azure の Python アプリのデータ ソリューション
 
@@ -18,7 +19,7 @@ ms.locfileid: "84202891"
 
 - **PostgreSQL**:
   - [Python を使用してAzure Database for PostgreSQL に接続し、データに対してクエリを実行する](/azure/postgresql/connect-python)
-  - [Azure App Service で PostgreSQL を使用して Python (Django) Web アプリを実行する](/azure/app-service/containers/tutorial-python-postgresql-app)
+  - [Azure App Service で PostgreSQL を使用して Python (Django) Web アプリを実行する](/azure/app-service/tutorial-python-postgresql-app)
 
 - **MySQL**:
   - [Python を使用して Azure Database for MySQL のデータに接続してクエリを実行する](/azure/mysql/connect-python)

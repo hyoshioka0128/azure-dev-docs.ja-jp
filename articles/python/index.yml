@@ -1,151 +1,99 @@
 ### YamlMime:Landing
 title: Python 開発者向けの Azure
 summary: >
-  Azure では、アプリ ホスティング、ストレージ、mySQL や PostgreSQL などのオープンソース データベース、データ サイエンス、機械学習、AI など、Python 開発者向けの広範なサービスを提供しています。 Python 用の Azure ライブラリ (SDK) は、開発者がこれらのサービスを使用するときの生産性を高めるのに役立ちます。
+  Web アプリ、サーバーレス アプリ、コンテナー、および機械学習モデル用に、Python コードを Azure にデプロイします。 Python 用 Azure ライブラリ (SDK) を利用して、ストレージ、データベース、事前構築済み AI 機能などのさまざまな Azure サービスにプログラムでアクセスします。
 metadata:
   title: Python 開発者向けの Azure
-  description: Python と Azure を使用した開発を始める
+  description: Azure Functions、Azure App Service、Azure Machine Learning、Azure Storage、および Azure SDK for Python を使用して、Python と Azure を使った開発を始めましょう。
   author: kraigb
   ms.author: kraigb
-  ms.date: 05/30/2020
+  ms.date: 08/06/2020
   ms.topic: landing-page
   ms.collection: collection
   ms.technology: azure
   ms.service: multiple
   ms.devlang: python
   ms.custom: devx-track-python
-  ms.openlocfilehash: 5775f12eed61f43787d4df8bb8331e2f3339ccc0
-  ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+  ms.openlocfilehash: 1a89da5a7ce092de4d8194db2136d390fec22928
+  ms.sourcegitcommit: 5051b25ad32be891800b23fc7ae12a4ca85cbb73
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 08/07/2020
-  ms.locfileid: "87983064"
+  ms.lasthandoff: 08/12/2020
+  ms.locfileid: "88147253"
 landingContent:
-- title: Azure での Python の概要
+- title: サーバーレス関数のデプロイ
   linkLists:
-  - linkListType: overview
-    links:
-    - text: Azure を使用したクラウド開発
-      url: cloud-development-overview.md
   - linkListType: how-to-guide
     links:
+    - text: Visual Studio Code の使用
+      url: tutorial-vs-code-serverless-python-01.md
+    - text: コマンド ラインを使用する
+      url: /azure/azure-functions/functions-create-first-azure-function-azure-cli?pivots=programming-language-python
+    - text: Visual Studio Code を使用してストレージに接続する
+      url: /azure/azure-functions/functions-add-output-binding-storage-queue-vs-code?pivots=programming-language-python
+    - text: コマンド ラインを使用してストレージに接続する
+      url: /azure/azure-functions/functions-add-output-binding-storage-queue-cli?tabs=bash%2Cbrowser&pivots=programming-language-python
+- title: Web アプリのデプロイ
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Visual Studio Code を使用した Flask
+      url: tutorial-deploy-app-service-on-linux-01.md
+    - text: コマンド ラインを使用した Flask
+      url: /azure/app-service/quickstart-python
+    - text: Azure portal を使用した Django と PostgreSQL
+      url: tutorial-python-postgresql-app-portal.md
+    - text: コマンド ラインを使用した Django と PostgreSQL
+      url: /azure/app-service/tutorial-python-postgresql-app
+    - text: Visual Studio Code を使用したコンテナー
+      url: tutorial-deploy-containers-01.md
+    - text: CI/CD パイプラインを構築する
+      url: /azure/devops/pipelines/ecosystems/python-webapp
+- title: 機械学習モデルのデプロイ
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: ML 実験を作成する
+      url: /azure/machine-learning/tutorial-1st-experiment-sdk-setup
+    - text: ML モデルをトレーニングする
+      url: /azure/machine-learning/tutorial-1st-experiment-sdk-train
+    - text: 画像分類をトレーニングする
+      url: /azure/machine-learning/tutorial-train-models-with-aml
+    - text: 事前構築済み AI サービス (顔、音声、テキスト、画像など) を使用する
+      url: quickstarts-cognitive-services.md
+    - text: さらに表示...
+      url: quickstarts-machine-learning.md
+- title: データとストレージのデプロイ
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: SQL データベース
+      url: quickstarts-data-solutions.md#sql-databases
+    - text: テーブル、BLOB、ファイル、NoSQL
+      url: quickstarts-data-solutions.md#tables-blobs-files-nosql
+    - text: ビッグ データと分析
+      url: quickstarts-data-solutions.md#big-data-and-analytics
+- title: Azure ライブラリ (SDK) の使用
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: クラウド開発の概要
+      url: cloud-development-overview.md
     - text: ローカル開発環境のセットアップ
       url: configure-local-development-environment.md
-  - linkListType: overview
-    links:
-    - text: Python 用 Azure ライブラリについて
+    - text: Azure ライブラリについて
       url: azure-sdk-overview.md
-  - linkListType: tutorial
-    links:
-    - text: Python を使用した Azure Storage のプロビジョニング
-      url: azure-sdk-example-storage.md
-    - text: Python コードから Azure Storage を使用する
-      url: azure-sdk-example-storage-use.md
-  - linkListType: reference
-    links:
-    - text: Python 用の Azure ライブラリ API リファレンス
-      url: sdk-library-api-reference.md
-- title: 開発者ツールを使ってみる
+    - text: ライブラリの使用パターンについて
+      url: azure-sdk-library-usage-patterns.md
+- title: 開発ツールの活用
   linkLists:
-  - linkListType: overview
+  - linkListType: get-started
     links:
-    - text: Visual Studio Code での Python
+    - text: Visual Studio Code (IDE)
       url: https://code.visualstudio.com/docs/languages/python
-  - linkListType: tutorial
-    links:
-    - text: Visual Studio Code を使用して Azure Functions でサーバーレスの Python アプリを作成する
-      url: tutorial-vs-code-serverless-python-01.md
-    - text: Visual Studio Code による Web アプリの作成と Azure へのデプロイ
-      url: tutorial-deploy-app-service-on-linux-01.md
-    - text: Visual Studio Code によるコンテナーの作成と Azure へのデプロイ
-      url: tutorial-deploy-containers-01.md
-  - linkListType: download
-    links:
-    - text: Visual Studio Code 用の Azure 拡張機能
-      url: https://code.visualstudio.com/docs/azure/extensions
-    - text: Azure CLI のインストール
-      url: /cli/azure/install-azure-cli?view=azure-cli-latest
-    - text: さまざまなディストリビューションを使用して、Linux アプリケーションを Windows 10 上でネイティブに実行する
+    - text: Azure コマンド ライン インターフェイス (CLI)
+      url: /cli/azure/install-azure-cli
+    - text: Windows Subsystem for Linux (WSL)
       url: /windows/wsl/install-win10
-- title: Azure 内でのアプリケーションのホスト
-  linkLists:
-  - linkListType: quickstart
-    links:
-    - text: Visual Studio Code を使用して HTTP 要求用のサーバーレス関数を作成する
-      url: tutorial-vs-code-serverless-python-01.md
-    - text: Azure CLI を使用して HTTP 要求用のサーバーレス関数を作成する
-      url: /azure/azure-functions/functions-create-first-azure-function-azure-cli?pivots=programming-language-python
-    - text: Azure App Service on Linux で Python アプリを作成する
-      url: /azure/app-service/containers/quickstart-python
-    - text: Azure Kubernetes Service にコンテナー化されたアプリをデプロイする
-      url: /azure/aks/kubernetes-walkthrough
-    - text: Azure CLI を使用してコンテナー インスタンスを Azure にデプロイする
-      url: /azure/container-instances/container-instances-quickstart
-    - text: Azure Pipelines を使用して Python アプリを構築およびデプロイする
-      url: /azure/devops/pipelines/languages/python-webapp
-    - text: Python Web アプリケーションに Microsoft でサインインを追加する
-      url: /azure/active-directory/develop/quickstart-v2-python-webapp
-  - linkListType: overview
-    links:
-    - text: Azure App Service on Linux の概要
-      url: /azure/app-service/containers/app-service-linux-intro
-- title: データ サイエンス、AI、機械学習のためのサービス
-  linkLists:
-  - linkListType: overview
-    links:
-    - text: Azure Machine Learning について
-      url: /azure/machine-learning/service
-    - text: Azure Cognitive Services について
-      url: /azure/cognitive-services
-  - linkListType: quickstart
-    links:
-    - text: Jupyter ノートブックで Azure Machine Learning ツールを使用する
-      url: /azure/notebooks/use-machine-learning-services-jupyter-notebooks
-    - text: データ処理にマネージド Azure HDInsights クラスターを使用する
-      url: /azure/hdinsight/hadoop/apache-hadoop-linux-create-cluster-get-started-portal
-    - text: データ サイエンス タスク用の Azure 仮想マシンを作成する
-      url: /azure/machine-learning/data-science-virtual-machine/dsvm-ubuntu-intro
-    - text: Azure Notebooks で Jupyter ノートブックを使用する
-      url: https://notebooks.azure.com/
-- title: Azure でのストレージ ソリューションとデータベース ソリューション
-  linkLists:
-  - linkListType: overview
-    links:
-    - text: Azure のストレージ ソリューションについて
-      url: /azure/storage/common/storage-introduction
-    - text: Azure Cosmos DB を使用したスケーラブルな NoSQL
-      url: /azure/cosmos-db/introduction
-  - linkListType: quickstart
-    links:
-    - text: Python から Azure Storage の BLOB を管理する
-      url: /azure/storage/blobs/storage-quickstart-blobs-python
-    - text: Azure 上に PostgreSQL インスタンスを作成し、Python を使用して接続する
-      url: /azure/postgresql/quickstart-create-server-database-portal
-    - text: Azure 上に MySQL インスタンスを作成し、Python を使用して接続する。
-      url: /azure/mysql/quickstart-create-mysql-server-database-using-azure-portal
-    - text: Azure Cosmos DB アカウント上で Python から SQL クエリを使用する
-      url: /azure/cosmos-db/create-sql-api-python
-    - text: Azure にマネージド SQL サーバーを設定する
-      url: /azure/sql-database/sql-database-connect-query-python
-- title: Azure でのメッセージング
-  linkLists:
-  - linkListType: overview
-    links:
-    - text: Azure キューを使用してメッセージを格納する
-      url: /azure/storage/queues/storage-queues-introduction
-    - text: Azure Service Bus を使用したアプリケーション間メッセージング
-      url: /azure/service-bus-messaging
-    - text: Event Hubs を使用したビッグ データのストリーム配信
-      url: /azure/event-hubs/event-hubs-about
-    - text: Event Grid を使用してイベントベースのアプリケーションを作成する
-      url: /azure/event-grid/overview
-  - linkListType: quickstart
-    links:
-    - text: Azure Queue storage の使用
-      url: /azure/storage/queues/storage-python-how-to-use-queue-storage
-    - text: Azure Service Bus キューの使用
-      url: /azure/service-bus-messaging/service-bus-python-how-to-use-queues
-    - text: Azure Event Hubs を使用してリアルタイムでデータを取り込む
-      url: /azure/event-hubs/event-hubs-python
-    - text: Event Grid を使ったカスタム イベントのルーティング
-      url: /azure/event-grid/custom-event-quickstart
+    - text: Visual Studio (Python/C++ 開発用)
+      url: /visualstudio/python/installation

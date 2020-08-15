@@ -3,15 +3,15 @@ title: Azure 上の Spring 統合のドキュメント
 summary: Spring は Pivotal によって開発されたオープンソースのアプリケーション フレームワークであり、Java アプリケーションを作成するための簡素化されたモジュール方式のアプローチを提供します。 この Web サイトのコンテンツでは、Spring アプリを開発し、クラウドにデプロイする方法を説明します。
 metadata:
   title: Azure 上の Spring 統合のドキュメント
-  description: Spring は Pivotal によって開発されたオープンソースのアプリケーション フレームワークであり、Java アプリケーションを作成するための簡素化されたモジュール方式のアプローチを提供します。 この Web サイトのコンテンツでは、Spring アプリを開発し、クラウドにデプロイする方法を説明します。
+  description: Spring は Pivotal によって開発されたオープンソースのアプリケーション フレームワークであり、Java アプリケーションを作成するための簡素化されたモジュール方式のアプローチを提供します。
   ms.date: 03/13/2020
   ms.topic: landing-page
-  ms.openlocfilehash: 4131fd1146fbff953a53747a7415b17e7f74ebf6
-  ms.sourcegitcommit: a7f2019727a954836b803493807664d4e4574ee3
+  ms.openlocfilehash: 7e4f5fc376c60a9a1eee0caf547ec5cc57ca0d7d
+  ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 07/13/2020
-  ms.locfileid: "86286439"
+  ms.lasthandoff: 08/14/2020
+  ms.locfileid: "88240984"
 landingContent:
 - title: ファースト ステップ ガイド
   linkLists:

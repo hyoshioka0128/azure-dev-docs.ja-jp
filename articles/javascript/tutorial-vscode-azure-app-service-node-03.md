@@ -13,7 +13,7 @@ ms.locfileid: "85792212"
 
 [前の手順:アプリケーションの作成](tutorial-vscode-azure-app-service-node-02.md)
 
-この手順では、VS コードと Azure App Service 拡張機能を介して git デプロイを使って Node.js アプリをデプロイします。 この目標を達成するには、まずローカル git リポジトリを初期化し、次に Azure で Web アプリを作成した後、git デプロイを使用するように VS Code を構成します。
+この手順では、VS コードと Azure App Service 拡張機能を介して Git デプロイを使って Node.js アプリをデプロイします。 この目標を達成するには、まずローカル Git リポジトリを初期化し、次に Azure で Web アプリを作成した後、Git デプロイを使用するように VS Code を構成します。
 
 1. ターミナルで、*expressApp1* フォルダーにいることを確認し、次のコマンドを使用して Visual Studio Code を開始します。
 
@@ -21,9 +21,9 @@ ms.locfileid: "85792212"
     code .
     ```
 
-1. VS Code で、ソース管理アイコンを選択して、**ソース管理**エクスプローラーを開き、[ **+** ] を選択してローカル git リポジトリを初期化します。
+1. VS Code で、ソース管理アイコンを選択して、**ソース管理**エクスプローラーを開き、[ **+** ] を選択してローカル Git リポジトリを初期化します。
 
-    ![git リポジトリを初期化する](media/deploy-azure/git-init.png)
+    ![Git リポジトリを初期化する](media/deploy-azure/git-init.png)
 
 1. プロンプトで、ワークスペース フォルダーの *[expressApp1]* を選択します。
 
@@ -48,7 +48,7 @@ ms.locfileid: "85792212"
 
     ![Web アプリの作成の完了に関する通知](media/deploy-azure/creation-complete.png)
 
-1. Web アプリを配置したら、次に、ローカル git リポジトリからコードをデプロイするように VS Code に指示します。 Azure アイコンを選択して **Azure App Service** エクスプローラーを開き、サブスクリプション ノードを展開します。作成した Web アプリの名前を右クリックし、 **[Configure Deployment Source]\(デプロイ ソースの構成\)** を選択します。
+1. Web アプリを配置したら、次に、ローカル Git リポジトリからコードをデプロイするように VS Code に指示します。 Azure アイコンを選択して **Azure App Service** エクスプローラーを開き、サブスクリプション ノードを展開します。作成した Web アプリの名前を右クリックし、 **[Configure Deployment Source]\(デプロイ ソースの構成\)** を選択します。
 
     ![Web アプリでのデプロイ ソースの構成コマンド](media/deploy-azure/configure-deployment-source.png)
 

@@ -7,13 +7,10 @@
 - name: クイックスタート
   expanded: true
   items:
-    - name: はじめに - Cloud Shell
+    - name: Azure Cloud Shell を使用した Ansible の構成
       href: getting-started-cloud-shell.md
-    - name: Ansible ソリューション テンプレートを CentOS にデプロイする
-      href: solution-template-deploy.md
-    - name: Ansible を Linux 仮想マシンにインストールする
+    - name: Azure CLI を使用した Ansible の構成
       href: install-on-linux-vm.md
-      maintainContext: true
     - name: Linux Virtual Machines の操作
       expanded: true
       items:

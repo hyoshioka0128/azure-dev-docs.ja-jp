@@ -7,11 +7,11 @@
 - name: クイックスタート
   expanded: true
   items:
-    - name: Jenkins サーバーを作成する
+    - name: Azure CLI を使用して Jenkins を構成する
       href: configure-on-linux-vm.md
 - name: チュートリアル
   items:
-    - name: '[構成]'
+    - name: 構成
       items:
         - name: Azure Container Instances でのスケーリング
           href: azure-container-instances-as-jenkins-build-agent.md

@@ -7,9 +7,9 @@
 - name: クイックスタート
   expanded: true
   items:
-    - name: 作業の開始 - Azure Cloud Shell
+    - name: Azure Cloud Shell を使用して Terraform を構成する
       href: get-started-cloud-shell.md
-    - name: 作業の開始 - Windows と PowerShell
+    - name: Azure PowerShell を使用して Terraform を構成する
       href: get-started-powershell.md
 - name: 操作方法ガイド
   items:

@@ -3,15 +3,15 @@ title: Azure Toolkit for IntelliJ のドキュメント
 summary: Azure Toolkit for IntelliJ は、IntelliJ 統合開発環境 (IDE) を使って Azure アプリケーションを簡単に作成、開発、テスト、またデプロイできるテンプレートと機能を提供します。
 metadata:
   title: Azure Toolkit for IntelliJ のドキュメント
-  description: Azure Toolkit for IntelliJ の概要について説明します。
+  description: Azure Toolkit for IntelliJ を使用して、IntelliJ IDE により Azure アプリケーションを簡単に作成、開発、テスト、デプロイできます。
   ms.date: 03/13/2020
   ms.topic: landing-page
-  ms.openlocfilehash: f816ad75074b92b0b2b8025c5e541b5ef7988b65
-  ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+  ms.openlocfilehash: f69096bead0650bbb5a40959f55cdf0967dade8e
+  ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 05/05/2020
-  ms.locfileid: "81675388"
+  ms.lasthandoff: 08/14/2020
+  ms.locfileid: "88241014"
 landingContent:
 - title: ファースト ステップ ガイド
   linkLists:

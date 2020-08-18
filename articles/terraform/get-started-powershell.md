@@ -3,19 +3,32 @@ title: クイック スタート - Windows と PowerShell を使用して Terraf
 description: このクイックスタートでは、Azure リソースを作成するために Terraform をインストールして構成する方法について説明します。
 keywords: Azure DevOps Terraform インストール 構成 Windows 初期化 プラン 適用 実行 ログイン RBAC サービス プリンシパル 自動スクリプト PowerShell
 ms.topic: quickstart
-ms.date: 07/27/2020
-ms.openlocfilehash: 055d3fcdbe095ddc3e5e1f5b90efcbd4950d43f6
-ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
+ms.date: 08/08/2020
+ms.openlocfilehash: 7ba60acf445f9ba29836e76aa50626985695bf2c
+ms.sourcegitcommit: 6a8485d659d6239569c4e3ecee12f924c437b235
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87478582"
+ms.lasthandoff: 08/09/2020
+ms.locfileid: "88026150"
 ---
 # <a name="quickstart-get-started-with-terraform-using-windows-and-powershell"></a>クイック スタート:Windows と PowerShell を使用して Terraform の使用を開始する
  
 [!INCLUDE [terraform-intro.md](includes/terraform-intro.md)]
 
 この記事では、PowerShell を使用して、[Azure で Terraform](https://www.terraform.io/docs/providers/azurerm/index.html) の使用を開始する方法について説明します。
+
+この記事では、次のことについて説明します。
+> [!div class="checklist"]
+> * 最新バージョンの PowerShell をインストールする
+> * 新しい PowerShell Az モジュールをインストールする
+> * Azure CLI のインストール
+> * Terraform のインストール
+> * 認証の目的で Azure サービス プリンシパルを作成する
+> * サービス プリンシパルを使用して Azure にログインする 
+> * Terraform が Azure サブスクリプションに対して正しく認証を行うように環境変数を設定する
+> * Azure リソース グループを作成するための Terraform スクリプトを記述する
+> * Terraform 実行プランを作成して適用する
+> * `terraform plan -destroy` フラグを使用して実行プランを破棄する
 
 [!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
@@ -119,6 +132,16 @@ PowerShell と Terraform を使用する場合は、サービス プリンシパ
     Connect-AzAccount -Credential $spCredential -Tenant "<azure_subscription_tenant_id>" -ServicePrincipal
     ```
 
+## <a name="set-environment-variables"></a>環境変数の設定
+
+Terraform で目的の Azure サブスクリプションを使用するために、環境変数を設定します。 環境変数は、Windows システム レベルまたは特定の PowerShell セッション内で設定できます。 特定のセッションに環境変数を設定する場合は、次のコードを使用します。 プレースホルダーは、ご使用の環境の適切な値に置き換えてください。
+
+```powershell
+$env:ARM_CLIENT_ID=<service_principle_app_id>
+$env:ARM_SUBSCRIPTION_ID=<azure_subscription_id>
+$env:ARM_TENANT_ID=<azure_subscription_tenant_id>
+```
+
 ## <a name="create-a-terraform-configuration-file"></a>Terraform 構成ファイルを作成する
 
 このセクションでは、Azure リソース グループを作成する Terraform 構成ファイルをコーディングします。
@@ -162,16 +185,6 @@ PowerShell と Terraform を使用する場合は、サービス プリンシパ
     - `azurerm` プロバイダー ブロック内には、`version` と `features` 属性が設定されています。 コメントに記載されているように、その使用方法はバージョン固有です。 これらの属性の設定に関する詳細については、「[AzureRM プロバイダーの v2.0](https://www.terraform.io/docs/providers/azurerm/guides/2.0-upgrade-guide.html)」を参照してください。
     - 唯一の[リソース宣言](https://www.terraform.io/docs/configuration/resources.html)は、[azurerm_resource_group](https://www.terraform.io/docs/providers/azurerm/r/resource_group.html) のリソースの種類に対するものです。 azure_resource_group の 2 つの必須引数は、name と location です。
 
-## <a name="set-environment-variables"></a>環境変数の設定
-
-Terraform で目的の Azure サブスクリプションを使用するために、環境変数を設定します。 環境変数は、Windows システム レベルまたは特定の PowerShell セッション内で設定できます。 特定のセッションに環境変数を設定する場合は、次のコードを使用します。 プレースホルダーは、ご使用の環境の適切な値に置き換えてください。
-
-```powershell
-$env:ARM_CLIENT_ID=<service_principle_app_id>
-$env:ARM_SUBSCRIPTION_ID=<azure_subscription_id>
-$env:ARM_TENANT_ID=<azure_subscription_tenant_id>
-```
-
 ## <a name="create-and-apply-a-terraform-execution-plan"></a>Terraform 実行プランを作成して適用する
 
 このセクションでは、"*実行プラン*" を作成し、クラウド インフラストラクチャに適用します。
@@ -205,7 +218,9 @@ $env:ARM_TENANT_ID=<azure_subscription_tenant_id>
     Get-AzResourceGroup -Name QuickstartTerraformTest-rg
     ```
 
-    成功すると、コマンドにより、新しく作成されたリソース グループのさまざまなプロパティが表示されます。
+    **注**:
+
+    - 成功すると、コマンドにより、新しく作成されたリソース グループのさまざまなプロパティが表示されます。
 
 ## <a name="clean-up-resources"></a>リソースをクリーンアップする
 

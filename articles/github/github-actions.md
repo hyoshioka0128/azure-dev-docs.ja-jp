@@ -6,11 +6,12 @@ ms.author: ushan
 ms.topic: conceptual
 ms.service: azure
 ms.date: 05/05/2020
-ms.openlocfilehash: 15d839ff8c05dbe4ffb990e31a883794c30d5649
-ms.sourcegitcommit: b3e506c6f140d91e6fdd9dcadf22ab1aa67f6978
+ms.openlocfilehash: 29d6f40a54cf503d12b8b7b87b908e7d05a8857d
+ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84942401"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87982564"
 ---
 # <a name="deploy-to-azure-using-github-actions"></a>GitHub Actions を使用して Azure にデプロイする
 
@@ -113,6 +114,10 @@ Azure Web Apps および Azure Web App for Containers にデプロイする:
 
 - [Azure SQL データベース](https://github.com/Azure/sql-action)  
 - [Azure MySQL アクション](https://github.com/Azure/mysql-action)  
+
+## <a name="azure-policy-integrations"></a>Azure Policy の統合
+
+- [Azure Policy コンプライアンス スキャン](https://github.com/Azure/policy-compliance-scan) 
 
 ## <a name="trigger-a-run-in-azure-pipelines"></a>Azure Pipelines での実行のトリガー
 

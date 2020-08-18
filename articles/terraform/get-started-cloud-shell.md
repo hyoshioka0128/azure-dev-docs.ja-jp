@@ -3,19 +3,29 @@ title: クイック スタート - Azure Cloud Shell を使用して Terraform �
 description: このクイックスタートでは、Azure リソースを作成するために Terraform をインストールして構成する方法について説明します。
 keywords: Azure DevOps Terraform インストール 構成 Cloud Shell 初期化 プラン 適用 実行 portal ログイン RBAC サービス プリンシパル 自動スクリプト
 ms.topic: quickstart
-ms.date: 07/26/2020
-ms.openlocfilehash: dbe290fbb7909d116d2ff0cec8e01a3b145ded30
-ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
+ms.date: 08/08/2020
+ms.openlocfilehash: 736c805b8dd8c95d1950537b754059cca9fc5712
+ms.sourcegitcommit: 6a8485d659d6239569c4e3ecee12f924c437b235
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87478592"
+ms.lasthandoff: 08/09/2020
+ms.locfileid: "88026137"
 ---
 # <a name="quickstart-get-started-with-terraform-using-azure-cloud-shell"></a>クイック スタート:Azure Cloud Shell を使用して Terraform の使用を開始する
  
 [!INCLUDE [terraform-intro.md](includes/terraform-intro.md)]
 
 この記事では、[Azure で Terraform](https://www.terraform.io/docs/providers/azurerm/index.html) の使用を開始する方法について説明します。
+
+この記事では、次のことについて説明します。
+> [!div class="checklist"]
+> * `az login` を使用して Azure に対して認証する
+> * Azure CLI を使用して Azure サービス プリンシパルを作成する
+> * サービス プリンシパルを使用して Azure に対して認証する
+> * 現在の Azure サブスクリプションを設定する - 複数のサブスクリプションがある場合に使用
+> * Azure リソース グループを作成するための Terraform スクリプトを記述する
+> * Terraform 実行プランを作成して適用する
+> * `terraform plan -destroy` フラグを使用して実行プランを破棄する
 
 [!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
@@ -166,7 +176,7 @@ Microsoft アカウントは、複数の Azure サブスクリプションに関
 
 ## <a name="create-and-apply-a-terraform-execution-plan"></a>Terraform 実行プランを作成して適用する
 
-構成ファイルを作成したら、このセクションでは、"*実行プラン*" を作成し、それをクラウド インフラストラクチャに適用する方法について説明します。
+このセクションでは、"*実行プラン*" を作成し、クラウド インフラストラクチャに適用します。
 
 1. [terraform init](https://www.terraform.io/docs/commands/init.html) を使用して Terraform のデプロイを初期化します。 この手順によって、Azure リソース グループを作成するために必要な Azure モジュールがダウンロードされます。
 
@@ -174,27 +184,24 @@ Microsoft アカウントは、複数の Azure サブスクリプションに関
     terraform init
     ```
 
-1. [terraform plan](https://www.terraform.io/docs/commands/plan.html) を実行して、実行プランを作成し、その結果をプレビューします。
+1. [terraform plan](https://www.terraform.io/docs/commands/plan.html) を 実行して、Terraform 構成ファイルから実行プランを作成します。
 
     ```bash
-    terraform plan
+    terraform plan -out QuickstartTerraformTest.tfplan
     ```
 
-    **注**:
+    **注:**
+    - `terraform plan` コマンドは、実行プランを作成しますが、実行はしません。 代わりに、構成ファイルに指定された構成を作成するために必要なアクションを決定します。 このパターンを使用すると、実際のリソースに変更を加える前に、実行プランが自分の想定と一致しているかどうかを確認できます。
+    - 省略可能な `-out` パラメーターを使用すると、プランの出力ファイルを指定できます。 `-out` パラメーターを使用すると、レビューしたプランが適用内容とまったく同じであることが確実になります。
+    - 実行プランの永続化とセキュリティの詳細については、[「セキュリティの警告」セクション](https://www.terraform.io/docs/commands/plan.html#security-warning)を参照してください。
 
-    - `terraform plan` コマンドは、実行プランを作成しますが、実行はしません。 代わりに、構成ファイルに指定された構成を作成するために必要なアクションを決定します。
-    - `terraform plan` コマンドを使用すると、実際のリソースに変更を加える前に、実行プランが自分が期待しているものと一致しているかどうかを確認できます。
-    - 省略可能な `-out` パラメーターを使用すると、プランの出力ファイルを指定できます。 `-out` パラメーターの使用方法の詳細については、「[後のデプロイのために実行プランを保存する](#persist-an-execution-plan-for-later-deployment)」セクションを参照してください。
-
-1. [terraform apply](https://www.terraform.io/docs/commands/apply.html) を使用して、実行プランを適用します。
+1. [terraform apply](https://www.terraform.io/docs/commands/apply.html) を実行して、実行プランを適用します。
 
     ```bash
-    terraform apply
+    terraform apply QuickstartTerraformTest.tfplan
     ```
 
-1. Terraform は、実行プランを適用した場合に何が起こるかを示し、その実行を確認するよう求めます。 `yes` を入力し、**Enter** キーを押して、コマンドを確認します。
-
-1. プランの実行を確認したら、[az group show](/cli/azure/group?#az-group-show) を使用して、リソース グループが正常に作成されたことをテストします。
+1. 実行プランが適用されたら、[az group show](/cli/azure/group?#az-group-show) を使用して、リソース グループが正常に作成されたことをテストできます。
 
     ```azurecli
     az group show -n "QuickstartTerraformTest-rg"
@@ -204,39 +211,6 @@ Microsoft アカウントは、複数の Azure サブスクリプションに関
 
     - 成功すると、`az group show` により、新しく作成されたリソース グループのさまざまなプロパティが表示されます。
 
-## <a name="persist-an-execution-plan-for-later-deployment"></a>後のデプロイのために実行プランを保存する
-
-前のセクションでは、[terraform plan](https://www.terraform.io/docs/commands/plan.html) を実行して実行プランを作成する方法を確認しました。 次に、[terraform apply](https://www.terraform.io/docs/commands/apply.html) を使用してそのプランを適用することを確認しました。 このパターンは、手順が対話型で逐次的な場合に適しています。
-
-より複雑なシナリオについては、実行プランをファイルに保存できます。 後で、または別のマシンからでも、その実行プランを適用することができます。
-
-この機能を使用する場合は、「[自動での Terraform の実行](https://learn.hashicorp.com/terraform/development/running-terraform-in-automation)」の記事を読むことをお勧めします。
-
-次の手順は、この機能を使用するための基本的なパターンを示しています。
-
-1. [terraform init](https://www.terraform.io/docs/commands/init.html) を実行します。
-
-    ```bash
-    terraform init
-    ```
-
-1. `-out` パラメーターを指定して `terraform plan` を実行します。
-
-    ```bash
-    terraform plan -out QuickstartTerraformTest.tfplan
-    ```
-
-1. 前の手順のファイルの名前を指定して `terraform apply` を実行します。
-
-    ```bash
-    terraform apply QuickstartTerraformTest.tfplan
-    ```
-
-    **注**:
-    
-    - 自動化での使用を有効にするために、`terraform apply <filename>` の実行で確認が求められることはありません。
-    - この機能を使用する場合は、[セキュリティ警告セクション](https://www.terraform.io/docs/commands/plan.html#security-warning)を参照してください。
-    
 ## <a name="clean-up-resources"></a>リソースをクリーンアップする
 
 この記事で作成したリソースが不要になったら、削除してください。
@@ -248,9 +222,9 @@ Microsoft アカウントは、複数の Azure サブスクリプションに関
     ```
 
     **注**:
-    - `terraform plan` コマンドは、実行プランを作成しますが、実行はしません。 代わりに、構成ファイルに指定された構成を作成するために必要なアクションを決定します。 これにより、実際のリソースに変更を加える前に、実行プランが自分の想定と一致しているかどうかを確認できます。
+    - `terraform plan` コマンドは、実行プランを作成しますが、実行はしません。 代わりに、構成ファイルに指定された構成を作成するために必要なアクションを決定します。 このパターンを使用すると、実際のリソースに変更を加える前に、実行プランが自分の想定と一致しているかどうかを確認できます。
     - `-destroy` パラメーターを指定すると、リソースを破棄するプランが生成されます。
-    - 省略可能な `-out` パラメーターを使用すると、プランの出力ファイルを指定できます。 `-out` パラメーターは必ず使用してください。これにより、レビューしたプランが適用内容とまったく同じであることが確実になるためです。
+    - 省略可能な `-out` パラメーターを使用すると、プランの出力ファイルを指定できます。 `-out` パラメーターを使用すると、レビューしたプランが適用内容とまったく同じであることが確実になります。
     - 実行プランの永続化とセキュリティの詳細については、[「セキュリティの警告」セクション](https://www.terraform.io/docs/commands/plan.html#security-warning)を参照してください。
 
 1. [terraform apply](https://www.terraform.io/docs/commands/apply.html) を実行して、実行プランを適用します。

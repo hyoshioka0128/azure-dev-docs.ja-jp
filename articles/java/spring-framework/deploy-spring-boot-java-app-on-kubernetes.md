@@ -9,12 +9,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: mvc, devx-track-java
-ms.openlocfilehash: f3757b8ca84eb9c52f9e4a94f20d54fd3a303652
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: cd7afa2e54a648c282a48d781a116032e7414e1d
+ms.sourcegitcommit: f82e9f569dce0416f4040312882d28eafab05a4a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86378616"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88040343"
 ---
 # <a name="deploy-spring-boot-application-to-the-azure-kubernetes-service"></a>Spring Boot アプリケーションを Azure Kubernetes Service にデプロイする
 
@@ -48,8 +48,8 @@ ms.locfileid: "86378616"
    ```
    -- または --
    ```
-   md /users/robert/SpringBoot
-   cd /users/robert/SpringBoot
+   md /users/$USER/SpringBoot
+   cd /users/$USER/SpringBoot
    ```
 
 1. [Docker での Spring Boot の使用開始] サンプル プロジェクトを、ディレクトリに複製します。
@@ -111,7 +111,12 @@ ms.locfileid: "86378616"
    az acr login
    ```
 
-1. Spring Boot アプリケーションの完了プロジェクト ディレクトリ ("*C:\SpringBoot\gs-spring-boot-docker\complete*" や " */users/robert/SpringBoot/gs-spring-boot-docker/complete*" など) に移動し、*pom.xml* ファイルをテキスト エディターで開きます。
+1. テキスト エディター([VS Code](https://code.visualstudio.com/docs) など) を使用して、*pom.xml* ファイルを開きます。
+
+   ```
+   code pom.xml
+   ```
+
 
 1. *pom.xml* ファイル内の `<properties>` コレクションを、Azure Container Registry のレジストリ名と [jib-maven-plugin](https://github.com/GoogleContainerTools/jib/tree/master/jib-maven-plugin) の最新バージョンで更新します。
 
@@ -119,7 +124,7 @@ ms.locfileid: "86378616"
    <properties>
       <!-- Note: If your ACR name contains upper case characters, be sure to convert them to lower case characters. -->
       <docker.image.prefix>wingtiptoysregistry.azurecr.io</docker.image.prefix>
-      <jib-maven-plugin.version>2.3.0</jib-maven-plugin.version>
+      <jib-maven-plugin.version>2.4.0</jib-maven-plugin.version>
       <java.version>1.8</java.version>
    </properties>
    ```
@@ -207,7 +212,7 @@ ms.locfileid: "86378616"
 1. クラスターにアプリがデプロイされたら、外部 IP アドレスを照会し、そのアドレスを Web ブラウザーで開きます。
 
    ```
-   kubectl get services -o jsonpath={.items[*].status.loadBalancer.ingress[0].ip} --namespace=default
+   kubectl get services -o=jsonpath='{.items[*].status.loadBalancer.ingress[0].ip}'
    ```
 
    ![Azure でサンプル アプリを参照する][SB02]

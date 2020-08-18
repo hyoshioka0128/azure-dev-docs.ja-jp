@@ -3,39 +3,46 @@ title: チュートリアル - Jenkins プラグインを使用した Azure App 
 description: Azure App Service Jenkins プラグインを使用して、Jenkins で Java Web アプリを Azure にデプロイする方法について説明します。
 keywords: Jenkins, Azure, 開発, App Service
 ms.topic: tutorial
-ms.date: 07/31/2018
-ms.openlocfilehash: 6d5287a3e5ff9500b1a734bd5546cd6af4b3f967
-ms.sourcegitcommit: 8309822d57f784a9c2ca67428ad7e7330bb5e0d6
+ms.date: 08/10/2018
+ms.custom: devx-track-jenkins
+ms.openlocfilehash: f165c1b4402d49ca0c52d6229c4b3ded45842e2f
+ms.sourcegitcommit: f65561589d22b9ba2d69b290daee82eb47b0b20f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82861225"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88162081"
 ---
 # <a name="tutorial-deploy-to-azure-app-service-using-the-jenkins-plugin"></a>チュートリアル:Jenkins プラグインを使用した Azure App Service へのデプロイ
 
-Java Web アプリを Azure にデプロイするには、[Jenkins パイプライン](deploy-to-azure-app-service-using-azure-cli.md)で Azure CLI を使用するか、[Azure App Service Jenkins プラグイン](https://plugins.jenkins.io/azure-app-service)を使用します。 Jenkins プラグイン バージョン 1.0 では、次のツールを介して Azure App Service の Web Apps 機能を使用することで継続的なデプロイをサポートします。
-* ファイルのアップロード。
-* Web Apps on Linux 用 Docker
+Java Web アプリを Azure にデプロイするには、[Jenkins パイプライン](deploy-to-azure-app-service-using-azure-cli.md)で Azure CLI を使用するか、[Azure App Service Jenkins プラグイン](https://plugins.jenkins.io/azure-app-service)を使用します。 Jenkins プラグイン バージョン 1.0 では、Azure App Service の Web Apps 機能を使用して、継続的なデプロイがサポートされます。
+
+- ファイルのアップロード。
+- Web Apps on Linux 用 Docker
 
 このチュートリアルでは、以下の内容を学習します。
+
 > [!div class="checklist"]
 > * ファイルのアップロードによって Web Apps をデプロイするように Jenkins を構成する。
 > * Web App for Containers をデプロイするように Jenkins を構成する
 
+## <a name="prerequisites"></a>前提条件
+
+[!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
+
+**Jenkins** - [Linux VM に Jenkins をインストールします](configure-on-linux-vm.md)
+
 ## <a name="create-and-configure-a-jenkins-instance"></a>Jenkins インスタンスを作成して構成する
 
-Jenkins マスターがまだない場合は、[Jenkins ソリューション テンプレート](configure-on-linux-vm.md)を使用してインストールします。 既定では、テンプレートによって Java Development Kit (JDK) バージョン 8 がインストールされます。 また、次の必須の Jenkins プラグインもインストールされます。
+Jenkins インストールに次のプラグインがインストールされていることを確認します。
 
-- [Jenkins Git クライアント プラグイン](https://plugins.jenkins.io/git-client) バージョン 2.4.6 
+- [Jenkins Git クライアント プラグイン](https://plugins.jenkins.io/git-client) バージョン 2.4.6
 - [Docker Commons プラグイン](https://plugins.jenkins.io/docker-commons) バージョン 1.4.0
 - [Azure Credentials](https://plugins.jenkins.io/azure-credentials) バージョン 1.2
 - [Azure App Service](https://plugins.jenkins.io/azure-app-service) バージョン 0.1
 
 Jenkins プラグインを使用して、Web Apps でサポートされている言語 (C#、PHP、Python、Java、Node.js など) の Web アプリをデプロイできます。 このチュートリアルでは、[Azure 用の単純な Java Web アプリ](https://github.com/azure-devops/javawebappsample)を使用します。 自分の GitHub アカウントにリポジトリをフォークするには、GitHub インターフェイスの右上隅にある **[Fork]** ボタンをクリックします。  
 
-> [!NOTE]
-> Java プロジェクトをビルドするには、Java JDK と Maven が必要です。 これらのコンポーネントを、Jenkins マスターまたは VM エージェント (エージェントを継続的インテグレーションに使用する場合) にインストールします。 Java SE アプリケーションをデプロイする場合は、ビルド サーバーに ZIP も必要です。
->
+Java プロジェクトをビルドするには、Java JDK と Maven が必要です。 これらのコンポーネントを、Jenkins マスターまたは VM エージェント (エージェントを継続的インテグレーションに使用する場合) にインストールします。 Java SE アプリケーションをデプロイする場合は、ビルド サーバーに ZIP も必要です。
 
 コンポーネントをインストールするには、SSH を使用して Jenkins インスタンスにサインインし、次のコマンドを実行します。
 
@@ -52,8 +59,10 @@ Azure にデプロイするには、Azure サービス プリンシパルが必�
 
 
 1. Azure サービス プリンシパルを作成するには、[Azure CLI](/cli/azure/create-an-azure-service-principal-azure-cli?toc=%2fazure%2fazure-resource-manager%2ftoc.json)  または [Azure portal](/azure/azure-resource-manager/resource-group-create-service-principal-portal) を使用します。
-2. Jenkins ダッシュボードで、 **[Credentials]\(資格情報\)**  >  **[System]\(システム\)** を選択します。 次に、 **[Global credentials(unrestricted)]\(グローバル資格情報 (制限なし)\)** を選択します。
-3. Microsoft Azure サービス プリンシパルを追加するには、 **[Add Credentials]\(資格情報の追加\)** を選択します。 **[Subscription ID]\(サブスクリプション ID\)** 、 **[Client ID]\(クライアント ID\)** 、 **[Client Secret]\(クライアント シークレット\)** 、 **[OAuth 2.0 Token Endpoint]\(OAuth 2.0 トークン エンドポイント\)** の各フィールドに値を入力します。 **[ID]** フィールドを **[mySp]** に設定します。 この ID は、この記事の以降の手順で使用します。
+
+1. Jenkins ダッシュボードで、 **[Credentials]\(資格情報\)**  >  **[System]\(システム\)** を選択します。 次に、 **[Global credentials(unrestricted)]\(グローバル資格情報 (制限なし)\)** を選択します。
+
+1. Microsoft Azure サービス プリンシパルを追加するには、 **[Add Credentials]\(資格情報の追加\)** を選択します。 **[Subscription ID]\(サブスクリプション ID\)** 、 **[Client ID]\(クライアント ID\)** 、 **[Client Secret]\(クライアント シークレット\)** 、 **[OAuth 2.0 Token Endpoint]\(OAuth 2.0 トークン エンドポイント\)** の各フィールドに値を入力します。 **[ID]** フィールドを **[mySp]** に設定します。 この ID は、この記事の以降の手順で使用します。
 
 
 ## <a name="configure-jenkins-to-deploy-web-apps-by-uploading-files"></a>ファイルのアップロードによって Web Apps をデプロイするように Jenkins を構成する
@@ -66,15 +75,17 @@ Azure にデプロイするには、Azure サービス プリンシパルが必�
 
 Jenkins でジョブを設定する前に、Java アプリを実行するための Azure App Service プランと Web アプリが必要です。
 
-
 1. `az appservice plan create` [Azure CLI コマンド](/cli/azure/appservice/plan#az-appservice-plan-create)を使用して、**Free** 価格レベルで Azure App Service プランを作成します。 App Service プランでは、アプリをホストするために使用される物理リソースを定義します。 App Service プランに割り当てられたすべてのアプリケーションがこれらのリソースを共有します。 共有リソースにより、複数のアプリをホストするときにコストを節約できます。
-2. Web アプリを作成します。 [Azure Portal](/azure/app-service/configure-common) または次の `az` Azure CLI コマンドをご利用いただけます。
-    ```azurecli-interactive 
+
+1. Web アプリを作成します。 [Azure Portal](/azure/app-service/configure-common) または次の `az` Azure CLI コマンドをご利用いただけます。
+
+    ```azurecli
     az webapp create --name <myAppName> --resource-group <myResourceGroup> --plan <myAppServicePlan>
     ```
     
-3. アプリで必要な Java ランタイム構成を設定します。 次の Azure CLI コマンドは、最新の JDK 8 および [Apache Tomcat](https://tomcat.apache.org/) バージョン 8.0 で動作するように Web アプリを構成します。
-    ```azurecli-interactive
+1. アプリで必要な Java ランタイム構成を設定します。 次の Azure CLI コマンドは、最新の JDK 8 および [Apache Tomcat](https://tomcat.apache.org/) バージョン 8.0 で動作するように Web アプリを構成します。
+
+    ```azurecli
     az webapp config set \
     --name <myAppName> \
     --resource-group <myResourceGroup> \
@@ -86,31 +97,41 @@ Jenkins でジョブを設定する前に、Java アプリを実行するため�
 ### <a name="set-up-the-jenkins-job"></a>Jenkins ジョブを設定する
 
 1. Jenkins ダッシュボードで新しい**フリースタイル** プロジェクトを作成します。
-2. [Azure 用の単純な Java Web アプリ](https://github.com/azure-devops/javawebappsample)のローカル フォークを使用するように **[Source Code Management]\(ソース コード管理\)** フィールドを構成します。 **リポジトリの URL** 値を指定します  (例: http:\//github.com/&lt;your_ID>/javawebappsample)。
-3. **[Execute shell]\(シェルの実行\)** コマンドを追加することで、Maven を使用してプロジェクトをビルドするステップを追加します。 この例では、ターゲット フォルダー内の \*.war ファイルの名前を **ROOT.war** に変更する追加のコマンドが必要です。   
+
+1. [Azure 用の単純な Java Web アプリ](https://github.com/azure-devops/javawebappsample)のローカル フォークを使用するように **[Source Code Management]\(ソース コード管理\)** フィールドを構成します。 **リポジトリの URL** 値を指定します  (例: http:\//github.com/&lt;your_ID>/javawebappsample)。
+
+1. **[Execute shell]\(シェルの実行\)** コマンドを追加することで、Maven を使用してプロジェクトをビルドするステップを追加します。 この例では、ターゲット フォルダー内の \*.war ファイルの名前を **ROOT.war** に変更する追加のコマンドが必要です。   
+
     ```bash
     mvn clean package
     mv target/*.war target/ROOT.war
     ```
 
-4. **[Publish an Azure Web App]\(Azure Web App の発行\)** を選択することで、ビルド後のアクションを追加します。
-5. Azure サービス プリンシパルとして **mySp** を指定します。 このプリンシパルは、前の手順で [Azure 資格情報](#service-principal)として保存されています。
-6. **[App Configuration]\(アプリの構成\)** セクションで、サブスクリプションのリソース グループと Web アプリを選択します。 Jenkins プラグインは、Web アプリが Windows ベースと Linux ベースのどちらであるかを自動的に検出します。 Windows Web アプリの場合、 **[Publish Files]\(ファイルの発行\)** オプションが表示されます。
-7. デプロイするファイルを入力します。 たとえば、Java を使用している場合は WAR パッケージを指定します。 オプションの **[Source Directory]\(ソース ディレクトリ\)** および **[Target Directory]\(ターゲット ディレクトリ\)** パラメーターを使用して、ファイル アップロードに使用するソース フォルダーとターゲット フォルダーを指定します。 Azure の Java Web アプリは、Tomcat サーバーで実行されます。 そのため、Java の場合、WAR パッケージを webapps フォルダーにアップロードします。 この例では、 **[Source Directory]\( ソース ディレクトリ\)** の値を **[target]\(ターゲット\)** に設定し、 **[Target Directory]\(ターゲット ディレクトリ\)** の値を **[webapps]** に設定します。
-8. 運用環境以外のスロットにデプロイする場合は、**スロット**名を設定することもできます。
-9. プロジェクトを保存してビルドします。 ビルドが完了すると、Web アプリが Azure にデプロイされます。
+1. **[Publish an Azure Web App]\(Azure Web App の発行\)** を選択することで、ビルド後のアクションを追加します。
+
+1. Azure サービス プリンシパルとして **mySp** を指定します。 このプリンシパルは、前の手順で [Azure 資格情報](#service-principal)として保存されています。
+
+1. **[App Configuration]\(アプリの構成\)** セクションで、サブスクリプションのリソース グループと Web アプリを選択します。 Jenkins プラグインは、Web アプリが Windows ベースと Linux ベースのどちらであるかを自動的に検出します。 Windows Web アプリの場合、 **[Publish Files]\(ファイルの発行\)** オプションが表示されます。
+
+1. デプロイするファイルを入力します。 たとえば、Java を使用している場合は WAR パッケージを指定します。 オプションの **[Source Directory]\(ソース ディレクトリ\)** および **[Target Directory]\(ターゲット ディレクトリ\)** パラメーターを使用して、ファイル アップロードに使用するソース フォルダーとターゲット フォルダーを指定します。 Azure の Java Web アプリは、Tomcat サーバーで実行されます。 そのため、Java の場合、WAR パッケージを webapps フォルダーにアップロードします。 この例では、 **[Source Directory]\( ソース ディレクトリ\)** の値を **[target]\(ターゲット\)** に設定し、 **[Target Directory]\(ターゲット ディレクトリ\)** の値を **[webapps]** に設定します。
+
+1. 運用環境以外のスロットにデプロイする場合は、**スロット**名を設定することもできます。
+
+1. プロジェクトを保存してビルドします。 ビルドが完了すると、Web アプリが Azure にデプロイされます。
 
 ### <a name="deploy-web-apps-by-uploading-files-using-jenkins-pipeline"></a>Jenkins パイプラインを使用したファイルのアップロードによって Web Apps for Containers をデプロイする
 
 Azure App Service Jenkins プラグインは、パイプラインに対応しています。 GitHub リポジトリの次のサンプルを参照できます。
 
 1. GitHub インターフェイスで、**Jenkinsfile_ftp_plugin** ファイルを開きます。 ファイルを編集するには、鉛筆アイコンをクリックします。 11 行目と 12 行目にある、Web アプリの **resourceGroup** と **webAppName** の定義を更新します。
+
     ```java
     def resourceGroup = '<myResourceGroup>'
     def webAppName = '<myAppName>'
     ```
 
-2. 14 行目の **withCredentials** の定義を、Jenkins インスタンスの資格情報 ID に設定します。
+1. 14 行目の **withCredentials** の定義を、Jenkins インスタンスの資格情報 ID に設定します。
+
     ```java
     withCredentials([azureServicePrincipal('<mySp>')]) {
     ```
@@ -118,12 +139,18 @@ Azure App Service Jenkins プラグインは、パイプラインに対応して
 ### <a name="create-a-jenkins-pipeline"></a>Jenkins パイプラインを作成する
 
 1. Web ブラウザーで Jenkins を開きます。 **[New Item (新しい項目)]** を選択します。
-2. ジョブの名前を指定し、 **[パイプライン]** を選択します。 **[OK]** を選択します。
-3. **[Pipeline]\(パイプライン\)** タブを選択します。
-4. **[Definition]\(定義\)** で、 **[Pipeline script from SCM]\(SCM からのパイプライン スクリプト\)** を選択します。
-5. **[SCM]** で **[Git]** を選択します。 フォークしたリポジトリの GitHub URL を入力します  (例: https://&lt;フォークしたリポジトリ>.git)。
-6. **[Script Path]\(スクリプト パス\)** の値を **Jenkinsfile_ftp_plugin** に更新します。
-7. **[Save]\(保存\)** をクリックし、ジョブを実行します。
+
+1. ジョブの名前を指定し、 **[パイプライン]** を選択します。 **[OK]** を選択します。
+
+1. **[Pipeline]\(パイプライン\)** タブを選択します。
+
+1. **[Definition]\(定義\)** で、 **[Pipeline script from SCM]\(SCM からのパイプライン スクリプト\)** を選択します。
+
+1. **[SCM]** で **[Git]** を選択します。 フォークしたリポジトリの GitHub URL を入力します  (例: https://&lt;フォークしたリポジトリ>.git)。
+
+1. **[Script Path]\(スクリプト パス\)** の値を **Jenkinsfile_ftp_plugin** に更新します。
+
+1. **[Save]\(保存\)** をクリックし、ジョブを実行します。
 
 ## <a name="configure-jenkins-to-deploy-web-app-for-containers"></a>Web App for Containers をデプロイするように Jenkins を構成する
 
@@ -139,46 +166,57 @@ Jenkins でジョブを設定するには、Linux 上の Web アプリが必要�
 ### <a name="set-up-the-jenkins-job-for-docker"></a>Docker の Jenkins ジョブを設定する
 
 1. Jenkins ダッシュボードで新しい**フリースタイル** プロジェクトを作成します。
-2. [Azure 用の単純な Java Web アプリ](https://github.com/azure-devops/javawebappsample)のローカル フォークを使用するように **[Source Code Management]\(ソース コード管理\)** フィールドを構成します。 **リポジトリの URL** 値を指定します  (例: http:\//github.com/&lt;your_ID>/javawebappsample)。
-3. **[Execute shell]\(シェルの実行\)** コマンドを追加することで、Maven を使用してプロジェクトをビルドするステップを追加します。 コマンドに次の行を含めます。
+
+1. [Azure 用の単純な Java Web アプリ](https://github.com/azure-devops/javawebappsample)のローカル フォークを使用するように **[Source Code Management]\(ソース コード管理\)** フィールドを構成します。 **リポジトリの URL** 値を指定します  (例: http:\//github.com/&lt;your_ID>/javawebappsample)。
+
+1. **[Execute shell]\(シェルの実行\)** コマンドを追加することで、Maven を使用してプロジェクトをビルドするステップを追加します。 コマンドに次の行を含めます。
+
     ```bash
     mvn clean package
     ```
 
-4. **[Publish an Azure Web App]\(Azure Web App の発行\)** を選択することで、ビルド後のアクションを追加します。
-5. Azure サービス プリンシパルとして **mySp** を指定します。 このプリンシパルは、前の手順で [Azure 資格情報](#service-principal)として保存されています。
-6. **[App Configuration]\(アプリの構成\)** セクションで、サブスクリプションのリソース グループと Linux Web アプリを選択します。
-7. **[Publish via Docker]\(Docker を介した発行\)** を選択します。
-8. **Dockerfile** パスを入力します。 既定値の "/Dockerfile" をそのまま使用できます。
-Azure Container Registry を使用している場合は、 **[Docker registry URL]\(Docker レジストリの URL\)** に https://&lt;レジストリ名>.azurecr.io の形式で URL を入力します。 DockerHub を使用している場合は、値を空白のままにしておきます。
-9. **[Registry credentials]\(レジストリの資格情報\)** に、コンテナー レジストリの資格情報を追加します。 ユーザー ID とパスワードは、Azure CLI で次のコマンドを実行することで取得できます。 最初のコマンドは、Administrator アカウントを有効にします。
+1. **[Publish an Azure Web App]\(Azure Web App の発行\)** を選択することで、ビルド後のアクションを追加します。
+
+1. Azure サービス プリンシパルとして **mySp** を指定します。 このプリンシパルは、前の手順で [Azure 資格情報](#service-principal)として保存されています。
+
+1. **[App Configuration]\(アプリの構成\)** セクションで、サブスクリプションのリソース グループと Linux Web アプリを選択します。
+
+1. **[Publish via Docker]\(Docker を介した発行\)** を選択します。
+
+1. **Dockerfile** パスを入力します。 既定値の "/Dockerfile" をそのまま使用できます。 Azure Container Registry を使用している場合は、 **[Docker registry URL]\(Docker レジストリの URL\)** に https://&lt;レジストリ名>.azurecr.io の形式で URL を入力します。 DockerHub を使用している場合は、値を空白のままにしておきます。
+
+1. **[Registry credentials]\(レジストリの資格情報\)** に、コンテナー レジストリの資格情報を追加します。 ユーザー ID とパスワードは、Azure CLI で次のコマンドを実行することで取得できます。 最初のコマンドは、Administrator アカウントを有効にします。
+
     ```azurecli-interactive
     az acr update -n <yourRegistry> --admin-enabled true
     az acr credential show -n <yourRegistry>
     ```
 
-10. **[Advanced]\(詳細\)** タブの Docker イメージ名とタグ値は省略可能です。 既定では、イメージ名の値は、Azure Portal の **[Docker コンテナー]** 設定で構成済みのイメージ名から取得されます。 タグは $BUILD_NUMBER から生成されます。
-    > [!NOTE]
-    > 必ず、Azure Portal でイメージ名を指定するか、 **[Advanced]\(詳細\)** タブの **[Docker Image]\(Docker イメージ\)** に値を入力してください。この例では、 **[Docker Image]\(Docker イメージ\)** の値を &lt;レジストリ名>.azurecr.io/calculator に設定し、 **[Docker Image Tag]\(Docker イメージ タグ\)** は空白のままにしておきます。
+1. **[Advanced]\(詳細\)** タブの Docker イメージ名とタグ値は省略可能です。 既定では、イメージ名の値は、Azure Portal の **[Docker コンテナー]** 設定で構成済みのイメージ名から取得されます。 タグは $BUILD_NUMBER から生成されます。 Azure portal でイメージ名を指定するか、 **[Advanced]\(詳細\)** タブの **[Docker Image]\(Docker イメージ\)** に値を入力してください。この例では、 **[Docker Image]\(Docker イメージ\)** の値を &lt;レジストリ名>.azurecr.io/calculator に設定し、 **[Docker Image Tag]\(Docker イメージ タグ\)** は空白のままにしておきます。
 
-11. 組み込みの Docker イメージ設定を使用すると、デプロイは失敗します。 Azure Portal の **[Docker コンテナー]** 設定のカスタム イメージを使用するように Docker 構成を変更します。 組み込みのイメージの場合は、ファイル アップロードの方法を使用してデプロイします。
-12. ファイル アップロードの方法と同様に、**運用環境**以外の別の**スロット**名を選択できます。
-13. プロジェクトを保存してビルドします。 コンテナー イメージがレジストリにプッシュされ、Web アプリがデプロイされます。
+1. 組み込みの Docker イメージ設定を使用すると、デプロイは失敗します。 Azure Portal の **[Docker コンテナー]** 設定のカスタム イメージを使用するように Docker 構成を変更します。 組み込みのイメージの場合は、ファイル アップロードの方法を使用してデプロイします。
+
+1. ファイル アップロードの方法と同様に、**運用環境**以外の別の**スロット**名を選択できます。
+
+1. プロジェクトを保存してビルドします。 コンテナー イメージがレジストリにプッシュされ、Web アプリがデプロイされます。
 
 ### <a name="deploy-web-app-for-containers-by-using-jenkins-pipeline"></a>Jenkins パイプラインを使用して Web App for Containers をデプロイする
 
 1. GitHub インターフェイスで、**Jenkinsfile_container_plugin** ファイルを開きます。 ファイルを編集するには、鉛筆アイコンをクリックします。 11 行目と 12 行目にある、Web アプリの **resourceGroup** と **webAppName** の定義を更新します。
+
     ```java
     def resourceGroup = '<myResourceGroup>'
     def webAppName = '<myAppName>'
     ```
 
-2. 13 行目を、使用するコンテナー レジストリ サーバーに変更します。
+1. 13 行目を、使用するコンテナー レジストリ サーバーに変更します。
+
     ```java
     def registryServer = '<registryURL>'
     ```
 
-3. 16 行目を変更して、Jenkins インスタンスの資格情報 ID を使用します。
+1. 16 行目を変更して、Jenkins インスタンスの資格情報 ID を使用します。
+
     ```java
     azureWebAppPublish azureCredentialsId: '<mySp>', publishType: 'docker', resourceGroup: resourceGroup, appName: webAppName, dockerImageName: imageName, dockerImageTag: imageTag, dockerRegistryEndpoint: [credentialsId: 'acr', url: "http://$registryServer"]
     ```
@@ -186,23 +224,31 @@ Azure Container Registry を使用している場合は、 **[Docker registry UR
 ### <a name="create-a-jenkins-pipeline"></a>Jenkins パイプラインを作成する    
 
 1. Web ブラウザーで Jenkins を開きます。 **[New Item (新しい項目)]** を選択します。
-2. ジョブの名前を指定し、 **[パイプライン]** を選択します。 **[OK]** を選択します。
-3. **[Pipeline]\(パイプライン\)** タブを選択します。
-4. **[Definition]\(定義\)** で、 **[Pipeline script from SCM]\(SCM からのパイプライン スクリプト\)** を選択します。
-5. **[SCM]** で **[Git]** を選択します。 フォークしたリポジトリの GitHub URL を入力します  (例: https://&lt;フォークしたリポジトリ>.git)。
-7. **[Script Path]\(スクリプト パス\)** の値を **Jenkinsfile_container_plugin** に更新します。
-8. **[Save]\(保存\)** をクリックし、ジョブを実行します。
+
+1. ジョブの名前を指定し、 **[パイプライン]** を選択します。 **[OK]** を選択します。
+
+1. **[Pipeline]\(パイプライン\)** タブを選択します。
+
+1. **[Definition]\(定義\)** で、 **[Pipeline script from SCM]\(SCM からのパイプライン スクリプト\)** を選択します。
+
+1. **[SCM]** で **[Git]** を選択します。 フォークしたリポジトリの GitHub URL を入力します  例: `https://&lt;your_forked_repo>.git.`
+
+1. **[Script Path]\(スクリプト パス\)** の値を **Jenkinsfile_container_plugin** に更新します。
+
+1. **[Save]\(保存\)** をクリックし、ジョブを実行します。
 
 ## <a name="verify-your-web-app"></a>Web アプリを検証する
 
-1. WAR ファイルが Web アプリに 正常にデプロイされたことを確認するには、Web ブラウザーを開きます。
-2. http://&lt;アプリ名>.azurewebsites.net/api/calculator/ping に移動します。 &lt;アプリ名> を実際の Web アプリの名前に置き換えます。 次のメッセージが表示されます。
-    ```
+1. WAR ファイルが Web アプリに 正常にデプロイされたことを確認するには、Web ブラウザーを開きます。 `http://&lt;your_app_name>.azurewebsites.net/api/calculator/ping` にアクセスします。 `&lt;your_app_name>` は、実際の Web アプリの名前に置き換えてください。 次のメッセージが表示されます。
+
+    ```output
     Welcome to Java Web App!!! This is updated!
     Sun Jun 17 16:39:10 UTC 2017
     ```
 
-3. http://&lt;アプリ名>.azurewebsites.net/api/calculator/add?x=&lt;x>&y=&lt;y> に移動します。 &lt;x> と &lt;y> を任意の数値に置き換えて、x と y の合計を取得します。 計算ツールに合計が表示されます。![計算ツール: 加算](./media/deploy-to-azure-app-service-using-azure-cli/calculator-add.png)
+1. `http://&lt;your_app_name>.azurewebsites.net/api/calculator/add?x=&lt;x>&y=&lt;y>` にアクセスします。 `&lt;x> and &lt;y>` を任意の数値に置き換えて、x と y の合計を取得します。 計算ツールに合計が表示されます。
+
+    ![Calculator: add](./media/deploy-to-azure-app-service-using-azure-cli/calculator-add.png)
 
 ### <a name="for-azure-app-service-on-linux"></a>Azure App Service on Linux の場合
 
@@ -214,17 +260,18 @@ Azure Container Registry を使用している場合は、 **[Docker registry UR
     
     次のメッセージが表示されます。
     
-    ```CLI
+    ```output
     ["calculator"]
     ```
     
-2. http://&lt;アプリ名>.azurewebsites.net/api/calculator/ping に移動します。 &lt;アプリ名> を実際の Web アプリの名前に置き換えます。 次のメッセージが表示されます。 
-    ```
+1. `http://&lt;your_app_name>.azurewebsites.net/api/calculator/ping` にアクセスします。 `&lt;your_app_name>` は、実際の Web アプリの名前に置き換えてください。 次のメッセージが表示されます。
+
+    ```output
     Welcome to Java Web App!!! This is updated!
     Sun Jul 09 16:39:10 UTC 2017
     ```
 
-3. http://&lt;アプリ名>.azurewebsites.net/api/calculator/add?x=&lt;x>&y=&lt;y> に移動します。 &lt;x> と &lt;y> を任意の数値に置き換えて、x と y の合計を取得します。
+1. `http://&lt;your_app_name>.azurewebsites.net/api/calculator/add?x=&lt;x>&y=&lt;y>` にアクセスします。 `&lt;x> and &lt;y>` を任意の数値に置き換えて、x と y の合計を取得します。
     
 ## <a name="troubleshooting-the-jenkins-plugin"></a>Jenkins プラグインのトラブルシューティング
 
@@ -232,10 +279,5 @@ Jenkins プラグインでバグが発生した場合は、[Jenkins JIRA](https:
 
 ## <a name="next-steps"></a>次のステップ
 
-このチュートリアルでは、Azure App Service Jenkins プラグインを使用して Azure にデプロイしました。
-
-以下の方法を学習しました。
-
-> [!div class="checklist"]
-> * ファイルのアップロードを介して Azure App Service をデプロイするように Jenkins を構成する 
-> * Web App for Containers にデプロイするように Jenkins を構成する 
+> [!div class="nextstepaction"]
+> [Azure 上の Jenkins](/azure/developer/jenkins)

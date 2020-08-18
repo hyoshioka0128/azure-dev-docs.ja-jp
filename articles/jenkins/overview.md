@@ -3,13 +3,13 @@ title: Jenkins と Azure の概要
 description: Azure で Jenkins ビルドをホストし、オートメーション サーバーをデプロイします。また、Azure のコンピューティング リソースとストレージ リソースを使用することで、継続的インテグレーションとデプロイ (CI/CD) パイプラインを拡張します。
 keywords: Jenkins, Azure, 開発, 概要
 ms.topic: overview
-ms.date: 10/23/2019
-ms.openlocfilehash: 19bacd6e1b3d4ddee4e6fef27b2183f4a33545d6
-ms.sourcegitcommit: 8309822d57f784a9c2ca67428ad7e7330bb5e0d6
+ms.date: 08/08/2020
+ms.openlocfilehash: 2592ad806d58b3cbfcf930f180fa582945be3196
+ms.sourcegitcommit: f65561589d22b9ba2d69b290daee82eb47b0b20f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82861305"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88162041"
 ---
 # <a name="azure-and-jenkins"></a>Azure と Jenkins
 
@@ -19,13 +19,7 @@ ms.locfileid: "82861305"
 
 ## <a name="host-your-jenkins-servers-in-azure"></a>Azure で Jenkins サーバーをホストする
 
-Azure で Jenkins をホストすることで、ビルドの自動化を集中管理し、ソフトウェア プロジェクト拡大のニーズに合わせてデプロイを拡大縮小します。 Azure への Jenkins のデプロイには以下を使用できます。
- 
-- Azure Marketplace の [Jenkins ソリューション テンプレート](configure-on-linux-vm.md)。
-- [Azure 仮想マシン](/azure/virtual-machines/linux/overview)。 VM で Jenkins を作成するには、[チュートリアル](pipeline-with-github-and-docker.md)を参照してください。
-- [Azure Container Service](/azure/container-service/kubernetes/container-service-kubernetes-walkthrough) で実行されている Kubernetes クラスターについては、こちらの[手順](/azure/container-service/kubernetes/container-service-kubernetes-jenkins)を参照してください。
-
-Azure Jenkins のデプロイは、[Azure Monitor ログ](/azure/log-analytics/log-analytics-overview)と [Azure CLI](/cli/azure) を使用して監視および管理します。
+Azure で Jenkins をホストすることで、ビルドの自動化を集中管理し、ソフトウェア プロジェクト拡大のニーズに合わせてデプロイを拡大縮小します。 Linux VM に Jenkins をインストールして構成する方法については、[Jenkins の使用を開始するためのクイックスタート](configure-on-linux-vm.md)を参照してください。 Azure Jenkins のデプロイは、[Azure Monitor ログ](/azure/log-analytics/log-analytics-overview)と [Azure CLI](/cli/azure) を使用して監視および管理します。
 
 ## <a name="scale-your-build-automation-on-demand"></a>ビルド自動化をオン デマンドで拡大縮小する
 

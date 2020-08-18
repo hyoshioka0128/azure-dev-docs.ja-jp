@@ -6,16 +6,16 @@ ms.author: edburns
 ms.topic: conceptual
 ms.date: 1/27/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: 3f3f4cd3a7714b45a68abe4d92c489581d1c1d5f
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 3b6d9847cc72f246587a36b74173521736a6cc9a
+ms.sourcegitcommit: b923aee828cd4b309ef92fe1f8d8b3092b2ffc5a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379726"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88052263"
 ---
-# <a name="migrate-weblogic-applications-to-azure-virtual-machines"></a>WebLogic アプリケーションを Azure Virtual Machines に移行する
+# <a name="migrate-weblogic-server-applications-to-azure-virtual-machines"></a>WebLogic Server のアプリケーションを Azure Virtual Machines に移行する
 
-このガイドでは、既存の WebLogic アプリケーションを移行して Azure Virtual Machines で実行する場合に知っておくべきことについて説明します。
+このガイドでは、既存の WebLogic アプリケーションを移行して Azure Virtual Machines で実行する場合に知っておくべきことについて説明します。  Azure Marketplace で入手できる WebLogic Server ソリューションの概要については、「[Azure の Oracle WebLogic Server とは](/azure/virtual-machines/workloads/oracle/oracle-weblogic)」を参照してください。
 
 ## <a name="pre-migration"></a>移行前
 
@@ -29,7 +29,7 @@ ms.locfileid: "86379726"
 
 ### <a name="determine-whether-the-pre-built-marketplace-offers-are-a-good-starting-point"></a>事前構築済みの Marketplace オファーが適切な出発点であるかどうか判断する
 
-Oracle と Microsoft は提携して、Azure ソリューション テンプレートのセットを Azure Marketplace に導入し、Azure への移行の確固たる出発点を提供しています。 「[Oracle Fusion Middleware](https://docs.oracle.com/en/middleware/fusion-middleware/weblogic-server/12.2.1.4/wlazu/)」ドキュメントでオファーの一覧を参照し、既存のデプロイに最も適合するものを選択してください。 オファーの一覧は、[Oracle のドキュメント](https://docs.oracle.com/en/middleware/fusion-middleware/weblogic-server/12.2.1.4/wlazu/select-required-oracle-weblogic-server-offer-azure-marketplace.html#GUID-187739C5-EE7A-47C6-B3BA-C0A0333DC398)に記載されています。
+Oracle と Microsoft は提携して、Azure ソリューション テンプレートのセットを Azure Marketplace に導入し、Azure への移行の確固たる出発点を提供しています。 「[Oracle Fusion Middleware](https://docs.oracle.com/en/middleware/standalone/weblogic-server/wlazu/)」ドキュメントでオファーの一覧を参照し、既存のデプロイに最も適合するものを選択してください。 オファーの一覧は、概要記事の「[Azure の Oracle WebLogic Server とは](/azure/virtual-machines/workloads/oracle/oracle-weblogic)」で確認できます。
 
 既存のオファーがいずれも適切な開始点でない場合は、Azure 仮想マシンのリソースを使用して手動でデプロイを再現する必要があります。 詳細については、「[IaaS とは](https://azure.microsoft.com/overview/what-is-iaas/)」を参照してください。
 
@@ -99,7 +99,7 @@ VM ファイルシステムは、永続化、スタートアップ、および�
 
 Azure Virtual Machines 上の WebLogic については、次のオファーを利用できます。
 
-オファーのデプロイ中に、WebLogic Server ノードの仮想マシンのサイズを選択するよう求められます。 VM サイズを選択する際、サイズ設定 (メモリ、プロセッサ、ディスク) のすべての側面を考慮することが重要です。 詳細については、[オファーに関するドキュメント](https://docs.oracle.com/en/middleware/fusion-middleware/weblogic-server/12.2.1.4/wlazu/deploy-oracle-weblogic-server-administration-server-single-node.html)と、[仮想マシンのサイズ設定に関する Azure ドキュメント](/azure/cloud-services/cloud-services-sizes-specs)を参照してください。
+オファーのデプロイ中に、WebLogic Server ノードの仮想マシンのサイズを選択するよう求められます。 VM サイズを選択する際、サイズ設定 (メモリ、プロセッサ、ディスク) のすべての側面を考慮することが重要です。 詳細については、[仮想マシンのサイズ設定に関する Azure のドキュメント](/azure/cloud-services/cloud-services-sizes-specs)を参照してください
 
 #### <a name="weblogic-server-single-node-with-no-admin-server"></a>管理サーバーのない WebLogic Server 単一ノード
 
@@ -107,7 +107,7 @@ Azure Virtual Machines 上の WebLogic については、次のオファーを�
 
 #### <a name="weblogic-server-single-node-with-admin-server"></a>管理サーバーがある WebLogic Server 単一ノード
 
-このオファーでは、単一の VM がプロビジョニングされ、それに WebLogic Server 12.1.2.3 がインストールされます。 ドメインが作成され、管理サーバーが起動されます。
+このオファーでは、単一の VM がプロビジョニングされ、それに WebLogic Server がインストールされます。 ドメインが作成され、管理サーバーが起動されます。
 
 #### <a name="weblogic-server-n-node-cluster"></a>WebLogic Server N ノード クラスター
 
@@ -119,7 +119,7 @@ Azure Virtual Machines 上の WebLogic については、次のオファーを�
 
 ### <a name="provision-the-offer"></a>オファーをプロビジョニングする
 
-開始するオファーを選択したら、[オファーのドキュメント](https://wls-eng.github.io/arm-oraclelinux-wls/)に記載されている手順に従って、そのオファーをプロビジョニングします。 既存のドメイン名と一致するドメイン名を必ず選択してください。 ドメイン パスワードを既存のドメイン パスワードと一致させることもできます。
+開始するオファーを選択したら、[オファーのドキュメント](https://docs.oracle.com/en/middleware/standalone/weblogic-server/wlazu/)に記載されている手順に従って、そのオファーをプロビジョニングします。 既存のドメイン名と一致するドメイン名を必ず選択してください。 ドメイン パスワードを既存のドメイン パスワードと一致させることもできます。
 
 ### <a name="migrate-the-domains"></a>ドメインの移行
 
@@ -136,6 +136,8 @@ Azure Virtual Machines 上の WebLogic については、次のオファーを�
 ### <a name="connect-the-jms-sources"></a>JMS ソースの接続
 
 データベースに接続した後、WebLogic のドキュメントの「[Fusion Middleware Oracle WebLogic Server JMS リソースの管理](https://docs.oracle.com/middleware/12213/wls/JMSAD/toc.htm)」の手順に従って JMS を構成できます。
+
+[!INCLUDE [account-for-authentication-and-authorization](includes/account-for-authentication-and-authorization.md)]
 
 ### <a name="account-for-logging"></a>ログの考慮
 
@@ -158,6 +160,8 @@ CI/CD パイプラインまたは手動デプロイ システムからのアク�
 * Azure Storage を使用して、仮想マシンにマウントされた静的コンテンツを提供します。 詳細については、[仮想マシンでのデータ ディスクのアタッチまたはデタッチ](/azure/lab-services/devtest-lab-attach-detach-data-disk)に関する記事を参照してください。
 
 * Azure DevOps を使用して、移行した WebLogic クラスターにアプリケーションをデプロイします。 詳細については、[Azure DevOps の使用開始に関するドキュメント](/azure/devops/get-started/?view=azure-devops)を参照してください。
+
+* Azure Application Gateway と共に WebLogic Server をデプロイした場合 (「[チュートリアル: ロード バランサーとして Azure Application Gateway を使用して Azure に WebLogic Server クラスターを移行する](migrate-weblogic-with-app-gateway.md)」の手順に従います)、Application Gateway で追加の構成を行うことができます。  詳細については、「[Application Gateway 構成の概要](/azure/application-gateway/configuration-overview)」を参照してください。
 
 * 高度な負荷分散サービスを使用してネットワーク トポロジを強化します。 詳細については、「[Azure で負荷分散サービスを使用する](/azure/traffic-manager/traffic-manager-load-balancing-azure)」を参照してください。
 

@@ -3,13 +3,13 @@ title: チュートリアル - Jenkins を使用して GitHub から Azure App S
 description: Java Web アプリの GitHub からの継続的インテグレーション (CI) と Azure App Service への継続的配置 (CD) のために Jenkins を構成する方法について説明します。
 keywords: Jenkins, Azure, 開発, App Service
 ms.topic: tutorial
-ms.date: 10/23/2019
-ms.openlocfilehash: 6516f5481f6170a9d15d43113ac0f3f234174931
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.date: 08/10/2020
+ms.openlocfilehash: 3961d413a573d416777f649cef44ceccdecb0b01
+ms.sourcegitcommit: e792f681ab66c54e6fd0c7f3cb71816206216d72
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82170028"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88075715"
 ---
 # <a name="tutorial-deploy-from-github-to-azure-app-service-using-jenkins"></a>チュートリアル:Jenkins を使用して GitHub から Azure App Service にデプロイする
 
@@ -116,41 +116,30 @@ Jenkins によって GitHub が監視され、お客様の GitHub フォーク�
 
 ## <a name="create-service-principal"></a>サービス プリンシパルの作成
 
-後のセクションでは、GitHub からお客様のアプリをビルドして Azure App Service にデプロイする Jenkins パイプライン ジョブを作成します。 お客様の資格情報を入力しなくても Jenkins が Azure にアクセスできるようにするには、Azure Active Directory の[サービス プリンシパル](https://docs.microsoft.com/azure/active-directory/develop/app-objects-and-service-principals)を Jenkins 用に作成します。 サービス プリンシパルは、Azure リソースに対するアクセスの認証を行うために Jenkins で使用できる別個の ID です。 このサービス プリンシパルを作成するには、ローカルのコマンド ラインまたは Azure Cloud Shell で、Azure CLI コマンド [ **`az ad sp create-for-rbac`** ](https://docs.microsoft.com/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest) を実行します。例: 
+後のセクションでは、GitHub からお客様のアプリをビルドして Azure App Service にデプロイする Jenkins パイプライン ジョブを作成します。 お客様の資格情報を入力しなくても Jenkins から Azure にアクセスできるようにするには、[サービス プリンシパル](/active-directory/develop/app-objects-and-service-principals)が必要です。 この記事のために使用できるサービス プリンシパルが既にある場合は、このセクションを省略できます。
+
+このサービス プリンシパルを作成するには、Azure CLI コマンドの [az ad sp create-for-rbac](/cli/azure/ad/sp?#az-ad-sp-create-for-rbac) を実行します。
 
 ```azurecli-interactive
-az ad sp create-for-rbac --name "yourAzureServicePrincipalName" --password yourSecurePassword
+az ad sp create-for-rbac
 ```
 
-必ず引用符を使用してサービス プリンシパル名を囲んでください。 さらに、[Azure Active Directory のパスワードの規則と制限](/azure/active-directory/active-directory-passwords-policy)に基づいて、強力なパスワードを作成します。 パスワードを指定しない場合は、お客様用のパスワードが Azure CLI によって作成されます。 
+**注**:
 
-**`create-for-rbac`** コマンドによって生成される出力を次に示します。 
+- 正常に完了すると、`az ad sp create-for-rbac` によっていくつかの値が表示されます。 `name`、`password`、および `tenant` の値は、次のステップで使用します。
+- 既定では、サービス プリンシパルは、Azure アカウントに対する読み取りと書き込みを行うための完全なアクセス許可を持つ**共同作成者**ロールが付与されて作成されます。 ロールベースのアクセス制御 (RBAC) とロールの詳細については、[RBAC の組み込みのロール](/azure/active-directory/role-based-access-built-in-roles)に関するページをご覧ください。
+- このパスワードは、紛失した場合、取得できません。 したがって、パスワードは安全な場所に保管してください。 パスワードを忘れた場合は、[サービス プリンシパルの資格情報をリセット](/cli/azure/create-an-azure-service-principal-azure-cli#reset-credentials)する必要があります。
 
-```json
-{
-   "appId": "yourAzureServicePrincipal-ID", // A GUID such as AAAAAAAA-AAAA-AAAA-AAAA-AAAAAAAAAAAA
-   "displayName": "yourAzureServicePrincipalName", // A user-friendly name for your Azure service principal
-   "name": "http://yourAzureServicePrincipalName",
-   "password": "yourSecurePassword",
-   "tenant": "yourAzureActiveDirectoryTenant-ID" // A GUID such as BBBBBBBB-BBBB-BBBB-BBBB-BBBBBBBBBBBB
-}
-```
-
-> [!TIP]
-> 
-> サービス プリンシパルが既にある場合、代わりにその ID を再利用できます。
-> 認証のためにサービス プリンシパルの値を指定する際は、`appId`、`password`、`tenant` のプロパティ値を使用します。 
-> 既存のサービス プリンシパルを検索する際は、`displayName` プロパティ値を使用します。
 
 ## <a name="add-service-principal-to-jenkins"></a>Jenkins へのサービス プリンシパルの追加
 
 1. Jenkins メイン ページで、 **[Credentials]\(資格情報\)**  >  **[System]\(システム\)** を選択します。 
 
-1. **[System]\(システム\)** ページの **[Domain]\(ドメイン\)** で、 **[Global credentials(unrestricted)]\(グローバル資格情報 (制限なし)\)** を選択します。
+1. **[System]\(システム\)** ページの **[Domain]\(ドメイン\)** で、**[Global credentials(unrestricted)]\(グローバル資格情報 (制限なし)\)** を選択します。
 
-1. 左側のメニューで、 **[Add Credentials]\(資格情報の追加\)** を選択します。
+1. 左側のメニューで、**[Add Credentials]\(資格情報の追加\)** を選択します。
 
-1. **[Kind]\(種類\)** リストで、 **[Azure Service Principal]\(Azure サービス プリンシパル\)** を選択します。
+1. **[Kind]\(種類\)** リストで、**[Azure Service Principal]\(Azure サービス プリンシパル\)** を選択します。
 
 1. お客様のサービス プリンシパルと Azure サブスクリプションに関する情報を、この手順の表で説明されているプロパティに入力します。
 
@@ -158,13 +147,13 @@ az ad sp create-for-rbac --name "yourAzureServicePrincipalName" --password yourS
 
    | プロパティ | 値 | 説明 | 
    |----------|-------|-------------| 
-   | **サブスクリプション ID** | <*yourAzureSubscription-ID*> | お客様の Azure サブスクリプションの GUID 値 <p>**ヒント**:お客様の Azure サブスクリプション ID がわからない場合は、コマンド ラインまたは Cloud Shell で次の Azure CLI コマンドを実行してから `id` GUID 値を使用します。 <p>`az account list` | 
+   | **サブスクリプション ID** | <*yourAzureSubscription-ID*> | お客様の Azure サブスクリプションの GUID 値 <p>**ヒント**: お客様の Azure サブスクリプション ID がわからない場合は、コマンド ラインまたは Cloud Shell で次の Azure CLI コマンドを実行してから `id` GUID 値を使用します。 <p>`az account list` | 
    | **クライアント ID** | <*yourAzureServicePrincipal-ID*> | お客様の Azure サービス プリンシパル用に先ほど生成された `appId` GUID 値 | 
    | **クライアント シークレット** | <*yourSecurePassword*> | `password` 値、またはお客様が自分の Azure サービス プリンシパルに指定した "シークレット" | 
    | **テナント ID** | <*yourAzureActiveDirectoryTenant-ID*> | お客様の Azure Active Directory テナントの `tenant` GUID 値 | 
    | **ID** | <*yourAzureServicePrincipalName*> | お客様の Azure サービス プリンシパルの `displayName` 値 | 
 
-1. お客様のサービス プリンシパルが機能することを確認するために、 **[Verify Service Principal]\(サービス プリンシパルの検証\)** を選択します。 終了したら、 **[OK]** を選択します。
+1. お客様のサービス プリンシパルが機能することを確認するために、**[Verify Service Principal]\(サービス プリンシパルの検証\)** を選択します。 終了したら、 **[OK]** を選択します。
 
 次に、お客様のアプリをビルドしてデプロイする Jenkins パイプラインを作成します。
 
@@ -172,17 +161,17 @@ az ad sp create-for-rbac --name "yourAzureServicePrincipalName" --password yourS
 
 Jenkins で、お客様のアプリをビルドしてデプロイするためのパイプライン ジョブを作成します。
 
-1. お客様の Jenkins ホーム ページに戻って、 **[New item]\(新しい項目\)** を選択します。 
+1. お客様の Jenkins ホーム ページに戻って、**[New item]\(新しい項目\)** を選択します。 
 
    ![Jenkins パイプラインを作成する](media/deploy-from-github-to-azure-app-service/jenkins-select-new-item.png)
 
-1. お客様のパイプライン ジョブに名前 ("My-Java-Web-App" など) を付けて、 **[Pipeline]\(パイプライン\)** を選択します。 下部にある **[OK]** を選択します。  
+1. お客様のパイプライン ジョブに名前 ("My-Java-Web-App" など) を付けて、**[Pipeline]\(パイプライン\)** を選択します。 下部にある **[OK]** を選択します。  
 
    ![Jenkins パイプライン ジョブに名前を付ける](media/deploy-from-github-to-azure-app-service/jenkins-select-pipeline.png)
 
 1. お客様のサービス プリンシパルを使用して Jenkins を設定します。これにより、ご自分の資格情報を使用せずに Jenkins による Azure へのデプロイが可能になります。
 
-   1. **[General]\(全般\)** タブで、 **[Prepare an environment for the run]\(実行用の環境を準備\)** を選択します。 
+   1. **[General]\(全般\)** タブで、**[Prepare an environment for the run]\(実行用の環境を準備\)** を選択します。 
 
    1. 表示される **[Properties Content]\(プロパティ コンテンツ\)** ボックスで、以下の環境変数とそれらの値を追加します。 
 
@@ -251,7 +240,7 @@ Jenkins で、お客様のアプリをビルドしてデプロイするための
 
 1. 左側のメニューで **[Configure]\(構成\)** を選択します。
 
-1. **[Pipeline]\(パイプライン\)** タブにある **[Definition]\(定義\)** リストで、 **[Pipeline script from SCM]\(SCM からのパイプライン スクリプト\)** を選択します。
+1. **[Pipeline]\(パイプライン\)** タブにある **[Definition]\(定義\)** リストで、**[Pipeline script from SCM]\(SCM からのパイプライン スクリプト\)** を選択します。
 
    1. 表示される **[SCM]** ボックスで、お客様のソース管理として **[Git]** を選択します。 
 
@@ -289,7 +278,7 @@ Jenkins で、お客様のアプリをビルドしてデプロイするための
 
    * [**`az webapp create`**](https://docs.microsoft.com/cli/azure/webapp?view=azure-cli-latest#az-webapp-create)
 
-1. Jenkins で、お客様のパイプライン ジョブを選択し、 **[Build Now]\(いますぐビルド\)** を選択します。
+1. Jenkins で、お客様のパイプライン ジョブを選択し、**[Build Now]\(いますぐビルド\)** を選択します。
 
    ビルドの完了後、お客様のアプリは Jenkins によってデプロイされ、発行 URL で Azure に公開されます。例: 
 

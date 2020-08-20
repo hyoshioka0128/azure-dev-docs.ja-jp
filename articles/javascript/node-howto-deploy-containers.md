@@ -3,13 +3,13 @@ title: Node.js コンテナーを Azure にデプロイする
 description: Docker コンテナーを使用して Node.js Web アプリを Azure にデプロイする
 ms.topic: article
 ms.date: 08/20/2019
-ms.custom: seo-javascript-september2019
-ms.openlocfilehash: 5d6851f00a6a53f207ab1dc08c209416160f896e
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.custom: seo-javascript-september2019, devx-track-javascript
+ms.openlocfilehash: 11fd9e18ba8f673bb51a53706a83677334396b86
+ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85792599"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88218627"
 ---
 # <a name="use-azure-to-deploy-scale-and-manage-nodejs-containers"></a>Azure を使用して Node.js コンテナーをデプロイ、スケーリング、管理する
 

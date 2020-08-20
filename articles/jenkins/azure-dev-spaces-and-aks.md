@@ -4,12 +4,13 @@ description: 継続的インテグレーション パイプラインで Azure De
 keywords: jenkins, azure, devops, azure dev spaces, aks, azure kubernetes service
 ms.topic: tutorial
 ms.date: 10/23/2019
-ms.openlocfilehash: acc4fba8bc12c631f395bf980ca6ee8b42dc8f49
-ms.sourcegitcommit: a631b36ec1277ee9397a860c597ffdd5495d88e7
+ms.custom: devx-track-jenkins
+ms.openlocfilehash: 505ee15ab181e63576f1bb2c276ac317d8372164
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83369939"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88240854"
 ---
 # <a name="tutorial-use-azure-dev-spaces-with-azure-kubernetes-service"></a>チュートリアル:Azure Kubernetes Service で Azure Dev Spaces を使用する
 
@@ -37,7 +38,7 @@ Azure Dev Spaces では、Azure Kubernetes Service (AKS) で実行されるマ�
 
 * [Azure CLI のインストール](/cli/azure/install-azure-cli?view=azure-cli-latest) (バージョン 2.0.43 以上)。
 
-* Jenkins マスター サーバー Jenkins マスターがまだない場合は、この [クイックスタート](https://docs.microsoft.com/azure/jenkins/install-jenkins-solution-template)の手順に従って、Azure で [Jenkins](https://aka.ms/jenkins-on-azure)  をデプロイしてください。 
+* Jenkins マスター サーバー Jenkins マスターがまだない場合は、この [クイックスタート](https://docs.microsoft.com/azure/jenkins/install-jenkins-solution-template)の手順に従って、Azure で [Jenkins](https://azuremarketplace.microsoft.com/marketplace/apps/bitnami.production-jenkins)  をデプロイしてください。 
 
 * このチュートリアルの後ろで説明されているとおり、Jenkins サーバーには Helm と kubectl をインストールし、それらを Jenkins アカウントで使用できるようにする必要があります。
 

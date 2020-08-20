@@ -4,12 +4,13 @@ description: Jenkins とブルー/グリーン デプロイ パターンを使�
 keywords: Jenkins, Azure, 開発, Kubernetes, k8s, AKS, ブルー/グリーン デプロイ, 継続的デリバリー, CD
 ms.topic: tutorial
 ms.date: 10/23/2019
-ms.openlocfilehash: 051a1531c9e973231ca56256603df63f60e21cf9
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-jenkins
+ms.openlocfilehash: 9a81b47d0e3828bb7c1cd809a66b2245f5a83771
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82169948"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88240994"
 ---
 # <a name="tutorial-deploy-to-azure-kubernetes-service-aks-using-the-bluegreen-deployment-pattern"></a>チュートリアル:ブルー/グリーン デプロイ パターンを使用した Azure Kubernetes Service (AKS) へのデプロイ
 
@@ -27,15 +28,15 @@ Azure Kubernetes Service (AKS) を使用すると、ホストされている Kub
 > * Jenkins ジョブの作成と実行
 
 ## <a name="prerequisites"></a>前提条件
-- [GitHub アカウント](https://github.com):サンプル リポジトリをクローンするために GitHub アカウントが必要です。
+- [GitHub アカウント](https://github.com):サンプル リポジトリを複製するために GitHub アカウントが必要です。
 - [Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest):Kubernetes クラスターを作成するために Azure CLI 2.0 を使用します。
 - [Chocolatey](https://chocolatey.org):kubectl をインストールするために使用するパッケージ マネージャーです。
 - [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/):Kubernetes クラスターに対してコマンドを実行するために使用するコマンド ライン インターフェイスです。
 - [jq](https://stedolan.github.io/jq/download/):簡便なコマンド ライン JSON プロセッサです。
 
-## <a name="clone-the-sample-app-from-github"></a>GitHub からのサンプル アプリのクローン
+## <a name="clone-the-sample-app-from-github"></a>GitHub からのサンプル アプリの複製
 
-GitHub の Microsoft リポジトリに、Jenkins とブルー/グリーン パターンを使用して AKS にデプロイする方法を示すサンプル アプリがあります。 このセクションでは、GitHub にそのリポジトリのフォークを作成し、アプリをローカル システムにクローンします。
+GitHub の Microsoft リポジトリに、Jenkins とブルー/グリーン パターンを使用して AKS にデプロイする方法を示すサンプル アプリがあります。 このセクションでは、GitHub にそのリポジトリのフォークを作成し、アプリをローカル システムに複製します。
 
 1. GitHub リポジトリで [todo-app-java-on-azure](https://github.com/microsoft/todo-app-java-on-azure.git) サンプル アプリを参照します。
 
@@ -49,27 +50,27 @@ GitHub の Microsoft リポジトリに、Jenkins とブルー/グリーン パ�
 
     ![GitHub アカウント名と注釈のスクリーンショット](./media/deploy-to-aks-using-blue-green-deployment-pattern/github-sample-msft-forked.png)
 
-1. **[Clone or download]\(クローンまたはダウンロード\)** を選択します。
+1. **[複製またはダウンロード]** を選択します。
 
-    ![リポジトリをクローンまたはダウンロードする GitHub オプションのスクリーンショット](./media/deploy-to-aks-using-blue-green-deployment-pattern/github-sample-clone.png)
+    ![リポジトリを複製またはダウンロードする GitHub オプションのスクリーンショット](./media/deploy-to-aks-using-blue-green-deployment-pattern/github-sample-clone.png)
 
-1. **[Clone with HTTPS]\(HTTPS でクローンする\)** ウィンドウで、**コピー** アイコンを選択します。
+1. **[Clone with HTTPS]\(HTTPS で複製する\)** ウィンドウで、**コピー** アイコンを選択します。
 
-    ![クローン URL をクリップボードにコピーする GitHub オプションのスクリーンショット](./media/deploy-to-aks-using-blue-green-deployment-pattern/github-sample-copy.png)
+    ![複製 URL をクリップボードにコピーする GitHub オプションのスクリーンショット](./media/deploy-to-aks-using-blue-green-deployment-pattern/github-sample-copy.png)
 
 1. ターミナル ウィンドウまたは Git Bash ウィンドウを開きます。
 
-1. リポジトリのローカル コピー (クローン) を格納したい場所にディレクトリを変更します。
+1. リポジトリのローカル コピー (複製) を格納したい場所にディレクトリを変更します。
 
-1. `git clone` コマンドを使用して、先ほどコピーした URL をクローンします。
+1. `git clone` コマンドを使用して、先ほどコピーした URL を複製します。
 
     ![Git Bash の git clone コマンドのスクリーンショット](./media/deploy-to-aks-using-blue-green-deployment-pattern/git-clone-command.png)
 
-1. Enter キーを押してクローンプロセスを開始します。
+1. Enter キーを押して複製プロセスを開始します。
 
     ![Git Bash の git clone コマンド結果のスクリーンショット](./media/deploy-to-aks-using-blue-green-deployment-pattern/git-clone-results.png)
 
-1. ディレクトリを、アプリのソースのクローンが含まれる、新しく作成されたディレクトリに変更します。
+1. ディレクトリを、アプリのソースの複製が含まれる、新しく作成されたディレクトリに変更します。
 
 ## <a name="create-and-configure-a-managed-kubernetes-cluster"></a>マネージド Kubernetes クラスターの作成と構成
 
@@ -108,7 +109,7 @@ GitHub の Microsoft リポジトリに、Jenkins とブルー/グリーン パ�
 
 ### <a name="set-up-the-kubernetes-cluster"></a>Kubernetes クラスターの設定
 
-AKS でのブルー/グリーン デプロイの設定は、手動で行うことも、前にクローンしたサンプルで提供されたセットアップ スクリプトを使って実施することもできます このセクションでは、両方の方法について説明します。
+AKS でのブルー/グリーン デプロイの設定は、手動で行うことも、前に複製したサンプルで提供されたセットアップ スクリプトを使って実施することもできます このセクションでは、両方の方法について説明します。
 
 #### <a name="set-up-the-kubernetes-cluster-via-the-sample-setup-script"></a>サンプルのセットアップ スクリプトを使用した Kubernetes クラスターの設定
 1. **deploy/aks/setup/setup.sh** ファイルを編集して、次のプレースホルダーを、自分の環境に合った値に置き換えます。 
@@ -189,7 +190,7 @@ AKS でのブルー/グリーン デプロイの設定は、手動で行うこ�
 
 このセクションでは、ビルドを実行するために、テストに最適な Jenkins サーバーを準備する方法を説明します。 ただし、Azure でエージェントを活用してお使いのビルドを実行するために、[Azure VM エージェント](https://plugins.jenkins.io/azure-vm-agents)または [Azure Container エージェント](https://plugins.jenkins.io/azure-container-agents)を使用する必要があります。 詳細については、Jenkins の「[security implications of building on master](https://wiki.jenkins.io/display/JENKINS/Security+implication+of+building+on+master)」 (マスターでの構築におけるセキュリティへの影響) の記事を参照してください。
 
-1. [Azure に Jenkins マスターを](https://aka.ms/jenkins-on-azure)デプロイします。
+1. [Azure に Jenkins マスターを](https://azuremarketplace.microsoft.com/marketplace/apps/bitnami.production-jenkins)デプロイします。
 
 1. SSH を使用してサーバーに接続し、ビルドを実行するサーバーにビルド ツールをインストールします。
    

@@ -4,12 +4,13 @@ description: Ansible を使用して Azure の動的インベントリを管理�
 keywords: Ansible, Azure, DevOps, Bash, Cloud Shell, 動的インベントリ
 ms.topic: tutorial
 ms.date: 10/23/2019
-ms.openlocfilehash: 20c152c6f276aed68abf10a6f2e6ae052235a99f
-ms.sourcegitcommit: 9365b437b119eebf98e40f851bd6f66fe966be4a
+ms.custom: devx-track-ansible
+ms.openlocfilehash: 8ada951f0c1e21de8e193d94fd7e7dcf35ae03be
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/16/2020
-ms.locfileid: "86422668"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88240304"
 ---
 # <a name="tutorial-configure-dynamic-inventories-of-your-azure-resources-using-ansible"></a>チュートリアル:Ansible を使用して Azure リソースの動的インベントリを構成する
 
@@ -92,7 +93,7 @@ Ansible には、Azure リソースの動的インベントリを生成する [a
 1. GNU `wget` コマンドを使用して、`azure_rm.py` スクリプトを取得します。
 
     ```python
-    wget https://raw.githubusercontent.com/ansible-collections/community.general/master/scripts/inventory/azure_rm.py
+    wget https://raw.githubusercontent.com/ansible-collections/community.general/main/scripts/inventory/azure_rm.py
     ```
 
 1. `chmod` コマンドを使用して、`azure_rm.py` スクリプトへのアクセス許可を変更します。 次のコマンドでは、`+x` パラメーターを使用して、指定されたファイル (`azure_rm.py`) の実行を許可しています。

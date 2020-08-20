@@ -3,12 +3,13 @@ title: チュートリアル - Terraform を使用して Azure でハブ仮想�
 description: 他のネットワーク間の共通接続ポイントとして機能するハブ仮想ネットワークを Azure で作成する方法について説明します。
 ms.topic: tutorial
 ms.date: 10/26/2019
-ms.openlocfilehash: ed2b391075dc04b7ef16d3f305ef4ff86abed4ae
-ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
+ms.custom: devx-track-terraform
+ms.openlocfilehash: 0833497301865506592639838c7d6075813bcf6e
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87478572"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88241144"
 ---
 # <a name="tutorial-create-a-hub-virtual-network-in-azure-by-using-terraform"></a>チュートリアル:Terraform を使用して Azure でハブ仮想ネットワークを作成する
 

@@ -4,12 +4,13 @@ description: Azure プロバイダーのデプロイ スロットで Terraform �
 keywords: Azure DevOps Terraform デプロイ スロット
 ms.topic: how-to
 ms.date: 03/09/2020
-ms.openlocfilehash: 8ae9f51b82f7868e4df11f1586664f203aa5403b
-ms.sourcegitcommit: e451e4360d9c5956cc6a50880b3a7a55aa4efd2f
+ms.custom: devx-track-terraform
+ms.openlocfilehash: bed68e64bb6948f4ab021035bd113ea9fb007950
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87478486"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88241214"
 ---
 # <a name="provision-infrastructure-with-azure-deployment-slots-using-terraform"></a>Terraform を使用して Azure デプロイ スロットでインフラストラクチャをプロビジョニングする
 

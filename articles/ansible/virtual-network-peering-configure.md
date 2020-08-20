@@ -4,12 +4,13 @@ description: Ansible を使用して、仮想ネットワーク ピアリング�
 keywords: ansible, azure, devops, bash, プレイブック, ネットワーキング, ピアリング
 ms.topic: tutorial
 ms.date: 04/30/2019
-ms.openlocfilehash: 4dfda10693ad86131ec529d7ac06070098a40a5e
-ms.sourcegitcommit: 499f7275446f006fa43c4eff3b1f0d001e9a98d9
+ms.custom: devx-track-ansible
+ms.openlocfilehash: 25ca319c735605e6597d4a4717c58f41b69e66c0
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84453693"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88240054"
 ---
 # <a name="tutorial-configure-azure-virtual-network-peering-using-ansible"></a>チュートリアル:Ansible を使用して Azure Virtual Network ピアリングを構成する
 

@@ -4,12 +4,13 @@ description: Ansible を使用して、Azure Service Bus のトピックを作�
 keywords: ansible, azure, devops, bash, プレイブック, service bus, トピック, サブスクリプション
 ms.topic: tutorial
 ms.date: 04/30/2019
-ms.openlocfilehash: 1561a53a99954190aed71fd7d58c5535e68c00e9
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-ansible
+ms.openlocfilehash: 8dad002f52ded3baaf66d96a516a3d23dac91d56
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81743303"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88240064"
 ---
 # <a name="tutorial-configure-topics-in-azure-service-bus-using-ansible"></a>チュートリアル:Ansible を使用して Azure Service Bus のトピックを構成する
 

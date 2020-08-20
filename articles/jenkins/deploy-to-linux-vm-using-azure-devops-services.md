@@ -4,12 +4,13 @@ description: Jenkins と Azure DevOps Services を使用して、継続的イン
 keywords: jenkins, azure, devops, 仮想マシン, cicd, azure devops services
 ms.topic: tutorial
 ms.date: 07/31/2018
-ms.openlocfilehash: 213acfa152d5bd066f2cdac51204b3eac56307eb
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-jenkins
+ms.openlocfilehash: 458acc31d4cb56215dff036bd3952090052eb5a1
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82169858"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88241074"
 ---
 # <a name="tutorial-deploy-to-linux-virtual-machine-using-jenkins-and-azure-devops-services"></a>チュートリアル:Jenkins と Azure DevOps Services を使用して Linux 仮想マシンにデプロイする
 

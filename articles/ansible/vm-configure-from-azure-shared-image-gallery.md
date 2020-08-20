@@ -4,12 +4,13 @@ description: Ansible を使用して、Shared Image Gallery にある一般化�
 keywords: Ansible, Azure, DevOps, Bash, プレイブック, 仮想マシン, 仮想マシン スケール セット, Shared Image Gallery
 ms.topic: tutorial
 ms.date: 10/14/2019
-ms.openlocfilehash: cd66899b5d5f37bc056d251a68117456062c16cf
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-ansible
+ms.openlocfilehash: c214daa3f63f88711ace9d41ffb9978d20551fc9
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81743281"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88240574"
 ---
 # <a name="tutorial-create-a-vm-or-virtual-machine-scale-set-from-the-azure-shared-image-gallery-using-ansible"></a>チュートリアル:Ansible を使用して Azure Shared Image Gallery から VM または仮想マシン スケール セットを作成する
 

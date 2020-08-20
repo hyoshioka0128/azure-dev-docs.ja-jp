@@ -4,12 +4,13 @@ description: Azure portal から Chef クライアントをデプロイして構
 keywords: azure、chef、devops、クライアント、インストール、ポータル
 ms.date: 02/22/2020
 ms.topic: article
-ms.openlocfilehash: b5dd158bd06511bf440228d4ae0948596bca0612
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-chef
+ms.openlocfilehash: 3fb282914bad8992a5f4df76019df89824675da0
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "80892901"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88240824"
 ---
 # <a name="install-the-chef-client-from-the-azure-portal"></a>Azure portal から Chef クライアントをインストールする
 Azure portal から Linux または Windows マシンに直接、Chef クライアント拡張機能を追加できます。 この記事では、新しい Linux 仮想マシンを使用してそのプロセスを説明します。

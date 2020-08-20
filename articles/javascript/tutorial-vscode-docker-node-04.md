@@ -3,12 +3,13 @@ title: Visual Studio Code から Node.js アプリのコンテナー イメー�
 description: 'チュートリアル パート 4: Node.js アプリケーション イメージを作成する'
 ms.topic: conceptual
 ms.date: 09/20/2019
-ms.openlocfilehash: a8659edb4d0b3664c7704fd0bedde0c274562f3c
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.custom: devx-track-javascript
+ms.openlocfilehash: 023f5fcba7231a6f767e3e61f6f212ddc2c385c0
+ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85792120"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88218432"
 ---
 # <a name="create-your-nodejs-application-image"></a>Node.js アプリケーション イメージを作成する
 

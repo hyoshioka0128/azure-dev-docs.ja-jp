@@ -4,12 +4,13 @@ description: Azure Container Instances でビルド ジョブをオンデマン�
 keywords: jenkins, azure, devops, container instances, ビルド エージェント
 ms.topic: article
 ms.date: 08/31/2018
-ms.openlocfilehash: 0fa994657412190ce1860f7bd30915cc8bb2bc91
-ms.sourcegitcommit: 8309822d57f784a9c2ca67428ad7e7330bb5e0d6
+ms.custom: devx-track-jenkins
+ms.openlocfilehash: 408ff0e5cc67e975c09fd108e9f5709c0a0cf510
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82861285"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88240904"
 ---
 # <a name="tutorial-use-azure-container-instances-as-a-jenkins-build-agent"></a>チュートリアル:Azure Container Instances を Jenkins ビルド エージェントとして使用する
 

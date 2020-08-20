@@ -4,12 +4,13 @@ description: Jenkins Azure Functions プラグインを使用して Azure Functi
 keywords: Jenkins, Azure, DevOps, Java, Azure Functions
 ms.topic: tutorial
 ms.date: 10/23/2019
-ms.openlocfilehash: 4dbd37b9527a3c41c6f1d5b40edf974b6adda6c3
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-jenkins
+ms.openlocfilehash: fa63ebf5a41a3c515f92b0c551ee63d683b665c7
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82169798"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88240933"
 ---
 # <a name="tutorial-deploy-to-azure-functions-using-jenkins"></a>チュートリアル:Jenkins を使用して Azure Functions にデプロイする
 
@@ -51,7 +52,7 @@ Java ランタイム スタックを備えた Java 関数を作成するには�
 
 次の手順では、Jenkins サーバーを準備する方法について説明します。
 
-1. Azure に [Jenkins サーバー](https://aka.ms/jenkins-on-azure)をデプロイします。 Jenkins サーバーのインスタンスをまだインストールしていない場合は、[Azure での Jenkins サーバーの作成](./configure-on-linux-vm.md)に関する記事でそのプロセスが説明されています。
+1. Azure に [Jenkins サーバー](https://azuremarketplace.microsoft.com/marketplace/apps/bitnami.production-jenkins)をデプロイします。 Jenkins サーバーのインスタンスをまだインストールしていない場合は、[Azure での Jenkins サーバーの作成](./configure-on-linux-vm.md)に関する記事でそのプロセスが説明されています。
 
 1. SSH を使用して Jenkins インスタンスにサインインします。
 

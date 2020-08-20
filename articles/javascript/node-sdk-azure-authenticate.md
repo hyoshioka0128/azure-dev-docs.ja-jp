@@ -3,12 +3,13 @@ title: Node.js 用 Azure 管理モジュールを使った認証
 description: Node.js 用 Azure 管理モジュールへの認証にサービス プリンシパルを使う方法について説明します。
 ms.topic: article
 ms.date: 06/17/2017
-ms.openlocfilehash: 76233fb6e6d15829783ff98b3af672abc7eba226
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.custom: devx-track-javascript
+ms.openlocfilehash: 6697e96264a09db1b1b74a74932b6fff78fa8443
+ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85792282"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88218872"
 ---
 # <a name="authenticate-with-the-azure-modules-for-nodejs"></a>Node.js 用 Azure モジュールを使った認証
 

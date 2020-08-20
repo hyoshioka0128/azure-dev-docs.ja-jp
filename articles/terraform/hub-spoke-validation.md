@@ -3,12 +3,13 @@ title: チュートリアル - Terraform を使用して Azure でハブとス�
 description: すべての仮想ネットワークが相互に接続されているハブとスポークのネットワーク トポロジを検証する方法について説明します。
 ms.topic: tutorial
 ms.date: 10/26/2019
-ms.openlocfilehash: e061fc882962b33261fe68a6f9d4c2d78172a871
-ms.sourcegitcommit: 756e4873f904db954a56c20ebb2f1f5116ee4596
+ms.custom: devx-track-terraform
+ms.openlocfilehash: ec21091b45dfe11839e4bfe0f4fe2f37261f16cc
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82170898"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88241114"
 ---
 # <a name="tutorial-validate-a-hub-and-spoke-network-in-azure-using-terraform"></a>チュートリアル:Terraform を使用して Azure でハブとスポーク ネットワークを検証する
 

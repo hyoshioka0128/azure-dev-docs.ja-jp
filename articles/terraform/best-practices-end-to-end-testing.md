@@ -3,12 +3,13 @@ title: チュートリアル - Terraform プロジェクトでエンド ツー �
 description: Terraform プロジェクトでの Terratest を使用したエンド ツー エンド テストの詳細について説明します。
 ms.topic: tutorial
 ms.date: 07/31/2020
-ms.openlocfilehash: 7e287ea1f15d539182b0f9bef135ce7ebcc65d5f
-ms.sourcegitcommit: b224b276a950b1d173812f16c0577f90ca2fbff4
+ms.custom: devx-track-terraform
+ms.openlocfilehash: 182d403ed227eca50961e9db2df0d6766c4b9f54
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87810605"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88241294"
 ---
 # <a name="tutorial-setup-end-to-end-terratest-testing-on-terraform-projects"></a>チュートリアル:Terraform プロジェクトでエンド ツー エンドの Terratest テストを設定する
 

@@ -9,12 +9,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
 ms.custom: devx-track-java
-ms.openlocfilehash: 2714d4d4b8a614bcdbf951eb2a9dc4c2dc78dda2
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: f449df07048dfcc20e173bc4103995ac989e38fe
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379426"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88240944"
 ---
 # <a name="tutorial-secure-a-java-web-app-using-the-spring-boot-starter-for-azure-active-directory"></a>チュートリアル:Azure Active Directory 用の Spring Boot Starter を使用して Java Web アプリをセキュリティで保護する
 
@@ -188,7 +188,7 @@ Azure サブスクリプションをお持ちでない場合は、開始する�
    spring.security.oauth2.client.registration.azure.client-secret=AbCdEfGhIjKlMnOpQrStUvWxYz==
 
    # Specifies the list of Active Directory groups to use for authorization:
-   azure.activedirectory.active-directory-groups=Users
+   azure.activedirectory.user-group.allowed-groups=Users
    ```
 
    各値の説明:
@@ -198,7 +198,7 @@ Azure サブスクリプションをお持ちでない場合は、開始する�
    | `azure.activedirectory.tenant-id` | 前の Active Directory の **ディレクトリ ID** を指定します。 |
    | `spring.security.oauth2.client.registration.azure.client-id` | 以前に完了したアプリ登録の**アプリケーション ID** を指定します。 |
    | `spring.security.oauth2.client.registration.azure.client-secret` | 以前に完了したアプリ登録キーの**値** を指定します。 |
-   | `azure.activedirectory.active-directory-groups` | 承認に使用する Active Directory グループの一覧を指定します。 |
+   | `azure.activedirectory.user-group.allowed-groups` | 承認に使用する Active Directory グループの一覧を指定します。 |
 
    > [!NOTE]
    > *application.properties* ファイルで使用できる値の完全な一覧については、GitHub にある [Azure Active Directory Spring Boot のサンプル][AAD Spring Boot Sample]を参照してください。
@@ -234,7 +234,7 @@ Azure サブスクリプションをお持ちでない場合は、開始する�
    ```
 
    > [!NOTE]
-   > `@PreAuthorize("hasRole('')")` メソッドに指定するグループ名には、*application.properties* ファイルの `azure.activedirectory.active-directory-groups` フィールドに指定したグループのいずれかが含まれている必要があります。
+   > `@PreAuthorize("hasRole('')")` メソッドに指定するグループ名には、*application.properties* ファイルの `azure.activedirectory.user-group.allowed-groups` フィールドに指定したグループのいずれかが含まれている必要があります。
    >
    > 異なる要求マッピングには異なる承認設定を指定することもできます。以下に例を示します。
    >

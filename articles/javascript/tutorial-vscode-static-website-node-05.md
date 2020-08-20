@@ -4,14 +4,15 @@ description: チュートリアル パート 5、変更を加えて再デプロ�
 ms.topic: conceptual
 ms.date: 09/24/2019
 ms.author: buhollan
-ms.openlocfilehash: d0f6be1d57c9d378a4428a5a05da0428314f76c0
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.custom: devx-track-javascript
+ms.openlocfilehash: 918f96376a03d17792c7a462d37ea47330e60d39
+ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85792702"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88218318"
 ---
-# <a name="make-changes-and-redeploy"></a>変更を加えて再デプロイする
+# <a name="part-5-make-changes-and-redeploy"></a>パート 5: 変更を加えて再デプロイする
 
 [前の手順:Azure Storage へのデプロイ](tutorial-vscode-static-website-node-04.md)
 

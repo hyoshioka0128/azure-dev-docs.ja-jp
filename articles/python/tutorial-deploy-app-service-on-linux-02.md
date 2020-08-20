@@ -4,12 +4,12 @@ description: チュートリアルの手順 2、アプリケーションの設�
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 0f85ea4e7da74b67ce2a20168ae751444b63b292
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: 9bb25bf6cfef2e6a93efa2ca195f27a10a6ca891
+ms.sourcegitcommit: 815cf2acff71e849735f7afce54723f03ffa5df3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87983587"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88501397"
 ---
 # <a name="2-prepare-your-app-for-deployment-to-azure-app-service"></a>2:Azure App Service にデプロイするためにアプリを準備する
 
@@ -89,4 +89,4 @@ ms.locfileid: "87983587"
 > [!div class="nextstepaction"]
 > [アプリの準備ができました - 手順 3 に進む >>>](tutorial-deploy-app-service-on-linux-03.md)
 
-[問題が発生しました](https://www.research.net/r/PWZWZ52?tutorial=vscode-appservice-python&step=02-prepare-app)
+[問題がある場合は、お知らせください。](https://aka.ms/FlaskVSCQuickstartHelp)

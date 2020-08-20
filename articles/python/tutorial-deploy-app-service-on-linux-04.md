@@ -4,12 +4,12 @@ description: チュートリアルの手順 4. では、Web アプリの起動�
 ms.topic: conceptual
 ms.date: 05/19/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 5de5f7f52fbf8c88bf05c7cb300952aee81a8439
-ms.sourcegitcommit: 5051b25ad32be891800b23fc7ae12a4ca85cbb73
+ms.openlocfilehash: 45c24711131f03c2475d3ecb2a5538cadd6e7c56
+ms.sourcegitcommit: 815cf2acff71e849735f7afce54723f03ffa5df3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88147383"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88501427"
 ---
 # <a name="4-configure-a-custom-startup-file-for-python-apps-on-azure-app-service"></a>4:Azure App Service の Python アプリ用のカスタム スタートアップ ファイルを構成する
 
@@ -113,4 +113,4 @@ Django や Flask 以外のフレームワーク (Falcon、FastAPI など) を使
 > [!div class="nextstepaction"]
 > [スタートアップ ファイルを構成しました - 手順 5 に進む >>>](tutorial-deploy-app-service-on-linux-05.md)
 
-[問題が発生しました](https://www.research.net/r/PWZWZ52?tutorial=vscode-appservice-python&step=04-startup-command)
+[問題がある場合は、お知らせください。](https://aka.ms/FlaskVSCQuickstartHelp)

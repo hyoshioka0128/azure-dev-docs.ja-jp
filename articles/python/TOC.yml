@@ -108,10 +108,10 @@
       items:
         - name: Azure によるアプリの認証
           href: azure-sdk-authenticate.md
-        - name: サービス プリンシパルを管理する
-          href: how-to-manage-service-principals.md
         - name: セキュリティ プリンシパルにロールのアクセス許可を割り当てる
           href: how-to-assign-role-permissions.md
+        - name: サービス プリンシパルを管理する
+          href: how-to-manage-service-principals.md
     - name: パッケージをインストールする
       href: azure-sdk-install.md
     - name: パッケージ インデックス

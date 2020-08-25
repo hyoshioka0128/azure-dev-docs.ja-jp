@@ -1,67 +1,148 @@
 ---
 title: Azure サービスを使用して Python アプリケーションを認証する方法
 description: Azure ライブラリを使用して、Azure サービスで Python アプリを認証するために必要な資格情報オブジェクトを取得する方法
-ms.date: 05/12/2020
+ms.date: 08/18/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 08636d4a9b8b0b93b6e448b919a14cbfc3ae2a96
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: 50f13c09d1c3932446d90420399b18c3247f1640
+ms.sourcegitcommit: 800c5e05ad3c0b899295d381964dd3d47436ff90
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87982674"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88614478"
 ---
-# <a name="how-to-authenticate-python-apps-with-azure-services"></a>Azure サービスを使用して Python アプリを認証する方法
+# <a name="how-to-authenticate-and-authorize-python-apps-on-azure"></a>Azure で Python アプリを認証および認可する方法
 
-Python 用 Azure ライブラリを使用してアプリのコードを記述するときは、次のパターンを使用して Azure リソースにアクセスします。
+Azure にデプロイされたほとんどのクラウド アプリケーションは、ストレージ、データベース、格納されているシークレットなど、他の Azure リソースにアクセスする必要があります。 これらのリソースにアクセスするには、アプリケーションは認証され、認可される必要があります。
 
-1. 資格情報を取得します (通常は 1 回限りの操作)。
-1. その資格情報を使用して、リソースに適したクライアント オブジェクトを取得します。
-1. そのクライアント オブジェクトを介してリソースにアクセスしたり変更を加えたりしようとすると、リソースの REST API に対する HTTP 要求が生成されます。
+- **認証**では、Azure Active Directory を使用してアプリの ID が確認されます。
 
-この REST API への要求の時点で、資格情報オブジェクトによって表されたアプリの ID が Azure によって認証されます。 その後 Azure は、要求された操作の実行がその ID に承認されているかどうかをチェックします。 承認されていない場合、操作は失敗します。 (アクセス許可の付与は、Azure Key Vault、Azure Storage など、リソースの種類によって異なります。詳細については、リソースの種類に対応するドキュメントを参照してください。)
+- **認可**では、認証されたアプリが特定のリソースに対して実行できる操作が決定されます。 認可された操作は、そのリソースのアプリ ID に割り当てられた**ロール**によって定義されています。 Azure Key Vault などのいくつかのケースでは、認可は、アプリ ID に割り当てられた追加の**アクセス ポリシー**によっても決定されます。
 
-これらのプロセスに関係する ID (つまり、資格情報オブジェクトによって表される ID) は通常、ユーザー、グループ、サービス、アプリのいずれかを表す "*セキュリティ プリンシパル*" によって定義されます。 この記事で取り上げるさまざまな認証方法には、明示的なプリンシパル (一般に "*サービス プリンシパル*" と呼ばれます) を使用しています。
+この記事では、認証と認可の詳細について説明します。
 
-ただし、ほとんどのクラウド アプリケーションでは、最初のセクションで取り上げる `DefaultAzureCredential` オブジェクトの使用をお勧めします。アプリケーションのサービス プリンシパルを扱う負担は、このオブジェクトを使用することで大幅に軽減されます。
+- アプリ ID を割り当てる方法
+- ID にアクセス許可を付与する方法
+- 認証と認可が行われる方法とタイミング
+- アプリが Azure ライブラリを使用して Azure で認証を行うさまざまな方法。 `DefaultAzureCredential` を使用することをお勧めしますが、必須ではありません。
 
-[!INCLUDE [chrome-note](includes/chrome-note.md)]
+## <a name="how-to-assign-an-app-identity"></a>アプリ ID を割り当てる方法
 
-## <a name="authenticate-with-defaultazurecredential"></a>DefaultAzureCredential を使用して認証する
+Azure では、アプリ ID は**サービス プリンシパル**によって定義されます。 (サービス プリンシパルとは、人間のユーザーやユーザー グループではなく、いわば 1 つのコードであるアプリやサービスを識別するために使用される特定の種類の "セキュリティ プリンシパル" です。)
+
+使用されるサービス プリンシパルは、次のセクションで説明するように、アプリが実行されている場所によって異なります。
+
+### <a name="identity-when-running-the-app-on-azure"></a>Azure でアプリを実行しているときの ID
+
+クラウド (たとえば、運用環境) で実行している場合、アプリでは、**システムによって割り当てられたマネージド ID** が使用されるのが最も一般的です。 [マネージド ID](/azure/active-directory/managed-identities-azure-resources/overview) では、リソースのロールとアクセス許可を割り当てるときにアプリの名前を使用します。 Azure は、基になるサービス プリンシパルを自動的に管理し、他の Azure リソースで自動的にアプリを認証します。 そのため、サービス プリンシパルを直接処理する必要はありません。 さらに、アプリ コードでは、Azure リソースのアクセス トークン、シークレット、または接続文字列を処理する必要はありません。そのため、このような情報が漏洩したり侵害されたりするリスクが軽減されます。
+
+マネージド ID の構成は、アプリをホストするために使用するサービスによって異なります。 各サービスの手順へのリンクについては、[マネージド ID をサポートするサービス](/azure/active-directory/managed-identities-azure-resources/services-support-managed-identities)に関する記事を参照してください。 たとえば、Azure App Service にデプロイされた Web アプリの場合、マネージド ID を有効にするには、Azure portal の **[ID]**  >  **[システム割り当て済み]** オプションを使用するか、Azure CLI で `az webapp identity assign` コマンドを使用します。
+
+マネージド ID を使用できない場合は、代わりに Azure Active Directory にアプリケーションを手動で登録します。 登録すると、サービス プリンシパルがアプリに割り当てられます。これは、ロールとアクセス許可を割り当てるときに使用します。 詳細については、[アプリケーションの登録](/azure/active-directory/develop/quickstart-register-app)に関するトピックを参照してください。
+
+### <a name="identity-when-running-the-app-locally"></a>ローカルでアプリを実行しているときの ID
+
+開発中に、クラウド内の Azure リソースにアプリのコードがアクセスできるようにした状態のまま、開発者ワークステーションでそのコードを実行したりデバッグしたりしたいことがよくあります。 この場合は、Azure Active Directory を使用して、ローカル開発専用の別個のサービス プリンシパルを作成します。 このサービス プリンシパルに、対象のリソースのロールとアクセス許可を再び割り当てます。 通常、この開発 ID には、非運用リソースにのみアクセスすることを認可します。
+
+ローカル サービス プリンシパルを作成し、Azure ライブラリで使用できるようにする方法の詳細については、[ローカル開発環境の構成](configure-local-development-environment.md)に関する記事を参照してください。 この 1 回限りの構成を完了すると、環境に固有の変更を加えなくても、ローカルとクラウドで同じアプリ コードを実行できます。
+
+それぞれの開発者は、ワークステーションのユーザー アカウント内でセキュリティ保護され、ソース管理リポジトリに保存されることのない独自のサービス プリンシパルを持つ必要があります。 サービス プリンシパルが盗まれたり侵害されたりした場合は、簡単にそれを削除してそのすべてのアクセス許可を取り消した後、その開発者のサービス プリンシパルを再作成できます。 詳細については、「[サービス プリンシパルを管理する方法](how-to-manage-service-principals.md)」を参照してください。
+
+> [!NOTE]
+> 独自の Azure ユーザー資格情報を使用してアプリを実行することはできますが、それによって、クラウドにデプロイするときにアプリに必要な特定のリソース アクセス許可を確立することはできません。 開発用のサービス プリンシパルを設定して、必要なロールとアクセス許可を割り当てることをお勧めします。これは、デプロイされたアプリのマネージド ID またはサービス プリンシパルを使用してレプリケートできます。
+
+## <a name="assign-roles-and-permissions-to-an-identity"></a>ロールとアクセス許可を ID に割り当てる
+
+Azure 上とローカルで実行する際の両方のアプリ ID を把握したら、ロールベースのアクセス制御 (RBAC) を使用して、Azure portal または Azure CLI を使用してアクセス許可を付与します。 詳細については、「[アプリ ID またはサービス プリンシパルにロールのアクセス許可を割り当てる方法](how-to-assign-role-permissions.md)」を参照してください。
+
+## <a name="when-does-authentication-and-authorization-occur"></a>認証と認可が行われるタイミング
+
+Python 用 Azure ライブラリ (SDK) を使用してアプリ コードを記述するときは、次のパターンを使用して Azure リソースにアクセスします。
+
+1. この記事の後半で説明するいずれかの方法を使用して、アプリ ID を記述する資格情報を取得します。
+
+1. その資格情報を使用して、目的のリソースのクライアント オブジェクトを取得します。 (リソースの種類ごとに、Azure ライブラリに独自のクライアント オブジェクトがあり、それに対してリソースの URL を指定します。)
+
+1. そのクライアント オブジェクトを介してリソースにアクセスしたり変更を加えたりしようとすると、リソースの REST API に対する HTTP 要求が生成されます。 API 呼び出しが行われたときに、Azure ではアプリ ID の認証と認可の確認の両方を実行します。
+
+次のコードでは、Azure Key Vault へのアクセスを試行することによって、これらの手順を説明して示します。
 
 ```python
 import os
 from azure.identity import DefaultAzureCredential
 from azure.keyvault.secrets import SecretClient
 
-# Obtain the credential object. When run locally, DefaultAzureCredential relies
-# on environment variables named AZURE_CLIENT_ID, AZURE_CLIENT_SECRET, and AZURE_TENANT_ID.
-credential = DefaultAzureCredential()
-
-# Create the client object using the credential
-#
-# **NOTE**: SecretClient here is only an example; the same process
-# applies to all other Azure client libraries.
+# Acquire the resource URL. In this code we assume the resource URL is in an
+# environment variable, KEY_VAULT_URL in this case.
 
 vault_url = os.environ["KEY_VAULT_URL"]
+
+
+# Acquire a credential object for the app identity. When running in the cloud,
+# DefaultAzureCredential uses the app's managed identity or user-assigned service principal.
+# When run locally, DefaultAzureCredential relies on environment variables named
+# AZURE_CLIENT_ID, AZURE_CLIENT_SECRET, and AZURE_TENANT_ID.
+
+credential = DefaultAzureCredential()
+
+
+# Acquire an appropriate client object for the resource identified by the URL. The
+# client object only stores the given credential at this point but does not attempt
+# to authenticate it.
+#
+# **NOTE**: SecretClient here is only an example; the same process applies to all
+# other Azure client libraries.
+
 secret_client = SecretClient(vault_url=vault_url, credential=credential)
 
-# Attempt to retrieve a secret value. The operation fails if the principal
-# cannot be authenticated or is not authorized for the operation in question.
-retrieved_secret = client.get_secret("secret-name-01")
+# Attempt to perform an operation on the resource using the client object (in
+# this case, retrieve a secret from Key Vault). The operation fails for any of
+# the following reasons:
+#
+# 1. The information in the credential object is invalid (for example, the AZURE_CLIENT_ID
+#    environment variable cannot be found).
+# 2. The app identity cannot be authenticated using the information in the credential object.
+# 3. The app identity is not authorized to perform the requested operation on the
+#    resource (identified in this case by the vault_url.
+
+retrieved_secret = secret_client.get_secret("secret-name-01")
 ```
 
-[`azure-identity`](/python/api/azure-identity/azure.identity?view=azure-python) ライブラリの [`DefaultAzureCredential`](/python/api/azure-identity/azure.identity.defaultazurecredential?view=azure-python) クラスには、きわめてシンプルな、推奨される認証手段が備わっています。
+ここでも、クライアント オブジェクトを介して Azure REST API への特定の要求がコードによって行われるまでは、認証または認可は行われません。 `DefaultAzureCredential` を作成するステートメント (次のセクションを参照) は、クライアント側のオブジェクトをメモリ内に作成するだけで、他のチェックは実行しません。 
 
-前述のコードでは、Azure Key Vault へのアクセス時に `DefaultAzureCredential` が使用されています。Azure Key Vault では、Key Vault の URL が `KEY_VAULT_URL` という名前の環境変数で提供されます。 このコードは紛れもなく、記事の冒頭で説明したパターンで実装されています。つまり、資格情報オブジェクトを取得し、SDK クライアント オブジェクトを作成した後、そのクライアント オブジェクトを使用して操作を実行しています。
+SDK [`SecretClient`](/python/api/azure-keyvault-secrets/azure.keyvault.secrets.secretclient?view=azure-python) オブジェクトを作成する場合も、対象のリソースとの通信は必要ありません。 `SecretClient` オブジェクトは、基になる Azure REST API の単なるラッパーであり、アプリのランタイム メモリにのみ存在します。 
 
-繰り返しになりますが、認証と承認は最後のステップで初めて実行されます。 SDK [`SecretClient`](/python/api/azure-keyvault-secrets/azure.keyvault.secrets.secretclient?view=azure-python) オブジェクトの作成には、対象となるリソースとのやり取りは伴いません。`SecretClient` オブジェクトはあくまで、基になる Azure REST API のラッパーであり、アプリの実行時のメモリにのみ存在します。 [`get_secret`](/python/api/azure-keyvault-secrets/azure.keyvault.secrets.secretclient?view=azure-python#get-secret-name--version-none----kwargs-) メソッドが呼び出されたときに初めて、クライアント オブジェクトが Azure に対して適切な REST API 呼び出しを生成します。 その後、`get_secret` に対応する Azure のエンドポイントで、呼び出し元の ID が認証され、承認がチェックされます。
+コードによって [`get_secret`](/python/api/azure-keyvault-secrets/azure.keyvault.secrets.secretclient?view=azure-python#get-secret-name--version-none----kwargs-) メソッドが呼び出されたときに初めて、クライアント オブジェクトは Azure への適切な REST API 呼び出しを生成します。 その後、`get_secret` に対応する Azure のエンドポイントで、呼び出し元の ID が認証され、承認がチェックされます。
 
-コードを Azure にデプロイして実行した場合、`DefaultAzureCredential` によって自動的にシステム割り当て ("マネージド") の ID が使用されます。このマネージド ID は、そのホストとなるあらゆるサービス内のアプリに対して有効にすることができます。 たとえば、Azure App Service にデプロイされた Web アプリの場合、そのマネージド ID は、Azure portal の **[ID]**  >  **[システム割り当て済み]** オプションで有効にするか、Azure CLI で `az webapp identity assign` コマンドを使用して有効にします。 その ID に対して特定のリソース (Azure Storage や Azure Key Vault など) のアクセス許可を割り当てる際にも、Azure portal または Azure CLI を使用します。 これらのケースでは、Azure によって管理されるこのマネージド ID によって最大限のセキュリティが確保されます。明示的なサービス プリンシパルをコード内で一切扱う必要がないためです。
+## <a name="authenticate-with-defaultazurecredential"></a>DefaultAzureCredential を使用して認証する
 
-コードをローカルで実行した場合は、`AZURE_TENANT_ID`、`AZURE_CLIENT_ID`、`AZURE_CLIENT_SECRET` という名前の各環境変数によって表されるサービス プリンシパルが `DefaultAzureCredential` によって自動的に使用されます。 その後、API エンドポイントを呼び出すと、それらの値が SDK クライアント オブジェクトによって (安全に) HTTP 要求ヘッダーに追加されます。 コードに変更を加える必要はありません。 サービス プリンシパルの作成と環境変数の設定について詳しくは、「[Azure 用のローカル Python 開発環境を構成する - 認証を構成する](configure-local-development-environment.md#configure-authentication)」を参照してください。
+ほとんどのアプリケーションでは、[`azure-identity`](/python/api/azure-identity/azure.identity?view=azure-python) ライブラリの [`DefaultAzureCredential`](/python/api/azure-identity/azure.identity.defaultazurecredential?view=azure-python) クラスには、最も単純で推奨される認証方法が用意されています。 `DefaultAzureCredential` は、クラウドでは自動的にアプリのマネージド ID を使用し、ローカルで実行しているときには自動的に環境変数からローカル サービス プリンシパルを読み込みます。
 
-どちらの場合も、関係する ID には、適切なリソースのアクセス許可を割り当てる必要があります (個々のサービスのドキュメントを参照)。 前出のコードで必要となるような Key Vault のアクセス許可について詳しくは、「[アクセス制御ポリシーを使用して Key Vault の認証を提供する](/azure/key-vault/general/group-permissions-for-apps)」を参照してください。
+```python
+import os
+from azure.identity import DefaultAzureCredential
+from azure.keyvault.secrets import SecretClient
+
+# Acquire the resource URL
+vault_url = os.environ["KEY_VAULT_URL"]
+
+# Aquire a credential object
+credential = DefaultAzureCredential()
+
+# Acquire a client object
+secret_client = SecretClient(vault_url=vault_url, credential=credential)
+
+# Attempt to perform an operation
+retrieved_secret = secret_client.get_secret("secret-name-01")
+```
+
+前述のコードでは、Azure Key Vault にアクセスするときに `DefaultAzureCredential` が使用されています。この場合、Key Vault の URL は `KEY_VAULT_URL` という名前の環境変数で提供されています。 このコードでは明らかに、一般的なライブラリの使用パターン (資格情報オブジェクトを取得し、Azure リソースの適切なクライアント オブジェクトを作成した後、そのクライアント オブジェクトを使用してそのリソースに対して操作を実行する) が実装されています。 ここでも、認証と認可はこの最後のステップで初めて実行されます。
+
+コードを Azure にデプロイして実行すると、`DefaultAzureCredential` はシステムによって割り当てられたマネージド ID を自動的に使用します。これは、そのホストとなるあらゆるサービス内のアプリに対して有効にできます。 Azure Storage や Azure Key Vault などの特定のリソースに対するアクセス許可は、Azure portal または Azure CLI を使用してその ID に割り当てられます。 これらのケースでは、Azure によって管理されるこのマネージド ID によって最大限のセキュリティが確保されます。明示的なサービス プリンシパルをコード内で一切扱う必要がないためです。
+
+コードをローカルで実行した場合は、`AZURE_TENANT_ID`、`AZURE_CLIENT_ID`、`AZURE_CLIENT_SECRET` という名前の各環境変数によって表されるサービス プリンシパルが `DefaultAzureCredential` によって自動的に使用されます。 その後、クライアント オブジェクトは、API エンドポイントを呼び出すときに、これらの値を (安全に) HTTP 要求ヘッダーに含めます。 ローカルまたはクラウドで実行するときに、コードの変更は必要ありません。 サービス プリンシパルの作成と環境変数の設定について詳しくは、「[Azure 用のローカル Python 開発環境を構成する - 認証を構成する](configure-local-development-environment.md#configure-authentication)」を参照してください。
+
+どちらの場合も、関連する ID には、適切なリソースのアクセス許可が割り当てられている必要があります。 一般的なプロセスについては、[ロールのアクセス許可を割り当てる方法](how-to-assign-role-permissions.md)に関する記事を参照してください。詳細については、個々のサービスのドキュメントをご覧ください。 たとえば、前のコードで必要となる Key Vault のアクセス許可の詳細については、「[アクセス制御ポリシーを使用して Key Vault の認証を提供する](/azure/key-vault/general/group-permissions-for-apps)」を参照してください。
 
 <a name="cli-auth-note"></a>
 > [!IMPORTANT]
@@ -121,9 +202,11 @@ print(subscription.subscription_id)
 
 クラウドにデプロイされたアプリケーションのサービス プリンシパルは、ご利用のサブスクリプションの Active Directory で管理されます。 詳細については、「[サービス プリンシパルを管理する方法](how-to-manage-service-principals.md)」を参照してください。
 
+いずれの場合も、適切なサービス プリンシパルまたはユーザーが、該当するリソースと操作に対する適切なアクセス許可を持っている必要があります。
+
 ### <a name="authenticate-with-a-json-file"></a>JSON ファイルを使用して認証する
 
-この方法では、サービス プリンシパルに必要な資格情報を含む JSON ファイルを作成します。 そのファイルを使用して SDK クライアント オブジェクトを作成します。 この方法は、ローカルでもクラウドでも使用できます。 
+この方法では、サービス プリンシパルに必要な資格情報を含む JSON ファイルを作成します。 そのファイルを使用して SDK クライアント オブジェクトを作成します。 この方法は、ローカルでもクラウドでも使用できます。
 
 1. 次の形式の JSON ファイルを作成します。
 
@@ -166,7 +249,6 @@ print(subscription.subscription_id)
     ---
 
     この例では、JSON ファイルが *credentials.json* という名前でプロジェクトの親フォルダーに格納されていることを想定しています。
-
 
 1. [get_client_from_auth_file](/python/api/azure-common/azure.common.client_factory?view=azure-python#get-client-from-auth-file-client-class--auth-path-none----kwargs-) メソッドを使用してクライアント オブジェクトを作成します。
 
@@ -289,7 +371,7 @@ subscription = next(subscription_client.subscriptions.list())
 print(subscription.subscription_id)
 ```
 
-adal ライブラリが必要な場合は、`pip install adal` を実行します。
+ADAL ライブラリが必要な場合は、`pip install adal` を実行します。
 
 この方法を使用した場合は、Azure パブリック クラウドではなく [Azure ソブリン クラウド (国内クラウド)](/azure/active-directory/develop/authentication-national-cloud) を使用できます。
 
@@ -316,7 +398,7 @@ subscription = next(subscription_client.subscriptions.list())
 print(subscription.subscription_id)
 ```
 
-この方法では、Azure CLI コマンド `az login` でサインインしているユーザーの資格情報を使用してクライアント オブジェクトを作成します。
+この方法では、Azure CLI コマンド `az login` でサインインしているユーザーの資格情報を使用してクライアント オブジェクトを作成します。 アプリケーションは、ユーザーとしてあらゆる操作を認可されます。
 
 SDK では既定のサブスクリプション ID が使用されます。または、[`az account`](https://docs.microsoft.com/cli/azure/manage-azure-subscriptions-azure-cli) を使用してサブスクリプションを設定することもできます。
 
@@ -329,6 +411,7 @@ SDK では既定のサブスクリプション ID が使用されます。また
 ## <a name="see-also"></a>関連項目
 
 - [Azure 用のローカル Python 開発環境を構成する](configure-local-development-environment.md)
+- [ロールのアクセス許可を割り当てる方法](how-to-assign-role-permissions.md)
 - [例:リソース グループをプロビジョニングする](azure-sdk-example-resource-group.md)
 - [例:Azure Storage をプロビジョニングして使用する](azure-sdk-example-storage.md)
 - [例:Web アプリをプロビジョニングしてコードをデプロイする](azure-sdk-example-web-app.md)

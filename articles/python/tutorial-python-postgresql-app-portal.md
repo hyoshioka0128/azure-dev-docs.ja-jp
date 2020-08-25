@@ -5,12 +5,12 @@ ms.devlang: python
 ms.topic: tutorial
 ms.date: 07/23/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: 0e9785871eba8866b5d225bb9ac1339becc172a3
-ms.sourcegitcommit: 5051b25ad32be891800b23fc7ae12a4ca85cbb73
+ms.openlocfilehash: 9e6794d655d420d5f6b4093aecf15b7540f34709
+ms.sourcegitcommit: 800c5e05ad3c0b899295d381964dd3d47436ff90
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88147393"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88614531"
 ---
 # <a name="tutorial-deploy-a-django-web-app-with-postgresql-using-the-azure-portal"></a>チュートリアル:Azure portal を使用して PostgreSQL で Django Web アプリをデプロイする
 
@@ -190,12 +190,18 @@ Azure portal を使用して、データ ドリブンの Python [Django](https:/
 
 コードをデプロイし、データベースを配置すると、アプリを使用する準備はほぼ完了です。 残りの作業は、データベース自体に必要なスキーマを確立することだけです。 これを行うには、Django アプリのデータ モデルをデータベースに "移行" します。
 
-1. Web アプリのブラウザー ウィンドウまたはタブで、(左側の **[開発ツール]** の下の) **[SSH]** を選択します。 Web アプリ サーバーで SSH コンソールを開きます。 Web アプリ コンテナーを開始する必要があるため、初回の接続には数分かかることがあります。
+1. Web アプリのブラウザー ウィンドウまたはタブで、(左側の **[開発ツール]** の下の) **[SSH]** 、 **[Go]\(実行\)** の順に選択して、Web アプリ サーバーで SSH コンソールを開きます。 Web アプリ コンテナーを開始する必要があるため、初回の接続には数分かかることがあります。
 
 1. コンソールで、Web アプリのフォルダーに移動します。
 
     ```bash
     cd site/wwwroot
+    ```
+
+1. 次のコマンドを実行して、コンテナーの仮想環境をアクティブにします。
+
+    ```bash
+    source /antenv/bin/activate
     ```
 
 1. Python パッケージをインストールする:
@@ -247,6 +253,8 @@ Azure portal を使用して、データ ドリブンの Python [Django](https:/
 1. 「[Django データベースの移行を実行する](#run-django-database-migrations)」の説明に従って、SSH 経由で再度 Web アプリに接続します。
 
 1. `cd site/wwwroot` を使用してアプリ フォルダーに移動します。
+
+1. `source /antenv/bin/activate` を使用して仮想環境をアクティブにします。
 
 1. `python manage.py migrate` を使用して移行を再実行します。
 

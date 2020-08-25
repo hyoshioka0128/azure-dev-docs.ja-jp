@@ -1,105 +1,118 @@
 ---
-title: クイック スタート - Azure で Linux 仮想マシンに Ansible をインストールする
+title: クイック スタート - Azure CLI を使用して Ansible を構成する
 description: このクイックスタートでは、Ubuntu、CentOS、SLES で Azure リソースを管理するため、Ansible をインストールして構成する方法を説明します
-keywords: Ansible, Azure, DevOps, Bash, Cloud Shell, プレイブック, Bash
+keywords: Ansible, Azure, DevOps, Bash, CloudShell, プレイブック, Azure CLI
 ms.topic: quickstart
-ms.service: ansible
-author: tomarchermsft
-manager: gwallace
-ms.author: tarcher
-ms.date: 04/30/2019
-ms.openlocfilehash: 4f577b9841375d63bfc88249da88e554c1464bde
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.date: 08/13/2020
+ms.custom: devx-track-ansible,devx-track-cli
+ms.openlocfilehash: aa1758e6b9670640c218976f6369d9935aa6381b
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81743586"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88240164"
 ---
-# <a name="quickstart-install-ansible-on-linux-virtual-machines-in-azure"></a>クイック スタート:Azure で Linux 仮想マシンに Ansible をインストールする
+# <a name="quickstart-configure-ansible-using-azure-cli"></a>クイック スタート:Azure CLI を使用した Ansible の構成
 
-Ansible を使用すると、環境でのリソースの展開と構成を自動化することができます。 この記事では、最も一般的ないくつかの Linux ディストリビューション用に Ansible を構成する方法を示します。 他のディストリビューションに Ansible をインストールするには、インストールするパッケージを特定のプラットフォーム用に調整してください。 
+このクイック スタートでは、Azure CLI を使用して [Ansible](https://docs.ansible.com/) をインストールする方法について説明します。
+
+このクイック スタートでは、以下のタスクを完了します。
+
+> [!div class="checklist"]
+> * SSH キー ペアの作成
+> * リソース グループを作成する
+> * CentOS 仮想マシンを作成する 
+> * Ansible を仮想マシンにインストールする
+> * SSH 経由で仮想マシンに接続する
+> * 仮想マシンで Ansible を構成する
 
 ## <a name="prerequisites"></a>前提条件
 
-[!INCLUDE [open-source-devops-prereqs-azure-sub.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
+[!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
 [!INCLUDE [open-source-devops-prereqs-create-sp.md](../includes/open-source-devops-prereqs-create-service-principal.md)]
 - **Linux または Linux 仮想マシンへのアクセス** - Linux マシンを所有していない場合は、[Linux 仮想マシン](/azure/virtual-network/quick-create-cli)を作成してください。
 
-## <a name="install-ansible-on-an-azure-linux-virtual-machine"></a>Azure の Linux 仮想マシンへの Ansible のインストール
+## <a name="create-an-ssh-key-pair"></a>SSH キー ペアの作成
 
-Ansible のインストール手順については、ご利用の Linux マシンにサインインし、次のいずれかのディストリビューションを選択してください。
+Linux VM に接続する場合、パスワード認証またはキーベースの認証を使用できます。 キーベースの認証は、パスワードを使用するよりも安全です。 そのため、この記事ではキーベースの認証を使用します。
 
-- [CentOS 7.4](#centos-74)
-- Ubuntu 16.04 LTS
-- [SLES 12 SP2](#sles-12-sp2)
+キーベースの認証では、次の 2 つのキーがあります。
 
-### <a name="centos-74"></a>CentOS 7.4
+- **公開キー**: 公開キーは、(この記事のように) VM 上などのホストに格納されます。
+- **秘密キー**: 秘密キーを使用すると、ホストに安全に接続できます。 秘密キーは事実上パスワードであり、そのように保護する必要があります。
+        
+次の手順では、SSH キーの組を作成する方法について説明します。
 
-このセクションでは、Ansible を使用するように CentOS を構成します。
+1. [Azure portal](https://portal.azure.com) にサインインします。
 
-1. ターミナル ウィンドウを開きます。
+1. [Azure Cloud Shell](/azure/cloud-shell/overview) を開き、**Bash**に切り替えます (まだ行っていない場合)。
 
-1. 次のコマンドを入力して、Azure Python SDK モジュール用に必要なパッケージをインストールします。
-
-    ```bash
-    sudo yum check-update; sudo yum install -y gcc libffi-devel python-devel openssl-devel epel-release
-    sudo yum install -y python-pip python-wheel
-    ```
-
-1. 次のコマンドを入力して、Ansible の必要なパッケージをインストールします。
+1. [ssh-keygen](https://www.ssh.com/ssh/keygen/) を使用して SSH キーを作成します。
 
     ```bash
-    sudo pip install ansible[azure]
+    ssh-keygen -m PEM -t rsa -b 2048 -C "azureuser@azure" -f ~/.ssh/ansible_rsa -N ""
     ```
 
-1. [Azure 資格情報を作成します](#create-azure-credentials)。
+    **注**:
 
-### <a name="ubuntu-1604-lts"></a>Ubuntu 16.04 LTS
+    - `ssh-keygen` コマンドは、生成されたキー ファイルの場所を表示します。 このディレクトリ名は、仮想マシンを作成するときに必要になります。
+    - 公開キーは `ansible_rsa.pub` に格納され、秘密キーは `ansible_rsa` に格納されます。
 
-このセクションでは、Ansible を使用するように Ubuntu を構成します。
+## <a name="create-a-virtual-machine"></a>仮想マシンの作成
 
-1. ターミナル ウィンドウを開きます。
+1. [az group create](/cli/azure/group#az-group-create) を使用してリソース グループを作成します。 場合によっては、`--location` パラメーターをお使いの環境に適した値に置き換える必要があります。
 
-1. 次のコマンドを入力して、Azure Python SDK モジュール用に必要なパッケージをインストールします。
-
-    ```bash
-    sudo apt-get update && sudo apt-get install -y libssl-dev libffi-dev python-dev python-pip
+    ```azurecli
+    az group create --name QuickstartAnsible-rg --location eastus
     ```
 
-1. 次のコマンドを入力して、Ansible の必要なパッケージをインストールします。
+1. [az vm create](/cli/azure/vm#az-vm-create) を使用して仮想マシンを作成します。
 
-    ```bash
-    sudo pip install ansible[azure]
+    ```azurecli
+    az vm create \
+    --resource-group QuickstartAnsible-rg \
+    --name QuickstartAnsible-vm \
+    --image OpenLogic:CentOS:7.7:latest \
+    --admin-username azureuser \
+    --ssh-key-values <ssh_public_key_filename>
     ```
 
-1. [Azure 資格情報を作成します](#create-azure-credentials)。
+1. [az vm list](/cli/azure/vm#az-vm-list) を使用して、新しい仮想マシンの作成 (および状態) を確認します。
 
-### <a name="sles-12-sp2"></a>SLES 12 SP2
-
-このセクションでは、Ansible を使用するように SLES を構成します。
-
-1. ターミナル ウィンドウを開きます。
-
-1. 次のコマンドを入力して、Azure Python SDK モジュール用に必要なパッケージをインストールします。
-
-    ```bash
-    sudo zypper refresh && sudo zypper --non-interactive install gcc libffi-devel-gcc5 make \
-        python-devel libopenssl-devel libtool python-pip python-setuptools
+    ```azurecli
+    az vm list -d -o table --query "[?name=='QuickstartAnsible-vm']"
     ```
 
-1. 次のコマンドを入力して、Ansible の必要なパッケージをインストールします。
+    **注**:
 
-    ```bash
-    sudo pip install ansible[azure]
-    ```
+    - `az vm list` コマンドからの出力には、SSH 経由で仮想マシンに接続するために使用されるパブリック IP アドレスが含まれます。
 
-1. 次のコマンドを入力して、競合している Python 暗号パッケージを削除します。
+## <a name="install-ansible-on-the-virtual-machine"></a>Ansible を仮想マシンにインストールする
 
-    ```bash
-    sudo pip uninstall -y cryptography
-    ```
+[az vm extension set](/cli/azure/vm/extension?#az-vm-extension-set) を使用して Ansible インストール スクリプトを実行します。
 
-1. [Azure 資格情報を作成します](#create-azure-credentials)。
+```azurecli
+az vm extension set \
+ --resource-group QuickstartAnsible-rg \
+ --vm-name QuickstartAnsible-vm \
+ --name customScript \
+ --publisher Microsoft.Azure.Extensions \
+ --version 2.1 \
+ --settings '{"fileUris":["https://raw.githubusercontent.com/MicrosoftDocs/mslearn-ansible-control-machine/master/configure-ansible-centos.sh"]}' \
+ --protected-settings '{"commandToExecute": "./configure-ansible-centos.sh"}'
+```
+
+**注:**
+
+- 完了すると、`az vm extension` コマンドにより、インストール スクリプトの実行結果が表示されます。
+
+## <a name="connect-to-your-virtual-machine-via-ssh"></a>SSH 経由で仮想マシンに接続する
+
+SSH コマンドを使用して仮想マシンに接続します。
+
+```azurecli
+ssh -i <ssh_private_key_filename> azureuser@<vm_ip_address>
+```
 
 ## <a name="create-azure-credentials"></a>Azure 資格情報の作成
 
@@ -117,7 +130,7 @@ Ansible Tower または Jenkins を使っている場合は、サービス プ�
 
 ### <a name="span-idfile-credentials-create-ansible-credentials-file"></a><span id="file-credentials"/> Ansible の資格情報ファイルの作成
 
-このセクションでは、Ansible に資格情報を提供するためのローカル資格情報ファイルを作成します。 
+このセクションでは、Ansible に資格情報を提供するためのローカル資格情報ファイルを作成します。
 
 Ansible の資格情報の定義について詳しくは、「[Providing Credentials to Azure Modules (Azure モジュールに資格情報を提供する)](https://docs.ansible.com/ansible/guide_azure.html#providing-credentials-to-azure-modules)」をご覧ください。
 
@@ -155,13 +168,9 @@ Ansible の資格情報の定義について詳しくは、「[Providing Credent
     export AZURE_TENANT=<security-principal-tenant>
     ```
 
-## <a name="verify-the-configuration"></a>構成を確認する
-
-正しく構成されたことを確認するには、Ansible を使用して Azure リソース グループを作成します。
-
-[!INCLUDE [create-resource-group-with-ansible.md](includes/ansible-snippet-create-resource-group.md)]
+これで、仮想マシンに Ansible がインストールされて構成されました。
 
 ## <a name="next-steps"></a>次のステップ
 
-> [!div class="nextstepaction"] 
-> [クイック スタート: Ansible を使用して Azure で Linux 仮想マシンを構成する](./vm-configure.md)
+> [!div class="nextstepaction"]
+> [Azure 上の Ansible](/azure/developer/Ansible)

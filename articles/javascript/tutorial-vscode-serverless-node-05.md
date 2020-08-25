@@ -3,18 +3,19 @@ title: Azure Functions アプリケーションを Azure にデプロイした�
 description: チュートリアル パート 5、リソースをクリーンアップする
 ms.topic: conceptual
 ms.date: 09/23/2019
-ms.openlocfilehash: ab20f86fd01aaac65c44afd0901c62f61a6ce119
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.custom: devx-track-javascript
+ms.openlocfilehash: 67745cdc9ac27b6f8c1bdfbd6f4dbaff0f39ce4a
+ms.sourcegitcommit: 815cf2acff71e849735f7afce54723f03ffa5df3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85792095"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88501494"
 ---
-# <a name="clean-up-resources"></a>リソースをクリーンアップする
+# <a name="clean-up-resources-after-deploying-an-azure-functions-app-with-visual-studio-code"></a>Visual Studio Code を使用して Azure Functions アプリをデプロイした後にリソースをクリーンアップする
 
 [前の手順:Functions アプリをデプロイする](tutorial-vscode-serverless-node-04.md)
 
-作成した Function App には、最小限のコストが発生する可能性があるリソースが含まれます ([Functions の価格](https://azure.microsoft.com/pricing/details/functions/)ページを参照してください)。 リソースをクリーンアップするには、**Azure:Functions** エクスプローラーで Function App を右クリックし、 **[Delete Function App]\(関数アプリの削除\)** を選択します。
+作成した Functions アプリには、最小限のコストが発生する可能性があるリソースが含まれます ([Functions の価格](https://azure.microsoft.com/pricing/details/functions/)に関するページを参照してください)。 リソースをクリーンアップするには、**Azure:Functions** エクスプローラーで Function App を右クリックし、 **[Delete Function App]\(関数アプリの削除\)** を選択します。
 
 [Azure portal](https://portal.azure.com) にアクセスし、左側にあるナビゲーション ウィンドウから **[リソース グループ]** を選択し、このチュートリアルで作成したリソース グループを選択し、 **[リソース グループの削除]** コマンドを使用することもできます。
 

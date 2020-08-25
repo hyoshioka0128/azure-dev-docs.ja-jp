@@ -3,13 +3,14 @@ title: チュートリアル - Azure VM エージェントを使用した Jenkin
 description: Azure 仮想マシンと Jenkins Azure VM エージェント プラグインを使用して、Jenkins パイプラインの容量をさらに追加する方法について説明します。
 keywords: Jenkins, Azure, 開発,仮想マシン, エージェント
 ms.topic: tutorial
-ms.date: 07/31/2018
-ms.openlocfilehash: c5ea0c3782414abfda47810ba68ad1092cd7b0d5
-ms.sourcegitcommit: f65561589d22b9ba2d69b290daee82eb47b0b20f
+ms.date: 08/19/2020
+ms.custom: devx-track-jenkins
+ms.openlocfilehash: d081861eac98495d125a1a5eb5dd9700fb7783a8
+ms.sourcegitcommit: 800c5e05ad3c0b899295d381964dd3d47436ff90
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88162051"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88614541"
 ---
 # <a name="tutorial-scale-jenkins-deployments-with-azure-vm-agents"></a>チュートリアル:Azure VM エージェントを使用した Jenkins デプロイのスケーリング
 
@@ -26,6 +27,10 @@ ms.locfileid: "88162051"
 > * Azure VM エージェントでジョブを実行する
 
 > [!VIDEO https://channel9.msdn.com/Shows/Azure-Friday/Continuous-Integration-with-Jenkins-Using-Azure-VM-Agents/player]
+
+## <a name="prerequisites"></a>前提条件
+
+- **Jenkins のインストール**: Jenkins のインストールにアクセスできない場合は、[Azure CLI を使用して Jenkins を構成します](configure-on-linux-vm.md)。
 
 ## <a name="install-azure-vm-agents-plugin"></a>Azure VM エージェント プラグインをインストールする
 
@@ -81,8 +86,6 @@ ms.locfileid: "88162051"
     完了したサービス プリンシパルには、**サブスクリプション ID** に `id` フィールドを、**クライアント ID** に `appId` の値を、**クライアント シークレット**に `password` を、**テナント ID** に `tenant` を、それぞれ使用する必要があります。 **[追加]** を選択してサービス プリンシパルを追加し、プラグインを構成して新しく作成された資格情報を使用します。
 
     ![Azure サービス プリンシパルを構成する](./media/scale-deployments-using-vm-agents/new-service-principal.png)
-
-    
 
 1. **[リソース グループ名]** セクションで、**[新規作成]** を選択した状態で `myJenkinsAgentGroup` を入力します。
 1. **[Verify configuration]\(構成の検証\)** を選択して、プロファイル設定をテストするために Azure に接続します。

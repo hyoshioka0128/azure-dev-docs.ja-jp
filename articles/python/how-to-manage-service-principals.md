@@ -1,31 +1,21 @@
 ---
 title: Azure 開発のためのローカル サービス プリンシパルの管理
 description: Azure portal または Azure CLI を使用して、ローカル開発のために作成されたサービス プリンシパルを管理する方法。
-ms.date: 05/12/2020
+ms.date: 08/18/2020
 ms.topic: conceptual
 ms.custom: devx-track-python, devx-track-azurecli
-ms.openlocfilehash: 8901a7ef9de7bbca31c5ba0352c79a4ee2c5cdf9
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: b6d3ffbb7e78b7c4f2405e5363446c1906913aa9
+ms.sourcegitcommit: 800c5e05ad3c0b899295d381964dd3d47436ff90
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87983104"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88614514"
 ---
 # <a name="how-to-manage-service-principals"></a>サービス プリンシパルを管理する方法
 
-セキュリティ上の理由から、Azure リソースにアクセスして変更するためのアプリ コードの承認方法を常に慎重に管理する必要があります。 コードをローカルでテストする場合は、[ローカル Python 開発環境の認証の構成](configure-local-development-environment.md#configure-authentication)に関するページに説明されているように、完全な特権を持つユーザーとして実行するのではなく、常にローカルの "*サービス プリンシパル*" を使用する必要があります。
+[アプリの認証方法](azure-sdk-authenticate.md)に関する記事で説明されているように、マネージド ID を使用している場合を除き、多くの場合、サービス プリンシパルを使用して Azure でアプリを識別します。
 
-やがて、これらのサービス プリンシパルの削除、名前の変更、または管理が必要になる場合があることでしょう。これは、Azure portal または Azure CLI を使用して実行できます。
-
-## <a name="basics-of-azure-authorization"></a>Azure 承認の基礎
-
-コードが Azure リソースに対して何らかの操作 (Azure ライブラリのクラスを通じて行われる) を実行しようとするたびに、Azure によって、そのアクションを実行する権限がアプリケーションにあることが確認されます。 特定のロールベースまたはリソースベースのアクセス許可をアプリケーションの ID に付与するには、[Azure portal](https://portal.azure.com) または Azure CLI を使用します (この手順により、アプリケーションのセキュリティが侵害された場合に悪用される可能性のあるアプリケーションに対して過度なアクセス許可が付与されることを回避できます)。
-
-Azure にデプロイされた場合、アプリケーションの ID は、通常、それをホストしているサービス (マネージド ID が有効な場合の Azure App Service、Azure Functions、仮想マシンなど) 内でアプリに付けた名前と同じになります。 ただし、コードをローカルで実行する場合、そのようなホスティング サービスは使用されないため、適切な代わりのものを Azure に示す必要があります。
-
-この目的のために、ローカル "*サービス プリンシパル*" を使用します。これは、ユーザー ID ではなく、アプリ ID のもう 1 つの名前です。 サービス プリンシパルは、名前、"テナント" 識別子 (基本的には組織の ID)、アプリまたは "クライアント" 識別子、およびシークレットまたはパスワードを含みます。 これらの資格情報は Azure で ID を認証するのに十分であり、その ID が特定のリソースにアクセスする権限を持っているかどうかを確認できます。
-
-それぞれの開発者は、ワークステーションのユーザー アカウント内でセキュリティ保護され、ソース管理リポジトリに保存されることのない独自のサービス プリンシパルを持つ必要があります。 サービス プリンシパルが盗まれた場合や侵害された場合は、Azure portal で簡単にそのサービス プリンシパルを削除してそのすべてのアクセス許可を取り消した後、その開発者のサービス プリンシパルを再作成できます。
+時間の経過と共に、通常、これらのサービス プリンシパルの削除、名前変更、または管理が必要になります。これは、Azure portal を介して、または Azure CLI を使用して行うことができます。
 
 ## <a name="manage-service-principals-using-the-azure-portal"></a>Azure portal を使用してサービス プリンシパルを管理する
 

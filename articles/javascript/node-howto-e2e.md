@@ -1,15 +1,15 @@
 ---
 title: コンテナー化された Node.js アプリを VS Code と Azure を使用してデプロイする
-description: Node.js アプリの作成、Docker 化、Azure へのデプロイの方法を紹介する完全なエンド ツー エンドのチュートリアル
+description: Node.js アプリの作成、コンテナー化、Azure へのデプロイの方法を紹介する完全なエンド ツー エンドのチュートリアル
 ms.topic: article
 ms.date: 06/25/2017
-ms.custom: seo-javascript-september2019, seo-javascript-october2019
-ms.openlocfilehash: b8841e5259a49b45db1f526330e0238d1bd0d050
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.custom: seo-javascript-september2019, seo-javascript-october2019, devx-track-javascript
+ms.openlocfilehash: c036adcd759f26dfafda5126f475e251b503a831
+ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85792332"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88218924"
 ---
 # <a name="develop-and-deploy-a-containerized-nodejs-app-with-visual-studio-code-and-azure"></a>コンテナー化された Node.js アプリを Visual Studio Code と Azure を使用して開発してデプロイする
 

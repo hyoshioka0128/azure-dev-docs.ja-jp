@@ -1,17 +1,18 @@
 ---
-title: クイック スタート - Windows と PowerShell を使用して Terraform の使用を開始する
+title: クイック スタート - Azure PowerShell を使用して Terraform を構成する
 description: このクイックスタートでは、Azure リソースを作成するために Terraform をインストールして構成する方法について説明します。
 keywords: Azure DevOps Terraform インストール 構成 Windows 初期化 プラン 適用 実行 ログイン RBAC サービス プリンシパル 自動スクリプト PowerShell
 ms.topic: quickstart
-ms.date: 08/08/2020
-ms.openlocfilehash: 7ba60acf445f9ba29836e76aa50626985695bf2c
-ms.sourcegitcommit: 6a8485d659d6239569c4e3ecee12f924c437b235
+ms.date: 08/18/2020
+ms.custom: devx-track-terraform
+ms.openlocfilehash: e58c53876ed05416f16a40d0ee23344bcde43b39
+ms.sourcegitcommit: 800c5e05ad3c0b899295d381964dd3d47436ff90
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/09/2020
-ms.locfileid: "88026150"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88614524"
 ---
-# <a name="quickstart-get-started-with-terraform-using-windows-and-powershell"></a>クイック スタート:Windows と PowerShell を使用して Terraform の使用を開始する
+# <a name="quickstart-configure-terraform-using-azure-powershell"></a>クイック スタート:Azure PowerShell を使用して Terraform を構成する
  
 [!INCLUDE [terraform-intro.md](includes/terraform-intro.md)]
 
@@ -115,14 +116,14 @@ PowerShell と Terraform を使用する場合は、サービス プリンシパ
     1. [Get-Credential](https://docs.microsoft.com/powershell/module/microsoft.powershell.security/get-credential) を呼び出し、要求されたら、サービス プリンシパル名とパスワードを入力します。
 
         ```powershell
-        $psCredential = Get-Credential
+        $spCredential = Get-Credential
         ```
 
     1. メモリ内に `PsCredential` オブジェクトを作成します。 プレースホルダーは、ご使用のサービス プリンシパルの適切な値に置き換えてください。 このパターンは、スクリプトからログインする方法です。
 
         ```powershell
-        $spName = "<service_principle_name>"
-        $spPassword = ConvertTo-SecureString "<service_principle_password>" -AsPlainText -Force
+        $spName = "<service_principal_name>"
+        $spPassword = ConvertTo-SecureString "<service_principal_password>" -AsPlainText -Force
         $spCredential = New-Object System.Management.Automation.PSCredential($spName , $spPassword)
         ```
 
@@ -137,9 +138,9 @@ PowerShell と Terraform を使用する場合は、サービス プリンシパ
 Terraform で目的の Azure サブスクリプションを使用するために、環境変数を設定します。 環境変数は、Windows システム レベルまたは特定の PowerShell セッション内で設定できます。 特定のセッションに環境変数を設定する場合は、次のコードを使用します。 プレースホルダーは、ご使用の環境の適切な値に置き換えてください。
 
 ```powershell
-$env:ARM_CLIENT_ID=<service_principle_app_id>
-$env:ARM_SUBSCRIPTION_ID=<azure_subscription_id>
-$env:ARM_TENANT_ID=<azure_subscription_tenant_id>
+$env:ARM_CLIENT_ID="<service_principal_app_id>"
+$env:ARM_SUBSCRIPTION_ID="<azure_subscription_id>"
+$env:ARM_TENANT_ID="<azure_subscription_tenant_id>"
 ```
 
 ## <a name="create-a-terraform-configuration-file"></a>Terraform 構成ファイルを作成する

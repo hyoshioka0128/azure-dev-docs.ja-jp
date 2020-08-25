@@ -4,12 +4,12 @@ description: Visual Studio Code、Azure SDK ライブラリ、ライブラリ認
 ms.date: 05/29/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 8d20960df802dc4671f6b432173a56f6dc88c38c
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: d95584758900eae2c50df5e731fd84f8bca00897
+ms.sourcegitcommit: 800c5e05ad3c0b899295d381964dd3d47436ff90
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87983144"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88614508"
 ---
 # <a name="configure-your-local-python-dev-environment-for-azure"></a>Azure 用のローカル Python 開発環境を構成する
 
@@ -78,7 +78,7 @@ Azure CLI では通常、セッション間のサインインが維持されま�
 
 ## <a name="configure-authentication"></a>認証を構成する。
 
-[「サービス プリンシパルを管理する方法」の承認の基礎に関するセクション](how-to-manage-service-principals.md#basics-of-azure-authorization)で説明されているように、アプリ コードをローカルでテストするときに、各開発者にはアプリケーション ID として使用するサービス プリンシパルが必要になります。
+[アプリの認証方法](azure-sdk-authenticate.md#identity-when-running-the-app-locally)に関する記事で説明されているように、アプリ コードをローカルでテストするときに、各開発者にはアプリケーション ID として使用するサービス プリンシパルが必要になります。
 
 以下のセクションでは、サービス プリンシパルと、必要に応じて Azure ライブラリにサービス プリンシパルのプロパティを提供する環境変数を作成する方法について説明します。
 
@@ -98,7 +98,7 @@ Azure CLI では通常、セッション間のサインインが維持されま�
 
     組織内のユーザーの場合、このコマンドを実行するためのアクセス許可がサブスクリプションにない可能性があります。 その場合は、サブスクリプションの所有者に連絡して、代わりにサービス プリンシパルを作成するように依頼してください。
 
-1. Azure ライブラリに必要な環境変数を作成します。 (azure-identity ライブラリの `DefaultAzureCredential` オブジェクトでこれらの変数が検索されます。)
+1. 次のコマンドを使用して、Azure ライブラリに必要な環境変数を作成します。 (azure-identity ライブラリの `DefaultAzureCredential` オブジェクトでこれらの変数が検索されます。)
 
     # <a name="cmd"></a>[cmd](#tab/cmd)
 
@@ -124,7 +124,7 @@ Azure CLI では通常、セッション間のサインインが維持されま�
 
     サブスクリプション ID を取得するには、[`az account show`](/cli/azure/account?view=azure-cli-latest#az-account-show) コマンドを実行し、その出力で `id` プロパティを探します。
 
-    ローカル テストを行う際にターミナルまたはコマンド プロンプトを開いたらいつでも実行できると便利なので、これらのコマンドが含まれた *.sh* または *.cmd* ファイルを作成します。 この場合も、そのファイルはソース管理には追加せず、ユーザー アカウント内にのみ残します。
+    利便性のため、これらの同じコマンドを含むコマンド ライン スクリプト ファイル (macOS/Linux の場合は *setenv.sh*、Windows の場合は *setenv.cmd*) を作成します。 その後、ローカル テストのためにターミナルまたはコマンド プロンプトを開いたときにいつでも、このスクリプトを実行して変数を設定できます。 この場合も、スクリプト ファイルはソース管理には追加せず、ユーザー アカウント内にのみ残します。
 
 1. クライアント ID とクライアント シークレット (およびこれを格納するファイル) を保護して、これが常にワークステーション上の特定のユーザー アカウント内にとどまるようにします。 これらのプロパティをソース管理に保存したり、他の開発者と共有したりしないでください。 必要に応じて、サービス プリンシパルを削除し、新しいサービス プリンシパルを作成することができます。
 

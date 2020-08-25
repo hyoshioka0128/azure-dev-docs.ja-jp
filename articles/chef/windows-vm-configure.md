@@ -7,12 +7,13 @@ ms.service: chef
 author: tomarchermsft
 ms.author: tarcher
 ms.date: 02/22/2020
-ms.openlocfilehash: 17fc56cbf3aaed573cead58eb8d436d99efa391b
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.custom: devx-track-chef
+ms.openlocfilehash: 7afddc83fef8e52e074600df75f2a2f6bc7c9ea7
+ms.sourcegitcommit: 815cf2acff71e849735f7afce54723f03ffa5df3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "80893051"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88501358"
 ---
 # <a name="quickstart---configure-a-windows-virtual-machine-in-azure-using-chef"></a>クイックスタート - Chef を使用して Azure で Windows 仮想マシンを構成する
 
@@ -52,7 +53,7 @@ Chef には、
 ## <a name="configure-azure-service-principal"></a>Azure サービス プリンシパルを構成する
 
 ここでは、サービス プリンシパルを使用して、Chef ワークステーションから Azure リソースを作成します。  必要なアクセス許可を利用して関連するサービス プリンシパルを作成するには、PowerShell 内で次のコマンドを実行します。
- 
+
 ```powershell
 Login-AzureRmAccount
 Get-AzureRmSubscription
@@ -101,10 +102,11 @@ Chef サーバーを使用していない場合は、次の手順を実行でき
 
 `organization-validator.pem` ファイルが `c:\Downloads` に保存されている場合は、そのファイルを `c:\chef` にコピーします。
 
-これでディレクトリは次の例のようになります。
+ディレクトリは次の例のようになります。
 
 ```powershell
-    Directory: C:\Users\username\chef
+
+Directory: C:\Users\username\chef
 
 Mode           LastWriteTime    Length Name
 ----           -------------    ------ ----
@@ -180,7 +182,7 @@ knife[:azure_client_secret] = "#1234p$wdchef19"
 
 `chef --version` は、次のように返します。
 
-```
+```powershell
 Chef Workstation: 0.4.2
   chef-run: 0.3.0
   chef-client: 15.0.300
@@ -204,7 +206,9 @@ Azure プラグインを含む、Knife Azure 拡張機能をインストール�
 
 次のコマンドを実行します。
 
-    chef gem install knife-azure ––pre
+```bash
+chef gem install knife-azure ––pre
+```
 
 > [!NOTE]
 > `–-pre` 引数により、最新の API セットへのアクセスを提供する Knife Azure プラグインの最新 RC バージョンを確実に受け取ることができます。
@@ -217,7 +221,9 @@ Azure プラグインを含む、Knife Azure 拡張機能をインストール�
 
 すべてが正しく構成されたことを確認するには、次のコマンドを実行します。
 
-    knife azurerm server list
+```bash
+knife azurerm server list
+```
 
 すべてが正しく構成されていると、利用できる Azure イメージの一覧がスクロール表示されます。
 
@@ -227,9 +233,11 @@ Azure プラグインを含む、Knife Azure 拡張機能をインストール�
 
 クックブックはマネージド クライアント上で実行する一連のコマンドを定義するために Chef によって使用されます。 クックブックの作成は簡単で、`chef generate cookbook` コマンドを使用するだけでクックブック テンプレートを生成できます。 この cookbook は、IIS を自動的にデプロイさせる Web サーバー用です。
 
-`C:\Chef directory` の下で、次のコマンドを実行します。
+`C:\Chef directory` で、次のコマンドを実行します。
 
-    chef generate cookbook webserver
+```bash
+chef generate cookbook webserver
+```
 
 このコマンドによって、ディレクトリ C:\Chef\cookbooks\webserver に一連のファイルが生成されます。 次に、マネージド仮想マシンで Chef クライアントが実行する一連のコマンドを定義します。
 
@@ -237,19 +245,21 @@ Azure プラグインを含む、Knife Azure 拡張機能をインストール�
 
 C:\chef\cookbooks\webserver\recipes\default.rb ファイルを変更し、次の行を追加します。
 
-    powershell_script 'Install IIS' do
-         action :run
-         code 'add-windowsfeature Web-Server'
-    end
+```powershell
+powershell_script 'Install IIS' do
+        action :run
+        code 'add-windowsfeature Web-Server'
+end
 
-    service 'w3svc' do
-         action [ :enable, :start ]
-    end
+service 'w3svc' do
+        action [ :enable, :start ]
+end
 
-    template 'c:\inetpub\wwwroot\Default.htm' do
-         source 'Default.htm.erb'
-         rights :read, 'Everyone'
-    end
+template 'c:\inetpub\wwwroot\Default.htm' do
+        source 'Default.htm.erb'
+        rights :read, 'Everyone'
+end
+```
 
 完了したらファイルを保存します。
 
@@ -259,7 +269,9 @@ C:\chef\cookbooks\webserver\recipes\default.rb ファイルを変更し、次の
 
 次のコマンドを実行してテンプレートを生成します。
 
-    chef generate template webserver Default.htm
+```bash
+chef generate template webserver Default.htm
+```
 
 `C:\chef\cookbooks\webserver\templates\default\Default.htm.erb` ファイルに移動します。 シンプルな *Hello World* HTML コードを追加してファイルを編集した後、このファイルを保存します。
 
@@ -267,7 +279,9 @@ C:\chef\cookbooks\webserver\recipes\default.rb ファイルを変更し、次の
 
 この手順では、ローカル コンピューターで作成したクックブックのコピーを作成し、Chef がホストするサーバーにこれをアップロードします。 アップロードが完了すると、クックブックが **[Policy]\(ポリシー\)** タブに表示されます。
 
-    knife cookbook upload webserver
+```bash
+knife cookbook upload webserver
+```
 
 ![Chef サーバーにクックブックをインストールした結果](./media/windows-vm-configure/cookbook-installation-under-policy-tab.png)
 
@@ -278,20 +292,20 @@ Azure 仮想マシンをデプロイし、`knife` コマンドを使用して `W
 `knife` コマンドを実行すると、IIS Web サービスと既定の Web ページもインストールされます。
 
 ```bash
-    knife azurerm server create `
-    --azure-resource-group-name rg-chefdeployment `
-    --azure-storage-account store `
-    --azure-vm-name chefvm `
-    --azure-vm-size 'Standard_DS2_v2' `
-    --azure-service-location 'westus' `
-    --azure-image-reference-offer 'WindowsServer' `
-    --azure-image-reference-publisher 'MicrosoftWindowsServer' `
-    --azure-image-reference-sku '2016-Datacenter' `
-    --azure-image-reference-version 'latest' `
-    -x myuser -P myPassword123 `
-    --tcp-endpoints '80,3389' `
-    --chef-daemon-interval 1 `
-    -r "recipe[webserver]"
+knife azurerm server create `
+--azure-resource-group-name rg-chefdeployment `
+--azure-storage-account store `
+--azure-vm-name chefvm `
+--azure-vm-size 'Standard_DS2_v2' `
+--azure-service-location 'westus' `
+--azure-image-reference-offer 'WindowsServer' `
+--azure-image-reference-publisher 'MicrosoftWindowsServer' `
+--azure-image-reference-sku '2016-Datacenter' `
+--azure-image-reference-version 'latest' `
+-x myuser -P myPassword123 `
+--tcp-endpoints '80,3389' `
+--chef-daemon-interval 1 `
+-r "recipe[webserver]"
 ```
 
 `knife` コマンドの例では、Windows Server 2016 がインストールされた *Standard_DS2_v2* 仮想マシンが米国西部リージョン内に作成されます。 アプリのニーズに応じて、これらの値を変更します。

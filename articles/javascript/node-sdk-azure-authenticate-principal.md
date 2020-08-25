@@ -3,12 +3,13 @@ title: Node.js を使った Azure サービス プリンシパルの作成
 description: Azure で Node.js および JavaScript を使用してサービス プリンシパルを認証する方法について説明します
 ms.topic: article
 ms.date: 06/17/2017
-ms.openlocfilehash: 1a85d185d6272a72b0f8029822b01174f9a043ce
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.custom: devx-track-javascript
+ms.openlocfilehash: 9343d1bfaa48e5b2307c5f442107b91613663e94
+ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85792222"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88218880"
 ---
 # <a name="create-an-azure-service-principal-with-nodejs"></a>Node.js を使った Azure サービス プリンシパルの作成 
 
@@ -46,7 +47,7 @@ ms.locfileid: "85792222"
 
 4. `az login` を呼び出すと、URL とコードが返されます。 指定された URL にブラウザーでアクセスし、コードを入力して、自分の Azure ID でログインします (既にログインしている場合は自動的に実行されます)。 その後は CLI から自分のアカウントにアクセスできるようになります。
 
-5. サブスクリプション ID とテナント ID を取得します。
+5. サブスクリプションとテナントの ID を取得します。
 
     ```shell
     $ az account list

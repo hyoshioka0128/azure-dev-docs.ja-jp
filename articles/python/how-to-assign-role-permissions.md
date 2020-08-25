@@ -4,12 +4,12 @@ description: Azure CLI を使用してサービス プリンシパルまたは�
 ms.date: 05/12/2020
 ms.topic: conceptual
 ms.custom: devx-track-python, devx-track-azurecli
-ms.openlocfilehash: 3eb81eac5ee9a7f2f85e50494efa2e04bbcbe439
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: facfa1663e6f62a7458f99ee20c86f66ee67b17d
+ms.sourcegitcommit: 800c5e05ad3c0b899295d381964dd3d47436ff90
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87983134"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88614482"
 ---
 # <a name="how-to-assign-role-permissions-to-an-app-identity-or-service-principal"></a>アプリ ID またはサービス プリンシパルにロールのアクセス許可を割り当てる方法
 
@@ -17,7 +17,7 @@ Azure のロールベースのアクセス制御 (RBAC) システムでは、さ
 
 実際には、常に、セキュリティ プリンシパルにとって最も限定的なスコープで本当に必要であるロールのみを割り当てるようにしてください。 当初、より広範なスコープでより広範なロールを割り当てる方が便利に思われたとしても、避けてください。 ロールとスコープを制限することにより、セキュリティ プリンシパルが侵害された場合 (つまり、そのプリンシパルの資格情報がデータ侵害やその他のセキュリティ インシデントで公開されてしまった場合) にリスクにさらされるリソースを制限できます。
 
-開発環境と運用環境では異なるセキュリティ プリンシパルを使用するため、各環境でロールの割り当てを繰り返します。 つまり、開発中は通常、ワークステーションで作成されたローカル サービス プリンシパルにロールを割り当てます ([ローカル Python 開発環境の認証の構成](configure-local-development-environment.md#configure-authentication)に関するセクションを参照してください)。 運用環境では、デプロイの前にアプリケーション ID またはサービス プリンシパルにロールを割り当て、アプリケーションが起動時にアクセスできるようにします。
+開発環境と運用環境では異なるセキュリティ プリンシパルを使用するため、各環境でロールの割り当てを繰り返します。 つまり、開発中は通常、ワークステーションで作成されたローカル サービス プリンシパルにロールを割り当てます ([ローカル Python 開発環境の認証の構成](configure-local-development-environment.md#configure-authentication)に関するセクションを参照してください)。 運用環境では、デプロイの前にアプリケーションのマネージド ID またはサービス プリンシパルにロールを割り当てて、アプリケーションが起動時にアクセスできるようにします。 詳細については、[認証 - Azure で実行されている場合のアプリの ID](azure-sdk-authenticate.md#identity-when-running-the-app-on-azure) に関する記事を参照してください。
 
 一般的な RBAC の詳細については、[Azure のロールベースのアクセス制御](/azure/role-based-access-control/overview)に関するページを参照してください。
 
@@ -64,7 +64,7 @@ Azure のロールベースのアクセス制御 (RBAC) システムでは、さ
 
 ## <a name="identify-scope-and-assign-a-role-through-the-azure-cli"></a><a name="azure-cli"></a>Azure CLI を使用してスコープを識別し、ロールを割り当てる
 
-Azure CLI でロールを割り当てるには、[`az role assignment`](/cli/azure/role/assignment?view=azure-cli-latest) コマンドを使用します。 割り当てを追加するには `az role assignment create` を使用し、割り当てを削除するには `az role assignment delete` を使用します。 
+Azure CLI でロールを割り当てるには、[`az role assignment`](/cli/azure/role/assignment?view=azure-cli-latest) コマンドを使用します。 割り当てを追加するには `az role assignment create` を使用し、割り当てを削除するには `az role assignment delete` を使用します。
 
 完全なプロセスについては、「[Azure CLI を使用して Azure でのロールの割り当てを追加または削除する](/azure/role-based-access-control/role-assignments-cli)」で説明されています。次の概要では、このデベロッパー センターの他の記事に関連する具体的な例を示します。
 

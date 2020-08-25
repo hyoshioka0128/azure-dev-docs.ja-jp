@@ -3,14 +3,15 @@ title: Visual Studio Code を使用して変更を加えた後に Azure App Serv
 description: 'チュートリアル ステップ 6: コンテナー イメージをリビルドして再デプロイするための簡単な手順。'
 ms.topic: conceptual
 ms.date: 09/20/2019
-ms.openlocfilehash: 7920bc9ddb2b9b7cc06f936fb97400a5c1d9dd7d
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.custom: devx-track-javascript
+ms.openlocfilehash: 27bfc943ee64cbf6708fc2665ad9593b0fb28647
+ms.sourcegitcommit: 815cf2acff71e849735f7afce54723f03ffa5df3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85792982"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88501407"
 ---
-# <a name="make-changes-and-redeploy"></a>変更を加えて再デプロイする
+# <a name="make-changes-and-redeploy-a-container-using-visual-studio-code"></a>Visual Studio Code を使用した変更およびコンテナーの再デプロイ
 
 [前の手順:アプリ イメージをデプロイする](tutorial-vscode-docker-node-05.md)
 

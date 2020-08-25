@@ -4,12 +4,13 @@ description: GitHub からの継続的インテグレーション (CI) と Azure
 keywords: jenkins, azure, devops, aks, azure kubernetes service, github
 ms.topic: article
 ms.date: 01/09/2019
-ms.openlocfilehash: cbde97c7796a7f89bfb8ec0cbe530e84bd750e04
-ms.sourcegitcommit: 8309822d57f784a9c2ca67428ad7e7330bb5e0d6
+ms.custom: devx-track-jenkins
+ms.openlocfilehash: c73e5c567f237c6f859b52230742ae74b87326f5
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82861185"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88241004"
 ---
 # <a name="tutorial-deploy-from-github-to-azure-kubernetes-service-using-jenkins"></a>チュートリアル:Jenkins を使用して GitHub から Azure Kubernetes Service にデプロイする
 
@@ -51,13 +52,13 @@ ms.locfileid: "82861185"
 
 サンプル アプリケーション ([https://github.com/Azure-Samples/azure-voting-app-redis](https://github.com/Azure-Samples/azure-voting-app-redis)) の GitHub リポジトリをフォークします。 自身の GitHub アカウントにリポジトリをフォークするには、右上隅の **[Fork]** ボタンを選択します。
 
-開発システム用にフォークのクローンを作成します。 このリポジトリをクローンするときに、フォークの URL を使用するようにします。
+開発システム用にフォークの複製を作成します。 このリポジトリを複製するときに、フォークの URL を使用するようにします。
 
 ```console
 git clone https://github.com/<your-github-account>/azure-voting-app-redis.git
 ```
 
-クローンしたフォークのディレクトリに変更します。
+複製したフォークのディレクトリに変更します。
 
 ```console
 cd azure-voting-app-redis
@@ -228,7 +229,7 @@ Jenkins ポータルのホーム ページから左側の **[新しい項目]** 
 
 1. ジョブ名として *azure-vote* を入力します。 **Freestyle プロジェクト**を選択し､ **[OK]** をクリックします
 1. **[General]\(一般\)** セクションで **[GitHub project]\(GitHub プロジェクト\)** を選択し、フォークしたリポジトリの URL (例: *https:\//github.com/\<your-github-account\>/azure-voting-app-redis*) を入力します
-1. **[Source code management]\(ソース コードの管理\)** セクションで **[Git]** を選択し、フォークしたリポジトリの *.git* の URL を入力します (例: *https:\//github.com/\<your-github-account\>/azure-voting-app-redis.git*)
+1. **[Source code management]\(ソース コードの管理\)** セクションで **[Git]** を選択し、フォークしたリポジトリの *.git* の URL (例: *https:\//github.com/\<your-github-account\>/azure-voting-app-redis.git*) を入力します
 
 1. **[Build Triggers]** セクションから **GitHub hook trigger for GITscm polling** を選択します
 1. **[Build Environment]\(ビルド環境\)** で、 **[Use secret texts or files]\(シークレット テキストまたはファイルを使用する\)** を選びます
@@ -267,7 +268,7 @@ GitHub のコミットに基づいてジョブを自動化する前に、まず 
 
 Docker イメージ レイヤーが Jenkins サーバーにプルダウンされるため、最初のビルド時間は 1 分または 2 分かかります。 その後のビルドでは、キャッシュされたイメージ レイヤーを使用してビルド時間を短縮できます。
 
-このビルド プロセスの間に、GitHub リポジトリが Jenkins ビルド サーバーにクローンされます。 新しいコンテナー イメージがビルドされて、ACR レジストリにプッシュされます。 最後に、AKS クラスターで実行されている Azure 投票アプリケーションが新しいイメージを使うように更新されます。 アプリケーション コードが変更されていないため、Web ブラウザーでサンプル アプリを表示する場合、アプリケーションは変更されません。
+このビルド プロセスの間に、GitHub リポジトリが Jenkins ビルド サーバーに複製されます。 新しいコンテナー イメージがビルドされて、ACR レジストリにプッシュされます。 最後に、AKS クラスターで実行されている Azure 投票アプリケーションが新しいイメージを使うように更新されます。 アプリケーション コードが変更されていないため、Web ブラウザーでサンプル アプリを表示する場合、アプリケーションは変更されません。
 
 ビルド ジョブが完了したら、ビルド履歴の下の**ビルド #1**をクリックします。 **[コンソール出力]** を選択し、ビルド プロセスからの出力を表示します。 最後の行でビルドの成功が示されている必要があります。
 
@@ -292,7 +293,7 @@ Docker イメージ レイヤーが Jenkins サーバーにプルダウンされ
 1. この新しいコンテナー イメージが Azure Container Registry にプッシュされます。
 1. Azure Kubernetes Service のレジストリにデプロイされたアプリケーションは、Azure Container Registry レジストリからの最新コンテナー イメージで更新されます。
 
-開発マシンで、クローンされたアプリケーションをコード エディターで開きます。 */azure-vote/azure-vote* ディレクトリで、**config_file.cfg** という名前のファイルを開きます。 次の例に示すように、このファイルの投票値を cats と dogs 以外のものに更新します。
+開発マシンで、複製されたアプリケーションをコード エディターで開きます。 */azure-vote/azure-vote* ディレクトリで、**config_file.cfg** という名前のファイルを開きます。 次の例に示すように、このファイルの投票値を cats と dogs 以外のものに更新します。
 
 ```
 # UI Configurations

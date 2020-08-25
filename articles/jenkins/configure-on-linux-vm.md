@@ -1,17 +1,18 @@
 ---
-title: クイック スタート - Jenkins の使用を開始する
+title: クイック スタート - Azure CLI を使用して Jenkins を構成する
 description: Azure Linux 仮想マシンに Jenkins をインストールし、サンプル Java アプリケーションをビルドする方法について説明します。
 keywords: Jenkins, Azure, DevOps, ポータル, Linux, 仮想マシン
 ms.topic: quickstart
-ms.date: 08/07/2020
-ms.openlocfilehash: 06d2365f51df76861a3a154702c4b82f962f7038
-ms.sourcegitcommit: f65561589d22b9ba2d69b290daee82eb47b0b20f
+ms.date: 08/19/2020
+ms.custom: devx-track-jenkins
+ms.openlocfilehash: b5be59dc1ed3fab69051a8ddd23576e27c966a7b
+ms.sourcegitcommit: 800c5e05ad3c0b899295d381964dd3d47436ff90
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88162091"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88614558"
 ---
-# <a name="quickstart-get-started-with-jenkins"></a>クイック スタート:Jenkins の使用を開始する
+# <a name="quickstart-configure-jenkins-using-azure-cli"></a>クイック スタート:Azure CLI を使用して Jenkins を構成する
 
 このクイックスタートでは、Azure で動作するよう構成されているプラグインとツールを備えた [Jenkins](https://jenkins.io) を Ubuntu Linux VM にインストールする方法について説明します。
 
@@ -64,19 +65,36 @@ Jenkins の構成で問題が発生した場合は、[Cloudbees Jenkins のイ�
 1. [az group create](/cli/azure/group#az-group-create) を使用してリソース グループを作成します。 場合によっては、`--location` パラメーターをお使いの環境に適した値に置き換える必要があります。
 
     ```azurecli
-    az group create --name QuickstartJenkins-rg --location eastus
+    az group create \
+    --name QuickstartJenkins-rg \
+    --location eastus
     ```
 
 1. [az vm create](/cli/azure/vm#az-vm-create) を使用して仮想マシンを作成します。
 
     ```azurecli
-    az vm create --resource-group QuickstartJenkins-rg --name QuickstartJenkins-vm --image UbuntuLTS --admin-username "azureuser" --generate-ssh-keys --custom-data cloud-init-jenkins.txt
+    az vm create \
+    --resource-group QuickstartJenkins-rg \
+    --name QuickstartJenkins-vm \
+    --image UbuntuLTS \
+    --admin-username "azureuser" \
+    --generate-ssh-keys \
+    --custom-data cloud-init-jenkins.txt
+    ```
+
+1. [az vm list](/cli/azure/vm#az-vm-list) を使用して、新しい仮想マシンの作成 (および状態) を確認します。
+
+    ```azurecli
+    az vm list -d -o table --query "[?name=='QuickstartJenkins-vm']"
     ```
 
 1. [az vm open](/cli/azure/vm#az-vm-open-port) を使用して、新しい仮想マシンでポート 8080 を開きます。
 
     ```azurecli
-    az vm open-port --resource-group QuickstartJenkins-rg --name QuickstartJenkins-vm  --port 8080 --priority 1010
+    az vm open-port \
+    --resource-group QuickstartJenkins-rg \
+    --name QuickstartJenkins-vm  \
+    --port 8080 --priority 1010
     ```
 
 ## <a name="configure-jenkins"></a>Jenkins を構成する
@@ -84,7 +102,11 @@ Jenkins の構成で問題が発生した場合は、[Cloudbees Jenkins のイ�
 1. [az vm show](/cli/azure/vm#az-vm-show) を使用して、サンプル仮想マシンのパブリック IP アドレスを取得します。
 
     ```azurecli
-    az vm show --resource-group QuickstartJenkins-rg --name QuickstartJenkins-vm -d --query [publicIps] --output tsv
+    az vm show \
+    --resource-group QuickstartJenkins-rg \
+    --name QuickstartJenkins-vm -d \
+    --query [publicIps] \
+    --output tsv
     ```
 
     **注**:
@@ -124,6 +146,8 @@ Jenkins の構成で問題が発生した場合は、[Cloudbees Jenkins のイ�
     ![選択したプラグインをインストールするオプションを選択する](./media/configure-on-linux-vm/select-plugins.png)
 
 1. ページの上部にあるフィルター ボックスに「`github`」と入力します。 GitHub プラグインを選択し、 **[Install]\(インストール\)** を選択します。
+
+    ![GitHub プラグインをインストールする](./media/configure-on-linux-vm/install-github-plugin.png)
 
 1. 最初の管理者ユーザーの情報を入力し、 **[Save and Continue]\(保存して続行\)** を選択します。
 

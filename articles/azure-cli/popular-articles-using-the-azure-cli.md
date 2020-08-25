@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.prod: azure
 ms.technology: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: 3a0b2e315e0eaf6c352aa2737f33da043b5feb7d
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 648f147c8bc3f954f8b41c2fbec4500c3115e66a
+ms.sourcegitcommit: 815cf2acff71e849735f7afce54723f03ffa5df3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82031254"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88501277"
 ---
 # <a name="popular-articles-using-the-azure-cli"></a>Azure CLI を使用した人気のある記事
 
@@ -22,16 +22,16 @@ Azure CLI は多くの Azure サービスで使用されるため、記事は複
 
 ## <a name="compute"></a>Compute
 
-| | | | |
+|サービス|記事の種類|記事のタイトル|説明|
 |-|-|-|-|
-|Virtual Machines | チュートリアル:Linux | [Azure CLI で Linux 仮想マシンを作成する](azure-cli-vm-tutorial.yml) | 仮想マシンを作成します。  出力クエリと環境変数の設定について説明します。
-|Virtual Machines | クイック スタート:Linux | [Azure CLI を使用して Linux 仮想マシンを作成する](/azure/virtual-machines/linux/quick-create-cli) | Linux 仮想マシンを作成してデプロイします。  Web トラフィック用のポートを開き、Web サーバーをインストールします。
+|仮想マシン | チュートリアル:Linux | [Azure CLI で Linux 仮想マシンを作成する](azure-cli-vm-tutorial.yml) | 仮想マシンを作成します。  出力クエリと環境変数の設定について説明します。
+|仮想マシン | クイック スタート:Linux | [Azure CLI を使用して Linux 仮想マシンを作成する](/azure/virtual-machines/linux/quick-create-cli) | Linux 仮想マシンを作成してデプロイします。  Web トラフィック用のポートを開き、Web サーバーをインストールします。
 |Virtual Machines | 攻略ガイド: Linux |[仮想マシンまたは VHD の Linus イメージを作成する](/azure/virtual-machines/linux/capture-image) | 既存の仮想マシンのプロビジョニングを解除し、イメージを作成して、キャプチャしたイメージから新しい仮想マシンを作成します。
 |Virtual Machines | 攻略ガイド: Linux | [Azure CLI を使用して VHD を Azure にアップロードする](/azure/virtual-machines/linux/disks-upload-vhd-to-managed-disk-cli) | 空のマネージド ディスクを作成し、ローカル VHD ファイルをアップロードして、マネージド ディスクをコピーします。
-|Virtual Machines | 攻略ガイド: Linux | [Azure CLI を使用して共有イメージ ギャラリーを作成する](/azure/virtual-machines/linux/shared-images) | 組織内、リージョン内またはリージョン間、または Azure Active Directory テナント内で、他のユーザーとの間でカスタム VM イメージの共有イメージ ギャラリーを作成します。
+|Virtual Machines | 攻略ガイド: Linux | [Azure CLI を使用して共有イメージ ギャラリーを作成する](/azure/virtual-machines/linux/shared-images) | 組織内、リージョン内またはリージョン間、または Azure Active Directory テナント内で、他のユーザーとの間でカスタム VM イメージの Shared Image Gallery を作成します。
 |Virtual Machines | 攻略ガイド: Linux | [Azure CLI を使用してスポット VM をデプロイする (プレビュー)](/azure/virtual-machines/linux/spot-cli) | 価格に基づいて削除されない Linux スポット仮想マシンをデプロイする方法を示しています。
 |Virtual Machines | クイック スタート:Windows | [Azure CLI を使用して Windows 仮想マシンを作成する](/azure/virtual-machines/windows/quick-create-cli) | Windows Server 2016 を実行する仮想マシンを Azure にデプロイします。
-|Virtual Machines | Learn モジュール | [Azure CLI を使用して仮想マシンを管理する](https://docs.microsoft.com/learn/modules/manage-virtual-machines-with-azure-cli/) | 仮想マシンに関連する追加の管理タスクを作成、開始、停止、実行します。
+|仮想マシン | 学習モジュール | [Azure CLI を使用して仮想マシンを管理する](https://docs.microsoft.com/learn/modules/manage-virtual-machines-with-azure-cli/) | 仮想マシンに関連する追加の管理タスクを作成、開始、停止、実行します。
 |Azure Kubernetes Service (AKS)| クイック スタート | [Azure CLI を使用して Azure Kubernetes Service (AKS) クラスターをデプロイする](/azure/aks/kubernetes-walkthrough) | AKS クラスターをデプロイおよび管理します。  アプリケーションを実行するクラスターとポッドの正常性を監視する方法を示します。
 |Azure Batch|サンプル | [Azure CLI を使用した Azure Batch でのジョブとタスクの実行](/azure/batch/scripts/batch-cli-sample-run-job) | Batch のジョブを作成してそのジョブに一連のタスクを追加します。 ジョブとそのタスクを監視します。
 |Azure Batch|サンプル | [Azure CLI を使用した Azure Batch での Windows プールの作成と管理](/azure/batch/scripts/batch-cli-sample-manage-windows-pool) | Cloud Services の構成で Windows 計算ノードのプールを作成および管理します。
@@ -40,20 +40,20 @@ Azure CLI は多くの Azure サービスで使用されるため、記事は複
 
 ## <a name="networking"></a>ネットワーク
 
-| | | | |
+|サービス|記事の種類|記事のタイトル|説明|
 |-|-|-|-|
 |Virtual Network|クイック スタート | [Azure CLI を使用した仮想ネットワークの作成](/azure/virtual-network/quick-create-cli) | 仮想ネットワークを作成し、仮想ネットワークに 2 つの仮想マシンをデプロイして、インターネットから仮想マシンに接続します。
 |Virtual Network|ハウツー ガイド | [Azure CLI を使用して Linux 仮想マシン上で高速ネットワークを有効にする](/azure/virtual-network/create-vm-accelerated-networking-cli) | Linux 仮想マシンを作成し、仮想関数の動的バインドと失効を処理し、高速ネットワークを有効にします。
 
 ## <a name="internet-of-things"></a>モノのインターネット (IoT)
 
-| | | | |
+|サービス|記事の種類|記事のタイトル|説明|
 |-|-|-|-|
 |IoT Hub|チュートリアル | [Azure CLI を使用して IoT Hub のメッセージ ルーティングを構成する](/azure/iot-hub/tutorial-routing) | IoT Hub でカスタム ルーティング クエリを設定して使用します。
 
 ## <a name="developer-tools"></a>開発者ツール
 
-| | | | |
+|サービス|記事の種類|記事のタイトル|説明|
 |-|-|-|-|
 |Azure App Configuration|サンプル |[Azure App Configuration 用の Azure CLI のサンプル](/azure/azure-app-configuration/cli-samples) | Azure App Configuration 用の Azure CLI を使用する bash スクリプトへのリンクを取得します。
 |Azure DevOps| 概要:DevOps パイプライン |[Azure CLI を使用して初めての Azure パイプラインを作成する](/azure/devops/pipelines/create-first-pipeline-cli) | 複製された GitHub ディレクトリに新しいパイプラインを作成し、パイプラインを管理して実行します。
@@ -62,7 +62,7 @@ Azure CLI は多くの Azure サービスで使用されるため、記事は複
 
 ## <a name="databases"></a>データベース
 
-| | | | |
+|サービス|記事の種類|記事のタイトル|説明|
 |-|-|-|-|
 |SQL Database| サンプル |[Azure CLI を使用して Azure SQL Database を構成する](/azure/sql-database/sql-database-cli-samples?tabs=single-database) | Azure SQL Database 用の Azure CLI サンプル。
 |MySQL|クイック スタート |[Azure CLI を使用した Azure Database for MySQL サーバーの作成](/azure/mysql/quickstart-create-mysql-server-database-using-azure-cli) | Azure Database for MySQL サーバーを作成します。  ファイアウォール規則と SSL 設定を構成します。  接続情報を取得して使用します。
@@ -71,7 +71,7 @@ Azure CLI は多くの Azure サービスで使用されるため、記事は複
 
 ## <a name="analytics"></a>Analytics
 
-| | | | |
+|サービス|記事の種類|記事のタイトル|説明|
 |-|-|-|-|
 Azure Event Hub |クイック スタート |[Azure CLI を使用したイベント ハブの作成](/azure/event-hubs/event-hubs-quickstart-cli) | Event Hubs 名前空間とイベント ハブを作成します。
 HDInsight |ハウツー ガイド |[Azure CLI を使用した HDInsight クラスターを作成する](/azure/hdinsight/hdinsight-hadoop-create-linux-clusters-azure-cli) | HDInsight 3.6 クラスターを作成します。
@@ -79,16 +79,16 @@ HDInsight |チュートリアル |[Azure CLI を使用した Azure HDInsight ク
 
 ## <a name="management-and-governance"></a>管理とガバナンス
 
-| | | | |
+|サービス|記事の種類|記事のタイトル|説明|
 |-|-|-|-|
 リソース マネージャーのテンプレート |ハウツー ガイド |[Azure Resource Manager テンプレートと Azure CLI を使用してリソースをデプロイする](/azure/azure-resource-manager/templates/deploy-cli) | テンプレートを使用してリソースを Azure にデプロイします。
 Resource Manager グループ |ハウツー ガイド |[Azure CLI を使用した Azure Resource Manager リソース グループの管理](/azure/azure-resource-manager/management/manage-resource-groups-cli) | Azure Resource Manager を使用して Azure リソース グループを管理します。
-リソース グラフ |クイック スタート |[Azure CLI を使用して最初の Resource Graph クエリを実行する](/azure/governance/resource-graph/first-query-azurecli) | Azure CLI インストールに Azure Resource Graph を追加し、最初の Resource Graph クエリを実行します。
+Resource Graph |クイック スタート |[Azure CLI を使用して最初の Resource Graph クエリを実行する](/azure/governance/resource-graph/first-query-azurecli) | Azure CLI インストールに Azure Resource Graph を追加し、最初の Resource Graph クエリを実行します。
 ポリシー割り当て |クイック スタート |[Azure CLI を使用して準拠していないリソースを識別するためのポリシー割り当てを作成する](/azure/governance/policy/assign-policy-azurecli) | マネージド ディスクを使用していない仮想マシンを識別するためのポリシー割り当てを作成します。
 
 ## <a name="hybrid"></a>ハイブリッド
 
-| | | | |
+|サービス|記事の種類|記事のタイトル|説明|
 |-|-|-|-|
 Azure Stack Hub| クイック スタート:Linux VM |[Azure CLI を使用して Azure Stack Hub に Linux サーバー仮想マシンを作成する](/azure-stack/user/azure-stack-quick-create-vm-linux-cli) | Ubuntu Server 16.04 LTS 仮想マシンを作成し、リモート クライアントを使用して仮想マシンに接続し、NGINX Web サーバーをインストールします。
 Azure Stack Hub| クイック スタート:Windows VM |[Azure CLI を使用して Azure Stack Hub に Windows Server 仮想マシンを作成する](/azure-stack/user/azure-stack-quick-create-vm-windows-cli) |Windows Server 2016 仮想マシンを作成し、リモート クライアントを使用して仮想マシンに接続し、IIS Web サーバーをインストールします。
@@ -96,7 +96,7 @@ Azure Stack Hub| 攻略ガイド: ASDK リソース |[Azure CLI を使用した 
 
 ## <a name="storage"></a>ストレージ
 
-| | | | |
+|サービス|記事の種類|記事のタイトル|説明|
 |-|-|-|-|
 BLOB ストレージ |クイック スタート |  [Azure CLI を使用して BLOB を作成、ダウンロード、および一覧表示する](/azure/storage/blobs/storage-quickstart-blobs-cli) | Azure Blob Storage との間でデータをアップロードおよびダウンロードします。
 BLOB ストレージ |ハウツー ガイド |[Azure CLI を使用して BLOB またはキュー データへのアクセスを承認する](/azure/storage/common/authorize-data-operations-cli) | データ操作を承認する方法を指定し、パラメーターの環境変数を設定します。
@@ -105,16 +105,16 @@ File Storage |クイック スタート |[Azure CLI を使用した Azure ファ
 
 ## <a name="security"></a>Security
 
-| | | | |
+|サービス|記事の種類|記事のタイトル|説明|
 |-|-|-|-|
 サービス プリンシパル |ハウツー ガイド |[Azure CLI で Azure サービス プリンシパルを作成する](/cli/azure/create-an-azure-service-principal-azure-cli) | Azure CLI を使用して、サービス プリンシパルの作成、情報の取得、およびリセットを行います。
 RBAC |ハウツー ガイド |[Azure RBAC と Azure CLI を使用してロールの割り当てを追加または削除する](/azure/role-based-access-control/role-assignments-cli) | Azure ロールベースのアクセス制御にロールを割り当てます。
-Key Vault |ハウツー ガイド |[Azure CLI を使用して Key Vault を管理する](/azure/key-vault/key-vault-manage-with-cli2) | Azure Key Vault を作成および管理します。  アプリケーションの登録と承認、高度なアクセス ポリシーの設定、クロスプラットフォームのコマンドライン インターフェイス コマンドの学習を行います。
+Key Vault |ハウツー ガイド |[Azure CLI を使用して Key Vault を管理します。](/azure/key-vault/key-vault-manage-with-cli2) | Azure Key Vault を作成および管理します。  アプリケーションの登録と承認、高度なアクセス ポリシーの設定、クロスプラットフォームのコマンドライン インターフェイス コマンドの学習を行います。
 Key Vault |チュートリアル |[Key Vault と Azure CLI を使用してストレージ アカウント キーを管理する](/azure/key-vault/key-vault-ovw-storage-keys) | ストレージ アカウント キーを管理し、Shared Access Signature トークンを生成します。
 
 ## <a name="ai--machine-learning"></a>AI + 機械学習
 
-| | | | |
+|サービス|記事の種類|記事のタイトル|説明|
 |-|-|-|-|
 Machine Learning |リファレンス |[Azure Machine Learning 用の Azure CLI 拡張機能を使用する](/azure/machine-learning/reference-azure-machine-learning-cli) | 実験を実行して機械学習モデルを作成し、顧客が使用するための機械学習モデルを登録します。  機械学習モデルのライフサイクルをパッケージ化、デプロイ、追跡します。
 Cognitive Services |ハウツー ガイド |[Azure CLI を使用して Cognitive Services リソースを作成する](/azure/cognitive-services/cognitive-services-apis-create-account-cli) | Azure Cognitive Services にサインアップし、単一サービスまたはマルチサービス サブスクリプションを持つアカウントを作成します。  自動的に生成されたキーとエンドポイントを使用して、自分のアプリケーションの認証を行います。
@@ -122,9 +122,9 @@ Azure Monitor |ハウツー ガイド |[Azure CLI を使用して Log Analytics 
 
 ## <a name="geographies"></a>地域
 
-| | | | |
+|サービス|記事の種類|記事のタイトル|説明|
 |-|-|-|-|
-Azure Germany |開始するには |[Azure CLI を使用して Azure Germany に接続する](/azure/germany/germany-get-started-connect-with-cli) | Azure Germany を使用して、スクリプトによる大規模なサブスクリプションを管理したり、現在グローバル Azure portal にはない機能を利用したりします。
+Azure ドイツ |開始するには |[Azure CLI を使用して Azure Germany に接続する](/azure/germany/germany-get-started-connect-with-cli) | Azure Germany を使用して、スクリプトによる大規模なサブスクリプションを管理したり、現在グローバル Azure portal にはない機能を利用したりします。
 Azure Government|開始するには |[Azure CLI を使用した Azure Government への接続](/azure/azure-government/documentation-government-get-started-connect-with-cli)|Azure Government のリソースにアクセスして管理を開始します。
 
 ## <a name="see-also"></a>関連項目

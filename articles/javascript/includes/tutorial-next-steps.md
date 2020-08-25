@@ -1,10 +1,11 @@
 ---
-ms.openlocfilehash: fdce0ef5f2acbd4766fce441cd2d9cd801b9fb02
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.custom: devx-track-javascript
+ms.openlocfilehash: 3f0706cad38bd9c410c5f877c44cb0c0e6652c3b
+ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85792088"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88501493"
 ---
 これで、このチュートリアルは正常に完了しました。 次に、他の Azure 拡張機能をチェックしてみましょう。
 
@@ -23,4 +24,4 @@ Node.js を使用した Azure での操作の詳細については、次のリ�
 * [Azure Functions の JavaScript 開発者向けガイド](https://docs.microsoft.com/azure/azure-functions/functions-reference-node)
 * [ブログ記事: Azure Functions & MongoDB を使用した CRUD アプリケーションの作成 - Dev.to](https://dev.to/azure/ezra-s-potluck-day-4-of-25daysofserverless-challenge-4pd6)
 * [ビデオ: Azure Functions を使用した API のサーバーレスへの移行 - YouTube](https://youtu.be/89WXgaY-NqY)
-* [公式 YouTube チャンネル – Azure Functions](https://www.youtube.com/channel/UCtUYj6As_XFkOooUFnsJbYg)
+* [公式 YouTube チャンネル - Azure Functions](https://www.youtube.com/channel/UCtUYj6As_XFkOooUFnsJbYg)

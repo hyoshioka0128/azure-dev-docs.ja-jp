@@ -3,13 +3,14 @@ title: Azure での Ansible の使用
 description: Ansible を使用してクラウド プロビジョニング、構成管理、およびアプリケーションのデプロイを自動化する方法の概要。
 keywords: Ansible, Azure, DevOps, 概要, クラウド プロビジョニング, 構成管理, アプリケーションのデプロイ, Ansible モジュール, Ansible プレイブック
 ms.topic: overview
-ms.date: 04/30/2019
-ms.openlocfilehash: e37807ffd4d7479bccec0dc058760be2e1f1e6d5
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.date: 08/13/2020
+ms.custom: devx-track-ansible
+ms.openlocfilehash: 2bd996a93952df1f52c2a007d73f7f37e4e0f132
+ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "80741520"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88239964"
 ---
 # <a name="using-ansible-with-azure"></a>Azure での Ansible の使用
 
@@ -56,5 +57,5 @@ Ansible には、Azure リソースのプロビジョニングと構成に使用
 
 ## <a name="next-steps"></a>次のステップ
 
-- [クイック スタート: Azure 用の Ansible ソリューション テンプレートを CentOS にデプロイする](./solution-template-deploy.md)
-- [クイック スタート: Ansible を使用して Azure で Linux 仮想マシンを構成する](./install-on-linux-vm.md)
+- [クイック スタート: Azure Cloud Shell を使用して Ansible を構成する](getting-started-cloud-shell.md)
+- [クイック スタート: Azure CLI を使用して Ansible を構成する](install-on-linux-vm.md)

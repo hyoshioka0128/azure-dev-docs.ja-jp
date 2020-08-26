@@ -1,7 +1,7 @@
 ### YamlMime:Landing
-title: JavaScript 開発者向けの Azure
+title: JavaScript および Node.js 開発者向けの Azure
 summary: >
-  JavaScript および Node.js 用の Azure SDK の概要、使用を開始するための方法、開発者向け機能について説明します。 アプリケーション ホスティング、DevOps タスク、永続的なストレージとデータベース、モノのインターネット (IoT) デバイスの操作など、便利な Azure 機能を使ってみましょう。
+  クイックスタート、攻略ガイド、コード サンプルなどを使用して、Azure での JavaScript の機能について説明します。
 metadata:
   title: JavaScript および Node.js 開発者向けの Azure
   description: 各種のチュートリアル、ツール、SDK リファレンスを活用して、ブラウザーまたは Node.js で Azure SDK for JavaScript を使用したアプリの開発を開始しましょう。
@@ -13,102 +13,95 @@ metadata:
   ms.technology: azure
   ms.service: multiple
   ms.devlang: javascript
-  ms.openlocfilehash: 9bd3770871be1c687f8f3096a840c0dd465dec54
-  ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+  ms.custom: 2020Aug21Redesign
+  ms.openlocfilehash: 886b00c75b2c653f458e68c475e6c775eb8cce03
+  ms.sourcegitcommit: 09e1952776c83e1f67005f144fd8181f5681889b
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 08/07/2020
-  ms.locfileid: "87983444"
+  ms.lasthandoff: 08/24/2020
+  ms.locfileid: "88781804"
 landingContent:
-- title: Azure の概要
+- title: Hosting
   linkLists:
-  - linkListType: overview
+  - linkListType: tutorial
     links:
-    - text: ローカル開発環境のセットアップ
-      url: configure-local-development-environment.md
-  - linkListType: quickstart
-    links:
-    - text: Azure App Service への迅速なデプロイ
-      url: https://aka.ms/try-azure-node
-    - text: サンプルの参照
-      url: /samples/browse/?languages=javascript,nodejs
-  - linkListType: learn
-    links:
-    - text: Microsoft Learn のモジュールとコース
-      url: learn-azure-javascript.md
-  - linkListType: reference
-    links:
-    - text: API リファレンス ドキュメント
-      url: /javascript/api/overview/azure/?view=azure-node-latest
-    - text: 最新の SDK
-      url: https://azure.github.io/azure-sdk/releases/latest/index.html#javascript
-- title: Visual Studio Code でのデプロイ
-  linkLists:
-  - linkListType: quickstart
-    links:
-    - text: 静的 Web アプリケーション
-      url: tutorial-vscode-static-website-node-01.md
-    - text: サーバーレス アプリケーション
-      url: tutorial-vscode-serverless-node-01.md
-    - text: フルスタック アプリケーション
+    - text: フロントエンド アプリ
+      url: /azure/static-web-apps/getting-started.md
+    - text: Node.js と App Service
       url: tutorial-vscode-azure-app-service-node-01.md
-    - text: コンテナー化されたアプリケーション
-      url: tutorial-vscode-docker-node-01.md
-- title: Azure CLI でのデプロイ
-  linkLists:
-  - linkListType: quickstart
-    links:
-    - text: Deno アプリ
+    - text: Deno と App Service
       url: tutorial-visual-studio-code-azure-app-service-deno-01.md
-- title: Host
+    - text: コンテナー
+      url: tutorial-vscode-docker-node-01.md
+  - linkListType: how-to-guide
+    links:
+    - text: フルスタック (サーバーレス API とフロントエンド)
+      url: node-howto-create-static-site-jamstack.md
+- title: サーバーレスな Functions
   linkLists:
-  - linkListType: overview
+  - linkListType: tutorial
     links:
-    - text: Azure App Service
-      url: /azure/app-service/overview
-  - linkListType: architecture
+    - text: 開発とデプロイ
+      url: tutorial-vscode-serverless-node-01.md
+  - linkListType: how-to-guide
     links:
-    - text: 適切なホスティング オプションを見つける
-      url: /azure/architecture/guide/technology-choices/compute-decision-tree
-- title: DevOps
-  linkLists:
-  - linkListType: quickstart
-    links:
-    - text: Azure Pipelines で CI/CD を設定する
-      url: /azure/devops-project/azure-devops-project-nodejs?toc=%2Fazure%2Fjavascript%2Ftoc.json&bc=%2Fazure%2Fjavascript%2Fbreadcrumb%2Ftoc.json
-- title: モニター
-  linkLists:
-  - linkListType: overview
-    links:
-    - text: Azure Monitor
-      url: /azure/azure-monitor/overview?toc=%2Fazure%2Fjavascript%2Ftoc.json&bc=%2Fazure%2Fjavascript%2Fbreadcrumb%2Ftoc.json
-  - linkListType: quickstart
-    links:
-    - text: Azure Pipelines の CI/CD
-      url: /azure/devops-project/azure-devops-project-nodejs?toc=%2Fazure%2Fjavascript%2Ftoc.json&bc=%2Fazure%2Fjavascript%2Fbreadcrumb%2Ftoc.json
-    - text: デプロイされたアプリケーションを監視する
-      url: /azure/azure-monitor/learn/nodejs-quick-start?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-- title: メッセージング サービス
+    - text: サーバーレス コードを記述する
+      url: node-howto-write-serverless-code.md
+- title: データ
   linkLists:
   - linkListType: quickstart
     links:
-    - text: Azure Service Bus キューを使用してメッセージを渡す
-      url: /azure/service-bus-messaging/service-bus-nodejs-how-to-use-queues?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-    - text: Azure Storage キューを使用してメッセージを渡す
-      url: /azure/storage/queues/storage-nodejs-how-to-use-queues?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-- title: ストレージとデータベース
+    - text: MongoDB
+      url: /azure/cosmos-db/create-mongodb-nodejs.md?toc=/azure/javascript/toc.json&bc=/azure/javascript/breadcrumb/toc.json
+    - text: MySQL
+      url: /azure/mysql/connect-nodejs.md
+    - text: PostgreSQL
+      url: /azure/postgresql/connect-nodejs.md
+    - text: Redis Cache
+      url: /azure/azure-cache-for-redis/cache-nodejs-get-started.md?toc=/azure/developer/javascript/toc.json&bc=/
+    - text: SQL Server
+      url: /azure/azure-sql/database/connect-query-nodejs.md
+    - text: ファイルを格納する
+      url: /azure/storage/blobs/storage-quickstart-blobs-nodejs.md?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
+- title: Cognitive Services
   linkLists:
   - linkListType: quickstart
     links:
-    - text: MongoDB から Azure Cosmos DB に移行する
-      url: /azure/cosmos-db/create-mongodb-nodejs?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-    - text: BLOB の使用
-      url: /azure/storage/blobs/storage-quickstart-blobs-nodejs?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-- title: モノのインターネット (IoT) デバイス
+    - text: 音声テキスト変換
+      url: /azure/cognitive-services/speech-service/quickstarts/speech-to-text-from-file.md?tabs=linux%2Cbrowser%2Cwindowsinstall&pivots=programming-language-javascript
+    - text: テキストを翻訳する
+      url: /azure/cognitive-services/translator/quickstart-translate.md?pivots=programming-language-javascript
+    - text: 画像内のオブジェクトを検出する
+      url: /azure/cognitive-services/computer-vision/quickstarts-sdk/client-library.md?pivots=programming-language-javascript
+- title: セキュリティ、メッセージング、ログ
   linkLists:
   - linkListType: quickstart
     links:
-    - text: デバイスを管理する
-      url: /azure/iot-hub/quickstart-control-device-node?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-    - text: データを処理する
-      url: /azure/iot-hub/quickstart-send-telemetry-node?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
+    - text: 認証
+      url: /azure/active-directory/develop/quickstart-v2-javascript.md
+    - text: メッセージ キュー
+      url: /azure/service-bus-messaging/service-bus-nodejs-how-to-use-queues-new-package.md
+    - text: ログと分析
+      url: /azure/azure-monitor/learn/nodejs-quick-start.md
+- title: Azure クライアント ライブラリ (SDK) の使用
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: 最新のクライアント ライブラリ
+      url: https://azure.github.io/azure-sdk/releases/latest/index.html#javascript
+    - text: リファレンス ドキュメント
+      url: https://docs.microsoft.com/javascript/api/overview/azure/?view=azure-node-latest
+    - text: JS/TS サンプル
+      url: https://docs.microsoft.com/samples/browse/?languages=javascript%2Cnodejs%2Ctypescript
+- title: 開発ツールの活用
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: Visual Studio Code (IDE)
+      url: https://code.visualstudio.com/docs/languages/javascript
+    - text: Azure コマンド ライン インターフェイス (CLI)
+      url: /cli/azure/install-azure-cli
+    - text: Windows ターミナル
+      url: https://aka.ms/terminal
+    - text: Windows Subsystem for Linux (WSL)
+      url: /windows/wsl/install-win10#install-your-linux-distribution-of-choice

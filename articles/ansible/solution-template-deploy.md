@@ -5,12 +5,12 @@ keywords: Ansible, Azure, DevOps, ソリューション テンプレート, 仮�
 ms.topic: quickstart
 ms.date: 04/30/2019
 ms.custom: devx-track-ansible
-ms.openlocfilehash: e984d95c86541f84d56ede4d47d2f5acabee7a58
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: cae15f8a69151b7692edde3c8fb36a9818a0e305
+ms.sourcegitcommit: 2f832baf90c208a8a69e66badef5f126d23bbaaf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240074"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88725186"
 ---
 # <a name="quickstart-deploy-the-ansible-solution-template-for-azure-to-centos"></a>クイック スタート:Azure 用の Ansible ソリューション テンプレートを CentOS にデプロイする
 
@@ -26,7 +26,7 @@ Azure 用の Ansible ソリューション テンプレートは、Azure と連�
 
 ## <a name="deploy-the-ansible-solution-template"></a>Ansible ソリューション テンプレートのデプロイ
 
-1. [Azure Marketplace で Ansible ソリューション テンプレート](https://azuremarketplace.microsoft.com/marketplace/apps/azure-oss.ansible?tab=Overview)に移動します。
+1. Azure Marketplace で Ansible ソリューション テンプレートに移動します。
 
 1. **[今すぐ入手する]** を選択します。
 

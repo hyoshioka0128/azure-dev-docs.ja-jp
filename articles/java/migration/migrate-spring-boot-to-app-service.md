@@ -6,12 +6,12 @@ ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 01/22/2019
 ms.custom: devx-track-java
-ms.openlocfilehash: f5edea5267bd79db7de890b6030db3e5d02f0ea2
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 5bd1611418cca94c5f580b085a067df35d7a1248
+ms.sourcegitcommit: 2f832baf90c208a8a69e66badef5f126d23bbaaf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379766"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88725236"
 ---
 # <a name="migrate-spring-boot-applications-to-azure-app-service"></a>Spring Boot アプリケーションを Azure App Service に移行する
 
@@ -162,7 +162,7 @@ Web アプリが作成されたら、[利用可能なデプロイ メカニズ�
 
 ### <a name="recommendations"></a>Recommendations
 
-* ファイル ストレージ用に */home* ディレクトリを使用することを選択した場合は、[それを Azure Storage に置き換える](/azure/app-service/containers/how-to-serve-content-from-azure-storage)ことを検討してください。
+* ファイル ストレージ用に */home* ディレクトリを使用することを選択した場合は、[それを Azure Storage に置き換える](/azure/app-service/configure-connect-to-azure-storage)ことを検討してください。
 
 * 接続文字列、SSL キー、およびその他の機密情報が含まれている */home* ディレクトリ内に構成がある場合、可能であれば、[Azure Key Vault](/azure/app-service/app-service-key-vault-references) または[アプリケーション設定を使用するパラメーター インジェクション](/azure/app-service/configure-common#configure-app-settings)、あるいはその両方を使用することを検討してください。
 

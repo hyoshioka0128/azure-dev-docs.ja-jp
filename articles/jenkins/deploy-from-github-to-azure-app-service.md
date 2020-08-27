@@ -5,12 +5,12 @@ keywords: Jenkins, Azure, 開発, App Service
 ms.topic: tutorial
 ms.date: 08/10/2020
 ms.custom: devx-track-jenkins
-ms.openlocfilehash: 6b7f1693eb02b51107e595365bc800540f98f20e
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: dea9ebe0976b45332f166034f3ff5c92ca4cfe99
+ms.sourcegitcommit: 2f832baf90c208a8a69e66badef5f126d23bbaaf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241024"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88725206"
 ---
 # <a name="tutorial-deploy-from-github-to-azure-app-service-using-jenkins"></a>チュートリアル:Jenkins を使用して GitHub から Azure App Service にデプロイする
 
@@ -117,7 +117,7 @@ Jenkins によって GitHub が監視され、お客様の GitHub フォーク�
 
 ## <a name="create-service-principal"></a>サービス プリンシパルの作成
 
-後のセクションでは、GitHub からお客様のアプリをビルドして Azure App Service にデプロイする Jenkins パイプライン ジョブを作成します。 お客様の資格情報を入力しなくても Jenkins から Azure にアクセスできるようにするには、[サービス プリンシパル](/active-directory/develop/app-objects-and-service-principals)が必要です。 この記事のために使用できるサービス プリンシパルが既にある場合は、このセクションを省略できます。
+後のセクションでは、GitHub からお客様のアプリをビルドして Azure App Service にデプロイする Jenkins パイプライン ジョブを作成します。 お客様の資格情報を入力しなくても Jenkins から Azure にアクセスできるようにするには、[サービス プリンシパル](/azure/active-directory/develop/app-objects-and-service-principals)が必要です。 この記事のために使用できるサービス プリンシパルが既にある場合は、このセクションを省略できます。
 
 このサービス プリンシパルを作成するには、Azure CLI コマンドの [az ad sp create-for-rbac](/cli/azure/ad/sp?#az-ad-sp-create-for-rbac) を実行します。
 

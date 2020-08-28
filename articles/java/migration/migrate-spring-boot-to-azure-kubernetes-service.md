@@ -6,12 +6,12 @@ ms.author: manriem
 ms.topic: conceptual
 ms.date: 4/10/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: 37abbaf978aabad22b8aa1200bcde2e2ba2051e3
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 84e7bc49d8e52081465ce18b90c3ffe14d41f75c
+ms.sourcegitcommit: 95fdc444c424f4a7d7d53437837e9532a0b897e9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379756"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88662993"
 ---
 # <a name="migrate-spring-boot-applications-to-azure-kubernetes-service"></a>Azure Kubernetes Service に Spring Boot アプリケーションを移行する
 
@@ -89,12 +89,12 @@ Spring Boot 1.x を使用しているアプリケーションの場合は、「[
 * Auth0 の Spring Security の構成については、[Auth0 の Spring Security のドキュメント](https://auth0.com/docs/quickstart/backend/java-spring-security5/01-authorization)を参照してください。
 * PingFederate の Spring Security の構成については、[Auth0 の PingFederate の手順](https://auth0.com/authenticate/java-spring-security/ping-federate/)を参照してください。
 
-#### <a name="resources-configured-through-pivotal-cloud-foundry-pcf"></a>Pivotal Cloud Foundry (PCF) を使用して構成されたリソース
+#### <a name="resources-configured-through-vmware-tanzu-application-service-tas-formerly-pivotal-cloud-foundry"></a>VMware Tanzu Application Service (TAS) (以前の Pivotal Cloud Foundry) によって構成されたリソース
 
-Pivotal Cloud Foundry を使用して管理されているアプリケーションでは、多くの場合、前に説明したリソースを含む外部リソースが PCF サービス バインドを使用して構成されています。 このようなリソースの構成を確認するには、[Cloud Foundry CLI](https://docs.cloudfoundry.org/cf-cli/) を使用して、アプリケーションの `VCAP_SERVICES` 変数を表示します。
+TAS を使用して管理されているアプリケーションでは、多くの場合、前に説明したリソースを含む外部リソースが TAS サービス バインドを使用して構成されています。 このようなリソースの構成を確認するには、[TAS (Cloud Foundry) CLI](https://docs.cloudfoundry.org/cf-cli/) を使用して、アプリケーションの `VCAP_SERVICES` 変数を表示します。
 
 ```bash
-# Log into PCF, if needed (enter credentials when prompted)
+# Log into TAS, if needed (enter credentials when prompted)
 cf login -a <API endpoint>
 
 # Set the organization and space containing the application, if not already selected during login.
@@ -105,7 +105,7 @@ cf target space <Space Name>
 cf env <Application Name>
 ```
 
-`VCAP_SERVICES` 変数を調べて、アプリケーションにバインドされている外部サービスの構成設定を確認します。 詳細については、[PCF のドキュメント](https://docs.cloudfoundry.org/devguide/deploy-apps/environment-variable.html#VCAP-SERVICES)を参照してください。
+`VCAP_SERVICES` 変数を調べて、アプリケーションにバインドされている外部サービスの構成設定を確認します。 詳細については、 [TAS (Cloud Foundry) のドキュメント](https://docs.cloudfoundry.org/devguide/deploy-apps/environment-variable.html#VCAP-SERVICES)を参照してください。
 
 ### <a name="in-place-testing"></a>インプレース テスト
 

@@ -6,12 +6,12 @@ ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 1/20/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: 2671f861e780aad0025f881311b9bc603d72bb90
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 29e446c28cb6935ffe0eeb51fa3a4b21c93e78a4
+ms.sourcegitcommit: 95fdc444c424f4a7d7d53437837e9532a0b897e9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379686"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88662963"
 ---
 # <a name="migrate-tomcat-applications-to-containers-on-azure-kubernetes-service"></a>Azure Kubernetes Service のコンテナーに Tomcat アプリケーションを移行する
 
@@ -36,7 +36,7 @@ ms.locfileid: "86379686"
 
 Tomcat の組み込みの [PersistentManager](https://tomcat.apache.org/tomcat-9.0-doc/config/manager.html) の実装 ([StandardManager](https://tomcat.apache.org/tomcat-9.0-doc/config/manager.html#Standard_Implementation) や [FileStore](https://tomcat.apache.org/tomcat-9.0-doc/config/manager.html#Nested_Components) など) は、Kubernetes のような分散型のスケーリングされたプラットフォームで使用するように設計されていません。 AKS は、複数のポッド間で負荷を分散し、任意の時点で任意のポッドを透過的に再起動することがあります。変更可能な状態をファイル システムに保持することは推奨されません。
 
-セッションの永続化が必要な場合は、代替の `PersistentManager` の実装を使用する必要があります。これは、Redis Cache を使用して Pivotal Session Manager などの外部データ ストアへの書き込みを行います。 詳細については、「[Tomcat を使用してセッション キャッシュとして Redis を使用する](/azure/app-service/containers/configure-language-java#use-redis-as-a-session-cache-with-tomcat)」を参照してください。
+セッションの永続化が必要な場合は、代替の `PersistentManager` の実装を使用する必要があります。これは、Redis Cache を使用して VMware Tanzu Session Manager などの外部データ ストアへの書き込みを行います。 詳細については、「[Tomcat を使用してセッション キャッシュとして Redis を使用する](/azure/app-service/containers/configure-language-java#use-redis-as-a-session-cache-with-tomcat)」を参照してください。
 
 ### <a name="special-cases"></a>特殊なケース
 

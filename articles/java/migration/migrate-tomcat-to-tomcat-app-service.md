@@ -6,12 +6,12 @@ ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 1/20/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: 1b22dfa4269cc0c51450ca307bb96b787278625b
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 227908087ffdbdc3ce27a3da721464ff91b6b085
+ms.sourcegitcommit: 2f832baf90c208a8a69e66badef5f126d23bbaaf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379706"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88725196"
 ---
 # <a name="migrate-tomcat-applications-to-tomcat-on-azure-app-service"></a>Tomcat アプリケーションを Azure App Service 上の Tomcat に 移行する
 
@@ -53,7 +53,7 @@ Azure App Service によって使用されている現在のバージョンを�
 <!-- App-Service-specific addendum to inventory-persistence-usage -->
 #### <a name="dynamic-or-internal-content"></a>動的または内部のコンテンツ
 
-アプリケーションで頻繁に書き込みおよび読み取りされるファイル (一時データ ファイルなど) や、アプリケーションでのみ表示できる静的ファイルの場合、Azure Storage を App Service ファイル システムにマウントできます。 詳細については、「[Linux 上の App Service 内の Azure Storage からコンテンツを提供する](/azure/app-service/containers/how-to-serve-content-from-azure-storage)」を参照してください。
+アプリケーションで頻繁に書き込みおよび読み取りされるファイル (一時データ ファイルなど) や、アプリケーションでのみ表示できる静的ファイルの場合、Azure Storage を App Service ファイル システムにマウントできます。 詳細については、「[Linux 上の App Service 内の Azure Storage からコンテンツを提供する](/azure/app-service/configure-connect-to-azure-storage)」を参照してください。
 
 ### <a name="identify-session-persistence-mechanism"></a>ID セッションの永続化メカニズム
 
@@ -61,7 +61,7 @@ Azure App Service によって使用されている現在のバージョンを�
 
 Tomcat の組み込みの [PersistentManager](https://tomcat.apache.org/tomcat-9.0-doc/config/manager.html) の実装 ([StandardManager](https://tomcat.apache.org/tomcat-9.0-doc/config/manager.html#Standard_Implementation) や [FileStore](https://tomcat.apache.org/tomcat-9.0-doc/config/manager.html#Nested_Components) など) は、App Service のような分散型のスケーリングされたプラットフォームで使用するように設計されていません。 App Service では、複数のインスタンス間で負荷が分散され、任意の時点で任意のインスタンスが透過的に再起動される可能性があるため、変更可能な状態をファイル システムに保持することは推奨されません。
 
-セッションの永続化が必要な場合は、代替の `PersistentManager` の実装を使用する必要があります。これは、Redis Cache を使用して Pivotal Session Manager などの外部データ ストアへの書き込みを行います。 詳細については、「[Tomcat を使用してセッション キャッシュとして Redis を使用する](/azure/app-service/containers/configure-language-java#use-redis-as-a-session-cache-with-tomcat)」を参照してください。
+セッションの永続化が必要な場合は、代替の `PersistentManager` の実装を使用する必要があります。これは、Redis Cache を使用して VMware Tanzu Session Manager などの外部データ ストアへの書き込みを行います。 詳細については、「[Tomcat を使用してセッション キャッシュとして Redis を使用する](/azure/app-service/containers/configure-language-java#use-redis-as-a-session-cache-with-tomcat)」を参照してください。
 
 ### <a name="special-cases"></a>特殊なケース
 
@@ -212,7 +212,7 @@ Web アプリが作成されたら、[利用可能なデプロイ メカニズ�
 
 ### <a name="recommendations"></a>Recommendations
 
-* ファイル ストレージ用に */home* ディレクトリを使用することを選択した場合は、[それを Azure Storage に置き換える](/azure/app-service/containers/how-to-serve-content-from-azure-storage)ことを検討してください。
+* ファイル ストレージ用に */home* ディレクトリを使用することを選択した場合は、[それを Azure Storage に置き換える](/azure/app-service/configure-connect-to-azure-storage)ことを検討してください。
 
 * 接続文字列、SSL キー、およびその他の機密情報が含まれている */home* ディレクトリ内に構成がある場合、可能であれば、[Azure Key Vault](/azure/app-service/app-service-key-vault-references) と [アプリケーション設定を使用するパラメーター インジェクション](/azure/app-service/configure-common#configure-app-settings)とを組み合わせて使用することを検討してください。
 

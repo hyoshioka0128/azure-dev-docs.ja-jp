@@ -6,12 +6,12 @@ ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 2/12/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: c52326b29aca3b12310f8a1a0acd86566c45ecf8
-ms.sourcegitcommit: b224b276a950b1d173812f16c0577f90ca2fbff4
+ms.openlocfilehash: e07bc23a7316352017e1ea99dd87253f0639a559
+ms.sourcegitcommit: 95fdc444c424f4a7d7d53437837e9532a0b897e9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87810635"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88662983"
 ---
 # <a name="migrate-spring-cloud-applications-to-azure-spring-cloud"></a>Spring Cloud アプリケーションを Azure Spring Cloud に移行する
 
@@ -98,12 +98,12 @@ ext {
 * Auth0 の Spring Security の構成については、[Auth0 の Spring Security のドキュメント](https://auth0.com/docs/quickstart/backend/java-spring-security5/01-authorization)を参照してください。
 * PingFederate の Spring Security の構成については、[Auth0 の PingFederate の手順](https://auth0.com/authenticate/java-spring-security/ping-federate/)を参照してください。
 
-#### <a name="resources-configured-through-pivotal-cloud-foundry-pcf"></a>Pivotal Cloud Foundry (PCF) を使用して構成されたリソース
+#### <a name="resources-configured-through-vmware-tanzu-application-service-tas-formerly-pivotal-cloud-foundry"></a>VMware Tanzu Application Service (TAS) (以前の Pivotal Cloud Foundry) によって構成されたリソース
 
-Pivotal Cloud Foundry を使用して管理されているアプリケーションでは、多くの場合、前に説明したリソースを含む外部リソースが PCF サービス バインドを使用して構成されています。 このようなリソースの構成を確認するには、[Cloud Foundry CLI](https://docs.cloudfoundry.org/cf-cli/) を使用して、アプリケーションの `VCAP_SERVICES` 変数を表示します。
+TAS を使用して管理されているアプリケーションでは、多くの場合、前に説明したリソースを含む外部リソースが TAS サービス バインドを使用して構成されています。 このようなリソースの構成を確認するには、[TAS (Cloud Foundry) CLI](https://docs.cloudfoundry.org/cf-cli/) を使用して、アプリケーションの `VCAP_SERVICES` 変数を表示します。
 
 ```bash
-# Log into PCF, if needed (enter credentials when prompted)
+# Log into TAS, if needed (enter credentials when prompted)
 cf login -a <API endpoint>
 
 # Set the organization and space containing the application, if not already selected during login.
@@ -114,7 +114,7 @@ cf target space <space name>
 cf env <Application Name>
 ```
 
-`VCAP_SERVICES` を調べて、アプリケーションにバインドされている外部サービスの構成設定を確認します。 詳細については、[PCF のドキュメント](https://docs.cloudfoundry.org/devguide/deploy-apps/environment-variable.html#VCAP-SERVICES)を参照してください。
+`VCAP_SERVICES` 変数を調べて、アプリケーションにバインドされている外部サービスの構成設定を確認します。 詳細については、 [TAS (Cloud Foundry) のドキュメント](https://docs.cloudfoundry.org/devguide/deploy-apps/environment-variable.html#VCAP-SERVICES)を参照してください。
 
 #### <a name="all-other-external-resources"></a>その他のすべての外部リソース
 

@@ -7,11 +7,12 @@ ms.service: mobile-services
 ms.topic: article
 ms.date: 06/08/2020
 ms.author: masoucou
-ms.openlocfilehash: 782123b4b567010a43ce72c622f7db5a65679db9
-ms.sourcegitcommit: f02ff55cef47581303a217cf1d310879cd722237
+ms.openlocfilehash: 2afdf7c4194052aff1fe7c7f915540b270ce588e
+ms.sourcegitcommit: c012db9b6e369813c56f35a0ddbb1d3a73db5c4d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84632584"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88889236"
 ---
 # <a name="add-authentication-and-manage-user-identities-in-your-mobile-apps"></a>ご利用のモバイル アプリに認証を追加し、ユーザー ID を管理する
 
@@ -44,14 +45,14 @@ ms.locfileid: "84632584"
 
 [Azure Active Directory](https://azure.microsoft.com/services/active-directory/) は Microsoft が提供するクラウドベースの ID およびアクセス管理サービスであり、従業員による以下のリソースへのサインインとアクセスを支援します。
 
-- Microsoft Office 365、Azure portal、およびその他何千という サービスとしてのソフトウェア (SaaS) アプリケーションなどの外部リソース。
+- Microsoft 365、Azure portal、およびその他何千という サービスとしてのソフトウェア (SaaS) アプリケーションなどの外部リソース。
 - 企業ネットワークとイントラネット上のアプリや、自分の組織で開発したクラウド アプリなどの内部リソース。
 
 ### <a name="azure-active-directory-features"></a>Azure Active Directory の機能
 
 - ユーザーが必要とするアプリケーションにユーザーを接続することによるシームレスかつ安全性の高いアクセス。
 - 包括的な ID 保護と、ユーザー、位置情報、デバイス、データ、アプリ コンテキストに基づく ID およびアクセスの強化されたセキュリティ。
-- 何千もの事前統合されたアプリ。Office 365、Salesforce.com、Box などの、商用アプリケーションとカスタム アプリケーションの両方があります。
+- 何千もの事前統合されたアプリ。Microsoft 365、Salesforce.com、Box などの、商用アプリケーションとカスタム アプリケーションの両方があります。
 - 大規模なアクセス管理機能。
 
 ### <a name="azure-active-directory-references"></a>Azure Active Directory の参考資料

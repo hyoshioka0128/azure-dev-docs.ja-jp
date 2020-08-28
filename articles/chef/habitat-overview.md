@@ -5,12 +5,12 @@ keywords: azure、chef、devops、仮想マシン、概要、自動化、habitat
 ms.date: 05/15/2018
 ms.topic: article
 ms.custom: devx-track-chef
-ms.openlocfilehash: af7a08e526a5b9109cb9662b1be5d2243af92e9d
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: d2a834c631986b70a13c95f1403e84e82886a5f2
+ms.sourcegitcommit: 95fdc444c424f4a7d7d53437837e9532a0b897e9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240774"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88662943"
 ---
 # <a name="use-habitat-to-deploy-your-application-to-azure"></a>Habitat を使用してアプリケーションを Azure にデプロイする
 
@@ -28,7 +28,7 @@ Habitat を使用すると、ランタイムの依存関係が正確に表され
 
 ## <a name="run-any-application-anywhere"></a>任意の場所で任意のアプリケーションを実行
 
-Habitat では、アプリケーションは任意のランタイム環境で変更せずに実行できます。 これには、ベア メタルや仮想マシンから、コンテナー (Docker など)、クラスター管理システム (Mesosphere や Kubernetes など)、PaaS システム (Pivotal Cloud Foundry) に至るすべてのものが含まれます。
+Habitat では、アプリケーションは任意のランタイム環境で変更せずに実行できます。 これには、ベア メタルや仮想マシンから、コンテナー (Docker など)、クラスター管理システム (Mesosphere や Kubernetes など)、PaaS システム (VMware Tanzu Application Service (以前の Pivotal Cloud Foundry)) まで、あらゆるものが含まれます。
 
 ## <a name="integrate-into-the-chef-devops-workflow"></a>Chef DevOps ワークフローとの統合
 

@@ -3,14 +3,14 @@ title: クイック スタート - Azure CLI を使用して Jenkins を構成�
 description: Azure Linux 仮想マシンに Jenkins をインストールし、サンプル Java アプリケーションをビルドする方法について説明します。
 keywords: Jenkins, Azure, DevOps, ポータル, Linux, 仮想マシン
 ms.topic: quickstart
-ms.date: 08/19/2020
+ms.date: 08/21/2020
 ms.custom: devx-track-jenkins
-ms.openlocfilehash: b5be59dc1ed3fab69051a8ddd23576e27c966a7b
-ms.sourcegitcommit: 800c5e05ad3c0b899295d381964dd3d47436ff90
+ms.openlocfilehash: 4e2250e6ca76c804f08a4f6ab4715ae4fc094570
+ms.sourcegitcommit: 2f832baf90c208a8a69e66badef5f126d23bbaaf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88614558"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88725216"
 ---
 # <a name="quickstart-configure-jenkins-using-azure-cli"></a>クイック スタート:Azure CLI を使用して Jenkins を構成する
 
@@ -22,7 +22,7 @@ ms.locfileid: "88614558"
 > * Jenkins をダウンロードしてインストールするセットアップ ファイルを作成する
 > * リソース グループを作成する
 > * セットアップ ファイルを使用して仮想マシンを作成する
-> * 仮想マシンに SSH 接続できるように ポート 8080 を開く
+> * 仮想マシンで Jenkins にアクセスするためにポート 8080 を開く
 > * SSH 経由で仮想マシンに接続する
 > * GitHub のサンプル Java アプリに基づいてサンプル Jenkins ジョブを構成する
 > * サンプル Jenkins ジョブをビルドする
@@ -88,7 +88,7 @@ Jenkins の構成で問題が発生した場合は、[Cloudbees Jenkins のイ�
     az vm list -d -o table --query "[?name=='QuickstartJenkins-vm']"
     ```
 
-1. [az vm open](/cli/azure/vm#az-vm-open-port) を使用して、新しい仮想マシンでポート 8080 を開きます。
+1. 既定では、Jenkins はポート 8080 で実行されます。 そのため、 [az vm open](/cli/azure/vm#az-vm-open-port) を使用して、新しい仮想マシンでポート 8080 を開きます。
 
     ```azurecli
     az vm open-port \

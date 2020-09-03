@@ -6,12 +6,12 @@ ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 1/20/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: 227908087ffdbdc3ce27a3da721464ff91b6b085
-ms.sourcegitcommit: 2f832baf90c208a8a69e66badef5f126d23bbaaf
+ms.openlocfilehash: 7a8de3191551be1557b68cab55b6d91afcf41feb
+ms.sourcegitcommit: 4036ac08edd7fc6edf8d11527444061b0e4531ef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88725196"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89062001"
 ---
 # <a name="migrate-tomcat-applications-to-tomcat-on-azure-app-service"></a>Tomcat アプリケーションを Azure App Service 上の Tomcat に 移行する
 
@@ -44,8 +44,6 @@ Azure App Service によって使用されている現在のバージョンを�
 
 [!INCLUDE [inventory-secrets](includes/inventory-secrets.md)]
 
-### <a name="inventory-certificates"></a>証明書をインベントリする
-
 [!INCLUDE [inventory-certificates](includes/inventory-certificates.md)]
 
 [!INCLUDE [determine-whether-and-how-the-file-system-is-used](includes/determine-whether-and-how-the-file-system-is-used.md)]
@@ -62,6 +60,10 @@ Azure App Service によって使用されている現在のバージョンを�
 Tomcat の組み込みの [PersistentManager](https://tomcat.apache.org/tomcat-9.0-doc/config/manager.html) の実装 ([StandardManager](https://tomcat.apache.org/tomcat-9.0-doc/config/manager.html#Standard_Implementation) や [FileStore](https://tomcat.apache.org/tomcat-9.0-doc/config/manager.html#Nested_Components) など) は、App Service のような分散型のスケーリングされたプラットフォームで使用するように設計されていません。 App Service では、複数のインスタンス間で負荷が分散され、任意の時点で任意のインスタンスが透過的に再起動される可能性があるため、変更可能な状態をファイル システムに保持することは推奨されません。
 
 セッションの永続化が必要な場合は、代替の `PersistentManager` の実装を使用する必要があります。これは、Redis Cache を使用して VMware Tanzu Session Manager などの外部データ ストアへの書き込みを行います。 詳細については、「[Tomcat を使用してセッション キャッシュとして Redis を使用する](/azure/app-service/containers/configure-language-java#use-redis-as-a-session-cache-with-tomcat)」を参照してください。
+
+[!INCLUDE [identify-all-outside-processes-and-daemons-running-on-the-production-servers](includes/identify-all-outside-processes-and-daemons-running-on-the-production-servers.md)]
+
+[!INCLUDE [identify-all-outside-processes-and-daemons-running-on-the-production-servers](includes/identify-all-outside-processes-and-daemons-running-on-the-production-servers.md)]
 
 ### <a name="special-cases"></a>特殊なケース
 
@@ -82,10 +84,6 @@ Tomcat の組み込みの [PersistentManager](https://tomcat.apache.org/tomcat-9
 [Tomcat クラスタリング](https://tomcat.apache.org/tomcat-9.0-doc/cluster-howto.html) は Azure App Service ではサポートされていません。 代わりに、Tomcat 固有の機能を使用せずに Azure App Service によってスケーリングと負荷分散を構成して管理できます。 セッション状態を別の場所に保持して、レプリカの間で使用できるようにすることができます。 詳細については、「[ID セッションの永続化メカニズム](#identify-session-persistence-mechanism)」を参照してください。
 
 アプリケーションでクラスタリングが使用されているかどうかを判断するには、*server.xml* ファイルの `<Host>` または `<Engine>` 要素内で `<Cluster>` 要素を探します。
-
-#### <a name="identify-all-outside-processesdaemons-running-on-the-production-servers"></a>実稼働サーバーで実行されているすべての外部プロセス/デーモンを識別する
-
-デーモンの監視など、アプリケーション サーバーの外部で実行されているプロセスは、他の場所に移行するか削除する必要があります。
 
 #### <a name="determine-whether-non-http-connectors-are-used"></a>非 HTTP コネクタが使用されているかどうかを判断する
 

@@ -6,12 +6,12 @@ ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 5/26/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: 7bc4a5188181f3b4b6d98b5308a5027a42bbac5e
-ms.sourcegitcommit: b224b276a950b1d173812f16c0577f90ca2fbff4
+ms.openlocfilehash: 4d2f84c6c77294c9a2d25028608e2feb712599f8
+ms.sourcegitcommit: 4036ac08edd7fc6edf8d11527444061b0e4531ef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87810585"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89062059"
 ---
 # <a name="migrate-spring-boot-applications-to-azure-spring-cloud"></a>Spring Boot アプリケーションを Azure Spring Cloud に移行する
 
@@ -74,94 +74,8 @@ Azure Spring Cloud によって、デプロイされたアプリケーション�
 
 ## <a name="migration"></a>移行
 
-### <a name="create-an-azure-spring-cloud-instance-and-apps"></a>Azure Spring Cloud のインスタンスとアプリを作成する
-
-存在していない場合、Azure サブスクリプションで Azure Spring Cloud インスタンスをプロビジョニングします。 その後、そこでアプリケーションを作成します。 詳細については、「[クイック スタート: Azure portal を使用して既存の Azure Spring Cloud アプリケーションを起動する](/azure/spring-cloud/spring-cloud-quickstart-launch-app-portal)」の手順に従ってください。
-
-[!INCLUDE [ensure-console-logging-and-configure-diagnostic-settings-azure-spring-cloud](includes/ensure-console-logging-and-configure-diagnostic-settings-azure-spring-cloud.md)]
-
-[!INCLUDE [configure-persistent-storage-azure-spring-cloud](includes/configure-persistent-storage-azure-spring-cloud.md)]
-
-### <a name="migrate-all-certificates-to-keyvault"></a>すべての証明書を KeyVault に移行する
-
-Azure Spring Cloud は JRE キーストアへのアクセスを提供しないため、Azure KeyVault に証明書を移行し、KeyVault 内の証明書にアクセスするようにアプリケーション コードを変更する必要があります。 詳細については、「[Key Vault 証明書の概要](/azure/key-vault/certificates/certificate-scenarios)」と [Java 用の Azure Key Vault の証明書クライアント ライブラリ](/java/api/overview/azure/security-keyvault-certificates-readme)に関するページを参照してください。
-
-### <a name="remove-application-performance-management-apm-integrations"></a>アプリケーション パフォーマンス管理 (APM) 統合を削除する
-
-APM ツール/エージェントとの統合をすべて削除します。 Azure Monitor を使用したパフォーマンス管理の構成については、「[移行後](#post-migration)」セクションを参照してください。
-
-### <a name="disable-metrics-clients-and-endpoints-in-your-applications"></a>アプリケーションのメトリック クライアントおよびエンドポイントを無効にする
-
-使用しているメトリック クライアント、またはアプリケーションで公開されているメトリック エンドポイントを削除します。
-
-### <a name="deploy-the-application"></a>アプリケーションの配置
-
-移行した各マイクロサービス (Spring Cloud Config および Registry のサーバーは含みません) をデプロイします。「[クイック スタート:Azure portal を使用して既存の Azure Spring Cloud アプリケーションを起動する](/azure/spring-cloud/spring-cloud-quickstart-launch-app-portal)」の手順に従ってください。
-
-### <a name="configure-per-service-secrets-and-externalized-settings"></a>サービスごとのシークレットと外部化された設定を構成する
-
-サービスごとの構成設定を各サービスに環境変数として挿入できます。 Azure portal で次の手順を使用します。
-
-1. Azure Spring Cloud インスタンスに移動し、 **[アプリ]** を選択します。
-1. 構成するサービスを選択します。
-1. **[構成]** を選択します。
-1. 構成する変数を入力します。
-1. **[保存]** を選択します。
-
-![Spring Cloud アプリの構成設定](media/migrate-spring-cloud-to-azure-spring-cloud/spring-cloud-app-configuration-settings.png)
-
-### <a name="migrate-and-enable-the-identity-provider"></a>ID プロバイダーを移行して有効にする
-
-Spring Cloud アプリケーションのいずれかで認証または認可が必要な場合は、それらが ID プロバイダーにアクセスするように構成されていることを確認します。
-
-* ID プロバイダーが Azure Active Directory である場合は、変更は必要ありません。
-* ID プロバイダーがオンプレミスの Active Directory フォレストである場合は、Azure Active Directory を使用したハイブリッド ID ソリューションの実装を検討します。 詳細については、[ハイブリッド ID のドキュメント](/azure/active-directory/hybrid/)を参照してください。
-* ID プロバイダーが別のオンプレミス ソリューション (PingFederate など) である場合は、「[Azure AD Connect のカスタム インストール](/azure/active-directory/hybrid/how-to-connect-install-custom)」トピックを参照して、Azure Active Directory とのフェデレーションを構成します。 または、Spring Security を使用して [OAuth2/OpenID Connect](https://docs.spring.io/spring-security/site/docs/current/reference/html5/#oauth2) または [SAML](https://docs.spring.io/spring-security/site/docs/current/reference/html5/#servlet-saml2) 経由で ID プロバイダーを使用することを検討します。
-
-### <a name="expose-the-application"></a>アプリケーションを公開する
-
-既定では、Azure Spring Cloud にデプロイされたアプリケーションは外部からは見えません。 次のコマンドでパブリックにすることでアプリケーションを公開できます。
-
-```azurecli
-az spring-cloud app update -n <application name> --is-public true
-```
-
-Spring Cloud Gateway を使用しているか、使用する予定であれば、この手順をスキップしてください (これに関する詳細は次のセクションにあります)。
+[!INCLUDE [migrate-steps-spring-boot-azure-spring-cloud](includes/migrate-steps-spring-boot-azure-spring-cloud.md)]
 
 ## <a name="post-migration"></a>移行後
 
-これで移行が完了したので、アプリケーションが予想どおりに動作することを確認します。 その後、次の推奨事項を利用することでアプリケーションをよりクラウドネイティブにすることができます。
-
-* Spring Cloud レジストリと連動するようにアプリケーションを有効にすることを検討してください。 これにより、デプロイされた他のマイクロサービスやクライアントでアプリケーションを動的に検出できます。 詳細については、[Java Spring アプリをデプロイ用に準備する](/azure/spring-cloud/spring-cloud-tutorial-prepare-app-deployment)」を参照してください。 次に、Spring Client ロード バランサーを使用するようにアプリケーション クライアントを変更します。 これにより、クライアントでは実行中のすべてのアプリケーション インスタンスのアドレスを取得し、別のインスタンスが壊れたか、応答しなくなった場合に動作するインスタンスを見つけることができます。 詳細については、Spring ブログの「[Spring Tips:Spring Cloud Loadbalancer](https://spring.io/blog/2020/03/25/spring-tips-spring-cloud-loadbalancer)」(Spring に関するヒント: Spring Cloud ロード バランサー) を参照してください。
-
-* アプリケーションをパブリックにする代わりに、[Spring Cloud Gateway](https://cloud.spring.io/spring-cloud-gateway/reference/html/) インスタンスの追加を検討してください。 Spring Cloud Gateway は、Azure Spring Cloud インスタンスにデプロイされたすべてのアプリケーションまたはマイクロサービスの単一エンドポイントとなります。 Spring Cloud Gateway が既にデプロイされている場合は、確実に新しくデプロイされたアプリケーションにトラフィックを送信するように構成します。
-
-* Spring Cloud Config サーバーを追加し、すべての Spring Cloud マイクロサービスの構成を、バージョン管理も含め、一元的に管理することを検討してください。 まず、構成を格納するための Git リポジトリを作成し、それを使用するように Azure Spring Cloud インスタンスを構成します。 詳細については、[自分のサービス向けに Spring Cloud Config Server インスタンスを設定する](/azure/spring-cloud/spring-cloud-tutorial-config-server)」を参照してください。 次に、以下の手順で構成を移行します。
-
-  1. Azure Spring Cloud インスタンスに定義したアプリケーションと同じ名前で、構成 Git リポジトリにディレクトリを作成します。
-
-  1. このディレクトリの中に、次の内容で *bootstrap.yml* ファイルを作成します。
-
-     ```yml
-     spring:
-       application:
-         name: <Your the application name used in the previous step>
-     ```
-
-  1. 上記のディレクトリ内に *application.yml* ファイルを作成し、そこにアプリケーション設定を移動します。 設定が以前、 *.properties* ファイルに含まれていた場合は、YAML に変換する必要があります。
-
-  1. これらの変更を Git リポジトリにコミットし、プッシュします。
-
-* 一貫性のある自動デプロイのためにデプロイ パイプラインを追加することを検討します。 [Azure Pipelines](/azure/spring-cloud/spring-cloud-howto-cicd)、[GitHub Actions](/azure/spring-cloud/spring-cloud-howto-github-actions)、 [Jenkins](/azure/jenkins/tutorial-jenkins-deploy-cli-spring-cloud-service) についての手順が用意されています。
-
-* ステージング環境のデプロイを使用してコードの変更を運用環境でテストした後に、一部またはすべてのエンド ユーザーがそれらを使用できるようにすることを検討します。 詳細については、「[Azure Spring Cloud でステージング環境を設定する](/azure/spring-cloud/spring-cloud-howto-staging-environment)」を参照してください。
-
-* サポートされている Azure データベースにアプリケーションを接続するために、サービス バインドを追加することを検討します。 これらのサービス バインドにより、資格情報などの接続情報を Spring Cloud アプリケーションに提供する必要がなくなります。
-
-* アプリケーションのパフォーマンスおよび相互作用を監視するために、分散トレースと Azure App Insights の使用を検討します。 詳細については、「[Azure Spring Cloud で分散トレースを使用する](/azure/spring-cloud/spring-cloud-tutorial-distributed-tracing)」を参照してください。
-
-* 異常な状態を迅速に検出して対処するために、Azure Monitor のアラート ルールおよびアクション グループを追加することを検討します。 詳細については、[アラートとアクション グループを使用して Spring Cloud のリソースを監視する](/azure/spring-cloud/spring-cloud-tutorial-alerts-action-groups)」を参照してください。
-
-* 待機時間を短くし、信頼性とフォールト トレランスを高めるために、別のリージョンに Azure Spring Cloud デプロイをレプリケートすることを検討します。 [Azure Traffic Manager](/azure/traffic-manager) を使用してデプロイ間で負荷を分散するか、[Azure Front Door](/azure/frontdoor) を使用して SSL オフロードと DDoS 保護付きの Web アプリケーション ファイアウォールを追加します。
-
-* geo レプリケーションが不要な場合は、[Azure Application Gateway](/azure/application-gateway) を追加して、SSL オフロードと DDoS 保護付きの Web アプリケーション ファイアウォールを追加することを検討します。
+[!INCLUDE [post-migration-spring-boot-azure-spring-cloud](includes/post-migration-spring-boot-azure-spring-cloud.md)]

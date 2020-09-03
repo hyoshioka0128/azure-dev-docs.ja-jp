@@ -3,14 +3,14 @@ title: クイック スタート - Azure Cloud Shell を使用して Ansible を
 description: このクイックスタートでは、Azure Cloud Shell で Bash を使用してさまざまな Ansible タスクを実行する方法について説明します
 keywords: Ansible, Azure, DevOps, Bash, Cloud Shell, プレイブック, Bash
 ms.topic: quickstart
-ms.date: 08/13/2020
+ms.date: 08/31/2020
 ms.custom: devx-track-ansible
-ms.openlocfilehash: fa118213624db21192617b65930041b8712075bd
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 42d7b57d9890bce3a432fba3c6fdcf3080ddb63c
+ms.sourcegitcommit: 2f98cf2a394d4fd82ddc917ac1041c1dc08473b6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240314"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89275162"
 ---
 # <a name="quickstart-configure-ansible-using-azure-cloud-shell"></a>クイック スタート:Azure Cloud Shell を使用した Ansible の構成
 

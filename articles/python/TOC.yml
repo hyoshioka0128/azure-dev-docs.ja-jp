@@ -112,6 +112,22 @@
           href: how-to-assign-role-permissions.md
         - name: サービス プリンシパルを管理する
           href: how-to-manage-service-principals.md
+        - name: チュートリアル
+          items:
+            - name: 1 概要と背景
+              href: walkthrough-tutorial-authentication-01.md
+            - name: 2 認証の要件
+              href: walkthrough-tutorial-authentication-02.md
+            - name: 3 サードパーティー API の実装
+              href: walkthrough-tutorial-authentication-03.md
+            - name: 4 メイン アプリの実装
+              href: walkthrough-tutorial-authentication-04.md
+            - name: 5 依存関係と環境変数
+              href: walkthrough-tutorial-authentication-05.md
+            - name: 6 メイン アプリの起動コード
+              href: walkthrough-tutorial-authentication-06.md
+            - name: 7 メイン アプリのエンドポイント
+              href: walkthrough-tutorial-authentication-07.md
     - name: パッケージをインストールする
       href: azure-sdk-install.md
     - name: パッケージ インデックス

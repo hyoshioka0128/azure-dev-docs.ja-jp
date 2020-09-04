@@ -14,28 +14,28 @@ metadata:
   ms.service: multiple
   ms.devlang: python
   ms.custom: devx-track-python
-  ms.openlocfilehash: 1a89da5a7ce092de4d8194db2136d390fec22928
-  ms.sourcegitcommit: 5051b25ad32be891800b23fc7ae12a4ca85cbb73
+  ms.openlocfilehash: 2dbd633555e7841eb28f58813a9ba292da989dd6
+  ms.sourcegitcommit: 324da872a9dfd4c55b34739824fc6a6598f2ae12
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 08/12/2020
-  ms.locfileid: "88147253"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89374543"
 landingContent:
-- title: サーバーレス関数のデプロイ
+- title: サーバーレスな Functions
   linkLists:
   - linkListType: how-to-guide
     links:
-    - text: Visual Studio Code の使用
+    - text: Visual Studio Code を使用してデプロイする
       url: tutorial-vs-code-serverless-python-01.md
-    - text: コマンド ラインを使用する
+    - text: コマンド ラインを使用してデプロイする
       url: /azure/azure-functions/functions-create-first-azure-function-azure-cli?pivots=programming-language-python
     - text: Visual Studio Code を使用してストレージに接続する
       url: /azure/azure-functions/functions-add-output-binding-storage-queue-vs-code?pivots=programming-language-python
     - text: コマンド ラインを使用してストレージに接続する
       url: /azure/azure-functions/functions-add-output-binding-storage-queue-cli?tabs=bash%2Cbrowser&pivots=programming-language-python
-- title: Web アプリのデプロイ
+- title: Web Apps
   linkLists:
-  - linkListType: how-to-guide
+  - linkListType: deploy
     links:
     - text: Visual Studio Code を使用した Flask
       url: tutorial-deploy-app-service-on-linux-01.md
@@ -47,9 +47,9 @@ landingContent:
       url: /azure/app-service/tutorial-python-postgresql-app
     - text: Visual Studio Code を使用したコンテナー
       url: tutorial-deploy-containers-01.md
-    - text: CI/CD パイプラインを構築する
+    - text: CI/CD パイプライン
       url: /azure/devops/pipelines/ecosystems/python-webapp
-- title: 機械学習モデルのデプロイ
+- title: 機械学習
   linkLists:
   - linkListType: how-to-guide
     links:
@@ -63,9 +63,9 @@ landingContent:
       url: quickstarts-cognitive-services.md
     - text: さらに表示...
       url: quickstarts-machine-learning.md
-- title: データとストレージのデプロイ
+- title: データとストレージ
   linkLists:
-  - linkListType: how-to-guide
+  - linkListType: deploy
     links:
     - text: SQL データベース
       url: quickstarts-data-solutions.md#sql-databases
@@ -73,7 +73,7 @@ landingContent:
       url: quickstarts-data-solutions.md#tables-blobs-files-nosql
     - text: ビッグ データと分析
       url: quickstarts-data-solutions.md#big-data-and-analytics
-- title: Azure ライブラリ (SDK) の使用
+- title: Azure ライブラリ (SDK)
   linkLists:
   - linkListType: get-started
     links:
@@ -85,7 +85,9 @@ landingContent:
       url: azure-sdk-overview.md
     - text: ライブラリの使用パターンについて
       url: azure-sdk-library-usage-patterns.md
-- title: 開発ツールの活用
+    - text: Azure サービスによる認証
+      url: walkthrough-tutorial-authentication-01.md
+- title: 開発者用ツール
   linkLists:
   - linkListType: get-started
     links:

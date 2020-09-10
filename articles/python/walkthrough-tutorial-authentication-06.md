@@ -4,12 +4,12 @@ description: API エンドポイントに必要な DefaultAzureCredential オブ
 ms.date: 08/24/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 5fc344fcf00655bbac7b2a20a2401ffb52482447
-ms.sourcegitcommit: 324da872a9dfd4c55b34739824fc6a6598f2ae12
+ms.openlocfilehash: 17d5e007c65572ef301a4aa682260af6f492a626
+ms.sourcegitcommit: 5ab6e90e20a87f9a8baea652befc74158a9b6613
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89379529"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89614277"
 ---
 # <a name="part-6-main-app-startup-code"></a>パート 6: メイン アプリのスタートアップ コード
 
@@ -25,7 +25,8 @@ app = Flask(__name__)
 number_url = os.environ["THIRD_PARTY_API_ENDPOINT"]
 ```
 
-次に、[`DefaultAzureCredential`](/api/azure-identity/azure.identity.defaultazurecredential?view=azure-python) オブジェクトを取得します。これは、Azure サービスでの認証時に使用することが推奨されている資格情報です。 [Python アプリの認証方法](azure-sdk-authenticate.md#authenticate-with-defaultazurecredential)に関する記事を参照してください。
+次に、[`DefaultAzureCredential`](/python/api/azure-identity/azure.identity.defaultazurecredential?view=azure-python
+) オブジェクトを取得します。これは、Azure サービスでの認証時に使用することが推奨されている資格情報です。 [Python アプリの認証方法](azure-sdk-authenticate.md#authenticate-with-defaultazurecredential)に関する記事を参照してください。
 
 ```python
 credential = DefaultAzureCredential()

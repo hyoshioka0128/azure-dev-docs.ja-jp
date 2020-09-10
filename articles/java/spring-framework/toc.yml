@@ -89,8 +89,6 @@
           href: 'https://github.com/Microsoft/todo-app-java-on-azure/'
         - name: MySQL を使用した To Do List
           href: 'https://github.com/Azure-Samples/mysql-spring-boot-todo'
-        - name: Java SDK を使用した Azure Storage
-          href: configure-spring-boot-starter-java-app-with-azure-storage-api.md
         - name: Spring Initializr
           href: 'https://start.spring.io/'
     - name: リファレンス

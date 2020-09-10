@@ -4,16 +4,16 @@ description: Azure SDK for Python ライブラリを使用して、Azure Storage
 ms.date: 05/29/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 6a956cf0f4f4689e653307f95d5f0900c8d01589
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: b774d986b886aae528c97c4583511a8d6c0ba0a5
+ms.sourcegitcommit: 2f98cf2a394d4fd82ddc917ac1041c1dc08473b6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87983434"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89275206"
 ---
 # <a name="example-provision-azure-storage-using-the-azure-libraries-for-python"></a>例:Python 用 Azure ライブラリを使用して Azure Storage をプロビジョニングする
 
-この記事では、Python スクリプトで Azure 管理ライブラリを使用して、Azure Storage アカウントと Blob Storage コンテナーを含むリソース グループをプロビジョニングする方法について説明します。 ([同等の Azure CLI コマンド](#for-reference-equivalent-azure-cli-commands)については、この記事の後半で説明します。)
+この記事では、Python スクリプトで Azure 管理ライブラリを使用して、Azure Storage アカウントと Blob Storage コンテナーを含むリソース グループをプロビジョニングする方法について説明します。 ([同等の Azure CLI コマンド](#for-reference-equivalent-azure-cli-commands)については、この記事の後半で説明します。 Azure portal を使用する場合は、「[Azure Storage アカウントの作成](/azure/storage/common/storage-account-create?tabs=azure-portal)」と [BLOB コンテナーの作成](/azure/storage/blobs/storage-quickstart-blobs-portal)に関する記事を参照してください。)
 
 リソースのプロビジョニング後、[Azure Storage の使用例](azure-sdk-example-storage-use.md)に関するページを参照し、Python アプリケーション コードで Azure クライアント ライブラリを使用し、Blob Storage コンテナーにファイルをアップロードします。
 

@@ -4,12 +4,12 @@ description: Azure SDK for Python ライブラリを使用して、Azure Storage
 ms.date: 08/05/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: bcb8d680950e2c42d3d7f092478c4d6096454b12
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: 8bbbb03a4bbbdb24e2c45692a0a982341fbcd7a5
+ms.sourcegitcommit: 2f98cf2a394d4fd82ddc917ac1041c1dc08473b6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87982694"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89275136"
 ---
 # <a name="example-access-azure-storage-using-the-azure-libraries-for-python"></a>例:Python 用 Azure ライブラリを使用して Azure Storage にアクセスする
 
@@ -21,7 +21,16 @@ ms.locfileid: "87982694"
 
 「[Azure 用のローカル Python 開発環境を構成する](configure-local-development-environment.md)」の手順をすべて実行します (まだ済んでいない場合)。
 
-必ず、ローカル開発用のサービス プリンシパルを作成し、このプロジェクト用の仮想環境を作成してアクティブ化してください。
+必ず、ローカル開発用のサービス プリンシパルを作成し、サービス プリンシパルの環境変数を設定 (下記参照) し、このプロジェクト用の仮想環境を作成してアクティブ化してください。
+
+この例では、次の環境変数が既に設定されていることを前提としています。
+
+| 変数名 | 必要な値 |
+| --- | --- |
+| AZURE_SUBSCRIPTION_ID | Azure サブスクリプションの GUID。 |
+| AZURE_CLIENT_ID | ローカル サービス プリンシパルのクライアント ID。 |
+| AZURE_CLIENT_SECRET | サービス プリンシパルのクライアント シークレット。 |
+| AZURE_TENANT_ID | サービス プリンシパルのテナント ID。 |
 
 ## <a name="2-install-library-packages"></a>2:ライブラリ パッケージをインストールする
 

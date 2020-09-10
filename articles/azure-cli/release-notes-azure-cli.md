@@ -8,12 +8,12 @@ ms.date: 04/21/2020
 ms.topic: article
 ms.service: azure-cli
 ms.devlang: azurecli
-ms.openlocfilehash: 74262a0be1062f32f63a225521f92657334c9994
-ms.sourcegitcommit: 815cf2acff71e849735f7afce54723f03ffa5df3
+ms.openlocfilehash: 4dcc1bcfb6e42089e221a1ebd7eb5abc0d37a4e3
+ms.sourcegitcommit: 324da872a9dfd4c55b34739824fc6a6598f2ae12
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88501267"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89374553"
 ---
 # <a name="azure-cli-release-notes"></a>Azure CLI リリース ノート
 
@@ -573,7 +573,7 @@ ms.locfileid: "88501267"
 
 * [破壊的変更] #11883 を修正: `az role assignment create`: 空のスコープの場合にエラーが表示されます
 
-### <a name="security"></a>セキュリティ
+### <a name="security"></a>Security
 
 * ストレージ アカウントの高度な脅威保護設定を表示および管理するための新しいコマンド `az atp show` と `az atp update` を追加します。
 
@@ -2235,7 +2235,7 @@ CLI では、将来、個々のパッケージのバージョン番号が削除�
 ### <a name="role"></a>Role
 * [非推奨]`create-for-rbac` の `--password` 引数を非推奨にしました。 代わりに、CLI によって生成された安全なパスワードを使用してください
 
-### <a name="security"></a>セキュリティ
+### <a name="security"></a>Security
 * 最初のリリース
 
 ### <a name="storage"></a>ストレージ
@@ -4571,7 +4571,7 @@ CLI では、将来、個々のパッケージのバージョン番号が削除�
 
 * `vmss get-instance-view` で `--instance-id *` を使用した場合に、余分な間違えた情報が表示される問題を修正しました
 * `vmss create` に `--lb-sku` のサポートを追加しました。
-* `[vm|vmss] create` の管理者名ブラックリストから人物名を削除しました
+* `[vm|vmss] create` の管理者名ブロック リストから人物名を削除しました
 * イメージからプラン情報を抽出できない場合に `[vm|vmss] create` がエラーをスローする問題を修正しました
 * 内部 LB で vmms scaleset を作成するときのクラッシュを修正しました
 * `vm availability-set create` で `--no-wait` 引数が機能しない問題を修正しました

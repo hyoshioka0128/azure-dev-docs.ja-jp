@@ -4,12 +4,12 @@ description: 統合テストと、Azure DevOps を使用した Terraform プロ�
 ms.topic: tutorial
 ms.date: 07/31/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 3d305fb63deffb8f56ebd2cb1503bac543c5b84b
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: ced6dc9a3ff40ceee3ac37daea3ab6300a529e0e
+ms.sourcegitcommit: 62f78d529c02c7d7895d32ec8ed415bf0946d056
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241304"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89557555"
 ---
 # <a name="tutorial-configure-integration-tests-for-terraform-projects-in-azure"></a>チュートリアル:Azure で Terraform プロジェクトの統合テストを構成する
 
@@ -36,7 +36,7 @@ ms.locfileid: "88241304"
 - **Terraform のインストール**:ご使用の環境に応じて、[Terraform をダウンロードしてインストール](https://www.terraform.io/downloads.html)します。
 - **テスト用サンプルをフォークする**:[GitHub の Terraform サンプル プロジェクト](https://github.com/Azure/terraform)をフォークし、開発/テスト用コンピューターに複製します。
 
-## <a name="validate-alocal-terraform-configuration"></a>ローカルの Terraform の構成を検証する
+## <a name="validate-a-local-terraform-configuration"></a>ローカルの Terraform の構成を検証する
 
 [terraform validate](https://www.terraform.io/docs/commands/validate.html) コマンドは、Terraform ファイルが格納されているディレクトリでコマンド ラインから実行します。 このコマンドの主な目的は、構文の検証です。
 

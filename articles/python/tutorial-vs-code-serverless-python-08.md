@@ -4,12 +4,12 @@ description: チュートリアルの手順 8、引き続き料金を請求さ�
 ms.topic: conceptual
 ms.date: 05/19/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 5f4faaa5d4b4c15755d9ee7bdba2dddf7810da15
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: fe4f9b0ef5789b307cbeb3c680dfde2eb46a0046
+ms.sourcegitcommit: 9e282fc2ec967bee181c3034e7e70b28ae308905
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87982754"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89473517"
 ---
 # <a name="8-clean-up-azure-resources-for-azure-functions"></a>8:Azure Functions の Azure リソースをクリーンアップする
 
@@ -47,4 +47,4 @@ Visual Studio Code 用の Azure 拡張機能は他にもあります。役に立
 > [!div class="nextstepaction"]
 > [完了しました。](https://docs.microsoft.com/python/azure/?view=azure-python)
 
-[問題が発生しました](https://www.research.net/r/PWZWZ52?tutorial=vscode-functions-python&step=08-clean-up-resources)
+問題がある場合 ページの下部にある [このページ] へのフィードバックを使用して、GitHub の問題を送信します。

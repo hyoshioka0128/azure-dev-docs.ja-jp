@@ -4,12 +4,12 @@ description: チュートリアルの手順 2、VS Code 用の Azure Functions �
 ms.topic: conceptual
 ms.date: 05/19/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 13c0083434d024064462bb583a6b24d9e80c38dd
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: 08f301ef4596ae8aac96051a13fd680917bd79be
+ms.sourcegitcommit: 9e282fc2ec967bee181c3034e7e70b28ae308905
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87983514"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89473567"
 ---
 # <a name="2-create-a-python-function-for-azure-functions"></a>2:Azure Functions 用に Python 関数を作成する
 
@@ -48,4 +48,4 @@ ms.locfileid: "87983514"
 > [!div class="nextstepaction"]
 > [関数を作成しました - 手順 3 に進む >>>](tutorial-vs-code-serverless-python-03.md)
 
-[問題が発生しました](https://www.research.net/r/PWZWZ52?tutorial=vscode-functions-python&step=02-create-function)
+問題がある場合 ページの下部にある [このページ] へのフィードバックを使用して、GitHub の問題を送信します。

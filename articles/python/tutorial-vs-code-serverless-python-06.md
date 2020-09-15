@@ -4,12 +4,12 @@ description: チュートリアルの手順 6、2 つ目の関数を追加して
 ms.topic: conceptual
 ms.date: 05/19/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 6dbdd722d1167e703119b8709ec6b44eadc3dcec
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: 29d625d40868ab761037c1a4a049f7e95e63df26
+ms.sourcegitcommit: 9e282fc2ec967bee181c3034e7e70b28ae308905
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87982794"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89473577"
 ---
 # <a name="6-add-a-second-python-function-to-azure-functions"></a>6: 2 つ目の Python 関数を Azure Functions に追加する
 
@@ -119,4 +119,4 @@ ms.locfileid: "87982794"
 > [!div class="nextstepaction"]
 > [2 つ目の関数を追加しました - 手順 7 に進む >>>](tutorial-vs-code-serverless-python-07.md)
 
-[問題が発生しました](https://www.research.net/r/PWZWZ52?tutorial=vscode-functions-python&step=06-second-function)
+問題がある場合 ページの下部にある [このページ] へのフィードバックを使用して、GitHub の問題を送信します。

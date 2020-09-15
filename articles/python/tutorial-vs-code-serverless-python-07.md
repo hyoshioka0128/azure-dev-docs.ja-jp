@@ -4,12 +4,12 @@ description: チュートリアルの手順 7、メッセージを Azure Storage
 ms.topic: conceptual
 ms.date: 05/19/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 211d1534d617b649b574f9f3d23e8c5ffd5ac414
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: a8e320b42221b1f1d30859d41b8e56f52c18072a
+ms.sourcegitcommit: 9e282fc2ec967bee181c3034e7e70b28ae308905
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87982813"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89473617"
 ---
 # <a name="7-add-a-storage-binding-for-azure-functions-in-python"></a>7:Python で Azure Functions のストレージ バインドを追加する
 
@@ -99,4 +99,4 @@ Azure Functions のストレージ バインドを追加できます。 "_バイ
 > [!div class="nextstepaction"]
 > [ストレージ バインドを追加しました - 手順 8 に進む >>>](tutorial-vs-code-serverless-python-08.md)
 
-[問題が発生しました](https://www.research.net/r/PWZWZ52?tutorial=python-functions-extension&step=07-storage-binding)
+問題がある場合 ページの下部にある [このページ] へのフィードバックを使用して、GitHub の問題を送信します。

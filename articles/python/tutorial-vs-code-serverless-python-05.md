@@ -4,12 +4,12 @@ description: チュートリアルの手順 5、Python の関数コードを Azu
 ms.topic: conceptual
 ms.date: 05/19/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 950dda297f131f9ae9e2029f79cecae7455e0c07
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: e4108ff7b705be96f62c06a02e301bce9247c048
+ms.sourcegitcommit: 9e282fc2ec967bee181c3034e7e70b28ae308905
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87982854"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89473597"
 ---
 # <a name="5-deploy-azure-functions-in-python"></a>5:Python で Azure Functions をデプロイする
 
@@ -75,4 +75,4 @@ func azure functionapp logstream <app_name> --browser
 > [!div class="nextstepaction"]
 > [関数をデプロイしました - 手順 6 に進む >>>](tutorial-vs-code-serverless-python-06.md)
 
-[問題が発生しました](https://www.research.net/r/PWZWZ52?tutorial=vscode-functions-python&step=05-deploy)
+問題がある場合 ページの下部にある [このページ] へのフィードバックを使用して、GitHub の問題を送信します。

@@ -9,12 +9,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
 ms.custom: devx-track-java
-ms.openlocfilehash: e8d9cf1c1fcc834b74f265c94ef5aae361100dbe
-ms.sourcegitcommit: 2f832baf90c208a8a69e66badef5f126d23bbaaf
+ms.openlocfilehash: c867f52063d657d93637ea1010e47c27e8101cb7
+ms.sourcegitcommit: 5ab6e90e20a87f9a8baea652befc74158a9b6613
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88725226"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89614335"
 ---
 # <a name="tutorial-secure-a-java-web-app-using-the-spring-boot-starter-for-azure-active-directory"></a>チュートリアル:Azure Active Directory 用の Spring Boot Starter を使用して Java Web アプリをセキュリティで保護する
 
@@ -43,14 +43,11 @@ Azure サブスクリプションをお持ちでない場合は、開始する�
 1. <https://start.spring.io/> を参照します。
 
 1. **Java** で **Maven** プロジェクトを生成することを指定し、アプリケーションの **[グループ]** と **[アーティファクト]** に名前を入力します。
-
-   ![グループとアーティファクトの名前を指定する][create-spring-app-01]
-
-1. 下にスクロールして、**Spring Web**、**Azure Active Directory**、および **Spring Security** の**依存関係**を追加します。
-
+1. **Spring Web**、**Azure Active Directory**、**Spring Security** の**依存関係**を追加します。
 1. ページの下部にある **[生成]** ボタンをクリックします。
-
-   ![セキュリティ、Web、および Azure Active Directory スターターを選択する][create-spring-app-02]
+   
+   >[!div class="mx-imgBorder"]
+   >![グループとアーティファクトの名前を指定して依存関係を選択する][create-spring-app-01]
 
 1. メッセージが表示されたら、ローカル コンピューター上のパスにプロジェクトをダウンロードします。
 
@@ -61,96 +58,120 @@ Azure サブスクリプションをお持ちでない場合は、開始する�
 1. <https://portal.azure.com> にログインします。
 
 1. **[+リソースの作成]** 、 **[ID]** 、 **[Azure Active Directory]** の順にクリックします。
+   
+   >[!div class="mx-imgBorder"]
+   >![新しい Azure Active Directory インスタンスを作成する][create-directory-01]
 
-   ![新しい Azure Active Directory インスタンスを作成する][create-directory-01]
+1. **組織名**と**初期ドメイン名**を入力します。 ディレクトリの完全な URL をコピーします。このチュートリアルでは後ほど、これを使用してユーザー アカウントを追加します
+ (例: `azuresampledirectory.onmicrosoft.com`)。 
 
-1. **組織名**と**初期ドメイン名**を入力します。 ディレクトリの完全な URL をコピーします。このチュートリアルでは後ほど、これを使用してユーザー アカウントを追加します (例: `wingtiptoysdirectory.onmicrosoft.com`)。 
-
-    ディレクトリの完全な URL をコピーします。このチュートリアルでは後ほど、これを使用してユーザー アカウントを追加します (例: wingtiptoysdirectory.onmicrosoft.com)。
+    ディレクトリの完全な URL をコピーします。このチュートリアルでは後ほど、これを使用してユーザー アカウントを追加します (例: azuresampledirectory.onmicrosoft.com.)。
 
     操作が完了したら、 **[作成]** をクリックします。 新しいリソースの作成には数分かかります。
-
-   ![Azure Active Directory の名前を指定する][create-directory-02]
+   
+   >[!div class="mx-imgBorder"]
+   >![Azure Active Directory の名前を指定する][create-directory-02]
 
 1. 完了したら、クリックして新しいディレクトリにアクセスします。
-
-   ![Azure アカウント名を選択する][create-directory-03]
+   
+   >[!div class="mx-imgBorder"]
+   >![Azure アカウント名を選択する][create-directory-03]
 
 1. **テナント ID** をコピーします。この値を使用して、このチュートリアルの後の方で *application.properties* ファイルを構成します。
-
-   ![テナント ID のコピー][create-directory-05]
+   
+   >[!div class="mx-imgBorder"]
+   >![テナント ID のコピー][create-directory-04]
 
 ### <a name="add-an-application-registration-for-your-spring-boot-app"></a>Spring Boot アプリのアプリケーション登録を追加する
 
 1. ポータル メニューで **[アプリの登録]** をクリックしてから、 **[アプリケーションの登録]** をクリックします。
-
-   ![新しいアプリ登録を追加する][create-app-registration-01]
+   
+   >[!div class="mx-imgBorder"]
+   >![新しいアプリ登録を追加する][create-app-registration-01]
 
 1. アプリケーションを指定し、 **[登録]** をクリックします。
-
-   ![新しいアプリ登録を作成する][create-app-registration-02]
+   
+   >[!div class="mx-imgBorder"]
+   >![新しいアプリ登録を作成する][create-app-registration-02]
 
 1. アプリ登録のページが表示されたら、**アプリケーション ID** と**テナント ID** をコピーします。このチュートリアルでは後ほど、これらの値を使用して *application.properties* ファイルを構成します。
-
-   ![アプリの登録キーを作成する][create-app-registration-03]
+   
+   >[!div class="mx-imgBorder"]
+   >![アプリの登録キーをコピーする][create-app-registration-03]
 
 1. 左側のナビゲーション ウィンドウで、 **[証明書とシークレット]** をクリックします。  次に、 **[新しいクライアント シークレット]** をクリックします。
-
-   ![アプリの登録キーを作成する][create-app-registration-03-5]
+   
+   >[!div class="mx-imgBorder"]
+   >![アプリの登録キーを作成する][create-app-registration-03-5]
 
 1. **説明**を追加し、 **[有効期限]** 一覧で期間を選択します。  **[追加]** をクリックします。 キーの値は自動的に入力されます。
-
-   ![アプリの登録キーのパラメーターを指定する][create-app-registration-04]
+   
+   >[!div class="mx-imgBorder"]
+   >![アプリの登録キーのパラメーターを指定する][create-app-registration-04]
 
 1. このチュートリアルの後の方で *application.properties* ファイルを構成するために、クライアント シークレットの値をコピーして保存します。 (この値は後で取得することはできません)。
-
-   ![アプリの登録キーのパラメーターを指定する][create-app-registration-04-5]
+   
+   >[!div class="mx-imgBorder"]
+   >![アプリの登録キー値をコピーする][create-app-registration-04-5]
 
 1. 左側のナビゲーション ウィンドウで **[API のアクセス許可]** をクリックします。 
 
 1. **[Microsoft Graph]** をクリックし、 **[サインインしたユーザーとしてディレクトリにアクセスします]** と **[サインインとユーザー プロファイルの読み取り]** をオンにします。 **[アクセス許可の付与]** をクリックし、プロンプトが表示されたら **[はい]** をクリックします。
-
-   ![アクセス許可を付与する][create-app-registration-08]
+   
+   >[!div class="mx-imgBorder"]
+   >![アクセス許可を追加する][create-app-registration-08]
+   
+1. **Grant admin consent for Azure Sample\(Azure サンプルに管理者の同意を与えます\)** をクリックし、**はい** をクリックします。
+   
+   >[!div class="mx-imgBorder"]
+   >![アクセス許可を付与する][create-app-registration-05]
 
 1. アプリ登録のメイン ページで、 **[認証]** をクリックし、 **[プラットフォームを追加]** をクリックします。  次に、 **[Web アプリケーション]** をクリックします。
-
-    ![応答 URL を編集する][create-app-registration-09]
+   
+   >[!div class="mx-imgBorder"]
+   >![応答 URL を編集する][create-app-registration-09]
 
 1. 新しい **[リダイレクト URI]** として「 http://localhost:8080/login/oauth2/code/azure 」と入力し、 **[構成]** をクリックします。
+   
+   >[!div class="mx-imgBorder"]
+   >![新しい応答 URL を追加する][create-app-registration-10]
 
-    ![新しい応答 URL を追加する][create-app-registration-10]
+1. アプリ登録のメイン ページで、 **[マニフェスト]** をクリックして `oauth2AllowIdTokenImplicitFlow` および `oauth2AllowImplicitFlow` パラメーターの値を `true` に設定し、 **[保存]** をクリックします。
+   
+   >[!div class="mx-imgBorder"]
+   >![アプリケーション マニフェストの構成][create-app-registration-11]
 
-1. アプリ登録のメイン ページで、 **[マニフェスト]** をクリックして `oauth2AllowImplicitFlow` パラメーターの値を `true` に設定し、 **[保存]** をクリックします。
-
-    ![アプリケーション マニフェストの構成][create-app-registration-11]
-
-    > [!NOTE]
-    > `oauth2AllowImplicitFlow` パラメーターとその他のアプリケーション設定の詳細については、「[Azure Active Directory アプリケーション マニフェスト][AAD app manifest]」を参照してください。
+   > [!NOTE]
+   > `oauth2AllowIdTokenImplicitFlow` および `oauth2AllowImplicitFlow` パラメーターとその他のアプリケーション設定の詳細については、[Azure Active Directory アプリケーション マニフェスト][AAD app manifest]に関するページを参照してください。
 
 ### <a name="add-a-user-account-to-your-directory-and-add-that-account-to-a-group"></a>ディレクトリにユーザー アカウントを追加し、そのアカウントをグループに追加する
 
-1. Active Directory の **[概要]** ページで、 **[すべてのユーザー]** をクリックし、次に **[新しいユーザー]** をクリックします。
-
-   ![新しいユーザー アカウントを追加する][create-user-01]
+1. Active Directory の **[概要]** ページで、 **[ユーザー]** をクリックし、次に **[新しいユーザー]** をクリックします。
+   
+   >[!div class="mx-imgBorder"]
+   >![新しいユーザー アカウントを追加する][create-user-01]
 
 1. **[ユーザー]** パネルが表示されたら、 **[ユーザー名]** と **[名前]** を入力します。  **[Create]** をクリックします。
-
-   ![ユーザー アカウント情報を入力する][create-user-02]
+   
+   >[!div class="mx-imgBorder"]
+   >![ユーザー アカウント情報を入力する][create-user-02]
 
    > [!NOTE]
    > ユーザー名を入力するときに、以下のように、このチュートリアルで先に出てきたディレクトリの URL を指定する必要があります。
    >
-   > `wingtipuser@wingtiptoysdirectory.onmicrosoft.com`
+   > `test-user@azuresampledirectory.onmicrosoft.com`
 
-1. **[グループ]** をクリックして、アプリケーションの承認に使用する**新しいグループを作成**します。
+1. Active Directory の **[概要]** ページで、 **[グループ]** をクリックし、次にアプリケーションで承認に使用する **[新しいグループ]** をクリックします。
 
 1. **[メンバーが選択されていません]** をクリックします (このチュートリアルでは、*users* という名前のグループを作成します)。前の手順で作成されたユーザーを検索します。  **[選択]** をクリックして、ユーザーをグループに追加します。  **[作成]** をクリックして、新しいグループを作成します。
-
-   ![グループのユーザーの選択][create-user-03]
+   
+   >[!div class="mx-imgBorder"]
+   >![グループのユーザーの選択][create-user-03]
 
 1. **[ユーザー]** パネルに戻り、 **[パスワードのリセット]** をクリックしてパスワードをコピーします。このチュートリアルで後ほどアプリケーションにログインするときに、これを使用します。
-
-   ![パスワードを表示する][create-user-04]
+   
+   >[!div class="mx-imgBorder"]
+   >![パスワードを表示する][create-user-04]
 
 ## <a name="configure-and-compile-your-app"></a>アプリの構成およびコンパイル
 
@@ -306,21 +327,25 @@ Azure サブスクリプションをお持ちでない場合は、開始する�
    mvn clean package
    mvn spring-boot:run
    ```
-
-   ![アプリをビルドする][build-application]
+   
+   >[!div class="mx-imgBorder"]
+   >![アプリをビルドする][build-application]
 
 1. Maven によってアプリケーションがビルドされ、起動したら、Web ブラウザーでhttp:<span></span>//localhost:8080 を開きます。ユーザー名とパスワードを入力するように求めるメッセージが表示されます。
-
+   
+   >[!div class="mx-imgBorder"]
    ![アプリケーションへのログイン][application-login]
 
    > [!NOTE]
    > 新しいユーザー アカウントに初めてログインする場合、パスワードの変更を求められることがあります。
-   >
-   > ![パスワードの変更][update-password]
+
+   >[!div class="mx-imgBorder"]
+   >![パスワードの変更][update-password]
 
 1. 正常にログインしたら、コントローラーにサンプルの "Hello World" テキストが表示されます。
 
-   ![正常なログイン][hello-world]
+   >[!div class="mx-imgBorder"]
+   >![正常なログイン][hello-world]
 
    > [!NOTE]
    > 承認されていないユーザー アカウントには、**HTTP 403 Unauthorized** メッセージが表示されます。
@@ -336,8 +361,8 @@ Azure サブスクリプションをお持ちでない場合は、開始する�
 
 Spring および Azure の詳細については、Azure ドキュメント センターで引き続き Spring に関するドキュメントをご確認ください。
 
-> [!div class="nextstepaction"]
-> [Azure の Spring](/azure/developer/java/spring-framework)
+   >[!div class="nextstepaction"]
+   >[Azure の Spring](/azure/developer/java/spring-framework)
 
 <!-- URL List -->
 
@@ -356,14 +381,11 @@ Spring および Azure の詳細については、Azure ドキュメント セ�
 <!-- IMG List -->
 
 [create-spring-app-01]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/create-spring-app-01.png
-[create-spring-app-02]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/create-spring-app-02.png
-[create-spring-app-03]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/create-spring-app-03.png
 
 [create-directory-01]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/create-directory-01.png
 [create-directory-02]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/create-directory-02.png
 [create-directory-03]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/create-directory-03.png
 [create-directory-04]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/create-directory-04.png
-[create-directory-05]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/create-directory-05.png
 
 [create-app-registration-01]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/create-app-registration-01.png
 [create-app-registration-02]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/create-app-registration-02.png
@@ -372,8 +394,6 @@ Spring および Azure の詳細については、Azure ドキュメント セ�
 [create-app-registration-04]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/create-app-registration-04.png
 [create-app-registration-04-5]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/create-app-registration-04-5.png
 [create-app-registration-05]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/create-app-registration-05.png
-[create-app-registration-06]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/create-app-registration-06.png
-[create-app-registration-07]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/create-app-registration-07.png
 [create-app-registration-08]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/create-app-registration-08.png
 [create-app-registration-09]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/create-app-registration-09.png
 [create-app-registration-10]: media/configure-spring-boot-starter-java-app-with-azure-active-directory/create-app-registration-10.png

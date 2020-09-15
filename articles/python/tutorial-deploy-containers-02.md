@@ -4,12 +4,12 @@ description: チュートリアルの手順 2、実際の Docker イメージを
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 1a8afac614f930e3d26424d5d776ff5d97019324
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: 080f3f5aa82d9944b5f26d3a54fb6f10bfe914cb
+ms.sourcegitcommit: 9e282fc2ec967bee181c3034e7e70b28ae308905
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87983534"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89473547"
 ---
 # <a name="2-deploy-a-container-image-to-azure-app-service"></a>2:コンテナー イメージを Azure App Service にデプロイする
 
@@ -48,4 +48,4 @@ ms.locfileid: "87983534"
 > [!div class="nextstepaction"]
 > [イメージをデプロイしました - 手順 3 に進む >>>](tutorial-deploy-containers-03.md)
 
-[問題が発生しました](https://www.research.net/r/PWZWZ52?tutorial=vscode-appservice-containers&step=02-deploy-container)
+問題がある場合 ページの下部にある [このページ] へのフィードバックを使用して、GitHub の問題を送信します。

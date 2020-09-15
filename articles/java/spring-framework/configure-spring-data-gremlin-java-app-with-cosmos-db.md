@@ -1,20 +1,20 @@
 ---
 title: Azure Cosmos DB SQL API で Spring Data Gremlin Starter を使用する方法
-description: Spring Boot Initializer で作成されたアプリケーションを Azure Cosmos DB SQL API で構成する方法について説明します。
+description: Spring Boot Initializr で作成されたアプリケーションを Azure Cosmos DB SQL API で構成する方法について説明します。
 services: cosmos-db
 documentationcenter: java
-ms.date: 01/10/2020
+ms.date: 08/03/2020
 ms.service: cosmos-db
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: data-services
 ms.custom: devx-track-java
-ms.openlocfilehash: 81a80d14e4cf371801cf75af1618048dda8775d7
-ms.sourcegitcommit: b224b276a950b1d173812f16c0577f90ca2fbff4
+ms.openlocfilehash: 4a19b6dff945cb04d2b726b546e362c261a00595
+ms.sourcegitcommit: 5ab6e90e20a87f9a8baea652befc74158a9b6613
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87810625"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89614325"
 ---
 # <a name="how-to-use-the-spring-data-gremlin-starter-with-the-azure-cosmos-db-sql-api"></a>Azure Cosmos DB SQL API で Spring Data Gremlin Starter を使用する方法
 
@@ -33,16 +33,16 @@ Spring Data Gremlin Starter は、Apache の Gremlin クエリ言語に Spring D
 * [Apache Maven](http://maven.apache.org/) バージョン 3.0 以降。
 
 
-## <a name="create-resource"></a>リソースを作成する
+## <a name="create-an-azure-cosmos-db-account"></a>Azure Cosmos DB アカウントを作成する
 
-### <a name="create-azure-cosmos-db"></a>Azure Cosmos DB の作成
+### <a name="create-a-cosmos-db-account-using-the-azure-portal"></a>Azure portal を使用して Cosmos DB アカウントを作成する
 
-1. <https://portal.azure.com/> で Azure portal を参照し、 `+Create a resource` をクリックします。
+1. Azure portal (<https://portal.azure.com/>) を参照し、[`+Create a resource`] を選択します。
 
    >[!div class="mx-imgBorder"]
    >![create-a-resource][create-a-resource-01]
 
-1. [`Databases`] をクリックし、[`Azure Cosmos DB`] をクリックします。
+1. [`Databases`]、[`Azure Cosmos DB`] の順に選択します。
 
    >[!div class="mx-imgBorder"]
    >![create-azure-cosmos-db][create-a-resource-02]
@@ -55,16 +55,20 @@ Spring Data Gremlin Starter は、Apache の Gremlin クエリ言語に Spring D
    * API の`Gremlin (Graph)` を選択します。
    * データベースの`Location`を指定します。
    
-1. これらのオプションを指定したら、[`Review + create`] をクリックします。
+1. これらのオプションを指定したら、[`Review + create`] を選択します。
 
    >[!div class="mx-imgBorder"]
    >![create-azure-cosmos-db-account][create-a-resource-03]
 
-1. 指定した内容を確認し、[`Create`] をクリックしてデータベースを作成します。
+1. 指定した内容を確認し、[`Create`] を選択してデータベースを作成します。
+
+1. データベースが作成されたら、 **[リソースに移動]** を選択します。 これは Azure **ダッシュボード**にも表示され、 **[すべてのリソース]** および **[Azure Cosmos DB]** ページにも表示されます。 これらのいずれかの場所でデータベースを選択すると、キャッシュのプロパティ ページを開くことができます。
+
+1. データベースのプロパティ ページが表示されたら、 **[キー]** を選択し、データベースの URI とアクセス キーをコピーします。これらの値は Spring Boot アプリケーションで使用します。
 
 ### <a name="add-a-graph-to-your-azure-cosmos-database"></a>ご自身の Azure Cosmos Database にグラフを追加する
 
-1. Cosmos DB のページで、[`Data Explorer`] をクリックし、次に [`New Graph`] をクリックします。
+1. Cosmos DB のページで、[`Data Explorer`] を選択し、次に [`New Graph`] を選択します。
 
    >[!div class="mx-imgBorder"]
    >![new-graph][create-a-graph-01]
@@ -74,10 +78,9 @@ Spring Data Gremlin Starter は、Apache の Gremlin クエリ言語に Spring D
    * お使いのデータベースの一意の `Database id` を指定します。
    * `Storage capacity` は、指定することも、既定値をそのまま使用することもできます。
    * お使いのグラフの一意の `Graph id` を指定します。
-   * `Partition key` を指定します。 詳細については、[グラフのパーティション]に関する記事を参照してください。
-[`OK`] をクリックします。
+   * `Partition key` を指定します。 詳細については、[グラフのパーティション]に関する記事を参照してください。 [`OK`] を選択します。
    
-   これらのオプションの指定後、[`OK`] をクリックして、グラフを作成します。
+   これらのオプションの指定後、[`OK`] を選択して、グラフを作成します。
 
    >[!div class="mx-imgBorder"]
    >![add-graph][create-a-graph-02]
@@ -89,44 +92,64 @@ Spring Data Gremlin Starter は、Apache の Gremlin クエリ言語に Spring D
    
    
 
-## <a name="create-simple-spring-boot-application-with-the-spring-initializr"></a>Spring Initializr でシンプルな Spring Boot アプリケーションを作成する
+## <a name="create-a-simple-spring-boot-application-with-the-spring-initializr"></a>Spring Initializr でシンプルな Spring Boot アプリケーションを作成する
 
 1. <https://start.spring.io/> を参照します。
 
-1. プロジェクトのメタデータを入力し、[`GENERATE`] をクリックします。
+1. **Java** で **Maven** プロジェクトを生成することを指定し、アプリケーションの **[グループ]** と **[アーティファクト]** に名前を入力します。**Spring Boot** のバージョンにバージョン 2.3.1 を指定し、 **[GENERATE]\(生成\)** を選択します。
+
+> [!NOTE]
+>
+> Spring Initializr では、 **[グループ]** と **[アーティファクト]** の名前を使用してパッケージ名を作成します (例: `com.example.wintiptoysdata`)。
+
 
    >[!div class="mx-imgBorder"]
    >![spring-initializr][spring-initializr-01]
 
-1. ファイルを解凍し、お使いの IDE にインポートします。
+1. メッセージが表示されたら、ローカル コンピューター上のパスにプロジェクトをダウンロードします。
+
+1. ローカル システム上でファイルを抽出したら、IDE にインポートします。
 
 
-## <a name="update-code-according-to-the-sample-project"></a>サンプル プロジェクトに従ってコードを更新する
+## <a name="configure-your-spring-boot-app-to-use-the-spring-data-gremlin-starter"></a>Spring Data Gremlin Starter を使用するように Spring Boot アプリを構成する
 
-サンプル プロジェクト ([azure-spring-data-sample-gremlin]) のようにプロジェクトを変更します。
+既存の [Azure Spring Data Gremlin のサンプル](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/spring/azure-spring-boot-samples/azure-spring-data-sample-gremlin)の構成をレプリケートします。 サンプルを参照し、このセクションの手順に従って Spring Boot アプリを構成します。
 
-1. `azure-spring-data-gremlin` の依存関係を追加します。
+1. アプリのディレクトリで *pom.xml* ファイルを探します。次に例を示します。
 
-1. `src/test/` のすべての内容を削除します。
+   *C:\SpringBoot\wingtiptoysdata\pom.xml*
 
-1. このサンプルと同様に、`src/main/java` にすべての java ファイルを追加します。
+   - または -
 
-1. `src/main/resorces/application.properties` で構成を更新します。この場合、次のようになります。
+   */users/example/home/wingtiptoysdata/pom.xml*
+
+1. *pom.xml* ファイルを開き、`<dependencies>` の一覧に Spring Data Gremlin Starter を追加します。
+
+   ```xml
+   <dependency>
+      <groupId>com.azure</groupId>
+      <artifactId>azure-spring-data-gremlin</artifactId>
+      <version>2.3.1-beta.1</version> <!-- {x-version-update;com.azure:azure-spring-data-gremlin;current} -->
+    </dependency>
+   ```
+
+1. *pom.xml* ファイルを保存して閉じます。
+
+1. *src/test/* フォルダーに移動し、すべての内容を削除します。
+
+1. サンプル アプリの *src/main/java* フォルダーに移動し、この同じディレクトリをコピーしてローカルの Spring Boot アプリに上書きします。
+
+1. *src/main/resources/application.properties* ファイルで、次のように構成を更新します。
 
    | フィールド              | 説明                                                                                                                                                                                                             |
    |--------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-   | `endpoint`         | ご自身のデータベースの Gremlin URI を指定します。これは、このチュートリアルで先ほど Azure Cosmos DB を作成したときに指定した一意の **ID** から派生します。                                                 |
+   | `endpoint`         | ご自身のデータベースの Gremlin URI を指定します。これは、このクイックスタートで先ほど Azure Cosmos DB を作成したときに指定した一意の **ID** から派生します。                                                 |
    | `port`             | TCP/IP ポートを指定します。HTTPS 用の **443** を使用する必要があります。                                                                                                                                                           |
-   | `username`         | このチュートリアルで先ほどグラフを追加したときに使用した一意の**データベース ID** と**グラフ ID** を指定します。"/dbs/**{Database id}**/colls/**{Graph id}**" という構文を使用して入力する必要があります。 |
-   | `password`         | このチュートリアルで先ほどコピーしたプライマリまたはセカンダリの**アクセス キー**を指定します。                                                                                                                      |
+   | `username`         | このクイックスタートで先ほどグラフを追加したときに使用した一意の**データベース ID** と**グラフ ID** を指定します。"/dbs/ **{Database ID}** /colls/ **{Graph ID}** " という構文を使用して入力する必要があります。 |
+   | `password`         | このクイックスタートで先ほどコピーしたプライマリまたはセカンダリの**アクセス キー**を指定します。                                                                                                                      |
    | `sslEnabled`       | SSL を有効にするかどうかを指定します。                                                                                                                                                                                           |
    | `telemetryAllowed` | 利用統計情報を有効にする場合は **true**、それ以外の場合は **false** を指定します。
    | `maxContentLength` | 内容の最大長を指定します。                                                                                                                                                                                           |
-
-1. パスワードの取得方法について:
-
-   >[!div class="mx-imgBorder"]
-   >![get-password][get-password-01]
 
 ## <a name="build-and-run-the-project"></a>プロジェクトをビルドして実行する
 
@@ -145,7 +168,7 @@ Spring Data Gremlin Starter は、Apache の Gremlin クエリ言語に Spring D
 
 ## <a name="next-steps"></a>次のステップ
 
-Spring および Azure の詳細については、Azure ドキュメント センターで引き続き Spring に関するドキュメントをご確認ください。
+Azure での Spring の詳細については、Azure ドキュメントで引き続き Spring に関するドキュメントをご確認ください。
 
 > [!div class="nextstepaction"]
 > [Azure の Spring](/azure/developer/java/spring-framework)

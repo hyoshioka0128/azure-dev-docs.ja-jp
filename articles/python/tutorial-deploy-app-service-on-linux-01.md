@@ -1,15 +1,15 @@
 ---
 title: チュートリアル:Visual Studio Code から Azure App Service on Linux に Python アプリをデプロイする
-description: チュートリアルの手順 1、概要、前提条件、Azure にサインインする。
+description: チュートリアルの手順1、Web アプリの操作、概要、前提条件
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 255e94d863f0c144ff4de402a2d775a21645b95a
-ms.sourcegitcommit: 815cf2acff71e849735f7afce54723f03ffa5df3
+ms.openlocfilehash: d4544c6e013f20b606303e56ff2169e87383d88c
+ms.sourcegitcommit: 5ab6e90e20a87f9a8baea652befc74158a9b6613
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88501377"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89614322"
 ---
 # <a name="tutorial-deploy-python-apps-to-azure-app-service-on-linux-from-visual-studio-code"></a>チュートリアル:Visual Studio Code から Azure App Service on Linux に Python アプリをデプロイする
 
@@ -18,6 +18,9 @@ ms.locfileid: "88501377"
 このチュートリアルのいずれかの手順で問題が発生した場合は、詳細をお知らせください。 フィードバックを送信するには、各記事の最後にある "**問題が発生しました**" リンクを使用します。
 
 デモ ビデオについては、仮想 PyCon 2020 の <a href="https://www.youtube.com/watch?v=dNVvFttc-sA&feature=youtu.be&ocid=AID3006292" target="_blank">VS Code と Azure App Service での WebApps のビルド</a>に関する動画 (youtube.com 2020) をご覧ください。
+
+> [!NOTE]
+> CLI を使用してアプリをデプロイする場合は、「 **[クイックスタート: Azure App Service on Linux で Python アプリを作成する](/azure/app-service/quickstart-python)** 」を参照してください。
 
 > [!TIP]
 > [Azure App Service on Linux](/azure/app-service/overview#app-service-on-linux) は、定義済みの Docker コンテナーでソース コードを実行します。 そのコンテナーでは、Python 3.7 と [Gunicorn](https://gunicorn.org) Web サーバーを使用してアプリが実行されます。 このコンテナーの特性は、[App Service on Linux 向けの Python アプリの構成](/azure/app-service/configure-language-python)に関するページで説明されています。 コンテナーの定義自体は [github.com/Azure-App-Service/python](https://github.com/Azure-App-Service/python/tree/master/3.7) にあります。

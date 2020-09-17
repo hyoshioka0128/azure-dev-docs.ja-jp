@@ -5,12 +5,12 @@ keywords: ansible、azure、devops、キー コンテナー、セキュリティ
 ms.topic: tutorial
 ms.date: 04/20/2020
 ms.custom: devx-track-ansible
-ms.openlocfilehash: 935361b62c30a34d3a2916abba79a2c2c99d1214
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 4891b277f8c1f9fcd7fe4c1d54ed13b39f19d2e4
+ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240004"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90682017"
 ---
 # <a name="tutorial-use-azure-key-vault-with-a-linux-virtual-machine-in-ansible"></a>チュートリアル:Ansible で Linux 仮想マシンと共に Azure Key Vault を使用する
 
@@ -40,13 +40,13 @@ ms.locfileid: "88240004"
 
 Azure CLI を使用して、Azure 用の Ansible モジュールを使用するときに必要な Azure サブスクリプション情報を取得します。 
 
-1. `az account show` コマンドを使用して、Azure サブスクリプション ID と Azure サブスクリプション テナント ID を取得します。 `<Subscription>` プレースホルダーには、Azure サブスクリプション名または Azure サブスクリプション ID を指定します。 このコマンドを実行すると、既定の Azure サブスクリプションに関連付けられている多くのキー値が表示されます。 複数のサブスクリプションがある場合は、[az account set](/cli/azure/account?view=azure-cli-latest#az-account-set) コマンドを使用して、現在のサブスクリプションを設定する必要がある場合があります。 コマンドの出力から、**ID** と **tenantID** の両方の値をメモします。
+1. `az account show` コマンドを使用して、Azure サブスクリプション ID と Azure サブスクリプション テナント ID を取得します。 `<Subscription>` プレースホルダーには、Azure サブスクリプション名または Azure サブスクリプション ID を指定します。 このコマンドを実行すると、既定の Azure サブスクリプションに関連付けられている多くのキー値が表示されます。 複数のサブスクリプションがある場合は、[az account set](/cli/azure/account#az-account-set) コマンドを使用して、現在のサブスクリプションを設定する必要がある場合があります。 コマンドの出力から、**ID** と **tenantID** の両方の値をメモします。
 
     ```azurecli
     az account show --subscription "<Subscription>" --query tenantId
     ```
 
-1. Azure サブスクリプションのサービス プリンシパルがない場合、 [Azure CLI で Azure サービス プリンシパルを作成します](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest)。 コマンドの出力から、**appId** の値をメモします。
+1. Azure サブスクリプションのサービス プリンシパルがない場合、 [Azure CLI で Azure サービス プリンシパルを作成します](/cli/azure/create-an-azure-service-principal-azure-cli)。 コマンドの出力から、**appId** の値をメモします。
 
 1. `az ad sp show` コマンドを使用してサービス プリンシパルのオブジェクト ID を取得します。 `<ApplicationID>` プレースホルダーに、サービス プリンシパルの appId を指定します。 `--query` パラメーターでは、*stdout* に出力する値を指定します。 この場合、サービス プリンシパルのオブジェクト ID です。
 
@@ -441,23 +441,23 @@ tasks:
     
 ## <a name="clean-up-resources"></a>リソースをクリーンアップする
 
-この記事で作成したリソースが不要になったら、削除してください。 `<kv_rg>` プレースホルダーを、デモのキー コンテナーの保持に使用されたリソース グループに置き換えます。
+この記事で作成したリソースが不要になったら、削除してください。 `<kv_rg>` プレースホルダーを、デモのキー コンテナーの保持に使用されたリソース グループに置き換えます。 
 
-```yml
-- hosts: localhost
-  vars:
-    kv_rg: <kv_rg>
-    test_vm_rg: kv_test_vm_rg
-  tasks:
-    - name: Delete the key vault resource group
-      azure_rm_resourcegroup:
-        name: "{{ kv_rg }}"
-        force_delete_nonempty: yes
-        state: absent
-    - name: Delete the test vm resource group
-      azure_rm_resourcegroup:
-        name: "{{ test_vm_rg }}"
-        force_delete_nonempty: yes
+```yml  
+- hosts: localhost  
+  vars: 
+    kv_rg: <kv_rg>  
+    test_vm_rg: kv_test_vm_rg   
+  tasks:    
+    - name: Delete the key vault resource group 
+      azure_rm_resourcegroup:   
+        name: "{{ kv_rg }}" 
+        force_delete_nonempty: yes  
+        state: absent   
+    - name: Delete the test vm resource group   
+      azure_rm_resourcegroup:   
+        name: "{{ test_vm_rg }}"    
+        force_delete_nonempty: yes  
         state: absent
 ```
 

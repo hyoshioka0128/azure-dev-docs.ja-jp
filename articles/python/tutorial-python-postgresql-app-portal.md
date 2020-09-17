@@ -5,12 +5,12 @@ ms.devlang: python
 ms.topic: tutorial
 ms.date: 07/23/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: 4ad5086e0bc0500a7b7a117142a153e56ee4b481
-ms.sourcegitcommit: 5ab6e90e20a87f9a8baea652befc74158a9b6613
+ms.openlocfilehash: 19c0dda48b0fb7b5b0c3af75a1d94d3c9b9e4080
+ms.sourcegitcommit: 4824cea71195b188b4e8036746f58bf8b70dc224
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89614288"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89753766"
 ---
 # <a name="tutorial-deploy-a-django-web-app-with-postgresql-using-the-azure-portal"></a>チュートリアル:Azure portal を使用して PostgreSQL で Django Web アプリをデプロイする
 
@@ -230,15 +230,15 @@ Azure portal を使用して、データ ドリブンの Python [Django](https:/
 
 これで、アプリが PostgreSQL データベースで動作していることを示すための簡単なテストを実行する準備ができました。
 
-1. Web アプリのブラウザー ウィンドウまたはタブで、 **[概要]** ページに戻り、Web アプリの **URL** (`http:\//\<app-name>.azurewebsites.net` 形式) を選択します。
+1. Web アプリのブラウザー ウィンドウまたはタブで、 **[概要]** ページに戻り、Web アプリの **URL** (`http://<app-name>.azurewebsites.net` 形式) を選択します。
 
 1. データベース内に特定の投票がまだないため、アプリには "No polls are available" (投票は利用できません) というメッセージが表示されます。
 
-1. `http:\//\<app-name>.azurewebsites.net/admin` ([Django Administration]\(Django 管理\) ページ) に移動し、前のセクションのスーパーユーザーの資格情報 (`root` と `Pollsdb1`) を使用してサインインします。
+1. `http://<app-name>.azurewebsites.net/admin` ([Django Administration]\(Django 管理\) ページ) に移動し、前のセクションのスーパーユーザーの資格情報 (`root` と `Pollsdb1`) を使用してサインインします。
 
 1. **[Polls]\(投票\)** で、 **[Questions]\(質問\)** の横の **[Add]\(追加\)** を選択し、いくつかの選択肢がある投票の質問を作成します。
 
-1. もう一度 `http:\//\<app-name>.azurewebsites.net/` に移動し、質問がユーザーに表示されるようになったことを確認します。 質問に自由に回答してデータベースにデータを生成します。
+1. もう一度 `http://<app-name>.azurewebsites.net/` に移動し、質問がユーザーに表示されるようになったことを確認します。 質問に自由に回答してデータベースにデータを生成します。
 
 **お疲れさまでした。** アクティブな PostgreSQL データベースを使用して、Azure App Service for Linux で Python Django Web アプリが実行されています。
 

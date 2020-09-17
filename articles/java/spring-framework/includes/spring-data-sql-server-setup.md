@@ -77,7 +77,7 @@ az sql server firewall-rule create \
     | jq
 ```
 
-### <a name="configure-a-azure-sql-database"></a>Azure SQL データベースを構成する
+### <a name="configure-a-azure-sql-database"></a>Azure SQL Database を構成する
 
 先ほど作成した Azure SQL Database サーバーは空です。 Spring Boot アプリケーションで使用できるデータベースはありません。 次のコマンドを実行し、`demo` という名前の新しいデータベースを作成します。
 

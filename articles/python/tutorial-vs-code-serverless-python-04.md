@@ -66,7 +66,7 @@ Visual Studio Code で Azure Functions の Python コードをローカルでデ
 1. 関数をローカルで徹底的にテストできたら、デバッガーを停止します ( **[デバッグ]**  >  **[デバッグの停止]** メニュー コマンドを使用するか、デバッグ ツールバーで **Disconnect** コマンドを使用します)。
 
 > [!NOTE]
-> ""local.settings.json" に指定されている "AzureWebJobsStorage" 接続を確認できませんでした。" というエラーが発生した場合は、プロジェクト内の *local.settings.json* ファイルに `"AzureWebJobsStorage": "UseDevelopmentStorage=true"` という行が含まれています。 この行は、デバッガーが Azure ストレージ エミュレーターをローカルで使用することが想定されているのに、これがインストールされていないことを示しています。 この場合は、[Azure ストレージ エミュレーターをインストールして](/azure/storage/common/storage-use-emulator#get-the-storage-emulator)、[エミュレーターを起動および初期化し](/azure/storage/common/storage-use-emulator#start-and-initialize-the-storage-emulator)、デバッガーを再起動することができます。
+> ""local.settings.json" に指定されている "AzureWebJobsStorage" 接続を確認できませんでした。" というエラーが発生した場合は、プロジェクト内の *local.settings.json* ファイルに `"AzureWebJobsStorage": "UseDevelopmentStorage=true"` という行が含まれています。 この行は、デバッガーが Azure Storage Emulator をローカルで使用することが想定されているのに、これがインストールされていないことを示しています。 この場合は、[Azure Storage Emulator をインストールして](/azure/storage/common/storage-use-emulator#get-the-storage-emulator)、[エミュレーターを起動および初期化し](/azure/storage/common/storage-use-emulator#start-and-initialize-the-storage-emulator)、デバッガーを再起動することができます。
 >
 > または、JSON ファイル内のこの行を `"AzureWebJobsStorage": ""` に変更し、デバッガーを再起動します。
 

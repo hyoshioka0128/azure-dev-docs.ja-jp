@@ -441,7 +441,7 @@ public static void main(String[] args) {
 mvn clean compile exec:java
 ```
 
-ストレージ アカウント内の `helloazure.txt` ファイルは、Azure Portal または [Azure ストレージ エクスプローラー](/azure/vs-azure-tools-storage-explorer-blobs)から参照することができます。
+ストレージ アカウント内の `helloazure.txt` ファイルは、Azure Portal または [Azure Storage Explorer](/azure/vs-azure-tools-storage-explorer-blobs) から参照することができます。
 
 CLI で次のコマンドを入力して、ストレージ アカウントをクリーンアップします。
 

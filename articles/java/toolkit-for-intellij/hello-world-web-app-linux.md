@@ -4,21 +4,21 @@ titleSuffix: Azure Toolkit for IntelliJ
 description: Linux コンテナーで基本的な Hello World Web アプリを実行し、Azure Toolkit for IntelliJ を使用してクラウドにデプロイします。
 services: app-service\web
 documentationcenter: java
-ms.date: 12/20/2018
+ms.date: 09/09/2020
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 7b6d393f44034794494f4e77a6365bf0d7bf6c1d
-ms.sourcegitcommit: 8cd0ddf1651c3b64bb72dedc2890108c2cfe3bcb
+ms.openlocfilehash: 0dd1b0202442a4af5322513f038ddcc9908a7dd1
+ms.sourcegitcommit: a139e25190960ba89c9e31f861f0996a6067cd6c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87334427"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90534717"
 ---
 # <a name="deploy-java-app-to-azure-web-apps-for-containers-using-azure-toolkit-for-intellij"></a>Azure Toolkit for IntelliJ を使用して Azure Web Apps for Containers に Java アプリをデプロイする
 
-[Docker] コンテナーは、Web アプリケーションをデプロイするために広く使用されている方法です。 Docker コンテナーを使用すると、開発者は、すべてのプロジェクト ファイルと依存関係を、サーバーにデプロイするために 1 つのパッケージに統合できます。 Azure Toolkit for IntelliJ には、Microsoft Azure にデプロイする機能が追加されているため、Java 開発者はプロセスを簡略化できます。
+[Docker] コンテナーは、Web アプリケーションをデプロイするために広く使用されている方法です。 Docker コンテナーを使用すると、開発者は、すべてのプロジェクト ファイルと依存関係を、サーバーにデプロイするために 1 つのパッケージに統合できます。 Azure Toolkit for IntelliJ には、Microsoft Azure にコンテナーをデプロイする機能が追加されているため、Java 開発者はこのプロセスを簡略化できます。
 
 この記事では、基本的な Hello World Web アプリを作成し、Azure Toolkit for IntelliJ を使用して Azure 用の Linux コンテナーに Web アプリを発行するために必要な手順について説明します。
 
@@ -32,29 +32,52 @@ ms.locfileid: "87334427"
 > ![[Docker の設定] メニュー][docker-settings-menu]
 >
 
-## <a name="create-a-new-web-app-project"></a>新しい Web アプリ プロジェクトの作成
+## <a name="installation-and-sign-in"></a>インストールとサインイン
 
-1. 「[Azure Toolkit for IntelliJ のサインイン手順](sign-in-instructions.md)」の記事に記載されている手順を使用して、IntelliJ を起動し Azure アカウントにサインインします。
+次の手順では、IntelliJ 開発環境での Azure サインイン プロセスについて説明します。
 
-1. **[ファイル]** メニューの **[New]\(新規\)** をクリックし、 **[プロジェクト]** をクリックします。
-   
-   ![新しいプロジェクトの作成][file-new-project]
+1. プラグインをインストールしていない場合は、「[Azure Toolkit for IntelliJ のインストール](installation.md)」を参照してください。
 
-1. **[新しいプロジェクト]** ダイアログ ボックスで、 **[Maven]** 、 **maven-archetype-webapp** の順に選択し、 **[次へ]** をクリックします。
-   
-   ![Maven アーキタイプ Web アプリの選択][maven-archetype-webapp]
-   
-1. Web アプリの **[GroupId]** と **[ArtifactId]** を指定し、 **[次へ]** をクリックします。
-   
-   ![GroupId と ArtifactId の指定][groupid-and-artifactid]
+1. Azure アカウントにサインインするには、左側の **[Azure Explorer]** サイドバーに移動し、 **[Azure サインイン]** アイコンをクリックします。 または、 **[ツール]** に移動し、 **[Azure]** を展開して、 **[Azure サインイン]** をクリックします。
 
-1. Maven 設定をカスタマイズするか、既定の設定をそのまま使用し、 **[次へ]** をクリックします。
-   
-   ![Maven 設定の指定][maven-options]
+   :::image type="content" source="media/sign-in-instructions/I01.png" alt-text="IntelliJ で Azure にサインインします。"::: 
 
-1. プロジェクト名と場所を指定し、 **[完了]** をクリックします。
-   
-   ![プロジェクト名の指定][project-name]
+1. **[Azure サインイン]** ウィンドウで、 **[Device Login]\(デバイスのログイン\)** を選択し、次に **[サインイン]** をクリックします ([他のサインイン オプション](sign-in-instructions.md))。
+
+1. **[Azure Device Login]\(Azure デバイスのログイン\)** ダイアログで **[Copy&Open]\(コピーして開く\)** をクリックします。
+
+1. ブラウザーで、該当のデバイス コード (前の手順で **[Copy&Open]\(コピーして開く\)** をクリックしたときにコピーされたもの) を貼り付け、 **[次へ]** をクリックします。
+
+1. Azure アカウントを選択し、サインインするために必要な認証手順を完了します。
+
+1. サインインしたら、ブラウザーを閉じて IntelliJ IDE に戻ります。 **[Select Subscriptions]\(サブスクリプションの選択\)** ダイアログ ボックスで、使用するサブスクリプションを選択し、 **[OK]** をクリックします。
+
+## <a name="creating-a-new-web-app-project"></a>新しい Web アプリ プロジェクトの作成
+
+1. **[File]\(ファイル\)** をクリックし、 **[New]\(新規\)** を展開して、 **[Project]\(プロジェクト\)** をクリックします。
+
+1. **[New Project]\(新しいプロジェクト\)** ダイアログ ボックスで、 **[Maven]** を選択し、 **[Create from Archetype]\(アーキタイプから作成\)** オプションがオンになっていることを確認します。 一覧から **[maven-archetype-webapp]** を選択し、 **[Next]\(次へ\)** をクリックします。
+
+   :::image type="content" source="media/create-hello-world-web-app/maven-archetype-webapp.png" alt-text="[maven-archetype-webapp] オプションを選択します。"::: 
+
+1. **[Artifact Coordinates]\(成果物の調整\)** ドロップダウンを展開してすべての入力フィールドを表示し、新しい Web アプリに次の情報を指定して、 **[Next]\(次へ\)** をクリックします。
+
+   * **Name**:Web アプリの名前です。 これは、Web アプリの **ArtifactId** フィールドに自動的に入力されます。
+   * **GroupId**:成果物グループの名前です (通常は会社のドメイン)。 (例: *com.microsoft.azure*)
+   * **バージョン**:既定のバージョン *1.0-SNAPSHOT* のままにします。
+
+1. Maven 設定をカスタマイズするか、既定の設定をそのまま使用し、 **[Finish]\(完了\)** をクリックします。
+
+1. 左側の **[Project]\(プロジェクト\)** タブでプロジェクトに移動し、ファイル **src/main/webapp/WEB-INF/index.jsp** を開きます。 コードを次の内容に置き換え、**変更を保存します**。
+
+   ```html
+   <html>
+    <body>
+      <b><% out.println("Hello World!"); %></b>
+    </body>
+   </html>
+   ```
+   :::image type="content" source="media/create-hello-world-web-app/open-index-page.png" alt-text="index.jsp ファイルを開きます。":::
 
 ## <a name="create-an-azure-container-registry-to-use-as-a-private-docker-registry"></a>Azure Container Registry をプライベート Docker レジストリとして使用するために作成する
 
@@ -69,27 +92,37 @@ Azure Portal を使用して Azure Container Registry を作成する手順を�
 
    Azure Portal のアカウントにサインインしたら、「[Azure Portal を使用したプライベート Docker コンテナー レジストリの作成]」の記事の手順に従います。便宜上、この手順を改めて以下で説明します。
 
-1. **[+ リソースの作成]** のメニュー アイコンをクリックし、 **[コンテナー]** 、 **[コンテナー レジストリ]** の順にクリックします。
-   
-   ![Azure Container Registry を新しく作成する][create-container-registry-01]
+1. **[+ リソースの作成]** のメニュー アイコンをクリックし、 **[コンテナー]** カテゴリをクリックし、 **[コンテナー レジストリ]** をクリックします。
 
-1. **[コンテナー レジストリの作成]** ページが表示されたら、 **[レジストリ名]** と **[リソース グループ]** を入力し、 **[管理ユーザー]** に対して **[有効化]** を選択した後、 **[作成]** をクリックします。
+1. **[コンテナー レジストリの作成]** ページが表示されたら、次の情報を指定します。
 
-   ![Azure Container Registry 設定を構成する][create-container-registry-02]
+   * **サブスクリプション**:新しいコンテナー レジストリに使用する Azure サブスクリプションを指定します。
+
+   * **リソース グループ**:コンテナー レジストリ用のリソース グループを指定します。 以下のオプションの 1 つを選択します。
+      * **[新規作成]** : 新しいリソース グループを作成することを指定します。
+      * **[Use Existing]\(既存の使用\)** :Azure アカウントに関連付けられているリソース グループの一覧から選択することを指定します。
+
+   * **レジストリ名**:新しいコンテナー レジストリの名前を指定します。
+
+   * **[場所]** :コンテナー レジストリを作成するリージョン ("米国西部" など) を指定します。
+
+   * **SKU**:コンテナー レジストリのサービス階層を指定します。 このチュートリアルでは、 *[Basic]\(ベーシック\)* を選択します。 詳細については、「[Azure Container Registry サービス階層](/azure/container-registry/container-registry-skus)」を参照してください。
+
+1. **[確認および作成]** をクリックし、情報が正しいことを確認します。 **[作成]** をクリックして完了します。
 
 ## <a name="deploy-your-web-app-in-a-docker-container"></a>Docker コンテナーに Web アプリを配置する
 
-1. プロジェクト エクスプローラーでプロジェクトを右クリックし、 **[Azure]** を選択し、 **[Add Docker Support]\(Docker サポートの追加\)** をクリックします。
+次の手順では、Web アプリの Docker サポートを構成し、Web アプリをにデプロイする手順について説明します。
+
+1. 左側の **[プロジェクト]** タブでプロジェクトに移動し、対象のプロジェクトを右クリックします。 **[Azure]** を展開し、 **[Add Docker Support]\(Docker サポートの追加\)** をクリックします。
 
    既定の構成の Docker ファイルが自動的に作成されます。
 
-   ![Docker サポートの追加][add-docker-support]
+   :::image type="content" source="media/hello-world-web-app-linux/docker-support-file.png" alt-text="Docker サポート ファイル。":::
 
-1. Docker のサポートを追加したら、プロジェクト エクスプローラーでプロジェクトを右クリックし、 **[Azure]** を選択して、 **[Run on Web App for Containers]\(Web App for Containers で実行\)** をクリックします。
+1. Docker のサポートを追加したら、プロジェクト エクスプローラーでプロジェクトを右クリックし、 **[Azure]** を展開し、 **[Run on Web App for Containers]\(Web App for Containers で実行\)** をクリックします。
 
-   ![[Run on Web App for Containers]\(Web App for Containers で実行\)][run-on-web-app-for-containers]
-
-1. **[Run on Web App for Containers]\(Web App for Containers で実行\)** ダイアログ ボックスが表示されたら、必要な情報を入力します。
+1. **[Run on Web App for Containers]\(Web App for Containers で実行\)** ダイアログ ボックスで、次の情報を入力します。
 
    * **Name**:Azure Toolkit に表示されるフレンドリ名を指定します。 
 
@@ -105,11 +138,7 @@ Azure Portal を使用して Azure Container Registry を作成する手順を�
 
    * **[App Service プラン]** :既存の App Service プランを使用するか、新しい App Service プランを作成するかを指定します。 
 
-   ![[Run on Web App for Containers]\(Web App for Containers で実行\)][run-on-web-app-linux]
-
 1. 上記の設定の構成が完了したら、 **[実行]** をクリックします。 Web アプリが正常にデプロイされると、 **[実行]** ウィンドウに状態が表示されます。
-
-   ![正常にデプロイされた Web アプリ][successfully-deployed]
 
 1. Web アプリが発行されたら、以前に指定した Web アプリの URL (例: *wingtiptoys.azurewebsites.net*) を参照できます。
 
@@ -119,11 +148,9 @@ Azure Portal を使用して Azure Container Registry を作成する手順を�
 
 1. Web アプリを発行すると、使用した設定が既定の設定として保存されます。ツール バーの緑色の矢印アイコンをクリックすると、Azure でアプリケーションを実行できます。 設定を変更するには、Web アプリのドロップダウン メニューをクリックし、 **[構成の編集]** をクリックします。
 
-   ![[構成の編集] メニュー][edit-configuration-menu]
+    :::image type="content" source="media/create-hello-world-web-app/edit-configuration-menu.png" alt-text="[構成の編集] メニュー。":::
 
 1. **[Run/Debug Configurations]\(構成の実行/デバッグ\)** ダイアログ ボックスが表示されたら、既定の設定を変更し、 **[OK]** をクリックします。
-
-   ![[構成の編集] ダイアログ ボックス][edit-configuration-dialog]
 
 ## <a name="next-steps"></a>次のステップ
 
@@ -144,18 +171,5 @@ Docker の他のリソースについては、公式の [Docker の Web サイ�
 
 <!-- IMG List -->
 
-[add-docker-support]: media/hello-world-web-app-linux/add-docker-support.png
 [browsing-to-web-app]:  media/hello-world-web-app-linux/browsing-to-web-app.png
-[create-container-registry-01]: media/hello-world-web-app-linux/create-container-registry-01.png
-[create-container-registry-02]: media/hello-world-web-app-linux/create-container-registry-02.png
 [docker-settings-menu]: media/hello-world-web-app-linux/docker-settings-menu.png
-[edit-configuration-dialog]: media/hello-world-web-app-linux/edit-configuration-dialog.png
-[edit-configuration-menu]: media/hello-world-web-app-linux/edit-configuration-menu.png
-[file-new-project]: media/hello-world-web-app-linux/file-new-project.png
-[groupid-and-artifactid]: media/hello-world-web-app-linux/groupid-and-artifactid.png
-[maven-archetype-webapp]: media/hello-world-web-app-linux/maven-archetype-webapp.png
-[maven-options]: media/hello-world-web-app-linux/maven-options.png
-[project-name]: media/hello-world-web-app-linux/project-name.png
-[run-on-web-app-for-containers]: media/hello-world-web-app-linux/run-on-web-app-for-containers.png
-[run-on-web-app-linux]: media/hello-world-web-app-linux/run-on-web-app-linux.png
-[successfully-deployed]: media/hello-world-web-app-linux/successfully-deployed.png

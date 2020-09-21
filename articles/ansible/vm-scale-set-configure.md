@@ -5,12 +5,12 @@ keywords: ansible, azure, devops, bash, プレイブック, 仮想マシン, 仮
 ms.topic: tutorial
 ms.date: 04/30/2019
 ms.custom: devx-track-ansible
-ms.openlocfilehash: e9ac4604b10f73e85290162eaf47803f4c4021c0
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 357de61099b8b3673022857a933a18632cff7e40
+ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240654"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90681867"
 ---
 # <a name="tutorial-configure-virtual-machine-scale-sets-in-azure-using-ansible"></a>チュートリアル:Ansible を使用して Azure 内に仮想マシン スケール セットを構成する
 
@@ -146,7 +146,7 @@ ms.locfileid: "88240654"
 
 * `vars` セクションで、`{{ admin_password }}` プレースホルダーを自分のパスワードに置き換えます。
 
-`ansible-playbook` コマンドを使用してプレイブックを実行します。
+[ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) を使用してプレイブックを実行します
 
 ```bash
 ansible-playbook vmss-create.yml
@@ -244,7 +244,7 @@ localhost                  : ok=8    changed=7    unreachable=0    failed=0
       azure_rm_virtualmachinescaleset: "{{ body }}"
 ```
 
-`ansible-playbook` コマンドを使用してプレイブックを実行します。
+[ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) を使用してプレイブックを実行します
 
 ```bash
 ansible-playbook vmss-scale-out.yml

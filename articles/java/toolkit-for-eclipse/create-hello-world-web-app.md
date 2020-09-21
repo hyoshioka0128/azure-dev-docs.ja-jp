@@ -7,22 +7,22 @@ documentationcenter: java
 author: selvasingh
 ms.assetid: 20d41e88-9eab-462e-8ee3-89da71e7a33f
 ms.reviewer: asirveda
-ms.date: 02/01/2018
+ms.date: 08/25/2020
 ms.service: app-service
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: devx-track-java
-ms.openlocfilehash: ea650fdf86f0a614303f94f67792f2c05827576e
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 053bca7e41ef9c95a8ad0e20b40d682552d0b384
+ms.sourcegitcommit: a139e25190960ba89c9e31f861f0996a6067cd6c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86378396"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90534523"
 ---
 # <a name="create-a-hello-world-web-app-for-azure-app-service-using-eclipse"></a>Eclipse を使用して Azure App Service 用の Hello World Web アプリを作成する
 
-オープンソースの [Azure Toolkit for Eclipse](https://marketplace.eclipse.org/content/azure-toolkit-eclipse) プラグインを使用すれば、数分で、基本的な Hello World アプリケーション作成して Web アプリとして Azure App Service にデプロイできます。
+この記事では、[Azure Toolkit for Eclipse](https://marketplace.eclipse.org/content/azure-toolkit-eclipse) を使用して、基本的な Hello World Web アプリを作成して Azure App Service に発行するために必要な手順について説明します。
 
 > [!NOTE]
 >
@@ -37,64 +37,80 @@ ms.locfileid: "86378396"
 
 ## <a name="installation-and-sign-in"></a>インストールとサインイン
 
-1. 次のボタンを実行中の Eclipse ワークスペースにドラッグして、Azure Toolkit for Eclipse プラグインをインストールします ([他のインストール オプション](installation.md))。
+次の手順では、Eclipse 開発環境での Azure サインイン プロセスについて説明します。
 
-    [![実行している Eclipse* ワークスペースにドラッグします。*Eclipse Marketplace Client が必要です](https://marketplace.eclipse.org/sites/all/themes/solstice/public/images/marketplace/btn-install.png)](http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1919278 "実行している Eclipse* ワークスペースにドラッグします。*Eclipse Marketplace Client が必要です")
+1. プラグインをインストールしていない場合は、「[Azure Toolkit for Eclipse のインストール](installation.md)」を参照してください。
 
-1. Azure アカウントにサインインするには、 **[ツール]** 、 **[Azure]** 、 **[サインイン]** の順にクリックします。
-   ![Azure サインイン用の Eclipse メニュー][I01]
+1. Azure アカウントにサインインするには、 **[Tools]\(ツール\)** 、 **[Azure]** 、 **[Sign In]\(サインイン\)** の順にクリックします。
 
-1. **[Azure サインイン]** ウィンドウで、 **[Device Login]\(デバイスのログイン\)** を選択し、次に **[サインイン]** をクリックします ([他のサインイン オプション](sign-in-instructions.md))。
+   :::image type="content" source="media/sign-in-instructions/eclipse-azure-signin.png" alt-text="Eclipse IDE で Azure にサインインします。":::
 
-   ![[デバイスのログイン] が選択されている [Azure サインイン] ウィンドウ][I02]
+1. **[Azure サインイン]** ウィンドウで、**[Device Login]\(デバイスのログイン\)** を選択し、次に **[サインイン]** をクリックします ([他のサインイン オプション](sign-in-instructions.md))。
 
-1. **[Azure Device Login]\(Azure デバイスのログイ\)** ダイアログで **[Copy&Open]\(コピーして開く\)** をクリックします。
-
-   ![[Azure ログイン] ダイアログ ウィンドウ][I03]
+1. **[Azure Device Login]\(Azure デバイスのログイン\)** ダイアログで **[Copy&Open]\(コピーして開く\)** をクリックします。
 
 1. ブラウザーで、該当のデバイス コード (前の手順で **[Copy&Open]\(コピーして開く\)** をクリックしたときにコピーされたもの) を貼り付け、 **[次へ]** をクリックします。
 
-   ![デバイスのログイン ブラウザー][I04]
+1. Azure アカウントを選択し、サインインするために必要な認証手順を完了します。
 
-1. 最後に、 **[サブスクリプションの選択]** ダイアログ ボックスで、使用するサブスクリプションを選択し、 **[OK]** をクリックします。
+1. サインインしたら、ブラウザーを閉じて Eclipse IDE に戻ります。 **[Select Subscriptions]\(サブスクリプションの選択\)** ダイアログ ボックスで、使用するサブスクリプションを選択し、 **[OK]** をクリックします。
 
-   ![[サブスクリプションの選択] ダイアログ ボックス][I05]
+### <a name="install-required-software-optional"></a>必要なソフトウェアのインストール " *(省略可能)* "
 
-## <a name="creating-web-app-project"></a>Web アプリ プロジェクトの作成
+Web アプリ プロジェクトを操作するために必要なコンポーネントがあることを確認するには、次の手順に従います。
 
-1. **[ファイル]** 、 **[新規]** 、 **[Dynamic Web Project]\(動的 Web プロジェクト\)** の順にクリックします ( **[ファイル]** と **[新規]** のクリック後、使用可能なプロジェクトとして **[Dynamic Web Project (動的 Web プロジェクト)]** が表示されない場合は、 **[ファイル]** 、 **[新規]** 、 **[プロジェクト]** の順にクリックし、 **[Web]** を展開して、 **[Dynamic Web Project (動的 Web プロジェクト)]** 、 **[次へ]** の順にクリックします)。
+1. **[Help]\(ヘルプ\)** メニューを選択し、 **[Install New Software]\(新しいソフトウェアのインストール\)** をクリックします。
 
-   ![新しい動的 Web プロジェクトの作成][file-new-dynamic-web-project]
+1. **[Available Software]\(使用可能なソフトウェア\)** ダイアログで、 **[Manage]\(管理\)** をクリックし、最新の Eclipse バージョン ( *[2020-06]* など) が選択されていることを確認します。
 
-2. このチュートリアルでは、プロジェクトに **MyWebApp**という名前を付けます。 画面は次のようになります。
+1. **[Apply and Close]\(適用して閉じる\)** をクリックします。 *[Work with:]\(連携:\)* ドロップダウン メニューを展開し て、推奨サイトを表示します。 最新の Eclipse バージョンのサイトを選択して、使用可能なソフトウェアを照会します。
+
+1. 一覧を下にスクロールし、 **[Web, XML, Java EE and OSGi Enterprise Development]\(Web、XML、Java EE、および OSGi Enterprise Development\)** 項目を選択します。 **[次へ]** をクリックします。
+
+1. [Install Details]\(インストールの詳細\) ウィンドウで、 **[Next]\(次へ\)** をクリックします。
+
+1. [Review Licenses] ダイアログ ボックスで、使用許諾契約の条項を確認します。 ライセンス契約の条項に同意する場合は、 **[I accept the terms of the license agreements (ライセンス契約の条項に同意する)]** をクリックし、 **[Finish (完了)]** をクリックします。 
+
+   > [!NOTE]
+   > Eclipse ワークスペースの右下隅でインストールの進行状況を確認できます。
+
+1. インストールを完了するために Eclipse を再起動するよう求めるメッセージが表示されたら、**[Restart Now]** をクリックします。
+
+## <a name="creating-a-web-app-project"></a>Web アプリ プロジェクトの作成
+
+1. **[File]\(ファイル\)** をクリックし、 **[New]\(新規\)** を展開して、 **[...Project]\(...プロジェクト\)** をクリックします。 [New Project]\(新しいプロジェクト\) ダイアログ ウィンドウ内で、 **[Web]** を展開し、 **[Dynamic Web Project]\(動的 Web プロジェクト\)** を選択し、 **[Next]\(次へ\)** をクリックします。
+
+   > [!TIP]
+   > 使用可能なプロジェクトとして **[Web]** が表示されない場合は、[こちらのセクション](#install-required-software-optional)を参照して、必要な Eclipse ソフトウェアがあることを確認してください。
+
+1. このチュートリアルでは、プロジェクトに **MyWebApp**という名前を付けます。 画面は次のようになります。
    
    ![新しい動的 Web プロジェクトのプロパティ][dynamic-web-project-properties]
 
-3. **[完了]** をクリックします。
+1. **[完了]** をクリックします。
 
-4. Eclipse の Project Explorer ビューで、 **[MyWebApp]** を展開します。 **WebContent** を右クリックし、 **[新規]** 、 **[JSP ファイル]** の順にクリックします。
+1. 左側の [Package Explorer]\(パッケージ エクスプローラー\) ペインで、 **[MyWebApp]** を展開します。 **[WebContent]** を右クリックし、 **[New]\(新規\)** にマウス ポインターを置いて、 **[Other...]\(その他...\)** をクリックします。
 
-   ![新しい JSP ファイルの作成][create-new-jsp-file]
+1. **[Web]** を展開して、 **[JSP File]\(JSP ファイル\)** オプションを見つけます。 **[次へ]** をクリックします。
 
-5. **[New JSP File (新しい JSP ファイル)]** ダイアログ ボックスで **index.jsp** ファイルに名前を付け、親フォルダーは **MyWebApp/WebContent** のままにして **[次へ]** をクリックします。
+1. **[New JSP File (新しい JSP ファイル)]** ダイアログ ボックスで **index.jsp** ファイルに名前を付け、親フォルダーは **MyWebApp/WebContent** のままにして **[次へ]** をクリックします。
 
    ![[New JSP File\(新しい JSP ファイル\)] ダイアログ ボックス][new-jsp-file-dialog]
 
-6. **[Select JSP Template (JSP テンプレートの選択)]** ダイアログ ボックスで、このチュートリアルのために **[New JSP File (html) (新しい JSP ファイル (html))]** を選択し、 **[完了]** をクリックします。
+1. **[Select JSP Template]\(JSP テンプレートの選択\)** ダイアログ ボックスで、このチュートリアルのために **[New JSP File (html 5)]\(新しい JSP ファイル (html 5)\)** を選択し、 **[Finish]\(完了\)** をクリックします。
 
-   ![JSP テンプレートの選択][select-jsp-template]
-
-7. index.jsp ファイルが Eclipse で開いたら、"**Hello World!** " を動的に表示するためのテキストを 既存の `<body>` 要素に追加します。 更新された `<body>` コンテンツは、次のようになります。
+1. index.jsp ファイルが Eclipse で開いたら、"**Hello World!** " を動的に表示するためのテキストを 既存の `<body>` 要素に追加します。 更新された `<body>` コンテンツは、次のようになります。
    
    ```jsp
-   <body><b><% out.println("Hello World!"); %></b></body>
+   <body>
+   <b><% out.println("Hello World!"); %></b>
+   </body>
    ```
+1. index.jsp を保存します。
 
-8. index.jsp を保存します。
+## <a name="deploying-the-web-app-to-azure"></a>Azure への Web アプリのデプロイ
 
-## <a name="deploying-web-app-to-azure"></a>Azure への Web アプリのデプロイ
-
-1. Eclipse のプロジェクト エクスプローラー ビューでプロジェクトを右クリックし、 **[Azure]** 、 **[Publish as Azure Web App]\(Azure Web アプリとして発行\)** の順に選択します。
+1. 左側の [Package Explorer]\(パッケージ エクスプローラー\) ペインでプロジェクトを右クリックし、 **[Azure]** 、 **[Publish as Azure Web App]\(Azure Web アプリとして発行\)** の順に選択します。
    
    ![[Publish as Azure Web App (Azure Web アプリとして発行)]][publish-as-azure-web-app]
 
@@ -102,37 +118,27 @@ ms.locfileid: "86378396"
 
    * 既存の Web アプリを選択します (存在する場合)。
 
-      ![アプリ サービスの選択][select-app-service]
+   * 既存の Web アプリがない場合は、 **[Create]\(作成\)** をクリックします。
 
-   * **[Create New Web App]\(新しい Web アプリを作成する\)** をクリックする。
+      ここで、ランタイム環境、アプリ サービス プラン リソース グループ、アプリ設定を構成できます。 必要に応じて、新しいリソースを作成してください。
 
-      ![App Service を作成する][create-app-service]
+      **[App Service の作成]** ダイアログ ボックスで Web アプリに必要な情報を指定し、**[作成]** をクリックします。
 
-      **[App Service の作成]** ダイアログ ボックスで Web アプリに必要な情報を指定し、 **[作成]** をクリックします。
+1. Web アプリを選択し、**[デプロイ]** をクリックします。
 
-      ここで、ランタイム環境、アプリ設定、サービス プラン、およびリソース グループを構成できます。
-
-      ![[App Service の作成] ダイアログ ボックス][create-app-service-dialog]
-
-1. Web アプリを選択し、 **[デプロイ]** をクリックします。
-
-   ![アプリ サービスのデプロイ][deploy-app-service]
-
-1. ツールキットにより Web アプリが正常にデプロイされると、 **[Azure の活動ログ]** タブに **[発行済み]** 状態として表示され、デプロイされた Web アプリの URL へのハイパーリンクが設定されます。
-
-   ![発行済み状態][publish-status]
+1. ツールキットにより Web アプリが正常にデプロイされると、**[Azure の活動ログ]** タブに **[発行済み]** 状態として表示され、デプロイされた Web アプリの URL へのハイパーリンクが設定されます。
 
 1. ステータス メッセージに表示されたリンクを使用して、Web アプリを参照できます。
 
    ![Web アプリの参照][browse-web-app]
 
-[!INCLUDE [show-azure-explorer](includes/show-azure-explorer.md)]
-
-## <a name="cleaning-up-resources"></a>リソースのクリーンアップ
+## <a name="cleaning-up-resources"></a>リソースの後処理
 
 1. Web アプリを Azure に発行した後、それを管理するには、Azure Explorer で右クリックし、コンテキスト メニューからオプションのいずれかを選択します。 たとえば、ここで Web アプリを **[削除]** して、このチュートリアルのリソースをクリーンアップできます。
 
    ![アプリ サービスの管理][manage-app-service]
+
+[!INCLUDE [show-azure-explorer](includes/show-azure-explorer.md)]
 
 ## <a name="next-steps"></a>次のステップ
 
@@ -151,23 +157,10 @@ Azure Web Apps の作成の詳細については、「 [Web Apps の概要]」�
 [Legacy Version]: create-hello-world-web-app-legacy-version.md
 
 <!-- IMG List -->
-[I01]: media/sign-in-instructions/I01.png
-[I02]: media/sign-in-instructions/I02.png
-[I03]: media/sign-in-instructions/I03.png
-[I04]: media/sign-in-instructions/I04.png
-[I05]: media/sign-in-instructions/I05.png
 
 [browse-web-app]: media/create-hello-world-web-app/browse-web-app.png
-[file-new-dynamic-web-project]: media/create-hello-world-web-app/file-new-dynamic-web-project.png
 [dynamic-web-project-properties]: media/create-hello-world-web-app/dynamic-web-project-properties.png
-[create-new-jsp-file]: media/create-hello-world-web-app/create-new-jsp-file.png
 [new-jsp-file-dialog]: media/create-hello-world-web-app/new-jsp-file-dialog.png
-[select-jsp-template]: media/create-hello-world-web-app/select-jsp-template.png
 [publish-as-azure-web-app]: media/create-hello-world-web-app/publish-as-azure-web-app.png
-[deploy-web-app-dialog]: media/create-hello-world-web-app/deploy-web-app-dialog.png
-[select-app-service]: media/create-hello-world-web-app/select-app-service.png
-[create-app-service-dialog]: media/create-hello-world-web-app/create-app-service-dialog.png
 [publish-status]: media/create-hello-world-web-app/publish-status.png
-[create-app-service]: media/create-hello-world-web-app/create-app-service.png
-[deploy-app-service]: media/create-hello-world-web-app/deploy-app-service.png
 [manage-app-service]: media/create-hello-world-web-app/manage-app-service.png

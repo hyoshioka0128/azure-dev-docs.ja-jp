@@ -2,19 +2,22 @@
 title: Azure Explorer for Eclipse を使用してストレージ アカウントを管理する
 description: Azure Explorer for Eclipse を使用して Azure ストレージ アカウントを管理する方法について説明します。
 documentationcenter: java
-ms.date: 02/01/2018
+ms.date: 08/25/2020
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: b3772c4d51852f9d77f63b2c998983a43cf00f4e
-ms.sourcegitcommit: 300251b3d866bac9c7d2dfc3133efaaea8e0ce04
+ms.openlocfilehash: 8c7c39fa80568efa3040d5cbfa18c3b0cfcd43bc
+ms.sourcegitcommit: a139e25190960ba89c9e31f861f0996a6067cd6c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87438336"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90534640"
 ---
 # <a name="manage-storage-accounts-by-using-the-azure-explorer-for-eclipse"></a>Azure Explorer for Eclipse を使用してストレージ アカウントを管理する
+
+> [!NOTE]
+> Azure Explorer のストレージ アカウント機能は非推奨です。 Azure portal を利用して、ストレージ アカウントとコンテナーを作成して管理できます。 ストレージ アカウントの管理方法に関するクイックスタートについては、 [Azure Storage](/azure/storage/blobs/storage-quickstart-blobs-portal) のドキュメントをご覧ください。
 
 Azure Toolkit for Eclipse の一部である Azure Explorer は、Eclipse 統合開発環境 (IDE) 内から Azure アカウントのストレージ アカウントを管理するための使いやすいソリューションを Java 開発者に提供します。
 
@@ -22,19 +25,13 @@ Azure Toolkit for Eclipse の一部である Azure Explorer は、Eclipse 統合
 
 [!INCLUDE [show-azure-explorer](includes/show-azure-explorer.md)]
 
-## <a name="create-a-storage-account-in-eclipse"></a>Eclipse でストレージ アカウントを作成する
-
-Azure Explorer を使用してストレージ アカウントを作成するには、以下の手順を実行します。
+## <a name="create-a-storage-account"></a>ストレージ アカウントの作成
 
 1. 「[Azure Toolkit for Eclipse のサインイン手順](/azure/developer/java/toolkit-for-eclipse/sign-in-instructions)」を使用して Azure アカウントにサインインします。
 
 1. **Azure Explorer** ビューで、 **[Azure]** ノードを展開し、 **[ストレージ アカウント]** を右クリックし、 **[ストレージ アカウントの作成]** をクリックします。
 
-   ![[ストレージ アカウントの作成] コマンド][CS01]
-
 1. **[ストレージ アカウントの作成]** ダイアログ ボックスで、次のオプションを指定します。
-
-   ![[新しいストレージ アカウントの作成] ダイアログ ボックス][CS02]
 
    * **Name**:新しいストレージ アカウントの名前を指定します。
 
@@ -46,49 +43,26 @@ Azure Explorer を使用してストレージ アカウントを作成するに�
 
    * **[リージョン]** :ストレージ アカウントが作成される場所 ("米国西部" など) を指定します。
 
-   * **[アカウントの種類]** : 作成するストレージ アカウントの種類 ("Blob Storage" など) を指定します。 詳細については、「[Azure ストレージ アカウントについて]」を参照してください。
+   * **[アカウントの種類]** : 作成するストレージ アカウントの種類 ("汎用 v1" など) を指定します。 詳細については、「[Azure ストレージ アカウントについて]」を参照してください。
 
-   * **パフォーマンス**: 選択された発行元からどのストレージ アカウント サービスを使用するかを指定します ("Premium" など)。 詳細については、「[Azure Storage のスケーラビリティおよびパフォーマンスのターゲット]」を参照してください。
+   * **パフォーマンス**: 選択された発行元からどのストレージ アカウント オファリングを使用するかを指定します ("Standard" など)。 詳細については、「[Azure Storage のスケーラビリティおよびパフォーマンスのターゲット]」を参照してください。
 
-   * **[Replication]\(レプリケーション\)** :ストレージ アカウントのレプリケーション ("ゾーン冗長" など) を指定します。 詳細については、「[Azure Storage のレプリケーション]」を参照してください。
+   * **[Replication]\(レプリケーション\)** :ストレージ アカウントのレプリケーション ("ローカル冗長" など) を指定します。 詳細については、「[Azure Storage のレプリケーション]」を参照してください。
 
 1. 上記のオプションをすべて指定したら、 **[作成]** をクリックします。
 
-## <a name="create-a-storage-container-in-eclipse"></a>Eclipse でストレージ コンテナーを作成する
+## <a name="create-and-manage-storage-containers"></a>ストレージ コンテナーの作成と管理
 
-Azure Explorer を使用してストレージ コンテナーを作成するには、以下の手順を実行します。
+ストレージ コンテナーを作成して管理するには、Azure portal にアクセスするか、プログラムでリソースをプロビジョニングします。
 
-1. **Azure Explorer** ビューで、コンテナーを作成するストレージ アカウントを右クリックし、 **[BLOB コンテナーを作成する]** をクリックします。
+Azure portal を使用して Azure Storage でコンテナーを作成し、そのコンテナー内のブロック BLOB をアップロードおよびダウンロードする方法の詳細なチュートリアルについては、「[Azure portal を使用して BLOB をアップロード、ダウンロード、および一覧表示する](/azure/storage/blobs/storage-quickstart-blobs-portal)」を参照してください。
 
-   ![[BLOB コンテナーを作成する] コマンド][CC01]
-
-1. **[BLOB コンテナーを作成する]** ダイアログ ボックスで、コンテナーの名前を指定し、 **[OK]** をクリックします。 ストレージ コンテナーの名前付けの詳細については、「[コンテナー、BLOB、メタデータの名前付けと参照]」を参照してください。
-
-   ![[BLOB コンテナーを作成する] ダイアログ ボックス][CC02]
-
-## <a name="delete-a-storage-container-in-eclipse"></a>Eclipse でストレージ コンテナーを削除する
-
-Azure Explorer を使用してストレージ コンテナーを削除するには、以下の手順を実行します。
-
-1. **Azure Explorer** ビューで、ストレージ コンテナーを右クリックし、 **[削除]** をクリックします。
-
-   ![[ストレージ コンテナーの削除] コマンド][DC01]
-
-1. 確認ウィンドウで、 **[OK]** をクリックします。
-
-   ![[ストレージ コンテナーの削除] 確認ウィンドウ][DC02]
-
-## <a name="delete-a-storage-account-in-eclipse"></a>Eclipse でストレージ アカウントを削除する
-
-Azure Explorer を使用してストレージ アカウントを削除するには、以下の手順を実行します。
+## <a name="delete-a-storage-account"></a>ストレージ アカウントを削除する
 
 1. **Azure Explorer** ビューで、ストレージ アカウントを右クリックし、 **[削除]** をクリックします。
 
-   ![[Delete storage account] (ストレージ アカウントの削除) コマンド][DS01]
-
 1. 確認ウィンドウで、 **[OK]** をクリックします。
 
-   ![[Delete storage account] (ストレージ アカウントの削除) 確認ウィンドウ][DS02]
 
 ## <a name="next-steps"></a>次のステップ
 
@@ -111,7 +85,7 @@ Azure ストレージ アカウント、サイズ、および料金の詳細に�
 [Azure ストレージ アカウントについて]: /azure/storage/storage-create-storage-account
 [Azure Storage のレプリケーション]: /azure/storage/storage-redundancy
 [Azure Storage のスケーラビリティおよびパフォーマンスのターゲット]: /azure/storage/storage-scalability-targets
-[コンテナー、BLOB、メタデータの名前付けと参照]: https://go.microsoft.com/fwlink/?LinkId=255555
+[Naming and referencing containers, blobs, and metadata]: https://go.microsoft.com/fwlink/?LinkId=255555
 
 [Azure の Windows ストレージ アカウントのサイズ]: https://docs.microsoft.com/azure/virtual-machines/sizes
 [Azure の Linux ストレージ アカウントのサイズ]: https://docs.microsoft.com/azure/virtual-machines/sizes

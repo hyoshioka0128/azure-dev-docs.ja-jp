@@ -1,20 +1,22 @@
 ---
-ms.openlocfilehash: 47bda8a2cff0065a0fe2371d37c7a3591be30284
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: db3db3c9d8239d36483796702404ea20446c004d
+ms.sourcegitcommit: a139e25190960ba89c9e31f861f0996a6067cd6c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81671028"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90534522"
 ---
 ## <a name="displaying-the-azure-explorer-view"></a>[Azure Explorer] ビューの表示
 
 **[Azure Explorer]** ビューが Eclipse に表示されていない場合は、以下の手順に従って表示します。
 
-1. **[Window]\(ウィンドウ\)** 、 **[Show View]\(ビューの表示\)** 、 **[Other]\(その他\)** の順にクリックします。
+1. **[Window]\(ウィンドウ\)** をクリックし、 **[Show View]\(ビューの表示\)** にマウス ポインターを置いて、 **[Other]\(その他\)** をクリックします。
 
-   ![[Show View]\(ビューの表示\) コマンド](../media/show-azure-explorer/show-az-exp-01.png)
+2. **[Show View]\(ビューの表示\)** ダイアログ ボックスで **[Azure]** を展開し、 **[Azure Explorer]** を選択して **[Open]\(開く\)** をクリックします。
 
-2. **[Show View]\(ビューの表示\)** ダイアログ ボックスで **[Azure Explorer]** を選択して **[OK]** をクリックします。
+    :::image type="content" source="../media/show-azure-explorer/show-az-exp-02.png" alt-text="[Azure Explorer] オプションを選択します。":::
 
-   ![[Show View]\(ビューの表示\) ダイアログ ボックス](../media/show-azure-explorer/show-az-exp-02.png)
+
+
+
 

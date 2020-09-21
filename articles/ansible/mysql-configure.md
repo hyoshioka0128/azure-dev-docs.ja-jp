@@ -5,12 +5,12 @@ keywords: ansible、azure、devops、bash、プレイブック、mysql、デー�
 ms.topic: tutorial
 ms.date: 04/30/2019
 ms.custom: devx-track-ansible
-ms.openlocfilehash: 6264ca6158017fc919e64fa2e33852076c523fc6
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 1fb753658486a0a1c8f5c44c01f6c4c33c8ecaf0
+ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88239984"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90682003"
 ---
 # <a name="tutorial-configure-databases-in-azure-database-for-mysql-using-ansible"></a>チュートリアル:Ansible を使用して Azure Database for MySQL のデータベースを構成する
 
@@ -57,7 +57,7 @@ ms.locfileid: "88239984"
 * `myResourceGroup` という名前のリソース グループが作成されます。
 * リソース グループが作成される場所は `eastus` です。
 
-`ansible-playbook` コマンドを使用してプレイブックを実行します。
+[ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) を使用してプレイブックを実行します
 
 ```bash
 ansible-playbook rg.yml
@@ -106,7 +106,7 @@ ansible-playbook rg.yml
 * `vars` セクションの `mysqlserver_name` の値は一意である必要があります。
 * `vars` セクションの `<server_admin_password>` をパスワードで置き換えます。
 
-`ansible-playbook` コマンドを使用してプレイブックを実行します。
+[ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) を使用してプレイブックを実行します
 
 ```bash
 ansible-playbook mysql_create.yml
@@ -148,7 +148,7 @@ ansible-playbook mysql_create.yml
 * Azure Database for MySQL との接続では、ポート 3306 が通信に使用されます。 企業ネットワーク内から接続を試みる場合、ポート 3306 での送信トラフィックが許可されていない場合があります。 その場合、会社の IT 部門によってポート 3306 が開放されない限り、サーバーに接続することはできません。
 * このプレイブックでは、REST API の直接使用を許可する `azure_rm_resource` モジュールを使用します。
 
-`ansible-playbook` コマンドを使用してプレイブックを実行します。
+[ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) を使用してプレイブックを実行します
 
 ```bash
 ansible-playbook mysql_firewall.yml
@@ -248,7 +248,7 @@ ansible-playbook mysql_firewall.yml
         var: mysqldatabasefacts
 ```
 
-`ansible-playbook` コマンドを使用してプレイブックを実行します。
+[ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) を使用してプレイブックを実行します
 
 ```bash
 ansible-playbook mysql_query.yml
@@ -316,26 +316,7 @@ ansible-playbook mysql_query.yml
 
 ## <a name="clean-up-resources"></a>リソースをクリーンアップする
 
-この記事で作成したリソースが不要になったら、削除してください。 
-
-次のプレイブックを `cleanup.yml` という名前で保存します。
-
-```yml
-- hosts: localhost
-  vars:
-    resource_group: myResourceGroup
-  tasks:
-    - name: Delete a resource group
-      azure_rm_resourcegroup:
-        name: "{{ resource_group }}"
-        state: absent
-```
-
-`ansible-playbook` コマンドを使用してプレイブックを実行します。
-
-```bash
-ansible-playbook cleanup.yml
-```
+[!INCLUDE [ansible-delete-resource-group.md](includes/ansible-delete-resource-group.md)]
 
 ## <a name="next-steps"></a>次のステップ
 

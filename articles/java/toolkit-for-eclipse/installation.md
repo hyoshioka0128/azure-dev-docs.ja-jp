@@ -3,24 +3,21 @@ title: Azure Toolkit for Eclipse のインストール
 description: Azure Toolkit for Eclipse プラグインをインストールして、クラウド アプリケーションを作成し、Azure にデプロイする方法を説明します。
 documentationcenter: java
 ms.assetid: 9e93ff6a-f42b-4d99-b55b-624136b4a730
-ms.date: 02/01/2018
+ms.date: 08/25/2020
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 867fd12dbcf5963de36f500b96a577be141e967a
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 27793d827b60a5977968529377b20c7033170ffe
+ms.sourcegitcommit: a139e25190960ba89c9e31f861f0996a6067cd6c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86378276"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90534668"
 ---
 # <a name="installing-the-azure-toolkit-for-eclipse"></a>Azure Toolkit for Eclipse のインストール
 
-Azure Toolkit for Eclipse をインストールするには次の 2 つの方法があります。
-
-  - [Eclipse Marketplace](#eclipse-marketplace)
-  - [新しいソフトウェアのインストール](#install-new-software)
+Azure Toolkit for Eclipse が提供する機能により、軽量で可用性が高くスケーラブルな Java Web アプリと HDInsight Spark ジョブを、Eclipse 開発環境を使用して簡単に作成、開発、構成、テストでき、さらに Azure にデプロイできます。
 
 > [!NOTE] 
 > 
@@ -31,59 +28,79 @@ Azure Toolkit for Eclipse をインストールするには次の 2 つの方法
 
 [!INCLUDE [basic-prerequisites](includes/basic-prerequisites.md)]
 
+Azure Toolkit for Eclipse をインストールする方法は 2 つあります。具体的には、**Eclipse Marketplace** にアクセスする方法と、[ヘルプ] メニューの **[新しいソフトウェアのインストール]** オプションを使用する方法です。 以降のセクションでは、両方のインストール方法を説明します。
+
 ## <a name="eclipse-marketplace"></a>Eclipse Marketplace
 
-1. 次のボタンを実行中の Eclipse ワークスペースにドラッグします。
+Eclipse IDE の Eclipse Marketplace ウィザードでは、ユーザーは [Eclipse Marketplace](https://marketplace.eclipse.org/) を参照して、ソリューションをインストールできます。 次の 2 つのオプションを使用すると、Eclipse Marketplace に移動できます。
 
-    [![実行している Eclipse* ワークスペースにドラッグします。*Eclipse Marketplace Client が必要です](https://marketplace.eclipse.org/sites/all/themes/solstice/public/images/marketplace/btn-install.png)](http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1919278 "実行している Eclipse* ワークスペースにドラッグします。*Eclipse Marketplace Client が必要です")
+   * 次のボタンを実行中の Eclipse ワークスペースにドラッグします。 このボタンにより、Azure Toolkit for Eclipse が既に選択された状態で Eclipse Marketplace が開きます。
 
-2. あるいは、 **[ヘルプ]/[Eclipse Marketplace]** で **Azure Toolkit for Eclipse プラグイン**を検索してインストールすることもできます。
+      [![実行している Eclipse* ワークスペースにドラッグします。*Eclipse Marketplace Client が必要です](https://marketplace.eclipse.org/sites/all/themes/solstice/public/images/marketplace/btn-install.png)](http://marketplace.eclipse.org/marketplace-client-intro?mpc_install=1919278 "実行している Eclipse* ワークスペースにドラッグします。*Eclipse Marketplace Client が必要です")
 
-    ![マーケットプレース](media/installation/marketplace.png)
+   * Eclipse IDE で、 **[ヘルプ]** メニューをクリックし、**Eclipse Marketplace** に移動し、"Azure Toolkit for Eclipse" を検索し、 **[インストール]** をクリックします。
 
-## <a name="install-new-software"></a>新しいソフトウェアのインストール
+      :::image type="content" source="media/installation/eclipse-marketplace-button.png" alt-text="Marketplace ウィンドウの [ヘルプ] メニュー。"::: 
 
-1. Eclipse を起動します。
+1. Eclipse Marketplace ウィザードがポップアップ表示され、インストール手順と、インストールされるコンポーネントの一覧が示されます。 すべての機能が選択されていることを確認し、 **[Confirm >]\(確認 >\)** をクリックします。
 
-1. 次の図に示すように、 **[Help]\(ヘルプ\)** メニューをクリックし、 **[Install New Software]\(新しいソフトウェアのインストール\)** をクリックします。
-
-   ![Azure Toolkit for Eclipse のインストール][01]
-
-1. **[Available Software]\(利用可能なソフトウェア\)** ダイアログで、 **[Work with]\(対象\)** テキスト ボックスに「`http://dl.microsoft.com/eclipse/`」と入力し、**Enter** キーを押します。
-
-1. **[Name]\(名前\)** ウィンドウで、 **[Azure Toolkit for Java]** をオンにし、 **[Contact all update sites during install to find required software]\(インストール中にすべての更新サイトに接続して必要なソフトウェアを調べる\)** をオフにします。 画面は次のようになります。
-
-   ![Azure Toolkit for Eclipse のインストール][02]
-
-1. **Azure Toolkit for Eclipse** を展開すると、インストールされるコンポーネントの一覧が表示されます。次に例を示します。
-
-   | 特徴量 | 説明 | 
+   | 機能 | 説明 | 
    |---|---| 
    | **Application Insights Plugin for Java** | アプリケーションとサーバー インスタンスに対する Azure のテレメトリ ログと分析サービスを使用できるようにします。 | 
    | **Azure Common Plugin** | 他のツールキット コンポーネントで必要な一般的な機能を提供します。 | 
    | **Azure Container Tools for Eclipse** | .WAR を Docker コンテナーとして Docker マシンに構築およびデプロイできるようにします。 | 
    | **Azure Containers for Eclipse** | .WAR または.JAR アーティファクトを Docker コンテナーとして Azure 仮想マシンにデプロイできるようにします。 | 
    | **Azure Explorer for Eclipse** | Azure リソースを管理するためのエクスプローラー スタイルのインターフェイスを提供します。 | 
+   | **Azure HDInsight plugin for Java** | Scala で Apache Spark アプリケーションを開発できるようにします。 |
    | **Microsoft JDBC Driver 6.1 for SQL Server** | SQL Server と Microsoft Azure SQL Database 向けに、Java Platform Enterprise Edition 8 の JDBC API を提供します。 | 
    | **Package for Microsoft Azure Libraries for Java** | Microsoft Azure の各種サービス (ストレージ、Service Bus、サービス ランタイムなど) にアクセスするための API を提供します。 | 
+   | **WebApp Plugin for Eclipse** | Web アプリケーションを Azure App Services としてデプロイできるようにします。 | 
+
+1. **[Review Licenses (ライセンスの確認)]** ダイアログで、ライセンス契約の条項を確認します。 ライセンス契約の条項に同意する場合は、 **[I accept the terms of the license agreements]\(ライセンス契約の条項に同意する\)** をクリックし、 **[Finish]\(完了\)** をクリックします。 
+
+   > [!NOTE]
+   > Eclipse ワークスペースの右下隅でインストールの進行状況を確認できます。
+
+4. インストールが完了すると、Eclipse IDE を再起動してソフトウェアの更新を適用するよう求めるプロンプトが表示されます。 **[今すぐ再起動する]** をクリックします。
+
+## <a name="install-new-software"></a>新しいソフトウェアのインストール
+
+Azure Toolkit for Eclipse は、新しいソフトウェアの形式で *[ヘルプ]* メニューから直接インストールできます。
+
+1. **[ヘルプ]** メニューをクリックし、 **[新しいソフトウェアのインストール]** をクリックします。
+
+   :::image type="content" source="media/installation/eclipse-install-software-button.png" alt-text="[新しいソフトウェアのインストール]、[ヘルプ] メニュー。"::: 
+
+1. **[利用可能なソフトウェア]** ダイアログで、 **[操作]** テキスト ボックスに `http://dl.microsoft.com/eclipse/` を入力します。
+
+1. **[Name]\(名前\)** ウィンドウで、 **[Azure Toolkit for Java]** をオンにし、 **[Contact all update sites during install to find required software]\(インストール中にすべての更新サイトに接続して必要なソフトウェアを調べる\)** をオフにします。 画面は次のようになります。
+
+   ![Azure Toolkit for Eclipse のインストール][02]
+
+1. **[Azure Toolkit for Java]** を展開すると、インストールされるコンポーネントの一覧が表示されます。次に例を示します。
+
+   | 機能 | 説明 | 
+   |---|---| 
+   | **Application Insights Plugin for Java** | アプリケーションとサーバー インスタンスに対する Azure のテレメトリ ログと分析サービスを使用できるようにします。 | 
+   | **Azure Common Plugin** | 他のツールキット コンポーネントで必要な一般的な機能を提供します。 | 
+   | **Azure Container Tools for Eclipse** | .WAR を Docker コンテナーとして Docker マシンに構築およびデプロイできるようにします。 | 
+   | **Azure Containers for Eclipse** | .WAR または.JAR アーティファクトを Docker コンテナーとして Azure 仮想マシンにデプロイできるようにします。 | 
+   | **Azure Explorer for Eclipse** | Azure リソースを管理するためのエクスプローラー スタイルのインターフェイスを提供します。 | 
+   | **Azure HDInsight plugin for Java** | Scala で Apache Spark アプリケーションを開発できるようにします。 |
+   | **Microsoft JDBC Driver 6.1 for SQL Server** | SQL Server と Microsoft Azure SQL Database 向けに、Java Platform Enterprise Edition 8 の JDBC API を提供します。 | 
+   | **Package for Microsoft Azure Libraries for Java** | Microsoft Azure の各種サービス (ストレージ、Service Bus、サービス ランタイムなど) にアクセスするための API を提供します。 | 
+   | **WebApp Plugin for Eclipse** | Web アプリケーションを Azure App Services としてデプロイできるようにします。 | 
 
 1. **[次へ]** をクリックします。 (ツールキットのインストール時に異常な遅延が発生する場合は、 **[Contact all update sites during install to find required software (インストール中にすべての更新サイトに接続して必要なソフトウェアを調べる)]** がオフになっていることを確認してください)。
 
 1. **[Install Details (インストールの詳細)]** ダイアログで、 **[Next (次へ)]** をクリックします。
 
-   ![Review Installation Details][03]
-
 1. **[Review Licenses (ライセンスの確認)]** ダイアログで、ライセンス契約の条項を確認します。 ライセンス契約の条項に同意する場合は、 **[I accept the terms of the license agreements (ライセンス契約の条項に同意する)]** をクリックし、 **[Finish (完了)]** をクリックします。 (残りの手順は、ライセンス契約の条項に同意したことを前提としています。 ライセンス契約の条項に同意しない場合はインストール プロセスを終了します。)
 
-   ![Review Licenses][04]
+   > [!NOTE]
+   > Eclipse ワークスペースの右下隅でインストールの進行状況を確認できます。
 
-   必要なパッケージが Eclipse によってダウンロードされてインストールされます。
-
-   ![Installation Progress][05]
-
-1. インストールを完了するために Eclipse を再起動することを求めるメッセージが表示されたら、 **[Yes]** をクリックします。
-
-   ![Restart Prompt][06]
+1. インストールを完了するために Eclipse を再起動するよう求めるメッセージが表示されたら、**[Restart Now]** をクリックします。
 
 ## <a name="next-steps"></a>次のステップ
 
@@ -94,9 +111,4 @@ Azure Toolkit for Eclipse をインストールするには次の 2 つの方法
 <!-- Legacy MSDN URL = https://msdn.microsoft.com/library/azure/hh690946.aspx -->
 
 <!-- IMG List -->
-[01]: media/installation/eclipse-installation-01.png
 [02]: media/installation/eclipse-installation-02.png
-[03]: media/installation/eclipse-installation-03.png
-[04]: media/installation/eclipse-installation-04.png
-[05]: media/installation/eclipse-installation-05.png
-[06]: media/installation/eclipse-installation-06.png

@@ -9,12 +9,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: f5606cb8b1e61358e610c8ff1bcadc837e44a539
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 51037098f05d985bcb8c35580688d37db0cbe363
+ms.sourcegitcommit: a139e25190960ba89c9e31f861f0996a6067cd6c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86378286"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90534740"
 ---
 # <a name="deploy-a-hello-world-web-app-to-a-linux-container-in-the-cloud-using-the-azure-toolkit-for-eclipse"></a>Azure Toolkit for Eclipse を使用して Hello World Web アプリをクラウドの Linux コンテナーにデプロイする
 
@@ -36,11 +36,11 @@ ms.locfileid: "86378286"
 
 1. Eclipse を起動し、[Azure Toolkit for Eclipse のサインイン手順](/azure/developer/java/toolkit-for-eclipse/sign-in-instructions)に関する記事の手順に従って、Azure アカウントにサインインします。
 
-1. **[File]\(ファイル\)** メニューをクリックし、 **[New]\(新規作成\)** 、 **[Dynamic Web Project]\(動的 Web プロジェクト\)** の順にクリックします。
+1. **[File]\(ファイル\)** メニューをクリックし、**[New]\(新規作成\)**、**[Dynamic Web Project]\(動的 Web プロジェクト\)** の順にクリックします。
    
    ![新しいプロジェクトの作成][file-new-project]
 
-1. **[New Dynamic Web Project]\(新しい動的 Web プロジェクト\)** ダイアログ ボックスで、プロジェクト名と場所を指定し、 **[Finish]\(完了\)** をクリックします。
+1. **[New Dynamic Web Project]\(新しい動的 Web プロジェクト\)** ダイアログ ボックスで、プロジェクト名と場所を指定し、**[Finish]\(完了\)** をクリックします。
    
    ![プロジェクト名の指定][project-name]
 
@@ -73,7 +73,7 @@ Azure Portal を使用して Azure Container Registry を作成する手順を�
 
    ![Docker サポートの追加][add-docker-support]
 
-1. Docker のサポートを追加したら、プロジェクト エクスプローラーでプロジェクトを右クリックし、 **[Azure]** を選択して、 **[Publish to Web App for Containers]\(Web App for Containers に発行\)** をクリックします。
+1. Docker のサポートを追加したら、プロジェクト エクスプローラーでプロジェクトを右クリックし、**[Azure]** を選択して、**[Publish to Web App for Containers]\(Web App for Containers に発行\)** をクリックします。
 
    ![[Publish to Web App for Containers]\(Web App for Containers に発行\)][run-on-web-app-for-containers]
 
@@ -95,7 +95,7 @@ Azure Portal を使用して Azure Container Registry を作成する手順を�
 
    ![[Run on Web App for Containers]\(Web App for Containers で実行\)][run-on-web-app-linux]
 
-1. 上記の設定の構成が完了したら、 **[OK]** をクリックして Web アプリを Azure に発行します。
+1. 上記の設定の構成が完了したら、**[OK]** をクリックして Web アプリを Azure に発行します。
 
 1. Web アプリが発行されたら、以前に指定した Web アプリの URL (例: *wingtiptoys.azurewebsites.net*) を参照できます。
 

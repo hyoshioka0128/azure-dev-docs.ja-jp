@@ -6,12 +6,12 @@ ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 01/22/2019
 ms.custom: devx-track-java
-ms.openlocfilehash: 5bd1611418cca94c5f580b085a067df35d7a1248
-ms.sourcegitcommit: 2f832baf90c208a8a69e66badef5f126d23bbaaf
+ms.openlocfilehash: a8e9f883e76f3c79a9b5470c18907276d9262d03
+ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88725236"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90682152"
 ---
 # <a name="migrate-spring-boot-applications-to-azure-app-service"></a>Spring Boot アプリケーションを Azure App Service に移行する
 
@@ -113,7 +113,7 @@ spring.jms.servicebus.idle-timeout=10000
 
 #### <a name="maven-applications"></a>Maven アプリケーション
 
-アプリケーションが Maven POM ファイルから作成されている場合は、[Maven 用の Webapp プラグインを使用](/azure/developer/java/spring-framework/deploy-spring-boot-java-app-with-maven-plugin#configure-maven-plugin-for-azure-app-service)して Web アプリを作成し、アプリケーションをデプロイします。
+アプリケーションが Maven POM ファイルから作成されている場合は、Maven 用の Webapp プラグインを使用して Web アプリを作成し、アプリケーションをデプロイします。 詳細については、「[クイック スタート: Azure App Service で Java アプリを作成する](/azure/app-service/quickstart-java?tabs=javase&pivots=platform-linux)」をご覧ください。
 
 #### <a name="non-maven-applications"></a>Maven 以外のアプリケーション
 

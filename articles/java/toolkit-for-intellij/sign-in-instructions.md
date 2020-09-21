@@ -7,12 +7,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: c5830ab871b78e586b502e0c6e2331700fa0149d
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 2891b0c09c43b652fd7dd41e354290c2821bad46
+ms.sourcegitcommit: a139e25190960ba89c9e31f861f0996a6067cd6c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379956"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90534571"
 ---
 # <a name="sign-in-instructions-for-the-azure-toolkit-for-intellij"></a>Azure Toolkit for IntelliJ のサインイン手順
 
@@ -31,25 +31,22 @@ ms.locfileid: "86379956"
 
 1. IntelliJ IDEA でプロジェクトを開きます。
 
-2. サイドバーの **Azure Explorer** を開き、上部のバーにある **[Azure サインイン]** アイコンをクリックします (または IDEA のメニューで **[ツール]、[Azure]、[Azure サインイン]** の順にクリックします)。
+1. サイドバーの **Azure Explorer** を開き、上部のバーにある **[Azure サインイン]** アイコンをクリックします (または IntelliJ メニューで **[ツール] > [Azure] > [Azure サインイン]** の順にクリックします)。
 
    ![IntelliJ Azure サインイン コマンド][I01]
 
-3. **[Azure サインイン]** ウィンドウで、 **[Device Login]\(デバイスのログイン\)** を選択し、 **[サインイン]** をクリックします。
+1. **[Azure サインイン]** ウィンドウで、 **[Device Login]\(デバイスのログイン\)** を選択し、 **[サインイン]** をクリックします。
 
    ![[デバイスのログイン] が選択されている [Azure サインイン] ウィンドウ][I02]
 
-4. **[Azure Device Login]\(Azure デバイスのログイ\)** ダイアログで **[Copy&Open]\(コピーして開く\)** をクリックします。
+1. **[Azure Device Login]\(Azure デバイスのログイ\)** ダイアログで **[Copy&Open]\(コピーして開く\)** をクリックします。
 
-   ![[Azure ログイン] ダイアログ ウィンドウ][I03]
+1. ブラウザーで、該当のデバイス コード (前の手順で **[Copy&Open]\(コピーして開く\)** をクリックしたときにコピーされたもの) を貼り付け、 **[次へ]** をクリックします。
 
-5. ブラウザーで、該当のデバイス コード (前の手順で **[Copy&Open]\(コピーして開く\)** をクリックしたときにコピーされたもの) を貼り付け、 **[次へ]** をクリックします。
+1. Azure アカウントを選択し、サインインするために必要な認証手順を完了します。
 
-   ![デバイスのログイン ブラウザー][I04]
+1. **[サブスクリプションの選択]** ダイアログ ボックスで、使用するサブスクリプションを選択し、 **[OK]** をクリックします。
 
-6. **[サブスクリプションの選択]** ダイアログ ボックスで、使用するサブスクリプションを選択し、 **[OK]** をクリックします。
-
-   ![[サブスクリプションの選択] ダイアログ ボックス][I05]
 
 ## <a name="sign-in-to-your-azure-account-by-service-principal"></a>[サービス プリンシパル] によって Azure アカウントにサインインする
 
@@ -57,46 +54,37 @@ ms.locfileid: "86379956"
 
 1. IntelliJ IDEA でプロジェクトを開きます。
 
-1. サイドバーの **Azure Explorer** を開き、上部のバーにある **[Azure サインイン]** アイコンをクリックします (または IDEA のメニューで **[ツール]、[Azure]、[Azure サインイン]** の順にクリックします)。
-   ![IntelliJ Azure サインイン コマンド][A01]
+1. サイドバーの **Azure Explorer** を開き、上部のバーにある **[Azure サインイン]** アイコンをクリックします (または IntelliJ メニューで **[ツール] > [Azure] > [Azure サインイン]** の順にクリックします)。
 
-1. **[Azure サインイン]** ウィンドウで、 **[サービス プリンシパル]** を選択し、 **[新規]** をクリックします。
+   ![IntelliJ Azure サインイン コマンド][I01]
+
+1. **[Azure サインイン]** ウィンドウで、**[サービス プリンシパル]** を選択し、**[新規]** をクリックします。
 
    ![[サービス プリンシパル] が選択されている [Azure サインイン] ウィンドウ][A02]
 
 1. **[Azure Device Login]\(Azure デバイスのログイ\)** ダイアログで **[Copy&Open]\(コピーして開く\)** をクリックします。
 
-   ![[Azure ログイン] ダイアログ ウィンドウ][A03]
-
 1. ブラウザーで、該当のデバイス コード (前の手順で **[Copy&Open]\(コピーして開く\)** をクリックしたときにコピーされたもの) を貼り付け、 **[次へ]** をクリックします。
 
-   ![デバイスのログイン ブラウザー][A04]
+1. Azure アカウントを選択し、サインインするために必要な認証手順を完了します。 認証後、ブラウザーを閉じて IntelliJ に戻ります。
 
 1. **[Create authentication files]\(認証ファイルの作成\)** ダイアログ ボックスが表示されたら、使用するサブスクリプションを選び、宛先ディレクトリを選択し、 **[開始]** をクリックします。
 
-   ![[Create authentication files]\(認証ファイルの作成\) ウィンドウ][A05]
-
 1. **[Service Principal Creatation Status]\(サービス プリンシパル作成状態\)** ダイアログ ボックスで、ファイルが正常に作成されたら **[OK]** をクリックします。
 
-   ![[Service Principal Creatation Status]\(サービス プリンシパル作成ステータス\) ダイアログ ボックス][A06]
-
-1. **[Azure サインイン]** ウィンドウで、 **[サインイン]** をクリックします。 
-
-   ![Azure のログイン ダイアログ ボックス][A07]
+1. **[Azure サインイン]** ウィンドウで、**[サインイン]** をクリックします。 
 
 1. **[サブスクリプションの選択]** ダイアログ ボックスで、使用するサブスクリプションを選択し、 **[OK]** をクリックします。
 
-   ![[サブスクリプションの選択] ダイアログ ボックス][A08]
-
-> サービス プリンシパルの認証ファイルを作成したら、手順 8 から開始し、自分の認証ファイルを選択してサインインできます。
+   > [!TIP]
+   > サービス プリンシパルの認証ファイルを作成した後、手順 3 から開始し、自分の認証ファイルを選択してサインインできます。
 
 ## <a name="sign-out-of-your-azure-account"></a>Azureアカウントからサインアウトする
 
-前の手順で自分のアカウントを構成した後は、IntelliJ IDEA を起動するたびに自動的にサインインが行われます。 ただし、自分の Azure アカウントからサインアウトしたい場合は、次の手順を実行してください。
+前の手順で自分のアカウントを構成した後は、IntelliJ IDEA を起動するたびに自動的にサインインが行われます。 
 
-* IntelliJ IDEA で Azure Explorer のサイド バーを開き、 **[Azure サインアウト]** アイコンをクリックして確認します (または、IDEA のメニューで **[ツール]、[Azure]、[Azure サインアウト]** の順にクリックします)。
+ただし、Azure アカウントからサインアウトする場合は、Azure Explorer のサイドバーに移動し、 **[Azure サインアウト]** アイコンをクリックするか、IntelliJ メニューで **[ツール] > [Azure] > [Azure サインアウト]** の順にクリックします。
 
-   ![IntelliJ Azure サインアウト コマンド][L01]
 
 ## <a name="next-steps"></a>次のステップ
 
@@ -108,20 +96,6 @@ ms.locfileid: "86379956"
 
 [I01]: media/sign-in-instructions/I01.png
 [I02]: media/sign-in-instructions/I02.png
-[I03]: media/sign-in-instructions/I03.png
-[I04]: media/sign-in-instructions/I04.png
-[I05]: media/sign-in-instructions/I05.png
 
-[A01]: media/sign-in-instructions/A01.png
 [A02]: media/sign-in-instructions/A02.png
-[A03]: media/sign-in-instructions/A03.png
-[A04]: media/sign-in-instructions/A04.png
-[A05]: media/sign-in-instructions/A05.png
-[A06]: media/sign-in-instructions/A06.png
-[A07]: media/sign-in-instructions/A07.png
-[A08]: media/sign-in-instructions/A08.png
-[A09]: media/sign-in-instructions/A09.png
 
-[L01]: media/sign-in-instructions/L01.png
-[L02]: media/sign-in-instructions/L02.png
-[L03]: media/sign-in-instructions/L03.png

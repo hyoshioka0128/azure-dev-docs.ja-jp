@@ -5,12 +5,12 @@ keywords: Ansible, Azure, DevOps, Bash, プレイブック, 仮想マシン, 仮
 ms.topic: tutorial
 ms.date: 10/14/2019
 ms.custom: devx-track-ansible
-ms.openlocfilehash: c214daa3f63f88711ace9d41ffb9978d20551fc9
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: ad8bfca4030583e67423144dbc650eecb22e5060
+ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240574"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90681968"
 ---
 # <a name="tutorial-create-a-vm-or-virtual-machine-scale-set-from-the-azure-shared-image-gallery-using-ansible"></a>チュートリアル:Ansible を使用して Azure Shared Image Gallery から VM または仮想マシン スケール セットを作成する
 
@@ -101,7 +101,7 @@ ms.locfileid: "88240574"
           version: latest
 ```
 
-`ansible-playbook` コマンドを使用してプレイブックを実行します。
+[ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) を使用してプレイブックを実行します
 
 ```bash
 ansible-playbook 00-prerequisites.yml
@@ -133,7 +133,7 @@ ansible-playbook 00-prerequisites.yml
         source: "{{ source_vm_name }}"
 ```
 
-`ansible-playbook` コマンドを使用してプレイブックを実行します。
+[ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) を使用してプレイブックを実行します
 
 ```bash
 ansible-playbook 01a-create-generalized-image.yml
@@ -160,7 +160,7 @@ ansible-playbook 01a-create-generalized-image.yml
         description: This is the gallery description.
 ```
 
-`ansible-playbook` コマンドを使用してプレイブックを実行します。
+[ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) を使用してプレイブックを実行します
 
 ```bash
 ansible-playbook 02-create-shared-image-gallery.yml
@@ -222,7 +222,7 @@ ansible-playbook 02-create-shared-image-gallery.yml
         var: output
 ```
 
-`ansible-playbook` コマンドを使用してプレイブックを実行します。
+[ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) を使用してプレイブックを実行します
 
 ```bash
 ansible-playbook 03a-create-shared-image-generalized.yml
@@ -253,7 +253,7 @@ ansible-playbook 03a-create-shared-image-generalized.yml
         id: "/subscriptions/{{ lookup('env', 'AZURE_SUBSCRIPTION_ID') }}/resourceGroups/{{ resource_group }}/providers/Microsoft.Compute/galleries/{{ shared_gallery_name }}/images/{{ shared_image_name }}/versions/{{ shared_image_version }}"
 ```
 
-`ansible-playbook` コマンドを使用してプレイブックを実行します。
+[ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) を使用してプレイブックを実行します
 
 ```bash
 ansible-playbook 04a-create-vm-using-generalized-image.yml
@@ -286,7 +286,7 @@ ansible-playbook 04a-create-vm-using-generalized-image.yml
         id: "/subscriptions/{{ lookup('env', 'AZURE_SUBSCRIPTION_ID') }}/resourceGroups/{{ resource_group }}/providers/Microsoft.Compute/galleries/{{ shared_gallery_name }}/images/{{ shared_image_name }}/versions/{{ shared_image_version }}"
 ```
 
-`ansible-playbook` コマンドを使用してプレイブックを実行します。
+[ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) を使用してプレイブックを実行します
 
 ```bash
 ansible-playbook 05a-create-vmss-using-generalized-image.yml
@@ -320,7 +320,7 @@ ansible-playbook 05a-create-vmss-using-generalized-image.yml
       name: "{{ shared_image_version }}"
 ```
 
-`ansible-playbook` コマンドを使用してプレイブックを実行します。
+[ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) を使用してプレイブックを実行します
 
 ```bash
 ansible-playbook 06-get-info.yml
@@ -359,7 +359,7 @@ ansible-playbook 06-get-info.yml
       state: absent
 ```
 
-`ansible-playbook` コマンドを使用してプレイブックを実行します。
+[ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) を使用してプレイブックを実行します
 
 ```bash
 ansible-playbook 07-delete-gallery.yml
@@ -367,36 +367,7 @@ ansible-playbook 07-delete-gallery.yml
 
 ## <a name="clean-up-resources"></a>リソースをクリーンアップする
 
-この記事で作成したリソースが不要になったら、削除してください。 
-
-このセクションのサンプル プレイブック コードは、次の目的で使用します。
-
-- 前に作成した 2 つのリソース グループを削除する
-
-次のプレイブックを `cleanup.yml` という名前で保存します。
-
-```yml
-- hosts: localhost
-  vars:
-    resource_group: "{{ resource_group_name }}"
-  tasks:
-    - name: Delete a resource group
-      azure_rm_resourcegroup:
-        name: "{{ resource_group }}"
-        force_delete_nonempty: yes
-        state: absent
-```
-
-以下に、サンプル プレイブックを使用する際に考慮すべき重要な点をいくつか示します。
-
-- `{{ resource_group_name }}` プレースホルダーは実際のリソース グループの名前に置き換えます。
-- 指定した 2 つのリソース グループ内のすべてのリソースが削除されます。
-
-`ansible-playbook` コマンドを使用してプレイブックを実行します。
-
-```bash
-ansible-playbook cleanup.yml
-```
+[!INCLUDE [ansible-delete-resource-group.md](includes/ansible-delete-resource-group.md)]
 
 ## <a name="next-steps"></a>次のステップ
 

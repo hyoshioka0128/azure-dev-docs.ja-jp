@@ -1,16 +1,16 @@
 ---
 title: チュートリアル - Ansible を使用して Azure Kubernetes Service (AKS) で Azure CNI ネットワークを構成する
-description: Ansible を使用して Azure Kubernetes Service (AKS) クラスターで kubenet ネットワークを構成する方法について説明します。
+description: Ansible を使用して Azure Kubernetes Service (AKS) クラスターで Azure CNI ネットワークを構成する方法について説明します
 keywords: ansible, azure, devops, bash, cloudshell, プレイブック, aks, コンテナー, aks, kubernetes
 ms.topic: tutorial
 ms.date: 04/30/2019
 ms.custom: devx-track-ansible
-ms.openlocfilehash: f3892b9c25b952d2d8c71e4e44857557c0a1813b
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 1f58c8c5964a6e015de9cb1e3990274791037599
+ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88239954"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90682115"
 ---
 # <a name="tutorial-configure-azure-cni-networking-in-azure-kubernetes-service-aks-using-ansible"></a>チュートリアル:Ansible を使用して Azure Kubernetes Service (AKS) で Azure CNI ネットワークを構成する
 
@@ -245,37 +245,7 @@ localhost                  : ok=9    changed=4    unreachable=0    failed=0    s
 
 ## <a name="clean-up-resources"></a>リソースをクリーンアップする
 
-この記事で作成したリソースが不要になったら、削除してください。 
-
-このセクションのサンプル プレイブック コードは、次の目的で使用します。
-
-- `vars` セクションで参照されているリソース グループを削除する。
-
-次のプレイブックを `cleanup.yml` という名前で保存します。
-
-```yml
----
-- hosts: localhost
-  vars:
-      resource_group: {{ resource_group_name }}
-  tasks:
-      - name: Clean up resource group
-        azure_rm_resourcegroup:
-            name: "{{ resource_group }}"
-            state: absent
-            force: yes
-```
-
-以下に、サンプル プレイブックを使用する際に考慮すべき重要な点をいくつか示します。
-
-- `{{ resource_group_name }}` プレースホルダーは実際のリソース グループの名前に置き換えます。
-- 指定したリソース グループ内のすべてのリソースが削除されます。
-
-ansible-playbook コマンドを使用してプレイブックを実行します。
-
-```bash
-ansible-playbook cleanup.yml
-```
+[!INCLUDE [ansible-delete-resource-group.md](includes/ansible-delete-resource-group.md)]
 
 ## <a name="next-steps"></a>次のステップ
 

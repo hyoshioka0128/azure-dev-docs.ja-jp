@@ -5,12 +5,12 @@ keywords: ansible, azure, devops, bash, cloudshell, プレイブック, aks, コ
 ms.topic: tutorial
 ms.date: 10/23/2019
 ms.custom: devx-track-ansible,fasttrack-edit
-ms.openlocfilehash: 55b3f2ec248e3163a6916c8a6067957f6a0c9ae1
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: fed1864ec886cacf1b67a51199158898524e17bf
+ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88239774"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90682084"
 ---
 # <a name="tutorial-configure-kubenet-networking-in-azure-kubernetes-service-aks-using-ansible"></a>チュートリアル:Ansible を使用して Azure Kubernetes Service (AKS) で kubenet ネットワークを構成する
 
@@ -326,30 +326,7 @@ localhost                  : ok=15   changed=2    unreachable=0    failed=0    s
 
 ## <a name="clean-up-resources"></a>リソースをクリーンアップする
 
-この記事で作成したリソースが不要になったら、削除してください。 
-
-`cleanup.yml` として次のコードを保存します。
-
-```yml
----
-- hosts: localhost
-  vars:
-      resource_group: aksansibletest
-  tasks:
-      - name: Clean up resource group
-        azure_rm_resourcegroup:
-            name: "{{ resource_group }}"
-            state: absent
-            force: yes
-```
-
-`vars` セクションで、`{{ resource_group_name }}` プレースホルダーを実際のリソース グループの名前に置き換えます。
-
-`ansible-playbook` コマンドを使用してプレイブックを実行します。
-
-```bash
-ansible-playbook cleanup.yml
-```
+[!INCLUDE [ansible-delete-resource-group.md](includes/ansible-delete-resource-group.md)]
 
 ## <a name="next-steps"></a>次のステップ
 

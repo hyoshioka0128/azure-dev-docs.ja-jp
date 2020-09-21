@@ -5,12 +5,12 @@ keywords: ansible, azure, devops, bash, プレイブック, ネットワーキ�
 ms.topic: tutorial
 ms.date: 04/30/2019
 ms.custom: devx-track-ansible
-ms.openlocfilehash: 25ca319c735605e6597d4a4717c58f41b69e66c0
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 747b11c9727e0844ac9d9c7b07a8355e8163c75e
+ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240054"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90681958"
 ---
 # <a name="tutorial-configure-azure-virtual-network-peering-using-ansible"></a>チュートリアル:Ansible を使用して Azure Virtual Network ピアリングを構成する
 
@@ -145,7 +145,7 @@ ms.locfileid: "88240054"
 完全なサンプル プレイブックを取得するには、次の 2 つの方法があります。
 
 - [プレイブックをダウンロード](https://github.com/Azure-Samples/ansible-playbooks/blob/master/vnet_peering.yml)して、`vnet_peering.yml` に保存する。
-- `vnet_peering.yml` という名前の新規ファイルを作成して、次のコンテンツをコピーする。
+- `vnet_peering.yml` という名前の新規ファイルを作成して、それに次の内容をコピーする。
 
 ```yml
 - hosts: localhost
@@ -289,43 +289,42 @@ localhost                  : ok=12   changed=9    unreachable=0    failed=0    s
 
 ## <a name="clean-up-resources"></a>リソースをクリーンアップする
 
-この記事で作成したリソースが不要になったら、削除してください。 
+この記事で作成したリソースが不要になったら、削除してください。    
 
-このセクションのサンプル プレイブック コードは、次の目的で使用します。
+このセクションのサンプル プレイブック コードは、次の目的で使用します。    
 
-- 前に作成した 2 つのリソース グループを削除する
+- 前に作成した 2 つのリソース グループを削除する   
 
-次のプレイブックを `cleanup.yml` という名前で保存します。
+次のプレイブックを `cleanup.yml` という名前で保存します。   
 
-```bash
-- hosts: localhost
-  vars:
-    resource_group: "{{ resource_group_name-1 }}"
-    resource_group_secondary: "{{ resource_group_name-2 }}"
-  tasks:
-    - name: Delete a resource group
-      azure_rm_resourcegroup:
-        name: "{{ resource_group }}"
-        force_delete_nonempty: yes
-        state: absent
+```bash 
+- hosts: localhost  
+  vars: 
+    resource_group: "{{ resource_group_name-1 }}"   
+    resource_group_secondary: "{{ resource_group_name-2 }}" 
+  tasks:    
+    - name: Delete a resource group 
+      azure_rm_resourcegroup:   
+        name: "{{ resource_group }}"    
+        force_delete_nonempty: yes  
+        state: absent   
+    - name: Delete a resource group 
+      azure_rm_resourcegroup:   
+        name: "{{ resource_group_secondary }}"  
+        force_delete_nonempty: yes  
+        state: absent   
+``` 
 
-    - name: Delete a resource group
-      azure_rm_resourcegroup:
-        name: "{{ resource_group_secondary }}"
-        force_delete_nonempty: yes
-        state: absent
-```
+以下に、サンプル プレイブックを使用する際に考慮すべき重要な点をいくつか示します。  
 
-以下に、サンプル プレイブックを使用する際に考慮すべき重要な点をいくつか示します。
+- `{{ resource_group_name-1 }}` プレースホルダーは、作成した最初のリソース グループの名前に置き換えます。  
+- `{{ resource_group_name-2 }}` プレースホルダーは、作成した 2 番目のリソース グループの名前に置き換えます。 
+- 指定した 2 つのリソース グループ内のすべてのリソースが削除されます。   
 
-- `{{ resource_group_name-1 }}` プレースホルダーは、作成した最初のリソース グループの名前に置き換えます。
-- `{{ resource_group_name-2 }}` プレースホルダーは、作成した 2 番目のリソース グループの名前に置き換えます。
-- 指定した 2 つのリソース グループ内のすべてのリソースが削除されます。
+ansible-playbook コマンドを使用してプレイブックを実行します。    
 
-ansible-playbook コマンドを使用してプレイブックを実行します。
-
-```bash
-ansible-playbook cleanup.yml
+```bash 
+ansible-playbook cleanup.yml    
 ```
 
 ## <a name="next-steps"></a>次のステップ

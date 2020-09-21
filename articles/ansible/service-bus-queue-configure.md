@@ -5,12 +5,12 @@ keywords: ansible、azure、devops、bash、プレイブック、サービス �
 ms.topic: tutorial
 ms.date: 04/30/2019
 ms.custom: devx-track-ansible
-ms.openlocfilehash: 438c5787469a31403285f8884452d5293f1460f4
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 2f58dac776de66d0d4f449bf4fe34a7c9d30c8fe
+ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88239994"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90681983"
 ---
 # <a name="tutorial-configure-queues-in-azure-service-bus-using-ansible"></a>チュートリアル:Ansible を使用して Azure Service Bus のキューを構成する
 
@@ -69,7 +69,7 @@ ms.locfileid: "88239994"
           var: queue
 ```
 
-`ansible-playbook` コマンドを使用してプレイブックを実行します。
+[ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) を使用してプレイブックを実行します
 
 ```bash
 ansible-playbook servicebus_queue.yml
@@ -106,7 +106,7 @@ ansible-playbook servicebus_queue.yml
 プレイブックを実行する前に、次の注意事項を参照してください。
 - `rights` 値は、ユーザーがキューに対して持っている特権を表します。 `manage`、`listen`、`send`、または `listen_send` の値のいずれかを指定します。
 
-`ansible-playbook` コマンドを使用してプレイブックを実行します。
+[ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) を使用してプレイブックを実行します
 
 ```bash
 ansible-playbook servicebus_queue_policy.yml
@@ -139,7 +139,7 @@ ansible-playbook servicebus_queue_policy.yml
 プレイブックを実行する前に、次の注意事項を参照してください。
 - `show_sas_policies` 値は、指定した名前空間下に SAS ポリシーを表示するかどうかを示します。 既定では、値は `False` になり、ネットワークのオーバーヘッドが追加されないようにします。
 
-`ansible-playbook` コマンドを使用してプレイブックを実行します。
+[ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) を使用してプレイブックを実行します
 
 ```bash
 ansible-playbook servicebus_namespace_info.yml
@@ -174,7 +174,7 @@ ansible-playbook servicebus_namespace_info.yml
 プレイブックを実行する前に、次の注意事項を参照してください。
 - `show_sas_policies` の値は、指定したキューの下に SAS ポリシーを表示するかどうかを示します。 既定では、この値は `False` に設定され、ネットワークのオーバーヘッドが追加されないようにします。
 
-`ansible-playbook` コマンドを使用してプレイブックを実行します。
+[ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) を使用してプレイブックを実行します
 
 ```bash
 ansible-playbook servicebus_queue_info.yml
@@ -203,7 +203,7 @@ ansible-playbook servicebus_queue_info.yml
           state: absent
 ```
 
-`ansible-playbook` コマンドを使用してプレイブックを実行します。
+[ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) を使用してプレイブックを実行します
 
 ```bash
 ansible-playbook servicebus_queue_policy_delete.yml
@@ -241,7 +241,7 @@ ansible-playbook servicebus_queue_policy_delete.yml
           force_delete_nonempty: yes
 ```
 
-`ansible-playbook` コマンドを使用してプレイブックを実行します。
+[ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) を使用してプレイブックを実行します
 
 ```bash
 ansible-playbook cleanup.yml

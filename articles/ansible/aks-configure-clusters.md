@@ -5,12 +5,12 @@ keywords: ansible, azure, devops, bash, cloudshell, プレイブック, aks, コ
 ms.topic: tutorial
 ms.date: 06/17/2020
 ms.custom: devx-track-ansible
-ms.openlocfilehash: 0e7b42776c0405acf335dc75508ef2759838da21
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: d54febc3e2d4a82b8986f0c64b200a4aaff7ab55
+ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240044"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90682143"
 ---
 # <a name="tutorial-configure-azure-kubernetes-service-aks-clusters-in-azure-using-ansible"></a>チュートリアル:Ansible を使用して Azure 内で Azure Kubernetes Service (AKS) クラスターを構成する
 
@@ -83,9 +83,9 @@ ms.locfileid: "88240044"
 - `tasks` 内の最初のセクションでは、`eastus` の場所にある `myResourceGroup` という名前のリソース グループが定義されています。
 - `tasks` 内の 2 番目のセクションでは、`myResourceGroup` というリソース グループ内に `myAKSCluster` という名前の AKS クラスターが定義されています。
 - `your_ssh_key` プレースホルダーには、"ssh-rsa" (引用符は除く) で始まる実際の RSA 公開キーを 1 行形式で入力してください。
-- `aks_version` プレースホルダーに対しては、[az aks get-versions](/cli/azure/aks?view=azure-cli-latest#az-aks-get-versions) コマンドを使用します。
+- `aks_version` プレースホルダーに対しては、[az aks get-versions](/cli/azure/aks#az-aks-get-versions) コマンドを使用します。
 
-`ansible-playbook` コマンドを使用してプレイブックを実行します。
+[ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) を使用してプレイブックを実行します
 
 ```bash
 ansible-playbook azure_create_aks.yml
@@ -150,7 +150,7 @@ localhost                  : ok=3    changed=2    unreachable=0    failed=0
 
 - `your_ssh_key` プレースホルダーには、"ssh-rsa" (引用符は除く) で始まる実際の RSA 公開キーを 1 行形式で入力してください。
 
-`ansible-playbook` コマンドを使用してプレイブックを実行します。
+[ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) を使用してプレイブックを実行します
 
 ```bash
 ansible-playbook azure_configure_aks.yml
@@ -193,7 +193,7 @@ localhost                  : ok=2    changed=1    unreachable=0    failed=0
       state: absent
   ```
 
-`ansible-playbook` コマンドを使用してプレイブックを実行します。
+[ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) を使用してプレイブックを実行します
 
 ```bash
 ansible-playbook azure_delete_aks.yml

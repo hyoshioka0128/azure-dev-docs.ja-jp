@@ -2,40 +2,39 @@
 title: Azure Explorer for IntelliJ を使用して仮想マシンを管理する
 description: Azure Explorer for IntelliJ を使用して Azure 仮想マシンを管理する方法について説明します。
 documentationcenter: java
-ms.date: 11/13/2018
+ms.date: 09/09/2020
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 65f0c827fec68bc6a11d7dcaf380738967e16a92
-ms.sourcegitcommit: 300251b3d866bac9c7d2dfc3133efaaea8e0ce04
+ms.openlocfilehash: 058842e8f7d50d885d2a5d28c56ee144072e637a
+ms.sourcegitcommit: a139e25190960ba89c9e31f861f0996a6067cd6c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87438476"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90534369"
 ---
 # <a name="manage-virtual-machines-by-using-the-azure-explorer-for-intellij"></a>Azure Explorer for IntelliJ を使用して仮想マシンを管理する
 
 Azure Toolkit for IntelliJ の一部である Azure Explorer は、IntelliJ 統合開発環境 (IDE) 内から Azure アカウントの仮想マシンを管理するための使いやすいソリューションを Java 開発者に提供します。
 
+この記事では、IntelliJ の Azure Explorer を使用して仮想マシンを作成して管理する方法について説明します。
+
 [!INCLUDE [prerequisites](includes/prerequisites.md)]
 
 [!INCLUDE [show-azure-explorer](includes/show-azure-explorer.md)]
 
-## <a name="create-a-virtual-machine-in-intellij"></a>IntelliJ で仮想マシンを作成する
+## <a name="create-a-virtual-machine"></a>仮想マシンの作成
 
 Azure Explorer を使用して仮想マシンを作成するには、以下の手順を実行します。 
 
 1. 「[Azure Toolkit for IntelliJ のサインイン手順]」に従って、Azure アカウントにサインインします。
 
 2. **Azure Explorer** ビューで、 **[Azure]** ノードを展開し、 **[仮想マシン]** を右クリックし、 **[VM の作成]** をクリックします。 
-
-   ![[VM の作成] コマンド][CR01]  
-    **[新しい仮想マシンの作成]** ウィザードが開きます。
+ 
+   :::image type="content" source="media/managing-virtual-machines-using-azure-explorer/CR01.png" alt-text="Azure Explorer の [VM の作成] オプション。":::
 
 3. **[サブスクリプションの選択]** ウィンドウで、サブスクリプションを選択し、 **[次へ]** をクリックします。 
-
-   ![[サブスクリプションの選択] ウィンドウ][CR02]
 
 4. **[仮想マシン イメージの選択]** ウィンドウで、次の情報を入力します。
 
@@ -53,8 +52,6 @@ Azure Explorer を使用して仮想マシンを作成するには、以下の�
 
       * **[Version #]\(バージョン番号\)** : 選択した SKU で使用するバージョンを指定します。
 
-   ![[仮想マシン イメージの選択] ウィンドウ][CR03]
-
 5. **[次へ]** をクリックします。 
 
 6. **[仮想マシンの基本設定]** ウィンドウで、次の情報を入力します。
@@ -65,9 +62,7 @@ Azure Explorer を使用して仮想マシンを作成するには、以下の�
 
    * **ユーザー名**:仮想マシンを管理するために作成する管理者アカウントを指定します。
 
-   * **[パスワード]** と **[確認]** : 管理者アカウントのパスワードを指定します。
-
-   ![[仮想マシンの基本設定] ウィンドウ][CR04]
+   * **パスワード**:管理者アカウントのパスワードを指定します。 **[Confirm]\(確認\)** ボックスにパスワードを再入力して、資格情報を確認します。
 
 7. **[次へ]** をクリックします。 
 
@@ -77,15 +72,9 @@ Azure Explorer を使用して仮想マシンを作成するには、以下の�
       * **新規作成**: 新しいリソース グループを作成することを指定します。
       * **[Use Existing]\(既存の使用\)** : Azure アカウントに関連付けられているリソース グループの一覧から選択することを指定します。
 
-       ![[関連するリソース] ウィンドウ][CR07]
-
    * **ストレージ アカウント**: 仮想マシンを格納するために使用するストレージ アカウントを指定します。 既存のストレージ アカウントを使用するか、新しいストレージ アカウントを作成できます。 **[新規作成]** を選択した場合は、次のダイアログ ボックスが表示されます。
 
-      ![[ストレージ アカウントの作成] ダイアログ ボックス][CR05]
-
    * **[仮想ネットワーク]** と **[サブネット]** : 仮想マシンを接続する仮想ネットワークとサブネットを指定します。 既存のネットワークとサブネットを使用するか、新しいネットワークとサブネットを作成できます。 **[新規作成]** を選択した場合は、次のダイアログ ボックスが表示されます。
-
-      ![[仮想ネットワークの作成] ダイアログ ボックス][CR06]
 
    * **[パブリック IP アドレス]** : 仮想マシンの外部接続 IP アドレスを指定します。 新しい IP アドレスを作成できます。仮想マシンのパブリック IP アドレスがない場合は、 **[(なし)]** を選択できます。 
 
@@ -93,42 +82,33 @@ Azure Explorer を使用して仮想マシンを作成するには、以下の�
 
    * **可用性セット**:仮想マシンが属することができる可用性セットを指定します (省略可能)。 既存の可用性セットを指定するか、新しい可用性セットを作成できます。仮想マシンが可用性セットに属さない場合は、 **[(なし)]** を選択します。
 
-9. **[完了]** をクリックします。  
-    新しい仮想マシンが Azure エクスプローラーのツール ウィンドウに表示されます。 
+9. **[完了]** をクリックします。 新しい仮想マシンが Azure エクスプローラーのツール ウィンドウに表示されます。 
 
-   ![Azure エクスプローラー ビューの新しい仮想マシン][CR08]
-
-## <a name="restart-a-virtual-machine-in-intellij"></a>IntelliJ で仮想マシンを再起動する
+## <a name="restart-a-virtual-machine"></a>仮想マシンを再起動します
 
 IntelliJ で Azure Explorer を使用して仮想マシンを再起動するには、以下の手順を実行します。
 
 1. **Azure Explorer** ビューで、仮想マシンを右クリックし、 **[再起動]** を選択します。
 
-   ![仮想マシンの [再起動] コマンド][RE01]
-
 2. 確認ウィンドウで **[はい]** をクリックします。 
 
    ![仮想マシンの再起動確認ウィンドウ][RE02]
 
-## <a name="shut-down-a-virtual-machine-in-intellij"></a>IntelliJ で仮想マシンをシャットダウンする
+## <a name="shut-down-a-virtual-machine"></a>仮想マシンをシャットダウンする
 
 IntelliJ でAzure Explorer を使用して実行中の仮想マシンをシャットダウンするには、以下の手順を実行します。
 
 1. **Azure Explorer** ビューで、仮想マシンを右クリックし、 **[シャットダウン]** を選択します。
 
-   ![仮想マシンの [シャットダウン] コマンド][SH01]
-
 2. 確認ウィンドウで **[はい]** をクリックします。 
 
    ![仮想マシンのシャットダウン確認ウィンドウ][SH02]
 
-## <a name="delete-a-virtual-machine-in-intellij"></a>IntelliJ で仮想マシンを削除する
+## <a name="delete-a-virtual-machine"></a>仮想マシンを削除します
 
 IntelliJ で Azure Explorer を使用して仮想マシンを削除するには、以下の手順を実行します。
 
 1. **Azure Explorer** ビューで、仮想マシンを右クリックし、 **[削除]** を選択します。
-
-   ![仮想マシンの [削除] コマンド][DE01]
 
 2. 確認ウィンドウで **[はい]** をクリックします。 
 

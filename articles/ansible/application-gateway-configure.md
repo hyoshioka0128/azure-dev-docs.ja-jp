@@ -3,14 +3,14 @@ title: チュートリアル - Ansible を使用して Azure Application Gateway
 description: Ansible を使用して Azure Application Gateway を作成および構成し、Web トラフィックを管理する方法について説明する
 keywords: Ansible、Azure、DevOps、Bash、プレイブック、アプリケーションゲートウェイ、ロード バランサー、Web トラフィック
 ms.topic: tutorial
-ms.date: 06/19/2020
+ms.date: 09/14/2020
 ms.custom: devx-track-ansible
-ms.openlocfilehash: cfeba71085443afb978ceb6b7c381a1e74e723fb
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: cb29fa619a68906a5a68eeaff5904d606c631616
+ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240474"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90681681"
 ---
 # <a name="tutorial-manage-web-traffic-with-azure-application-gateway-using-ansible"></a>チュートリアル:Ansible を使用して Azure Application Gateway で Web トラフィックを管理する
 
@@ -54,7 +54,7 @@ ms.locfileid: "88240474"
 - リソース グループ名は `myResourceGroup` です。 この値はチュートリアル全体で使用されます。
 - リソース グループが作成される場所は `eastus` です。
 
-`ansible-playbook` コマンドを使用してプレイブックを実行します。
+[ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) を使用してプレイブックを実行します
 
 ```bash
 ansible-playbook rg.yml
@@ -107,7 +107,7 @@ ansible-playbook rg.yml
 * `vars` セクションには、ネットワーク リソースの作成に使用される値が含まれています。 
 * これらの値は、ご使用の環境に合わせて変更する必要があります。
 
-`ansible-playbook` コマンドを使用してプレイブックを実行します。
+[ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) を使用してプレイブックを実行します
 
 ```bash
 ansible-playbook vnet_create.yml
@@ -160,7 +160,7 @@ ansible-playbook vnet_create.yml
               - 80
 ```
 
-`ansible-playbook` コマンドを使用してプレイブックを実行します。
+[ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) を使用してプレイブックを実行します
 
 ```bash
 ansible-playbook aci_create.yml
@@ -263,7 +263,7 @@ ansible-playbook aci_create.yml
 * `frontend_ip_configurations` ブロックでは `appGatewayFrontendIP` が定義されます。 これは、myAGPublicIPAddress を appGatewayHttpListener に割り当てます。
 * `request_routing_rules` ブロックでは `rule1` が定義されます。 これは、appGatewayHttpListener に関連付けられている既定のルーティング規則です。
 
-`ansible-playbook` コマンドを使用してプレイブックを実行します。
+[ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) を使用してプレイブックを実行します
 
 ```bash
 ansible-playbook appgw_create.yml
@@ -287,26 +287,7 @@ ansible-playbook appgw_create.yml
 
 ## <a name="clean-up-resources"></a>リソースをクリーンアップする
 
-この記事で作成したリソースが不要になったら、削除してください。 
-
-`cleanup.yml` として次のコードを保存します。
-
-```yml
-- hosts: localhost
-  vars:
-    resource_group: myResourceGroup
-  tasks:
-    - name: Delete a resource group
-      azure_rm_resourcegroup:
-        name: "{{ resource_group }}"
-        state: absent
-```
-
-`ansible-playbook` コマンドを使用してプレイブックを実行します。
-
-```bash
-ansible-playbook cleanup.yml
-```
+[!INCLUDE [ansible-delete-resource-group.md](includes/ansible-delete-resource-group.md)]
 
 ## <a name="next-steps"></a>次のステップ
 

@@ -9,12 +9,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: mvc, devx-track-java
-ms.openlocfilehash: f981ba6c22de8fa985291c1a9795169c655733f6
-ms.sourcegitcommit: 2f832baf90c208a8a69e66badef5f126d23bbaaf
+ms.openlocfilehash: b2cc66d13cd5248604e61b5322f53c358c15a7d8
+ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88725176"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90681594"
 ---
 # <a name="deploy-spring-boot-application-to-the-azure-kubernetes-service"></a>Spring Boot アプリケーションを Azure Kubernetes Service にデプロイする
 
@@ -33,43 +33,48 @@ ms.locfileid: "88725176"
 * [ACR Docker 資格情報ヘルパー](https://github.com/Azure/acr-docker-credential-helper)。
 
 > [!NOTE]
->
 > このチュートリアルには仮想化要件があるため、仮想マシンでこの記事の手順を実行することはできません。仮想化機能を有効にした物理コンピューターを使用する必要があります。
->
 
 ## <a name="create-the-spring-boot-on-docker-getting-started-web-app"></a>Spring Boot on Docker Getting Started Web アプリを作成する
 
 次の手順で、Spring Boot Web アプリケーションをビルドしてローカルでテストします。
 
 1. コマンド プロンプトを開き、アプリケーションを保持するためのローカル ディレクトリを作成して、そのディレクトリに変更します。次に例を示します。
-   ```
-   md C:\SpringBoot
+
+   ```bash
+   mkdir C:\SpringBoot
    cd C:\SpringBoot
    ```
+
    -- または --
-   ```
-   md /users/$USER/SpringBoot
+
+   ```bash
+   mkdir /users/$USER/SpringBoot
    cd /users/$USER/SpringBoot
    ```
 
 1. [Docker での Spring Boot の使用開始] サンプル プロジェクトを、ディレクトリに複製します。
-   ```
+
+   ```bash
    git clone https://github.com/spring-guides/gs-spring-boot-docker.git
    ```
 
 1. 完成したプロジェクトにディレクトリを変更します。
-   ```
+
+   ```bash
    cd gs-spring-boot-docker
    cd complete
    ```
 
 1. Maven を使用してサンプル アプリをビルドして実行します。
-   ```
+
+   ```bash
    mvn package spring-boot:run
    ```
 
 1. Web アプリをテストするには、 `http://localhost:8080` を参照するか、次の `curl` コマンドを使用します。
-   ```
+
+   ```bash
    curl http://localhost:8080
    ```
 
@@ -82,21 +87,25 @@ ms.locfileid: "88725176"
 1. コマンド プロンプトを開きます。
 
 1. Azure アカウントにログインします。
+
    ```azurecli
    az login
    ```
 
 1. Azure サブスクリプションを選択します。
+
    ```azurecli
    az account set -s <YourSubscriptionID>
    ```
 
 1. このチュートリアルで使用する Azure リソースのリソース グループを作成します。
+
    ```azurecli
    az group create --name=wingtiptoys-kubernetes --location=eastus
    ```
 
 1. リソース グループ内に、プライベートな Azure コンテナー レジストリを作成します。 このチュートリアルでは、後の手順で、このレジストリに Docker イメージとしてサンプル アプリをプッシュします。 `wingtiptoysregistry` を、レジストリの一意の名前に置き換えます。
+
    ```azurecli
    az acr create --resource-group wingtiptoys-kubernetes --location eastus \
     --name wingtiptoysregistry --sku Basic
@@ -105,6 +114,7 @@ ms.locfileid: "88725176"
 ## <a name="push-your-app-to-the-container-registry-via-jib"></a>Jib を使用してアプリをコンテナー レジストリにプッシュする
 
 1. Azure CLI から Azure Container Registry にログインします。
+
    ```azurecli
    # set the default name for Azure Container Registry, otherwise you will need to specify the name in "az acr login"
    az configure --defaults acr=wingtiptoysregistry
@@ -113,10 +123,9 @@ ms.locfileid: "88725176"
 
 1. テキスト エディター([VS Code](https://code.visualstudio.com/docs) など) を使用して、*pom.xml* ファイルを開きます。
 
-   ```
+   ```bash
    code pom.xml
    ```
-
 
 1. *pom.xml* ファイル内の `<properties>` コレクションを、Azure Container Registry のレジストリ名と [jib-maven-plugin](https://github.com/GoogleContainerTools/jib/tree/master/jib-maven-plugin) の最新バージョンで更新します。
 
@@ -128,6 +137,7 @@ ms.locfileid: "88725176"
       <java.version>1.8</java.version>
    </properties>
    ```
+
 1. 以下の例に示すように *pom.xml* ファイルの `<plugins>` コレクションを更新し、`<plugin>` 要素に `jib-maven-plugin` のエントリが含まれるようにします。 ここでは、Microsoft Container Registry (MCR) の基本イメージ (`mcr.microsoft.com/java/jdk:8-zulu-alpine`) が使用されていることに注目してください。このイメージには、公式にサポートされた Azure 用の JDK が含まれています。 その他公式にサポートされた JDK を含む MCR 基本イメージについては、「[Java SE JDK](https://hub.docker.com/_/microsoft-java-jdk)」、「[Java SE JRE](https://hub.docker.com/_/microsoft-java-jre)」、「[Java SE ヘッドレス JRE](https://hub.docker.com/_/microsoft-java-jre-headless)」、「[Java SE JDK と Maven](https://hub.docker.com/_/microsoft-java-maven)」を参照してください。
 
    ```xml
@@ -153,42 +163,46 @@ ms.locfileid: "88725176"
    ```
 
 > [!NOTE]
->
 > Azure Cli と Azure Container Registry のセキュリティ上の懸念により、`az acr login` によって作成された資格情報は 1 時間有効であり、"*401 権限がありません*" エラーが発生した場合は、もう一度 `az acr login -n <your registry name>` コマンドを実行して再認証できます。
->
 
 ## <a name="create-a-kubernetes-cluster-on-aks-using-the-azure-cli"></a>Azure CLI を使用して AKS で Kubernetes クラスターを作成する
 
 1. Azure Kubernetes Service で Kubernetes クラスターを作成します。 次のコマンドでは、*kubernetes* クラスターを *wingtiptoys-kubernetes* リソース グループに作成します。クラスター名として *wingtiptoys-akscluster* を使用し、 Azure Container Registry (ACR) `wingtiptoysregistry` を接続し、DNS プレフィックスとして *wingtiptoys-kubernetes* を使用します。
+
    ```azurecli
-   az aks create --resource-group=wingtiptoys-kubernetes --name=wingtiptoys-akscluster \ 
+   az aks create --resource-group=wingtiptoys-kubernetes --name=wingtiptoys-akscluster \
     --attach-acr wingtiptoysregistry \
     --dns-name-prefix=wingtiptoys-kubernetes --generate-ssh-keys
    ```
+
    このコマンドは、完了するまで時間がかかる場合があります。
 
 1. Azure CLI を使用して `kubectl` をインストールします。 Kubernetes CLI は `/usr/local/bin` にデプロイされるため、Linux ユーザーはこのコマンドの前に `sudo` を付けなければならない場合があります。
+
    ```azurecli
    az aks install-cli
    ```
 
 1. クラスター構成情報をダウンロードして、Kubernetes Web インターフェイスと `kubectl` からクラスターを管理できるようにします。 
+
    ```azurecli
    az aks get-credentials --resource-group=wingtiptoys-kubernetes --name=wingtiptoys-akscluster
    ```
 
 ## <a name="deploy-the-image-to-your-kubernetes-cluster"></a>イメージを Kubernetes クラスターにデプロイする
 
-このチュートリアルでは、`kubectl` を使用してアプリをデプロイします。これにより、Kubernetes Web インターフェイスを通してデプロイを調べることができます。
+このチュートリアルでは、`kubectl` を使用してアプリをデプロイします。これにより、Kubernetes Web インターフェイスを介してデプロイを調べることができます。
 
 ### <a name="deploy-with-kubectl"></a>kubectl を使用してデプロイする
 
 1. コマンド プロンプトを開きます。
 
 1. `kubectl run` コマンドを使用して、Kubernetes クラスターのコンテナーを実行します。 Kubernetes でのアプリのサービス名と完全なイメージ名を指定します。 次に例を示します。
-   ```
+
+   ```bash
    kubectl run gs-spring-boot-docker --image=wingtiptoysregistry.azurecr.io/gs-spring-boot-docker:latest
    ```
+
    このコマンドの説明:
 
    * コンテナー名 `gs-spring-boot-docker` は `run` コマンドの直後に指定します。
@@ -196,12 +210,14 @@ ms.locfileid: "88725176"
    * `--image` パラメーターは、結合されたログイン サーバーとイメージの名前を `wingtiptoysregistry.azurecr.io/gs-spring-boot-docker:latest` として指定します。
 
 1. `kubectl expose` コマンドを使用して、Kubernetes クラスターを外部に公開します。 サービス名、アプリにアクセスするために使用される公開 TCP ポート、およびアプリがリッスンする内部ターゲット ポートを指定します。 次に例を示します。
+
+   ```bash
+   kubectl expose pod gs-spring-boot-docker --type=LoadBalancer --port=80 --target-port=8080
    ```
-   kubectl expose deployment gs-spring-boot-docker --type=LoadBalancer --port=80 --target-port=8080
-   ```
+
    このコマンドの説明:
 
-   * コンテナー名 `gs-spring-boot-docker` は `expose deployment` コマンドの直後に指定します。
+   * コンテナー名 `gs-spring-boot-docker` は `expose pod` コマンドの直後に指定します。
 
    * `--type` パラメーターは、クラスターでロード バランサーを使用することを指定します。
 
@@ -211,53 +227,50 @@ ms.locfileid: "88725176"
 
 1. クラスターにアプリがデプロイされたら、外部 IP アドレスを照会し、そのアドレスを Web ブラウザーで開きます。
 
-   ```
+   ```bash
    kubectl get services -o=jsonpath='{.items[*].status.loadBalancer.ingress[0].ip}'
    ```
 
    ![Azure でサンプル アプリを参照する][SB02]
-
-
 
 ### <a name="deploy-with-the-kubernetes-web-interface"></a>Kubernetes Web インターフェイスを使用してデプロイする
 
 1. コマンド プロンプトを開きます。
 
 1. Kubernetes クラスターの構成 Web サイトを既定のブラウザーで開きます。
-   ```
+
+   ```azurecli
    az aks browse --resource-group=wingtiptoys-kubernetes --name=wingtiptoys-akscluster
    ```
-   
 
 > [!IMPORTANT]
 > AKS クラスターが RBAC を使用する場合は、ダッシュボードに正しくアクセスする前に *ClusterRoleBinding* を作成する必要があります。 既定では、Kubernetes ダッシュボードは、最小限の読み取りアクセス権付きでデプロイされ、RBAC アクセス エラーが表示されます。 現時点では、Kubernetes ダッシュボードは、現在のアクセスのレベルを決定するユーザー指定の資格情報はサポートしていません。それは、サービス アカウントに付与されているロールを使用します。 クラスター管理者は、*kubernetes-dashboard*サービス アカウントに追加のアクセス権を付与することを選択できます。ただし、これは、特権昇格に対するベクトルになる可能性があります。 Azure Active Directory 認証を統合して、さらに細かいレベルのアクセス権を提供することもできます。
-> 
+>
 > バインドを作成するには、[kubectl create clusterrolebinding] コマンドを使用します。 次の例はサンプル バインドを作成する方法を示していますが、このサンプル バインドは、追加の認証コンポーネントを適用しないため、安全に使用できない可能性があります。 Kubernetes ダッシュボードは、URL にアクセスできるすべてのユーザーに公開されています。 Kubernetes ダッシュボードは、一般に公開しないでください。
 >
-> ```console
+> ```bash
 > kubectl create clusterrolebinding kubernetes-dashboard --clusterrole=cluster-admin --serviceaccount=kube-system:kubernetes-dashboard
 > ```
-> 
+>
 > さまざまな認証方法の使用の詳細については、Kubernetes ダッシュボード Wiki で[ダッシュボードの認証]に関するページを参照してください。
 
 1. Kubernetes 構成 Web サイトがブラウザーで開いたら、**コンテナー化されたアプリをデプロイする**ためのリンクを選択します。
 
-   ![Kubernetes 構成 Web サイト][KB01]
+   ![ここに表示するものがないというメッセージが表示されている Kubernetes 構成 Web サイト][KB01]
 
 1. **[Resource Creation]\(リソースの作成)** ページが表示されたら、次のオプションを指定します。
 
    a. **[CREATE AN APP]\(アプリの作成)** を選択します。
 
-   b. Spring Boot アプリケーション名を **[App name]\(アプリ名)** に入力します (例: "*gs-spring-boot-docker*")。
+   b. Spring Boot アプリケーション名を **[App name]\(アプリ名\)** に入力します (例: *gs-spring-boot-docker*)。
 
-   c. ログイン サーバーとコンテナー イメージを **[Container image]\(コンテナー イメージ)** に入力します (例: "*wingtiptoysregistry.azurecr.io/gs-spring-boot-docker:latest*")。
+   c. 前に設定したログイン サーバーとコンテナー イメージを **[Container image]\(コンテナー イメージ\)** に入力します (例: *wingtiptoysregistry.azurecr.io/gs-spring-boot-docker:latest*)。
 
    d. **[Service]\(サービス)** で **[External]\(外部)** を選択します。
 
    e. 外部ポートと内部ポートを **[Port]\(ポート)** テキスト ボックスと **[Target port]\(ターゲット ポート\)** テキスト ボックスに指定します。
 
-   ![Kubernetes 構成 Web サイト][KB02]
-
+   ![Kubernetes 構成 Web サイトの [CREATE AN APP]\(アプリの作成\) ページ][KB02]
 
 1. **[Deploy]\(デプロイ)** を選択してコンテナーをデプロイします。
 
@@ -265,11 +278,11 @@ ms.locfileid: "88725176"
 
 1. アプリケーションがデプロイされると、 **[Services]\(サービス)** の下に Spring Boot アプリケーションが表示されます。
 
-   ![Kubernetes サービス][KB06]
+   ![Kubernetes Web サイトのサービスの一覧][KB06]
 
 1. **[External endpoints]\(外部エンドポイント)\\** のリンクを選択すると、Spring Boot アプリケーションが Azure で実行されていることを確認できます。
 
-   ![Kubernetes サービス][KB07]
+   ![Kubernetes Web サイトのサービスの一覧で [External endpoints]\(外部エンドポイント\) が強調表示されている][KB07]
 
    ![Azure でサンプル アプリを参照する][SB02]
 
@@ -313,7 +326,7 @@ Azure でカスタム Docker イメージを使用する方法に関するその
 Azure Kubernetes Service (AKS) で直接 Azure Dev Spaces を使用してコンテナーの実行とデバッグを繰り返す場合の詳細については、「[Azure Dev Spaces での Java の使用]」を参照してください。
 
 <!-- URL List -->
-[kubectl-create-clusterrolebinding]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#-em-clusterrolebinding-em-
+[kubectl create clusterrolebinding]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#-em-clusterrolebinding-em-
 [ダッシュボードの認証]: https://github.com/kubernetes/dashboard/wiki/Access-control
 [Azure コマンド ライン インターフェイス (CLI)]: /cli/azure/overview
 [Azure Kubernetes Service (AKS)]: https://azure.microsoft.com/services/kubernetes-service/

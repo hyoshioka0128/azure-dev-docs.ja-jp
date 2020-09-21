@@ -7,22 +7,22 @@ documentationcenter: java
 author: selvasingh
 ms.assetid: 75ce7b36-e3ae-491d-8305-4b42ce37db4e
 ms.reviewer: asirveda
-ms.date: 02/01/2018
+ms.date: 09/09/2020
 ms.service: app-service
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: devx-track-java
-ms.openlocfilehash: 47deaeb4957076ef80bcdf0f708fb16b95e0b646
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 3a096ac0cb533fda11f2b2f3a652dfae628298d4
+ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86378076"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90682126"
 ---
 # <a name="create-a-hello-world-web-app-for-azure-app-service-using-intellij"></a>IntelliJ を使用して Azure App Service 用の Hello World Web アプリを作成する
 
-オープンソースの [Azure Toolkit for IntelliJ](https://plugins.jetbrains.com/plugin/8053) プラグインを使用すれば、数分で、基本的な Hello World アプリケーション作成して Web アプリとして Azure App Service にデプロイできます。
+この記事では、[Azure Toolkit for IntelliJ](https://plugins.jetbrains.com/plugin/8053) を使用して、基本的な Hello World Web アプリを作成して Azure App Service に発行するために必要な手順について説明します。
 
 > [!NOTE]
 >
@@ -37,53 +37,41 @@ ms.locfileid: "86378076"
 
 ## <a name="installation-and-sign-in"></a>インストールとサインイン
 
-1. IntelliJ IDEA の [設定/環境設定] ダイアログ (Ctrl+Alt+S) で、 **[プラグイン]** を選択します。 次に、**Marketplace** で **Azure Toolkit for IntelliJ** を見つけ、 **[インストール]** をクリックします。 インストール後、 **[再起動]** をクリックしてプラグインをアクティブにします。 
+次の手順では、IntelliJ 開発環境での Azure サインイン プロセスについて説明します。
 
-   ![Marketplace の Azure Toolkit for IntelliJ プラグイン][marketplace]
+1. プラグインをインストールしていない場合は、「[Azure Toolkit for IntelliJ のインストール](installation.md)」を参照してください。
 
-2. Azure アカウントにサインインするには、サイドバーの **Azure Explorer** を開き、上部のバーにある **[Azure サインイン]** アイコンをクリックします (または [IDEA] メニューから **[ツール]/[Azure]/ [Azure サインイン]** をクリックします)。
+1. Azure アカウントにサインインするには、左側の **[Azure Explorer]** サイドバーに移動し、 **[Azure Sign in]\(Azure サインイン\)** アイコンをクリックします。 または、 **[Tools]\(ツール\)** に移動し、 **[Azure]** を展開して、 **[Azure Sign in]\(Azure サインイン\)** をクリックします。
 
-   ![IntelliJ Azure サインイン コマンド][I01]
+   :::image type="content" source="media/sign-in-instructions/I01.png" alt-text="IntelliJ で Azure にサインインします。"::: 
 
-3. **[Azure サインイン]** ウィンドウで、 **[Device Login]\(デバイスのログイン\)** を選択し、次に **[サインイン]** をクリックします ([他のサインイン オプション](sign-in-instructions.md))。
+1. **[Azure サインイン]** ウィンドウで、 **[Device Login]\(デバイスのログイン\)** を選択し、次に **[サインイン]** をクリックします ([他のサインイン オプション](sign-in-instructions.md))。
 
-   ![[デバイスのログイン] が選択されている [Azure サインイン] ウィンドウ][I02]
+1. **[Azure Device Login]\(Azure デバイスのログイン\)** ダイアログで **[Copy&Open]\(コピーして開く\)** をクリックします。
 
-4. **[Azure Device Login]\(Azure デバイスのログイ\)** ダイアログで **[Copy&Open]\(コピーして開く\)** をクリックします。
+1. ブラウザーで、該当のデバイス コード (前の手順で **[Copy&Open]\(コピーして開く\)** をクリックしたときにコピーされたもの) を貼り付け、 **[次へ]** をクリックします。
 
-   ![[Azure ログイン] ダイアログ ウィンドウ][I03]
+1. Azure アカウントを選択し、サインインするために必要な認証手順を完了します。
 
-5. ブラウザーで、該当のデバイス コード (前の手順で **[Copy&Open]\(コピーして開く\)** をクリックしたときにコピーされたもの) を貼り付け、 **[次へ]** をクリックします。
+1. サインインしたら、ブラウザーを閉じて IntelliJ IDE に戻ります。 **[Select Subscriptions]\(サブスクリプションの選択\)** ダイアログ ボックスで、使用するサブスクリプションを選択し、 **[OK]** をクリックします。
 
-   ![デバイスのログイン ブラウザー][I04]
+## <a name="creating-a-new-web-app-project"></a>新しい Web アプリ プロジェクトの作成
 
-6. **[サブスクリプションの選択]** ダイアログ ボックスで、使用するサブスクリプションを選択し、 **[OK]** をクリックします。
+1. **[File]\(ファイル\)** をクリックし、 **[New]\(新規\)** を展開して、 **[Project]\(プロジェクト\)** をクリックします。
 
-   ![[サブスクリプションの選択] ダイアログ ボックス][I05]
+1. **[New Project]\(新しいプロジェクト\)** ダイアログ ボックスで、 **[Maven]** を選択し、 **[Create from Archetype]\(アーキタイプから作成\)** オプションがオンになっていることを確認します。 一覧から **[maven-archetype-webapp]** を選択し、 **[Next]\(次へ\)** をクリックします。
 
-## <a name="creating-web-app-project"></a>Web アプリ プロジェクトの作成
+   :::image type="content" source="media/create-hello-world-web-app/maven-archetype-webapp.png" alt-text="maven-archetype-webapp オプションを選択します。"::: 
 
-1. IntelliJ で、 **[ファイル]** メニュー、 **[新規作成]** 、 **[プロジェクト]** の順にクリックします。
+1. **[Artifact Coordinates]\(成果物の調整\)** ドロップダウンを展開してすべての入力フィールドを表示し、新しい Web アプリに次の情報を指定して、 **[Next]\(次へ\)** をクリックします。
 
-   ![新しいプロジェクトの作成][file-new-project]
+   * **Name**:Web アプリの名前です。 これは、Web アプリの **ArtifactId** フィールドに自動的に入力されます。
+   * **GroupId**:成果物グループの名前です (通常は会社のドメイン)。 (例: *com.microsoft.azure*)
+   * **バージョン**:既定のバージョン *1.0-SNAPSHOT* のままにします。
 
-2. **[新しいプロジェクト]** ダイアログ ボックスで、 **[Maven]** 、 **maven-archetype-webapp** の順に選択し、 **[次へ]** をクリックします。
+1. Maven 設定をカスタマイズするか、既定の設定をそのまま使用し、 **[Finish]\(完了\)** をクリックします。
 
-   ![Maven アーキタイプ Web アプリの選択][maven-archetype-webapp]
-
-3. Web アプリの **[GroupId]** と **[ArtifactId]** を指定し、 **[次へ]** をクリックします。
-
-   ![GroupId と ArtifactId の指定][groupid-and-artifactid]
-
-4. Maven 設定をカスタマイズするか、既定の設定をそのまま使用し、 **[次へ]** をクリックします。
-
-   ![Maven 設定の指定][maven-options]
-
-5. プロジェクト名と場所を指定し、 **[完了]** をクリックします。
-
-   ![プロジェクト名の指定][project-name]
-
-6. Project Explorer ビューで、**src/main/webapp/index.jsp** ファイルを開き、次のように編集して**変更を保存します**。
+1. 左側の **[Project]\(プロジェクト\)** タブでプロジェクトに移動し、ファイル **src/main/webapp/WEB-INF/index.jsp** を開きます。 コードを次の内容に置き換え、**変更を保存します**。
 
    ```html
    <html>
@@ -92,51 +80,56 @@ ms.locfileid: "86378076"
     </body>
    </html>
    ```
-
-   ![インデックス ページの編集][edit-index-page]
+   :::image type="content" source="media/create-hello-world-web-app/open-index-page.png" alt-text="index.jsp ファイルを開きます。":::
 
 ## <a name="deploying-web-app-to-azure"></a>Azure への Web アプリのデプロイ
 
-1. Project Explorer ビューでプロジェクトを右クリックし、 **[Azure]** を展開して、次に **[Deploy to Azure]\(Azure へのデプロイ\)** をクリックします。
+1. [Project Explorer] ビューでプロジェクトを右クリックし、 **[Azure]** を展開して、次に **[Deploy to Azure Web Apps]\(Azure Web Apps へのデプロイ\)** をクリックします。
 
-   ![[Deploy to Azure]\(Azure へのデプロイ\) メニュー][deploy-to-azure-menu]
+1. [Deploy to Azure]\(Azure へのデプロイ\) ダイアログ ボックスでは、既存の Tomcat webapp にアプリケーションをデプロイすることも、新たに作成することもできます。
 
-1. [Deploy to Azure]\(Azure へのデプロイ\) ダイアログ ボックスで、既存の Tomcat Web アプリがある場合はそれにアプリケーションを直接デプロイできますが、それ以外の場合は、最初に新しいものを作成する必要があります。
-   1. **[No Available webapp, click to create a new one]\(使用可能な Web アプリがありません。クリックして新しいものを作成してください\)** リンクをクリックし、新しい Web アプリを作成します。お使いのサブスクリプションに既存の Web アプリがある場合は、WebApp ドロップダウンから **[新しい Web アプリを作成する]** を選択できます。
+   a. **[No available webapp, click to create a new one]\(使用可能な webapp がありません。クリックして新規作成します\)** をクリックし、新しい webapp を作成します。 あるいは、サブスクリプションに既存の webapp がある場合は、WebApp ドロップダウンから **[Create New WebApp]\(新しい WebApp を作成\)** を選択します。
 
-      ![[Deploy to Azure]\(Azure へのデプロイ\) ダイアログ ボックス][deploy-to-azure-dialog]
+      :::image type="content" source="media/create-hello-world-web-app/deploy-to-azure-webapps.png" alt-text="[Deploy to Azure]\(Azure へのデプロイ\) ダイアログ ウィンドウ。":::
 
-   1. ポップアップ ダイアログ ボックスで、[Web コンテナー] として **TOMCAT 8.5-jre8** を選択し、その他の必要な情報を指定し、 **[OK]** をクリックして Web アプリを作成します。
+   ポップアップされる **[Create WebApp]\(WebApp の作成\)** ダイアログ ボックスで、次の情報を指定し、 **[OK]** をクリックします。 
 
-      ![新しい Web アプリの作成][create-new-web-app-dialog]
+      * **Name**:WebApp のドメイン名の文字列です。
+      * **サブスクリプション**:新しい WebApp に使用する Azure サブスクリプションを指定します。
+      * **Platform**: *[Linux]* を選択します。
+      * **Web Container (Web コンテナー)** :*TOMCAT 9.0-jre8* または適宜選択します。
+      * **リソース グループ**:自分の WebApp 用のリソース グループを指定します。 Azure アカウントに関連付けられている既存のリソース グループを選択することも、新規作成することもできます。
+      * **[App Service プラン]** :WebApp の App Service プランを指定します。 Azure アカウントに関連付けられている既存のプランを選択することも、新規作成することもできます。
 
-   1. WebApp ドロップダウンから Web アプリを選択し、 **[実行]** をクリックします。(既存の Web アプリにデプロイする場合は、ここから開始できます)
-
-      ![既存の Web アプリへのデプロイ][deploy-to-existing-webapp]
+   b. 既存の webapp にデプロイするには、WebApp ドロップ ダウンから Web アプリを選択し、 **[Run]\(実行\)** をクリックします。
 
 1. ツールキットにより Web アプリが正常にデプロイされた場合、状態メッセージと、デプロイされた Web アプリの URL (成功した場合) が表示されます。
 
-   ![デプロイに成功][successfully-deployed]
-
 1. ステータス メッセージに表示されたリンクを使用して、Web アプリを参照できます。
 
-   ![Web アプリの参照][browse-web-app]
+   :::image type="content" source="media/create-hello-world-web-app/browse-web-app.png" alt-text="Web アプリの参照。":::
 
 ## <a name="managing-deploy-configurations"></a>デプロイ構成の管理
 
-1. Web アプリを発行すると、使用した設定が既定値として保存され、ツール バーの緑色の矢印アイコンをクリックすることでデプロイを実行できます。 設定を変更するには、Web アプリのドロップダウン メニューをクリックし、 **[Edit Configurations]\(構成の編集\)** をクリックします。
+> [!TIP]
+> Web アプリを発行したら、ツール バーの緑色の矢印アイコンをクリックしてデプロイを実行できます。
 
-   ![[構成の編集] メニュー][edit-configuration-menu]
+1. WebApp のデプロイを実行する前に、Web アプリのドロップダウン メニューをクリックし、 **[Edit Configurations]\(構成の編集\)** を選択して、既定の設定を変更でき ます。
 
-1. **[Run/Debug Configurations]\(構成の実行/デバッグ\)** ダイアログ ボックスが表示されたら、既定の設定を変更し、 **[OK]** をクリックします。
+   :::image type="content" source="media/create-hello-world-web-app/edit-configuration-menu.png" alt-text="[Edit Configurations]\(構成の編集\) メニュー。":::
 
-   ![[構成の編集] ダイアログ ボックス][edit-configuration-dialog]
+1. **[Run/Debug Configurations]\(構成の実行/デバッグ\)** ダイアログ ボックスで、既定の設定をどれでも変更できます。 **[OK]** をクリックして設定を保存します。
 
-## <a name="cleaning-up-resources"></a>リソースのクリーンアップ
+## <a name="cleaning-up-resources"></a>リソースの後処理
 
-1. Azure Explorer での Web アプリ の削除
+1. Web アプリを削除するには、左側の **[Azure Explorer]** サイドバーに移動し、 **[Web Apps]\(Web アプリ\)** 項目を見つけます。 
 
-     ![リソースのクリーンアップ][clean-resources]
+   > [!NOTE]
+   > Web Apps\(Web アプリ\) メニュー項目が展開されない場合は、Azure Explorer ツール バーの  **Refresh\(更新\)** アイコンをクリックするか、Web Apps\(Web アプリ\) メニュー項目を右クリックして **Refresh\(更新\)** を選択して、一覧を手動で最新の情報に更新してください。
+
+1. 削除する Web アプリを右クリックし、 **[Delete]\(削除\)** をクリックします。
+
+1. App Service プランまたはリソース グループを削除するには、 [Azure portal](https://portal.azure.com) にアクセスし、お使いのサブスクリプションのリソースを手動で削除してください。
 
 ## <a name="next-steps"></a>次のステップ
 
@@ -173,8 +166,3 @@ Azure Web Apps の作成の詳細については、「 [Web Apps の概要]」�
 [edit-configuration-menu]: media/create-hello-world-web-app/edit-configuration-menu.png
 [edit-configuration-dialog]: media/create-hello-world-web-app/edit-configuration-dialog.png
 [clean-resources]: media/create-hello-world-web-app/clean-resource.png
-[I01]: media/sign-in-instructions/I01.png
-[I02]: media/sign-in-instructions/I02.png
-[I03]: media/sign-in-instructions/I03.png
-[I04]: media/sign-in-instructions/I04.png
-[I05]: media/sign-in-instructions/I05.png

@@ -3,17 +3,17 @@ title: Azure Toolkit for IntelliJ のインストール
 description: Azure Toolkit for IntelliJ プラグインをインストールして、クラウド アプリケーションを作成し、Azure にデプロイする方法を説明します。
 documentationcenter: java
 ms.assetid: c6817c7b-f28c-4c06-8216-41c7a8117de3
-ms.date: 02/01/2018
+ms.date: 09/09/2020
 ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 15e3bdc3f001b3fe93a96b27bf7fc44c7aaa8f3a
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: fe8b07257ff3a9fc5523d13dd13e19982103ab05
+ms.sourcegitcommit: a139e25190960ba89c9e31f861f0996a6067cd6c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379926"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90534474"
 ---
 # <a name="installing-the-azure-toolkit-for-intellij"></a>Azure Toolkit for IntelliJ のインストール
 
@@ -53,80 +53,39 @@ Azure Toolkit for IntelliJ には、以下のソフトウェア コンポーネ�
 -->
 
 
-## <a name="to-install-the-azure-toolkit-for-intellij-from-the-settings-dialog-box"></a>Azure Toolkit for IntelliJ を [Settings]\(設定) ダイアログ ボックスからインストールするには
+## <a name="from-the-settings-dialog-box"></a>[settings]\(設定\) ダイアログ ボックスから
 
-1. IntelliJ IDEA を起動します。
+1. IntelliJ ツールバーで、 **[File]\(ファイル\)** をクリックし、 **[Settings]\(設定\)** をクリックします。
 
-1. IntelliJ IDEA が起動したら **[File (ファイル)]** をクリックし、 **[Settings (設定)]** をクリックします。
-   
-   ![Open the IntelliJ IDEA Settings Dialog Box][01a]
+1. [Settings]\(設定\) ダイアログ ボックスの左側のナビゲーション メニューで、 **[Plugins]\(プラグイン\)** をクリックします。
 
-1. [Settings (設定)] ダイアログ ボックスの **[Plugins (プラグイン)]** をクリックし、 **[Browse repositories (リポジトリの参照)]** をクリックします。
-   
-   ![IntelliJ IDEA Settings Dialog Box][02a]
+1. **Marketplace** の検索バーに「Azure」と入力してプラグインの一覧をフィルター処理します。 **[Azure Toolkit for IntelliJ]** を選択し、 **[Install]\(インストール\)** をクリックします。 IntelliJ の *[Third-party Plugins Privacy Note]\(サード パーティ プラグインのプライバシーに関するノート\)* を読み、 **[Accept]\(同意\)** をクリックします。
 
-1. **[Browse Repositories]** (リポジトリの参照) ダイアログ ボックスの検索ボックスに「Azure」と入力します。 **Azure Toolkit for IntelliJ** を強調表示して **Install (インストール)** をクリックします。
-   
-   ![Search for the Azure Toolkit for IntelliJ][03]
-   
-   インストールの進行状況がダイアログ ボックスに表示されます。
-   
-   ![Installation progress][04]
+   :::image type="content" source="media/installation/03-intellij-search-plugin.png" alt-text="Azure Toolkit for IntelliJ プラグインを検索します。"::: 
 
-1. インストールが完了したら、 **[Restart IntelliJ IDEA]** (IntelliJ IDEA の再起動) をクリックします。
-   
-   ![[Restart IntelliJ IDEA]][05]
+1. インストールが完了したら、 **[Restart IDE]\(IDE を再起動する\)** をクリックします。
 
-1. **[OK]** をクリックして [Settings]\(設定) ダイアログ ボックスを閉じます。
+1. IntelliJ IDEA を再起動するよう求めるプロンプトが表示されたら、 **[Restart]\(再起動\)** をクリックします。
    
-   ![Close IntelliJ IDEA Settings Dialog Box][06]
+   :::image type="content" source="media/installation/07-restart-intellij.png" alt-text="IntelliJ IDEA を再起動します。"::: 
 
-1. IntelliJ IDEA をすぐに再起動するか、後から再起動するかを求められたら、 **[Restart]** (再起動) をクリックします。
-   
-1   ![[Restart IntelliJ IDEA]][07]
+## <a name="from-the-start-screen"></a>スタート画面から
 
-## <a name="to-install-the-azure-toolkit-for-intellij-from-the-start-screen"></a>Azure Toolkit for IntelliJ をスタート画面からインストールするには
+1. IntelliJ IDEA のスタート画面で、 **[Configure]\(構成\)** をクリックし、 **[Plugins]\(プラグイン\)** をクリックします。
 
-1. IntelliJ IDEA を起動します。
+   :::image type="content" source="media/installation/01-intellij-configure-dropdown.png" alt-text="スタート画面から [Plugins]\(プラグイン\)。"::: 
 
-1. IntelliJ IDEA のスタート画面が表示されたら、 **[Configure (構成)]** をクリックし、 **[Plugins (プラグイン)]** をクリックします。
-   
-   ![Install IntelliJ IDEA Plugins][01b]
+1. **Marketplace** の検索バーに「Azure」と入力してプラグインの一覧をフィルター処理します。 **[Azure Toolkit for IntelliJ]** を選択し、 **[Install]\(インストール\)** をクリックします。 IntelliJ の *[Third-party Plugins Privacy Note]\(サード パーティ プラグインのプライバシーに関するノート\)* を読み、 **[Accept]\(同意\)** をクリックします。
 
-1. **[Plugins (プラグイン)]** ダイアログ ボックスで **[Browse repositories (リポジトリの参照)]** をクリックします。
-   
-   ![Browse IntelliJ IDEA Plugin Repositories][02b]
+   :::image type="content" source="media/installation/01-intellij-start-screen-marketplace.png" alt-text="スタート画面から Marketplace の [Plugins]\(プラグイン\)。":::
 
-1. **[Browse Repositories]** (リポジトリの参照) ダイアログ ボックスの検索ボックスに「Azure」と入力します。 **Azure Toolkit for IntelliJ** を強調表示して **Install (インストール)** をクリックします。
-   
-   ![Search for the Azure Toolkit for IntelliJ][03]
-   
-   インストールの進行状況がダイアログ ボックスに表示されます。
-   
-   ![Installation progress][04]
+1. インストールが完了したら、 **[Restart IDE]\(IDE を再起動する\)** をクリックします。
 
-1. インストールが完了したら、 **[Restart IntelliJ IDEA]** (IntelliJ IDEA の再起動) をクリックします。
+1. IntelliJ IDEA を再起動するよう求めるプロンプトが表示されたら、 **[Restart]\(再起動\)** をクリックします。
    
-   ![[Restart IntelliJ IDEA]][05]
-
-1. IntelliJ IDEA をすぐに再起動するか、後から再起動するかを求められたら、 **[Restart]** (再起動) をクリックします。
-   
-   ![[Restart IntelliJ IDEA]][07]
+   :::image type="content" source="media/installation/01-intellij-start-screen-marketplace-restart.png" alt-text="スタート画面から再起動してインストールします。":::
 
 ## <a name="next-steps"></a>次のステップ
 
 [!INCLUDE [additional-resources](includes/additional-resources.md)]
 
-<!-- URL List -->
-
-<!-- IMG List -->
-
-[01a]: media/installation/01-intellij-file-settings.png
-[01b]: media/installation/01-intellij-configure-dropdown.png
-[02a]: media/installation/02-intellij-settings-dialog.png
-[02b]: media/installation/02-intellij-plugins-dialog.png
-[03]: media/installation/03-intellij-browse-repositories.png
-[04]: media/installation/04-install-progress.png
-[05]: media/installation/05-restart-intellij.png
-[06]: media/installation/06-intellij-settings-dialog.png
-[07]: media/installation/07-restart-intellij.png

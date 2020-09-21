@@ -5,12 +5,12 @@ keywords: Ansible, Azure, DevOps, Bash, Cloud Shell, 動的インベントリ
 ms.topic: tutorial
 ms.date: 10/23/2019
 ms.custom: devx-track-ansible
-ms.openlocfilehash: 8ada951f0c1e21de8e193d94fd7e7dcf35ae03be
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 53cf2e25a89081b314826cda4322e2556fc38c39
+ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240304"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90682063"
 ---
 # <a name="tutorial-configure-dynamic-inventories-of-your-azure-resources-using-ansible"></a>チュートリアル:Ansible を使用して Azure リソースの動的インベントリを構成する
 
@@ -20,7 +20,7 @@ Ansible を使用して、(Azure などのクラウド ソースを含む) さ�
 
 > [!div class="checklist"]
 >
-> * 2 つのテスト用仮想マシンを構成する 
+> * 2 つのテスト用仮想マシンを構成する
 > * それらの仮想マシンの 1 つにタグを付ける
 > * タグ付けされた仮想マシンに Nginx をインストールする
 > * 構成済みの Azure リソースを含む動的インベントリを構成する
@@ -39,7 +39,7 @@ Ansible を使用して、(Azure などのクラウド ソースを含む) さ�
 
 1. このチュートリアル用の仮想マシンを保持する Azure リソース グループを作成します。
 
-    > [!IMPORTANT]    
+    > [!IMPORTANT]
     > この手順で作成する Azure リソース グループには、名前をすべて小文字で指定する必要があります。 それ以外の場合、動的インベントリの生成は失敗します。
 
     ```azurecli-interactive
@@ -66,17 +66,17 @@ Ansible を使用して、(Azure などのクラウド ソースを含む) さ�
 
 ## <a name="tag-a-vm"></a>VM にタグを付ける
 
-[タグを使用して、Azure リソースをユーザー定義のカテゴリ別に整理](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags#azure-cli)できます。 
+[タグを使用して、Azure リソースをユーザー定義のカテゴリ別に整理](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags#azure-cli)できます。
 
 ### <a name="using-ansible-version--28"></a>Ansible バージョン 2.8 未満を使用する
-次の [az resource tag](/cli/azure/resource?view=azure-cli-latest.md#az-resource-tag) コマンドを入力して、仮想マシン `ansible-inventory-test-vm1` にキー `nginx` を使用してタグを付けます。
+次の [az resource tag](/cli/azure/resource#az-resource-tag) コマンドを入力して、仮想マシン `ansible-inventory-test-vm1` にキー `nginx` を使用してタグを付けます。
 
 ```azurecli-interactive
 az resource tag --tags nginx --id /subscriptions/<YourAzureSubscriptionID>/resourceGroups/ansible-inventory-test-rg/providers/Microsoft.Compute/virtualMachines/ansible-inventory-test-vm1
 ```
 
 ### <a name="using-ansible-version--28"></a>Ansible バージョン 2.8 以上を使用する
-次の [az resource tag](/cli/azure/resource?view=azure-cli-latest.md#az-resource-tag) コマンドを入力して、仮想マシン `ansible-inventory-test-vm1` にキー `Ansible=nginx` を使用してタグを付けます。
+次の [az resource tag](/cli/azure/resource#az-resource-tag) コマンドを入力して、仮想マシン `ansible-inventory-test-vm1` にキー `Ansible=nginx` を使用してタグを付けます。
 
 ```azurecli-interactive
 az resource tag --tags Ansible=nginx --id /subscriptions/<YourAzureSubscriptionID>/resourceGroups/ansible-inventory-test-rg/providers/Microsoft.Compute/virtualMachines/ansible-inventory-test-vm1
@@ -240,7 +240,7 @@ Ansible 2.8 以降、Ansible では [Azure 動的インベントリ プラグイ
 
 1. ファイルを保存し、エディターを終了します。
 
-1. `ansible-playbook` コマンドを使用してプレイブックを実行します。
+1. [ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) を使用してプレイブックを実行します
 
    - Ansible 2.8 未満:
 
@@ -276,7 +276,7 @@ Ansible 2.8 以降、Ansible では [Azure 動的インベントリ プラグイ
 
 このセクションでは、Nginx が仮想マシンにインストールされているかどうかをテストする 1 つの方法を示します。
 
-1. [az vm list-ip-addresses](https://docs.microsoft.com/cli/azure/vm?view=azure-cli-latest#az-vm-list-ip-addresses) コマンドを使用して、`ansible-inventory-test-vm1` 仮想マシンの IP アドレスを取得します。 次に、返された値 (仮想マシンの IP アドレス) を、仮想マシンに接続するための SSH コマンドのパラメーターとして使用します。
+1. [az vm list-ip-addresses](https://docs.microsoft.com/cli/azure/vm#az-vm-list-ip-addresses) コマンドを使用して、`ansible-inventory-test-vm1` 仮想マシンの IP アドレスを取得します。 次に、返された値 (仮想マシンの IP アドレス) を、仮想マシンに接続するための SSH コマンドのパラメーターとして使用します。
 
     ```azurecli-interactive
     ssh `az vm list-ip-addresses \
@@ -313,6 +313,10 @@ Ansible 2.8 以降、Ansible では [Azure 動的インベントリ プラグイ
     * nginx-lightTry: sudo apt install <selected package>
     tom@ansible-inventory-test-vm2:~$
     ```
+
+## <a name="clean-up-resources"></a>リソースをクリーンアップする
+
+[!INCLUDE [ansible-delete-resource-group.md](includes/ansible-delete-resource-group.md)]
 
 ## <a name="next-steps"></a>次のステップ
 

@@ -5,12 +5,12 @@ keywords: Ansible, Azure, DevOps, Bash, CloudShell, プレイブック, Azure CL
 ms.topic: quickstart
 ms.date: 08/13/2020
 ms.custom: devx-track-ansible,devx-track-cli
-ms.openlocfilehash: aa1758e6b9670640c218976f6369d9935aa6381b
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 50fbcb4d086679265d728f14061a5c4c649fa48d
+ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240164"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90682025"
 ---
 # <a name="quickstart-configure-ansible-using-azure-cli"></a>クイック スタート:Azure CLI を使用した Ansible の構成
 
@@ -118,7 +118,7 @@ ssh -i <ssh_private_key_filename> azureuser@<vm_ip_address>
 
 Ansible の資格情報を構成するには、次の情報が必要です。
 
-* Azure サブスクリプション ID 
+* Azure サブスクリプション ID
 * サービス プリンシパルの値
 
 Ansible Tower または Jenkins を使っている場合は、サービス プリンシパルの値を環境変数として宣言します。
@@ -168,7 +168,11 @@ Ansible の資格情報の定義について詳しくは、「[Providing Credent
     export AZURE_TENANT=<security-principal-tenant>
     ```
 
+## <a name="test-ansible-installation"></a>Ansible インストールをテストする
+
 これで、仮想マシンに Ansible がインストールされて構成されました。
+
+[!INCLUDE [ansible-test-configuration.md](includes/ansible-test-configuration.md)]
 
 ## <a name="next-steps"></a>次のステップ
 

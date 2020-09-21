@@ -5,12 +5,12 @@ keywords: ansible, azure, devops, bash, プレイブック, cosmo db, データ�
 ms.topic: tutorial
 ms.date: 04/30/2019
 ms.custom: devx-track-ansible
-ms.openlocfilehash: 7c09f0dd28dbcbdf62219a62295b05758b4c8372
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 7d6c7aed7c1401600fca14cefbb77d86588e485b
+ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240344"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90681661"
 ---
 # <a name="tutorial-configure-azure-cosmos-db-accounts-using-ansible"></a>チュートリアル:Ansible を使用して Azure Cosmos DB アカウントを構成する
 
@@ -142,7 +142,7 @@ ms.locfileid: "88240344"
 
 完全なサンプル プレイブックを取得するには、次の 2 つの方法があります。
 - [プレイブックをダウンロード](https://github.com/Azure-Samples/ansible-playbooks/blob/master/cosmosdb_create.yml)して、`cosmosdb.yml` に保存する。
-- `cosmosdb.yml` という名前の新規ファイルを作成して、次のコンテンツをコピーする。
+- `cosmosdb.yml` という名前の新規ファイルを作成して、それに次の内容をコピーする。
 
 ```yml
 ---
@@ -234,7 +234,7 @@ ms.locfileid: "88240344"
 - `vars` セクションで、`{{ resource_group_name }}` プレースホルダーを実際のリソース グループの名前に置き換えます。
 - cosmosdbaccount_name が小文字のみを含んでおり、グローバルに一意であることを確認します。
 
-`ansible-playbook` コマンドを使用してプレイブックを実行します。
+[ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) を使用してプレイブックを実行します
 
 ```bash
 ansible-playbook cosmosdb.yml
@@ -242,27 +242,7 @@ ansible-playbook cosmosdb.yml
 
 ## <a name="clean-up-resources"></a>リソースをクリーンアップする
 
-この記事で作成したリソースが不要になったら、削除してください。 
-
-`cleanup.yml` として次のコードを保存します。
-
-```yml
-- hosts: localhost
-  vars:
-    resource_group: myResourceGroup
-  tasks:
-    - name: Delete a resource group
-      azure_rm_resourcegroup:
-        name: "{{ resource_group }}"
-        force_delete_nonempty: yes
-        state: absent
-```
-
-`ansible-playbook` コマンドを使用してプレイブックを実行します。
-
-```bash
-ansible-playbook cleanup.yml
-```
+[!INCLUDE [ansible-delete-resource-group.md](includes/ansible-delete-resource-group.md)]
 
 ## <a name="next-steps"></a>次のステップ
 

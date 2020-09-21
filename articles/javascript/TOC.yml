@@ -5,6 +5,10 @@
       items:
         - name: 開発環境を設定する
           href: configure-local-development-environment.md
+        - name: サービス プリンシパルを設定する
+          href: node-sdk-azure-authenticate-principal.md
+        - name: Azure に対して認証します
+          href: node-sdk-azure-authenticate.md
     - name: クイックスタート
       expanded: true
       items:
@@ -205,30 +209,30 @@
     - name: サンプル
       items:
         - name: Web アプリとサーバーレス
-          href: 'https://docs.microsoft.com/samples/browse/?languages=javascript%2Cnodejs&products=azure-functions%2Cazure-app-service%2Cazure-logic-apps'
+          href: /samples/browse/?languages=javascript%252cnodejs&products=azure-functions%252cazure-app-service%252cazure-logic-apps
         - name: データベース
           items:
             - name: Cosmos DB
-              href: 'https://docs.microsoft.com/samples/browse/?languages=javascript%2Cnodejs&products=azure-cosmos-db'
+              href: /samples/browse/?languages=javascript%252cnodejs&products=azure-cosmos-db
             - name: SQL DB
-              href: 'https://docs.microsoft.com/samples/browse/?languages=javascript%2Cnodejs&products=azure-sql-database'
+              href: /samples/browse/?languages=javascript%252cnodejs&products=azure-sql-database
             - name: Mongo DB
-              href: 'https://docs.microsoft.com/samples/browse/?languages=javascript%2Cnodejs&term=Mongo%20DB'
+              href: /samples/browse/?languages=javascript%252cnodejs&term=Mongo%2bDB
         - name: ストレージ
-          href: 'https://docs.microsoft.com/samples/browse/?languages=javascript%2Cnodejs&products=azure-storage'
+          href: /samples/browse/?languages=javascript%252cnodejs&products=azure-storage
         - name: ID とセキュリティ
-          href: 'https://docs.microsoft.com/samples/browse/?languages=javascript%2Cnodejs&products=azure-active-directory%2Cazure-key-vault'
+          href: /samples/browse/?languages=javascript%252cnodejs&products=azure-active-directory%252cazure-key-vault
         - name: IoT
-          href: 'https://docs.microsoft.com/samples/browse/?languages=javascript%2Cnodejs&products=azure-iot-hub%2Cazure-iot-edge%2Cazure-iot-central'
+          href: /samples/browse/?languages=javascript%252cnodejs&products=azure-iot-hub%252cazure-iot-edge%252cazure-iot-central
         - name: マイクロサービス
-          href: 'https://docs.microsoft.com/samples/browse/?languages=javascript%2Cnodejs&products=azure-event-grid'
+          href: /samples/browse/?languages=javascript%252cnodejs&products=azure-event-grid
         - name: AI と Cognitive Services
-          href: 'https://docs.microsoft.com/samples/browse/?languages=javascript%2Cnodejs&products=azure-cognitive-services'
+          href: /samples/browse/?languages=javascript%252cnodejs&products=azure-cognitive-services
         - name: 検索
-          href: 'https://docs.microsoft.com/samples/browse/?languages=javascript%2Cnodejs&products=azure-search'
+          href: /samples/browse/?languages=javascript%252cnodejs&products=azure-search
         - name: すべてのサンプル
-          href: 'https://docs.microsoft.com/samples/browse/?languages=javascript%2Cnodejs'
-    - name: ライブラリ API リファレンス
+          href: /samples/browse/?languages=javascript%252cnodejs
+    - name: NPM パッケージ
+      href: azure-sdk-library-package-index.md
+    - name: NPM パッケージのドキュメント
       href: /javascript/api/overview/azure/?view=azure-node-latest
-    - name: 最新の SDK
-      href: 'https://azure.github.io/azure-sdk/releases/latest/index.html#javascript'

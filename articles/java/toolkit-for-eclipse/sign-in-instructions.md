@@ -7,12 +7,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 3be8734755455dfaebcf1478f4441058496f7999
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: d0dbc16a16ca3a5ff367e6c67fceabcb37e2cce6
+ms.sourcegitcommit: a139e25190960ba89c9e31f861f0996a6067cd6c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379976"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90534427"
 ---
 # <a name="sign-in-instructions-for-the-azure-toolkit-for-eclipse"></a>Azure Toolkit for Eclipse のサインイン手順
 
@@ -27,20 +27,19 @@ Azure Toolkit for Eclipse には、Azure アカウントにサインインする
 
 ## <a name="sign-in-to-your-azure-account-by-device-login"></a>[Device Login]\(デバイスのログイン\) によって Azure アカウントにサインインする
 
-[Device Login]\(デバイスのログイン\) によって Azure にサインインするには、以下を実行します。
+このセクションでは、デバイス ログインによる Azure サインイン プロセスについて説明します。
 
 1. Eclipse でプロジェクトを開きます。
 
-2. **[ツール]** 、 **[Azure]** 、 **[サインイン]** の順にクリックします。
-   ![Azure サインイン用の Eclipse メニュー][I01]
+1. **[ツール]** 、 **[Azure]** 、 **[サインイン]** の順にクリックします。
 
-3. **[Azure サインイン]** ウィンドウで、 **[Device Login]\(デバイスのログイン\)** を選択し、 **[サインイン]** をクリックします。
+      :::image type="content" source="media/sign-in-instructions/eclipse-azure-signin.png" alt-text="Eclipse IDE で Azure にサインインします。":::
+
+1. **[Azure サインイン]** ウィンドウで、 **[Device Login]\(デバイスのログイン\)** を選択し、 **[サインイン]** をクリックします。
 
    ![[デバイスのログイン] が選択されている [Azure サインイン] ウィンドウ][I02]
 
-4. **[Azure Device Login]\(Azure デバイスのログイ\)** ダイアログで **[Copy&Open]\(コピーして開く\)** をクリックします。
-
-   ![[Azure ログイン] ダイアログ ウィンドウ][I03]
+1. **[Azure Device Login]\(Azure デバイスのログイ\)** ダイアログで **[Copy&Open]\(コピーして開く\)** をクリックします。
 
 > [!NOTE]
 >
@@ -51,13 +50,11 @@ Azure Toolkit for Eclipse には、Azure アカウントにサインインする
 > 2. 使用するブラウザーを選択します
 >
 
-5. ブラウザーで、該当のデバイス コード (前の手順で **[Copy&Open]\(コピーして開く\)** をクリックしたときにコピーされたもの) を貼り付け、 **[次へ]** をクリックします。
+1. ブラウザーで、該当のデバイス コード (前の手順で **[Copy&Open]\(コピーして開く\)** をクリックしたときにコピーされたもの) を貼り付け、 **[次へ]** をクリックします。
 
-   ![デバイスのログイン ブラウザー][I04]
+1. Azure アカウントを選択し、サインインするために必要な認証手順を完了します。
 
-6. 最後に、 **[サブスクリプションの選択]** ダイアログ ボックスで、使用するサブスクリプションを選択し、 **[OK]** をクリックします。
-
-   ![[サブスクリプションの選択] ダイアログ ボックス][I05]
+1. サインインしたら、ブラウザーを閉じて Eclipse IDE に戻ります。 **[Select Subscriptions]\(サブスクリプションの選択\)** ダイアログ ボックスで、使用するサブスクリプションを選択し、 **[OK]** をクリックします。
 
 ## <a name="sign-in-to-your-azure-account-by-service-principal"></a>[サービス プリンシパル] によって Azure アカウントにサインインする
 
@@ -66,15 +63,14 @@ Azure Toolkit for Eclipse には、Azure アカウントにサインインする
 1. Eclipse でプロジェクトを開きます。
 
 2. **[ツール]** 、 **[Azure]** 、 **[サインイン]** の順にクリックします。
-   ![Eclipse Azure サインイン コマンド][A01]
+
+      :::image type="content" source="media/sign-in-instructions/eclipse-azure-signin.png" alt-text="Eclipse IDE で Azure にサインインします。":::
 
 3. **[Azure サインイン]** ウィンドウで、 **[サービス プリンシパル]** を選択します。 サービス プリンシパル認証ファイルがまだない場合は、 **[新規]** をクリックして作成します。 そうでない場合は、 **[参照]** をクリックしてそれを開き、ステップ 8 に進むことができます。
 
    ![[サービス プリンシパル] が選択されている [Azure サインイン] ウィンドウ][A02]
 
 4. **[Azure Device Login]\(Azure デバイスのログイ\)** ダイアログで **[Copy&Open]\(コピーして開く\)** をクリックします。
-
-   ![[Azure ログイン] ダイアログ ウィンドウ][A08]
 
 > [!NOTE]
 >
@@ -87,15 +83,9 @@ Azure Toolkit for Eclipse には、Azure アカウントにサインインする
 
 5. ブラウザーで、該当のデバイス コード (前の手順で **[Copy&Open]\(コピーして開く\)** をクリックしたときにコピーされたもの) を貼り付け、 **[次へ]** をクリックします。
 
-   ![デバイスのログイン ブラウザー][A03]
-
 6. **[Create authentication files]\(認証ファイルの作成\)** ダイアログ ボックスが表示されたら、使用するサブスクリプションを選び、宛先ディレクトリを選択し、 **[開始]** をクリックします。
 
-   ![[Create authentication files]\(認証ファイルの作成\) ウィンドウ][A04]
-
 7. **[Service Principal Creatation Status]\(サービス プリンシパル作成状態\)** ダイアログ ボックスで、ファイルが正常に作成されたら **[OK]** をクリックします。
-
-   ![[Service Principal Creatation Status]\(サービス プリンシパル作成ステータス\) ダイアログ ボックス][A05]
 
 8. 作成されたファイルのアドレスは **[Azure サインイン]** ウィンドウに自動的に入力されるため、ここで **[サインイン]** をクリックします。
 
@@ -103,7 +93,6 @@ Azure Toolkit for Eclipse には、Azure アカウントにサインインする
 
 9. 最後に、 **[サブスクリプションの選択]** ダイアログ ボックスで、使用するサブスクリプションを選択し、 **[OK]** をクリックします。
 
-   ![[サブスクリプションの選択] ダイアログ ボックス][A07]
 
 ## <a name="sign-out-of-your-azure-account"></a>Azureアカウントからサインアウトする
 
@@ -111,11 +100,7 @@ Azure Toolkit for Eclipse には、Azure アカウントにサインインする
 
 1. Eclipse で、 **[ツール]** 、 **[Azure]** 、 **[サインアウト]** の順にクリックします。
 
-   ![Azure サインアウト用の Eclipse メニュー][L01]
-
 2. **[Azure Sign Out (Azure サインアウト)]** ダイアログ ボックスが表示されたら、 **[はい]** をクリックします。
-
-   ![[サインアウト] ダイアログ ボックス][L02]
 
 ## <a name="next-steps"></a>次のステップ
 
@@ -126,21 +111,7 @@ Azure Toolkit for Eclipse には、Azure アカウントにサインインする
 
 <!-- IMG List -->
 
-[I01]: media/sign-in-instructions/I01.png
 [I02]: media/sign-in-instructions/I02.png
-[I03]: media/sign-in-instructions/I03.png
-[I04]: media/sign-in-instructions/I04.png
-[I05]: media/sign-in-instructions/I05.png
 
-[A01]: media/sign-in-instructions/A01.png
 [A02]: media/sign-in-instructions/A02.png
-[A03]: media/sign-in-instructions/A03.png
-[A04]: media/sign-in-instructions/A04.png
-[A05]: media/sign-in-instructions/A05.png
 [A06]: media/sign-in-instructions/A06.png
-[A07]: media/sign-in-instructions/A07.png
-[A08]: media/sign-in-instructions/A08.png
-
-[L01]: media/sign-in-instructions/L01.png
-[L02]: media/sign-in-instructions/L02.png
-[L03]: media/sign-in-instructions/L03.png

@@ -4,12 +4,12 @@ description: Azure ライブラリを使用して、Azure サービスで Python
 ms.date: 08/18/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 50f13c09d1c3932446d90420399b18c3247f1640
-ms.sourcegitcommit: 800c5e05ad3c0b899295d381964dd3d47436ff90
+ms.openlocfilehash: 746a948077c7def12aae5053355c445b7592eae0
+ms.sourcegitcommit: 4824cea71195b188b4e8036746f58bf8b70dc224
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88614478"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89753747"
 ---
 # <a name="how-to-authenticate-and-authorize-python-apps-on-azure"></a>Azure で Python アプリを認証および認可する方法
 
@@ -110,13 +110,13 @@ retrieved_secret = secret_client.get_secret("secret-name-01")
 
 ここでも、クライアント オブジェクトを介して Azure REST API への特定の要求がコードによって行われるまでは、認証または認可は行われません。 `DefaultAzureCredential` を作成するステートメント (次のセクションを参照) は、クライアント側のオブジェクトをメモリ内に作成するだけで、他のチェックは実行しません。 
 
-SDK [`SecretClient`](/python/api/azure-keyvault-secrets/azure.keyvault.secrets.secretclient?view=azure-python) オブジェクトを作成する場合も、対象のリソースとの通信は必要ありません。 `SecretClient` オブジェクトは、基になる Azure REST API の単なるラッパーであり、アプリのランタイム メモリにのみ存在します。 
+SDK [`SecretClient`](/python/api/azure-keyvault-secrets/azure.keyvault.secrets.secretclient) オブジェクトを作成する場合も、対象のリソースとの通信は必要ありません。 `SecretClient` オブジェクトは、基になる Azure REST API の単なるラッパーであり、アプリのランタイム メモリにのみ存在します。 
 
-コードによって [`get_secret`](/python/api/azure-keyvault-secrets/azure.keyvault.secrets.secretclient?view=azure-python#get-secret-name--version-none----kwargs-) メソッドが呼び出されたときに初めて、クライアント オブジェクトは Azure への適切な REST API 呼び出しを生成します。 その後、`get_secret` に対応する Azure のエンドポイントで、呼び出し元の ID が認証され、承認がチェックされます。
+コードによって [`get_secret`](/python/api/azure-keyvault-secrets/azure.keyvault.secrets.secretclient#get-secret-name--version-none----kwargs-) メソッドが呼び出されたときに初めて、クライアント オブジェクトは Azure への適切な REST API 呼び出しを生成します。 その後、`get_secret` に対応する Azure のエンドポイントで、呼び出し元の ID が認証され、承認がチェックされます。
 
 ## <a name="authenticate-with-defaultazurecredential"></a>DefaultAzureCredential を使用して認証する
 
-ほとんどのアプリケーションでは、[`azure-identity`](/python/api/azure-identity/azure.identity?view=azure-python) ライブラリの [`DefaultAzureCredential`](/python/api/azure-identity/azure.identity.defaultazurecredential?view=azure-python) クラスには、最も単純で推奨される認証方法が用意されています。 `DefaultAzureCredential` は、クラウドでは自動的にアプリのマネージド ID を使用し、ローカルで実行しているときには自動的に環境変数からローカル サービス プリンシパルを読み込みます。
+ほとんどのアプリケーションでは、[`azure-identity`](/python/api/azure-identity/azure.identity) ライブラリの [`DefaultAzureCredential`](/python/api/azure-identity/azure.identity.defaultazurecredential) クラスには、最も単純で推奨される認証方法が用意されています。 `DefaultAzureCredential` は、クラウドでは自動的にアプリのマネージド ID を使用し、ローカルで実行しているときには自動的に環境変数からローカル サービス プリンシパルを読み込みます。
 
 ```python
 import os
@@ -228,7 +228,7 @@ print(subscription.subscription_id)
     4 つのプレースホルダーは、Azure サブスクリプション ID、テナント ID、クライアント ID、クライアント シークレットに置き換えてください。
 
     > [!TIP]
-    > [ローカル開発環境の構成](configure-local-development-environment.md#create-a-service-principal-and-environment-variables-for-development)に関するセクションで説明されているように、[az ad sp create-for-rbac](/cli/azure/ad/sp?view=azure-cli-latest#az-ad-sp-create-for-rbac) コマンドに `--sdk-auth` パラメーターを指定することで、この JSON 形式をすぐに生成できます。
+    > [ローカル開発環境の構成](configure-local-development-environment.md#create-a-service-principal-and-environment-variables-for-development)に関するセクションで説明されているように、[az ad sp create-for-rbac](/cli/azure/ad/sp#az-ad-sp-create-for-rbac) コマンドに `--sdk-auth` パラメーターを指定することで、この JSON 形式をすぐに生成できます。
 
 1. ファイルに名前 (*credentials.json* など) を付けて、コードからアクセスできる安全な場所に保存します。 資格情報の安全性を確保するため、このファイルはソース管理から除外し、他の開発者と共有しないようにしてください。 つまり、サービス プリンシパルのテナント ID、クライアント ID、クライアント シークレットは、常に自分の開発ワークステーションで隔離されている必要があります。
 
@@ -250,7 +250,7 @@ print(subscription.subscription_id)
 
     この例では、JSON ファイルが *credentials.json* という名前でプロジェクトの親フォルダーに格納されていることを想定しています。
 
-1. [get_client_from_auth_file](/python/api/azure-common/azure.common.client_factory?view=azure-python#get-client-from-auth-file-client-class--auth-path-none----kwargs-) メソッドを使用してクライアント オブジェクトを作成します。
+1. [get_client_from_auth_file](/python/api/azure-common/azure.common.client_factory#get-client-from-auth-file-client-class--auth-path-none----kwargs-) メソッドを使用してクライアント オブジェクトを作成します。
 
     ```python
     from azure.common.client_factory import get_client_from_auth_file
@@ -302,7 +302,7 @@ subscription = next(subscription_client.subscriptions.list())
 print(subscription.subscription_id)
 ```
 
-前のセクションで説明したように、ファイルを使用する代わりに、必要な JSON データを変数に作成し、[get_client_from_json_dict](/python/api/azure-common/azure.common.client_factory?view=azure-python#get-client-from-json-dict-client-class--config-dict----kwargs-) を呼び出すことができます。 このコードは、[ローカル開発環境の構成](configure-local-development-environment.md#create-a-service-principal-and-environment-variables-for-development)に関するセクションで説明されている環境変数が作成済みであることを想定しています。 クラウドにデプロイされるコードの場合、これらの環境変数をサーバー VM 上に作成できるほか、Azure App Service や Azure Functions などのプラットフォーム サービスを使用しているときは、アプリケーション設定として作成することができます。
+前のセクションで説明したように、ファイルを使用する代わりに、必要な JSON データを変数に作成し、[get_client_from_json_dict](/python/api/azure-common/azure.common.client_factory#get-client-from-json-dict-client-class--config-dict----kwargs-) を呼び出すことができます。 このコードは、[ローカル開発環境の構成](configure-local-development-environment.md#create-a-service-principal-and-environment-variables-for-development)に関するセクションで説明されている環境変数が作成済みであることを想定しています。 クラウドにデプロイされるコードの場合、これらの環境変数をサーバー VM 上に作成できるほか、Azure App Service や Azure Functions などのプラットフォーム サービスを使用しているときは、アプリケーション設定として作成することができます。
 
 または、環境変数を使わずに、値を Azure Key Vault に格納して実行時に取得してもかまいません。
 
@@ -327,7 +327,7 @@ subscription = next(subscription_client.subscriptions.list())
 print(subscription.subscription_id)
 ```
 
-この方法では、Azure Key Vault や環境変数など、安全な記憶域から取得した資格情報を使用して [`ServicePrincipalCredentials`](/python/api/msrestazure/msrestazure.azure_active_directory.serviceprincipalcredentials?view=azure-python) オブジェクトを作成します。 前のコードは、[ローカル開発環境の構成](configure-local-development-environment.md#create-a-service-principal-and-environment-variables-for-development)に関するセクションで説明されている環境変数が作成済みであることを想定しています。
+この方法では、Azure Key Vault や環境変数など、安全な記憶域から取得した資格情報を使用して [`ServicePrincipalCredentials`](/python/api/msrestazure/msrestazure.azure_active_directory.serviceprincipalcredentials) オブジェクトを作成します。 前のコードは、[ローカル開発環境の構成](configure-local-development-environment.md#create-a-service-principal-and-environment-variables-for-development)に関するセクションで説明されている環境変数が作成済みであることを想定しています。
 
 この方法を使用した場合は、クライアント オブジェクトに `base_url` 引数を指定することで、Azure パブリック クラウドではなく [Azure ソブリン クラウド (国内クラウド)](/azure/active-directory/develop/authentication-national-cloud) を使用できます。
 
@@ -400,13 +400,13 @@ print(subscription.subscription_id)
 
 この方法では、Azure CLI コマンド `az login` でサインインしているユーザーの資格情報を使用してクライアント オブジェクトを作成します。 アプリケーションは、ユーザーとしてあらゆる操作を認可されます。
 
-SDK では既定のサブスクリプション ID が使用されます。または、[`az account`](https://docs.microsoft.com/cli/azure/manage-azure-subscriptions-azure-cli) を使用してサブスクリプションを設定することもできます。
+SDK では既定のサブスクリプション ID が使用されます。または、[`az account`](https://docs.microsoft.com/cli/azure/manage-azure-subscriptions-azure-cli) を使用して、コードを実行する前にサブスクリプションを設定することもできます。 同じスクリプトでさまざまなサブスクリプションを参照する必要がある場合は、この記事で前述した [' get_client_from_auth_file'](#authenticate-with-a-json-file) または [`get_client_from_json_dict`](#authenticate-with-a-json-dictionary) メソッドを使用してください。
 
-この方法は、初期段階の実験や開発目的に限定してください。サインイン ユーザーは所有者や管理者の権限を有しているのが一般的であり、別途アクセス許可を取得しなくても、大半のリソースにアクセスできてしまいます。 詳細については、[`DefaultAzureCredential` での CLI 資格情報の使用](#cli-auth-note)について述べた前出の注意事項を参照してください。
+`get_client_from_cli_profile` 関数は、初期段階の実験や開発の目的でのみ使用してください。サインイン ユーザーは一般的に所有者や管理者の権限を保持しており、追加のアクセス許可なしで大半のリソースにアクセスできるためです。 詳細については、[`DefaultAzureCredential` での CLI 資格情報の使用](#cli-auth-note)について述べた前出の注意事項を参照してください。
 
 ### <a name="deprecated-authenticate-with-userpasscredentials"></a>非推奨:UserPassCredentials を使用して認証する
 
-[Azure Active Directory Authentication Library (ADAL) for Python](https://github.com/AzureAD/azure-activedirectory-library-for-python) が利用できるようになるまでは、現在は非推奨となっている [`UserPassCredentials`](/python/api/msrestazure/msrestazure.azure_active_directory.userpasscredentials?view=azure-python) クラスを使用する必要がありました。 このクラスは 2 要素認証をサポートしていないため、今後は使用しないでください。
+[Azure Active Directory Authentication Library (ADAL) for Python](https://github.com/AzureAD/azure-activedirectory-library-for-python) が利用できるようになるまでは、現在は非推奨となっている [`UserPassCredentials`](/python/api/msrestazure/msrestazure.azure_active_directory.userpasscredentials) クラスを使用する必要がありました。 このクラスは 2 要素認証をサポートしていないため、今後は使用しないでください。
 
 ## <a name="see-also"></a>関連項目
 

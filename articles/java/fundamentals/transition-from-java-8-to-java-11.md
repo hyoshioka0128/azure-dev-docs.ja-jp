@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 11/19/2019
 ms.author: dagrieve
 ms.custom: devx-track-java
-ms.openlocfilehash: 6aa930bb4ee5c6a5019e33b3d8075765b92f0bfc
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 2f7a7777551aadc5ef970d071e93974f1dea17b9
+ms.sourcegitcommit: 4824cea71195b188b4e8036746f58bf8b70dc224
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379786"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89753756"
 ---
 # <a name="transition-from-java-8-to-java-11"></a>Java 8 から Java 11 への移行
 
@@ -126,7 +126,7 @@ JDK 11 を使用してコンパイルする場合は、ビルド スクリプト
 ### <a name="check-command-line-options"></a>コマンドライン オプションを確認する
 
 Java 11 上で実行する前に、コマンドライン オプションのクイック スキャンを実行します。 
-[削除されたオプション](#unrecognized-options)を選択すると、Java 仮想マシン (JVM) が終了します。 GC ログ オプションを使用する場合は、Java 8 から大幅に変更されたため、このチェックは特に重要です。 [JaCoLine](https://jacoline.dev/about) ツールは、コマンドライン オプションを使用して問題を検出するために適しています。 
+[削除されたオプション](#unrecognized-options)を選択すると、Java 仮想マシン (JVM) が終了します。 GC ログ オプションを使用する場合は、Java 8 から大幅に変更されたため、このチェックは特に重要です。 コマンド ライン オプションに関する問題を検出するには、JaCoLine ツールが適しています。 
 
 ### <a name="check-third-party-libraries"></a>サードパーティ製ライブラリを確認する
 

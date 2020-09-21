@@ -9,12 +9,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: tutorial
 ms.workload: identity
 ms.custom: devx-track-java
-ms.openlocfilehash: 17a154fe7f41e4079fd9c6dcf1358c2acd50367b
-ms.sourcegitcommit: 035f485f182405fdf3e274ec4f70abfcf5fc9641
+ms.openlocfilehash: efe17eba034b92d771d979a896585d4d5362a11d
+ms.sourcegitcommit: a139e25190960ba89c9e31f861f0996a6067cd6c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/07/2020
-ms.locfileid: "89511061"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90534400"
 ---
 # <a name="tutorial-reading-a-secret-from-azure-key-vault-in-a-spring-boot-application"></a>チュートリアル:Spring Boot アプリケーションでの Azure Key Vault からのシークレットの読み取り
 
@@ -34,7 +34,7 @@ Spring Boot アプリケーションは、ユーザー名やパスワードな�
 
 * 有効な Azure サブスクリプション
   * Azure サブスクリプションをお持ちでない場合は、[無料アカウントを作成](https://azure.microsoft.com/free/)してください。
-* [Azure CLI バージョン 2.0.67 以降をインストール](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)し、`az extension add --name spring-cloud` コマンドを使用して Azure Spring Cloud 拡張機能をインストールする
+* [Azure CLI バージョン 2.0.67 以降をインストール](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest&preserve-view=true)し、`az extension add --name spring-cloud` コマンドを使用して Azure Spring Cloud 拡張機能をインストールする
 * サポートされている Java Development Kit (JDK)。 Azure での開発時に使用可能な JDK の詳細については、<https://aka.ms/azure-jdks> を参照してください。
 * [Apache Maven](http://maven.apache.org/) バージョン 3.0 以降。
 * `curl` コマンド。  ほとんどの UNIX 系オペレーティング システムには、このコマンドがプレインストールされています。  OS 固有のクライアントは、[curl の公式 Web サイト](https://curl.haxx.se/)で入手できます。
@@ -170,7 +170,7 @@ az ad sp create-for-rbac --name contososp
    "https://contosokv.vault.azure.net/"
    ```
 
-1. Key Vault がそのマネージド ID からの `get` と `list` 操作を許可するように構成します。  `object-id` の値は、上記の `az ad sp create-for-rbac` コマンドの `appId` です。
+1. Key Vault を構成して、そのマネージド ID からの `get` と `list` 操作を許可します。  `object-id` の値は、上記の `az ad sp create-for-rbac` コマンドの `appId` です。
 
    ```azurecli
    az keyvault set-policy --name contosokv --spn http://ejbcontososp --secret-permissions get list
@@ -185,6 +185,9 @@ az ad sp create-for-rbac --name contososp
    | name | Key Vault の名前。 |
    | spn | 上記の `az ad sp create-for-rbac` コマンドの出力からの `name`。 |
    | secret-permissions | 名前付きプリンシパルからの許可する操作の一覧。 |
+
+    > [!NOTE]
+    > 最小限の特権の原則ではリソースに対して最小限の特権セットを許可することが推奨されますが、Key Vault 統合の設計には少なくとも `get` と `list` が必要です。
 
 1. 新しい Key Vault にシークレットを格納します。  一般的なユース ケースでは、JDBC 接続文字列を格納します。  次に例を示します。
 

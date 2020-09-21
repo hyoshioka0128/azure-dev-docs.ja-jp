@@ -5,12 +5,12 @@ keywords: ansible, azure, devops, bash, プレイブック, ネットワーク, 
 ms.topic: tutorial
 ms.date: 04/30/2019
 ms.custom: devx-track-ansible
-ms.openlocfilehash: 28302e5e8fc6a46193d96c791080797559a566e9
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 6eca7aa93716e41d62ca5dae0211fa1467eec2ef
+ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240024"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90681996"
 ---
 # <a name="tutorial-configure-azure-route-tables-using-ansible"></a>チュートリアル:Ansible を使用して Azure ルート テーブルを構成する
 
@@ -47,7 +47,7 @@ Azure では、Azure のサブネット、仮想ネットワーク、および�
         resource_group: "{{ resource_group }}"
 ```
 
-`ansible-playbook` コマンドを使用してプレイブックを実行します。
+[ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) を使用してプレイブックを実行します
 
 ```bash
 ansible-playbook route_table_create.yml
@@ -104,7 +104,7 @@ ansible-playbook route_table_create.yml
         route_table: "{ route_table_name }"
 ```
 
-`ansible-playbook` コマンドを使用してプレイブックを実行します。
+[ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) を使用してプレイブックを実行します
 
 ```bash
 ansible-playbook route_table_associate.yml
@@ -133,7 +133,7 @@ ansible-playbook route_table_associate.yml
         address_prefix_cidr: "10.1.0.0/24"
 ```
 
-`ansible-playbook` コマンドを使用してプレイブックを実行します。
+[ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) を使用してプレイブックを実行します
 
 ```bash
 ansible-playbook route_table_dissociate.yml
@@ -166,7 +166,7 @@ ansible-playbook route_table_dissociate.yml
 * `virtual_network_gateway` は `next_hop_type` と定義されます。 Azure のルート選択方法の詳細については、[ルーティングの概要](/azure/virtual-network/virtual-networks-udr-overview)に関するページを参照してください。
 * `address_prefix` は `10.1.0.0/16` と定義されます。 このプレフィックスをルート テーブル内で重複させることはできません。
 
-`ansible-playbook` コマンドを使用してプレイブックを実行します。
+[ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) を使用してプレイブックを実行します
 
 ```bash
 ansible-playbook route_create.yml
@@ -193,7 +193,7 @@ ansible-playbook route_create.yml
         state: absent
 ```
 
-`ansible-playbook` コマンドを使用してプレイブックを実行します。
+[ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) を使用してプレイブックを実行します
 
 ```bash
 ansible-playbook route_delete.yml
@@ -221,7 +221,7 @@ ansible-playbook route_delete.yml
          var: query.route_tables[0]
 ```
 
-`ansible-playbook` コマンドを使用してプレイブックを実行します。
+[ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) を使用してプレイブックを実行します
 
 ```bash
 ansible-playbook route_table_facts.yml
@@ -250,7 +250,7 @@ ansible-playbook route_table_facts.yml
         state: absent
 ```
 
-`ansible-playbook` コマンドを使用してプレイブックを実行します。
+[ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) を使用してプレイブックを実行します
 
 ```bash
 ansible-playbook route_table_delete.yml

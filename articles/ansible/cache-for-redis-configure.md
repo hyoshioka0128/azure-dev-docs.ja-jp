@@ -5,12 +5,12 @@ keywords: ansible, azure, devops, bash, プレイブック, キャッシュ, red
 ms.topic: tutorial
 ms.date: 04/30/2019
 ms.custom: devx-track-ansible
-ms.openlocfilehash: e5e3211dc2625670937a583d3db0018c6222ae19
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 66da31edef14a09a903b3a78d97e1067856098ef
+ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240334"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90681732"
 ---
 # <a name="tutorial-configure-caches-in-azure-cache-for-redis-using-ansible"></a>チュートリアル:Ansible を使用して Azure Cache for Redis のキャッシュを構成する
 
@@ -159,7 +159,7 @@ Azure Cache for Redis をプロビジョニングするタスクと同様に、�
 
 完全なサンプル プレイブックを取得するには、次の 2 つの方法があります。
 - [プレイブックをダウンロード](https://github.com/Azure-Samples/ansible-playbooks/blob/master/rediscache.yml)して、`rediscache.yml` に保存する。
-- `rediscache.yml` という名前の新規ファイルを作成して、次のコンテンツをコピーする。
+- `rediscache.yml` という名前の新規ファイルを作成して、それに次の内容をコピーする。
 
 ```yml
 - name: Manage Azure Cache for Redis
@@ -241,7 +241,7 @@ Azure Cache for Redis をプロビジョニングするタスクと同様に、�
 
 `vars` セクションで、`{{ resource_group_name }}` プレースホルダーを実際のリソース グループの名前に置き換えます。
 
-`ansible-playbook` コマンドを使用してプレイブックを実行します。
+[ansible-playbook](https://docs.ansible.com/ansible/latest/cli/ansible-playbook.html) を使用してプレイブックを実行します
 
 ```bash
 ansible-playbook rediscache.yml
@@ -323,28 +323,7 @@ Tuesday 12 March 2019  16:44:14 +0800 (0:00:06.217)       0:23:08.626
 
 ## <a name="clean-up-resources"></a>リソースをクリーンアップする
 
-この記事で作成したリソースが不要になったら、削除してください。 
-
-`cleanup.yml` として次のコードを保存します。
-
-```yml
-- hosts: localhost
-  vars:
-    resource_group: "{{ resource_group_name }}"
-  tasks:
-    - name: Delete a resource group
-      azure_rm_resourcegroup:
-        name: "{{ resource_group }}"
-        state: absent
-```
-
-`vars` セクションで、`{{ resource_group_name }}` プレースホルダーを実際のリソース グループの名前に置き換えます。
-
-`ansible-playbook` コマンドを使用してプレイブックを実行します。
-
-```bash
-ansible-playbook cleanup.yml
-```
+[!INCLUDE [ansible-delete-resource-group.md](includes/ansible-delete-resource-group.md)]
 
 ## <a name="next-steps"></a>次のステップ
 

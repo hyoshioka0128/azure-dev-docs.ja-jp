@@ -1,5 +1,5 @@
 - name: Java 用 Azure クイック スタート
-  href: /azure/developer/java/quickstarts
+  href: ./index.yml
   items:
     - name: Compute Services
       href: compute.md
@@ -15,7 +15,7 @@
       href: directories.md
     - name: メッセージングとイベント
       href: messaging-and-eventing.md
-    - name: ネットワーク
+    - name: ネットワーキング
       href: networking.md
     - name: 監視
       href: monitoring.md

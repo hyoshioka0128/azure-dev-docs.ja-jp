@@ -70,7 +70,7 @@
     - name: チュートリアル
       items:
         - name: Maven で App Service にデプロイする
-          href: deploy-spring-boot-java-app-with-maven-plugin.md
+          href: /azure/app-service/quickstart-java?pivots=platform-linux%252cplatform-linux
         - name: Kubernetes へのデプロイ
           href: deploy-spring-boot-java-app-on-kubernetes.md
         - name: Web App for Containers へのデプロイ

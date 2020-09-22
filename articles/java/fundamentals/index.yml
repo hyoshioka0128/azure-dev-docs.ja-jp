@@ -6,12 +6,12 @@ metadata:
   description: Azure での Java 開発のためのツール、IDE、およびサポートされている JDK
   ms.date: 04/03/2020
   ms.topic: landing-page
-  ms.openlocfilehash: d229e7b7964290c78c8ab963e7c70374043c40a8
-  ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+  ms.openlocfilehash: 7417675f8808d6dd479aea1853a89db77a189cd5
+  ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 05/05/2020
-  ms.locfileid: "81675268"
+  ms.lasthandoff: 09/21/2020
+  ms.locfileid: "90831508"
 landingContent:
 - title: Java クラウド開発者向けのツール
   linkLists:
@@ -36,9 +36,9 @@ landingContent:
     - text: Visual Studio Code
       url: https://code.visualstudio.com/docs/languages/java
     - text: IntelliJ IDEA
-      url: /azure/developer/java/toolkit-for-intellij
+      url: ../toolkit-for-intellij/index.yml
     - text: Eclipse
-      url: /azure/developer/java/toolkit-for-eclipse
+      url: ../toolkit-for-eclipse/index.yml
 - title: Maven プラグイン
   linkLists:
   - linkListType: overview
@@ -49,12 +49,12 @@ landingContent:
       url: /java/api/overview/azure/maven/azure-functions-maven-plugin/readme
     - text: Azure Spring Cloud
       url: /java/api/overview/azure/maven/azure-spring-cloud-maven-plugin/readme
-- title: ログ記録
+- title: ログの記録
   linkLists:
   - linkListType: overview
     links:
     - text: Azure SDK for Java でのログ記録の構成
-      url: /azure/developer/java/sdk/java-sdk-azure-log
+      url: ../sdk/java-sdk-azure-log.md
     - text: Logz.io を使用した監視とログ記録
       url: java-get-started-with-logzio.md
 - title: DevOps

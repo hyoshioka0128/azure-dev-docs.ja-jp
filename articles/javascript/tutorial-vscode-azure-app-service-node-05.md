@@ -3,14 +3,15 @@ title: Azure App Service を Visual Studio Code にデプロイした後にリ�
 description: チュートリアル パート 5、リソースをクリーンアップする
 ms.topic: conceptual
 ms.date: 03/04/2020
-ms.openlocfilehash: 1c3b277270bf6f8f7cb5884b7bb56ce2c9b3368c
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.custom: devx-track-javascript
+ms.openlocfilehash: fc420d98121816157e75017ee453aa42929f68e6
+ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85793052"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "90772895"
 ---
-# <a name="clean-up-resources"></a>リソースをクリーンアップする
+# <a name="part-5-clean-up-resources"></a>パート 5: リソースをクリーンアップする
 
 [前の手順:ログのストリーミング](tutorial-vscode-azure-app-service-node-04.md)
 

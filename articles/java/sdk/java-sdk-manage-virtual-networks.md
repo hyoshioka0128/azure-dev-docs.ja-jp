@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 3/30/2017
 ms.reviewer: asirveda
 ms.custom: devx-track-java
-ms.openlocfilehash: 31e20e4ef347bb3b771e818da6e458261537a3f3
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: c2bd707cb90e7d558faf1f02e4ec26d7ae2ea906
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379396"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831868"
 ---
 # <a name="create-and-manage-azure-virtual-networks-from-your-java-apps"></a>Java アプリによる Azure 仮想ネットワークの作成と管理
 
@@ -20,7 +20,7 @@ ms.locfileid: "86379396"
 
 ## <a name="run-the-sample"></a>サンプルを実行する
 
-[認証ファイル](https://docs.microsoft.com/azure/java/java-sdk-azure-authenticate#mgmt-file)を作成し、そのファイルのコンピューター上における完全なパスを保持する環境変数 `AZURE_AUTH_LOCATION` を設定します。 次に、次のコマンドを実行します。
+[認証ファイル](/azure/java/java-sdk-azure-authenticate#mgmt-file)を作成し、そのファイルのコンピューター上における完全なパスを保持する環境変数 `AZURE_AUTH_LOCATION` を設定します。 次に、次のコマンドを実行します。
 
 ```
 git clone https://github.com/Azure-Samples/network-java-manage-virtual-network.git

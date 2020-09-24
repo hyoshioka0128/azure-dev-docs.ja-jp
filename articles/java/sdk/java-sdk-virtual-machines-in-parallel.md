@@ -7,23 +7,23 @@ ms.topic: article
 ms.date: 03/30/2017
 ms.reviewer: asirveda
 ms.custom: devx-track-java
-ms.openlocfilehash: a0e93cd355560c62c91cee61df843564e738dd25
-ms.sourcegitcommit: 300251b3d866bac9c7d2dfc3133efaaea8e0ce04
+ms.openlocfilehash: 53810dcfc0dc03152ba640a9e9d0bcdd27dc763c
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87438351"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831848"
 ---
 # <a name="create-virtual-machines-across-multiple-regions-from-your-java-applications"></a>Java アプリケーションから複数のリージョンに対して仮想マシンを作成する
 
 [このサンプル](https://github.com/Azure-Samples/compute-java-create-virtual-machines-across-regions-in-parallel)では、[Azure Management Libraries for Java](https://github.com/Azure/azure-sdk-for-java) を使って複数の Azure リージョンに対して同時に仮想マシンを作成します。
 
 > [!IMPORTANT]
-> 4 つのリージョンに対し、[STANDARD_DS3_V2 サイズ](https://docs.microsoft.com/azure/virtual-machines/sizes)の Ubuntu 16.04 LTS を実行する合計 48 の VM を作成します。 これらの仮想マシンは、終了前にサンプル コードによって削除されます。 このサンプルを既定の VM 数で実行する前に必ず、[サービスの制限とクォータをチェック](/azure/azure-subscription-service-limits)してください。
+> 4 つのリージョンに対し、[STANDARD_DS3_V2 サイズ](/azure/virtual-machines/sizes)の Ubuntu 16.04 LTS を実行する合計 48 の VM を作成します。 これらの仮想マシンは、終了前にサンプル コードによって削除されます。 このサンプルを既定の VM 数で実行する前に必ず、[サービスの制限とクォータをチェック](/azure/azure-subscription-service-limits)してください。
 
 ## <a name="run-the-sample"></a>サンプルを実行する
 
-[認証ファイル](https://docs.microsoft.com/azure/java/java-sdk-azure-authenticate#mgmt-file)を作成し、そのファイルのコンピューター上における完全なパスを保持する環境変数 `AZURE_AUTH_LOCATION` を設定します。 次に、次のコマンドを実行します。
+[認証ファイル](/azure/java/java-sdk-azure-authenticate#mgmt-file)を作成し、そのファイルのコンピューター上における完全なパスを保持する環境変数 `AZURE_AUTH_LOCATION` を設定します。 次に、次のコマンドを実行します。
 
 ```
 git clone https://github.com/Azure-Samples/compute-java-create-virtual-machines-across-regions-in-parallel.git

@@ -5,12 +5,12 @@ keywords: Jenkins, Azure, 開発, Kubernetes, k8s, AKS, ブルー/グリーン �
 ms.topic: tutorial
 ms.date: 10/23/2019
 ms.custom: devx-track-jenkins
-ms.openlocfilehash: 9a81b47d0e3828bb7c1cd809a66b2245f5a83771
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 6a33227f7a5a0aa3e82e48d821e9f37bdfeadd6e
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240994"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90832048"
 ---
 # <a name="tutorial-deploy-to-azure-kubernetes-service-aks-using-the-bluegreen-deployment-pattern"></a>チュートリアル:ブルー/グリーン デプロイ パターンを使用した Azure Kubernetes Service (AKS) へのデプロイ
 
@@ -29,7 +29,7 @@ Azure Kubernetes Service (AKS) を使用すると、ホストされている Kub
 
 ## <a name="prerequisites"></a>前提条件
 - [GitHub アカウント](https://github.com):サンプル リポジトリを複製するために GitHub アカウントが必要です。
-- [Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest):Kubernetes クラスターを作成するために Azure CLI 2.0 を使用します。
+- [Azure CLI 2.0](/cli/azure/install-azure-cli?view=azure-cli-latest):Kubernetes クラスターを作成するために Azure CLI 2.0 を使用します。
 - [Chocolatey](https://chocolatey.org):kubectl をインストールするために使用するパッケージ マネージャーです。
 - [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/):Kubernetes クラスターに対してコマンドを実行するために使用するコマンド ライン インターフェイスです。
 - [jq](https://stedolan.github.io/jq/download/):簡便なコマンド ライン JSON プロセッサです。
@@ -81,7 +81,7 @@ GitHub の Microsoft リポジトリに、Jenkins とブルー/グリーン パ�
 - Azure Container Registry サービスのインスタンスを作成する。
 
 ### <a name="use-the-azure-cli-20-to-create-a-managed-kubernetes-cluster"></a>Azure CLI 2.0 を使用したマネージド Kubernetes クラスターの作成
-[Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) を使用してマネージド Kubernetes クラスターを作成する場合は、Azure CLI バージョン 2.0.25 以降を使用していることを確認してください。
+[Azure CLI 2.0](/cli/azure/install-azure-cli?view=azure-cli-latest) を使用してマネージド Kubernetes クラスターを作成する場合は、Azure CLI バージョン 2.0.25 以降を使用していることを確認してください。
 
 1. Azure アカウントにサインインします。 次のコマンドを入力した後に、サインインを完了する方法を説明する手順が示されます。 
     

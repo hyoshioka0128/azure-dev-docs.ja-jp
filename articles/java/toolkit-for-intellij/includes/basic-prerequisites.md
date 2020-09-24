@@ -1,16 +1,16 @@
 ---
-ms.openlocfilehash: a839da7cf596c356541ee69d341f1b73ca278a44
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 23a16188b7f24265ca4045f684c9e08304788ea1
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81672308"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831611"
 ---
 ## <a name="prerequisites"></a>前提条件
 
 この記事の手順を完了するには、Azure Toolkit for IntelliJ をインストールする必要があります。これには、次のソフトウェア コンポーネントが必要です。
 
-* [Azure でサポートされている Java Development Kit (JDK)](https://aka.ms/azure-jdks)
+* [Azure でサポートされている Java Development Kit (JDK)](../../fundamentals/java-jdk-long-term-support.md)
 * [IntelliJ IDEA](https://www.jetbrains.com/idea/download/) Ultimate Edition または Community Edition がインストールされていること
 
 > [!NOTE]

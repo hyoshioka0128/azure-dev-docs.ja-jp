@@ -8,16 +8,16 @@ ms.tgt_pltfrm: multiple
 ms.author: judubois
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 481b3fce5d7d5f62cf4639d53d86c092e364a74f
-ms.sourcegitcommit: 04ee2325e3efd9b7797102b4cd9d5db009c38a42
+ms.openlocfilehash: 3bbed7be27854514d76b5cd3e5b905ba5741fa72
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86945810"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831828"
 ---
 # <a name="use-spring-data-jdbc-with-azure-database-for-mysql"></a>Azure Database for MySQL で Spring Data JDBC を使用する
 
-このトピックでは、[Spring Data JDBC](https://spring.io/projects/spring-data-jdbc) を使って [Azure Database for MySQL](https://docs.microsoft.com/azure/mysql/) から情報を格納および取得するサンプル アプリケーションを作成する方法を説明します。
+このトピックでは、[Spring Data JDBC](https://spring.io/projects/spring-data-jdbc) を使って [Azure Database for MySQL](/azure/mysql/) から情報を格納および取得するサンプル アプリケーションを作成する方法を説明します。
 
 [JDBC](https://jcp.org/en/jsr/detail?id=221) は、従来のリレーショナル データベースに接続するための標準の Java API です。
 
@@ -103,4 +103,4 @@ CREATE TABLE todo (id SERIAL PRIMARY KEY, description VARCHAR(255), details VARC
 
 Spring Data JDBC の詳細については、Spring の[リファレンス ドキュメント](https://docs.spring.io/spring-data/jdbc/docs/current/reference/html/#reference)を参照してください。
 
-Java での Azure の使用の詳細については、「[Java 開発者向けの Azure](/azure/developer/java/)」および [Azure DevOps と Java の操作](/azure/devops/)に関するページを参照してください。
+Java での Azure の使用の詳細については、「[Java 開発者向けの Azure](../index.yml)」および [Azure DevOps と Java の操作](/azure/devops/)に関するページを参照してください。

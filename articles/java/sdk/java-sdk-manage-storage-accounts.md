@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 3/30/2017
 ms.reviewer: asirveda
 ms.custom: devx-track-java
-ms.openlocfilehash: 92c6c6fe43fe6bd7c1932eeb64a88db87437713d
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 7a16f5c9f9c6e27a56bace08aa43aef3c4a9bdb6
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379386"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831878"
 ---
 # <a name="manage-azure-storage-accounts-from-your-java-applications"></a>Java アプリケーションから Azure ストレージ アカウントを管理する
 
@@ -20,7 +20,7 @@ ms.locfileid: "86379386"
 
 ## <a name="run-the-sample"></a>サンプルを実行する
 
-[認証ファイル](https://docs.microsoft.com/azure/java/java-sdk-azure-authenticate#mgmt-file)を作成し、そのファイルのコンピューター上における完全なパスを保持する環境変数 `AZURE_AUTH_LOCATION` を設定します。 次に、次のコマンドを実行します。
+[認証ファイル](/azure/java/java-sdk-azure-authenticate#mgmt-file)を作成し、そのファイルのコンピューター上における完全なパスを保持する環境変数 `AZURE_AUTH_LOCATION` を設定します。 次に、次のコマンドを実行します。
 
 ```
 git clone https://github.com/Azure-Samples/storage-java-manage-storage-accounts.git

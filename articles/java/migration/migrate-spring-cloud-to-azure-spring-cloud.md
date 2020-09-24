@@ -6,12 +6,12 @@ ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 2/12/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: e07bc23a7316352017e1ea99dd87253f0639a559
-ms.sourcegitcommit: 95fdc444c424f4a7d7d53437837e9532a0b897e9
+ms.openlocfilehash: e4be32594940d2c207610e7d709ccb328c38ecf6
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88662983"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831698"
 ---
 # <a name="migrate-spring-cloud-applications-to-azure-spring-cloud"></a>Spring Cloud アプリケーションを Azure Spring Cloud に移行する
 
@@ -158,7 +158,7 @@ Azure Spring Cloud インスタンスで構成サーバーを構成します。 
 
 ### <a name="migrate-spring-cloud-vault-secrets-to-azure-keyvault"></a>Spring Cloud Vault シークレットを Azure KeyVault に移行する
 
-Azure KeyVault Spring Boot Starter を使用して、Spring 経由でアプリケーションに直接シークレットを挿入できます。 詳細については、「[Azure Key Vault 用の Spring Boot Starter の使用方法](/azure/developer/java/spring-framework/configure-spring-boot-starter-java-app-with-azure-key-vault)」を参照してください。
+Azure KeyVault Spring Boot Starter を使用して、Spring 経由でアプリケーションに直接シークレットを挿入できます。 詳細については、「[Azure Key Vault 用の Spring Boot Starter の使用方法](../spring-framework/configure-spring-boot-starter-java-app-with-azure-key-vault.md)」を参照してください。
 
 > [!NOTE]
 > 移行において、一部のシークレットの名前変更が必要な場合があります。 必要に応じて、アプリケーション コードを更新してください。

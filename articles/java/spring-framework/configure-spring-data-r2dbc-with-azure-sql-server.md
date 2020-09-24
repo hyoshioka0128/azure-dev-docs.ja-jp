@@ -8,16 +8,16 @@ ms.tgt_pltfrm: multiple
 ms.author: judubois
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: b0f1b594d45dce98b990aec1209b550e08065bc8
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 16945c094d9e6ecb8b837f7fa7c00482fe8a735a
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86378716"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831808"
 ---
 # <a name="use-spring-data-r2dbc-with-azure-sql-database"></a>Azure SQL Database で Spring Data R2DBC を使用する
 
-このトピックでは、[GitHub の r2dbc-mssql リポジトリ](https://github.com/r2dbc/r2dbc-mssql)の Microsoft SQL Server 用の R2DBC 実装を使用して、[Spring Data R2DBC](https://spring.io/projects/spring-data-r2dbc) を使って [Azure SQL Database](https://docs.microsoft.com/azure/sql-database/) に情報を格納および取得するサンプル アプリケーションを作成する方法を説明します。
+このトピックでは、[GitHub の r2dbc-mssql リポジトリ](https://github.com/r2dbc/r2dbc-mssql)の Microsoft SQL Server 用の R2DBC 実装を使用して、[Spring Data R2DBC](https://spring.io/projects/spring-data-r2dbc) を使って [Azure SQL Database](/azure/sql-database/) に情報を格納および取得するサンプル アプリケーションを作成する方法を説明します。
 
 [R2DBC](https://r2dbc.io/) は、従来のリレーショナル データベースにリアクティブ API を提供します。 これを Spring WebFlux と共に使用すると、非ブロッキング API を使用する完全にリアクティブな Spring Boot アプリケーションを作成できます。 "接続ごとに 1 つのスレッド" という従来の手法よりも優れたスケーラビリティが実現されます。
 
@@ -117,4 +117,4 @@ CREATE TABLE todo (id INT IDENTITY PRIMARY KEY, description VARCHAR(255), detail
 
 Spring Data R2DBC の詳細については、Spring の「[リファレンス ドキュメント](https://docs.spring.io/spring-data/r2dbc/docs/current/reference/html/#reference)」を参照してください。
 
-Java での Azure の使用の詳細については、「[Java 開発者向けの Azure](/azure/developer/java/)」および [Azure DevOps と Java の操作](/azure/devops/)に関するページを参照してください。
+Java での Azure の使用の詳細については、「[Java 開発者向けの Azure](../index.yml)」および [Azure DevOps と Java の操作](/azure/devops/)に関するページを参照してください。

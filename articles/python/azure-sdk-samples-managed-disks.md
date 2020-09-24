@@ -4,18 +4,18 @@ description: マネージド ディスクの作成、サイズ変更、更新を
 ms.topic: conceptual
 ms.date: 6/15/2017
 ms.custom: devx-track-python
-ms.openlocfilehash: 0e319d56f1391d193979c79750025a99b565134a
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: b1973276f6cf080006f61ddc3a2805c345591e89
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87983244"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831528"
 ---
 # <a name="managed-disks"></a>Managed Disks
 
 Azure Managed Disks により、ディスク管理の簡素化、スケーラビリティの強化、セキュリティの向上、スケールが提供されます。 ディスクのストレージ アカウントの概念を取り払い、顧客がストレージ アカウントに関連する制限を気にすることなくスケーリングを行えるようにします。 この記事では、Python のサービスを利用する際の概要とリファレンスを簡単に紹介します。
 
-開発者の視点から見ると、Azure CLI の Managed Disks エクスペリエンスは、他のクロスプラットフォーム ツールの CLI と比べて独特です。 [Azure Python](https://azure.microsoft.com/develop/python/) SDK と [azure-mgmt-compute package 0.33.0](https://pypi.python.org/pypi/azure-mgmt-compute) を使用して、Managed Disks を管理できます。 この[チュートリアル](https://docs.microsoft.com/python/api/overview/azure/virtualmachines?view=azure-python)を使用して、コンピューティング クライアントを作成できます。
+開発者の視点から見ると、Azure CLI の Managed Disks エクスペリエンスは、他のクロスプラットフォーム ツールの CLI と比べて独特です。 [Azure Python](https://azure.microsoft.com/develop/python/) SDK と [azure-mgmt-compute package 0.33.0](https://pypi.python.org/pypi/azure-mgmt-compute) を使用して、Managed Disks を管理できます。 この[チュートリアル](/python/api/overview/azure/virtualmachines?view=azure-python)を使用して、コンピューティング クライアントを作成できます。
 
 ## <a name="standalone-managed-disks"></a>スタンドアロンの管理ディスク
 

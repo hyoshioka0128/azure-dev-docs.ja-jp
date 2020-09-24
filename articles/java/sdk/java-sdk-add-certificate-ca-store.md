@@ -8,12 +8,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 11/13/2018
 ms.custom: devx-track-java
-ms.openlocfilehash: 6807374dac927d8a93e1ecf1ac2b1e3fa54877ac
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 2f40f013d7323c51c25d5ecf97f097824d75e914
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379546"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831678"
 ---
 # <a name="adding-a-root-certificate-to-the-java-ca-certificates-store"></a>ルート証明書を Java CA 証明書ストアに追加する方法
 
@@ -79,6 +79,6 @@ Baltimore 証明書が cacerts ストアに既にインストールされてい�
 
 keytool ユーティリティの詳細については、<https://docs.oracle.com/javase/7/docs/technotes/tools/windows/keytool.html> を参照してください。
 
-Java の詳細については、「[Azure for Java developers (Java 開発者向けの Azure)](/azure/developer/java)」をご覧ください。
+Java の詳細については、「[Azure for Java developers (Java 開発者向けの Azure)](../index.yml)」をご覧ください。
 
 Azure での開発時に使用可能なサポート対象 JDK の詳細については、<https://aka.ms/azure-jdks> を参照してください。

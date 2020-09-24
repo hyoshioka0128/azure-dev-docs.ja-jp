@@ -7,17 +7,17 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 5152b1bfedd02c821d2a9138fa3e20325b5ea086
-ms.sourcegitcommit: a139e25190960ba89c9e31f861f0996a6067cd6c
+ms.openlocfilehash: a209f532069741e9c6302bca97dc8c72cde0e396
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90534320"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831948"
 ---
 # <a name="manage-storage-accounts-by-using-the-azure-explorer-for-intellij"></a>Azure Explorer for IntelliJ を使用してストレージ アカウントを管理する
 
 > [!NOTE]
-> Azure Explorer のストレージ アカウント機能は非推奨です。 Azure portal を利用して、ストレージ アカウントとコンテナーを作成して管理できます。 ストレージ アカウントの管理方法に関するクイックスタートについては、[Azure Storage](/azure/storage/blobs/storage-quickstart-blobs-portal) のドキュメントをご覧ください。
+> Azure Explorer のストレージ アカウント機能は非推奨です。 Azure portal を利用して、ストレージ アカウントとコンテナーを作成して管理できます。 ストレージ アカウントの管理方法に関するクイックスタートについては、 [Azure Storage](/azure/storage/blobs/storage-quickstart-blobs-portal) のドキュメントをご覧ください。
 
 Azure Toolkit for IntelliJ の一部である Azure Explorer は、IntelliJ 統合開発環境 (IDE) 内から Azure アカウントのストレージ アカウントを管理するための使いやすいソリューションを Java 開発者に提供します。
 
@@ -86,8 +86,8 @@ Azure ストレージ アカウント、サイズ、および料金の詳細に�
 [Azure Storage のスケーラビリティおよびパフォーマンスのターゲット]: /azure/storage/storage-scalability-targets
 [Naming and referencing containers, blobs, and metadata]: https://go.microsoft.com/fwlink/?LinkId=255555
 
-[Azure の Windows ストレージ アカウントのサイズ]: https://docs.microsoft.com/azure/virtual-machines/sizes
-[Azure の Linux ストレージ アカウントのサイズ]: https://docs.microsoft.com/azure/virtual-machines/sizes
+[Azure の Windows ストレージ アカウントのサイズ]: /azure/virtual-machines/sizes
+[Azure の Linux ストレージ アカウントのサイズ]: /azure/virtual-machines/sizes
 [Windows ストレージ アカウントの料金]: https://azure.microsoft.com/pricing/details/virtual-machines/windows/
 [Linux ストレージ アカウントの料金]: https://azure.microsoft.com/pricing/details/virtual-machines/linux/
 

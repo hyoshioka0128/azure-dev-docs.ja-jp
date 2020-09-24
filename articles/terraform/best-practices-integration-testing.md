@@ -4,12 +4,12 @@ description: 統合テストと、Azure DevOps を使用した Terraform プロ�
 ms.topic: tutorial
 ms.date: 07/31/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: ced6dc9a3ff40ceee3ac37daea3ab6300a529e0e
-ms.sourcegitcommit: 62f78d529c02c7d7895d32ec8ed415bf0946d056
+ms.openlocfilehash: d6c8f9c419070d734c3c848163c52e6255d5512a
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89557555"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831998"
 ---
 # <a name="tutorial-configure-integration-tests-for-terraform-projects-in-azure"></a>チュートリアル:Azure で Terraform プロジェクトの統合テストを構成する
 
@@ -30,9 +30,9 @@ ms.locfileid: "89557555"
 ## <a name="prerequisites"></a>前提条件
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
-- **Azure DevOps 組織とプロジェクト**:まだお持ちでない場合は、[Azure DevOps 組織を作成します](https://docs.microsoft.com/azure/devops/organizations/projects/create-project?view=azure-devops&tabs=preview-page)。
+- **Azure DevOps 組織とプロジェクト**:まだお持ちでない場合は、[Azure DevOps 組織を作成します](/azure/devops/organizations/projects/create-project?tabs=preview-page&view=azure-devops)。
 - **Terraform の Build & Release Tasks 拡張機能**:Azure DevOps 組織に [Terraform のビルド/リリース タスク拡張機能をインストール](https://marketplace.visualstudio.com/items?itemName=charleszipp.azure-pipelines-tasks-terraform)します。
-- **Azure サブスクリプションへの Azure DevOps のアクセスを許可する**:`terraform-basic-testing-azure-connection` という名前の [Azure サービス接続](https://docs.microsoft.com/azure/devops/pipelines/library/connect-to-azure?view=azure-devops)を作成して、Azure Pipelines を Azure サブスクリプションに接続できるようにします。
+- **Azure サブスクリプションへの Azure DevOps のアクセスを許可する**:`terraform-basic-testing-azure-connection` という名前の [Azure サービス接続](/azure/devops/pipelines/library/connect-to-azure?view=azure-devops)を作成して、Azure Pipelines を Azure サブスクリプションに接続できるようにします。
 - **Terraform のインストール**:ご使用の環境に応じて、[Terraform をダウンロードしてインストール](https://www.terraform.io/downloads.html)します。
 - **テスト用サンプルをフォークする**:[GitHub の Terraform サンプル プロジェクト](https://github.com/Azure/terraform)をフォークし、開発/テスト用コンピューターに複製します。
 

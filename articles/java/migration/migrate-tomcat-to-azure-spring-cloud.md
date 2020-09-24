@@ -5,12 +5,12 @@ author: yevster
 ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 6/16/2020
-ms.openlocfilehash: 7b8a29c2769b3c4b04a40053d0470bfc6b1a0cca
-ms.sourcegitcommit: 2f98cf2a394d4fd82ddc917ac1041c1dc08473b6
+ms.openlocfilehash: a718c7b8b481b99f5a4b1303acac7147c88d1550
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89275186"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831668"
 ---
 # <a name="migrate-a-tomcat-application-to-azure-spring-cloud"></a>Tomcat アプリケーションを Azure Spring Cloud に移行する
 
@@ -131,7 +131,7 @@ Spring Boot と Spring Cloud では、ビルドと依存関係の管理に Maven
 
 1. [Spring beans](https://docs.spring.io/spring-boot/docs/current/reference/html/using-spring-boot.html#using-boot-spring-beans-and-dependency-injection) を使用して、他のすべての JNDI 依存関係を再作成します。 メッセージングに [Spring JMS](https://spring.io/guides/gs/messaging-jms/) を使用するなど、Spring のメカニズムの使用を優先します。
 
-1. Tomcat の領域を [Spring Security](https://docs.spring.io/spring-security/site/docs/current/reference/html5/#servlet-filters-review) に置き換えます。 認可管理には、[Active Directory 用の Spring Boot Starter](/azure/developer/java/spring-framework/spring-boot-starters-for-azure#azure-active-directory)経由で Azure Active Directory を使用することを検討してください。
+1. Tomcat の領域を [Spring Security](https://docs.spring.io/spring-security/site/docs/current/reference/html5/#servlet-filters-review) に置き換えます。 認可管理には、[Active Directory 用の Spring Boot Starter](../spring-framework/spring-boot-starters-for-azure.md#azure-active-directory)経由で Azure Active Directory を使用することを検討してください。
 
 1. *web.xml* に構成されているサーブレット フィルターを [Spring beans](https://docs.spring.io/spring-boot/docs/current/reference/html/howto.html#howto-add-a-servlet-filter-or-listener-as-spring-bean) または [クラスパス スキャン](https://docs.spring.io/spring-boot/docs/current/reference/html/howto.html#howto-add-a-servlet-filter-or-listener-using-scanning)で再作成します。
 

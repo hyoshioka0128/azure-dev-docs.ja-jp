@@ -4,16 +4,16 @@ description: Java アプリに対するストレージに関する Azure ドキ�
 ms.date: 04/09/2020
 ms.topic: conceptual
 ms.custom: devx-track-java
-ms.openlocfilehash: 2291b5a9dd374ea92079e1b8f70e3fd87f24b00e
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 93bfbb2231a69bd78f81e7fad5b638c536e9a78d
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379566"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831578"
 ---
 # <a name="storage-for-java-apps-on-azure"></a>Azure の Java アプリに対するストレージ
 
 次の記事は、Azure で各種のストレージ オプションを初めて使用する場合に役立ちます。
 
 - [Storage](/azure/storage/blobs/storage-quickstart-blobs-java)
-- [Storage - Spring Resource](/azure/developer/java/spring-framework/configure-spring-boot-starter-java-app-with-azure-storage)
+- [Storage - Spring Resource](../spring-framework/configure-spring-boot-starter-java-app-with-azure-storage.md)

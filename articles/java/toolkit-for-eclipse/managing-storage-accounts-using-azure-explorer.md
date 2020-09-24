@@ -7,12 +7,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 8c7c39fa80568efa3040d5cbfa18c3b0cfcd43bc
-ms.sourcegitcommit: a139e25190960ba89c9e31f861f0996a6067cd6c
+ms.openlocfilehash: e5b5c946b5ed4d2480b1040d0925507453cc2408
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90534640"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831748"
 ---
 # <a name="manage-storage-accounts-by-using-the-azure-explorer-for-eclipse"></a>Azure Explorer for Eclipse を使用してストレージ アカウントを管理する
 
@@ -27,7 +27,7 @@ Azure Toolkit for Eclipse の一部である Azure Explorer は、Eclipse 統合
 
 ## <a name="create-a-storage-account"></a>ストレージ アカウントの作成
 
-1. 「[Azure Toolkit for Eclipse のサインイン手順](/azure/developer/java/toolkit-for-eclipse/sign-in-instructions)」を使用して Azure アカウントにサインインします。
+1. 「[Azure Toolkit for Eclipse のサインイン手順](./sign-in-instructions.md)」を使用して Azure アカウントにサインインします。
 
 1. **Azure Explorer** ビューで、 **[Azure]** ノードを展開し、 **[ストレージ アカウント]** を右クリックし、 **[ストレージ アカウントの作成]** をクリックします。
 
@@ -87,8 +87,8 @@ Azure ストレージ アカウント、サイズ、および料金の詳細に�
 [Azure Storage のスケーラビリティおよびパフォーマンスのターゲット]: /azure/storage/storage-scalability-targets
 [Naming and referencing containers, blobs, and metadata]: https://go.microsoft.com/fwlink/?LinkId=255555
 
-[Azure の Windows ストレージ アカウントのサイズ]: https://docs.microsoft.com/azure/virtual-machines/sizes
-[Azure の Linux ストレージ アカウントのサイズ]: https://docs.microsoft.com/azure/virtual-machines/sizes
+[Azure の Windows ストレージ アカウントのサイズ]: /azure/virtual-machines/sizes
+[Azure の Linux ストレージ アカウントのサイズ]: /azure/virtual-machines/sizes
 [Windows ストレージ アカウントの料金]: https://azure.microsoft.com/pricing/details/virtual-machines/windows/
 [Linux ストレージ アカウントの料金]: https://azure.microsoft.com/pricing/details/virtual-machines/linux/
 

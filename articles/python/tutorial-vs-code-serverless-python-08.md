@@ -2,14 +2,14 @@
 title: 手順 8:Azure Functions の Python コードで使用されるリソースをクリーンアップする
 description: チュートリアルの手順 8、引き続き料金を請求されないように Azure リソースをクリーンアップする。
 ms.topic: conceptual
-ms.date: 05/19/2020
+ms.date: 09/17/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: fe4f9b0ef5789b307cbeb3c680dfde2eb46a0046
-ms.sourcegitcommit: 9e282fc2ec967bee181c3034e7e70b28ae308905
+ms.openlocfilehash: 885ff8b79ac219d4adaf4760e31fe439d010f9d5
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89473517"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90832008"
 ---
 # <a name="8-clean-up-azure-resources-for-azure-functions"></a>8:Azure Functions の Azure リソースをクリーンアップする
 
@@ -31,7 +31,7 @@ Visual Studio Code では、 **[Azure: Functions]** エクスプローラーの 
 
 「[Azure Functions の概要](/azure/azure-functions/functions-overview)」では、使用できるさまざまなトリガーについて説明されています。
 
-データ ストレージのほか、AI や機械学習のサービスなど、Python から使用できる Azure サービスの詳細については、[Azure Python デベロッパー センター](/azure/python/?view=azure-python)にアクセスしてください。
+データ ストレージのほか、AI や機械学習のサービスなど、Python から使用できる Azure サービスの詳細については、[Azure Python デベロッパー センター](./index.yml)にアクセスしてください。
 
 Visual Studio Code 用の Azure 拡張機能は他にもあります。役に立つ機能が見つかるかもしれません。 拡張機能のエクスプローラーで、"Azure" で検索してください。
 
@@ -45,6 +45,4 @@ Visual Studio Code 用の Azure 拡張機能は他にもあります。役に立
 - [Azure リソース マネージャー ツール](https://marketplace.visualstudio.com/items?itemName=msazurermtools.azurerm-vscode-tools)
 
 > [!div class="nextstepaction"]
-> [完了しました。](https://docs.microsoft.com/python/azure/?view=azure-python)
-
-問題がある場合 ページの下部にある [このページ] へのフィードバックを使用して、GitHub の問題を送信します。
+> [完了しました。](/python/azure/?preserve-view=true&view=azure-python)

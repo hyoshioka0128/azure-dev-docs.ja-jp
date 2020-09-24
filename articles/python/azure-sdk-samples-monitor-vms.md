@@ -4,18 +4,18 @@ description: Azure Monitor からのメトリック レポートを調査およ�
 ms.topic: conceptual
 ms.date: 6/15/2017
 ms.custom: devx-track-python
-ms.openlocfilehash: 53823a1709e1f1411609957569b79d10d7bdefd1
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: 81cb21f3dca640f8c9db2a5556b88c82ea0ffc47
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87982584"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90832038"
 ---
 # <a name="azure-monitor"></a>Azure Monitor
 
 このサンプルは、Azure 上のリソース (VM など) のメトリックを取得します。
 
-フィルターに使用可能なキーワードの完全な一覧については、[こちら](https://msdn.microsoft.com/library/azure/mt743622.aspx)を参照してください。
+フィルターに使用可能なキーワードの完全な一覧については、[こちら](/rest/api/monitor/metrics)を参照してください。
 
 ```python
 import datetime

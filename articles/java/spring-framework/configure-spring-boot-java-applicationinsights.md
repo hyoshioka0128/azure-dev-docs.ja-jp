@@ -10,12 +10,12 @@ ms.service: azure-monitor
 ms.tgt_pltfrm: application-insights
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 687ecf87894a22e9300bf8ff4681e790db5a0d48
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 97825b81869ac6d2845576bd77a972d4573a624d
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379376"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831758"
 ---
 # <a name="configure-a-spring-boot-initializer-app-to-use-application-insights"></a>Application Insights を使用するように Spring Boot Initializer アプリを構成する
 
@@ -268,7 +268,7 @@ ms.locfileid: "86379376"
 Spring および Azure の詳細については、Azure ドキュメント センターで引き続き Spring に関するドキュメントをご確認ください。
 
 > [!div class="nextstepaction"]
-> [Azure の Spring](/azure/developer/java/spring-framework)
+> [Azure の Spring](./index.yml)
 
 ### <a name="additional-resources"></a>その他のリソース
 
@@ -292,7 +292,7 @@ Java での Azure の使用の詳細については、「[Java 開発者向け�
 
 <!-- URL List -->
 
-[Java 開発者向けの Azure]: /azure/developer/java/
+[Java 開発者向けの Azure]: ../index.yml
 [無料の Azure アカウント]: https://azure.microsoft.com/pricing/free-trial/
 [Azure DevOps と Java の操作]: /azure/devops/
 [MSDN サブスクライバーの特典]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/

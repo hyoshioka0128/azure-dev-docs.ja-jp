@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: multiple
 ms.assetid: b1e10b79-f75e-4605-aecd-eed64873e2d3
 ms.custom: seo-java-august2019, devx-track-java
-ms.openlocfilehash: d8f173fca56af289fb83012a101bc5cb99e4ed12
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 9ae476b38768789eb8ecef915d3c68d93302bdc6
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379516"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831788"
 ---
 # <a name="get-started-with-cloud-development-using-java-on-azure"></a>Azure での Java を使用したクラウド開発の開始
 
@@ -144,7 +144,7 @@ mvn archetype:generate -DgroupId=com.fabrikam -DartifactId=AzureApp \
 
 ### <a name="install-the-azure-toolkit-for-intellij"></a>Azure Toolkit for IntelliJ をインストールする
 
-Web アプリや API をプログラムでデプロイする予定でも、その他の開発に現在使用していない場合は、[Azure Toolkit](/azure/developer/java/toolkit-for-intellij/installation) が必要です。 インストール プロセスの概要を次に示します。 クイック スタートについては、[Azure Toolkit for IntelliJ のクイック スタート](/azure/developer/java/toolkit-for-intellij/create-hello-world-web-app)に関するページをご覧ください。
+Web アプリや API をプログラムでデプロイする予定でも、その他の開発に現在使用していない場合は、[Azure Toolkit](../toolkit-for-intellij/installation.md) が必要です。 インストール プロセスの概要を次に示します。 クイック スタートについては、[Azure Toolkit for IntelliJ のクイック スタート](../toolkit-for-intellij/create-hello-world-web-app.md)に関するページをご覧ください。
 
 - **[File]\(ファイル\)** メニューを選択し、 **[Settings...]\(設定...\)** を選択します。
 
@@ -154,7 +154,7 @@ Web アプリや API をプログラムでデプロイする予定でも、そ�
 
 ### <a name="install-the-azure-toolkit-for-eclipse"></a>Azure Toolkit for Eclipse をインストールする
 
-Web アプリや API をプログラムでデプロイする予定でも、その他の開発に現在使用していない場合は、[Azure Toolkit](/azure/developer/java/toolkit-for-eclipse) が必要です。 インストール プロセスの概要を次に示します。 クイック スタートについては、[Azure Toolkit for Eclipse のクイック スタート](/azure/developer/java/toolkit-for-eclipse/create-hello-world-web-app)に関するページをご覧ください。
+Web アプリや API をプログラムでデプロイする予定でも、その他の開発に現在使用していない場合は、[Azure Toolkit](../toolkit-for-eclipse/index.yml) が必要です。 インストール プロセスの概要を次に示します。 クイック スタートについては、[Azure Toolkit for Eclipse のクイック スタート](../toolkit-for-eclipse/create-hello-world-web-app.md)に関するページをご覧ください。
 
 - **[Help]\(ヘルプ\)** メニューを選択し、 **[Install New software]\(新しいソフトウェアのインストール\)** を選択します。
 

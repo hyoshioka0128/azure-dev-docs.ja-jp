@@ -13,12 +13,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: devx-track-java
-ms.openlocfilehash: 3a096ac0cb533fda11f2b2f3a652dfae628298d4
-ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
+ms.openlocfilehash: b340802d861ad1dbe1b4f118734e527cdefeec21
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90682126"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831612"
 ---
 # <a name="create-a-hello-world-web-app-for-azure-app-service-using-intellij"></a>IntelliJ を使用して Azure App Service 用の Hello World Web アプリを作成する
 
@@ -41,7 +41,7 @@ ms.locfileid: "90682126"
 
 1. プラグインをインストールしていない場合は、「[Azure Toolkit for IntelliJ のインストール](installation.md)」を参照してください。
 
-1. Azure アカウントにサインインするには、左側の **[Azure Explorer]** サイドバーに移動し、 **[Azure Sign in]\(Azure サインイン\)** アイコンをクリックします。 または、 **[Tools]\(ツール\)** に移動し、 **[Azure]** を展開して、 **[Azure Sign in]\(Azure サインイン\)** をクリックします。
+1. Azure アカウントにサインインするには、左側の **[Azure Explorer]** サイドバーに移動し、 **[Azure サインイン]** アイコンをクリックします。 または、 **[ツール]** に移動し、 **[Azure]** を展開して、 **[Azure サインイン]** をクリックします。
 
    :::image type="content" source="media/sign-in-instructions/I01.png" alt-text="IntelliJ で Azure にサインインします。"::: 
 
@@ -61,7 +61,7 @@ ms.locfileid: "90682126"
 
 1. **[New Project]\(新しいプロジェクト\)** ダイアログ ボックスで、 **[Maven]** を選択し、 **[Create from Archetype]\(アーキタイプから作成\)** オプションがオンになっていることを確認します。 一覧から **[maven-archetype-webapp]** を選択し、 **[Next]\(次へ\)** をクリックします。
 
-   :::image type="content" source="media/create-hello-world-web-app/maven-archetype-webapp.png" alt-text="maven-archetype-webapp オプションを選択します。"::: 
+   :::image type="content" source="media/create-hello-world-web-app/maven-archetype-webapp.png" alt-text="[maven-archetype-webapp] オプションを選択します。"::: 
 
 1. **[Artifact Coordinates]\(成果物の調整\)** ドロップダウンを展開してすべての入力フィールドを表示し、新しい Web アプリに次の情報を指定して、 **[Next]\(次へ\)** をクリックします。
 
@@ -139,8 +139,8 @@ Azure Web Apps の作成の詳細については、「 [Web Apps の概要]」�
 
 <!-- URL List -->
 
-[Azure Toolkit for IntelliJ]: azure-toolkit-for-intellij.md
-[Azure Toolkit for Eclipse]: ../toolkit-for-eclipse/azure-toolkit-for-eclipse.md
+[Azure Toolkit for IntelliJ]: /azure/developer/java/tookit-for-intellij
+[Azure Toolkit for Eclipse]: /azure/developer/java/tookit-for-eclipse
 [eclipse-hello-world]: ../toolkit-for-eclipse/create-hello-world-web-app.md
 [Web Apps の概要]: /azure/app-service/app-service-web-overview
 [Apache Tomcat]: http://tomcat.apache.org/

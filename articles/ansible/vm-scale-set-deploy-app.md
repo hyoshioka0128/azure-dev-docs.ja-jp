@@ -5,12 +5,12 @@ keywords: ansible, azure, devops, bash, プレイブック, 仮想マシン, 仮
 ms.topic: tutorial
 ms.date: 01/13/2020
 ms.custom: devx-track-ansible
-ms.openlocfilehash: 161592c9f437de0f72204051b222c7ed8c5f99e0
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 2ea2dbf740025797e6dd8514330e5b0c0de0df84
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240844"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831098"
 ---
 # <a name="tutorial-deploy-apps-to-virtual-machine-scale-sets-in-azure-using-ansible"></a>チュートリアル:Ansible を使用して Azure の仮想マシン スケール セットにアプリをデプロイする
 
@@ -33,7 +33,7 @@ ms.locfileid: "88240844"
 [!INCLUDE [ansible-prereqs-cloudshell-use-or-vm-creation2.md](includes/ansible-prereqs-cloudshell-use-or-vm-creation2.md)] 
 [!INCLUDE [ansible-prereqs-vm-scale-set.md](includes/ansible-prereqs-vm-scale-set.md)]
 - **git** - このチュートリアルでは、[git](https://git-scm.com) を使用して Java サンプルをダウンロードします。
-- **Java SE Development Kit (JDK)** - [JDK](https://aka.ms/azure-jdks) は、サンプルの Java プロジェクトをビルドする際に使用します。
+- **Java SE Development Kit (JDK)** - [JDK](../java/fundamentals/java-jdk-long-term-support.md) は、サンプルの Java プロジェクトをビルドする際に使用します。
 - **Apache Maven** - [Apache Maven](https://maven.apache.org/download.cgi) は、サンプルの Java プロジェクトをビルドするために使用します。
 
 ## <a name="get-host-information"></a>ホスト情報を取得する

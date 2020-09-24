@@ -8,16 +8,16 @@ ms.tgt_pltfrm: multiple
 ms.author: judubois
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: a6eabc4e7aca4a79ba41b0061721bf8431d312bf
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: abf197e0626925dd836243a207ddf0c49ee32470
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86378906"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831248"
 ---
 # <a name="use-spring-data-jdbc-with-azure-sql-database"></a>Azure SQL Database で Spring Data JDBC を使用する
 
-このトピックでは、[Spring Data JDBC](https://spring.io/projects/spring-data-jdbc) を使って [Azure SQL Database](https://docs.microsoft.com/azure/sql-database/) で情報を格納および取得するサンプル アプリケーションを作成する方法を説明します。
+このトピックでは、[Spring Data JDBC](https://spring.io/projects/spring-data-jdbc) を使って [Azure SQL Database](/azure/sql-database/) で情報を格納および取得するサンプル アプリケーションを作成する方法を説明します。
 
 [JDBC](https://en.wikipedia.org/wiki/Java_Database_Connectivity) は、従来のリレーショナル データベースに接続するための標準の Java API です。
 
@@ -99,4 +99,4 @@ CREATE TABLE todo (id INT IDENTITY PRIMARY KEY, description VARCHAR(255), detail
 
 Spring Data JDBC の詳細については、Spring の[リファレンス ドキュメント](https://docs.spring.io/spring-data/jdbc/docs/current/reference/html/#reference)を参照してください。
 
-Java での Azure の使用の詳細については、「[Java 開発者向けの Azure](/azure/developer/java/)」および [Azure DevOps と Java の操作](/azure/devops/)に関するページを参照してください。
+Java での Azure の使用の詳細については、「[Java 開発者向けの Azure](../index.yml)」および [Azure DevOps と Java の操作](/azure/devops/)に関するページを参照してください。

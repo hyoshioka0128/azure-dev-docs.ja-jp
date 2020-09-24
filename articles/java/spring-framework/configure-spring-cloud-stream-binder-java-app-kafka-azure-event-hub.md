@@ -7,12 +7,12 @@ ms.date: 12/19/2018
 ms.service: event-hubs
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 3a57a0bd684946a90675206be4b0e7908c51ec79
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 523d7b7eb0465bc9b1e367b7b450591319f5995a
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379146"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831268"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-apache-kafka-with-azure-event-hubs"></a>Azure Event Hubs で Apache Kafka 用 Spring Boot Starter を使用する方法
 
@@ -412,7 +412,7 @@ ms.locfileid: "86379146"
 Spring および Azure の詳細については、Azure ドキュメント センターで引き続き Spring に関するドキュメントをご確認ください。
 
 > [!div class="nextstepaction"]
-> [Azure の Spring](/azure/developer/java/spring-framework)
+> [Azure の Spring](./index.yml)
 
 ### <a name="additional-resources"></a>その他のリソース
 

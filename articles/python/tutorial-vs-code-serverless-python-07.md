@@ -2,14 +2,14 @@
 title: 手順 7:VS Code を使用して Python で Azure Functions のストレージ バインドを追加する
 description: チュートリアルの手順 7、メッセージを Azure Storage に書き込むバインドを Python で追加する。
 ms.topic: conceptual
-ms.date: 05/19/2020
+ms.date: 09/17/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: a8e320b42221b1f1d30859d41b8e56f52c18072a
-ms.sourcegitcommit: 9e282fc2ec967bee181c3034e7e70b28ae308905
+ms.openlocfilehash: ad242e5c9c2258e438846a7d393163871d14db9e
+ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89473617"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90772855"
 ---
 # <a name="7-add-a-storage-binding-for-azure-functions-in-python"></a>7:Python で Azure Functions のストレージ バインドを追加する
 
@@ -21,7 +21,9 @@ Azure Functions のストレージ バインドを追加できます。 "_バイ
 
 このセクションでは、このチュートリアルで前に作成した HttpExample 関数にストレージ バインドを追加します。 関数でこのバインドを使用し、要求ごとにストレージにメッセージを書き込みます。 ストレージでは、関数アプリで使用されているものと同じ既定のストレージ アカウントが使用されます。 ただし、ストレージを頻繁に利用する予定がある場合は、別アカウントの作成を検討してください。
 
-1. Azure Functions プロジェクトのリモート設定を "*local.settings.json*" ファイルに同期します。その際、コマンド パレットを開き、 **[Azure Functions:リモート設定のダウンロード]** を選択します。 "*local.settings.json*" を開き、`AzureWebJobsStorage` の値が含まれていることを確認します。 その値はストレージ アカウントの接続文字列です。
+1. Azure Functions プロジェクトのリモート設定を "*local.settings.json*" ファイルに同期します。その際、コマンド パレットを開き、 **[Azure Functions:リモート設定のダウンロード]** を選択します。
+ 
+    "*local.settings.json*" を開き、`AzureWebJobsStorage` の値が含まれていることを確認します。 その値はストレージ アカウントの接続文字列です。
 
 1. `HttpExample` フォルダーで、"*function.json*" を右クリックし、 **[バインドの追加]** を選択します。
 
@@ -49,7 +51,9 @@ Azure Functions のストレージ バインドを追加できます。 "_バイ
         }
     ```
 
-1. これでバインドが構成されました。バインドを関数コードで使用できます。 繰り返しになりますが、新しく定義されたバインドは、" *\_\_init\_\_.py*" の `main` 関数の引数としてコードに表示されます。 たとえば、次のコードに一致するように、HttpExample で " *\_\_init\_\_.py*" ファイルを変更できます。次のコードでは、`msg` 引数を使用することで、要求に使用されている名前でタイムスタンプ付きのメッセージが書かれます。 コメントからは、特定の変更について説明されます。
+1. これでバインドが構成されました。バインドを関数コードで使用できます。 繰り返しになりますが、新しく定義されたバインドは、" *\_\_init\_\_.py*" の `main` 関数の引数としてコードに表示されます。
+
+    たとえば、次のコードに一致するように、HttpExample で " *\_\_init\_\_.py*" ファイルを変更できます。次のコードでは、`msg` 引数を使用することで、要求に使用されている名前でタイムスタンプ付きのメッセージが書かれます。 コメントからは、特定の変更について説明されます。
 
     ```python
     import logging
@@ -82,7 +86,9 @@ Azure Functions のストレージ バインドを追加できます。 "_バイ
             )
     ```
 
-1. このような変更をローカルでテストするには、F5 を押すか、 **[デバッグ]**  >  **[デバッグの開始]** メニュー コマンドを選択し、Visual Studio Code で再度、デバッガーを起動します。 前と同じように、 **[出力]** ウィンドウには、プロンプトのエンドポイントが表示されるはずです。
+1. このような変更をローカルでテストするには、F5 を押すか、 **[デバッグ]**  >  **[デバッグの開始]** メニュー コマンドを選択し、Visual Studio Code で再度、デバッガーを起動します。
+
+    前と同じように、 **[出力]** ウィンドウには、プロンプトのエンドポイントが表示されるはずです。
 
 1. ブラウザーで、URL `http://localhost:7071/api/HttpExample?name=VS%20Code` にアクセスし、HttpExample エンドポイントへの要求を作成します。これにより、メッセージのキューへの書き込みも行われるはずです。
 
@@ -99,4 +105,3 @@ Azure Functions のストレージ バインドを追加できます。 "_バイ
 > [!div class="nextstepaction"]
 > [ストレージ バインドを追加しました - 手順 8 に進む >>>](tutorial-vs-code-serverless-python-08.md)
 
-問題がある場合 ページの下部にある [このページ] へのフィードバックを使用して、GitHub の問題を送信します。

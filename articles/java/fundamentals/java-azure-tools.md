@@ -6,12 +6,12 @@ ms.assetid: b55923b7-d60a-460d-b77c-af5fac67f1cc
 ms.topic: article
 ms.date: 11/13/2018
 ms.custom: seo-java-july2019, devx-track-java
-ms.openlocfilehash: 32f3b53ed58f9436aca82f08a3a4ce8600060632
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 857487b644e585b87998f660b9ecc6358be01eba
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379876"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831498"
 ---
 # <a name="azure-tools-for-java-developers"></a>Java 開発者のための Azure ツール
 
@@ -23,7 +23,7 @@ Azure での開発時に使用可能なサポート対象 JDK の詳細につい
 
 ## <a name="eclipse-and-intellij-plugins"></a>Eclipse と IntelliJ のプラグイン
 
-Azure Toolkit for [Eclipse](/azure/developer/java/toolkit-for-eclipse) や Azure Toolkit for [IntelliJ](/azure/developer/java/toolkit-for-intellij) を使用して、IDE から Azure リソースを管理したり、アプリをデプロイしたりすることができます。
+Azure Toolkit for [Eclipse](../toolkit-for-eclipse/index.yml) や Azure Toolkit for [IntelliJ](../toolkit-for-intellij/index.yml) を使用して、IDE から Azure リソースを管理したり、アプリをデプロイしたりすることができます。
 
 ![IntelliJ ツールキットで Azure エクスプローラーを表示したところ](media/intelliJ-azure-explorer.png)
 

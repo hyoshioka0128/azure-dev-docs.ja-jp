@@ -8,12 +8,12 @@ author: tomarchermsft
 ms.author: tarcher
 ms.date: 02/22/2020
 ms.custom: devx-track-chef
-ms.openlocfilehash: 7afddc83fef8e52e074600df75f2a2f6bc7c9ea7
-ms.sourcegitcommit: 815cf2acff71e849735f7afce54723f03ffa5df3
+ms.openlocfilehash: 6f01653deb6d9f3f4c1c34620d3832b6e4b32c51
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88501358"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831458"
 ---
 # <a name="quickstart---configure-a-windows-virtual-machine-in-azure-using-chef"></a>クイックスタート - Chef を使用して Azure で Windows 仮想マシンを構成する
 
@@ -48,7 +48,7 @@ Chef には、
 
 `C:\Chef` という名前のディレクトリを作成します。
 
-お使いのワークステーション上に、最新バージョンの [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) をダウンロードしてインストールします。
+お使いのワークステーション上に、最新バージョンの [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest) をダウンロードしてインストールします。
 
 ## <a name="configure-azure-service-principal"></a>Azure サービス プリンシパルを構成する
 

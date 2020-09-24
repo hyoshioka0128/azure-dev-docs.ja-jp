@@ -1,17 +1,17 @@
 ---
 title: WebSphere アプリケーションを Azure Kubernetes Service 上の WildFly に移行する
 description: このガイドでは、既存の WebSphere アプリケーションを移行して Azure Kubernetes Service コンテナーの WildFly 上で実行する場合に知っておくべきことについて説明します。
-author: mriem
+author: mnriem
 ms.author: manriem
 ms.topic: conceptual
 ms.date: 2/28/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: 44e7b2a88a66fb837b6ff9d11c2a534d921d8155
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 5f31107a192cd36d79d3fb664c49f019bad7e972
+ms.sourcegitcommit: 850856d3fa2ddd8f96616ee6a1f092d8e0aedab3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379716"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90738517"
 ---
 # <a name="migrate-websphere-applications-to-wildfly-on-azure-kubernetes-service"></a>WebSphere アプリケーションを Azure Kubernetes Service 上の WildFly に移行する
 

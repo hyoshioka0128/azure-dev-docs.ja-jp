@@ -6,12 +6,12 @@ ms.author: kuthapar
 ms.topic: conceptual
 ms.date: 1/9/2019
 ms.custom: devx-track-java
-ms.openlocfilehash: 119a2b3ff761778e111500a9fe0cf33d2dc6b080
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: f2fb9a1af0634e0cecb3b6d990ae423b31da6210
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86378446"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90829988"
 ---
 # <a name="spring-data-azure-cosmos-db-developers-guide"></a>Spring Data Azure Cosmos DB 開発者ガイド
 
@@ -19,9 +19,9 @@ ms.locfileid: "86378446"
 
 [Azure Cosmos DB](/azure/cosmos-db/introduction) は、開発者がさまざまな標準 API を使用してデータを操作できるようにするグローバル分散型データベース サービスです。 Spring Data Cosmos DB SDK は [Spring Data](https://spring.io/projects/spring-data) フレームワークに基づいており、SQL API を使用した Azure Cosmos DB との統合を提供します。 その他の API のサポートについては、次のトピックを参照してください。
 
-- [Azure Cosmos DB で Spring Data MongoDB API を使用する方法](/azure/developer/java/spring-framework/configure-spring-data-mongodb-with-cosmos-db)
-- [Azure Cosmos DB で Spring Data Apache Cassandra API を使用する方法](/azure/developer/java/spring-framework/configure-spring-data-apache-cassandra-with-cosmos-db)
-- [Azure Cosmos DB SQL API で Spring Data Gremlin Starter を使用する方法](/azure/developer/java/spring-framework/configure-spring-data-gremlin-java-app-with-cosmos-db)
+- [Azure Cosmos DB で Spring Data MongoDB API を使用する方法](./configure-spring-data-mongodb-with-cosmos-db.md)
+- [Azure Cosmos DB で Spring Data Apache Cassandra API を使用する方法](./configure-spring-data-apache-cassandra-with-cosmos-db.md)
+- [Azure Cosmos DB SQL API で Spring Data Gremlin Starter を使用する方法](./configure-spring-data-gremlin-java-app-with-cosmos-db.md)
 
 Spring Data Cosmos DB SDK は、GitHub の [spring-data-cosmosdb](https://github.com/microsoft/spring-data-cosmosdb) リポジトリでオープンソースとして提供されています。 このリポジトリには、アクティブな[問題](https://github.com/microsoft/spring-data-cosmosdb/issues)の一覧があります。ここでは、バグを報告したり、既に登録されている問題に対する回避策を確認したりできます。 また、[リリース](https://github.com/microsoft/spring-data-cosmosdb/releases)の一覧で、新しいバージョンで問題が修正されたかどうかを確認することもできます。 Spring Data Cosmos DB SDK バージョン 2.2.x リリース トレインでは spring-data-commons バージョン 2.2.0 リリースがサポートされていますが、バージョン 2.1. x リリース トレインの SDK では、spring-data-common バージョン 2.1.0 リリースがサポートされています。
 

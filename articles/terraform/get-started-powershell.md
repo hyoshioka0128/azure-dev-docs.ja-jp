@@ -5,12 +5,12 @@ keywords: Azure DevOps Terraform インストール 構成 Windows 初期化 プ
 ms.topic: quickstart
 ms.date: 08/18/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: e58c53876ed05416f16a40d0ee23344bcde43b39
-ms.sourcegitcommit: 800c5e05ad3c0b899295d381964dd3d47436ff90
+ms.openlocfilehash: 401a6c4cc8827e48858a936a10c9c7f62af15aab
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88614524"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90830058"
 ---
 # <a name="quickstart-configure-terraform-using-azure-powershell"></a>クイック スタート:Azure PowerShell を使用して Terraform を構成する
  
@@ -39,13 +39,13 @@ ms.locfileid: "88614524"
 
 ## <a name="configure-your-environment"></a>環境を構成する
 
-1. Azure リソースの操作を可能にする最新の PowerShell モジュールは、[Azure PowerShell Az モジュール](https://docs.microsoft.com/powershell/azure/new-azureps-module-az)と呼ばれています。 Azure PowerShell Az モジュールを使用する場合、すべてのプラットフォームで推奨されるバージョンは PowerShell 7 (またはそれ以降) です。 PowerShell がインストールされている場合は、PowerShell プロンプトで次のコマンドを入力して、バージョンを確認できます。
+1. Azure リソースの操作を可能にする最新の PowerShell モジュールは、[Azure PowerShell Az モジュール](/powershell/azure/new-azureps-module-az)と呼ばれています。 Azure PowerShell Az モジュールを使用する場合、すべてのプラットフォームで推奨されるバージョンは PowerShell 7 (またはそれ以降) です。 PowerShell がインストールされている場合は、PowerShell プロンプトで次のコマンドを入力して、バージョンを確認できます。
 
     ```powershell
     $PSVersionTable.PSVersion
     ```
 
-1. [PowerShell をインストールします](https://docs.microsoft.com/powershell/scripting/install/installing-powershell-core-on-windows?view=powershell-7)。 このデモは、Windows 10 で PowerShell v7.0.2 を使用してテストされました。
+1. [PowerShell をインストールします](/powershell/scripting/install/installing-powershell-core-on-windows?view=powershell-7)。 このデモは、Windows 10 で PowerShell v7.0.2 を使用してテストされました。
 
 1. [Terraform で Azure に対して認証を行う](https://www.terraform.io/docs/providers/azurerm/guides/azure_cli.html)には、[Azure CLI をインストールする](/cli/azure/install-azure-cli-windows?view=azure-cli-latest)必要があります。 このデモは、Azure CLI バージョン 2.9.1 を使用してテストされました。
 
@@ -70,9 +70,9 @@ PowerShell と Terraform を使用する場合は、サービス プリンシパ
 
 サービス プリンシパルを使用して Azure サブスクリプションにログインするには、まずサービス プリンシパルへのアクセスが必要です。 サービス プリンシパルが既にある場合は、このセクションを省略できます。
 
-[PowerShell でサービス プリンシパルを作成](https://docs.microsoft.com/powershell/azure/create-azure-service-principal-azureps)する場合、数多くのオプションがあります。 この記事では、**共同作成者**ロールを使用してサービス プリンシパルを作成します。 **共同作成者**ロール (既定のロール) には、Azure アカウントに対して読み取りと書き込みを行うための完全なアクセス許可があります。 ロールベースのアクセス制御 (RBAC) とロールの詳細については、[RBAC の組み込みのロール](/azure/active-directory/role-based-access-built-in-roles)に関するページをご覧ください。
+[PowerShell でサービス プリンシパルを作成](/powershell/azure/create-azure-service-principal-azureps)する場合、数多くのオプションがあります。 この記事では、**共同作成者**ロールを使用してサービス プリンシパルを作成します。 **共同作成者**ロール (既定のロール) には、Azure アカウントに対して読み取りと書き込みを行うための完全なアクセス許可があります。 ロールベースのアクセス制御 (RBAC) とロールの詳細については、[RBAC の組み込みのロール](/azure/active-directory/role-based-access-built-in-roles)に関するページをご覧ください。
 
-[New-AzADServicePrincipal](https://docs.microsoft.com/powershell/module/Az.Resources/New-AzADServicePrincipal) を呼び出すと、指定されたサブスクリプションのサービス プリンシパルが作成されます。 正常に完了すると、サービス プリンシパルの情報 (サービス プリンシパル名、表示名など) が表示されます。 認証資格情報を指定せずに `New-AzADServicePrincipal` を呼び出すと、パスワードが自動的に生成されます。 ただし、このパスワードは `SecureString` 型で返されるため、表示されません。 そのため、結果が変数に入るようにして `New-AzADServicePrincipal` を呼び出す必要があります。 その後、変数をプレーンテキストに変換して表示できます。
+[New-AzADServicePrincipal](/powershell/module/Az.Resources/New-AzADServicePrincipal) を呼び出すと、指定されたサブスクリプションのサービス プリンシパルが作成されます。 正常に完了すると、サービス プリンシパルの情報 (サービス プリンシパル名、表示名など) が表示されます。 認証資格情報を指定せずに `New-AzADServicePrincipal` を呼び出すと、パスワードが自動的に生成されます。 ただし、このパスワードは `SecureString` 型で返されるため、表示されません。 そのため、結果が変数に入るようにして `New-AzADServicePrincipal` を呼び出す必要があります。 その後、変数をプレーンテキストに変換して表示できます。
 
 1. 使用する Azure サブスクリプションのサブスクリプション ID を取得します。 サブスクリプション ID がわからない場合は、[Azure portal](https://portal.azure.com/) から値を取得できます。
 
@@ -82,7 +82,7 @@ PowerShell と Terraform を使用する場合は、サービス プリンシパ
 
 1. PowerShell を開始します。
 
-1. [New-AzADServicePrincipal](https://docs.microsoft.com/powershell/module/az.resources/new-azadserviceprincipal) を使用して新しいサービス プリンシパルを作成します。 `<azure_subscription_id>` は、使用する Azure サブスクリプションの ID に置き換えてください。
+1. [New-AzADServicePrincipal](/powershell/module/az.resources/new-azadserviceprincipal) を使用して新しいサービス プリンシパルを作成します。 `<azure_subscription_id>` は、使用する Azure サブスクリプションの ID に置き換えてください。
 
     ```powershell
     $sp = New-AzADServicePrincipal -Scope /subscriptions/<azure_subscription_id>
@@ -94,7 +94,7 @@ PowerShell と Terraform を使用する場合は、サービス プリンシパ
     $sp.ServicePrincipalNames
     ```
 
-1. 自動生成されたパスワードをテキストとして表示します ([ConvertFrom-SecureString](https://docs.microsoft.com/powershell/module/microsoft.powershell.security/convertfrom-securestring))。
+1. 自動生成されたパスワードをテキストとして表示します ([ConvertFrom-SecureString](/powershell/module/microsoft.powershell.security/convertfrom-securestring))。
 
     ```powershell
     $UnsecureSecret = ConvertFrom-SecureString -SecureString $sp.Secret -AsPlainText
@@ -103,17 +103,17 @@ PowerShell と Terraform を使用する場合は、サービス プリンシパ
 **注**:
 
 - サービス プリンシパル名とパスワードの値は、サービス プリンシパルを使用してサブスクリプションにログインするために必要です。
-- このパスワードは、紛失した場合、取得できません。 したがって、パスワードは安全な場所に保管してください。 パスワードを忘れた場合は、[サービス プリンシパルの資格情報をリセット](https://docs.microsoft.com/powershell/azure/create-azure-service-principal-azureps#reset-credentials)する必要があります。
+- このパスワードは、紛失した場合、取得できません。 したがって、パスワードは安全な場所に保管してください。 パスワードを忘れた場合は、[サービス プリンシパルの資格情報をリセット](/powershell/azure/create-azure-service-principal-azureps#reset-credentials)する必要があります。
 
 ## <a name="log-in-to-azure-using-a-service-principal"></a>サービス プリンシパルを使用して Azure にログインする
 
-サービス プリンシパルを使用して Azure サブスクリプションにログインするには、[PsCredential](https://docs.microsoft.com/dotnet/api/system.management.automation.pscredential) 型のオブジェクトを指定して [Connect-AzAccount](https://docs.microsoft.com/powershell/module/az.accounts/Connect-AzAccount) を呼び出します。
+サービス プリンシパルを使用して Azure サブスクリプションにログインするには、[PsCredential](/dotnet/api/system.management.automation.pscredential) 型のオブジェクトを指定して [Connect-AzAccount](/powershell/module/az.accounts/Connect-AzAccount) を呼び出します。
 
 1. PowerShell を開始します。
 
-1. 次のいずれかの方法を使用して、[PsCredential](https://docs.microsoft.com/dotnet/api/system.management.automation.pscredential) オブジェクトを取得します。
+1. 次のいずれかの方法を使用して、[PsCredential](/dotnet/api/system.management.automation.pscredential) オブジェクトを取得します。
 
-    1. [Get-Credential](https://docs.microsoft.com/powershell/module/microsoft.powershell.security/get-credential) を呼び出し、要求されたら、サービス プリンシパル名とパスワードを入力します。
+    1. [Get-Credential](/powershell/module/microsoft.powershell.security/get-credential) を呼び出し、要求されたら、サービス プリンシパル名とパスワードを入力します。
 
         ```powershell
         $spCredential = Get-Credential
@@ -213,7 +213,7 @@ $env:ARM_TENANT_ID="<azure_subscription_tenant_id>"
     terraform apply QuickstartTerraformTest.tfplan
     ```
 
-1. 実行プランが適用されたら、[Get-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/Get-AzResourceGroup) を使用して、リソース グループが正常に作成されたことをテストできます。
+1. 実行プランが適用されたら、[Get-AzResourceGroup](/powershell/module/az.resources/Get-AzResourceGroup) を使用して、リソース グループが正常に作成されたことをテストできます。
 
     ```powershell
     Get-AzResourceGroup -Name QuickstartTerraformTest-rg
@@ -245,7 +245,7 @@ $env:ARM_TENANT_ID="<azure_subscription_tenant_id>"
     terraform apply QuickstartTerraformTest.destroy.tfplan
     ```
 
-1. [Get-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/Get-AzResourceGroup) を使用して、リソース グループが削除されたことを確認します。
+1. [Get-AzResourceGroup](/powershell/module/az.resources/Get-AzResourceGroup) を使用して、リソース グループが削除されたことを確認します。
 
     ```powershell
     Get-AzResourceGroup -Name QuickstartTerraformTest-rg

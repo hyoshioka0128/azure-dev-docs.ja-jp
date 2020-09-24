@@ -3,12 +3,12 @@ title: Azure SDK for Go での認証
 description: Azure SDK for Go で使用できる認証方法とそれらの使用方法について説明します。
 ms.date: 09/05/2018
 ms.topic: conceptual
-ms.openlocfilehash: b4bf09dbb3f59c77c2914ae9c9091dc0af31b093
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: 61353f2b7f2c13764f4e736105b15127d1355e29
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "80319679"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831318"
 ---
 # <a name="authentication-methods-in-the-azure-sdk-for-go"></a>Azure SDK for Go における認証方法
 
@@ -111,7 +111,7 @@ Azure Stack で認証するには、次の変数を設定する必要があり�
 | 開発キット | `https://management.local.azurestack.external/` |
 | 統合システム | `https://management.(region).ext-(machine-name).(FQDN)` |
 
-Azure Stack での Azure SDK for Go の使用方法の詳細については、「[Azure Stack での GO による API バージョンのプロファイルの使用](https://docs.microsoft.com/azure/azure-stack/user/azure-stack-version-profiles-go)」をご覧ください。
+Azure Stack での Azure SDK for Go の使用方法の詳細については、「[Azure Stack での GO による API バージョンのプロファイルの使用](/azure/azure-stack/user/azure-stack-version-profiles-go)」をご覧ください。
 
 ## <a name="use-file-based-authentication"></a>ファイル ベースの認証を使用する
 

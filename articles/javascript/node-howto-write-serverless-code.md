@@ -4,12 +4,12 @@ description: Azure Functions を使用してサーバーレス コードを作�
 ms.topic: article
 ms.date: 08/19/2019
 ms.custom: seo-javascript-september2019, seo-javascript-october2019, devx-track-javascript
-ms.openlocfilehash: 8b0fa5aac45d95780da4327d72cea6b6533c971e
-ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
+ms.openlocfilehash: 5f69fa073647527516452e7a5cdf77d6b5a8caa8
+ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88218612"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90772955"
 ---
 # <a name="use-azure-functions-to-write-serverless-nodejs-code-on-azure"></a>Azure Functions を使用して Azure でサーバーレス Node.js コードを作成する
 
@@ -31,7 +31,7 @@ Azure におけるサーバーレスのプランは、Azure Functions と呼ば�
 
 他にも、サーバーレス コードについての知識を深めるのに役立つリソースが数多く用意されています。
 
-- Microsoft Learn モジュール: [Azure Functions と SignalR Service を使って、Web アプリケーションの自動更新を有効にする](https://docs.microsoft.com/learn/modules/automatic-update-of-a-webapp-using-azure-functions-and-signalr/)
+- Microsoft Learn モジュール: [Azure Functions と SignalR Service を使って、Web アプリケーションの自動更新を有効にする](/learn/modules/automatic-update-of-a-webapp-using-azure-functions-and-signalr/)
 
 - さまざまなトリガーを使用してサーバーレス コードを実行する方法について:
 

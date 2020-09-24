@@ -4,12 +4,12 @@ description: チュートリアルの手順 7、Azure のリソースをクリ�
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: ba8d4b3ae6411b2bced31689513b17ee1bad9efd
-ms.sourcegitcommit: 815cf2acff71e849735f7afce54723f03ffa5df3
+ms.openlocfilehash: cc1acdd316406d9269c97a4f5b25f465d0303509
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88501437"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831478"
 ---
 # <a name="7-clean-up-resources-after-deploying-to-azure-app-service-on-linux-from-visual-studio-code"></a>7:Azure App Service on Linux にデプロイしたリソースを Visual Studio Code を使用してクリーンアップします。
 
@@ -25,7 +25,7 @@ ms.locfileid: "88501437"
 
 前述のように、App Service 拡張機能の詳細は GitHub リポジトリの [vscode-azureappservice](https://github.com/Microsoft/vscode-azureappservice) で参照できます。 問題提起や投稿も歓迎いたします。
 
-データ ストレージのほか、AI や機械学習のサービスなど、Python から使用できる Azure サービスの詳細については、[Azure Python デベロッパー センター](https://docs.microsoft.com/python/azure/?view=azure-python)にアクセスしてください。
+データ ストレージのほか、AI や機械学習のサービスなど、Python から使用できる Azure サービスの詳細については、[Azure Python デベロッパー センター](/python/azure/?view=azure-python)にアクセスしてください。
 
 VS Code 用の Azure 拡張機能は他にもあります。役に立つ機能が見つかるかもしれません。 拡張機能のエクスプローラーで、"Azure" で検索してください。
 
@@ -39,6 +39,6 @@ VS Code 用の Azure 拡張機能は他にもあります。役に立つ機能�
 - [Azure Resource Manager (ARM) Tools](https://marketplace.visualstudio.com/items?itemName=msazurermtools.azurerm-vscode-tools)
 
 > [!div class="nextstepaction"]
-> [完了しました。](https://docs.microsoft.com/python/azure/?view=azure-python) 
+> [完了しました。](/python/azure/?view=azure-python) 
 
 [問題がある場合は、お知らせください。](https://aka.ms/FlaskVSCQuickstartHelp)

@@ -4,12 +4,12 @@ description: Azure を使用する Python 開発者のための IDE 統合とコ
 ms.topic: conceptual
 ms.date: 08/06/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: cd81a4dcceb4d13630fd5cad60162729028eb91e
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: e1157d69cd2bec72c88202175f0cb0b1f537bb19
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87982574"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90829968"
 ---
 # <a name="azure-tools-for-python-developers"></a>Python 開発者のための Azure ツール
 
@@ -41,4 +41,4 @@ Azure CLI と同様に、Azure PowerShell には Azure リソースを作成し�
 
 Windows 上の Visual Studio では、Python 開発とデータ サイエンス ワークロード (Visual Studio 2017 以降) および無料の Python Tools for Visual Studio 拡張機能 (Visual Studio 2015 以前) を通じて、Python 言語のオープンソース サポートが提供されます。 Visual Studio は、Python とC++ の両方を使用する開発者にとって最も一般的に使用されています。クラス最高言語の開発とデバッグのサポートが提供されるためです。
 
-[Visual Studio の Python サポートのインストール](https://docs.microsoft.com/visualstudio/python/installation)
+[Visual Studio の Python サポートのインストール](/visualstudio/python/installation)

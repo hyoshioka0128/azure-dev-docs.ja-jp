@@ -9,12 +9,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 51037098f05d985bcb8c35580688d37db0cbe363
-ms.sourcegitcommit: a139e25190960ba89c9e31f861f0996a6067cd6c
+ms.openlocfilehash: b12888cde3a80583d95ccd39bfcd34615842913c
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90534740"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90830012"
 ---
 # <a name="deploy-a-hello-world-web-app-to-a-linux-container-in-the-cloud-using-the-azure-toolkit-for-eclipse"></a>Azure Toolkit for Eclipse を使用して Hello World Web アプリをクラウドの Linux コンテナーにデプロイする
 
@@ -34,7 +34,7 @@ ms.locfileid: "90534740"
 
 ## <a name="create-a-new-web-app-project"></a>新しい Web アプリ プロジェクトの作成
 
-1. Eclipse を起動し、[Azure Toolkit for Eclipse のサインイン手順](/azure/developer/java/toolkit-for-eclipse/sign-in-instructions)に関する記事の手順に従って、Azure アカウントにサインインします。
+1. Eclipse を起動し、[Azure Toolkit for Eclipse のサインイン手順](./sign-in-instructions.md)に関する記事の手順に従って、Azure アカウントにサインインします。
 
 1. **[File]\(ファイル\)** メニューをクリックし、**[New]\(新規作成\)**、**[Dynamic Web Project]\(動的 Web プロジェクト\)** の順にクリックします。
    
@@ -111,7 +111,7 @@ Docker の他のリソースについては、公式の [Docker の Web サイ�
 
 [Azure Portal]: https://portal.azure.com/
 [Azure Portal を使用したプライベート Docker コンテナー レジストリの作成]: /azure/container-registry/container-registry-get-started-portal
-[Azure for Java Developers]: /azure/developer/java/
+[Azure for Java Developers]: ../index.yml
 [Java Tools for Visual Studio Team Services]: https://java.visualstudio.com/
 [Create Docker Registry using Azure CLI]: /azure/container-registry/container-registry-get-started-azure-cli
 

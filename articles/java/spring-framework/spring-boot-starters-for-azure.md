@@ -7,12 +7,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 7bfd7edbdabd2298c84b3480292949e1fb351913
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 0d4615b3d6b05ee54538befdf6a7a7d220e77917
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86378436"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831008"
 ---
 # <a name="spring-boot-starters-for-azure"></a>Azure 向けの Spring Boot Starter
 
@@ -224,7 +224,7 @@ Azure では、次の Spring Boot Starter を現在利用できます。
 Spring および Azure の詳細については、Azure ドキュメント センターで引き続き Spring に関するドキュメントをご確認ください。
 
 > [!div class="nextstepaction"]
-> [Azure の Spring](/azure/developer/java/spring-framework)
+> [Azure の Spring](./index.yml)
 
 ### <a name="additional-resources"></a>その他のリソース
 
@@ -236,10 +236,10 @@ Java での Azure の使用の詳細については、「[Java 開発者向け�
 
 <!-- URL List -->
 
-[Java 開発者向けの Azure]: /azure/developer/java/
+[Java 開発者向けの Azure]: ../index.yml
 [Azure DevOps と Java の操作]: /azure/devops/
 [Spring Boot]: http://projects.spring.io/spring-boot/
-[Azure の Spring]: /azure/developer/java/spring-framework/
+[Azure の Spring]: ./index.yml
 [Spring Framework]: https://spring.io/
 [Spring Initializr]: https://start.spring.io/
 

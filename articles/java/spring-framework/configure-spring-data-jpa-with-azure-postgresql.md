@@ -8,16 +8,16 @@ ms.tgt_pltfrm: multiple
 ms.author: judubois
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 17487e2440d42bc048a7058183e924febe0a0d33
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 3a17e09f257bb4d06320fea8aaa6b423c4f2027b
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86378866"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90830970"
 ---
 # <a name="use-spring-data-jpa-with-azure-database-for-postgresql"></a>Azure Database for PostgreSQL で Spring Data JPA を使用する
 
-このトピックでは、[Spring Data JPA](https://spring.io/projects/spring-data-jpa) を使って [Azure Database for PostgreSQL](https://docs.microsoft.com/azure/postgresql/) で情報を格納および取得するサンプル アプリケーションを作成する方法を説明します。
+このトピックでは、[Spring Data JPA](https://spring.io/projects/spring-data-jpa) を使って [Azure Database for PostgreSQL](/azure/postgresql/) で情報を格納および取得するサンプル アプリケーションを作成する方法を説明します。
 
 [Java Persistence API (JPA)](https://en.wikipedia.org/wiki/Java_Persistence_API) は、オブジェクト リレーショナル マッピング用の標準的な Java API です。
 
@@ -83,4 +83,4 @@ spring.jpa.hibernate.ddl-auto=create-drop
 
 Spring Data JPA の詳細については、Spring の[リファレンス ドキュメント](https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#reference)を参照してください。
 
-Java での Azure の使用の詳細については、「[Java 開発者向けの Azure](/azure/developer/java/)」および [Azure DevOps と Java の操作](/azure/devops/)に関するページを参照してください。
+Java での Azure の使用の詳細については、「[Java 開発者向けの Azure](../index.yml)」および [Azure DevOps と Java の操作](/azure/devops/)に関するページを参照してください。

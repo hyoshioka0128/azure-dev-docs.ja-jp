@@ -4,12 +4,12 @@ description: チュートリアルの手順 3、コンテナー イメージを�
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 6a2c09e861da9fedaa90f1229f212f02f95a349e
-ms.sourcegitcommit: 9e282fc2ec967bee181c3034e7e70b28ae308905
+ms.openlocfilehash: 79498685492d57a22884b30c551c3a28b6e0fe15
+ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89473494"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90772635"
 ---
 # <a name="2-redeploy-a-container-to-azure-app-service-after-making-changes"></a>2:変更を加えた後に Azure App Service にコンテナーを再デプロイする
 
@@ -31,5 +31,3 @@ ms.locfileid: "89473494"
 
 > [!div class="nextstepaction"]
 > [変更を加えて再デプロイしました - 手順 4 に進む >>>](tutorial-deploy-containers-04.md)
-
-問題がある場合 ページの下部にある [このページ] へのフィードバックを使用して、GitHub の問題を送信します。

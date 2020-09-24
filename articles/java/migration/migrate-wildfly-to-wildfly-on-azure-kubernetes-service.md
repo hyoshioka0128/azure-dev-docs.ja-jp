@@ -1,17 +1,17 @@
 ---
 title: WildFly アプリケーションを Azure Kubernetes Service 上の WildFly に移行する
 description: このガイドでは、既存の WildFly アプリケーションを移行して Azure Kubernetes Service コンテナーの WildFly 上で実行する場合に知っておくべきことについて説明します。
-author: mriem
+author: mnriem
 ms.author: manriem
 ms.topic: conceptual
 ms.date: 3/16/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: cf056d9d961662e20f4fa4112a153150bf05460f
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 701e1f1a8db4148837b793227ee3e91ef8ef97d5
+ms.sourcegitcommit: 850856d3fa2ddd8f96616ee6a1f092d8e0aedab3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379696"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90738391"
 ---
 # <a name="migrate-wildfly-applications-to-wildfly-on-azure-kubernetes-service"></a>WildFly アプリケーションを Azure Kubernetes Service 上の WildFly に移行する
 

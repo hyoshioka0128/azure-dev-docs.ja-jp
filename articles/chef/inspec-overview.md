@@ -5,12 +5,12 @@ keywords: azure、chef、devops、仮想マシン、概要、自動化、inspec
 ms.date: 03/19/2019
 ms.topic: article
 ms.custom: devx-track-chef
-ms.openlocfilehash: 0c50cd07473565609084db24b9e537519194a0c2
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: baabe7530c2f54d89b1d14023a4f9a34e4eeb809
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240724"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831448"
 ---
 # <a name="use-inspec-for-compliance-automation-of-your-azure-infrastructure"></a>Azure インフラストラクチャのコンプライアンス オートメーションのために InSpec を使用する
 
@@ -30,7 +30,7 @@ InSpec のエージェントレス検出モードを使用すると、露出レ�
 
 ## <a name="audit-azure-virtual-machines-with-policy-guest-configuration"></a>ポリシーのゲスト構成を使用して Audit Azure 仮想マシンを監査する
 
-Azure は、[Azure Policy ゲスト構成](https://docs.microsoft.com/azure/governance/policy/concepts/guest-configuration)を介して、Azure 仮想マシンを監査するための Chef InSpec 定義の使用を直接サポートしています。 ゲスト構成は、提供された Chef InSpec 定義に対して Linux 仮想マシンを評価し、Azure Policy を介してコンプライアンスを報告します。 このような監査の結果も Azure Monitor ログで報告されるため、アラートやその他の自動シナリオを利用できます。
+Azure は、[Azure Policy ゲスト構成](/azure/governance/policy/concepts/guest-configuration)を介して、Azure 仮想マシンを監査するための Chef InSpec 定義の使用を直接サポートしています。 ゲスト構成は、提供された Chef InSpec 定義に対して Linux 仮想マシンを評価し、Azure Policy を介してコンプライアンスを報告します。 このような監査の結果も Azure Monitor ログで報告されるため、アラートやその他の自動シナリオを利用できます。
 
 ## <a name="satisfy-audits"></a>監査の基準に適合する
 

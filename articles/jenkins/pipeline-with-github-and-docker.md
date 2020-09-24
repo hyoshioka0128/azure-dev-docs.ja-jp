@@ -5,12 +5,12 @@ keywords: Jenkins, Azure, DevOps, パイプライン, CICD, Docker
 ms.topic: tutorial
 ms.date: 03/27/2017
 ms.custom: devx-track-jenkins
-ms.openlocfilehash: 2a9bc23852a04b42b72628adda116585d354f860
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 8a29533b8589d91d095a3d591e6346f87dde4e52
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240704"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831218"
 ---
 # <a name="tutorial-create-a-jenkins-pipeline-using-github-and-docker"></a>チュートリアル:GitHub と Docker を使用して Jenkins パイプラインを作成する
 
@@ -24,12 +24,12 @@ ms.locfileid: "88240704"
 > * アプリ用の Docker イメージを作成する
 > * GitHub によって build new Docker image がコミットされ､動作中のアプリが更新されることを確認する
 
-このチュートリアルでは、[Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview) で CLI を使用します。このバージョンは常に更新され最新になっています。 Cloud Shell を開くには、コード ブロックの上部にある **[試してみる]** を選択します。
+このチュートリアルでは、[Azure Cloud Shell](/azure/cloud-shell/overview) で CLI を使用します。このバージョンは常に更新され最新になっています。 Cloud Shell を開くには、コード ブロックの上部にある **[試してみる]** を選択します。
 
 CLI をローカルにインストールして使用する場合、このチュートリアルでは、Azure CLI バージョン 2.0.30 以降を実行していることが要件です。 バージョンを確認するには、`az --version` を実行します。 インストールまたはアップグレードする必要がある場合は、[Azure CLI のインストール]( /cli/azure/install-azure-cli)に関するページを参照してください。
 
 ## <a name="create-jenkins-instance"></a>Jenkins インスタンスを作成する
-[Linux 仮想マシンを初回起動時にカスタマイズする方法](/azure/virtual-machines/linux/tutorial-automate-vm-deployment)に関する先行のチュートリアルで、cloud-init を使用して VM のカスタマイズを自動化する方法を学習しました。 このチュートリアルでは、cloud-init ファイルを使用して、Jenkins と Docker を VM にインストールします。 Jenkins は、広く普及しているオープンソースのオートメーション サーバーで、Azure とシームレスに統合することで、継続的インテグレーション (CI) と継続的デリバリー (CD) が可能になります。 Jenkins の使用方法に関する詳しいチュートリアルについては、[Azure ハブでの Jenkins](https://docs.microsoft.com/azure/jenkins/) に関する記事をご覧ください。
+[Linux 仮想マシンを初回起動時にカスタマイズする方法](/azure/virtual-machines/linux/tutorial-automate-vm-deployment)に関する先行のチュートリアルで、cloud-init を使用して VM のカスタマイズを自動化する方法を学習しました。 このチュートリアルでは、cloud-init ファイルを使用して、Jenkins と Docker を VM にインストールします。 Jenkins は、広く普及しているオープンソースのオートメーション サーバーで、Azure とシームレスに統合することで、継続的インテグレーション (CI) と継続的デリバリー (CD) が可能になります。 Jenkins の使用方法に関する詳しいチュートリアルについては、[Azure ハブでの Jenkins](/azure/jenkins/) に関する記事をご覧ください。
 
 現在のシェルで、*cloud-init-jenkins.txt* というファイルを作成し、次の構成を貼り付けます。 たとえば、ローカル コンピューター上にない Cloud Shell でファイルを作成します。 `sensible-editor cloud-init-jenkins.txt` を入力し、ファイルを作成して使用可能なエディターの一覧を確認します。 cloud-init ファイル全体 (特に最初の行) が正しくコピーされたことを確認してください。
 

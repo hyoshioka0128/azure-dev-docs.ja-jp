@@ -5,12 +5,12 @@ keywords: jenkins, azure, devops, ストレージ, cicd, ビルド成果物
 ms.topic: article
 ms.date: 08/13/2019
 ms.custom: devx-track-jenkins
-ms.openlocfilehash: 783d6870eff461ccf4936aff9bfd76577816e5bf
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: e3e290b7135f1207ffa91e8a228e2af91e91f878
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240974"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831358"
 ---
 # <a name="tutorial-use-azure-storage-for-build-artifacts"></a>チュートリアル:ビルド成果物に Azure Storage を使用する
 
@@ -135,7 +135,7 @@ Azure BLOB ストレージからダウンロードする項目が他にもある
 
 * **[ストレージ アカウント]** : Azure のストレージにアクセスする場合には必ず、ストレージ アカウントを使用します。 ストレージ アカウントは、BLOB にアクセスするための最高レベルの名前空間です。 アカウントに格納できるコンテナーの数は、コンテナーの合計サイズが 100 TB (テラバイト) 未満である限り無制限です。
 * **コンテナー**:コンテナーには、一連の BLOB をグループ化するコンテナーが用意されています。 すべての BLOB は 1 つのコンテナーに存在する必要があります。 アカウントには、無制限の数のコンテナーを含めることができます。 コンテナーには、BLOB を無制限に格納できます。
-* **BLOB**:任意の種類とサイズのファイルです。 Azure Storage に格納できる BLOB には、ブロック BLOB とページ BLOB の 2 種類があります。 ほとんどのファイルはブロック BLOB です。 1 つのブロック BLOB には、最大で 200 GB までのデータを格納できます。 このチュートリアルでは、 ブロック BLOB を使用します。 もう 1 つの種類の BLOB であるページ BLOB には、最大 1 TB までのデータを格納できます。ファイルのバイト数の範囲が頻繁に変更される場合には、こちらの方が効率的です。 BLOB の詳細については、「[ブロック BLOB、追加 BLOB、ページ BLOB について](https://msdn.microsoft.com/library/azure/ee691964.aspx)」をご覧ください。
+* **BLOB**:任意の種類とサイズのファイルです。 Azure Storage に格納できる BLOB には、ブロック BLOB とページ BLOB の 2 種類があります。 ほとんどのファイルはブロック BLOB です。 1 つのブロック BLOB には、最大で 200 GB までのデータを格納できます。 このチュートリアルでは、 ブロック BLOB を使用します。 もう 1 つの種類の BLOB であるページ BLOB には、最大 1 TB までのデータを格納できます。ファイルのバイト数の範囲が頻繁に変更される場合には、こちらの方が効率的です。 BLOB の詳細については、「[ブロック BLOB、追加 BLOB、ページ BLOB について](/rest/api/storageservices/Understanding-Block-Blobs--Append-Blobs--and-Page-Blobs)」をご覧ください。
 * **URL の形式**:BLOB は、次の URL 形式を使用してアドレス指定できます。
   
     `http://storageaccount.blob.core.windows.net/container_name/blob_name`

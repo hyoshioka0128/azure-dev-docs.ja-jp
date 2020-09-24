@@ -8,12 +8,12 @@ ms.service: cosmos-db
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: c39fffef8f743f89d6d448b86606463527c8e06a
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 52fbaa611f0c9367eede649dac644fd478f8855e
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379056"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831258"
 ---
 # <a name="how-to-use-spring-data-apache-cassandra-api-with-azure-cosmos-db"></a>Azure Cosmos DB で Spring Data Apache Cassandra API を使用する方法
 
@@ -167,7 +167,7 @@ ms.locfileid: "86379056"
 Spring および Azure の詳細については、Azure ドキュメント センターで引き続き Spring に関するドキュメントをご確認ください。
 
 > [!div class="nextstepaction"]
-> [Azure の Spring](/azure/developer/java/spring-framework)
+> [Azure の Spring](./index.yml)
 
 ### <a name="additional-resources"></a>その他のリソース
 
@@ -175,7 +175,7 @@ Java での Azure の使用の詳細については、「[Java 開発者向け�
 
 <!-- URL List -->
 
-[Java 開発者向けの Azure]: /azure/developer/java/
+[Java 開発者向けの Azure]: ../index.yml
 [無料の Azure アカウント]: https://azure.microsoft.com/pricing/free-trial/
 [Azure DevOps と Java の操作]: /azure/devops/
 [MSDN サブスクライバーの特典]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/

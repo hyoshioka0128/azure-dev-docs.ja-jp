@@ -4,27 +4,27 @@ description: チュートリアル パート 1、概要と前提条件。
 ms.topic: conceptual
 ms.date: 09/24/2019
 ms.custom: devx-track-javascript
-ms.openlocfilehash: 51fb29a80ba69dd59ca18dd94eaaeb6f09e53074
-ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
+ms.openlocfilehash: e720cd1ca6f29a42bfd9bf6c79c6184338c2621a
+ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88218072"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90772885"
 ---
 # <a name="deploy-to-azure-app-service-using-the-azure-cli"></a>Azure CLI を使用して Azure App Service にデプロイする
 
-このチュートリアルでは、すべてのオペレーティング システムで実行される [Azure コマンド ライン インターフェイス (CLI)](https://docs.microsoft.com/cli/azure/overview?view=azure-cli-latest) を使用して、Node.js アプリケーションを Azure App Service にデプロイします。 この CLI を使用すると、Azure リソースを作成し、Git リポジトリと Azure 間のデプロイ パイプラインを設定し、アプリの `console.log` 出力を表示することができます。
+このチュートリアルでは、すべてのオペレーティング システムで実行される [Azure コマンド ライン インターフェイス (CLI)](/cli/azure/overview?view=azure-cli-latest) を使用して、Node.js アプリケーションを Azure App Service にデプロイします。 この CLI を使用すると、Azure リソースを作成し、Git リポジトリと Azure 間のデプロイ パイプラインを設定し、アプリの `console.log` 出力を表示することができます。
 
 ## <a name="prerequisites"></a>前提条件
 
 - [Azure サブスクリプション](#azure-subscription)。
 - [Node.js と npm 6.x 以上](https://nodejs.org/en/download)、Node.js パッケージ マネージャー。
 - [Git](https://git-scm.com/downloads)。インストール後に、コマンド `git --version` を実行するとバージョン番号が表示されます。
-- [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli)。
+- [Azure CLI](/cli/azure/install-azure-cli)。
 
 代わりに、構文の色付け、IntelliSense (入力候補)、および Azure CLI スクリプトを記述する際のスニペットを提供する、[Visual Studio Code 用の Azure CLI 拡張機能](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azurecli)を使用することもできます。
 
-もう 1 つの選択肢は、[Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview) です。これは、[Azure Account 拡張機能](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azure-account)を使って、Visual Studio Code 内から使用できます。
+もう 1 つの選択肢は、[Azure Cloud Shell](/azure/cloud-shell/overview) です。これは、[Azure Account 拡張機能](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azure-account)を使って、Visual Studio Code 内から使用できます。
 
 ### <a name="azure-subscription"></a>Azure サブスクリプション
 

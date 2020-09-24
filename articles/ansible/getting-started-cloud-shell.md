@@ -5,12 +5,12 @@ keywords: Ansible, Azure, DevOps, Bash, Cloud Shell, プレイブック, Bash
 ms.topic: quickstart
 ms.date: 09/14/2020
 ms.custom: devx-track-ansible
-ms.openlocfilehash: 0a03794bdcbd810444f42db045650cdad813724c
-ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
+ms.openlocfilehash: ddc4ba9f473e5e8d727996a4e902210f0d3055f6
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90682055"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831188"
 ---
 # <a name="quickstart-configure-ansible-using-azure-cloud-shell"></a>クイック スタート:Azure Cloud Shell を使用した Ansible の構成
 
@@ -21,7 +21,7 @@ ms.locfileid: "90682055"
 ## <a name="configure-your-environment"></a>環境を構成する
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
-- **Azure Cloud Shell の構成** - Azure Cloud Shell を初めて使用する場合は、「[Azure Cloud Shell の Bash のクイック スタート](https://docs.microsoft.com/azure/cloud-shell/quickstart)」を参照してください。
+- **Azure Cloud Shell の構成** - Azure Cloud Shell を初めて使用する場合は、「[Azure Cloud Shell の Bash のクイック スタート](/azure/cloud-shell/quickstart)」を参照してください。
 
 [!INCLUDE [open-cloud-shell.md](../includes/open-cloud-shell.md)]
 

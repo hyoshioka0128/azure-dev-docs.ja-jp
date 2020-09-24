@@ -2,14 +2,14 @@
 title: 手順 5:VS Code を使用して Python で Azure Functions をデプロイする
 description: チュートリアルの手順 5、Python の関数コードを Azure にデプロイし、ローカル プロジェクトと Azure の間でのログのストリーム配信や設定の同期の方法を学習する。
 ms.topic: conceptual
-ms.date: 05/19/2020
+ms.date: 09/17/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: e4108ff7b705be96f62c06a02e301bce9247c048
-ms.sourcegitcommit: 9e282fc2ec967bee181c3034e7e70b28ae308905
+ms.openlocfilehash: 8acf168ecc858410677b8f55b7b84ed14416c005
+ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89473597"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90772865"
 ---
 # <a name="5-deploy-azure-functions-in-python"></a>5:Python で Azure Functions をデプロイする
 
@@ -23,7 +23,9 @@ ms.locfileid: "89473597"
 
     ![Python 関数を Azure 関数アプリにデプロイする](media/tutorial-vs-code-serverless-python/deploy-a-python-fuction-to-azure-function-app.png)
 
-1. プロンプトが表示されたら、 **[Create New Function App in Azure\(Azure で新しい関数アプリを作成する\)]** を選択し、Azure 全体で一意となる名前を指定します (通常、個人の名前か社名を他の一意の識別子と共に使用します。文字、数字、ハイフンを使用できます)。 前に Function App を作成した場合、その名前はこのオプション一覧に表示されます。
+1. プロンプトが表示されたら、 **[Create New Function App in Azure\(Azure で新しい関数アプリを作成する\)]** を選択し、Azure 全体で一意となる名前を指定します (通常、個人の名前か社名を他の一意の識別子と共に使用します。文字、数字、ハイフンを使用できます)。
+
+    前に Function App を作成した場合、その名前はこのオプション一覧に表示されます。
 
 1. プロンプトが表示されたら、Python のバージョンと Azure の場所を選択します。
 
@@ -75,4 +77,3 @@ func azure functionapp logstream <app_name> --browser
 > [!div class="nextstepaction"]
 > [関数をデプロイしました - 手順 6 に進む >>>](tutorial-vs-code-serverless-python-06.md)
 
-問題がある場合 ページの下部にある [このページ] へのフィードバックを使用して、GitHub の問題を送信します。

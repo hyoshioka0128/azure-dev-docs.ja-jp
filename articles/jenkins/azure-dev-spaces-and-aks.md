@@ -5,12 +5,12 @@ keywords: jenkins, azure, devops, azure dev spaces, aks, azure kubernetes servic
 ms.topic: tutorial
 ms.date: 10/23/2019
 ms.custom: devx-track-jenkins
-ms.openlocfilehash: 505ee15ab181e63576f1bb2c276ac317d8372164
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 39a730507df89186b8934d4ded7d2ff92c07b420
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240854"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831378"
 ---
 # <a name="tutorial-use-azure-dev-spaces-with-azure-kubernetes-service"></a>チュートリアル:Azure Kubernetes Service で Azure Dev Spaces を使用する
 
@@ -38,7 +38,7 @@ Azure Dev Spaces では、Azure Kubernetes Service (AKS) で実行されるマ�
 
 * [Azure CLI のインストール](/cli/azure/install-azure-cli?view=azure-cli-latest) (バージョン 2.0.43 以上)。
 
-* Jenkins マスター サーバー Jenkins マスターがまだない場合は、この [クイックスタート](https://docs.microsoft.com/azure/jenkins/install-jenkins-solution-template)の手順に従って、Azure で [Jenkins](https://azuremarketplace.microsoft.com/marketplace/apps/bitnami.production-jenkins)  をデプロイしてください。 
+* Jenkins マスター サーバー Jenkins マスターがまだない場合は、この [クイックスタート](/azure/jenkins/install-jenkins-solution-template)の手順に従って、Azure で [Jenkins](https://azuremarketplace.microsoft.com/marketplace/apps/bitnami.production-jenkins)  をデプロイしてください。 
 
 * このチュートリアルの後ろで説明されているとおり、Jenkins サーバーには Helm と kubectl をインストールし、それらを Jenkins アカウントで使用できるようにする必要があります。
 
@@ -50,8 +50,8 @@ Azure Dev Spaces では、Azure Kubernetes Service (AKS) で実行されるマ�
 このセクションでは、Azure リソースを作成します。
 
 * このチュートリアル用の Azure リソースがすべて含まれるリソース グループ。
-* [Azure Kubernetes Service](https://docs.microsoft.com/azure/aks/) (AKS) クラスター。
-* Docker イメージをビルド (ACR タスクを使用) して格納するための [Azure コンテナー レジストリ](https://docs.microsoft.com/azure/container-registry/) (ACR)。
+* [Azure Kubernetes Service](/azure/aks/) (AKS) クラスター。
+* Docker イメージをビルド (ACR タスクを使用) して格納するための [Azure コンテナー レジストリ](/azure/container-registry/) (ACR)。
 
 1. リソース グループを作成します。
 
@@ -82,7 +82,7 @@ Azure Dev Spaces では、Azure Kubernetes Service (AKS) で実行されるマ�
 
 このセクションでは、開発空間を設定し、前のセクションで作成した AKS クラスターにサンプル アプリケーションをデプロイします。 アプリケーションは、*webfrontend* と *mywebapi* の 2 つの部分で構成されます。 どちらのコンポーネントも開発空間でデプロイされます。 このチュートリアルの後半で、mywebapi に対して pull request を送信し、Jenkins で CI パイプラインをトリガーします。
 
-Azure Dev Spaces の使用、および Azure Dev Spaces を使用したマルチサービスの開発の詳細については、「[Azure Dev Spaces での Java の使用](https://docs.microsoft.com/azure/dev-spaces/get-started-java)」と「[Azure Dev Spaces を使用したマルチサービスの開発](https://docs.microsoft.com/azure/dev-spaces/multi-service-java)」を参照してください。 これらのチュートリアルでは、ここには記載されていないその他の背景情報が提供されます。
+Azure Dev Spaces の使用、および Azure Dev Spaces を使用したマルチサービスの開発の詳細については、「[Azure Dev Spaces での Java の使用](/azure/dev-spaces/get-started-java)」と「[Azure Dev Spaces を使用したマルチサービスの開発](/azure/dev-spaces/multi-service-java)」を参照してください。 これらのチュートリアルでは、ここには記載されていないその他の背景情報が提供されます。
 
 1. GitHub から https://github.com/Azure/dev-spaces リポジトリをダウンロードします。
 
@@ -132,7 +132,7 @@ Azure Dev Spaces の使用、および Azure Dev Spaces を使用したマルチ
     * `./charts/webfrontend` の下の [Helm チャート](https://helm.sh/docs/topics/charts/)は、Kubernetes にコンテナーを展開する方法を記述しています。
     * `./azds.yaml` は、Azure Dev Spaces の構成ファイルです。
 
-    詳細については、「[Azure Dev Spaces のしくみと構成方法](https://docs.microsoft.com/azure/dev-spaces/how-dev-spaces-works)」を参照してください。
+    詳細については、「[Azure Dev Spaces のしくみと構成方法](/azure/dev-spaces/how-dev-spaces-works)」を参照してください。
 
 6. `azds up` コマンドを使用し、AKS でアプリケーションをビルドして実行します。
 

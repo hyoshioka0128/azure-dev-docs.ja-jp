@@ -4,12 +4,12 @@ description: チュートリアルの手順 5、引き続き料金を請求さ�
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: cc5540570bc914d39a17bd102dc0f86f6674025a
-ms.sourcegitcommit: 9e282fc2ec967bee181c3034e7e70b28ae308905
+ms.openlocfilehash: 9140f5b695fe4b20e1e9417fe1d5e6ad115bb4eb
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89473527"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831418"
 ---
 # <a name="5-clean-up-azure-resources"></a>5:Azure リソースをクリーンアップする
 
@@ -23,7 +23,7 @@ ms.locfileid: "89473527"
 
 Docker と App Service の拡張機能の詳細については、GitHub のそれぞれのリポジトリ ([vscode-docker](https://github.com/Microsoft/vscode-docker) と [vscode-azureappservice](https://github.com/Microsoft/vscode-azureappservice)) を参照してください。 問題提起や投稿も歓迎いたします。
 
-データ ストレージのほか、AI や機械学習のサービスなど、Python から使用できる Azure サービスの詳細については、[Azure Python デベロッパー センター](https://docs.microsoft.com/python/azure/?view=azure-python)にアクセスしてください。
+データ ストレージのほか、AI や機械学習のサービスなど、Python から使用できる Azure サービスの詳細については、[Azure Python デベロッパー センター](/python/azure/?preserve-view=true&view=azure-python)にアクセスしてください。
 
 VS Code 用の Azure 拡張機能は他にもあります。役に立つ機能が見つかるかもしれません。 拡張機能のエクスプローラーで、"Azure" で検索してください。
 
@@ -37,6 +37,4 @@ VS Code 用の Azure 拡張機能は他にもあります。役に立つ機能�
 - [Azure リソース マネージャー ツール](https://marketplace.visualstudio.com/items?itemName=msazurermtools.azurerm-vscode-tools)
 
 > [!div class="nextstepaction"]
-> [完了しました。](https://docs.microsoft.com/python/azure/?view=azure-python)
-
-問題がある場合 ページの下部にある [このページ] へのフィードバックを使用して、GitHub の問題を送信します。
+> [完了しました。](/python/azure/?preserve-view=true&view=azure-python)

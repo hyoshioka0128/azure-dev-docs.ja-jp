@@ -5,12 +5,12 @@ keywords: jenkins, azure, devops, 仮想マシン, cicd, azure devops services
 ms.topic: tutorial
 ms.date: 07/31/2018
 ms.custom: devx-track-jenkins
-ms.openlocfilehash: 458acc31d4cb56215dff036bd3952090052eb5a1
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 3eedcc72a7c272f1cacf97b9071e750aab5a446e
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241074"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831328"
 ---
 # <a name="tutorial-deploy-to-linux-virtual-machine-using-jenkins-and-azure-devops-services"></a>チュートリアル:Jenkins と Azure DevOps Services を使用して Linux 仮想マシンにデプロイする
 
@@ -18,7 +18,7 @@ ms.locfileid: "88241074"
 
 このチュートリアルでは、Jenkins を使用して Node.js Web アプリをビルドします。 次に、Azure DevOps を使用して、
 
-Linux 仮想マシン (VM) を含む[配置グループ](https://docs.microsoft.com/azure/devops/pipelines/release/deployment-groups/index?view=vsts)にアプリをデプロイします。 学習内容は次のとおりです。
+Linux 仮想マシン (VM) を含む[配置グループ](/azure/devops/pipelines/release/deployment-groups/index?view=vsts)にアプリをデプロイします。 学習内容は次のとおりです。
 
 > [!div class="checklist"]
 > * サンプル アプリを入手する。
@@ -32,17 +32,17 @@ Linux 仮想マシン (VM) を含む[配置グループ](https://docs.microsoft.
 
 ## <a name="before-you-begin"></a>開始する前に
 
-* Jenkins サーバーにアクセスする必要があります。 Jenkins サーバーをまだ作成していない場合は、[Azure 仮想マシンへの Jenkins マスターの作成](https://docs.microsoft.com/azure/jenkins/install-jenkins-solution-template)に関するページをご覧ください。 
+* Jenkins サーバーにアクセスする必要があります。 Jenkins サーバーをまだ作成していない場合は、[Azure 仮想マシンへの Jenkins マスターの作成](/azure/jenkins/install-jenkins-solution-template)に関するページをご覧ください。 
 
 * Azure DevOps Services 組織 (**https://{yourorganization}.visualstudio.com**) にサインインします。 
   [無料の Azure DevOps Services 組織](https://go.microsoft.com/fwlink/?LinkId=307137&clcid=0x409&wt.mc_id=o~msft~vscom~home-vsts-hero~27308&campaign=o~msft~vscom~home-vsts-hero~27308)を取得できます。
 
   > [!NOTE]
-  > 詳細については、[Azure DevOps Services への接続](https://docs.microsoft.com/azure/devops/organizations/projects/connect-to-projects?view=vsts)に関する記事をご覧ください。
+  > 詳細については、[Azure DevOps Services への接続](/azure/devops/organizations/projects/connect-to-projects?view=vsts)に関する記事をご覧ください。
 
-*  デプロイ ターゲットの Linux 仮想マシンが必要です。  詳細については、「[Azure CLI を使用した Linux VM の作成と管理](https://docs.microsoft.com/azure/virtual-machines/linux/tutorial-manage-vm)」をご覧ください。
+*  デプロイ ターゲットの Linux 仮想マシンが必要です。  詳細については、「[Azure CLI を使用した Linux VM の作成と管理](/azure/virtual-machines/linux/tutorial-manage-vm)」をご覧ください。
 
-*  仮想マシンの受信ポート 80 を開きます。 詳細については、「[Azure Portal を使用したネットワーク セキュリティ グループの作成](https://docs.microsoft.com/azure/virtual-network/tutorial-filter-network-traffic)」をご覧ください。
+*  仮想マシンの受信ポート 80 を開きます。 詳細については、「[Azure Portal を使用したネットワーク セキュリティ グループの作成](/azure/virtual-network/tutorial-filter-network-traffic)」をご覧ください。
 
 ## <a name="get-the-sample-app"></a>サンプル アプリを入手する
 
@@ -90,7 +90,7 @@ Linux 仮想マシン (VM) を含む[配置グループ](https://docs.microsoft.
  
 1.  Azure DevOps Services 組織で PAT を作成します (まだない場合)。 Jenkins から Azure DevOps Services 組織にアクセスするには、この情報が必要です。 必ず、このセクションの以降の手順で必要なトークンの情報を保存します。
   
-    トークンの生成方法については、[Azure DevOps Services の個人用アクセス トークンを作成する方法](https://docs.microsoft.com/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=vsts)に関する記事をご覧ください。
+    トークンの生成方法については、[Azure DevOps Services の個人用アクセス トークンを作成する方法](/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=vsts)に関する記事をご覧ください。
 2. **[Post-build Actions]\(ビルド後のアクション)** タブで **[Add post-build action]\(ビルド後のアクションを追加する)** を選択します。 **[Archive the artifacts] \(成果物のアーカイブ)** を選択します。
 3. **[Files to archive]\(アーカイブするファイル\)** に `**/*` と入力してすべてのファイルが含まれるようにします。
 4. 別のアクションを作成するには **[Add post-build action] \(ビルド後のアクションを追加する)** をクリックします。
@@ -177,7 +177,7 @@ Jenkins プラグインでバグが発生した場合は、[Jenkins JIRA](https:
 > * Azure 仮想マシンのデプロイ グループを作成する。
 > * VM を構成し、アプリをデプロイする Azure パイプラインを作成する。
 
-ビルドとリリースの両方のステップで Azure Pipelines を使用する方法については、[こちら](https://docs.microsoft.com/azure/devops/pipelines/apps/cd/deploy-linuxvm-deploygroups)を参照してください。
+ビルドとリリースの両方のステップで Azure Pipelines を使用する方法については、[こちら](/azure/devops/pipelines/apps/cd/deploy-linuxvm-deploygroups)を参照してください。
 
 VM へのデプロイを行う YAML ベースの CI/CD パイプラインを作成する方法については、次のチュートリアルに進んでください。
 

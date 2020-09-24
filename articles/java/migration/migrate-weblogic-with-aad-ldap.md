@@ -5,12 +5,12 @@ author: edburns
 ms.author: edburns
 ms.topic: tutorial
 ms.date: 08/10/2020
-ms.openlocfilehash: b1437362601e990b560dc0385420605ef01a426a
-ms.sourcegitcommit: 4049dc6109600a8308ba5617cc122a5b32cc4ca1
+ms.openlocfilehash: 2ee3e7c03d0fd7f7048037fb27f2cfacfe39671d
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89056283"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831388"
 ---
 # <a name="end-user-authorization-and-authentication-for-migrating-java-apps-on-weblogic-server-to-azure"></a>WebLogic Server 上の Java アプリを Azure に移行するためのエンドユーザーの認可と認証
 
@@ -209,4 +209,4 @@ az resource update --ids $AADDS_ID --set properties.domainSecuritySettings.tlsV1
 WebLogic Server アプリの Azure への移行に関する他の側面を調べます。
 
 > [!div class="nextstepaction"]
-> [WebLogic Server のアプリケーションを Azure Virtual Machines に移行する](/azure/developer/java/migration/migrate-weblogic-to-virtual-machines)
+> [WebLogic Server のアプリケーションを Azure Virtual Machines に移行する](./migrate-weblogic-to-virtual-machines.md)

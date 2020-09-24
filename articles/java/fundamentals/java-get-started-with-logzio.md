@@ -7,12 +7,12 @@ ms.topic: tutorial
 ms.date: 11/05/2019
 ms.author: judubois
 ms.custom: devx-track-java
-ms.openlocfilehash: 8ed24a6b15d602a96ec7bdb186225c66a87393ae
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 89dc2a40e39a417d33e59b22f28202c61f036c79
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379856"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831488"
 ---
 # <a name="tutorial-getting-started-with-monitoring-and-logging-using-logzio-for-java-apps-running-on-azure"></a>チュートリアル:Azure で実行される Java アプリ用の Logz.io を使用した監視とログ記録の概要
 
@@ -28,7 +28,7 @@ ms.locfileid: "86379856"
 
 ## <a name="prerequisites"></a>前提条件
 
-* [Java Developer Kit](https://aka.ms/azure-jdks) バージョン 8 以降
+* [Java Developer Kit](./java-jdk-long-term-support.md) バージョン 8 以降
 * [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/logz.logzio-elk-as-a-service-pro) からの Logz.io アカウント
 * Log4J または Logback を使用する既存の Java アプリケーション
 

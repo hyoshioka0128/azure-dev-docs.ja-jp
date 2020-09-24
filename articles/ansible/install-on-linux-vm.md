@@ -5,12 +5,12 @@ keywords: Ansible, Azure, DevOps, Bash, CloudShell, プレイブック, Azure CL
 ms.topic: quickstart
 ms.date: 08/13/2020
 ms.custom: devx-track-ansible,devx-track-cli
-ms.openlocfilehash: 50fbcb4d086679265d728f14061a5c4c649fa48d
-ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
+ms.openlocfilehash: bdda836789e9230cffdc14a6ee4bd87ddb2ce5ef
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90682025"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831175"
 ---
 # <a name="quickstart-configure-ansible-using-azure-cli"></a>クイック スタート:Azure CLI を使用した Ansible の構成
 
@@ -177,4 +177,4 @@ Ansible の資格情報の定義について詳しくは、「[Providing Credent
 ## <a name="next-steps"></a>次のステップ
 
 > [!div class="nextstepaction"]
-> [Azure 上の Ansible](/azure/developer/Ansible)
+> [Azure 上の Ansible](./index.yml)

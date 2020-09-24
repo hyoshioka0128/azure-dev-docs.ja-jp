@@ -4,12 +4,12 @@ description: Azure には、Web アプリや他の Node.js アプリと組み合
 ms.topic: article
 ms.date: 08/20/2019
 ms.custom: devx-track-javascript
-ms.openlocfilehash: 3e38e3edca5022eb87f090cb8f951d65f36dcb60
-ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
+ms.openlocfilehash: efee87ce711616de35979a696539e47784c1868c
+ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88218625"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90772965"
 ---
 # <a name="how-to-integrate-azure-databases-in-nodejs-apps"></a>Azure のデータベースを Node.js アプリに統合する方法
 
@@ -17,10 +17,10 @@ ms.locfileid: "88218625"
 
 | サービス | クイック スタート | サンプル |
 | --- | --- | --- |
-| **Cosmos DB** | [Node.js Azure Cosmos DB Web アプリの作成](/azure/cosmos-db/create-sql-api-nodejs) | [サンプル](https://docs.microsoft.com/samples/browse/?languages=javascript%2Cnodejs&products=azure-cosmos-db) |
-| **MongoDB** | [Node.js の MongoDB Web アプリの作成](/azure/app-service-web/app-service-web-tutorial-nodejs-mongodb-app) | [サンプル](https://docs.microsoft.com/samples/browse/?languages=javascript%2Cnodejs&term=Mongo%20DB) |
+| **Cosmos DB** | [Node.js Azure Cosmos DB Web アプリの作成](/azure/cosmos-db/create-sql-api-nodejs) | [サンプル](/samples/browse/?languages=javascript%252cnodejs&products=azure-cosmos-db) |
+| **MongoDB** | [Node.js の MongoDB Web アプリの作成](/azure/app-service-web/app-service-web-tutorial-nodejs-mongodb-app) | [サンプル](/samples/browse/?languages=javascript%252cnodejs&term=Mongo%2bDB) |
 | **Redis Cache** | [Redis Cache の作成と使用](/azure/redis-cache/cache-nodejs-get-started) | |
-| **Azure SQL データベース** | [Node.js を使用して Azure SQL データベースに照会する](/azure/sql-database/sql-database-connect-query-nodejs) | [サンプル](https://docs.microsoft.com/samples/browse/?languages=javascript%2Cnodejs&products=azure-sql-database) | |
+| **Azure SQL データベース** | [Node.js を使用して Azure SQL データベースに照会する](/azure/sql-database/sql-database-connect-query-nodejs) | [サンプル](/samples/browse/?languages=javascript%252cnodejs&products=azure-sql-database) | |
 | **MySQL** | [Node.js を使った接続とデータの照会](/azure/mysql/connect-nodejs) | |
 | **PostgreSQL** | [Node.js を使った接続とデータの照会](/azure/postgresql/connect-nodejs) | |
 

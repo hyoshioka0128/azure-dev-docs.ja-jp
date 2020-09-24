@@ -5,12 +5,12 @@ keywords: Jenkins, Azure, DevOps, ポータル, Linux, 仮想マシン
 ms.topic: quickstart
 ms.date: 08/21/2020
 ms.custom: devx-track-jenkins
-ms.openlocfilehash: 4e2250e6ca76c804f08a4f6ab4715ae4fc094570
-ms.sourcegitcommit: 2f832baf90c208a8a69e66badef5f126d23bbaaf
+ms.openlocfilehash: 7e7c8de6353a29af949231709675a4d2785405c3
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88725216"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831368"
 ---
 # <a name="quickstart-configure-jenkins-using-azure-cli"></a>クイック スタート:Azure CLI を使用して Jenkins を構成する
 
@@ -216,4 +216,4 @@ Jenkins の構成で問題が発生した場合は、[Cloudbees Jenkins のイ�
 ## <a name="next-steps"></a>次のステップ
 
 > [!div class="nextstepaction"]
-> [Azure 上の Jenkins](/azure/developer/jenkins)
+> [Azure 上の Jenkins](./index.yml)

@@ -9,12 +9,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: mvc, devx-track-java
-ms.openlocfilehash: b2cc66d13cd5248604e61b5322f53c358c15a7d8
-ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
+ms.openlocfilehash: b4b36df09811e8e9e6a9bae944119e280258d751
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90681594"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90830078"
 ---
 # <a name="deploy-spring-boot-application-to-the-azure-kubernetes-service"></a>Spring Boot アプリケーションを Azure Kubernetes Service にデプロイする
 
@@ -291,7 +291,7 @@ ms.locfileid: "90681594"
 Spring および Azure の詳細については、Azure ドキュメント センターで引き続き Spring に関するドキュメントをご確認ください。
 
 > [!div class="nextstepaction"]
-> [Azure の Spring](/azure/developer/java/spring-framework)
+> [Azure の Spring](./index.yml)
 
 ### <a name="additional-resources"></a>その他のリソース
 
@@ -330,7 +330,7 @@ Azure Kubernetes Service (AKS) で直接 Azure Dev Spaces を使用してコン�
 [ダッシュボードの認証]: https://github.com/kubernetes/dashboard/wiki/Access-control
 [Azure コマンド ライン インターフェイス (CLI)]: /cli/azure/overview
 [Azure Kubernetes Service (AKS)]: https://azure.microsoft.com/services/kubernetes-service/
-[Java 開発者向けの Azure]: /azure/developer/java/
+[Java 開発者向けの Azure]: ../index.yml
 [Azure portal]: https://portal.azure.com/
 [Create a private Docker container registry using the Azure portal]: /azure/container-registry/container-registry-get-started-portal
 [Azure Web App on Linux 向けのカスタム Docker イメージを使用する]: /azure/app-service/tutorial-custom-container
@@ -349,7 +349,7 @@ Azure Kubernetes Service (AKS) で直接 Azure Dev Spaces を使用してコン�
 [名前空間]: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/
 [プライベート レジストリからのイメージのプル]: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
 
-[Java Development Kit (JDK)]: https://aka.ms/azure-jdks
+[Java Development Kit (JDK)]: ../fundamentals/java-jdk-long-term-support.md
 <!-- http://www.oracle.com/technetwork/java/javase/downloads/ -->
 
 <!-- Newly added -->

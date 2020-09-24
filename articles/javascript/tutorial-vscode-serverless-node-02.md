@@ -4,18 +4,18 @@ description: チュートリアル パート2、Azure Functions アプリを作�
 ms.topic: conceptual
 ms.date: 09/23/2019
 ms.custom: devx-track-javascript
-ms.openlocfilehash: 2aca9c53e254eca7c8a070cc50a88426d3886cdd
-ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
+ms.openlocfilehash: 7ea1b39086a6cd824084e9bbb3839ab41a24eaad
+ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88218396"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90772625"
 ---
 # <a name="create-the-local-functions-app"></a>ローカルの Functions アプリを作成する
 
 [前の手順:概要と前提条件](tutorial-vscode-serverless-node-01.md)
 
-この手順で、[HTTP トリガー](https://docs.microsoft.com/azure/azure-functions/functions-reference-node#http-triggers-and-bindings)を使用する関数を含むローカルの Azure Functions アプリケーションを作成します。 Azure Functions アプリには、[さまざまなトリガー](https://docs.microsoft.com/azure/azure-functions/functions-triggers-bindings)を持つ多数の関数を含めることができます。 HTTP トリガーは、特に着信 HTTP トラフィックの処理を行います。
+この手順で、[HTTP トリガー](/azure/azure-functions/functions-reference-node#http-triggers-and-bindings)を使用する関数を含むローカルの Azure Functions アプリケーションを作成します。 Azure Functions アプリには、[さまざまなトリガー](/azure/azure-functions/functions-triggers-bindings)を持つ多数の関数を含めることができます。 HTTP トリガーは、特に着信 HTTP トラフィックの処理を行います。
 
 1. ターミナルまたはコマンド プロンプトで、プロジェクトの適切なフォルダー内から Visual Studio Code を実行します。
 

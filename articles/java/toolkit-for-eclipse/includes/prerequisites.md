@@ -1,16 +1,16 @@
 ---
-ms.openlocfilehash: dea8cf8da093159c257fc09caea4f4e2992799a7
-ms.sourcegitcommit: be67ceba91727da014879d16bbbbc19756ee22e2
+ms.openlocfilehash: a137e28a81a5175109b6f91b4d29e533b182a85c
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81670918"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90830011"
 ---
 ## <a name="prerequisites"></a>前提条件
 
 この記事の手順を完了するには、Azure Toolkit for Eclipse をインストールする必要があります。これには、次のソフトウェア コンポーネントが必要です。
 
-* [Azure でサポートされている Java Development Kit (JDK)](https://aka.ms/azure-jdks)
+* [Azure でサポートされている Java Development Kit (JDK)](../../fundamentals/java-jdk-long-term-support.md)
 * [Eclipse IDE](http://www.eclipse.org/downloads/)
 * [Azure Toolkit for Eclipse](https://marketplace.eclipse.org/content/azure-toolkit-eclipse)。詳細については、[インストール ガイド](../installation.md)を参照してください
 * Azure Toolkit for Eclipse 用の自分の Azure アカウントに[サインイン](../sign-in-instructions.md)していること

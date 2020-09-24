@@ -5,12 +5,12 @@ keywords: azure、chef、devops、クライアント、インストール、ポ�
 ms.date: 02/22/2020
 ms.topic: article
 ms.custom: devx-track-chef
-ms.openlocfilehash: 3fb282914bad8992a5f4df76019df89824675da0
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: c84804628be0904deb1781006b7a66c7c402deb8
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240824"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831468"
 ---
 # <a name="install-the-chef-client-from-the-azure-portal"></a>Azure portal から Chef クライアントをインストールする
 Azure portal から Linux または Windows マシンに直接、Chef クライアント拡張機能を追加できます。 この記事では、新しい Linux 仮想マシンを使用してそのプロセスを説明します。
@@ -51,7 +51,7 @@ Azure portal から Linux または Windows マシンに直接、Chef クライ�
 1. **[基本]** タブで次の値を指定し、 **[OK]** を選択します。
 
    - **名前**: 新しい仮想マシンの名前を入力します。
-   - **VM ディスクの種類**: **[SSD]** または **[HDD]** の記憶域ディスクの種類を選択します。 Azure での仮想マシン ディスクの種類について詳しくは、[ディスクの種類の選択](https://docs.microsoft.com/azure/virtual-machines/windows/disks-types)に関する記事をご覧ください。
+   - **VM ディスクの種類**: **[SSD]** または **[HDD]** の記憶域ディスクの種類を選択します。 Azure での仮想マシン ディスクの種類について詳しくは、[ディスクの種類の選択](/azure/virtual-machines/windows/disks-types)に関する記事をご覧ください。
    - **ユーザー名**: 仮想マシンの管理者権限が付与されているユーザー名を入力します。
    - **認証の種類**: **[パスワード]** を選択します。 **[SSH 公開キー]** を選択して、SSH 公開キー値を指定することもできます。 このデモでは (およびスクリーン ショットでは)、 **[パスワード]** が選択されています。
    - **[パスワード]** と **[パスワードの確認入力]** : ユーザーのパスワードを入力します。

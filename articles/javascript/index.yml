@@ -7,20 +7,32 @@ metadata:
   description: 各種のチュートリアル、ツール、SDK リファレンスを活用して、ブラウザーまたは Node.js で Azure SDK for JavaScript を使用したアプリの開発を開始しましょう。
   author: diberry
   ms.author: diberry
-  ms.date: 07/23/2020
+  ms.date: 09/21/2020
   ms.topic: landing-page
   ms.collection: collection
   ms.technology: azure
   ms.service: multiple
   ms.devlang: javascript
   ms.custom: 2020Aug21Redesign
-  ms.openlocfilehash: 372e8cbbfea398d06bbadca0d0d05a769cc1ec4a
-  ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
+  ms.openlocfilehash: 85f5a27eb61c90ee3cdafd034daf072b571cea47
+  ms.sourcegitcommit: 53972873f4976a050b67c26eccab9bbe14293743
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/18/2020
-  ms.locfileid: "90772985"
+  ms.lasthandoff: 09/22/2020
+  ms.locfileid: "90990455"
 landingContent:
+- title: Azure を利用するのが初めてであれば、
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: Azure の基礎
+      url: /learn/paths/azure-fundamentals/
+    - text: 開発環境を設定する
+      url: configure-local-development-environment.md
+    - text: クライアント ライブラリの認証
+      url: node-sdk-azure-authenticate.md
+    - text: Azure SDK ブログ
+      url: https://devblogs.microsoft.com/azure-sdk/
 - title: Hosting
   linkLists:
   - linkListType: tutorial

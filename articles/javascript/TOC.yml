@@ -232,7 +232,7 @@
           href: /samples/browse/?languages=javascript%252cnodejs&products=azure-search
         - name: すべてのサンプル
           href: /samples/browse/?languages=javascript%252cnodejs
-    - name: NPM パッケージ
+    - name: npm パッケージ
       href: azure-sdk-library-package-index.md
-    - name: NPM パッケージのドキュメント
+    - name: npm パッケージのドキュメント
       href: /javascript/api/overview/azure/?view=azure-node-latest

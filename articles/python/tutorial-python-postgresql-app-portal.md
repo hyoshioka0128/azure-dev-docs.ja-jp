@@ -3,14 +3,14 @@ title: チュートリアル:Azure portal を使用して PostgreSQL で Django 
 description: Azure で Web アプリと PostgreSQL データベースをプロビジョニングし、GitHub からアプリ コードをデプロイします。
 ms.devlang: python
 ms.topic: tutorial
-ms.date: 07/23/2020
+ms.date: 09/23/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: 19c0dda48b0fb7b5b0c3af75a1d94d3c9b9e4080
-ms.sourcegitcommit: 4824cea71195b188b4e8036746f58bf8b70dc224
+ms.openlocfilehash: 7f363c3e82873e82630cf477ea469627aa528a4e
+ms.sourcegitcommit: b03cb337db8a35e6e62b063c347891e44a8a5a13
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89753766"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91110538"
 ---
 # <a name="tutorial-deploy-a-django-web-app-with-postgresql-using-the-azure-portal"></a>チュートリアル:Azure portal を使用して PostgreSQL で Django Web アプリをデプロイする
 
@@ -47,9 +47,9 @@ Azure portal を使用して、データ ドリブンの Python [Django](https:/
 
 1. [Azure portal](https://portal.azure.com) を開きます。
 
-1. **[リソースの作成]** を選択します。
+1. **[リソースの作成]** を選択すると、 **[新規]** ページが開きます。
 
-1. **[新規]** ページの **[人気]** 列で **[Web アプリ]** を選択します ( **[Web アプリ]** がすぐに表示されない場合は、 **[Azure Marketplace]** で **[Web]** を選択し、 **[おすすめ]** で **[Web アプリ]** を選択します)。 
+1. **[Web アプリ]** を検索して選択します。
 
 1. **[Web アプリの作成]** ページで、次の情報を入力します。
 
@@ -74,9 +74,9 @@ Azure portal を使用して、データ ドリブンの Python [Django](https:/
 
 1. [Azure portal](https://portal.azure.com) で新しいブラウザー ウィンドウまたはタブを開きます。 データベースをプロビジョニングするために新しいタブを使用します。これは、データベース ページから、前のセクションから開いたままの Web アプリ ページに情報を転送する必要があるためです。
 
-1. **[リソースの作成]** を選択します。
+1. **[リソースの作成]** を選択すると、 **[新規]** ページが開きます。
 
-1. **[新規]** ページの **[Azure Marketplace]** で **[データベース]** を選択し、 **[おすすめ]** で **[Azure Database for PostgreSQL]** を選択します。
+1. **[Azure Database for PostgreSQL]** を検索して選択します。
 
 1. 次のページの **[単一サーバー]** で **[作成]** を選択します。
 
@@ -90,7 +90,7 @@ Azure portal を使用して、データ ドリブンの Python [Django](https:/
     | データ ソース | **なし** |
     | 場所 | お近くの場所を選択します。 |
     | Version | 既定値 (最新バージョン) のままにします。 |
-    | コンピューティングとストレージ | **[サーバーの構成]** を選択し、 **[Basic]** および **[Gen 5]** を選択します。 **[仮想コア]** を 1 に設定し、 **[ストレージ]** を 5 GB に設定し、 **[OK]** を選択します。 これらの選択により、Azure で PostgreSQL 用に使用できる最もコストの低いサーバーがプロビジョニングされます。 |
+    | コンピューティングとストレージ | **[サーバーの構成]** を選択し、 **[Basic]** および **[Gen 5]** を選択します。 **[仮想コア]** を 1 に設定し、 **[ストレージ]** を 5 GB に設定し、 **[OK]** を選択します。 これらの選択により、Azure で PostgreSQL 用に使用できる最もコストの低いサーバーがプロビジョニングされます。 また、サーバーのコストをカバーするクレジットを Azure アカウントで使用することもできます。 |
     | 管理者ユーザー名、パスワード、パスワードの確認入力 | データベース サーバーの管理者アカウントの資格情報を入力します。 これらの資格情報は、このチュートリアルの後半で必要になるため、記録しておいてください。 |
 
 1. **[確認および作成]** 、 **[作成]** の順に選択します。 Azure での Web アプリのプロビジョニングには数分かかります。
@@ -145,7 +145,7 @@ Azure portal を使用して、データ ドリブンの Python [Django](https:/
 
     ![Web アプリのためのポータル設定の構成](media/tutorial-python-postgresql-app-portal/web-app-settings.png)
 
-1. **[新しいアプリケーション設定]** ボタンを使用して、次の各値の設定を作成します。
+1. **[新しいアプリケーション設定]** ボタンを使用して、次の各値の設定を作成します (djangoapp サンプルで使用されます)。
 
     | 設定名 | 値 |
     | --- | --- |
@@ -168,7 +168,7 @@ Azure portal を使用して、データ ドリブンの Python [Django](https:/
 
 1. Web アプリのブラウザー ウィンドウまたはタブで、(左側の **[デプロイ]** の下の) **[デプロイ センター]** を選択します。
 
-1. **[ソース管理]** ステップで、 **[GitHub]** を選択し、サインイン プロンプトに従うことを選択するか、 **[続行]** を選択して現在の GitHub ログインを使用します。
+1. **[ソース管理]** のステップで、 **[GitHub]** を選択し、必要に応じて **[承認]** を選択します。 次に、サインイン プロンプトに従うか、 **[続行]** を選択して、現在の GitHub ログインを使用します。
 
 1. **[ビルド プロバイダー]** ステップで、 **[App Service のビルド サービス]** を選択し、 **[続行]** を選択します。
 

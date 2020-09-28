@@ -3,13 +3,15 @@ title: Azure CLI から Azure App Service に Deno アプリをデプロイす�
 description: チュートリアル パート 1、概要と前提条件。
 ms.topic: conceptual
 ms.date: 06/01/2020
-ms.openlocfilehash: 817efd11f5eaf072d10a54efa083823e9b73e356
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.custom: devx-track-javascript
+ms.openlocfilehash: 0a725c0c1f59f01fd75e76e68ac533c7918a429b
+ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85792569"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "90772935"
 ---
-# <a name="deploy-to-azure-app-service-using-visual-studio-code"></a>Visual Studio Code を使用して Azure App Service にデプロイする
+# <a name="deploy-deno-to-azure-app-service-using-visual-studio-code"></a>Visual Studio Code を使用して Deno を Azure App Service にデプロイする
 
 このチュートリアルでは、Azure CLI を使用して、Deno アプリケーションを Azure App Service (Linux または Windows 上) にデプロイします。
 

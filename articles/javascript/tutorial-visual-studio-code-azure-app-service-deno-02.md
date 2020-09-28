@@ -1,13 +1,15 @@
 ---
-title: Visual Studio Code から Azure App Service を作成する
+title: Visual Studio Code から Deno Azure App Service を作成する
 description: チュートリアル パート 2、Deno アプリを作成してローカルで実行する
 ms.topic: conceptual
 ms.date: 06/01/2020
-ms.openlocfilehash: 32bd9e1f2b30d57ad573eb9be3fa22b9e246b0e9
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.custom: devx-track-javascript
+ms.openlocfilehash: 6440f75d11bd4eb68dfbcf4e1dcf6b2b27c0496f
+ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85792539"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "90772925"
 ---
 # <a name="test-local-deno-apps"></a>ローカル Deno アプリをテストする
 

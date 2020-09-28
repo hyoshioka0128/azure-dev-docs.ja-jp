@@ -3,14 +3,15 @@ title: コンテナー化された Node.js アプリを Visual Studio Code か�
 description: 'チュートリアル パート 8: リソースをクリーンアップする'
 ms.topic: conceptual
 ms.date: 09/20/2019
-ms.openlocfilehash: dd71ec5affdd1696544ec166ad8517b376958cab
-ms.sourcegitcommit: 553da4e9aa988e5bb823364244ea81961cee5bc7
+ms.custom: devx-track-javascript
+ms.openlocfilehash: d05766092022772c96fa745f9a52aa4901b27f82
+ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85792899"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "90772705"
 ---
-# <a name="clean-up-resources"></a>リソースをクリーンアップする
+# <a name="part-8-clean-up-resources"></a>パート 8 リソースをクリーンアップする
 
 [前の手順:ログのストリーミング](tutorial-vscode-docker-node-07.md)
 

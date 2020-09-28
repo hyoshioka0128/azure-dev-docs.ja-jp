@@ -4,12 +4,12 @@ description: Python 用 Azure SDK ライブラリ内の管理ライブラリを�
 ms.date: 05/29/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 9db37e1cc496333c825789cc850ed6750907fa88
-ms.sourcegitcommit: 2f98cf2a394d4fd82ddc917ac1041c1dc08473b6
+ms.openlocfilehash: 03a2f8b8f8830916243db0778d16650da1892b04
+ms.sourcegitcommit: b03cb337db8a35e6e62b063c347891e44a8a5a13
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89275176"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91110464"
 ---
 # <a name="example-use-the-azure-libraries-to-provision-and-deploy-a-web-app"></a>例:Azure ライブラリを使用して Web アプリをプロビジョニングしてデプロイする
 
@@ -144,7 +144,7 @@ print(f"Provisioned web app {web_app_result.name} at {web_app_result.default_hos
 #
 # You can call this method again to change the repo.
 
-REPO_URL = 'https://github.com/kraigb/python-docs-hello-world'
+REPO_URL = 'https://github.com/<your_fork>/python-docs-hello-world'
 
 poller = app_service_client.web_apps.create_or_update_source_control(RESOURCE_GROUP_NAME,
     WEB_APP_NAME,
@@ -192,7 +192,7 @@ python provision_deploy_web_app.py
 ## <a name="7-clean-up-resources"></a>7:リソースをクリーンアップする
 
 ```azurecli
-az group delete -n PythonAzureExample-WebApp-rg
+az group delete -n PythonAzureExample-WebApp-rg --no-wait
 ```
 
 この例でプロビジョニングしたリソースを残す必要がなければ、今後サブスクリプションに課金されないようにするために、このコマンドを実行してください。

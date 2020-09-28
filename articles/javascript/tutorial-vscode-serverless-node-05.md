@@ -1,17 +1,17 @@
 ---
-title: Azure Functions アプリケーションを Azure にデプロイした後にリソースをクリーンアップする
-description: チュートリアル パート 5、リソースをクリーンアップする
+title: Azure Functions アプリケーションをデプロイした後にリソースをクリーンアップする
+description: リソースをクリーンアップするには、Azure:Functions エクスプローラーで Function App を右クリックし、 [Delete Function App]\(関数アプリの削除\) を選択します。
 ms.topic: conceptual
-ms.date: 09/23/2019
+ms.date: 08/31/2020
 ms.custom: devx-track-javascript
-ms.openlocfilehash: 67745cdc9ac27b6f8c1bdfbd6f4dbaff0f39ce4a
-ms.sourcegitcommit: 815cf2acff71e849735f7afce54723f03ffa5df3
+ms.openlocfilehash: 7348f367547f0e61daf91f68d6e11b83a1b1a4bc
+ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88501494"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90773112"
 ---
-# <a name="clean-up-resources-after-deploying-an-azure-functions-app-with-visual-studio-code"></a>Visual Studio Code を使用して Azure Functions アプリをデプロイした後にリソースをクリーンアップする
+# <a name="tutorial-for-azure-functions-clean-up-resources"></a>Azure Functions のチュートリアル: リソースをクリーンアップする
 
 [前の手順:Functions アプリをデプロイする](tutorial-vscode-serverless-node-04.md)
 
@@ -19,9 +19,18 @@ ms.locfileid: "88501494"
 
 [Azure portal](https://portal.azure.com) にアクセスし、左側にあるナビゲーション ウィンドウから **[リソース グループ]** を選択し、このチュートリアルで作成したリソース グループを選択し、 **[リソース グループの削除]** コマンドを使用することもできます。
 
-## <a name="next-steps"></a>次のステップ
+[!INCLUDE [Next steps for using VSCode extensions](includes/tutorial-next-steps-vscode-extensions.md)]
 
-[!INCLUDE [tutorial-next-steps](includes/tutorial-next-steps.md)]
+[!INCLUDE [Next steps for using JavaScript on Azure](includes/tutorial-next-steps-js-azure.md)]
+
+## <a name="learn-more-about-azure-functions"></a>Azure Functions の詳細について
+
+* [Azure Functions 開発者ガイド](/azure/azure-functions/functions-reference)
+* [Azure Functions の JavaScript 開発者向けガイド](/azure/azure-functions/functions-reference-node)
+* [Azure Functions のセキュリティ保護](/azure/azure-functions/security-concepts)
+* [ストレージ](/azure/azure-functions/storage-considerations)と[パフォーマンス](/azure/azure-functions/functions-best-practices)の考慮事項
+
+## <a name="next-steps"></a>次のステップ
 
 > [!div class="nextstepaction"]
 > [終わりました](node-howto-write-serverless-code.md) [問題が発生しました](https://www.research.net/r/PWZWZ52?tutorial=node-deployment-azurefunctions&step=clean-up-resources)

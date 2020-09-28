@@ -1,25 +1,25 @@
 ---
 title: チュートリアル:Visual Studio Code を使用して Docker コンテナーを Azure App Service にデプロイする
-description: チュートリアルの手順1、コンテナーの操作、概要、前提条件。
+description: チュートリアル ステップ 1、コンテナーの環境を構成する
 ms.topic: conceptual
-ms.date: 09/12/2019
+ms.date: 09/17/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: f0fb983a596ca1828809d1d829af5517e8af66df
-ms.sourcegitcommit: 9e282fc2ec967bee181c3034e7e70b28ae308905
+ms.openlocfilehash: 447643662ef3c839823d81d29cfb55cc2ee442b2
+ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89473557"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90772611"
 ---
 # <a name="tutorial-deploy-docker-containers-to-azure-app-service-with-visual-studio-code"></a>チュートリアル:Visual Studio Code を使用して Docker コンテナーを Azure App Service にデプロイする
 
-この記事では、Visual Studio Code を使用して、コンテナー イメージをコンテナー レジストリから [Azure App Service](/azure/app-service/) にデプロイするプロセスについて説明します。これらはすべて Visual Studio Code 内で実行されます。
+この記事では、Visual Studio Code を使用して、コンテナー イメージをコンテナー レジストリから [Azure App Service](/azure/app-service/) にデプロイするプロセスについて説明します。
 
-このチュートリアルのいずれかの手順で問題が発生した場合は、詳細をお知らせください。 フィードバックを送信するには、各記事の最後にある "**問題が発生しました**" リンクを使用します。
+このチュートリアルのいずれかの手順で問題が発生した場合は、詳細をお知らせください。 各記事の最後にある **[このページ]** フィードバック ボタンを使用してください。
 
 関連するデモ ビデオについては、仮想 PyCon 2020 の「<a href="https://www.youtube.com/watch?v=t79HDLC5kQA&feature=youtu.be&ocid=AID3006292" target="_blank">Django Apps in VS Code dev containers</a>」 (VS Code 開発コンテナーの Django Apps) (youtube.com) をご覧ください。
 
-## <a name="prerequisites"></a>前提条件
+## <a name="configure-your-environment"></a>環境を構成する
 
 - [Azure アカウント](https://azure.microsoft.com/free/?utm_source=campaign&utm_campaign=vscode-tutorial-docker-extension&mktingSource=vscode-tutorial-docker-extension)
 - [Visual Studio Code](https://code.visualstudio.com/)
@@ -33,5 +33,3 @@ ms.locfileid: "89473557"
 
 > [!div class="nextstepaction"]
 > [Azure にサインインしました - 手順 2 に進む >>>](tutorial-deploy-containers-02.md)
-
-問題がある場合 ページの下部にある [このページ] へのフィードバックを使用して、GitHub の問題を送信します。

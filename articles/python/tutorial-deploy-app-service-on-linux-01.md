@@ -1,21 +1,21 @@
 ---
 title: チュートリアル:Visual Studio Code から Azure App Service on Linux に Python アプリをデプロイする
-description: チュートリアルの手順1、Web アプリの操作、概要、前提条件
+description: チュートリアル ステップ 1、App Service の環境を構成する
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: d4544c6e013f20b606303e56ff2169e87383d88c
-ms.sourcegitcommit: 5ab6e90e20a87f9a8baea652befc74158a9b6613
+ms.openlocfilehash: b35fc41707b31bec8e889d2b60becdad56f4e7d9
+ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89614322"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90773075"
 ---
 # <a name="tutorial-deploy-python-apps-to-azure-app-service-on-linux-from-visual-studio-code"></a>チュートリアル:Visual Studio Code から Azure App Service on Linux に Python アプリをデプロイする
 
 この記事では、Visual Studio Code と [Azure App Service](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azureappservice) 拡張機能を使用して、Azure App Service on Linux に Python アプリケーションをデプロイする手順について説明します。
 
-このチュートリアルのいずれかの手順で問題が発生した場合は、詳細をお知らせください。 フィードバックを送信するには、各記事の最後にある "**問題が発生しました**" リンクを使用します。
+このチュートリアルのいずれかの手順で問題が発生した場合は、詳細をお知らせください。 フィードバックを送信するには、各記事の最後にある "**問題がある場合はお知らせください。** " のリンクを使用します。
 
 デモ ビデオについては、仮想 PyCon 2020 の <a href="https://www.youtube.com/watch?v=dNVvFttc-sA&feature=youtu.be&ocid=AID3006292" target="_blank">VS Code と Azure App Service での WebApps のビルド</a>に関する動画 (youtube.com 2020) をご覧ください。
 
@@ -25,7 +25,7 @@ ms.locfileid: "89614322"
 > [!TIP]
 > [Azure App Service on Linux](/azure/app-service/overview#app-service-on-linux) は、定義済みの Docker コンテナーでソース コードを実行します。 そのコンテナーでは、Python 3.7 と [Gunicorn](https://gunicorn.org) Web サーバーを使用してアプリが実行されます。 このコンテナーの特性は、[App Service on Linux 向けの Python アプリの構成](/azure/app-service/configure-language-python)に関するページで説明されています。 コンテナーの定義自体は [github.com/Azure-App-Service/python](https://github.com/Azure-App-Service/python/tree/master/3.7) にあります。
 
-## <a name="prerequisites"></a>前提条件
+## <a name="configure-your-environment"></a>環境を構成する
 
 - [Azure サブスクリプション](#azure-subscription)。
 - [Visual Studio Code と Azure App Service 拡張機能](#visual-studio-code-python-and-the-azure-app-service-extension)。

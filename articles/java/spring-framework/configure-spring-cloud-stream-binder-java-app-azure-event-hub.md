@@ -3,17 +3,17 @@ title: Azure Event Hubs を使用する Spring Cloud Stream Binder アプリケ�
 description: Spring Boot Initializr を使用して作成された Java ベースの Spring Cloud Stream Binder アプリケーションを、Azure Event Hubs を使用するように構成する方法について説明します。
 services: event-hubs
 documentationcenter: java
-ms.date: 12/19/2018
+ms.date: 09/11/2020
 ms.service: event-hubs
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 50b6046e8b4435d8e75af1bb8df360be018eb8ec
-ms.sourcegitcommit: 5ab6e90e20a87f9a8baea652befc74158a9b6613
+ms.openlocfilehash: f19f3a8d3e101b6cd8d6e9173e2dd99eae590ef9
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89614299"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90831278"
 ---
 # <a name="how-to-create-a-spring-cloud-stream-binder-application-with-azure-event-hubs"></a>Azure Event Hubs を使用する Spring Cloud Stream Binder アプリケーションを作成する方法
 
@@ -40,38 +40,41 @@ ms.locfileid: "89614299"
 
 1. Azure portal (<https://portal.azure.com/>) を参照し、サインインします。
 
-1. **[+ リソースの作成]** をクリックし、*Event Hubs** を検索します。
+1. **[+ リソースの作成]** を選択し、 *[Event Hubs]* を検索します。
 
-1. **Create** をクリックしてください。
+1. **[作成]** を選択します。
 
-   ![Azure イベント ハブの名前空間を作成する][IMG01]
+   >[!div class="mx-imgBorder"]
+   >![Azure イベント ハブの名前空間を作成する][IMG01]
 
 1. **[名前空間の作成]** ページで、次の情報を入力します。
 
-   * 一意の**名前**を入力します。この名前は、イベント ハブの名前空間の URI の一部になります。 たとえば、 **[名前]** に「**wingtiptoys**」と入力した場合、URI は *wingtiptoys.servicebus.windows.net* になります。
-   * 価格レベル。
    * 名前空間に使用する**サブスクリプション**を選択します。
    * 名前空間の新しい**リソース グループ**を作成するか、既存のリソース グループを選択するかを指定します。
+   * 一意の**名前空間名**を入力します。この名前は、イベント ハブの名前空間の URI の一部になります。 たとえば、 **[名前空間名]** に「*wingtiptoys-space*」と入力した場合、URI は `wingtiptoys-space.servicebus.windows.net` になります。
    * イベント ハブの名前空間の**場所**を指定します。
+   * 価格レベル。
    * 名前空間の **[スループット ユニット]** を指定することもできます。
+   
+   >[!div class="mx-imgBorder"]
+   >![Azure イベント ハブの名前空間のオプションを指定する][IMG02]
 
-   ![Azure イベント ハブの名前空間のオプションを指定する][IMG02]
-
-1. 上記のオプションを指定したら、 **[作成]** をクリックして名前空間を作成します。
+1. 上記のオプションを指定したら、 **[確認および作成]** を選択し、指定した内容を確認し、 **[作成]** を選択して名前空間を作成します。
 
 ## <a name="create-an-azure-event-hub-in-your-namespace"></a>名前空間に Azure イベント ハブを作成する
 
-名前空間のデプロイ後、名前空間にイベント ハブを作成できます。
+名前空間をデプロイしたら、 **[リソースに移動]** を選択して **[Event Hubs 名前空間]** のページを開きます。ここで、名前空間にイベント ハブを作成できます。
 
-1. 前の手順で作成した名前空間に移動します。
+1. 前のセクションで作成した名前空間に移動します。
 
-1. 上部のメニュー バーの **[+ イベント ハブ]** をクリックします。
+1. 上部のメニュー バーの **[+ Event Hubs]** を選択します。
 
 1. イベント ハブに名前を指定します。
 
-1. **Create** をクリックしてください。
+1. **[作成]** を選択します。
 
-   ![イベント ハブの作成][IMG05]
+   >[!div class="mx-imgBorder"]
+   >![イベント ハブの作成][IMG05]
 
 ### <a name="create-an-azure-storage-account-for-your-event-hub-checkpoints"></a>イベント ハブのチェックポイント用の Azure ストレージ アカウントを作成する
 
@@ -79,7 +82,7 @@ ms.locfileid: "89614299"
 
 1. Azure portal (<https://portal.azure.com/>) を参照します。
 
-1. **[+ 作成]** をクリックし、 **[Storage]** 、 **[ストレージ アカウント]** の順にクリックします。
+1. **[+ リソースの作成]** を選択し、 **[ストレージ]** を選択して、 **[ストレージ アカウント]** を選択します。
 
 1. **[ストレージ アカウントの作成]** ページで、次の情報を入力します。
 
@@ -87,12 +90,13 @@ ms.locfileid: "89614299"
    * ストレージ アカウントの新しい**リソース グループ**を作成するか、既存のリソース グループを選択するかを指定します。
    * ストレージ アカウント用に一意の**名前**を入力します。
    * ストレージ アカウントの**場所**を指定します。
+   
+   >[!div class="mx-imgBorder"]
+   >![Azure ストレージ アカウントのオプションを指定する][IMG08]
 
-   ![Azure ストレージ アカウントのオプションを指定する][IMG08]
+1. 上記のオプションを指定したら、 **[確認および作成]** を選択してストレージ アカウントを作成します。
 
-1. 上記のオプションを指定したら、 **[確認および作成]** をクリックしてストレージ アカウントを作成します。
-
-1. 仕様を確認し、 **[作成]** をクリックします。  デプロイには数分かかります。
+1. 指定した内容を確認し、 **[作成]** を選択します。  デプロイには数分かかります。
 
 ## <a name="create-a-simple-spring-boot-application-with-the-spring-initializr"></a>Spring Initializr でシンプルな Spring Boot アプリケーションを作成する
 
@@ -103,18 +107,19 @@ ms.locfileid: "89614299"
 1. 次のオプションを指定します。
 
    * **Java** で **Maven** プロジェクトを生成します。
-   * **Spring Boot** のバージョンとして、2.0 以上を指定します。
+   * **Spring Boot** のバージョンとして、2.2 以上を指定します。
    * アプリケーションの**グループ (Group)** と**成果物 (Artifact)** の名前を指定します。
-   * **Web** 依存関係を追加します。
+   * *Web* 依存関係を追加します。
 
-      ![基本的な Spring Initializr オプション][SI01]
+   >[!div class="mx-imgBorder"]
+   >![基本的な Spring Initializr オプション][SI01]
 
    > [!NOTE]
    >
-   > Spring Initializr では、**グループ (Group)** と**成果物 (Artifact)** の名前を使用してパッケージ名を作成します (例: *com.wingtiptoys.eventhub*)。
+   > Spring Initializr では、**グループ (Group)** と**成果物 (Artifact)** の名前を使用してパッケージ名を作成します (例: *com.contoso.eventhubs.sample*)。
    >
 
-1. 上記のオプションを指定したら、 **[Generate Project]\(プロジェクトの生成\)** をクリックします。
+1. 上記のオプションを指定したら、 **[GENERATE CTRL +]** を選択します。
 
 1. メッセージが表示されたら、ローカル コンピューター上のパスにプロジェクトをダウンロードします。
 
@@ -124,11 +129,11 @@ ms.locfileid: "89614299"
 
 1. アプリのルート ディレクトリで *pom.xml* ファイルを探します。次に例を示します。
 
-   `C:\SpringBoot\eventhub\pom.xml`
+   *C:\SpringBoot\eventhubs-sample\pom.xml*
 
-   または
+   - または -
 
-   `/users/example/home/eventhub/pom.xml`
+   */users/example/home/eventhubs-sample/pom.xml*
 
 1. テキスト エディターで *pom.xml* ファイルを開き、Spring Cloud Azure Event Hub Stream Binder スターターを `<dependencies>` のリストに追加します。
 
@@ -148,14 +153,14 @@ ms.locfileid: "89614299"
 
 1. Spring Boot アプリの *resources* ディレクトリに移動します。次に例を示します。
 
-   ```shell
-   cd C:\SpringBoot\eventhub\src\main\resources
+   ```bash
+   cd C:\SpringBoot\eventhubs-sample\src\main\resources
    ```
 
    または
 
-   ```shell
-   cd /users/example/home/eventhub/src/main/resources
+   ```bash
+   cd /users/example/home/eventhubs-sample/src/main/resources
    ```
 
 1. Azure アカウントにサインインします。
@@ -181,7 +186,7 @@ ms.locfileid: "89614299"
        "state": "Enabled",
        "tenantId": "22222222-2222-2222-2222-222222222222",
        "user": {
-         "name": "gena.soto@wingtiptoys.com",
+         "name": "user@contoso.com",
          "type": "user"
        }
      }
@@ -221,11 +226,11 @@ ms.locfileid: "89614299"
 
 1. アプリの *resources* ディレクトリで *application.properties* を探します。次に例を示します。
 
-   `C:\SpringBoot\eventhub\src\main\resources\application.properties`
+   *C:\SpringBoot\eventhubs-sample\src\main\resources\application.properties*
 
-   または
+   - または -
 
-   `/users/example/home/eventhub/src/main/resources/application.properties`
+   */users/example/home/eventhubs-sample/src/main/resources/application.properties*
 
 2. テキスト エディターで *application.properties* ファイルを開きます。次の行を追加し、サンプルの値をイベント ハブの適切なプロパティに置き換えます。
 
@@ -263,26 +268,28 @@ ms.locfileid: "89614299"
 
 1. アプリのパッケージ ディレクトリでメイン アプリケーションの Java ファイルを探します。次に例を示します。
 
-   `C:\SpringBoot\eventhub\src\main\java\com\wingtiptoys\eventhub\EventhubApplication.java`
+   *C:\SpringBoot\eventhubs-sample\src\main\java\com\wingtiptoys\eventhub\EventhubApplication.java*
 
-   または
+   - または -
 
-   `/users/example/home/eventhub/src/main/java/com/wingtiptoys/eventhub/EventhubApplication.java`
+   */users/example/home/eventhubs-sample/src/main/java/com/wingtiptoys/eventhub/EventhubApplication.java*
 
 1. テキスト エディターでメイン アプリケーションの Java ファイルを開き、ファイルに次の行を追加します。
 
    ```java
-   package com.wingtiptoys.eventhub;
-
-   import org.springframework.boot.SpringApplication;
-   import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-   @SpringBootApplication
-   public class EventhubApplication {
-      public static void main(String[] args) {
-         SpringApplication.run(EventhubApplication.class, args);
-      }
-   }
+    package com.contoso.eventhubs.sample;
+    
+    import org.springframework.boot.SpringApplication;
+    import org.springframework.boot.autoconfigure.SpringBootApplication;
+    
+    @SpringBootApplication
+    public class EventhubsSampleApplication {
+    
+        public static void main(String[] args) {
+            SpringApplication.run(EventhubsSampleApplication.class, args);
+        }
+    
+    }
    ```
 
 1. メイン アプリケーションの Java ファイルを保存して閉じます。
@@ -291,31 +298,31 @@ ms.locfileid: "89614299"
 
 1. アプリのパッケージ ディレクトリに *EventhubSource.java* という名前の新しい Java ファイルを作成し、テキスト エディターでファイルを開いて、次の行を追加します。
 
-   ```java
-   package com.wingtiptoys.eventhub;
-
-   import org.springframework.beans.factory.annotation.Autowired;
-   import org.springframework.cloud.stream.annotation.EnableBinding;
-   import org.springframework.cloud.stream.messaging.Source;
-   import org.springframework.messaging.support.GenericMessage;
-   import org.springframework.web.bind.annotation.PostMapping;
-   import org.springframework.web.bind.annotation.RequestBody;
-   import org.springframework.web.bind.annotation.RestController;
-
-   @EnableBinding(Source.class)
-   @RestController
-   public class EventhubSource {
-
-      @Autowired
-      private Source source;
-
-      @PostMapping("/messages")
-      public String postMessage(@RequestBody String message) {
-         this.source.output().send(new GenericMessage<>(message));
-         return message;
-      }
-   }
-   ```
+    ```java
+    package com.contoso.eventhubs.sample;
+    
+    import org.springframework.beans.factory.annotation.Autowired;
+    import org.springframework.cloud.stream.annotation.EnableBinding;
+    import org.springframework.cloud.stream.messaging.Source;
+    import org.springframework.messaging.support.GenericMessage;
+    import org.springframework.web.bind.annotation.PostMapping;
+    import org.springframework.web.bind.annotation.RequestBody;
+    import org.springframework.web.bind.annotation.RestController;
+    
+    @EnableBinding(Source.class)
+    @RestController
+    public class EventhubSource {
+    
+        @Autowired
+        private Source source;
+    
+        @PostMapping("/messages")
+        public String postMessage(@RequestBody String message) {
+            this.source.output().send(new GenericMessage<>(message));
+            return message;
+        }
+    }
+    ```
 1. *EventhubSource.java* ファイルを保存して閉じます。
 
 ### <a name="create-a-new-class-for-the-sink-connector"></a>シンク コネクタの新しいクラスを作成する
@@ -323,10 +330,10 @@ ms.locfileid: "89614299"
 1. アプリのパッケージ ディレクトリに *EventhubSink.java* という名前の新しい Java ファイルを作成し、テキスト エディターでファイルを開いて、次の行を追加します。
 
    ```java
-   package com.wingtiptoys.eventhub;
+   package com.contoso.eventhubs.sample;
 
    import com.microsoft.azure.spring.integration.core.AzureHeaders;
-   import com.microsoft.azure.spring.integration.core.api.Checkpointer;
+   import com.microsoft.azure.spring.integration.core.api.reactor.Checkpointer;
    import org.slf4j.Logger;
    import org.slf4j.LoggerFactory;
    import org.springframework.cloud.stream.annotation.EnableBinding;
@@ -360,29 +367,32 @@ ms.locfileid: "89614299"
 
 1. コマンド プロンプトを開き、ディレクトリを *pom.xml* ファイルが置かれているフォルダーに変更します。次に例を示します。
 
-   `cd C:\SpringBoot\eventhub`
-
+   ```bash
+    cd C:\SpringBoot\eventhubs-sample
+   ```
    または
 
-   `cd /users/example/home/eventhub`
+   ```bash
+   cd /users/example/home/eventhubs-sample
+   ```
 
 1. Spring Boot アプリケーションを Maven でビルドし、実行します。次に例を示します。
 
-   ```shell
-   mvn clean package
+   ```bash
+   mvn clean package -Dmaven.test.skip=true
    mvn spring-boot:run
    ```
 
-1. アプリケーションが実行されたら、*curl* を使用してアプリケーションをテストできます。次に例を示します。
+1. アプリケーションが実行されたら、`curl` を使用してアプリケーションをテストできます。次に例を示します。
 
-   ```shell
+   ```bash
    curl -X POST -H "Content-Type: text/plain" -d "hello" http://localhost:8080/messages
    ```
    アプリケーションのログに送信された "hello" が表示されます。 次に例を示します。
 
-   ```shell
-   [Thread-13] INFO com.wingtiptoys.eventhub.EventhubSink - New message received: 'hello'
-   [pool-10-thread-7] INFO com.wingtiptoys.eventhub.EventhubSink - Message 'hello' successfully checkpointed
+   ```text
+   2020-09-11 15:11:12.138  INFO 7616 --- [      elastic-4] c.contoso.eventhubs.sample.EventhubSink  : New message received: 'hello'
+   2020-09-11 15:11:12.406  INFO 7616 --- [ctor-http-nio-1] c.contoso.eventhubs.sample.EventhubSink  : Message 'hello' successfully checkpointed
    ```
 
 ## <a name="next-steps"></a>次のステップ
@@ -390,7 +400,7 @@ ms.locfileid: "89614299"
 Spring および Azure の詳細については、Azure ドキュメント センターで引き続き Spring に関するドキュメントをご確認ください。
 
 > [!div class="nextstepaction"]
-> [Azure の Spring](/azure/developer/java/spring-framework)
+> [Azure の Spring](./index.yml)
 
 ### <a name="additional-resources"></a>その他のリソース
 
@@ -409,7 +419,7 @@ Java での Azure の使用の詳細については、「[Java 開発者向け�
 <!-- URL List -->
 
 [無料の Azure アカウント]: https://azure.microsoft.com/pricing/free-trial/
-[Java 開発者向けの Azure]: /azure/developer/java/
+[Java 開発者向けの Azure]: ../index.yml
 [Azure DevOps と Java の操作]: /azure/devops/
 [MSDN サブスクライバーの特典]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
 [Spring Boot]: http://projects.spring.io/spring-boot/
@@ -420,13 +430,7 @@ Java での Azure の使用の詳細については、「[Java 開発者向け�
 
 [IMG01]: media/configure-spring-cloud-stream-binder-java-app-azure-event-hub/create-event-hub-01.png
 [IMG02]: media/configure-spring-cloud-stream-binder-java-app-azure-event-hub/create-event-hub-02.png
-[IMG03]: media/configure-spring-cloud-stream-binder-java-app-azure-event-hub/create-event-hub-03.png
-[IMG04]: media/configure-spring-cloud-stream-binder-java-app-azure-event-hub/create-event-hub-04.png
 [IMG05]: media/configure-spring-cloud-stream-binder-java-app-azure-event-hub/create-event-hub-05.png
-[IMG06]: media/configure-spring-cloud-stream-binder-java-app-azure-event-hub/create-event-hub-06.png
-[IMG07]: media/configure-spring-cloud-stream-binder-java-app-azure-event-hub/create-event-hub-07.png
 [IMG08]: media/configure-spring-cloud-stream-binder-java-app-azure-event-hub/create-event-hub-08.png
 
 [SI01]: media/configure-spring-cloud-stream-binder-java-app-azure-event-hub/create-project-01.png
-[SI02]: media/configure-spring-cloud-stream-binder-java-app-azure-event-hub/create-project-02.png
-[SI03]: media/configure-spring-cloud-stream-binder-java-app-azure-event-hub/create-project-03.png

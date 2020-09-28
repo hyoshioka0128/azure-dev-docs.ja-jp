@@ -1,15 +1,15 @@
 ---
 title: Azure で開発するためのローカル JavaScript 環境を構成する
 description: エディター、Azure SDK ライブラリ、オプションのツール、ライブラリ認証に必要な資格情報など、Azure で作業するためのローカル JavaScript 開発環境を設定する方法。
-ms.date: 07/01/2020
+ms.date: 09/22/2020
 ms.topic: conceptual
 ms.custom: devx-track-javascript
-ms.openlocfilehash: 1071985de770d8c1d9e5e78a25e8556048857a3e
-ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
+ms.openlocfilehash: 93d76b4268d9d9b1533599ce474fe0c554723e28
+ms.sourcegitcommit: 823d5e5b8bbac36fa08a578a0eb2efaa0239bfb7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88218937"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91128951"
 ---
 # <a name="configure-your-local-javascript-dev-environment-for-azure"></a>Azure 用のローカル JavaScript 開発環境を構成する
 
@@ -22,7 +22,7 @@ ms.locfileid: "88218937"
 Azure リソースは、Azure を使用するための課金単位であるサブスクリプション内に作成されます。 無料のリソースを作成することはできますが (各サブスクリプションには、ほとんどのサービスに無料のリソースが用意されています)、リソースを運用環境にデプロイする予定の場合は、有料階層のリソースを作成する必要があります。
 
 * 既にサブスクリプションをお持ちの場合は、新しいものを作成する必要はありません。 [Azure portal](https://portal.azure.com) を使用して、既存のサブスクリプションにアクセスしてください。
-* [無料試用版サブスクリプションを開始する]()
+* [無料試用版サブスクリプションを開始する](https://azure.microsoft.com/free/cognitive-services)
 
 ## <a name="one-time-installation"></a>1 回限りのインストール
 
@@ -30,10 +30,10 @@ Azure リソースは、Azure を使用するための課金単位であるサ�
 
 |名前またはインストーラー|説明|
 |--|--|
-|[Node.js]()|ローカル ワークステーション開発用の最新の長期サポート (LTS) ランタイム環境をインストールします。 |
-| NPM (最新バージョンの Node.js と共にインストールされます) または [Yarn]()|Azure SDK ライブラリをインストールするためのパッケージ マネージャー。|
-|[VSCode](https://aka.ms/vscode-deploy)| VSCode は、優れた JavaScript 統合とコーディングのエクスペリエンスを提供しますが、必須ではありません。 任意のコード エディターを使用することができます。 このドキュメントにおいては、別のエディターを使用している場合、Azure との統合を確認するか、Azure CLI を使用してください。|
-|[Azure CLI]()|Azure CLI を使用すると、コマンド ライン、ターミナル、または bash シェルから Azure リソースを再作成したり管理したりすることができます。|
+|[Node.js](https://www.npmjs.com/)|ローカル ワークステーション開発用の最新の長期サポート (LTS) ランタイム環境をインストールします。 |
+| NPM (最新バージョンの Node.js と共にインストールされます) または [Yarn](https://yarnpkg.com/)|Azure SDK ライブラリをインストールするためのパッケージ マネージャー。|
+|[Visual Studio Code](https://code.visualstudio.com/)| Visual Studio Code は、優れた JavaScript 統合とコーディングのエクスペリエンスを提供しますが、必須ではありません。 任意のコード エディターを使用することができます。 このドキュメントにおいては、別のエディターを使用している場合、Azure との統合を確認するか、Azure CLI を使用してください。|
+|[Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli?view=azure-cli-latest)|Azure CLI を使用すると、コマンド ライン、ターミナル、または bash シェルから Azure リソースを再作成したり管理したりすることができます。|
 
 > [!CAUTION]
 > Azure Web アプリや Azure Container Instance など、コードのランタイム環境として Azure リソースを使用する予定がある場合は、ローカルの Node.js 開発環境が、使用する予定の Azure リソース ランタイムと一致していることを確認する必要があります。
@@ -60,140 +60,7 @@ Azure リソースは、Azure を使用するための課金単位であるサ�
 
 ### <a name="create-service-principal"></a>サービス プリンシパルの作成
 
-サービス プリンシパルの作成を簡単にするには、次の手順と提供されるスクリプトを使用して、Azure クイックスタートで使用するサービス プリンシパルを作成します。 次の手順では、ユーザー名の例として `JOE` という名前を使用します。 これを独自の名前または電子メール エイリアスに置き換えてください。
-
-1. VSCode を開き、[Azure CLI ツール](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azurecli)拡張機能をインストールします。 この拡張機能を使用すると、スクリプト ファイルから Azure CLI コマンドを 1 行ずつ実行できます。 各コマンドを実行すると、隣接するドキュメントが VSCode で開き、結果が表示されます。
-
-1. `create-service-principal.sh` という名前の新しいファイルを作成し、次の Azure コマンドをこのファイルにコピーします。
-
-    ```azurecli
-    # Replace ALL-CAPS variables with your own values
-
-    ####################################
-    # Login as you
-    ####################################
-
-    # Login - command opens browser, select your account to finish authentication, then close browser
-    az login
-
-    ####################################
-    # Optional, set default subscription
-    ####################################
-
-    # If you have more than 1 subscription, use the `list` command to find the subscription, then use the `set` command to set the default by name or id
-    az account list
-    az account set --subscription MYCOMPANYSUBSCRIPTION
-
-    ####################################
-    # Create service principal
-    ####################################
-
-    # Create a service principal with a name that indicates its purpose and owner - the response includes the `appId` which is necessary in some of the remaining commands
-    az ad sp create-for-rbac --name JOE-SERVICEPRINCIPAL-DOCUMENT-QUICKSTARTS --skip-assignment
-
-    ####################################
-    # Add role of contributor
-    ####################################
-
-    # Add contributor role to service principal so it can create Azure resources
-    az role assignment create --assignee APP-ID --role CONTRIBUTOR
-
-    ####################################
-    # Optional, verify role assignment
-    ####################################
-
-    # Verify role assignment for service principal
-    az role assignment list --assignee APP-ID
-
-    ####################################
-    # Logout
-    ####################################
-
-    # Logout off Azure CLI
-    az logout
-    ```
-
-    この手順の残りのステップについては、そのファイル内の `#` で始まって**いない**各行について、その行に VSCode カーソルを置き、**右クリック**して **[Run Line in Editor]\(エディターで行を実行\)** を選択します。
-
-    :::image type="content" source="media/development-setup/vscode-rightclick-run-line-in-editor.png" alt-text="この手順の残りのステップでは、そのファイル内の `#` で始まっていない各行について、その行に VSCode カーソルを置き、右クリックして [Run Line in Editor]\(エディターで行を実行\) を選択します。":::
-
-1. 次の行で右クリック/[Run Line in Editor]\(エディターで行を実行\) を使用して、Azure CLI を用いて、自分のユーザー アカウントで Azure に対する認証を行います。 このコマンドにより、インターネット ブラウザーが開きます。 Azure アカウントを選択します。 アカウントが認証されたら、そのブラウザー ウィンドウを閉じます。これは、残りのタスクでは必要ありません。
-
-    ```azurecli
-    az login
-    ```
-
-    応答には、アクセス権のあるすべてのサブスクリプションが含まれ、別の VSCode ドキュメント ウィンドウに JSON 配列として表示されます。 `name` または `id` プロパティを見つけます。 残りのコマンドで、これらの値のいずれかが必要です。
-
-    ```json
-    [  {
-    "cloudName": "AzureCloud",
-    "id": "320d9379-aaaa-bbbb-cccc-52f2b0fc40ac",
-    "isDefault": false,
-    "name": "contoso-development-team",
-    "state": "Enabled",
-    "tenantId": "72f988bf-aaaa-bbbb-cccc-2d7cd011db47",
-    "user": {
-      "name": "joe@contoso.com",
-      "type": "user"
-    }
-    }]
-    ```
-
-    `isDefault: true` でマークされたサブスクリプションは、残りのコマンドを受け取るサブスクリプションです。 既定のサブスクリプションを変更する必要がある場合は、`az account set --subscription <name or id>` コマンドを使用します。
-
-
-<a name='create-service-principal-command'></a>
-
-1. 次の行で右クリック/[Run Line in Editor]\(エディターで行を実行\) を使用して、自分のユーザー アカウントに関連付けられたサービス プリンシパルを作成します。 `--skip-assignment` パラメーターにより、このサービス プリンシパルには、スコープ付きアクセス許可がまだありません。
-
-
-    ```azurecli
-    az ad sp create-for-rbac --name JOE-SERVICEPRINCIPAL-DOCUMENT-QUICKSTARTS --skip-assignment
-    ```
-
-    サービス プリンシパル名は `JOE-SERVICEPRINCIPAL-DOCUMENT-QUICKSTARTS` です。 Azure portal の Active Directory サービスのアプリケーション一覧の下に、自分の Azure ユーザー アカウントに関連付けられたすべてのサービス プリンシパルの一覧が表示されます。
-
-    この結果には、必要な情報である `appId` と `password` が含まれています。 このファイルを `create-service-principal.json` という名前で保存します
-
-    ```json
-    {
-      "appId": "93453d56-aaaa-bbbb-cccc-db600ecc4f6a",
-      "displayName": "JOE-SERVICEPRINCIPAL-DOCUMENT-QUICKSTARTS",
-      "name": "http://JOE-SERVICEPRINCIPAL-DOCUMENT-QUICKSTARTS",
-      "password": "d88b21e0-aaaa-bbbb-cccc-e1e9b06d50f6",
-      "tenant": "72f988bf-aaaa-bbbb-cccc-2d7cd011db47"
-    }
-    ```
-
-1. 次の行で右クリック/[Run Line in Editor]\(エディターで行を実行\) を使用して、Azure リソースを作成するためのスコープ付きアクセス許可を割り当てます。 `CONTRIBUTOR` スコープにより、サービス プリンシパルは Azure リソースを作成できます。
-
-    ```azurecli
-    az role assignment create --assignee APP-ID --role CONTRIBUTOR
-    ```
-
-    結果は次のようになります。
-
-    ```json
-    {
-      "canDelegate": null,
-      "id": "/subscriptions/a5b1ca8b-aaaa-bbbb-cccc-4cf7ec4791a0/providers/Microsoft.Authorization/roleAssignments/3a155db5-aaaa-bbbb-cccc-0cbfebf75464",
-      "name": "3a155db5-aaaa-bbbb-cccc-0cbfebf75464",
-      "principalId": "c05d56c9-aaaa-bbbb-cccc-0535d6167ed4",
-      "principalType": "ServicePrincipal",
-      "roleDefinitionId": "/subscriptions/a5b1ca8b-aaaa-bbbb-cccc-4cf7ec4791a0/providers/Microsoft.Authorization/roleDefinitions/b24988ac-aaaa-bbbb-cccc-20f7382dd24c",
-      "scope": "/subscriptions/a5b1ca8b-aaaa-bbbb-cccc-4cf7ec4791a0",
-      "type": "Microsoft.Authorization/roleAssignments"
-    }
-    ```
-
-    この時点で、サービス プリンシパルを使用する準備ができました。
-
-1. 次の行で右クリック/[Run Line in Editor]\(エディターで行を実行\) を使用して、次のコマンドで Azure CLI からログアウトします。
-
-    ```azurecli
-    az logout
-    ```
+サービス プリンシパルを[作成する方法](node-sdk-azure-authenticate-principal.md)について学習します。 作成ステップからの応答を忘れずに保存してください。 サービス プリンシパルを使用するには、`appId`、`tenant`、および `password` の値が必要です。
 
 ## <a name="steps-for-each-new-development-project-setup"></a>新しい開発プロジェクトのセットアップごとの手順
 
@@ -206,82 +73,19 @@ Azure を使用する新しいプロジェクトでは、それぞれ次のこ�
 
 ### <a name="library-versions"></a>ライブラリのバージョン
 
-すべての Azure ライブラリは `@azure` スコープに移行中です。
+[Azure ライブラリ](azure-sdk-library-package-index.md)では、一般的に `@azure` スコープが使用されます。
 
-| ライブラリの種類 | 説明|
-|--|--|
-|モダン|`@azure` (たとえば、[@azure/storage-blob](https://www.npmjs.com/package/@azure/storage-blob) および [@azure/cosmos](https://www.npmjs.com/package/@azure/cosmos)) にスコープが設定され、TypeScript 型が含まれます。|
-|古いパッケージ|通常は `azure-` で始まります。 多くのパッケージはこの名前で始まりますが、それらは Microsoft によって生成されたものではありません。 パッケージの所有者が Microsoft または Azure のいずれかであることを確認してください。|
+最新のライブラリでは、`@azure` スコープが使用されます。 通常、Microsoft の古いパッケージは `azure-` で始まります。 多くのパッケージはこの名前で始まりますが、それらは Microsoft によって生成されたものではありません。 パッケージの所有者が Microsoft または Azure のいずれかであることを確認してください。
 
-### <a name="create-resource-using-service-principal"></a>サービス プリンシパルを使用してリソースを作成する
+## <a name="create-azure-resource-with-service-principal"></a>サービス プリンシパルを使用して Azure リソースを作成する
 
-次のセクションでは、サービス プリンシパルを使用して Azure サービス リソースを作成する方法の例を示します。 サービス プリンシパルを使用してサインインするには、「[サービス プリンシパルの作成](#create-service-principal)」手順で `create-service-principal.json`に保存した `appId`、`tenant`、および `password` が必要です。
+Azure CLI で、[サービス プリンシパルを使用して Azure リソースを作成します](https://docs.microsoft.com/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest#create-a-resource-using-service-principal)。
 
-1. VSCode を開き、前にインストールした [Azure CLI ツール](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azurecli)拡張機能を使用します。 この拡張機能を使用すると、スクリプト ファイルから Azure CLI コマンドを 1 行ずつ実行できます。 各コマンドを実行すると、隣接するドキュメントが VSCode で開き、結果が表示されます。
+## <a name="use-service-principal-in-javascript"></a>JavaScript でサービス プリンシパルを使用する
 
-1. `create-service-resource.sh` という名前の新しいファイルを作成し、次の Azure コマンドをこのファイルにコピーします。
+個人用ユーザー アカウントではなく、Azure クライアント ライブラリに対して認証を行う場合に、[サービス プリンシパルを使用します](node-sdk-azure-authenticate-principal.md#using-the-service-principal)。
 
-    ```azurecli
-    ####################################
-    # Login as service principal
-    ####################################
-    # User name for command is the app id
-    az login --service-principal --username APP_ID --password PASSWORD --tenant TENANT_ID
-
-    ####################################
-    # Create resource group
-    ####################################
-
-    # Create resource group in westus region - check your quickstart if it requires a specific region, then change this value to the appropriate region
-    # Common naming convention for resource group is `USERNAME-REGION-PURPOSE`
-    az group create --location WESTUS --name JOE-WESTUS-QUICKSTARTS-RESOURCEGROUP
-
-    ####################################
-    # Create specific service resource
-    ####################################
-
-    # Create resource in westus
-    # This is an example of creating a Cognitive Services LUIS resource
-    # Review your quickstart to find the exact command
-    az SERVICENAME account create --name JOE-WESTUS-COGNITIVESERVICES-LUIS --resource-group JOE-WESTUS-QUICKSTARTS-RESOURCEGROUP --kind LUIS --sku F0 --location WESTUS --yes
-
-    ####################################
-    # Get resource keys
-    ####################################
-
-    # Get resource keys
-    az cognitiveservices account keys list --name JOE-WESTUS-COGNITIVESERVICES-LUIS --resource-group JOE-WESTUS-QUICKSTARTS-RESOURCEGROUP
-    ```
-
-1. 次の行で右クリック/[Run Line in Editor]\(エディターで行を実行\) を使用して、サービス プリンシパルでログインします。 すべて大文字の変数が、[前のサービス プリンシパル作成コマンド](#create-service-principal-command)からの応答で返されました。
-
-    ```azurecli
-    az login --service-principal --username APP_ID --password PASSWORD --tenant TENANT_ID
-    ```
-
-1. 次の行で右クリック/[Run Line in Editor]\(エディターで行を実行\) を使用して、クイックスタート用に作成する必要のあるすべてのリソースのリソース グループを作成します。 リソース グループのリージョンには、そのリージョンのリソースのみを含めることができます。
-
-    ```azurecli
-    az group create --location WESTUS --name JOE-WESTUS-QUICKSTARTS-RESOURCEGROUP
-    ```
-
-    クイックスタート リソースの使用が終了したら、リソース グループを削除できます。これは、1 回のアクションでリソースに対して削除が行われます。
-
-1. 次の行で右クリック/[Run Line in Editor]\(エディターで行を実行\) を使用して、Cognitive Services LUIS リソースを作成します。 これは例です。独自のリソースには別のコマンドを使用することになります。
-
-    ```azurecli
-    az SERVICENAME account create --name JOE-WESTUS-COGNITIVESERVICES-LUIS --resource-group JOE-WESTUS-QUICKSTARTS-RESOURCEGROUP --kind LUIS --sku F0 --location WESTUS --yes
-    ```
-
-    LUIS リソースではキーとエンドポイントが使用されます。これらは、LUIS のクイックスタートを使用するために必要です。
-
-1. 次の行で右クリック/[Run Line in Editor]\(エディターで行を実行\) を使用して、LUIS キーとエンドポイントを取得します。 LUIS サービスに対する認証では、キーとエンドポイントが使用されます。
-
-    ```azurecli
-    az cognitiveservices account keys list --name JOE-WESTUS-COGNITIVESERVICES-LUIS --resource-group JOE-WESTUS-QUICKSTARTS-RESOURCEGROUP
-    ```
-
-### <a name="create-environment-variables-for-the-azure-libraries"></a>Azure ライブラリの環境変数を作成する
+## <a name="create-environment-variables-for-the-azure-libraries"></a>Azure ライブラリの環境変数を作成する
 
 Azure SDK ライブラリに必要な Azure 設定を使用して Azure クラウドにアクセスするには、最も一般的な値を環境変数に設定します。 次のコマンドは、環境変数をローカル ワークステーションに設定します。 もう 1 つの一般的なメカニズムは、`DOTENV` NPM パッケージを使用して、これらの設定用の `.env` ファイルを作成することです。 `.env` を使用する場合は、このファイルをソース管理にチェックインしないようにしてください。 これらの設定がソース管理にチェックインされるようにするための標準的な方法は、`.env` ファイルを git の `.ignore` ファイルに追加することです。
 
@@ -309,7 +113,7 @@ set AZURE_CLIENT_SECRET=abcdef00-4444-5555-6666-1234567890ab
 
 これらのコマンドに示されている値を、お客様固有のサービス プリンシパルの値で置き換えます。
 
-### <a name="install-npm-packages"></a>NPM パッケージのインストール
+## <a name="install-npm-packages"></a>NPM パッケージのインストール
 
 すべてのプロジェクトについて、次の手順に従って、常に個別のフォルダーと独自の `package.json` ファイルを作成することをお勧めします。
 
@@ -330,7 +134,7 @@ set AZURE_CLIENT_SECRET=abcdef00-4444-5555-6666-1234567890ab
 1. クイックスタートに必要な Azure SDK ライブラリをインストールします。 次のコマンドは例です。
 
     ```console
-    npm install @azure/cognitiveservices-luis-runtime
+    npm install @azure/ai-text-analytics@5.0.0
     ```
 
 ## <a name="use-source-control"></a>ソース管理を使用する
@@ -353,4 +157,6 @@ Visual Studio Code には、数多くの組み込み Git 機能が含まれて�
 
 ## <a name="next-steps"></a>次のステップ
 
+* [サービス プリンシパルを作成して使用する](node-sdk-azure-authenticate-principal.md)
+* [Node.js 用 Azure モジュールを使った認証](node-sdk-azure-authenticate.md)
 * [Visual Studio Code から静的 Web サイトを Azure にデプロイする](tutorial-vscode-static-website-node-01.md)

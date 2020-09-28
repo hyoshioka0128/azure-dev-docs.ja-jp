@@ -4,16 +4,16 @@ description: チュートリアルの手順 2、アプリケーションの設�
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 9bb25bf6cfef2e6a93efa2ca195f27a10a6ca891
-ms.sourcegitcommit: 815cf2acff71e849735f7afce54723f03ffa5df3
+ms.openlocfilehash: 36e2c57f556718a0c2d83de90995ce52602a34ad
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88501397"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90832028"
 ---
 # <a name="2-prepare-your-app-for-deployment-to-azure-app-service"></a>2:Azure App Service にデプロイするためにアプリを準備する
 
-[前の手順: 前提条件](tutorial-deploy-app-service-on-linux-01.md)
+[前のステップ: 環境を構成する](tutorial-deploy-app-service-on-linux-01.md)
 
 この記事では、このチュートリアルの Azure App Service にデプロイするアプリを準備します。 既存のアプリを使用することも、アプリを作成またはダウンロードすることもできます。
 
@@ -21,7 +21,19 @@ ms.locfileid: "88501397"
 
 まだアプリがない場合は、次のいずれかの方法を使用します。 アプリがローカルで動作することを確認してください。
 
-## <a name="minimal-flask-app"></a>最小限の Flask アプリ
+## <a name="option-1-vs-code-flask-tutorial-sample"></a>オプション 1: VS Code Flask チュートリアル サンプル
+
+[https://github.com/Microsoft/python-sample-vscode-flask-tutorial](https://github.com/Microsoft/python-sample-vscode-flask-tutorial) をダウンロードまたは複製します。これは [Flask チュートリアル](https://code.visualstudio.com/docs/python/tutorial-flask)に従って得られた結果です。
+
+## <a name="option-2-vs-code-django-tutorial-sample"></a>オプション 2:VS Code Django チュートリアル サンプル
+
+[https://github.com/Microsoft/python-sample-vscode-django-tutorial](https://github.com/Microsoft/python-sample-vscode-django-tutorial) をダウンロードまたは複製します。これは [Django チュートリアル](https://code.visualstudio.com/docs/python/tutorial-django)に従って得られた結果です。
+
+このサンプルのようにローカル SQLite データベースが Django アプリに使用されている場合、事前初期化済みかつ事前設定済みの *db.sqlite3* ファイルのコピーをリポジトリに追加する必要があります。 これは、現在 App Service for Linux には、デプロイの過程で Django の `migrate` コマンドを実行する手段が用意されていないため、あらかじめ作成しておいたデータベースを自分でデプロイしなければならないためです。 その場合でも、データベースは事実上読み取り専用であり、また、データベースに書き込みを行うとエラーが発生します。
+
+いずれのケースも最善の方法は、アプリのコードとは無関係にデプロイおよび初期化された別個のデータベースを使用することです。
+
+## <a name="option-3-create-a-minimal-flask-app"></a>オプション 3:最小限の Flask アプリを作成する
 
 このセクションでは、このチュートリアルで使用する最小限の Flask アプリについて説明します。
 
@@ -39,10 +51,35 @@ ms.locfileid: "88501397"
 1. *requirements.txt* という名前のファイルを作成し、内容を次のようにします。
 
     ```text
-    Flask==1.1.1
+    Flask==1.1.2
     ```
 
-1. [Flask チュートリアル (Flask 用のプロジェクト環境の作成)](https://code.visualstudio.com/docs/python/tutorial-flask#create-a-project-environment-for-flask) の手順に従って、Flask がインストールされた仮想環境を作成します。この仮想環境内のローカルでアプリを実行することができます。
+1. メニュー コマンド **Terminal** > **New Terminal** を使用してターミナルを開きます。
+
+1. 次に、`env` という名前の仮想環境を作成してアクティブ化します。
+
+    # <a name="macoslinux"></a>[macOS/Linux](#tab/linux)
+
+    ```bash
+    sudo apt-get install python3-venv    # If needed
+    python3 -m venv env
+    source env/bin/activate
+    ```
+
+    # <a name="windows"></a>[Windows](#tab/windows)
+
+    ```cmd
+    python -m venv env
+    env\scripts\activate
+    ```
+
+    ---
+
+1. アプリの依存関係をインストールします:
+
+    ```cmd
+    pip install -r requirements.txt
+    ```
 
 1. アプリ オブジェクトの検索先を Flask に指示する FLASK_APP 環境変数を設定します。
 
@@ -73,18 +110,6 @@ ms.locfileid: "88501397"
     ```
 
 1. その後、`http://127.0.0.1:5000/` という URL を使用してアプリをブラウザーで開くことができます。
-
-## <a name="vs-code-flask-tutorial-sample"></a>VS Code Flask チュートリアル サンプル
-
-[python-sample-vscode-flask-tutorial](https://github.com/Microsoft/python-sample-vscode-flask-tutorial) をダウンロードまたは複製します。これは [Flask チュートリアル](https://code.visualstudio.com/docs/python/tutorial-flask)に従って得られた結果です。
-
-## <a name="vs-code-django-tutorial-sample"></a>VS Code Django チュートリアル サンプル
-
-[Django チュートリアル](https://code.visualstudio.com/docs/python/tutorial-django)で得られた結果である [python-sample-vscode-django-tutorial](https://github.com/Microsoft/python-sample-vscode-django-tutorial) をダウンロードまたは複製します。
-
-このサンプルのようにローカル SQLite データベースが Django アプリに使用されている場合、事前初期化済みかつ事前設定済みの *db.sqlite3* ファイルのコピーをリポジトリに追加する必要があります。 これは、現在 App Service for Linux には、デプロイの過程で Django の `migrate` コマンドを実行する手段が用意されていないため、あらかじめ作成しておいたデータベースを自分でデプロイしなければならないためです。 その場合でも、データベースは事実上読み取り専用であり、また、データベースに書き込みを行うとエラーが発生します。
-
-いずれのケースも最善の方法は、アプリのコードとは無関係にデプロイおよび初期化された別個のデータベースを使用することです。
 
 > [!div class="nextstepaction"]
 > [アプリの準備ができました - 手順 3 に進む >>>](tutorial-deploy-app-service-on-linux-03.md)

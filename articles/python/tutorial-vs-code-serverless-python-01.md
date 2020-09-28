@@ -1,15 +1,15 @@
 ---
 title: チュートリアル:VS Code を使用して Python でサーバーレスの Azure Functions を作成してデプロイする
-description: チュートリアルの手順 1、Azure Functions の操作、概要、前提条件。
+description: チュートリアル ステップ 1、Azure Functions のローカル環境を構成する
 ms.topic: conceptual
 ms.date: 05/19/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 740a64785c57694be34f37ef6aa6571b0b3304b7
-ms.sourcegitcommit: 9e282fc2ec967bee181c3034e7e70b28ae308905
+ms.openlocfilehash: 8d7b3d29b1bd8860d87505fd6f3b09a20702f904
+ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89473607"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90772757"
 ---
 # <a name="tutorial-create-and-deploy-serverless-azure-functions-in-python-with-visual-studio-code"></a>チュートリアル:Visual Studio Code を使用して Python でサーバーレスの Azure Functions を作成してデプロイする
 
@@ -17,11 +17,11 @@ ms.locfileid: "89473607"
 
 Azure Functions では、サーバーレス環境でコードが実行されますが、仮想マシンをプロビジョニングしたり、Web アプリを公開したりする必要がありません。 Visual Studio Code 用の Azure Functions 拡張により、さまざまな構成問題が自動的に処理され、Functions の使用プロセスが大幅に簡素化されます。
 
-このチュートリアルのいずれかの手順で問題が発生した場合は、詳細をお知らせください。 フィードバックを送信するには、各記事の最後にある **[問題が発生しました]** ボタンを使用します。
+このチュートリアルのいずれかの手順で問題が発生した場合は、詳細をお知らせください。 各記事の最後にある **[このページ]** フィードバック ボタンを使用してください。
 
 デモ ビデオについては、仮想 PyCon 2020 の <a href="https://www.youtube.com/watch?v=9bMsdBYy-D0&feature=youtu.be&ocid=AID3006292" target="_blank">VS Code での Azure Functions のビルド</a>に関する動画 (youtube.com) をご覧ください。 より長いセッションに関心があれば、<a href="https://www.youtube.com/watch?v=PV7iy6FPjAY&feature=youtu.be&t=13&ocid=AID3006292" target="_blank">Azure Functions での簡単なデータ処理</a>に関する動画 (youtube.com) もご覧ください。 
 
-## <a name="prerequisites"></a>前提条件
+## <a name="configure-your-environment"></a>環境を構成する
 
 - [Azure サブスクリプション](#azure-subscription)。
 - [Azure Functions Core Tools](#azure-functions-core-tools)。
@@ -54,9 +54,19 @@ Node.js をインストールする場合は、既定のオプションを使用
 
 ### <a name="sign-in-to-azure"></a>Azure へのサインイン
 
-[!INCLUDE [azure-sign-in](includes/azure-sign-in.md)]
+Azure 拡張機能をインストールしたら、お使いの Azure アカウントにサインインします。それには、**Azure** エクスプローラーに移動し、 **[Functions]** の下の **[Azure にサインイン]** を選択して、ブラウザーの指示に従います。
 
-### <a name="verify-prerequisites"></a>前提条件を確認する
+![VS Code から Azure にサインインする](media/tutorial-vs-code-serverless-python/azure-sign-in.png)
+
+サインインしたら、ステータス バーに **[Azure: サインイン]** と表示され、サブスクリプションが **Azure** エクスプローラーに表示されていることを確認します。
+
+![Visual Studio Code で Azure アカウントが表示されているステータス バー](media/tutorial-vs-code-serverless-python/azure-account-status-bar.png)
+
+![Visual Studio Code のサブスクリプションが表示されている Azure App Service エクスプローラー](media/tutorial-vs-code-serverless-python/azure-subscription-view.png)
+
+[!INCLUDE [proxy-config](includes/proxy-config.md)]
+
+### <a name="verify-your-environment"></a>環境の確認
 
 すべての Azure Functions ツールがインストールされていることを確認するには、Visual Studio Code コマンド パレット (**F1**) を開き、**Terminal: Create New Integrated Terminal** コマンドを選択し、ターミナルが開いたら、コマンド `func` を実行します。
 
@@ -70,5 +80,3 @@ Azure Functions ロゴで始まる出力は (出力を上方向にスクロー�
 
 > [!div class="nextstepaction"]
 > [Azure にサインインしました - 手順 2 に進む >>>](tutorial-vs-code-serverless-python-02.md)
-
-問題がある場合 ページの下部にある [このページ] へのフィードバックを使用して、GitHub の問題を送信します。

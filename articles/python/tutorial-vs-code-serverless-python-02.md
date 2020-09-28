@@ -2,18 +2,18 @@
 title: 手順 2:VS Code を使用して Azure Functions 用に Python 関数を作成する
 description: チュートリアルの手順 2、VS Code 用の Azure Functions 拡張機能の使用方法を紹介する。
 ms.topic: conceptual
-ms.date: 05/19/2020
+ms.date: 09/17/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 08f301ef4596ae8aac96051a13fd680917bd79be
-ms.sourcegitcommit: 9e282fc2ec967bee181c3034e7e70b28ae308905
+ms.openlocfilehash: cc0d8f5241cafceb9e087557104a624f5f7adb92
+ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89473567"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90773061"
 ---
 # <a name="2-create-a-python-function-for-azure-functions"></a>2:Azure Functions 用に Python 関数を作成する
 
-[前の手順: 前提条件](tutorial-vs-code-serverless-python-01.md)
+[前のステップ: 環境を構成する](tutorial-vs-code-serverless-python-01.md)
 
 この記事では、Visual Studio Code を使用して Azure Functions 用に Python 関数を作成します。 Azure Functions のコードは、コードの作成前に最初に作成する Functions "_プロジェクト_" 内で管理されます。
 
@@ -27,7 +27,7 @@ ms.locfileid: "89473567"
     | --- | --- | --- |
     | Specify a folder for the project (プロジェクトのフォルダーを指定してください) | 現在開いているフォルダー | プロジェクトを作成するフォルダー。 サブフォルダーにプロジェクトを作成することもできます。 |
     | Select a language for your function app project (関数アプリ プロジェクトの言語を選択してください) | **Python** | 関数に使用する言語。これによりコードに使用するテンプレートが決定されます。 |
-    | Select Python interpreter (Python インタープリターを選択してください) | (指定された既定のパスを使用します。) | 仮想環境に使用する Python インタープリター。 |
+    | 仮想環境を作成する Python インタープリターを選択する | (指定された既定のパスを使用するか、何も指定されていない場合は、適切なインタープリターへのパスを手動で入力してください。) | 仮想環境に使用する Python インタープリター。 |
     | Select a template for your project's first function (プロジェクトの最初の関数のテンプレートを選択してください) | **HTTP トリガー** | HTTP トリガーを使用する関数は、関数のエンドポイントに HTTP 要求が行われるたびに実行されます。 (Azure Functions には他にもさまざまなトリガーがあります。 詳細は、「[Functions でできること](/azure/azure-functions/functions-overview#what-can-i-do-with-functions)」を参照してください。) |
     | Provide a function name (関数名を指定してください) | HttpExample | この名前は、構成データと共に関数のコードが含まれるサブフォルダーに使用されます。また、HTTP エンドポイントの名前がこの名前で定義されます。 関数自体とトリガーを区別する目的で、既定の "HTTPTrigger1" をそのまま使用せず、"HttpExample" を使用します。 |
     | 承認レベル | **Anonymous** | 匿名認証の場合、関数は公開され、誰でもアクセスできます。 |
@@ -48,4 +48,3 @@ ms.locfileid: "89473567"
 > [!div class="nextstepaction"]
 > [関数を作成しました - 手順 3 に進む >>>](tutorial-vs-code-serverless-python-03.md)
 
-問題がある場合 ページの下部にある [このページ] へのフィードバックを使用して、GitHub の問題を送信します。

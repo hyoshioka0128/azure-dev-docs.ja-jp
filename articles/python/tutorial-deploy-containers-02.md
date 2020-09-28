@@ -2,18 +2,18 @@
 title: 手順 2:Visual Studio Code を使用してコンテナー イメージを Azure App Service にデプロイする
 description: チュートリアルの手順 2、実際の Docker イメージをコンテナー レジストリから Azure App Service にデプロイする。
 ms.topic: conceptual
-ms.date: 09/12/2019
+ms.date: 09/17/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 080f3f5aa82d9944b5f26d3a54fb6f10bfe914cb
-ms.sourcegitcommit: 9e282fc2ec967bee181c3034e7e70b28ae308905
+ms.openlocfilehash: 5255e0d65fda839fbbe86c1743d424ab5801774f
+ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89473547"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90830898"
 ---
 # <a name="2-deploy-a-container-image-to-azure-app-service"></a>2:コンテナー イメージを Azure App Service にデプロイする
 
-[前の手順: 前提条件](tutorial-deploy-containers-01.md)
+[前のステップ: 環境を構成する](tutorial-deploy-containers-01.md)
 
 コンテナー イメージがレジストリ内にある場合は、VS Code の Docker 拡張機能を使用して、コンテナーを実行している Azure App Service を簡単に設定できます。
 
@@ -29,9 +29,9 @@ ms.locfileid: "89473547"
 
     ![イメージを作成して Azure App Service にデプロイする](media/deploy-containers/deploy-image-to-azure-app-service.gif)
 
-    **リソース グループ**は、アプリを構成するさまざまなリソースの名前付きコレクションです。 アプリのリソースすべてを 1 つのグループに割り当てることで、それらのリソースを 1 つのユニットとして簡単に管理できます  (詳細については、Azure ドキュメントの「[Azure Resource Manager の概要](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview)」を参照してください)。
+    **リソース グループ**は、アプリを構成するさまざまなリソースの名前付きコレクションです。 アプリのリソースすべてを 1 つのグループに割り当てることで、それらのリソースを 1 つのユニットとして簡単に管理できます  (詳細については、Azure ドキュメントの「[Azure Resource Manager の概要](/azure/azure-resource-manager/resource-group-overview)」を参照してください)。
 
-    **App Service プラン**は、実行中のコンテナーをホストする物理リソース (基になる仮想マシン) を定義します。 このチュートリアルでは、B1 が、Docker コンテナーをサポートする最も低コストのプランです  (詳細については、Azure ドキュメントの [App Service プランの概要](https://docs.microsoft.com/azure/app-service/azure-web-sites-web-hosting-plans-in-depth-overview)に関する記事を参照してください)。
+    **App Service プラン**は、実行中のコンテナーをホストする物理リソース (基になる仮想マシン) を定義します。 このチュートリアルでは、B1 が、Docker コンテナーをサポートする最も低コストのプランです  (詳細については、Azure ドキュメントの [App Service プランの概要](/azure/app-service/azure-web-sites-web-hosting-plans-in-depth-overview)に関する記事を参照してください)。
 
     App Service の名前は Azure 全体で一意である必要があるため、通常は会社名または個人名を使用します。 運用サイトでは、通常、App Service を構成する際に、個別に登録されたドメイン名を使用します。
 
@@ -47,5 +47,3 @@ ms.locfileid: "89473547"
 
 > [!div class="nextstepaction"]
 > [イメージをデプロイしました - 手順 3 に進む >>>](tutorial-deploy-containers-03.md)
-
-問題がある場合 ページの下部にある [このページ] へのフィードバックを使用して、GitHub の問題を送信します。

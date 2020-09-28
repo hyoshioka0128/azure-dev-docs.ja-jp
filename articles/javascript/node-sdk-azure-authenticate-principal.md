@@ -4,14 +4,14 @@ description: Azure で Node.js および JavaScript を使用してサービス 
 ms.topic: article
 ms.date: 06/17/2017
 ms.custom: devx-track-javascript
-ms.openlocfilehash: 9343d1bfaa48e5b2307c5f442107b91613663e94
-ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
+ms.openlocfilehash: 156892d9fd8e8014e3dacaae2492126ac9bf5836
+ms.sourcegitcommit: b03cb337db8a35e6e62b063c347891e44a8a5a13
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88218880"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91110435"
 ---
-# <a name="create-an-azure-service-principal-with-nodejs"></a>Node.js を使った Azure サービス プリンシパルの作成 
+# <a name="create-an-azure-service-principal-for-nodejs"></a>Node.js の Azure サービス プリンシパルを作成する
 
 リソースへのアクセスを必要とするアプリには、ID を設定し、アプリをそれ自体の資格情報で認証できます。 この ID は、"*サービス プリンシパル*" と呼ばれます。 ユーザーの介入やユーザー名/パスワードの入力を求めるのではなく、SDK に与える Azure Active Directory アカウントのキーを認証用に作成するのが基本的な原理となります。
 
@@ -29,7 +29,7 @@ ms.locfileid: "88218880"
 
 ## <a name="create-a-service-principal-using-the-azure-portal"></a>Azure Portal を使用してサービス プリンシパルを作成する
 
-サービス プリンシパルの作成については、「[リソースにアクセスできる Azure Active Directory アプリケーションとサービス プリンシパルをポータルで作成する](https://azure.microsoft.com/documentation/articles/resource-group-create-service-principal-portal/)」のトピックで説明されている手順を参考にしてください。
+サービス プリンシパルの作成については、「[リソースにアクセスできる Azure Active Directory アプリケーションとサービス プリンシパルをポータルで作成する](/azure/active-directory/develop/howto-create-service-principal-portal)」のトピックで説明されている手順を参考にしてください。
 
 ## <a name="create-a-service-principal-using-the-azure-cli-20"></a>Azure CLI 2.0 を使用してサービス プリンシパルを作成する
 
@@ -45,7 +45,8 @@ ms.locfileid: "88218880"
     $ az login
     ```
 
-4. `az login` を呼び出すと、URL とコードが返されます。 指定された URL にブラウザーでアクセスし、コードを入力して、自分の Azure ID でログインします (既にログインしている場合は自動的に実行されます)。 その後は CLI から自分のアカウントにアクセスできるようになります。
+4. `az login` を呼び出すと、URL とコードが返されます。 指定された URL にブラウザーでアクセスし、コードを入力して、自分の Azure ID でログインします (既にログインしている場合は自動的に実行されます)。
+その後は CLI から自分のアカウントにアクセスできるようになります。
 
 5. サブスクリプションとテナントの ID を取得します。
 
@@ -93,7 +94,7 @@ ms.locfileid: "88218880"
 
     **テナント、名前、パスワードの値を書き留めてください。手順 7. で必要になります。**
 
-7. 環境変数を設定します。&lt;subscriptionId>、&lt;tenant>、&lt;name>、&lt;password> の各プレースホルダーには、手順 4. と手順 5. で得た値を指定してください。 
+7. 環境変数を設定します。&lt;subscriptionId>、&lt;tenant>、&lt;name>、&lt;password> の各プレースホルダーには、手順 4. と手順 5. で得た値を指定してください。
 
     **bash の使用**
 
@@ -115,7 +116,7 @@ ms.locfileid: "88218880"
 
 ## <a name="create-a-service-principal-using-the-azure-sdk-for-nodejs"></a>Azure SDK for Node.js を使用してサービス プリンシパルを作成する
 
-JavaScript を使ってプログラムでサービス プリンシパルを作成するには、[ServicePrincipal スクリプト](https://github.com/Azure/azure-sdk-for-node/tree/master/Documentation/ServicePrincipal)を使用します。   
+JavaScript を使ってプログラムでサービス プリンシパルを作成するには、[ServicePrincipal スクリプト](https://github.com/Azure/azure-sdk-for-node/tree/master/Documentation/ServicePrincipal)を使用します。
 
 ## <a name="using-the-service-principal"></a>サービス プリンシパルの使用
 
@@ -138,3 +139,7 @@ MsRest.loginWithServicePrincipalSecret(
   }
 );
 ```
+
+## <a name="next-steps"></a>次の手順
+
+* [Node.js 用 Azure モジュールを使った認証](node-sdk-azure-authenticate.md)

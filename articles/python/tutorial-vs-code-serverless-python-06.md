@@ -2,14 +2,14 @@
 title: 手順 6:VS Code を使用して 2 つ目の Python 関数を Azure Functions に追加する
 description: チュートリアルの手順 6、2 つ目の関数を追加して Azure Functions プロジェクトを展開する。
 ms.topic: conceptual
-ms.date: 05/19/2020
+ms.date: 09/17/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 29d625d40868ab761037c1a4a049f7e95e63df26
-ms.sourcegitcommit: 9e282fc2ec967bee181c3034e7e70b28ae308905
+ms.openlocfilehash: f60bd70a8c67a3b33140b11731906e0f205e98f7
+ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89473577"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90772875"
 ---
 # <a name="6-add-a-second-python-function-to-azure-functions"></a>6: 2 つ目の Python 関数を Azure Functions に追加する
 
@@ -117,6 +117,4 @@ ms.locfileid: "89473577"
 1. デプロイが完了したら (数分かかります!)、 **[出力]** ウィンドウに、テストを繰り返すことができる公開エンドポイントが表示されます。
 
 > [!div class="nextstepaction"]
-> [2 つ目の関数を追加しました - 手順 7 に進む >>>](tutorial-vs-code-serverless-python-07.md)
-
-問題がある場合 ページの下部にある [このページ] へのフィードバックを使用して、GitHub の問題を送信します。
+> [2 つ目の関数を追加しました - ステップ 7 に進む >>>](tutorial-vs-code-serverless-python-07.md)

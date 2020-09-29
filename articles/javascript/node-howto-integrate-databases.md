@@ -20,7 +20,7 @@ ms.locfileid: "90772965"
 | **Cosmos DB** | [Node.js Azure Cosmos DB Web アプリの作成](/azure/cosmos-db/create-sql-api-nodejs) | [サンプル](/samples/browse/?languages=javascript%252cnodejs&products=azure-cosmos-db) |
 | **MongoDB** | [Node.js の MongoDB Web アプリの作成](/azure/app-service-web/app-service-web-tutorial-nodejs-mongodb-app) | [サンプル](/samples/browse/?languages=javascript%252cnodejs&term=Mongo%2bDB) |
 | **Redis Cache** | [Redis Cache の作成と使用](/azure/redis-cache/cache-nodejs-get-started) | |
-| **Azure SQL データベース** | [Node.js を使用して Azure SQL データベースに照会する](/azure/sql-database/sql-database-connect-query-nodejs) | [サンプル](/samples/browse/?languages=javascript%252cnodejs&products=azure-sql-database) | |
+| **Azure SQL Database** | [Node.js を使用して Azure SQL Database に照会する](/azure/sql-database/sql-database-connect-query-nodejs) | [サンプル](/samples/browse/?languages=javascript%252cnodejs&products=azure-sql-database) | |
 | **MySQL** | [Node.js を使った接続とデータの照会](/azure/mysql/connect-nodejs) | |
 | **PostgreSQL** | [Node.js を使った接続とデータの照会](/azure/postgresql/connect-nodejs) | |
 

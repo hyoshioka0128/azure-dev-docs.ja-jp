@@ -3,17 +3,17 @@ title: Azure の Eclipse MicroProfile のドキュメント
 summary: MicroProfile は、標準化を目標とした実装の枠を越えたイノベーションと、関心のある共通分野でのコラボレーションによって、分散マイクロサービス アーキテクチャの実現に向け Java EE などの Enterprise Java テクノロジーを活用し、進化させることを目指した Eclipse Foundation プロジェクトです。
 metadata:
   title: Azure の Eclipse MicroProfile のドキュメント
-  description: Eclipse MicroProfile を使用して、エンタープライズ Java テクノロジを活用および進化させることにより、Azure でアプリを開発しましょう。
-  author: brborges
-  ms.author: brborges
-  ms.date: 03/13/2020
+  description: Azure で Eclipse MicroProfile を使用してアプリの開発を開始します。
+  author: yoshioterada
+  ms.author: yoterada
+  ms.date: 06/29/2020
   ms.topic: landing-page
-  ms.openlocfilehash: 0b0bb28c4ec0751b1a6d29ff89fadaf53fe57ccd
-  ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+  ms.openlocfilehash: 2c478ff485c5a003aef47f2ffeb26bc75d3fdfb2
+  ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 08/14/2020
-  ms.locfileid: "88240914"
+  ms.lasthandoff: 09/28/2020
+  ms.locfileid: "91401202"
 landingContent:
 - title: ファースト ステップ ガイド
   linkLists:
@@ -21,12 +21,22 @@ landingContent:
     links:
     - text: Azure Container Instances へのデプロイ
       url: deploy-microprofile-to-container-instances.md
-    - text: Azure Web Apps へのデプロイ
-      url: deploy-microprofile-to-web-app-for-containers.md
     - text: Azure Key Vault 用の構成ソース
       url: configure-microprofile-with-keyvault.md
     - text: Azure DevOps を使用した MicroProfile アプリケーションの CI/CD
       url: cicd-microprofile.md
+- title: Maven で Azure App Service にデプロイする
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Quarkus のデプロイ
+      url: deploy-microprofile-quarkus-java-app-with-maven-plugin.md
+    - text: Helidon のデプロイ
+      url: deploy-microprofile-helidon-java-app-with-maven-plugin.md
+    - text: Payara Micro のデプロイ
+      url: deploy-microprofile-payara-micro-java-app-with-maven-plugin.md
+    - text: KumuluzEE のデプロイ
+      url: deploy-microprofile-kumuluzee-java-app-with-maven-plugin.md
 - title: コード サンプル
   linkLists:
   - linkListType: sample

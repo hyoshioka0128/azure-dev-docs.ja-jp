@@ -13,6 +13,10 @@
       href: get-started-powershell.md
 - name: 操作方法ガイド
   items:
+    - name: セットアップと構成
+      items:
+        - name: Terraform 状態を Azure Storage に格納する
+          href: store-state-in-azure-storage.md
     - name: App Service
       items:
         - name: Terraform および Azure プロバイダーのデプロイ スロット
@@ -37,7 +41,7 @@
       items:
         - name: 仮想マシンとインフラストラクチャ
           href: create-linux-virtual-machine-with-infrastructure.md
-        - name: 仮想マシン クラスターと Terraform モジュール
+        - name: 仮想マシン クラスターを構成する
           href: create-vm-cluster-module.md
         - name: 仮想マシン クラスターと Terraform および HCL
           href: create-vm-cluster-with-infrastructure.md
@@ -47,10 +51,6 @@
           href: create-vm-scaleset-network-disks-using-packer-hcl.md
 - name: チュートリアル
   items:
-    - name: セットアップと構成
-      items:
-        - name: Terraform 状態を Azure Storage に格納する
-          href: store-state-in-azure-storage.md
     - name: ネットワーク
       items:
         - name: ハブとスポークのトポロジ

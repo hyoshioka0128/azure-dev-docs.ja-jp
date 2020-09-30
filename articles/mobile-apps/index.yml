@@ -11,12 +11,12 @@ metadata:
   author: codemillmatt
   ms.author: masoucou
   ms.date: 07/27/2020
-  ms.openlocfilehash: f7f2f1d9d7b9764904fa995ce575fc7409d3a237
-  ms.sourcegitcommit: cf23d382eee2431a3958b1c87c897b270587bde0
+  ms.openlocfilehash: f7f7948f16d6d72f963f91cbf7121f02ddb528cc
+  ms.sourcegitcommit: e97cb81a245ce7dcabeac3260abc3db7c30edd79
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 07/29/2020
-  ms.locfileid: "87400670"
+  ms.lasthandoff: 09/29/2020
+  ms.locfileid: "91493089"
 landingContent:
 - title: Azure でのモバイルの概要
   linkLists:
@@ -29,7 +29,7 @@ landingContent:
   - linkListType: learn
     links:
     - text: Xamarin.Forms を使用してモバイル アプリを構築する
-      url: https://docs.microsoft.com/learn/paths/build-mobile-apps-with-xamarin-forms/
+      url: /learn/paths/build-mobile-apps-with-xamarin-forms/
   - linkListType: video
     links:
     - text: Azure を使用してモバイル アプリ全体を構築する
@@ -41,19 +41,19 @@ landingContent:
   - linkListType: overview
     links:
     - text: Azure Functions とその他のサービスでサーバーレス モバイル アプリケーション バックエンドを構築する
-      url: https://docs.microsoft.com/xamarin/xamarin-forms/data-cloud/azure-services/azure-functions
+      url: /xamarin/xamarin-forms/data-cloud/azure-services/azure-functions
     - text: Azure SignalR でリアルタイム アプリケーションを構築する
       url: real-time-communication.md
   - linkListType: quickstart
     links:
     - text: Azure Functions と Xamarin の概要
-      url: https://docs.microsoft.com/xamarin/xamarin-forms/data-cloud/azure-services/azure-functions
+      url: /xamarin/xamarin-forms/data-cloud/azure-services/azure-functions
     - text: Azure SignalR Service と Xamarin.Forms
-      url: https://docs.microsoft.com/xamarin/xamarin-forms/data-cloud/azure-services/azure-signalr
+      url: /xamarin/xamarin-forms/data-cloud/azure-services/azure-signalr
   - linkListType: learn
     links:
     - text: Xamarin と RESTful Web サービスを使用する
-      url: https://docs.microsoft.com/learn/modules/consume-rest-services
+      url: /learn/modules/consume-rest-services
 - title: データの保存
   linkLists:
   - linkListType: overview
@@ -67,11 +67,11 @@ landingContent:
   - linkListType: quickstart
     links:
     - text: Azure Cosmos DB を使用してデータを保存する
-      url: https://docs.microsoft.com/azure/cosmos-db/create-sql-api-xamarin-dotnet
+      url: /azure/cosmos-db/create-sql-api-xamarin-dotnet
     - text: Blob Storage を操作する
-      url: https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-xamarin
+      url: /azure/storage/blobs/storage-quickstart-blobs-xamarin
     - text: .NET SDK と Azure Cosmos DB の MongoDB 用 API を使用して Xamarin.Forms アプリを構築する
-      url: https://docs.microsoft.com/azure/cosmos-db/create-mongodb-xamarin
+      url: /azure/cosmos-db/create-mongodb-xamarin
 - title: プッシュ通知の送信
   linkLists:
   - linkListType: overview
@@ -81,29 +81,29 @@ landingContent:
   - linkListType: quickstart
     links:
     - text: Azure portal 内で Azure 通知ハブを作成する
-      url: https://docs.microsoft.com/azure/notification-hubs/create-notification-hub-portal
+      url: /azure/notification-hubs/create-notification-hub-portal
   - linkListType: tutorial
     links:
     - text: ASP.NET Cor と Azure Notification Hubs を使用して Xamarin.Forms アプリにプッシュ通知を送信する
       url: notification-hubs-backend-service-xamarin-forms.md
     - text: Android デバイスにプッシュ通知を送信する
-      url: https://docs.microsoft.com/azure/notification-hubs/notification-hubs-android-push-notification-google-fcm-get-started
+      url: /azure/notification-hubs/notification-hubs-android-push-notification-google-fcm-get-started
     - text: リッチ コンテンツをデバイスにプッシュする
-      url: https://docs.microsoft.com/azure/notification-hubs/notification-hubs-aspnet-backend-ios-apple-push-notification-service-apns-rich
+      url: /azure/notification-hubs/notification-hubs-aspnet-backend-ios-apple-push-notification-service-apns-rich
 - title: ユーザーを認証する
   linkLists:
   - linkListType: overview
     links:
     - text: Microsoft Authentication Library (MSAL) でサポートされている認証フロー
-      url: https://docs.microsoft.com/azure/active-directory/develop/msal-authentication-flows
+      url: /azure/active-directory/develop/msal-authentication-flows
     - text: ご利用のモバイル アプリに認証を追加し、ユーザー ID を管理する
       url: authentication.md
   - linkListType: tutorial
     links:
     - text: Android アプリケーションからユーザーをサインインさせて、Microsoft Graph を呼び出す
-      url: https://docs.microsoft.com/azure/active-directory/develop/tutorial-v2-android
+      url: /azure/active-directory/develop/tutorial-v2-android
     - text: Azure Active Directory B2C テナントへのネイティブ クライアント アプリケーションの追加
-      url: https://docs.microsoft.com/azure/active-directory-b2c/add-native-application
+      url: /azure/active-directory-b2c/add-native-application
   - linkListType: sample
     links:
     - text: Swift iOS アプリを使用したユーザーのサインイン
@@ -117,15 +117,15 @@ landingContent:
     - text: 継続的なビルドとインテグレーションによってアプリのライフサイクルを自動化する
       url: continuous-integration.md
     - text: 新しい Azure Pipelines ユーザー向けの主要な概念
-      url: https://docs.microsoft.com/azure/devops/pipelines/get-started/key-pipelines-concepts?view=azure-devops
+      url: /azure/devops/pipelines/get-started/key-pipelines-concepts?view=azure-devops
   - linkListType: overview
     links:
     - text: App Center でビルドをリリースする
-      url: https://docs.microsoft.com/appcenter/distribution/uploading
+      url: /appcenter/distribution/uploading
   - linkListType: how-to-guide
     links:
     - text: App Center CodePush
-      url: https://docs.microsoft.com/appcenter/distribution/codepush
+      url: /appcenter/distribution/codepush
 - title: 分析とクラッシュを追跡する
   linkLists:
   - linkListType: concept
@@ -137,15 +137,15 @@ landingContent:
   - linkListType: overview
     links:
     - text: App Center Analytics
-      url: https://docs.microsoft.com/appcenter/analytics/overview
+      url: /appcenter/analytics/overview
   - linkListType: how-to-guide
     links:
     - text: アプリでの診断の有効化
-      url: https://docs.microsoft.com/appcenter/diagnostics/enabling-diagnostics
+      url: /appcenter/diagnostics/enabling-diagnostics
   - linkListType: tutorial
     links:
     - text: リアルタイム分析を受信する
-      url: https://docs.microsoft.com/appcenter/analytics/log-flow
+      url: /appcenter/analytics/log-flow
 - title: SDK を使用した開発
   linkLists:
   - linkListType: download

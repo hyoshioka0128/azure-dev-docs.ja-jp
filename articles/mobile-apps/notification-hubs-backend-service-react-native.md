@@ -6,12 +6,12 @@ ms.service: mobile-services
 ms.topic: tutorial
 ms.date: 07/27/2020
 ms.author: alstrakh
-ms.openlocfilehash: 1fbfd29cce90222334309cd24339eb196a3aaa36
-ms.sourcegitcommit: b224b276a950b1d173812f16c0577f90ca2fbff4
+ms.openlocfilehash: b8846a2171c6f99a4796d288774c3b525093238a
+ms.sourcegitcommit: e97cb81a245ce7dcabeac3260abc3db7c30edd79
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87810645"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91493248"
 ---
 # <a name="tutorial-send-push-notifications-to-react-native-apps-using-azure-notification-hubs-via-a-backend-service"></a>チュートリアル:バックエンド サービス経由で Azure Notification Hubs を使用して React Native アプリにプッシュ通知を送信する  
 
@@ -23,7 +23,7 @@ ms.locfileid: "87810645"
 > * [Flutter](notification-hubs-backend-service-flutter.md)
 > * [React Native](notification-hubs-backend-service-react-native.md)
 
-このチュートリアルでは、[Azure Notification Hubs](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-push-notification-overview) を使用して、**Android** と **iOS** をターゲットとする [React Native](https://reactnative.dev/) アプリケーションにプッシュ通知を送信します。  
+このチュートリアルでは、[Azure Notification Hubs](/azure/notification-hubs/notification-hubs-push-notification-overview) を使用して、**Android** と **iOS** をターゲットとする [React Native](https://reactnative.dev/) アプリケーションにプッシュ通知を送信します。  
 
 [!INCLUDE [Notification Hubs Backend Service Introduction](includes/notification-hubs-backend-service-introduction.md)]
 
@@ -62,9 +62,9 @@ iOS の場合は次のものが必要です。
 以前に経験がなくとも、この第一原理の例に記載されている手順に従うことができます。 ただし、以下の面について知識があると役立ちます。
 
 * [Apple Developer ポータル](https://developer.apple.com)
-* [ASP.NET Core](https://docs.microsoft.com/aspnet/core/introduction-to-aspnet-core?view=aspnetcore-3.1)
+* [ASP.NET Core](/aspnet/core/introduction-to-aspnet-core?view=aspnetcore-3.1)
 * [Google Firebase Console](https://console.firebase.google.com/u/0/)
-* [Microsoft Azure](https://portal.azure.com) と、[Azure Notification Hubs を使用して iOS アプリにプッシュ通知を送信すること](https://docs.microsoft.com/azure/notification-hubs/ios-sdk-get-started)。
+* [Microsoft Azure](https://portal.azure.com) と、[Azure Notification Hubs を使用して iOS アプリにプッシュ通知を送信すること](/azure/notification-hubs/ios-sdk-get-started)。
 * [React Native](https://reactnative.dev/docs/getting-started)
 
 示される手順は [Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac/) と [Visual Studio Code](https://code.visualstudio.com/download) を対象としていますが、[Visual Studio 2019](https://visualstudio.microsoft.com/vs) を使用して進めることもできます。
@@ -85,7 +85,7 @@ iOS の場合は次のものが必要です。
 
 ## <a name="create-an-aspnet-core-web-api-backend-application"></a>ASP.NET Core Web API バックエンド アプリケーションを作成する
 
-このセクションでは、[デバイスの登録](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-push-notification-registration-management#what-is-device-registration)と React Native モバイル アプリへの通知の送信を処理する [ASP.NET Core Web API](https://dotnet.microsoft.com/apps/aspnet/apis) バックエンドを作成します。
+このセクションでは、[デバイスの登録](/azure/notification-hubs/notification-hubs-push-notification-registration-management#what-is-device-registration)と React Native モバイル アプリへの通知の送信を処理する [ASP.NET Core Web API](https://dotnet.microsoft.com/apps/aspnet/apis) バックエンドを作成します。
 
 [!INCLUDE [Create an ASP.NET Core Web API backend application](includes/notification-hubs-backend-service-web-api.md)]
 
@@ -117,16 +117,16 @@ iOS の場合は次のものが必要です。
 
 ## <a name="related-links"></a>関連リンク
 
-* [Azure Notification Hubs の概要](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-push-notification-overview)
-* [Visual Studio for Mac のインストール](https://docs.microsoft.com/visualstudio/mac/installation?view=vsmac-2019)
+* [Azure Notification Hubs の概要](/azure/notification-hubs/notification-hubs-push-notification-overview)
+* [Visual Studio for Mac のインストール](/visualstudio/mac/installation?view=vsmac-2019)
 * [Visual Studio Code のインストール](https://code.visualstudio.com/download)
 * [React Native 開発環境の設定](https://reactnative.dev/docs/environment-setup)
 * [バックエンド操作用の Notification Hubs SDK](https://www.nuget.org/packages/Microsoft.Azure.NotificationHubs/)
 * [GitHub 上の Notification Hubs SDK](https://github.com/Azure/azure-notificationhubs)
-* [アプリケーション バックエンドへの登録](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-ios-aspnet-register-user-from-backend-to-push-notification)
-* [登録管理](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-push-notification-registration-management)
-* [タグの使用](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-tags-segment-push-message)
-* [カスタム テンプレートの使用](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-templates-cross-platform-push-messages)
+* [アプリケーション バックエンドへの登録](/azure/notification-hubs/notification-hubs-ios-aspnet-register-user-from-backend-to-push-notification)
+* [登録管理](/azure/notification-hubs/notification-hubs-push-notification-registration-management)
+* [タグの使用](/azure/notification-hubs/notification-hubs-tags-segment-push-message)
+* [カスタム テンプレートの使用](/azure/notification-hubs/notification-hubs-templates-cross-platform-push-messages)
 
 ## <a name="next-steps"></a>次のステップ
 

@@ -7,12 +7,12 @@ ms.date: 11/12/2019
 ms.service: app-service
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 22455b8f8215e0c3bfb9d4e9d8f75788cb56d844
-ms.sourcegitcommit: c6642cae6fdb5e3025ed66fcd4ef89792c3b436a
+ms.openlocfilehash: 10d08226e0d97622c492f0e87a1fd0b175c76c4a
+ms.sourcegitcommit: f80537193d3e22eb24cce4a0a5464a996d1e63eb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/15/2020
-ms.locfileid: "86405633"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91409964"
 ---
 # <a name="deploy-a-spring-app-to-app-service-with-mysql"></a>MySQL を使用して Spring アプリを App Service にデプロイする
 
@@ -182,13 +182,13 @@ set REGION=<region>
 
 Maven では、指定した名前で Azure リソースを作成するためにこれらの値が使用されます。 環境変数を使用すると、プロジェクト ファイルのアカウントのシークレットを保持することができます。
 
-次に、*pom.xml* ファイルを更新して、Azure へのデプロイ用に Maven を構成します。 以前に追加した `<plugin>` 要素の後に、次の XML を追加します。 必要に応じて、`1.9.1` を [Azure App Service 用 Maven プラグイン](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme)の最新バージョンに変更します。
+次に、*pom.xml* ファイルを更新して、Azure へのデプロイ用に Maven を構成します。 以前に追加した `<plugin>` 要素の後に、次の XML を追加します。 必要に応じて、`1.11.0` を [Azure App Service 用 Maven プラグイン](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme)の最新バージョンに変更します。
 
 ```xml
 <plugin>
     <groupId>com.microsoft.azure</groupId>
     <artifactId>azure-webapp-maven-plugin</artifactId>
-    <version>1.9.1</version>
+    <version>1.11.0</version>
     <configuration>
         <schemaVersion>v2</schemaVersion>
         <resourceGroup>${RESOURCEGROUP_NAME}</resourceGroup>
@@ -197,7 +197,7 @@ Maven では、指定した名前で Azure リソースを作成するために�
         <region>${REGION}</region>
         <runtime>
             <os>linux</os>
-            <javaVersion>jre8</javaVersion>            
+            <javaVersion>jre8</javaVersion>
             <webContainer>TOMCAT 9.0</webContainer>
         </runtime>
         <deployment>
@@ -390,13 +390,13 @@ show databases;
 </profile>
 ```
 
-次に、*pom.xml* ファイルを構成して、Azure のデプロイと MySQL の使用のために Maven を構成します。 以前に追加した `<plugin>` 要素の後に、次の XML を追加します。 必要に応じて、`1.9.1` を [Azure App Service 用 Maven プラグイン](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme)の最新バージョンに変更します。
+次に、*pom.xml* ファイルを構成して、Azure のデプロイと MySQL の使用のために Maven を構成します。 以前に追加した `<plugin>` 要素の後に、次の XML を追加します。 必要に応じて、`1.11.0` を [Azure App Service 用 Maven プラグイン](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme)の最新バージョンに変更します。
 
 ```xml
 <plugin>
     <groupId>com.microsoft.azure</groupId>
     <artifactId>azure-webapp-maven-plugin</artifactId>
-    <version>1.9.1</version>
+    <version>1.11.0</version>
     <configuration>
         <schemaVersion>v2</schemaVersion>
         <resourceGroup>${RESOURCEGROUP_NAME}</resourceGroup>
@@ -405,7 +405,7 @@ show databases;
         <region>${REGION}</region>
         <runtime>
             <os>linux</os>
-            <javaVersion>jre8</javaVersion>            
+            <javaVersion>jre8</javaVersion>
             <webContainer>TOMCAT 9.0</webContainer>
         </runtime>
         <appSettings>

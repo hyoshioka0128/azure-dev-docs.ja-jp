@@ -4,12 +4,12 @@ description: チュートリアルの手順 7、Azure のリソースをクリ�
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: cc1acdd316406d9269c97a4f5b25f465d0303509
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: 523a1bb305fbaf566181f87c4affa0dd251e93a5
+ms.sourcegitcommit: 4af22924a0eaf01e6902631c0714045c02557de4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831478"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91209374"
 ---
 # <a name="7-clean-up-resources-after-deploying-to-azure-app-service-on-linux-from-visual-studio-code"></a>7:Azure App Service on Linux にデプロイしたリソースを Visual Studio Code を使用してクリーンアップします。
 
@@ -29,7 +29,7 @@ ms.locfileid: "90831478"
 
 VS Code 用の Azure 拡張機能は他にもあります。役に立つ機能が見つかるかもしれません。 拡張機能のエクスプローラーで、"Azure" で検索してください。
 
-![Visual Studio Code 用の Azure 拡張機能](media/deploy-containers/azure-extensions-for-visual-studio-code.png)
+![Visual Studio Code 用の Azure 拡張機能](media/deploy-azure/azure-extensions-for-visual-studio-code.png)
 
 人気の拡張機能の一部:
 

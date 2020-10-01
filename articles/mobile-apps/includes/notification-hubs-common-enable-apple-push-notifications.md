@@ -4,12 +4,12 @@ ms.author: miparker
 ms.date: 07/27/2020
 ms.service: mobile-services
 ms.topic: include
-ms.openlocfilehash: f83e5ae060ee6b13523af8dbb271906dff02e027
-ms.sourcegitcommit: cf23d382eee2431a3958b1c87c897b270587bde0
+ms.openlocfilehash: 07778fad0d390b297850a10b544f08d9e5ec3569
+ms.sourcegitcommit: e97cb81a245ce7dcabeac3260abc3db7c30edd79
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87401701"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91493157"
 ---
 ### <a name="register-your-ios-app-for-push-notifications"></a>iOS アプリをプッシュ通知に登録する
 
@@ -51,7 +51,7 @@ ms.locfileid: "87401701"
 
 1. [トークンベースの認証に使用できる p8 証明書を作成する](#option-2-creating-a-p8-certificate-that-can-be-used-for-token-based-authentication) (*新しい推奨されるアプローチ*)
 
-「[APNS のトークンベース (HTTP/2) 認証](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-push-notification-http2-token-authentification)」にも記載されているように、新しい方のアプローチには多くの利点があります。 必要な手順は少数ですが、特定のシナリオで必須になることもあります。 ただし、どちらの方法もこのチュートリアルの目的で動作するため、両方の手順が提供されています。
+「[APNS のトークンベース (HTTP/2) 認証](/azure/notification-hubs/notification-hubs-push-notification-http2-token-authentification)」にも記載されているように、新しい方のアプローチには多くの利点があります。 必要な手順は少数ですが、特定のシナリオで必須になることもあります。 ただし、どちらの方法もこのチュートリアルの目的で動作するため、両方の手順が提供されています。
 
 ##### <a name="option-1-creating-a-p12-push-certificate-that-can-be-uploaded-directly-to-notification-hub"></a>オプション 1: 通知ハブに直接アップロードできる p12 プッシュ証明書を作成する
 
@@ -168,7 +168,7 @@ ms.locfileid: "87401701"
 1. **[Select certificates]\(証明書の選択\)** ウィンドウで、コード署名に使用する開発証明書を選択し、 **[Continue]\(続行\)** を選択します。
 
     > [!NOTE]
-    > これは証明書であり、[前の手順](#creating-a-certificate-for-notification-hubs)で作成したプッシュ証明書ではありません。 これは開発証明書です。 このチュートリアルでは[前提条件](#prerequisites)であるため、存在しない場合は作成する必要があります。 開発者証明書は、[Apple Developer ポータル](https://developer.apple.com)、[Xcode](https://developer.apple.com/library/archive/documentation/ToolsLanguages/Conceptual/YourFirstAppStoreSubmission/ProvisionYourDevicesforDevelopment/ProvisionYourDevicesforDevelopment.html)、または [Visual Studio](https://docs.microsoft.com/xamarin/ios/get-started/installation/device-provisioning/) で作成できます。
+    > これは証明書であり、[前の手順](#creating-a-certificate-for-notification-hubs)で作成したプッシュ証明書ではありません。 これは開発証明書です。 このチュートリアルでは[前提条件](#prerequisites)であるため、存在しない場合は作成する必要があります。 開発者証明書は、[Apple Developer ポータル](https://developer.apple.com)、[Xcode](https://developer.apple.com/library/archive/documentation/ToolsLanguages/Conceptual/YourFirstAppStoreSubmission/ProvisionYourDevicesforDevelopment/ProvisionYourDevicesforDevelopment.html)、または [Visual Studio](/xamarin/ios/get-started/installation/device-provisioning/) で作成できます。
 
 1. **[Certificates, Identifiers & Profiles]\(証明書、識別子、およびプロファイル\)** ページに戻り、左側のメニューから **[Profiles]\(プロファイル\)** を選択し、 **[+]** を選択して新しいプロファイルを作成します。 **[Register a New Provisioning Profile]\(新しいプロビジョニング プロファイルの登録\)** 画面が表示されます。
 

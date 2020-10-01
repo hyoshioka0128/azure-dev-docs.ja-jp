@@ -4,12 +4,12 @@ description: 統合テストと、Azure DevOps を使用した Terraform プロ�
 ms.topic: tutorial
 ms.date: 07/31/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: d6c8f9c419070d734c3c848163c52e6255d5512a
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: 73f7c279948101af509ba5e3120b1af650f38ca1
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831998"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401732"
 ---
 # <a name="tutorial-configure-integration-tests-for-terraform-projects-in-azure"></a>チュートリアル:Azure で Terraform プロジェクトの統合テストを構成する
 
@@ -25,14 +25,12 @@ ms.locfileid: "90831998"
 > * `terraform plan` を実行して、リモート サービスの観点からその Terraform 構成ファイルを検証します。
 > * Azure パイプラインを使用して継続的インテグレーションを自動化します。
 
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
-
 ## <a name="prerequisites"></a>前提条件
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
-- **Azure DevOps 組織とプロジェクト**:まだお持ちでない場合は、[Azure DevOps 組織を作成します](/azure/devops/organizations/projects/create-project?tabs=preview-page&view=azure-devops)。
+- **Azure DevOps 組織とプロジェクト**:まだお持ちでない場合は、[Azure DevOps 組織を作成します](/azure/devops/organizations/projects/create-project)。
 - **Terraform の Build & Release Tasks 拡張機能**:Azure DevOps 組織に [Terraform のビルド/リリース タスク拡張機能をインストール](https://marketplace.visualstudio.com/items?itemName=charleszipp.azure-pipelines-tasks-terraform)します。
-- **Azure サブスクリプションへの Azure DevOps のアクセスを許可する**:`terraform-basic-testing-azure-connection` という名前の [Azure サービス接続](/azure/devops/pipelines/library/connect-to-azure?view=azure-devops)を作成して、Azure Pipelines を Azure サブスクリプションに接続できるようにします。
+- **Azure サブスクリプションへの Azure DevOps のアクセスを許可する**:`terraform-basic-testing-azure-connection` という名前の [Azure サービス接続](/azure/devops/pipelines/library/connect-to-azure)を作成して、Azure Pipelines を Azure サブスクリプションに接続できるようにします。
 - **Terraform のインストール**:ご使用の環境に応じて、[Terraform をダウンロードしてインストール](https://www.terraform.io/downloads.html)します。
 - **テスト用サンプルをフォークする**:[GitHub の Terraform サンプル プロジェクト](https://github.com/Azure/terraform)をフォークし、開発/テスト用コンピューターに複製します。
 
@@ -195,7 +193,7 @@ terraform plan
 
     ![コードはどこにありますか?](media/best-practices-integration-testing/new-pipeline-where-github-yaml.png)
 
-1. この時点で、Azure DevOps に、ご自身の組織へのアクセスを承認することが必要になる可能性があります。 このトピックの詳細については、記事「[GitHub リポジトリの構築](/azure/devops/pipelines/repos/github?view=azure-devops&tabs=yaml)」を参照してください。
+1. この時点で、Azure DevOps に、ご自身の組織へのアクセスを承認することが必要になる可能性があります。 このトピックの詳細については、記事「[GitHub リポジトリの構築](/azure/devops/pipelines/repos/github)」を参照してください。
 
 1. リポジトリの一覧で、GitHub 組織で作成したリポジトリのフォークを選択します。
 
@@ -222,6 +220,8 @@ terraform plan
 このステップが完了したら、Azure DevOps の詳細にアクセスして、すべてが正しく実行されていることを確認します。
 
 ![Azure DevOps の緑色のパイプライン](media/best-practices-integration-testing/azure-devops-green-pipeline.png)
+
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>次のステップ
 

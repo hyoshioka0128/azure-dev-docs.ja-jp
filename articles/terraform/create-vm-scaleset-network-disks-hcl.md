@@ -4,12 +4,12 @@ description: Terraform を使用して Azure 仮想マシン スケール セッ
 ms.topic: how-to
 ms.date: 11/07/2019
 ms.custom: devx-track-terraform
-ms.openlocfilehash: e6f83d6f4f138b92576e44cadb65c3e4d018dc66
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: d261a5c9ca76dd66c5c79333186079b92ea54bae
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241244"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401632"
 ---
 # <a name="create-an-azure-virtual-machine-scale-set-using-terraform"></a>Terraform を使用して Azure 仮想マシン スケール セットを作成する
 
@@ -26,8 +26,6 @@ ms.locfileid: "88241244"
 
 > [!NOTE]
 > この記事で使用される Terraform 構成ファイルの最新バージョンは、[GitHub の Awesome Terraform リポジトリ](https://github.com/Azure/awesome-terraform/tree/master/codelab-vmss)にあります。
-
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -395,10 +393,6 @@ Cloud Shell で、次の手順を実行します。
     terraform apply
     ```
 
-    このコマンドの出力は次のスクリーンショットのようになります。
-
-    ![Terraform の仮想マシン スケール セットのリソース グループ](./media/create-vm-scaleset-network-disks-hcl/resource-group-contents.png)
-
 1. ブラウザーを開き、コマンドから返された FQDN に接続します。
 
     ![FQDN の参照の結果](./media/create-vm-scaleset-network-disks-hcl/browser-fqdn.png)
@@ -504,12 +498,9 @@ SSH "*ジャンプボックス*" は、ネットワーク上の他のサーバ�
    terraform apply
    ```
 
-デプロイが完了すると、リソース グループの内容は次のスクリーンショットのようになります。
+**注**:
 
-![Terraform の仮想マシン スケール セットのリソース グループ](./media/create-vm-scaleset-network-disks-hcl/resource-group-contents-final.png)
-
-> [!NOTE]
-> パスワードを使用してログインする機能は、デプロイしたジャンプボックスと仮想マシン スケール セットでは無効にされています。 仮想マシンにアクセスするには、SSH を使用してログインします。
+- パスワードを使用してログインする機能は、デプロイしたジャンプボックスと仮想マシン スケール セットでは無効にされています。 仮想マシンにアクセスするには、SSH を使用してログインします。
 
 ## <a name="environment-cleanup"></a>環境のクリーンアップ
 
@@ -520,6 +511,8 @@ terraform destroy
 ```
 
 この削除プロセスが完了するまでに数分かかることがあります。
+
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>次のステップ
 

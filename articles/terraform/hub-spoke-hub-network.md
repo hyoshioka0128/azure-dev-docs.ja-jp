@@ -4,12 +4,12 @@ description: 他のネットワーク間の共通接続ポイントとして機�
 ms.topic: tutorial
 ms.date: 10/26/2019
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 0833497301865506592639838c7d6075813bcf6e
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: ee75fe6c7fe49463137f9e0a68e518290f78acce
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241144"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401512"
 ---
 # <a name="tutorial-create-a-hub-virtual-network-in-azure-by-using-terraform"></a>チュートリアル:Terraform を使用して Azure でハブ仮想ネットワークを作成する
 
@@ -22,8 +22,6 @@ ms.locfileid: "88241144"
 > * Terraform を使用して、ハブ ジャンプボックス仮想マシンを作成する。
 > * Terraform を使用して、ハブ仮想プライベート ネットワーク ゲートウェイを作成する。
 > * Terraform を使用して、ハブとオンプレミスのゲートウェイの接続を作成する。
-
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -227,6 +225,8 @@ ms.locfileid: "88241144"
     ```
     
 3. ファイルを保存し、エディターを終了します。
+
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>次のステップ
 

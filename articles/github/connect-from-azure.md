@@ -7,12 +7,12 @@ ms.topic: reference
 ms.service: azure
 ms.date: 08/31/2020
 ms.custom: github-actions-azure
-ms.openlocfilehash: d7c791aec426e139592e8a32e7779b2f02832d5f
-ms.sourcegitcommit: 5205d15c697bbfd4ecb3f45b5de093f709d11979
+ms.openlocfilehash: 4900097ea8d3635c2030f73eab1c63fb46323bc9
+ms.sourcegitcommit: e97cb81a245ce7dcabeac3260abc3db7c30edd79
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90026413"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91493123"
 ---
 # <a name="use-github-actions-to-connect-to-azure"></a>GitHub Actions を使用して Azure に接続する
 
@@ -30,7 +30,7 @@ Azure CLI は、Azure CLI の GitHub アクション ランナー環境を設定
 
 この例では、Azure での認証に使用できる `AZURE_CREDENTIALS` という名前のシークレットを作成します。  
 
-1. 既存のアプリケーションがない場合は、サービス プリンシパルで使用する[新しい Active Directory アプリケーション](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#register-an-application-with-azure-ad-and-create-a-service-principal&preserve-view=true)を登録します。
+1. 既存のアプリケーションがない場合は、サービス プリンシパルで使用する[新しい Active Directory アプリケーション](/azure/active-directory/develop/howto-create-service-principal-portal#register-an-application-with-azure-ad-and-create-a-service-principal&preserve-view=true)を登録します。
 
     ```azurecli-interactive
         appName="myApp"
@@ -41,7 +41,7 @@ Azure CLI は、Azure CLI の GitHub アクション ランナー環境を設定
         --identifier-uris http://localhost/$appName
     ```
 
-1. Azure portal でアプリ用の[新しいサービス プリンシパルを作成します](https://docs.microsoft.com/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest)。 
+1. Azure portal でアプリ用の[新しいサービス プリンシパルを作成します](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest)。 
 
     ```azurecli-interactive
         az ad sp create-for-rbac --name "myApp" --role contributor \
@@ -67,11 +67,11 @@ Azure CLI は、Azure CLI の GitHub アクション ランナー環境を設定
 
 1. **[Settings]\(設定\)** 、 **[New Secret]\([新しいシークレット\)]** の順に選択します。
 
-    :::image type="content" source="media/select-secrets.png" alt-text="シークレットの追加を選択する":::
+    :::image type="content" source="media/select-secrets.png" alt-text="ナビゲーションで [Settings]\(設定\) を選択する":::
 
 1. `AZURE_CREDENTIALS` という名前のサービス プリンシパルの JSON オブジェクトを貼り付けます。 
 
-    :::image type="content" source="media/azure-secret-add.png" alt-text="GitHub でシークレットを追加する":::
+    :::image type="content" source="media/azure-secret-add.png" alt-text="ナビゲーションで [Settings]\(設定\) を選択する":::
 
 1. **[Add secret]\(シークレットの追加\)** を選択して保存します。
 
@@ -158,19 +158,19 @@ build-and-deploy:
 
 ### <a name="azure-active-directory"></a>Azure Active Directory 
 
-- [Azure AD で GitHub Enterprise にサインインする (シングル サインオン)](https://docs.microsoft.com/azure/active-directory/saas-apps/github-tutorial)   
+- [Azure AD で GitHub Enterprise にサインインする (シングル サインオン)](/azure/active-directory/saas-apps/github-tutorial)   
 
 ### <a name="power-bi"></a>Power BI
 
-- [Power BI を GitHub に接続する](https://docs.microsoft.com/power-bi/service-connect-to-github)   
+- [Power BI を GitHub に接続する](/power-bi/service-connect-to-github)   
 
 ### <a name="connectors"></a>Connectors
 
-- [Azure Logic Apps、Power Automate、および Power Apps 用の GitHub コネクタ](https://docs.microsoft.com/connectors/github/)   
+- [Azure Logic Apps、Power Automate、および Power Apps 用の GitHub コネクタ](/connectors/github/)   
 
 ### <a name="azure-databricks"></a>Azure Databricks
 
-- [GitHub をノートブックのバージョン管理として使用する](https://docs.microsoft.com/azure/databricks/notebooks/github-version-control) 
+- [GitHub をノートブックのバージョン管理として使用する](/azure/databricks/notebooks/github-version-control) 
 
 > [!div class="nextstepaction"]
 > [GitHub から Azure にアプリをデプロイする](deploy-to-azure.md)

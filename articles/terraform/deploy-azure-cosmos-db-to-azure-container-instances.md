@@ -4,12 +4,12 @@ description: Terraform を使用して、Azure Container Instances に Azure Cos
 ms.topic: how-to
 ms.date: 04/26/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 376d0e3637489ddedde942812dcbf55d46da48db
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 75ee5e19d3cd42d10bd68e2550c391589c5c2d39
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241164"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401522"
 ---
 # <a name="deploy-an-azure-cosmos-db-to-azure-container-instances"></a>Azure Container Instances への Azure Cosmos DB のデプロイ
 
@@ -19,8 +19,6 @@ ms.locfileid: "88241164"
 > * Azure Cosmos DB インスタンス
 > * Azure Container Instances
 > * これら 2 つのリソース間で動作するアプリ
-
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -176,6 +174,8 @@ ms.locfileid: "88241164"
 ```bash
 terraform destroy -auto-approve
 ```
+
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>次のステップ
 

@@ -5,12 +5,12 @@ keywords: Azure DevOps Terraform VM 仮想マシン クラスター
 ms.topic: how-to
 ms.date: 03/09/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: b0de2ed0c82f26902470835658ba7bb34f1acd7a
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 1e383cbe7c7cb8a19f59ba1768f9f598f0e6dc94
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241206"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401642"
 ---
 # <a name="create-an-azure-vm-cluster-with-terraform-and-hcl"></a>Terraform と HCL を使用した Azure VM クラスターの作成
 
@@ -26,8 +26,6 @@ ms.locfileid: "88241206"
 > * Terraform を初期化します。
 > * Terraform 実行プランを作成します。
 > * Terraform 実行プランを適用して、Azure リソースを作成します。
-
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -252,6 +250,8 @@ Terraform は、構成ファイルに指定された状態を実現するため�
   ```
 
 ![Terraform 実行プランの適用](media/create-vm-cluster-with-infrastructure/terraform-apply.png)
+
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>次のステップ
 

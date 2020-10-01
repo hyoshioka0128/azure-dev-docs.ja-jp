@@ -1,15 +1,15 @@
 ---
 title: Node.js、API、マークアップを使用して Azure 上で静的サイトを構築する
 description: Azure を使用して JAMstack アプリ (JavaScript、API、Markup) を作成する方法
-ms.topic: article
+ms.topic: how-to
 ms.date: 08/20/2019
-ms.custom: seo-javascript-september2019, devx-track-javascript
-ms.openlocfilehash: 354c55609092bbeaf21b4e1eefdd125967eccfd6
-ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
+ms.custom: seo-javascript-september2019, devx-track-js
+ms.openlocfilehash: 25c379382d94a1892ad86becbb26cdf347ff006f
+ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88218698"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91364535"
 ---
 # <a name="build-jamstack-static-site-web-apps-on-azure-with-nodejs"></a>Node.js を使用して Azure で JAMstack (静的サイト) Web アプリを作成する
 

@@ -5,12 +5,12 @@ keywords: Azure DevOps Terraform AKS Kubernetes
 ms.topic: how-to
 ms.date: 03/09/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 726f4544f4c417792d784dfaddf93a3d79eaec9e
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: ccf5855f414b233f97642f60a4f52c99848b34cd
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241254"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401652"
 ---
 # <a name="create-a-kubernetes-cluster-with-azure-kubernetes-service-using-terraform"></a>Terraform を使用して Azure Kubernetes Service で Kubernetes クラスターを作成する
 
@@ -23,15 +23,13 @@ ms.locfileid: "88241254"
 > * AKS と Terraform を使用した Kubernetes クラスターの作成
 > * kubectl ツールを使用した Kubernetes クラスターの可用性のテスト
 
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
-
 ## <a name="prerequisites"></a>前提条件
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
 
 - **Terraform の構成**:[Terraform および Azure へのアクセスの構成](get-started-cloud-shell.md)に関する記事の指示に従ってください
 
-- **Azure サービス プリンシパル**:「[Azure CLI で Azure サービス プリンシパルを作成する](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest)」の「**サービス プリンシパルを作成する**」の指示に従ってください。 `appId`、`displayName`、`password`、`tenant` の各値をメモします。
+- **Azure サービス プリンシパル**:「[Azure CLI で Azure サービス プリンシパルを作成する](/cli/azure/create-an-azure-service-principal-azure-cli)」の「**サービス プリンシパルを作成する**」の指示に従ってください。 `appId`、`displayName`、`password`、`tenant` の各値をメモします。
 
 ## <a name="create-the-directory-structure"></a>ディレクトリ構造を作成する
 
@@ -401,6 +399,8 @@ Kubernetes ツールを使用して、新しく作成したクラスターを確
 ## <a name="monitor-health-and-logs"></a>正常性の監視とログ
 
 AKS クラスターが作成されたとき、クラスター ノードとポッドの両方の正常性メトリックを取得するための監視が有効になりました。 これらの正常性メトリックは、Azure portal で利用できます。 コンテナーの正常性の監視の詳細については、[Azure Kubernetes Service の正常性の監視](/azure/azure-monitor/insights/container-insights-overview)に関するページを参照してください。
+
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>次のステップ
 

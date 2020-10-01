@@ -7,11 +7,12 @@ ms.service: mobile-services
 ms.topic: article
 ms.date: 06/08/2020
 ms.author: masoucou
-ms.openlocfilehash: 157a9e7a3f9f366035512d97a843d31dcfdc3bdb
-ms.sourcegitcommit: f02ff55cef47581303a217cf1d310879cd722237
+ms.openlocfilehash: 0ab44652d4a635d5ff04928b76883a76fe3a62fa
+ms.sourcegitcommit: e97cb81a245ce7dcabeac3260abc3db7c30edd79
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84632344"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91493113"
 ---
 # <a name="cloud-hosted-source-code-management-services"></a>クラウドでホストされるソース コードの管理サービス
 
@@ -62,7 +63,7 @@ ms.locfileid: "84632344"
 
 ## <a name="azure-devops"></a>Azure DevOps
 
-[Azure DevOps](https://azure.microsoft.com/services/devops/) では、ソース管理オプションとして [Azure Repos](https://azure.microsoft.com/services/devops/repos/) と [Team Foundation バージョン管理 (TFVC)](https://docs.microsoft.com/azure/devops/repos/tfvc/index?view=azure-devops) がサポートされています。 用意されている無制限の無料プライベート リポジトリでは、コラボレーション コード レビュー、高度なファイル管理、コード検索、ブランチ ポリシーを使用して、高品質のコードを確実に実現できます。 Azure Repos は、小規模なプロジェクトにも、ネイティブの Azure Active Directory サポートと高度なポリシーを必要とする大規模な組織にも適しています。
+[Azure DevOps](https://azure.microsoft.com/services/devops/) では、ソース管理オプションとして [Azure Repos](https://azure.microsoft.com/services/devops/repos/) と [Team Foundation バージョン管理 (TFVC)](/azure/devops/repos/tfvc/index?view=azure-devops) がサポートされています。 用意されている無制限の無料プライベート リポジトリでは、コラボレーション コード レビュー、高度なファイル管理、コード検索、ブランチ ポリシーを使用して、高品質のコードを確実に実現できます。 Azure Repos は、小規模なプロジェクトにも、ネイティブの Azure Active Directory サポートと高度なポリシーを必要とする大規模な組織にも適しています。
 
 ### <a name="azure-devops-features"></a>Azure DevOps 機能
 

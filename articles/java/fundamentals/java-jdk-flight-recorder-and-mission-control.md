@@ -4,12 +4,12 @@ description: Zulu Flight Recorder と Mission Control を使用してアプリ �
 ms.date: 04/09/2019
 ms.topic: conceptual
 ms.custom: seo-java-july2019, seo-java-august2019, seo-java-september2019, devx-track-java
-ms.openlocfilehash: eda3eef3f733a9fc6a0b56d5ca22339c1d84c9cb
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 908b6b9b5bf584f16e3e343bb4fe6354ef13a237
+ms.sourcegitcommit: 717e32b68fc5f4c986f16b2790f4211967c0524b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379846"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91585540"
 ---
 # <a name="monitor-and-manage-java-workloads-with-zulu-flight-recorder-and-zulu-mission-control"></a>Zulu Flight Recorder と Zulu Mission Control を使用して Java ワークロードを監視および管理する
 
@@ -36,25 +36,25 @@ Zulu Mission Control をインストールし、Java 仮想マシン (JVM) に�
 
     **Linux:**
 
-    ```cli
+    ```azurecli
     tar -xzvf zmc7.0.0-EA-linux_x64.tar.gz
     ```
 
     **Windows:**
 
-    ```cli
+    ```azurecli
     unzip -zxvf zmc7.0.0-EA-win_x64.zip
     ```
 
     **macOS:**
 
-    ```cli
+    ```azurecli
     tar -xzvf zmc7.0.0-EA-macosx_x64.tar.gz
     ```
 
 4. 互換性のある JDK のいずれかを使用して Java アプリケーションを起動します。 次に例を示します。
 
-    ```cli
+    ```azurecli
     $JAVA_HOME/bin/java -jar MyApplication.jar
     ```
 
@@ -62,19 +62,19 @@ Zulu Mission Control をインストールし、Java 仮想マシン (JVM) に�
 
     **Linux:**
 
-    ```cli
+    ```azurecli
     zmc7.0.0-EA-linux_x64/zmc
     ```
 
     **Windows:**
 
-    ```cli
+    ```azurecli
     zmc7.0.0-EA-win_x64\zmc.exe
     ```
 
     **macOS:**
 
-    ```cli
+    ```azurecli
     zmc7.0.0-EA-macosx_x64/Zulu\ Mission\ Control.app/Contents/MacOS/zmc
     ```
 

@@ -3,22 +3,20 @@ title: Terraform を使用して Azure デプロイ スロットでインフラ�
 description: Azure プロバイダーのデプロイ スロットで Terraform を使用する方法について説明します。
 keywords: Azure DevOps Terraform デプロイ スロット
 ms.topic: how-to
-ms.date: 03/09/2020
+ms.date: 09/27/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: bed68e64bb6948f4ab021035bd113ea9fb007950
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: ad98549bca6b98635d111ee333212bd8b9a9dbba
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241214"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401772"
 ---
 # <a name="provision-infrastructure-with-azure-deployment-slots-using-terraform"></a>Terraform を使用して Azure デプロイ スロットでインフラストラクチャをプロビジョニングする
 
 [Azure デプロイ スロット](/azure/app-service/deploy-staging-slots)を使用し、アプリの異なるバージョン間をスワップできます。 この機能によって、デプロイ分断の影響が最小限に抑えられます。 
 
 この記事では、GitHub と Azure を使用して 2 つのアプリをデプロイする方法を説明しながら、デプロイ スロットの使用例を紹介します。 1 つのアプリが運用スロットでホストされています。 2 番目のアプリはステージング スロットでホストされています。 ("運用" と "ステージング" という名前は任意です。 これらは、実際のシナリオに適したものにすることができます。)デプロイ スロットを構成したら、必要に応じて Terraform を使用して 2 つのスロット間をスワップします。
-
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -303,6 +301,8 @@ terraform apply
 ```
 
 アプリがスワップされると、元の構成が表示されます。
+
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>次のステップ
 

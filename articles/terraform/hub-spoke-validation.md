@@ -4,12 +4,12 @@ description: すべての仮想ネットワークが相互に接続されてい�
 ms.topic: tutorial
 ms.date: 10/26/2019
 ms.custom: devx-track-terraform
-ms.openlocfilehash: ec21091b45dfe11839e4bfe0f4fe2f37261f16cc
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 684bca6b62847718f34ce799d0c1371b25fdd532
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241114"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401502"
 ---
 # <a name="tutorial-validate-a-hub-and-spoke-network-in-azure-using-terraform"></a>チュートリアル:Terraform を使用して Azure でハブとスポーク ネットワークを検証する
 
@@ -23,8 +23,6 @@ ms.locfileid: "88241114"
 > * Terraform apply を使用して、Azure にリソースを作成する
 > * 異なるネットワークの間の接続を確認する
 > * Terraform を使用して、すべてのリソースを破棄する
-
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -144,6 +142,8 @@ VPN エラーの解決方法の詳細については、[ハイブリッド VPN �
     ```bash
     rm -r hub-spoke
     ```
+
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>次のステップ
 

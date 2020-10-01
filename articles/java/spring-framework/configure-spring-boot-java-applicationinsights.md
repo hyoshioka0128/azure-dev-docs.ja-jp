@@ -10,12 +10,12 @@ ms.service: azure-monitor
 ms.tgt_pltfrm: application-insights
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 97825b81869ac6d2845576bd77a972d4573a624d
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: ee48999f7d83857c4992e74ad4dc4b248bfe195b
+ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831758"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91365215"
 ---
 # <a name="configure-a-spring-boot-initializer-app-to-use-application-insights"></a>Application Insights を使用するように Spring Boot Initializer アプリを構成する
 
@@ -102,7 +102,7 @@ ms.locfileid: "90831758"
    spring.application.name=[your app name]
    ```
 
-   Application Insights の微調整の方法については、[Application Insights Spring Boot Starter の Readme](https://github.com/Microsoft/ApplicationInsights-Java/blob/master/azure-application-insights-spring-boot-starter/README.md) を参照してください。
+   Application Insights の微調整の方法については、[Application Insights Spring Boot Starter の Readme](https://github.com/MicrosoftDocs/azure-dev-docs/blob/master/articles/java/spring-framework/spring-boot-starters-for-azure.md) を参照してください。
 
    > [!NOTE]
    > 
@@ -282,7 +282,7 @@ Application Insights では、外部の依存関係を自動収集できます�
 
 Azure Application Insights とその監視機能の詳細については、 **[Application Insights]** のホーム ページをご覧ください。
 
-Application Insights Spring Boot Starter の追加の構成の詳細については、こちらの[リンク](https://github.com/Microsoft/ApplicationInsights-Java/blob/master/azure-application-insights-spring-boot-starter/README.md)を参照してください。
+Application Insights Spring Boot Starter の追加の構成の詳細については、こちらの[リンク](https://github.com/MicrosoftDocs/azure-dev-docs/blob/master/articles/java/spring-framework/spring-boot-starters-for-azure.md)を参照してください。
 
 機能要求や潜在的なバグについては、[GitHub](https://github.com/Microsoft/ApplicationInsights-Java/issues) リポジトリで問題を開いてください。
 

@@ -4,12 +4,12 @@ description: 他のネットワーク間の共通接続ポイントとして機�
 ms.topic: tutorial
 ms.date: 10/26/2019
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 1bc9b2b899157985394165171adc76d988fe7e6a
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: b7276d3807f00e828c89ee00ffcde2e6e2f0b9a5
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241134"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401459"
 ---
 # <a name="tutorial-create-a-hub-virtual-network-appliance-in-azure-using-terraform"></a>チュートリアル:Terraform を使用して Azure でハブ仮想ネットワーク アプライアンスを作成する
 
@@ -24,8 +24,6 @@ Azure では、さまざまなネットワーク仮想アプライアンスが�
 > * Terraform を使用して、アプライアンスとして機能するハブ ネットワーク仮想マシンを作成する
 > * Terraform と CustomScript の拡張機能を使用してルートを有効にする
 > * Terraform を使用してハブ スポーク ゲートウェイのルート テーブルを作成する
-
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -270,6 +268,8 @@ Azure では、さまざまなネットワーク仮想アプライアンスが�
     ```
 
 1. ファイルを保存し、エディターを終了します。
+
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>次のステップ
 

@@ -4,12 +4,12 @@ description: Terraform 状態を Azure Storage に格納する方法について
 ms.topic: tutorial
 ms.date: 11/07/2019
 ms.custom: devx-track-terraform
-ms.openlocfilehash: d2fd110fec8d23bd8382669cbb572ce46b6fd1e6
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: a59ba1d24fc59f36e237f5be9a75981b9ae8f8ae
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241184"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401742"
 ---
 # <a name="tutorial-store-terraform-state-in-azure-storage"></a>チュートリアル:Terraform 状態を Azure Storage に格納する
 
@@ -20,8 +20,6 @@ Terraform 状態は、Terraform 構成を使用してデプロイされたリソ
 - 状態をローカルに格納すると、不注意で削除される可能性が高くなる。
 
 Terraform は、リモート ストレージへの状態の永続化をサポートしています。 そのようなサポート対象のバックエンドの 1 つとして Azure Storage があります。 このドキュメントでは、この目的のために Azure Storage を構成して使用する方法について説明します。
-
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -126,6 +124,8 @@ Azure portal または他の Azure 管理ツールを使用して BLOB を調べ
 Azure BLOB の格納データは、永続化される前に暗号化されます。 必要に応じて、Terraform はバックエンドから状態を取得し、ローカル メモリに格納します。 このパターンを使用すると、状態はローカル ディスクに書き込まれません。
 
 Azure Storage 暗号化の詳細については、[保存データに対する Azure Storage Service Encryption](/azure/storage/common/storage-service-encryption) に関するページをご覧ください。
+
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>次のステップ
 

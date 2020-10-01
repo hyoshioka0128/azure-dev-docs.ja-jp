@@ -3,13 +3,13 @@ title: Azure で開発するためのローカル JavaScript 環境を構成す�
 description: エディター、Azure SDK ライブラリ、オプションのツール、ライブラリ認証に必要な資格情報など、Azure で作業するためのローカル JavaScript 開発環境を設定する方法。
 ms.date: 09/22/2020
 ms.topic: conceptual
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 93d76b4268d9d9b1533599ce474fe0c554723e28
-ms.sourcegitcommit: 823d5e5b8bbac36fa08a578a0eb2efaa0239bfb7
+ms.custom: devx-track-js
+ms.openlocfilehash: 6d9f86b026a7104e79228d78d5ac27649049a8a4
+ms.sourcegitcommit: 4af22924a0eaf01e6902631c0714045c02557de4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91128951"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91208683"
 ---
 # <a name="configure-your-local-javascript-dev-environment-for-azure"></a>Azure 用のローカル JavaScript 開発環境を構成する
 

@@ -5,12 +5,12 @@ keywords: Ansible, Azure, DevOps, 概要, クラウド プロビジョニング,
 ms.topic: overview
 ms.date: 08/13/2020
 ms.custom: devx-track-ansible
-ms.openlocfilehash: 2bd996a93952df1f52c2a007d73f7f37e4e0f132
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 9eb90921a0d44e138c331eb716700feb85e8aa9d
+ms.sourcegitcommit: 717e32b68fc5f4c986f16b2790f4211967c0524b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88239964"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91586103"
 ---
 # <a name="using-ansible-with-azure"></a>Azure での Ansible の使用
 
@@ -24,9 +24,9 @@ ms.locfileid: "88239964"
 
 ## <a name="ansible-modules"></a>Ansible モジュール
 
-Ansible には一連の [Ansible モジュール](https://docs.ansible.com/ansible/latest/modules_by_category.html)が含まれています。これらのモジュールは、リモート ホストで直接実行されるか、[プレイブック](https://docs.ansible.com/ansible/latest/playbooks.html)を介して実行されます。 ユーザーは独自のモジュールを作成できます。 モジュールは、サービス、パッケージ、ファイルなどのシステム リソースの制御や、システム コマンドの実行に使用されます。
+Ansible には一連の [Ansible モジュール](https://docs.ansible.com/ansible/2.9/modules/modules_by_category.html)が含まれています。これらのモジュールは、リモート ホストで直接実行されるか、[プレイブック](https://docs.ansible.com/ansible/latest/playbooks.html)を介して実行されます。 ユーザーは独自のモジュールを作成できます。 モジュールは、サービス、パッケージ、ファイルなどのシステム リソースの制御や、システム コマンドの実行に使用されます。
 
-Ansible には、Azure サービスとの対話用に一連の [Ansible クラウド モジュール](https://docs.ansible.com/ansible/list_of_cloud_modules.html#azure)が含まれています。 これらのモジュールを使用すると、Azure でインフラストラクチャを作成して調整できます。 
+Ansible には、Azure サービスとの対話用に一連の [Ansible クラウド モジュール](https://docs.ansible.com/ansible/2.9/modules/list_of_cloud_modules.html#azure)が含まれています。 これらのモジュールを使用すると、Azure でインフラストラクチャを作成して調整できます。 
 
 ## <a name="migrate-existing-workload-to-azure"></a>Azure への既存のワークロードの移行
 

@@ -4,20 +4,18 @@ description: Terraform プロジェクトを検証するために構成できる
 ms.topic: overview
 ms.date: 07/31/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 29f128361030b64da38124f7f7d723619306f582
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 6c782b2a6fed14698aede5a7dbfb6eae5ff9cf4a
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241274"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401672"
 ---
 # <a name="tutorial-terraform-testing-overview"></a>チュートリアル:Terraform のテストの概要
 
 [!INCLUDE [terraform-intro.md](includes/terraform-intro.md)]
 
 Terraform は、Infrastructure as Code (IaC) ツールです。 このカテゴリのツールは、Terraform ファイルをプロジェクトのソース コードと同じように扱うことを意味します。 そのプロセスの一部として、バージョン管理とソース コード管理が含まれます。 また、テストもプロセスに組み込む必要があります。 この記事では、Terraform プロジェクトに対して実行できる、さまざまな種類のテストの概要を示します。
-
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
 ## <a name="integration-testing"></a>統合テスト
 
@@ -59,3 +57,5 @@ E2E テストは通常、3 段階のプロセスです。 最初に、構成を�
 
 > [!div class="nextstepaction"]
 > [エンド ツー エンド テストの詳細情報](best-practices-end-to-end-testing.md)
+
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]

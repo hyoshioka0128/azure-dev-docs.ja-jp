@@ -4,12 +4,12 @@ description: Terratest を使用して Terraform モジュールをテストす�
 ms.topic: tutorial
 ms.date: 10/26/2019
 ms.custom: devx-track-terraform
-ms.openlocfilehash: f174c6c3a4a91fe47ded8ade8826ce9c4c09af65
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: ec42182fd20ce073f727b8096d15e2a87a3c1207
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241064"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401702"
 ---
 # <a name="tutorial-test-terraform-modules-in-azure-using-terratest"></a>チュートリアル:Terratest を使用して Azure で Terraform モジュールをテストする
 
@@ -27,14 +27,12 @@ Terraform モジュールを作成するときは、品質保証を実装する�
 - **Go で記述されたテスト ケース** - Terraform を利用する多くの開発者は Go 開発者です。 Go 開発者の場合、Terratest を使用するために別のプログラミング言語を習得する必要はありません。
 - **拡張可能なインフラストラクチャ** - Azure 固有の機能などの追加機能で Terratest を拡張できます。
 
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
-
 ## <a name="prerequisites"></a>前提条件
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
 - **Go プログラミング言語**: Terraform テスト ケースは [Go](https://golang.org/dl/) で記述します。
 - **dep**: [dep](https://github.com/golang/dep#installation) は、Go 向けの依存関係管理ツールです。
-- **Azure CLI**:[Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest) は、Azure リソースを管理するために使用できるコマンドライン ツールです。 (Terraform では、サービス プリンシパル経由または [Azure CLI を介した](https://www.terraform.io/docs/providers/azurerm/authenticating_via_azure_cli.html) Azure への認証がサポートされます。)
+- **Azure CLI**:[Azure CLI](/cli/azure/install-azure-cli) は、Azure リソースを管理するために使用できるコマンドライン ツールです。 (Terraform では、サービス プリンシパル経由または [Azure CLI を介した](https://www.terraform.io/docs/providers/azurerm/authenticating_via_azure_cli.html) Azure への認証がサポートされます。)
 - **mage**: Terratest ケースの実行を簡単にする方法を示すため、[mage 実行可能ファイル](https://github.com/magefile/mage/releases)を使用します。 
 
 ## <a name="create-a-static-webpage-module"></a>静的 Web ページ モジュールを作成する
@@ -521,6 +519,8 @@ mage では、Go パッケージ システムを使用して、ステップを�
 **省略可能: 受け入れテストを実行するようにサービス プリンシパル環境変数を設定する**
  
 テストの前に `az login` を実行する代わりに、サービス プリンシパル環境変数を設定して Azure 認証を完了できます。 Terraform から、[環境変数名の一覧](https://www.terraform.io/docs/providers/azurerm/index.html#testing)が公開されています。 (必要になるのは、これらの環境変数のうち最初の 4 つのみです)。[これらの環境変数の値を取得する](https://www.terraform.io/docs/providers/azurerm/authenticating_via_service_principal.html)方法が説明された詳しい手順も Terraform から公開されています。
+
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>次のステップ
 

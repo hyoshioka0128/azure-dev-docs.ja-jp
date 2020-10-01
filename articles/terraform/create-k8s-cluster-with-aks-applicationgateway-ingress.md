@@ -5,12 +5,12 @@ keywords: Azure DevOps Terraform アプリケーション ゲートウェイ イ
 ms.topic: how-to
 ms.date: 03/09/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 4d83e6720958ff76126c7e71e8cfbbcfb13c666a
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 10e52f4cc05bfa4127ee519ed265f0607d4745be
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241264"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401662"
 ---
 # <a name="create-an-application-gateway-ingress-controller-in-azure-kubernetes-service"></a>Azure Kubernetes Service で Application Gateway イングレス コントローラーを作成する
 
@@ -27,8 +27,6 @@ ms.locfileid: "88241264"
 > * AKS と Terraform を使用して Kubernetes クラスターを作成する。
 > * kubectl ツールを使用して Kubernetes クラスターの可用性をテストする。
 
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
-
 ## <a name="prerequisites"></a>前提条件
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
@@ -37,7 +35,7 @@ ms.locfileid: "88241264"
 
 - **Azure リソース グループ**:デモに使用する Azure リソース グループがない場合は、[Azure リソース グループを作成してください](/azure/azure-resource-manager/manage-resource-groups-portal#create-resource-groups)。 リソース グループの名前と場所がデモで使用されるため、それらの値をメモしてください。
 
-- **Azure サービス プリンシパル**:「[Azure CLI で Azure サービス プリンシパルを作成する](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest)」の「**サービス プリンシパルを作成する**」セクションの指示に従ってください。 `appId`、`displayName`、`password` の各値をメモします。
+- **Azure サービス プリンシパル**:「[Azure CLI で Azure サービス プリンシパルを作成する](/cli/azure/create-an-azure-service-principal-azure-cli)」の「**サービス プリンシパルを作成する**」セクションの指示に従ってください。 `appId`、`displayName`、`password` の各値をメモします。
 
 - **サービス プリンシパル オブジェクト ID を取得する**:Cloud Shell で次のコマンドを実行します。`az ad sp list --display-name <displayName>`
 
@@ -774,6 +772,8 @@ App Gateway、AKS、AGIC をインストールしたら、[Azure Cloud Shell](ht
 ```azurecli
 az group delete -n <resource-group>
 ```
+
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>次のステップ
 

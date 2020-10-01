@@ -4,12 +4,12 @@ description: Azure で Terraform を使用して、ハイブリッド ネット�
 ms.topic: tutorial
 ms.date: 10/26/2019
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 7fd6de18404f6c71184f17510699c6eb2a7be16b
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 5a9c4541d0dc04413e088587791488133fe61ff9
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241124"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401492"
 ---
 # <a name="tutorial-create-a-hub-and-spoke-hybrid-network-topology-in-azure-using-terraform"></a>チュートリアル:Terraform を使用して Azure でハブ スポーク ハイブリッド ネットワーク トポロジを作成する
 
@@ -26,8 +26,6 @@ ms.locfileid: "88241124"
 > * Terraform を使用して、Azure 上に個々のワークロードをスポーク VNet として作成する
 > * Terraform を使用して、オンプレミス ネットワークと Azure ネットワーク間のゲートウェイと接続を確立する
 > * Terraform を使用して、スポーク ネットワークへの VNet ピアリングを作成する
-
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -157,6 +155,8 @@ Azure プロバイダーを宣言する Terraform 構成ファイルを作成し
     ```
 
 1. ファイルを保存し、エディターを終了します。
+
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>次のステップ
 

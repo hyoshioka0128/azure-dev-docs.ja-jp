@@ -1,11 +1,11 @@
 ---
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 45c027d261a091e6c5e2abaa1ea1d4f55f5ad23f
-ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
+ms.custom: devx-track-js
+ms.openlocfilehash: 659f538569d2e2155c0eccd3c08684ee835e7449
+ms.sourcegitcommit: 4af22924a0eaf01e6902631c0714045c02557de4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "90773091"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91208781"
 ---
 VS Code で Azure 拡張機能をインストールしたら、お使いの Azure アカウントにサインインします。それには、**Azure** エクスプローラーに移動し、 **[Azure にサインイン]** を選択して、画面の指示に従います。 (複数の Azure 拡張機能がインストールされている場合は、App Service、Functions など、自分が作業している分野のものを選択します)。
 

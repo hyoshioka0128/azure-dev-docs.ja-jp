@@ -4,12 +4,12 @@ description: Azure で Yeoman を使用して Terraform ベース テンプレ�
 ms.topic: how-to
 ms.date: 05/25/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: aa71698735d96bd591b15d6804fd2d142602d326
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: f125f6d1fd5b37fc023343dc045a70dd92084840
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241284"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401722"
 ---
 # <a name="create-a-terraform-base-template-in-azure-using-yeoman"></a>Azure で Yeoman を使用して Terraform ベース テンプレートを作成する
 
@@ -21,8 +21,6 @@ ms.locfileid: "88241284"
 > * 2 つの異なる方法を使用して、Terraform テンプレートをテストします。
 > * Docker ファイルを使用して、Terraform モジュールを実行します。
 > * Azure Cloud Shell で Terraform モジュールをネイティブに実行します。
-
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -290,6 +288,8 @@ Docker が実際に実行されていることを確認するには、`docker in
     ```
 
     ![テスト合格の結果](media/create-a-base-template-using-yeoman/ymg-pass.png)
+
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>次のステップ
 

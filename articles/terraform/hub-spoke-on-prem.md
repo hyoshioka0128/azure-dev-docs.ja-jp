@@ -4,12 +4,12 @@ description: ローカル リソースを格納するオンプレミス仮想ネ
 ms.topic: tutorial
 ms.date: 10/26/2019
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 63ad0ef21ee9a6474710bf7ac40282d442105567
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 4faf366a585c7652584e5b70cf10b150a91d1b0e
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241104"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401472"
 ---
 # <a name="tutorial-create-on-premises-virtual-network-in-azure-using-terraform"></a>チュートリアル:Terraform を使用して Azure でオンプレミスの仮想ネットワークを作成する
 
@@ -22,8 +22,6 @@ ms.locfileid: "88241104"
 > * Terraform を使用して、ハブ ネットワーク アプライアンス リソースを作成する
 > * Terraform を使用して、オンプレミス仮想マシンを作成する
 > * Terraform を使用して、オンプレミス仮想プライベート ネットワーク ゲートウェイを作成する
-
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -221,6 +219,8 @@ ms.locfileid: "88241104"
     ```
 
 1. ファイルを保存し、エディターを終了します。
+
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>次のステップ
 

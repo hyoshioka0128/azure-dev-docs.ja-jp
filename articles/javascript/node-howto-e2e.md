@@ -1,15 +1,15 @@
 ---
 title: コンテナー化された Node.js アプリを VS Code と Azure を使用してデプロイする
 description: Node.js アプリの作成、コンテナー化、Azure へのデプロイの方法を紹介する完全なエンド ツー エンドのチュートリアル
-ms.topic: article
+ms.topic: how-to
 ms.date: 06/25/2017
-ms.custom: seo-javascript-september2019, seo-javascript-october2019, devx-track-javascript
-ms.openlocfilehash: c036adcd759f26dfafda5126f475e251b503a831
-ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
+ms.custom: seo-javascript-september2019, seo-javascript-october2019, devx-track-js
+ms.openlocfilehash: 9d23e9dc578b89058c0fadeb98978de96712cab6
+ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88218924"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91364905"
 ---
 # <a name="develop-and-deploy-a-containerized-nodejs-app-with-visual-studio-code-and-azure"></a>コンテナー化された Node.js アプリを Visual Studio Code と Azure を使用して開発してデプロイする
 
@@ -114,7 +114,7 @@ Yarn でアプリの依存関係をインストールすると、*yarn.lock* フ
 
 コードを (コピーして貼り付けるのではなく) 手動で入力した場合、`process` の後にピリオドを入力すると、Visual Studio Code によって Node.js の process グローバル API で使用できるメンバーが表示されることに注目してください。
 
-![オートコンプリートによって API のメンバーが自動的に表示される](./media/node-howto-e2e/visual-studio-code-process-env.png)
+![process.env での VS Code 環境変数](./media/node-howto-e2e/visual-studio-code-process-env.png)
 
 オートコンプリートは、Visual Studio Code がバックグラウンドで TypeScript (JavaScript にも対応) を使用し、型情報を提供することによって実現されています。その型情報が、ユーザーが何か入力したときに、入力候補一覧に伝えられます。 Visual Studio Code は、Node.js プロジェクトを認識し、[Node.js に使用される TypeScript の型指定ファイルを NPM から](https://www.npmjs.com/package/@types/node)自動的にダウンロードします。 この型指定ファイルによって、他の Node.js グローバル (`Buffer`、`setTimeout` など) やすべての組み込みモジュール (`fs`、`http` など) でオートコンプリートが利用できるようになります。
 

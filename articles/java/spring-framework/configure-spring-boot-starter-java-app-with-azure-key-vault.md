@@ -9,12 +9,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: tutorial
 ms.workload: identity
 ms.custom: devx-track-java
-ms.openlocfilehash: d3504137c2c9a8ee2b1af960a17deb902be95d7a
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: e06d09d4f44366ba995ecaa401df901dc6270c6d
+ms.sourcegitcommit: f80537193d3e22eb24cce4a0a5464a996d1e63eb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831988"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91409974"
 ---
 # <a name="tutorial-reading-a-secret-from-azure-key-vault-in-a-spring-boot-application"></a>チュートリアル:Spring Boot アプリケーションでの Azure Key Vault からのシークレットの読み取り
 
@@ -398,7 +398,7 @@ Key Vault がシークレットをアプリケーション コードから外部
     <plugin>
      <groupId>com.microsoft.azure</groupId>
      <artifactId>azure-webapp-maven-plugin</artifactId>
-     <version>1.9.1</version>
+     <version>1.11.0</version>
     </plugin>
    ```
 
@@ -412,7 +412,9 @@ Key Vault がシークレットをアプリケーション コードから外部
    mvn azure-webapp:config
    ```
 
-1. OS に `linux` が選択されていることを確認します。
+1. `Subscription` では、作成した Key Vault と同じサブスクリプション ID が選択されていることを確認します。
+1. `Web App` では、既存の Web アプリを選択するか、`<create>` を選択して新規作成できます。既存の Web アプリを選択した場合は、最後の**確認**の手順に直接移動します。
+1. `OS` では、`linux` が選択されていることを確認します。
 1. `javaVersion` には、Spring Initializr で選択した Java のバージョンが選択されていることを確認します。  上記で `11` を選択したので、ここでは 11 を選択します。
 1. 残りの質問については既定値を受け入れます。
 1. 確認を求められたら、Y と答えて続行するか、N で質問への回答を再び開始します。  プラグインの実行が完了すると、POM を編集できるようになります。
@@ -437,9 +439,10 @@ Key Vault がシークレットをアプリケーション コードから外部
      <plugin> 
        <groupId>com.microsoft.azure</groupId>  
        <artifactId>azure-webapp-maven-plugin</artifactId>  
-       <version>1.9.1</version>  
+       <version>1.11.0</version>  
        <configuration>
          <schemaVersion>V2</schemaVersion>
+         *<subscriptionId>********-****-****-****-************</subscriptionId>
          *<resourceGroup>contosorg</resourceGroup>
          *<appName>contosokeyvault</appName>
          <pricingTier>P1v2</pricingTier>

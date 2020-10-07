@@ -4,12 +4,12 @@ description: Visual Studio Code で Azure Terraform 拡張機能をインスト�
 ms.topic: how-to
 ms.date: 10/26/2019
 ms.custom: devx-track-terraform
-ms.openlocfilehash: dbb76f2bcdce12ebb55d9ae6002747701858751e
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: ac8c5c765237a065fbb2531f71de7f39644b70dc
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241324"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401762"
 ---
 # <a name="configure-the-azure-terraform-visual-studio-code-extension"></a>Azure Terraform Visual Studio Code 拡張機能の構成
 
@@ -20,8 +20,6 @@ Azure Terraform Visual Studio Code 拡張機能を使用すると、エディタ
 > * Terraform を使用して Azure サービスのプロビジョニングを自動化する。
 > * Azure サービス用の Terraform Visual Studio Code 拡張機能をインストールして使用する。
 > * Visual Studio Code を使用して、Terraform プランを記述、計画、実行する。
-
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -137,8 +135,6 @@ Azure Terraform 拡張機能が、インストール済み拡張機能の一覧�
 1. メニュー バーで、 **[表示] > [コマンド パレット] > [Azure Terraform:Init]** の順に選択します。
 
 1. 確認のメッセージが表示されたら **[OK]** を選択します。
-
-    ![Cloud Shell を開くための確認ダイアログ](media/configure-vs-code-extension-for-terraform/tf-do-you-want-to-open-cloud-shell.png)
 
 1. 新しいフォルダーから初めて Cloud Shell を起動すると、Web アプリケーションを作成するよう求められます。 **[Open (開く)]** を選択します。
 
@@ -270,11 +266,9 @@ Visual Studio Code 内からの Terraform コマンドの使用を開始する�
 
 1. テストの種類のオプション一覧から **[lint]** を選択します。
 
-    ![テストの種類の選択](media/configure-vs-code-extension-for-terraform/tf-select-type-of-test-lint.png)
+    ![テストの種類として [lint] を選択する](media/configure-vs-code-extension-for-terraform/tf-select-type-of-test-lint.png)
 
 1. 確認のメッセージが表示されたら **[OK]** を選択し、画面の指示に従います。
-
-    ![Cloud Shell を開くための確認ダイアログ](media/configure-vs-code-extension-for-terraform/tf-do-you-want-to-open-cloudshell-small.png)
 
 >[!NOTE]
 >**lint** または **end to end** のテストを実行すると、Azure では、コンテナー サービスを使用して、実際のテストを実行するテスト マシンがプロビジョニングされます。 このため、通常、テスト結果が返されるまでに数分かかる場合があります。
@@ -289,11 +283,9 @@ Visual Studio Code 内からの Terraform コマンドの使用を開始する�
 
 1. テストの種類のオプション一覧から **[end to end]** を選択します。
 
-    ![テストの種類の選択](media/configure-vs-code-extension-for-terraform/tf-select-type-of-test-end-to-end.png)
+    ![テストの種類として [end to end] を選択する](media/configure-vs-code-extension-for-terraform/tf-select-type-of-test-end-to-end.png)
 
 1. 確認のメッセージが表示されたら **[OK]** を選択し、画面の指示に従います。
-
-    ![Cloud Shell を開くための確認ダイアログ](media/configure-vs-code-extension-for-terraform/tf-do-you-want-to-open-cloudshell-small.png)
 
 >[!NOTE]
 >**lint** または **end to end** のテストを実行すると、Azure では、コンテナー サービスを使用して、実際のテストを実行するテスト マシンがプロビジョニングされます。 このため、通常、テスト結果が返されるまでに数分かかる場合があります。
@@ -302,6 +294,9 @@ Visual Studio Code 内からの Terraform コマンドの使用を開始する�
 
 ![Test results](media/configure-vs-code-extension-for-terraform/tf-end-to-end-test-results.png)
 
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
+
 ## <a name="next-steps"></a>次のステップ
+
 > [!div class="nextstepaction"]
 > [Azure およびサポートされているその他のプロバイダーで使用できる Terraform モジュールの一覧](https://registry.terraform.io/)

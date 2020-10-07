@@ -1,16 +1,16 @@
 ---
 title: クイック スタート - Azure PowerShell を使用して Terraform を構成する
-description: このクイックスタートでは、Azure リソースを作成するために Terraform をインストールして構成する方法について説明します。
+description: このクイックスタートでは、Azure PowerShell を使用して Terraform をインストールして構成する方法について説明します。
 keywords: Azure DevOps Terraform インストール 構成 Windows 初期化 プラン 適用 実行 ログイン RBAC サービス プリンシパル 自動スクリプト PowerShell
 ms.topic: quickstart
-ms.date: 08/18/2020
+ms.date: 09/27/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 401a6c4cc8827e48858a936a10c9c7f62af15aab
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: 8f95d0bb09d7e9e7ea789b90a27178cdf5426d74
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90830058"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401556"
 ---
 # <a name="quickstart-configure-terraform-using-azure-powershell"></a>クイック スタート:Azure PowerShell を使用して Terraform を構成する
  
@@ -27,11 +27,9 @@ ms.locfileid: "90830058"
 > * 認証の目的で Azure サービス プリンシパルを作成する
 > * サービス プリンシパルを使用して Azure にログインする 
 > * Terraform が Azure サブスクリプションに対して正しく認証を行うように環境変数を設定する
-> * Azure リソース グループを作成するための Terraform スクリプトを記述する
+> * 基本の Terraform 構成ファイルを作成する
 > * Terraform 実行プランを作成して適用する
-> * `terraform plan -destroy` フラグを使用して実行プランを破棄する
-
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
+> * 実行プランを破棄する
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -45,9 +43,9 @@ ms.locfileid: "90830058"
     $PSVersionTable.PSVersion
     ```
 
-1. [PowerShell をインストールします](/powershell/scripting/install/installing-powershell-core-on-windows?view=powershell-7)。 このデモは、Windows 10 で PowerShell v7.0.2 を使用してテストされました。
+1. [PowerShell をインストールします](/powershell/scripting/install/installing-powershell-core-on-windows)。 このデモは、Windows 10 で PowerShell v7.0.2 を使用してテストされました。
 
-1. [Terraform で Azure に対して認証を行う](https://www.terraform.io/docs/providers/azurerm/guides/azure_cli.html)には、[Azure CLI をインストールする](/cli/azure/install-azure-cli-windows?view=azure-cli-latest)必要があります。 このデモは、Azure CLI バージョン 2.9.1 を使用してテストされました。
+1. [Terraform で Azure に対して認証を行う](https://www.terraform.io/docs/providers/azurerm/guides/azure_cli.html)には、[Azure CLI をインストールする](/cli/azure/install-azure-cli-windows)必要があります。 このデモは、Azure CLI バージョン 2.9.1 を使用してテストされました。
 
 1. [Terraform をダウンロードします](https://www.terraform.io/downloads.html)。
 
@@ -64,9 +62,15 @@ ms.locfileid: "90830058"
     **注**:
     - Terraform 実行可能ファイルが見つかった場合は、構文と使用可能なコマンドが一覧表示されます。
 
-## <a name="create-an-azure-service-principal"></a>Azure サービス プリンシパルを作成する
+## <a name="authenticate-to-azure"></a>Azure に対して認証します
 
-PowerShell と Terraform を使用する場合は、サービス プリンシパルを使用してログインする必要があります。
+PowerShell と Terraform を使用する場合は、サービス プリンシパルを使用してログインする必要があります。 次の 2 つのセクションでは、次のタスクについて説明します。
+
+- [Azure サービス プリンシパルを作成する](#create-an-azure-service-principal)
+- [サービス プリンシパルを使用して Azure にログインする](#log-in-to-azure-using-a-service-principal)
+
+
+### <a name="span-idcreate-an-azure-service-principalcreate-an-azure-service-principal"></a><span id="create-an-azure-service-principal"/>Azure サービス プリンシパルを作成する
 
 サービス プリンシパルを使用して Azure サブスクリプションにログインするには、まずサービス プリンシパルへのアクセスが必要です。 サービス プリンシパルが既にある場合は、このセクションを省略できます。
 
@@ -105,7 +109,7 @@ PowerShell と Terraform を使用する場合は、サービス プリンシパ
 - サービス プリンシパル名とパスワードの値は、サービス プリンシパルを使用してサブスクリプションにログインするために必要です。
 - このパスワードは、紛失した場合、取得できません。 したがって、パスワードは安全な場所に保管してください。 パスワードを忘れた場合は、[サービス プリンシパルの資格情報をリセット](/powershell/azure/create-azure-service-principal-azureps#reset-credentials)する必要があります。
 
-## <a name="log-in-to-azure-using-a-service-principal"></a>サービス プリンシパルを使用して Azure にログインする
+### <a name="span-idlog-in-to-azure-using-a-service-principallog-in-to-azure-using-a-service-principal"></a><span id="log-in-to-azure-using-a-service-principal"/>サービス プリンシパルを使用して Azure にログインする
 
 サービス プリンシパルを使用して Azure サブスクリプションにログインするには、[PsCredential](/dotnet/api/system.management.automation.pscredential) 型のオブジェクトを指定して [Connect-AzAccount](/powershell/module/az.accounts/Connect-AzAccount) を呼び出します。
 
@@ -143,124 +147,15 @@ $env:ARM_SUBSCRIPTION_ID="<azure_subscription_id>"
 $env:ARM_TENANT_ID="<azure_subscription_tenant_id>"
 ```
 
-## <a name="create-a-terraform-configuration-file"></a>Terraform 構成ファイルを作成する
+[!INCLUDE [terraform-create-base-config-file.md](includes/terraform-create-base-config-file.md)]
 
-このセクションでは、Azure リソース グループを作成する Terraform 構成ファイルをコーディングします。
+[!INCLUDE [terraform-create-and-apply-execution-plan.md](includes/terraform-create-and-apply-execution-plan.md)]
 
-1. このデモ用の Terraform ファイルを格納するディレクトリを作成します。
+[!INCLUDE [terraform-reverse-execution-plan.md](includes/terraform-reverse-execution-plan.md)]
 
-    ```powershell
-    mkdir QuickstartTerraformTest
-    ```
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
-1. ディレクトリを demo ディレクトリに変更します。
-
-    ```powershell
-    cd QuickstartTerraformTest
-    ```
-
-1. 任意のエディターを使用して、Terraform 構成ファイルを作成します。 この記事では、[Visual Studio Code](https://code.visualstudio.com/Download) を使用します。
-
-    ```powershell
-    code QuickstartTerraformTest.tf
-    ```
-
-1. 次の HCL コードを新しいファイルに貼り付けます。 詳細については、コード リストの後の注を参照してください。
-
-    ```hcl
-    provider "azurerm" {
-      # The "feature" block is required for AzureRM provider 2.x.
-      # If you're using version 1.x, the "features" block isn't allowed.
-      version = "~>2.0"
-      features {}
-    }
-
-    resource "azurerm_resource_group" "rg" {
-      name     = "QuickstartTerraformTest-rg"
-      location = "eastus"
-    }
-    ```
-
-    **注**:
-    - プロバイダー ブロックは、[Azure プロバイダー (azurerm)](https://www.terraform.io/docs/providers/azurerm/index.html) が使用されることを指定しています。
-    - `azurerm` プロバイダー ブロック内には、`version` と `features` 属性が設定されています。 コメントに記載されているように、その使用方法はバージョン固有です。 これらの属性の設定に関する詳細については、「[AzureRM プロバイダーの v2.0](https://www.terraform.io/docs/providers/azurerm/guides/2.0-upgrade-guide.html)」を参照してください。
-    - 唯一の[リソース宣言](https://www.terraform.io/docs/configuration/resources.html)は、[azurerm_resource_group](https://www.terraform.io/docs/providers/azurerm/r/resource_group.html) のリソースの種類に対するものです。 azure_resource_group の 2 つの必須引数は、name と location です。
-
-## <a name="create-and-apply-a-terraform-execution-plan"></a>Terraform 実行プランを作成して適用する
-
-このセクションでは、"*実行プラン*" を作成し、クラウド インフラストラクチャに適用します。
-
-1. [terraform init](https://www.terraform.io/docs/commands/init.html) を使用して Terraform のデプロイを初期化します。 この手順によって、Azure リソース グループを作成するために必要な Azure モジュールがダウンロードされます。
-
-    ```powershell
-    terraform init
-    ```
-
-1. [terraform plan](https://www.terraform.io/docs/commands/plan.html) を 実行して、Terraform 構成ファイルから実行プランを作成します。
-
-    ```powershell
-    terraform plan -out QuickstartTerraformTest.tfplan
-    ```
-
-    **注:**
-    - `terraform plan` コマンドは、実行プランを作成しますが、実行はしません。 代わりに、構成ファイルに指定された構成を作成するために必要なアクションを決定します。 このパターンを使用すると、実際のリソースに変更を加える前に、実行プランが自分の想定と一致しているかどうかを確認できます。
-    - 省略可能な `-out` パラメーターを使用すると、プランの出力ファイルを指定できます。 `-out` パラメーターを使用すると、レビューしたプランが適用内容とまったく同じであることが確実になります。
-    - 実行プランの永続化とセキュリティの詳細については、[「セキュリティの警告」セクション](https://www.terraform.io/docs/commands/plan.html#security-warning)を参照してください。
-
-1. [terraform apply](https://www.terraform.io/docs/commands/apply.html) を実行して、実行プランを適用します。
-
-    ```powershell
-    terraform apply QuickstartTerraformTest.tfplan
-    ```
-
-1. 実行プランが適用されたら、[Get-AzResourceGroup](/powershell/module/az.resources/Get-AzResourceGroup) を使用して、リソース グループが正常に作成されたことをテストできます。
-
-    ```powershell
-    Get-AzResourceGroup -Name QuickstartTerraformTest-rg
-    ```
-
-    **注**:
-
-    - 成功すると、コマンドにより、新しく作成されたリソース グループのさまざまなプロパティが表示されます。
-
-## <a name="clean-up-resources"></a>リソースをクリーンアップする
-
-この記事で作成したリソースが不要になったら、削除してください。
-
-1. [terraform plan](https://www.terraform.io/docs/commands/plan.html) を実行して、Terraform 構成ファイルに示されているリソースを破棄する実行プランを作成します。
-
-    ```powershell
-    terraform plan -destroy -out QuickstartTerraformTest.destroy.tfplan
-    ```
-
-    **注:**
-    - `terraform plan` コマンドは、実行プランを作成しますが、実行はしません。 代わりに、構成ファイルに指定された構成を作成するために必要なアクションを決定します。 このパターンを使用すると、実際のリソースに変更を加える前に、実行プランが自分の想定と一致しているかどうかを確認できます。
-    - `-destroy` パラメーターを指定すると、リソースを破棄するプランが生成されます。
-    - 省略可能な `-out` パラメーターを使用すると、プランの出力ファイルを指定できます。 `-out` パラメーターを使用すると、レビューしたプランが適用内容とまったく同じであることが確実になります。
-    - 実行プランの永続化とセキュリティの詳細については、[「セキュリティの警告」セクション](https://www.terraform.io/docs/commands/plan.html#security-warning)を参照してください。
-
-1. [terraform apply](https://www.terraform.io/docs/commands/apply.html) を実行して、実行プランを適用します。
-
-    ```powershell
-    terraform apply QuickstartTerraformTest.destroy.tfplan
-    ```
-
-1. [Get-AzResourceGroup](/powershell/module/az.resources/Get-AzResourceGroup) を使用して、リソース グループが削除されたことを確認します。
-
-    ```powershell
-    Get-AzResourceGroup -Name QuickstartTerraformTest-rg
-    ```
-
-    **注**:
-    - 成功すると、`Get-AzResourceGroup` により、リソース グループが存在しないという事実が表示されます。
-
-1. ディレクトリを親ディレクトリに変更し、demo ディレクトリを削除します。 `-r` パラメーターを指定すると、ディレクトリが削除される前にディレクトリの内容が削除されます。 ディレクトリの内容には、前に作成した構成ファイルと Terraform の状態ファイルが含まれています。
-
-    ```powershell
-    cd .. && rm -r QuickstartTerraformTest
-    ```
-
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次の手順
 
 > [!div class="nextstepaction"]
-> [Terraform がインストールされている Azure VM を作成する](create-linux-virtual-machine-with-infrastructure.md)
+> [Terraform を使用して Linux VM を作成する](create-linux-virtual-machine-with-infrastructure.md)

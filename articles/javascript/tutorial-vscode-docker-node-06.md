@@ -1,15 +1,15 @@
 ---
 title: Visual Studio Code を使用して変更を加えた後に Azure App Service にコンテナーを再デプロイする
-description: 'チュートリアル ステップ 6: コンテナー イメージをリビルドして再デプロイするための簡単な手順。'
-ms.topic: conceptual
+description: Docker チュートリアル ステップ 6、コンテナー イメージをリビルドして再デプロイするための簡単な手順。
+ms.topic: tutorial
 ms.date: 09/20/2019
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 27bfc943ee64cbf6708fc2665ad9593b0fb28647
-ms.sourcegitcommit: 815cf2acff71e849735f7afce54723f03ffa5df3
+ms.custom: devx-track-js
+ms.openlocfilehash: 29f07936d69d971c9ea139b019ac4ee272871342
+ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88501407"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91365105"
 ---
 # <a name="make-changes-and-redeploy-a-container-using-visual-studio-code"></a>Visual Studio Code を使用した変更およびコンテナーの再デプロイ
 

@@ -5,12 +5,12 @@ author: edburns
 ms.author: edburns
 ms.topic: tutorial
 ms.date: 08/10/2020
-ms.openlocfilehash: 2ee3e7c03d0fd7f7048037fb27f2cfacfe39671d
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: 277f34fecfd976135077243252bc31aace11dd61
+ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831388"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91365015"
 ---
 # <a name="end-user-authorization-and-authentication-for-migrating-java-apps-on-weblogic-server-to-azure"></a>WebLogic Server 上の Java アプリを Azure に移行するためのエンドユーザーの認可と認証
 
@@ -168,7 +168,7 @@ az resource update --ids $AADDS_ID --set properties.domainSecuritySettings.tlsV1
 |----------------|---------------|---------|
 | `aadsServerHost` | サーバー ホスト | この値は、「[Azure Active Directory Domain Services のマネージド ドメインを作成して構成する](/azure/active-directory-domain-services/tutorial-create-instance)」の完了時に保存したパブリック DNS 名です。 |
 | `aadsPublicIP` | Secure LDAP 外部 IP アドレス | この値は、「**外部アクセスのための DNS ゾーンを構成する**」セクションで保存した [[Secure LDAP 外部 IP アドレス]](/azure/active-directory-domain-services/tutorial-configure-ldaps#configure-dns-zone-for-external-access) です。|
-| `wlsLDAPPrincipal` | プリンシパル   | *LDP.exe* に戻ります。  `wlsLDAPPrincipal` の追加の値を取得するには、次の手順を実行します。 <ol><li>**[表示]** メニューの **[ツリー]** を選択します。</li><li>**[ツリー ビュー]** ダイアログで、 **[ベース DN]** を空白のままにして、 **[OK]** を選択します。</li><li>右側のペインを右クリックし、 **[出力のクリア]** を選択します。</li><li>左側のツリー ビューを展開し、"OU=AADDC Users" で始まるエントリを選択します。</li><li>**[参照]** メニューで、 **[検索]** を選択します。</li><li>表示されるダイアログで、既定値をそのまま使用し、 **[実行]** を選択します。</li><li>右側のペインに出力が表示されたら、 **[実行]** の横にある **[閉じる]** を選択します。</li><li>出力を調べて、"AAD DC Administrators" グループに追加したユーザーに対応する **Dn** エントリを探します。  これは、**Dn:CN=&lt;ユーザー名&gt;OU=AADDC Users"** で始まります。</li></ol> |
+| `wlsLDAPPrincipal` | プリンシパル   | *LDP.exe* に戻ります。  `wlsLDAPPrincipal` の追加の値を取得するには、次の手順を実行します。 <ol><li>**[表示]** メニューの **[ツリー]** を選択します。</li><li>**[ツリー ビュー]** ダイアログで、 **[ベース DN]** を空白のままにして、 **[OK]** を選択します。</li><li>右側のペインを右クリックし、 **[出力のクリア]** を選択します。</li><li>左側のツリー ビューを展開し、"OU=AADDC Users" で始まるエントリを選択します。</li><li>**[参照]** メニューで、 **[検索]** を選択します。</li><li>表示されるダイアログで、既定値をそのまま使用し、 **[実行]** を選択します。</li><li>右側のペインに出力が表示されたら、 **[実行]** の横にある **[閉じる]** を選択します。</li><li>出力を調べて、"AAD DC Administrators" グループに追加したユーザーに対応する **Dn** エントリを探します。  これは、**Dn:CN=&lt;user name&gt;OU=AADDC Users** で始まります。</li></ol> |
 | `wlsLDAPGroupBaseDN` および `wlsLDAPUserBaseDN` | ユーザー ベース DN とグループ ベース DN | このチュートリアルでは、これらの両方のプロパティの値は同じです。最初のコンマの後の **wlsLDAPPrincipal** の部分です。|
 | `wlsLDAPPrincipalPassword` | プリンシパルのパスワード | この値は、**AAD DC Administrators** グループに追加されたユーザーのパスワードです。 |
 | `wlsLDAPProviderName` | プロバイダー名 | この値は、既定値のままにしておくことができます。  これは、WLS で認証プロバイダーの名前として使用されます。 |

@@ -1,111 +1,72 @@
 ---
-title: モジュール レジストリを使用した Terraform での Azure VM クラスターの作成
+title: Terraform を使用して Azure VM クラスターを構成する
 description: Terraform モジュールを使用して Azure で Windows 仮想マシン クラスターを作成する方法について説明します。
 keywords: Azure DevOps Terraform VM 仮想マシン クラスター モジュール レジストリ
 ms.topic: how-to
-ms.date: 03/09/2020
+ms.date: 09/27/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 794551aea159318b37426bb5d5dd7e1a13cca3d1
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 73f375090a2178b38b0fc7e0afd4eb8c6b514672
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241234"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401588"
 ---
-# <a name="create-an-azure-vm-cluster-with-terraform-using-the-module-registry"></a>モジュール レジストリを使用した Terraform での Azure VM クラスターの作成
+# <a name="configure-an-azure-vm-cluster-using-terraform"></a>Terraform を使用して Azure VM クラスターを構成する
 
-この記事では、Terraform [Azure コンピューティング モジュール](https://registry.terraform.io/modules/Azure/compute/azurerm/1.0.2)を使用した小さな VM クラスターの作成について説明します。 この記事では、次の方法について説明します。
-
-> [!div class="checklist"]
-> * Azure で認証を設定する
-> * Terraform テンプレートを作成する
-> * プランを使用して変更を視覚化する
-> * 構成を適用して VM クラスターを作成する
-
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
+この記事では、Azure で VM クラスターを作成するための Terraform コード例を示します。
 
 ## <a name="prerequisites"></a>前提条件
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
 
-## <a name="set-up-authentication-with-azure"></a>Azure で認証を設定する
+[!INCLUDE [terraform-configure-environment.md](includes/terraform-configure-environment.md)]
 
-> [!TIP]
-> [Terraform 環境変数を使用する](get-started-cloud-shell.md)か、または [Azure Cloud Shell](/azure/cloud-shell/overview) でこの例を実行する場合は、この手順を省略します。
-
- Azure サービス プリンシパルを作成するには、「[Install Terraform and configure access to Azure (Terraform のインストールおよび Azure へのアクセスの構成)](get-started-cloud-shell.md)」を確認してください。 このサービス プリンシパルを使用して、空のディレクトリ内の新しいファイル `azureProviderAndCreds.tf` に次のコードを入力します。
+## <a name="configure-an-azure-vm-cluster"></a>Azure VM クラスターを構成する
 
 ```hcl
-variable subscription_id {}
-variable tenant_id {}
-variable client_id {}
-variable client_secret {}
-
-provider "azurerm" {
-    version = "~>1.40"
-
-    subscription_id = "xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-    tenant_id = "xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-    client_id = "xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-    client_secret = "xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-}
-```
-
-## <a name="create-the-template"></a>テンプレートを作成する
-
-次のコードを使用して、`main.tf` という名前の新しい Terraform テンプレートを作成します。
-
-```hcl
-module mycompute {
-    source = "Azure/compute/azurerm"
-    resource_group_name = "myResourceGroup"
-    location = "East US 2"
-    admin_password = "ComplxP@assw0rd!"
-    vm_os_simple = "WindowsServer"
-    is_windows_image = "true"
-    remote_port = "3389"
-    nb_instances = 2
-    public_ip_dns = ["unique_dns_name"]
-    vnet_subnet_id = module.network.vnet_subnets[0]
+module "windowsservers" {
+  source              = "Azure/compute/azurerm"
+  resource_group_name = azurerm_resource_group.rg.name
+  is_windows_image    = true
+  vm_hostname         = "mywinvm"                         // Line can be removed if only one VM module per resource group
+  admin_password      = "ComplxP@ssw0rd!"                 // See note following code about storing passwords in config files
+  vm_os_simple        = "WindowsServer"
+  public_ip_dns       = ["winsimplevmips"]                // Change to a unique name per data center region
+  vnet_subnet_id      = module.network.vnet_subnets[0]
+    
+  depends_on = [azurerm_resource_group.rg]
 }
 
 module "network" {
-    source = "Azure/network/azurerm"
-    location = "East US 2"
-    resource_group_name = "myResourceGroup"
+  source              = "Azure/network/azurerm"
+  resource_group_name = azurerm_resource_group.rg.name
+  subnet_prefixes     = ["10.0.1.0/24"]
+  subnet_names        = ["subnet1"]
+
+  depends_on = [azurerm_resource_group.rg]
 }
 
-output "vm_public_name" {
-    value = module.mycompute.public_ip_dns_name
+output "windows_vm_public_name" {
+  value = module.windowsservers.public_ip_dns_name
 }
 
 output "vm_public_ip" {
-    value = module.mycompute.public_ip_address
+  value = module.windowsservers.public_ip_address
 }
 
 output "vm_private_ips" {
-    value = module.mycompute.network_interface_private_ip
+  value = module.windowsservers.network_interface_private_ip
 }
 ```
 
-構成ディレクトリで `terraform init` を実行します。 0\.10.6 以上の Terraform バージョンを使用すると、次の出力が表示されます。
+**注**:
 
-![Terraform の初期化](media/create-vm-cluster-module/terraform-init-with-modules.png)
+- 前のコード例では、わかりやすくするために、変数 `admin_password` にリテラル値が割り当てられています。 パスワードなどの機密データを格納するには、さまざまな方法があります。 データを保護する方法の決定は、ご使用の特定の環境や、このデータが漏えいする不安度に関する個別の選択に影響されることになります。 リスクの例として、このようなファイルをソース管理に格納すると、他のユーザーにパスワードを見られる可能性があります。 このトピックの詳細について、HashiCorp では[入力変数を宣言する](https://www.terraform.io/docs/configuration/variables.html)ためのさまざまな方法および[機密データ (パスワードなど) を管理する](https://www.terraform.io/docs/state/sensitive-data.html)ための手法を文書化しています。
 
-## <a name="visualize-the-changes-with-plan"></a>プランを使用して変更を視覚化する
-
-テンプレートによって作成された仮想マシン インフラストラクチャをプレビューするには、`terraform plan` を実行します。
-
-![Terraform プラン](media/create-vm-cluster-with-infrastructure/terraform-plan.png)
-
-
-## <a name="create-the-virtual-machines-with-apply"></a>適用によって仮想マシンを作成する
-
-Azure に VM をプロビジョニングするには、`terraform apply` を実行します。
-
-![Terraform の適用](media/create-vm-cluster-with-infrastructure/terraform-apply.png)
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>次のステップ
 
 > [!div class="nextstepaction"] 
-> [Azure Terraform モジュールの一覧を参照する](https://registry.terraform.io/modules/Azure)
+> [Azure での Terraform の使用について詳細を参照](/azure/terraform)

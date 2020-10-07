@@ -4,12 +4,12 @@ description: Terraform を使用して、Packer で生成されたカスタム �
 ms.topic: how-to
 ms.date: 11/07/2019
 ms.custom: devx-track-terraform
-ms.openlocfilehash: de8f22311edefcef1f25571731f17e5e5bc96348
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 7d81c80f1051b615dcfd089205f8c685ecaf1589
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241194"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401602"
 ---
 # <a name="create-an-azure-virtual-machine-scale-set-from-a-packer-custom-image-by-using-terraform"></a>Terraform を使用して Packer カスタム イメージから Azure 仮想マシン スケール セットを作成する
 
@@ -24,8 +24,6 @@ ms.locfileid: "88241194"
 > * Packer を使用してカスタム仮想マシン イメージを作成します。
 > * カスタム イメージを使用して、仮想マシン スケール セットを作成してデプロイします。
 > * ジャンプボックスを作成してデプロイします。
-
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -329,12 +327,7 @@ Azure で他のリソースをデプロイします。
 terraform apply 
 ```
 
-リソース グループの内容は次の図のようになります。
-
-![Terraform の仮想マシン スケール セットのリソース グループ](./media/create-vm-scaleset-network-disks-using-packer-hcl/tf-create-vmss-step6-apply.png)
-
-ブラウザーを開き、コマンドから返された完全修飾ドメイン名に接続します。 
-
+ブラウザーを開き、コマンドから返された完全修飾ドメイン名に接続します。
 
 ## <a name="add-a-jumpbox-to-the-existing-network"></a>ジャンプボックスを既存のネットワークに追加する 
 
@@ -434,12 +427,9 @@ output "jumpbox_public_ip" {
 terraform apply 
 ```
 
-デプロイが完了すると、リソース グループの内容は次の図のようになります。
+**注**:
 
-![Terraform の仮想マシン スケール セットのリソース グループ](./media/create-vm-scaleset-network-disks-using-packer-hcl/tf-create-create-vmss-step8.png)
-
-> [!NOTE]
-> デプロイしたジャンプボックスと仮想マシン スケール セットでは、パスワードによるサインインは無効にされています。 VM にアクセスするには、SSH を使用してサインインします。
+- デプロイしたジャンプボックスと仮想マシン スケール セットでは、パスワードによるログインは無効にされています。 VM にアクセスするには、SSH を使用してログインします。
 
 ## <a name="clean-up-the-environment"></a>環境のクリーンアップ
 
@@ -450,6 +440,8 @@ terraform destroy
 ```
 
 リソースの削除の確認を求めるメッセージが表示されたら、「*yes*」と入力します。 この削除プロセスが完了するまでに数分かかることがあります。
+
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
 ## <a name="next-steps"></a>次のステップ
 

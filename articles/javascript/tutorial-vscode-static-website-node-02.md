@@ -1,16 +1,16 @@
 ---
 title: Visual Studio Code で静的 Node.js アプリを作成する
-description: チュートリアル パート 2、サンプル アプリを作成する
-ms.topic: conceptual
+description: 静的 Web アプリのチュートリアル パート 2、サンプル アプリを作成する
+ms.topic: tutorial
 ms.date: 09/24/2019
 ms.author: buhollan
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 4d35a46323639aa42e7f220b8609f913f57d9027
-ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
+ms.custom: devx-track-js
+ms.openlocfilehash: a46fd8c35cf76de65e60a175fb3ccd70767a5dc4
+ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88218223"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91364635"
 ---
 # <a name="create-the-app"></a>アプリを作成する
 
@@ -140,7 +140,7 @@ CLI によって構成に関する質問が表示された場合は、Enter キ�
 
 1. ブラウザーを開いて `http://localhost:5000` を参照し、アプリが実行されていることを確認します。
 
-    ![実行中のサンプル Vue アプリ](media/static-website/local-app-svelte.png)
+    ![実行中のサンプル svelte アプリ](media/static-website/local-app-svelte.png)
 
 1. ターミナルまたはコマンド プロンプトで **Ctrl**+**C** を押してサーバーを停止します。
 

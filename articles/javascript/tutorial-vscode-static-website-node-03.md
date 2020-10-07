@@ -1,15 +1,15 @@
 ---
 title: Visual Studio Code から静的 Node.js Web サイト用の Azure Storage アカウントを作成する
-description: チュートリアル パート 3、Azure Storage アカウントを作成する
-ms.topic: conceptual
+description: 静的 Web アプリのチュートリアル パート 3、Azure Storage アカウントを作成する
+ms.topic: tutorial
 ms.date: 09/24/2019
-ms.custom: devx-track-javascript
-ms.openlocfilehash: f0aa6a8cbfc0a5d286d0b7c93a12cbd48b68d620
-ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
+ms.custom: devx-track-js
+ms.openlocfilehash: 03bfea7dac32280a7ac44840c3930b6c36d61f95
+ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88218356"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91365065"
 ---
 # <a name="create-an-azure-storage-account"></a>Azure Storage アカウントの作成
 

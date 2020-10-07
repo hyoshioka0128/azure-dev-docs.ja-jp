@@ -1,16 +1,16 @@
 ---
 title: クイック スタート - Azure Cloud Shell を使用して Terraform を構成する
-description: このクイックスタートでは、Azure リソースを作成するために Terraform をインストールして構成する方法について説明します。
+description: このクイックスタートでは、Azure Cloud Shell に Terraform をインストールして構成する方法について説明します。
 keywords: Azure DevOps Terraform インストール 構成 Cloud Shell 初期化 プラン 適用 実行 portal ログイン RBAC サービス プリンシパル 自動スクリプト
 ms.topic: quickstart
-ms.date: 08/08/2020
+ms.date: 09/27/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: d8cec2954357269b5605a7b35c96030b8e8b5fa0
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: f5b1b242479ede712cccb178a8ee25b0b557173c
+ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241174"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91401612"
 ---
 # <a name="quickstart-configure-terraform-using-azure-cloud-shell"></a>クイック スタート:Azure Cloud Shell を使用して Terraform を構成する
  
@@ -20,15 +20,13 @@ ms.locfileid: "88241174"
 
 この記事では、次のことについて説明します。
 > [!div class="checklist"]
-> * `az login` を使用して Azure に対して認証する
+> * Azure に対して認証します
 > * Azure CLI を使用して Azure サービス プリンシパルを作成する
 > * サービス プリンシパルを使用して Azure に対して認証する
 > * 現在の Azure サブスクリプションを設定する - 複数のサブスクリプションがある場合に使用
-> * Azure リソース グループを作成するための Terraform スクリプトを記述する
+> * 基本の Terraform 構成ファイルを作成する
 > * Terraform 実行プランを作成して適用する
-> * `terraform plan -destroy` フラグを使用して実行プランを破棄する
-
-[!INCLUDE [hashicorp-support.md](includes/hashicorp-support.md)]
+> * 実行プランを破棄する
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -122,134 +120,15 @@ Microsoft アカウントは、複数の Azure サブスクリプションに関
 
     - `az account set` を呼び出すと、指定した Azure サブスクリプションに切り替えた結果が表示されません。 ただし、`az account show` を使用して、現在の Azure サブスクリプションが変更されたことを確認できます。
 
-## <a name="create-a-terraform-configuration-file"></a>Terraform 構成ファイルを作成する
+[!INCLUDE [terraform-create-base-config-file.md](includes/terraform-create-base-config-file.md)]
 
-このセクションでは、Azure リソース グループを作成する Terraform 構成ファイルを作成する方法について説明します。
+[!INCLUDE [terraform-create-and-apply-execution-plan.md](includes/terraform-create-and-apply-execution-plan.md)]
 
-1. Cloud Shell での作業内容が保存されている、マウントされたファイル共有にディレクトリを変更します。 Cloud Shell でのファイルの保存方法の詳細については、「[Microsoft Azure Files ストレージの接続](/azure/cloud-shell/overview#connect-your-microsoft-azure-files-storage)」を参照してください。
+[!INCLUDE [terraform-reverse-execution-plan.md](includes/terraform-reverse-execution-plan.md)]
 
-    ```bash
-    cd clouddrive
-    ```
+[!INCLUDE [terraform-troubleshooting.md](includes/terraform-troubleshooting.md)]
 
-1. このデモ用の Terraform ファイルを格納するディレクトリを作成します。
-
-    ```bash
-    mkdir QuickstartTerraformTest
-    ```
-
-1. ディレクトリを demo ディレクトリに変更します。
-
-    ```bash
-    cd QuickstartTerraformTest
-    ```
-
-1. 任意のエディターを使用して、Terraform 構成ファイルを作成します。 この記事では、組み込みの [Cloud Shell エディター](/azure/cloud-shell/using-cloud-shell-editor)を使用します。
-
-    ```bash
-    code QuickstartTerraformTest.tf
-    ```
- 
-1. 次の HCL を新しいファイルに貼り付けます。
-
-    ```hcl
-    provider "azurerm" {
-      # The "feature" block is required for AzureRM provider 2.x.
-      # If you are using version 1.x, the "features" block is not allowed.
-      version = "~>2.0"
-      features {}
-    }
-    resource "azurerm_resource_group" "rg" {
-            name = "QuickstartTerraformTest-rg"
-            location = "eastus"
-    }
-    ```
-
-    **注**:
-
-    - `provider` ブロックは、[Azure プロバイダー (`azurerm`)](https://www.terraform.io/docs/providers/azurerm/index.html) が使用されることを指定しています。
-    - `azurerm` プロバイダー ブロック内には、`version` と `features` 属性が設定されています。 コメントに記載されているように、その使用方法はバージョン固有です。 ご使用環境に合わせてこれらの属性を設定する方法の詳細については、[AzureRM プロバイダーの v2.0](https://www.terraform.io/docs/providers/azurerm/guides/2.0-upgrade-guide.html) に関するページを参照してください。
-    - 唯一の[リソース宣言](https://www.terraform.io/docs/configuration/resources.html)は、[azurerm_resource_group](https://www.terraform.io/docs/providers/azurerm/r/resource_group.html) のリソースの種類に対するものです。 `azure_resource_group` に必要な 2 つの引数は `name` と `location` です。
-
-1. ファイルを保存します ( **&lt;Ctrl>S**)。
-
-1. エディターを終了します ( **&lt;Ctrl>Q**)。
-
-## <a name="create-and-apply-a-terraform-execution-plan"></a>Terraform 実行プランを作成して適用する
-
-このセクションでは、"*実行プラン*" を作成し、クラウド インフラストラクチャに適用します。
-
-1. [terraform init](https://www.terraform.io/docs/commands/init.html) を使用して Terraform のデプロイを初期化します。 この手順によって、Azure リソース グループを作成するために必要な Azure モジュールがダウンロードされます。
-
-    ```bash
-    terraform init
-    ```
-
-1. [terraform plan](https://www.terraform.io/docs/commands/plan.html) を 実行して、Terraform 構成ファイルから実行プランを作成します。
-
-    ```bash
-    terraform plan -out QuickstartTerraformTest.tfplan
-    ```
-
-    **注:**
-    - `terraform plan` コマンドは、実行プランを作成しますが、実行はしません。 代わりに、構成ファイルに指定された構成を作成するために必要なアクションを決定します。 このパターンを使用すると、実際のリソースに変更を加える前に、実行プランが自分の想定と一致しているかどうかを確認できます。
-    - 省略可能な `-out` パラメーターを使用すると、プランの出力ファイルを指定できます。 `-out` パラメーターを使用すると、レビューしたプランが適用内容とまったく同じであることが確実になります。
-    - 実行プランの永続化とセキュリティの詳細については、[「セキュリティの警告」セクション](https://www.terraform.io/docs/commands/plan.html#security-warning)を参照してください。
-
-1. [terraform apply](https://www.terraform.io/docs/commands/apply.html) を実行して、実行プランを適用します。
-
-    ```bash
-    terraform apply QuickstartTerraformTest.tfplan
-    ```
-
-1. 実行プランが適用されたら、[az group show](/cli/azure/group?#az-group-show) を使用して、リソース グループが正常に作成されたことをテストできます。
-
-    ```azurecli
-    az group show -n "QuickstartTerraformTest-rg"
-    ```
-
-    **注**:
-
-    - 成功すると、`az group show` により、新しく作成されたリソース グループのさまざまなプロパティが表示されます。
-
-## <a name="clean-up-resources"></a>リソースをクリーンアップする
-
-この記事で作成したリソースが不要になったら、削除してください。
-
-1. [terraform plan](https://www.terraform.io/docs/commands/plan.html) を実行して、Terraform 構成ファイルに示されているリソースを破棄する実行プランを作成します。
-
-    ```bash
-    terraform plan -destroy -out QuickstartTerraformTest.destroy.tfplan
-    ```
-
-    **注**:
-    - `terraform plan` コマンドは、実行プランを作成しますが、実行はしません。 代わりに、構成ファイルに指定された構成を作成するために必要なアクションを決定します。 このパターンを使用すると、実際のリソースに変更を加える前に、実行プランが自分の想定と一致しているかどうかを確認できます。
-    - `-destroy` パラメーターを指定すると、リソースを破棄するプランが生成されます。
-    - 省略可能な `-out` パラメーターを使用すると、プランの出力ファイルを指定できます。 `-out` パラメーターを使用すると、レビューしたプランが適用内容とまったく同じであることが確実になります。
-    - 実行プランの永続化とセキュリティの詳細については、[「セキュリティの警告」セクション](https://www.terraform.io/docs/commands/plan.html#security-warning)を参照してください。
-
-1. [terraform apply](https://www.terraform.io/docs/commands/apply.html) を実行して、実行プランを適用します。
-
-    ```bash
-    terraform apply QuickstartTerraformTest.destroy.tfplan
-    ```
-
-1. [az group show](/cli/azure/group?#az-group-show) を使用して、リソース グループが削除されたことを確認します。
-
-    ```azurecli
-    az group show -n "QuickstartTerraformTest-rg"
-    ```
-
-    **注**:
-    - 成功すると、`az group show` により、リソース グループが存在しないという事実が表示されます。
-
-1. ディレクトリを親ディレクトリに変更し、demo ディレクトリを削除します。 `-r` パラメーターを指定すると、ディレクトリが削除される前にディレクトリの内容が削除されます。 ディレクトリの内容には、前に作成した構成ファイルと Terraform の状態ファイルが含まれています。
-
-    ```bash
-    cd .. && rm -r QuickstartTerraformTest
-    ```
-
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次の手順
 
 > [!div class="nextstepaction"]
-> [Terraform がインストールされている Azure VM を作成する](create-linux-virtual-machine-with-infrastructure.md)
+> [Terraform を使用して Linux VM を作成する](create-linux-virtual-machine-with-infrastructure.md)

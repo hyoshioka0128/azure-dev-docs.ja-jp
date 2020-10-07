@@ -1,15 +1,15 @@
 ---
 title: Visual Studio Code から Azure Functions アプリケーションを作成する
-description: チュートリアル パート2、Azure Functions アプリを作成する
-ms.topic: conceptual
+description: サーバーレス チュートリアル パート2、Azure Functions アプリを作成する
+ms.topic: tutorial
 ms.date: 09/23/2019
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 7ea1b39086a6cd824084e9bbb3839ab41a24eaad
-ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
+ms.custom: devx-track-js
+ms.openlocfilehash: 39481fc2b5472bd2f9e54946d3ab1dd6051f00d1
+ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90772625"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91365115"
 ---
 # <a name="create-the-local-functions-app"></a>ローカルの Functions アプリを作成する
 
@@ -42,7 +42,7 @@ ms.locfileid: "90772625"
 
 1. **[承認レベル]** というプロンプトでは、 **[匿名]** を選択します。
 
-    ![関数名を入力する](media/functions-extension/create-function-anonymous-auth.png)
+    ![ [承認レベル] というプロンプトで [匿名] を選択する](media/functions-extension/create-function-anonymous-auth.png)
 
 1. しばらくすると、VS Code によってプロジェクトの作成が完了します。 関数用に指定された *HttpExample* フォルダーが作成され、次の 3 つのファイルが含まれています。
 

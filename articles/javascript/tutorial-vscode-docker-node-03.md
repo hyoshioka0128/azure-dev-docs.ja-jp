@@ -1,15 +1,15 @@
 ---
 title: Visual Studio Code から JavaScript アプリのコンテナー イメージを作成する
-description: 'チュートリアル パート 3: ローカル Node.js アプリを作成して実行する'
-ms.topic: conceptual
+description: Docker チュートリアル パート 3、ローカル Node.js アプリを作成して実行する
+ms.topic: tutorial
 ms.date: 03/22/2020
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 77f6c96c7bd817815177c2684f994cb75986d1eb
-ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
+ms.custom: devx-track-js
+ms.openlocfilehash: 8d3062ae9d82b7b162a5fd760b1b168b8e8ad7fb
+ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88218397"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91364711"
 ---
 # <a name="create-and-run-a-local-nodejs-app-from-visual-studio-code"></a>Visual Studio Code からローカル Node.js アプリを作成して実行する
 

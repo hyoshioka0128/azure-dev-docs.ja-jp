@@ -1,15 +1,15 @@
 ---
 title: Visual Studio Code から Node.js アプリのコンテナー イメージをデプロイする
-description: 'チュートリアル パート 5: Azure App Service にイメージをデプロイする'
-ms.topic: conceptual
+description: Docker チュートリアル パート 5、Azure App Service にイメージをデプロイする
+ms.topic: tutorial
 ms.date: 09/20/2019
-ms.custom: devx-track-javascript
-ms.openlocfilehash: f9809deacac828cac6ba4a89b5eb08968de1d012
-ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
+ms.custom: devx-track-js
+ms.openlocfilehash: 996a3ed71fb23e179f80364813ad7df0710e8402
+ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88218444"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91364675"
 ---
 # <a name="deploy-the-image-to-azure-app-service"></a>Azure App Service にイメージをデプロイする
 

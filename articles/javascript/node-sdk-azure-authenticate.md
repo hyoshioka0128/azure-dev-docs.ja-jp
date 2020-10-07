@@ -1,67 +1,55 @@
 ---
 title: Node.js 用 Azure 管理モジュールを使った認証
 description: Node.js 用 Azure 管理モジュールへの認証にサービス プリンシパルを使う方法について説明します。
-ms.topic: article
+ms.topic: how-to
 ms.date: 06/17/2017
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 1d3f0d2930d397c24177f0cee7a9e276c4df9d67
-ms.sourcegitcommit: b03cb337db8a35e6e62b063c347891e44a8a5a13
+ms.custom: devx-track-js
+ms.openlocfilehash: 150b00c4dbb21d0514d1d7c7d34813272bbf06e1
+ms.sourcegitcommit: 717e32b68fc5f4c986f16b2790f4211967c0524b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91110425"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91586120"
 ---
-# <a name="authenticate-with-the-azure-modules-for-nodejs"></a>Node.js 用 Azure モジュールを使った認証
+# <a name="authenticate-with-the-azure-management-modules-for-javascript"></a>JavaScript 用 Azure 管理モジュールを使用した認証
 
-すべてのサービス API は、インスタンス化する際に、`credentials` オブジェクトを介して認証を行う必要があります。 必要な資格情報を Azure SDK for Node.js で認証したり作成したりするには、次の 3 とおりの方法があります。
+リソース管理を支援する Azure サービスの管理パッケージには、2 つのセットがあります。
+- Azure SDK for Node.js
+- Azure SDK for JavaScript
 
-- [基本認証]
-- 対話型ログイン
-- サービス プリンシパルの認証
+Azure SDK for Node.js は、Azure サービス用の古い一連の管理パッケージであり、次の特徴があります。 
+- Node.js でのみ使用でき、ブラウザーでは使用できません
+- 手動で記述された型宣言ファイルを使用して JavaScript で記述されます
+- Azure SDK for JavaScript パッケージが優先されるため、アクティブな開発は行われておらず、非推奨となっています
+- `azure-arm-` で始まるパッケージ名を持ちます
+- Azure Active Directory を使用して認証するために、パッケージ内のクライアント クラスに渡すことができる資格情報を作成する [ms-rest-azure](https://www.npmjs.com/package/ms-rest-azure) パッケージが必要です。
+- https://github.com/Azure/azure-sdk-for-node リポジトリに存在します
+
+Azure SDK for JavaScript は、Azure サービス用の新しい一連の管理パッケージであり、次の特徴があります。
+- Node.js とブラウザーの両方で使用可能です
+- TypeScript で記述され、JavaScript と TypeScript の両方のプロジェクトで使用できます
+- アクティブな開発がなされており、Azure サービスによってリソース管理 API が更新されたときに更新プログラムを受信します
+- `@azure/arm-` で始まるパッケージ名を持ちます
+- Azure Active Directory を使用して認証するために、パッケージ内のクライアント クラスに渡すことができる資格情報を作成する [@azure/ms-rest-nodeauth](https://www.npmjs.com/package/@azure/ms-rest-nodeauth) パッケージが必要です。 アプリケーションがブラウザーで実行されている場合は、代わりに [@azure/ms-rest-browserauth](https://www.npmjs.com/package/@azure/ms-rest-browserauth) を使用します。
+- https://github.com/Azure/azure-sdk-for-js リポジトリに存在します
+
+パッケージの 2 つのセットを区別する簡単な方法は、パッケージ名を確認することです。
+
+すべてのサービス API は、インスタンス化する際に、`credentials` オブジェクトを介して認証を行う必要があります。 Azure SDK for Node.js と Azure SDK for JavaScript の両方で、パッケージに必要な資格情報を認証および作成する方法は複数あります。
+
+一般的な方法を以下に示します。
+
+- ユーザー名とパスワードを使用する基本認証
+- 対話型ログイン。最も簡単な認証方法ですが、ユーザー アカウントでログインする必要があります。
+- サービス プリンシパル認証。 サービス プリンシパルの作成に関するさまざまな手法については、「[Node.js を使った Azure サービス プリンシパルの作成](./node-sdk-azure-authenticate-principal.md)」というトピックで説明しています。 
+
+以下の各パッケージの readme には、資格情報オブジェクトを取得するさまざまな方法について詳しく記載されています。
+- [@azure/ms-rest-nodeauth](https://www.npmjs.com/package/@azure/ms-rest-nodeauth): Node.js で Azure SDK for JavaScript の管理パッケージを使用する場合
+- [@azure/ms-rest-browserauth](https://www.npmjs.com/package/@azure/ms-rest-browserauth): ブラウザーで Azure SDK for JavaScript の管理パッケージを使用する場合
+- [ms-rest-azure](https://www.npmjs.com/package/ms-rest-azure): 以前の Azure SDK for Node.js で管理パッケージを使用する場合
 
 [!INCLUDE [chrome-note](includes/chrome-note.md)]
 
-## <a name="basic-authentication"></a>[基本認証]
-
-Azure アカウントの資格情報を使ってプログラムで認証するには、`loginWithUsernamePassword` 関数を使用します。 次の JavaScript コード スニペットは、環境変数として格納された資格情報を使った基本認証の方法を示したものです。
-
-```javascript
-const Azure = require('azure');
-const MsRest = require('ms-rest-azure');
-
-MsRest.loginWithUsernamePassword(process.env.AZURE_USER,
-                                 process.env.AZURE_PASS,
-                                 (err, credentials) => {
-  if (err) throw err;
-
-  let storageClient = Azure.createARMStorageManagementClient(credentials,
-                                                             '<azure-subscription-id>');
-
-  // ..use the client instance to manage service resources.
-});
-```
-
-## <a name="interactive-login"></a>対話型ログイン
-
-対話型ログインでは、ユーザーがブラウザーから認証を行うためのリンクとコードが提供されます。 この方法は、同じスクリプトで複数のアカウントが使用される場合や、ユーザーが介入した方が望ましい状況で使用します。
-
-```javascript
-const Azure = require('azure');
-const MsRest = require('ms-rest-azure');
-
-MsRest.interactiveLogin((err, credentials) => {
-  if (err) throw err;
-
-  let storageClient = Azure.createARMStorageManagementClient(credentials, '<azure-subscription-id>');
-
-  // ..use the client instance to manage service resources.
-});
-```
-
-## <a name="service-principal-authentication"></a>サービス プリンシパルの認証
-
-認証方法としては、[対話型ログイン](#interactive-login)が最も簡単です。 ただし、Node.js SDK を使うときは、アカウントの資格情報を提供するよりも、サービス プリンシパル認証を使った方がよい場合もあります。 サービス プリンシパルの作成 (および使用) に関するさまざまな手法については、「[Node.js を使った Azure サービス プリンシパルの作成](./node-sdk-azure-authenticate-principal.md)」というトピックで説明しています。
-
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次のステップ   
 
 * [Visual Studio Code から静的 Web サイトを Azure にデプロイする](tutorial-vscode-static-website-node-01.md)

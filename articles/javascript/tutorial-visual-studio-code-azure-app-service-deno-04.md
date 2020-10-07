@@ -1,15 +1,15 @@
 ---
 title: Azure App Service にデプロイした後にリソースをクリーンアップする
-description: 'チュートリアル パート 4: リソースをクリーンアップする'
-ms.topic: conceptual
+description: Deno チュートリアル パート 4、リソースをクリーンアップする
+ms.topic: tutorial
 ms.date: 06/01/2020
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 6573d7b33d4e18d541def9ca742809a6741f821a
-ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
+ms.custom: devx-track-js
+ms.openlocfilehash: 307f0d344324312f9b93f4f60e3c312b9d415941
+ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "90772905"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91364455"
 ---
 # <a name="clean-up"></a>クリーンアップ
 

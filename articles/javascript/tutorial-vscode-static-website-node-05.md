@@ -1,16 +1,16 @@
 ---
 title: Visual Studio Code から静的 Node.js Web サイトに変更をデプロイする
-description: チュートリアル パート 5、変更を加えて再デプロイする
-ms.topic: conceptual
+description: 静的 Web アプリのチュートリアル パート 5、変更を加えて再デプロイする
+ms.topic: tutorial
 ms.date: 09/24/2019
 ms.author: buhollan
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 918f96376a03d17792c7a462d37ea47330e60d39
-ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
+ms.custom: devx-track-js
+ms.openlocfilehash: 5d7a2af9dca7a775ee812b457012fa432c461d9a
+ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88218318"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91365285"
 ---
 # <a name="part-5-make-changes-and-redeploy"></a>パート 5: 変更を加えて再デプロイする
 
@@ -32,7 +32,7 @@ ms.locfileid: "88218318"
 
 1. デプロイが完了したら、ブラウザーでサイトを更新して変更を確認します。
 
-    ![再デプロイ後のアプリの変更](media/static-website/updated-azure-app-angular.png)
+    ![Angular - デプロイが完了したら、ブラウザーでサイトを更新して変更を確認する](media/static-website/updated-azure-app-angular.png)
 
 # <a name="react"></a>[React](#tab/react)
 
@@ -48,7 +48,7 @@ ms.locfileid: "88218318"
 
 1. デプロイが完了したら、ブラウザーでサイトを更新して変更を確認します。
 
-    ![再デプロイ後のアプリの変更](media/static-website/updated-azure-app-react.png)
+    ![React - 再デプロイ後のアプリの変更](media/static-website/updated-azure-app-react.png)
 
 # <a name="vue"></a>[Vue](#tab/vue)
 
@@ -64,7 +64,7 @@ ms.locfileid: "88218318"
 
 1. デプロイが完了したら、ブラウザーでサイトを更新して変更を確認します。
 
-    ![再デプロイ後のアプリの変更](media/static-website/updated-azure-app-vue.png)
+    ![Vue - 再デプロイ後のアプリの変更](media/static-website/updated-azure-app-vue.png)
 
 # <a name="svelte"></a>[Svelte](#tab/svelte)
 
@@ -95,7 +95,7 @@ ms.locfileid: "88218318"
 
 1. デプロイが完了したら、ブラウザーでサイトを更新して変更を確認します。
 
-    ![再デプロイ後のアプリの変更](media/static-website/updated-azure-app-svelte.png)
+    ![Svelte - 再デプロイ後のアプリの変更](media/static-website/updated-azure-app-svelte.png)
 
 ---
 

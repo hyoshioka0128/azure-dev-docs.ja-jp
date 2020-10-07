@@ -108,8 +108,6 @@
       items:
         - name: Azure によるアプリの認証
           href: azure-sdk-authenticate.md
-        - name: セキュリティ プリンシパルにロールのアクセス許可を割り当てる
-          href: how-to-assign-role-permissions.md
         - name: サービス プリンシパルを管理する
           href: how-to-manage-service-principals.md
         - name: チュートリアル
@@ -180,7 +178,7 @@
       href: /samples/browse/?languages=python&products=azure-cosmos-db%2Cazure-sql-database
     - name: ストレージ
       items:
-        - name: Azure Storage
+        - name: Azure ストレージ
           href: /samples/browse/?languages=python&products=azure-storage
         - name: Redis Cache
           href: /samples/browse/?languages=python&products=azure-redis-cache

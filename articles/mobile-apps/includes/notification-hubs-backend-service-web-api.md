@@ -4,12 +4,12 @@ ms.author: miparker
 ms.date: 07/27/2020
 ms.service: mobile-services
 ms.topic: include
-ms.openlocfilehash: 9d7db7db5a1b7323bd10e7e9cc87ca3b9a95826a
-ms.sourcegitcommit: cf23d382eee2431a3958b1c87c897b270587bde0
+ms.openlocfilehash: 06fc0e0986a41b2d37aa38d5557b0efbae08994e
+ms.sourcegitcommit: e97cb81a245ce7dcabeac3260abc3db7c30edd79
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87401677"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91493161"
 ---
 ### <a name="create-a-web-project"></a>Web プロジェクトの作成
 
@@ -36,9 +36,7 @@ ms.locfileid: "87401677"
 
 1. **WeatherForecast.cs** を削除します。
 
-1. **PushDemoApi** プロジェクトで **[Control]**  + **クリック**を実行し、 **[追加]** メニューから **[新しいファイル...]** を選択します。
-
-1. [シークレット マネージャー ツール](https://docs.microsoft.com/aspnet/core/security/app-secrets?view=aspnetcore-3.1&tabs=linux#secret-manager)を使用して、ローカル構成値を設定します。 ソリューションからシークレットを分離することによって、ソース管理で終了することがないようにできます。 **ターミナル**を開き、プロジェクト ファイルのディレクトリに移動して、次のコマンドを実行します。
+1. [シークレット マネージャー ツール](/aspnet/core/security/app-secrets?view=aspnetcore-3.1&tabs=linux#secret-manager)を使用して、ローカル構成値を設定します。 ソリューションからシークレットを分離することによって、ソース管理で終了することがないようにできます。 **ターミナル**を開き、プロジェクト ファイルのディレクトリに移動して、次のコマンドを実行します。
 
     ```bash
     dotnet user-secrets init
@@ -59,7 +57,7 @@ ms.locfileid: "87401677"
 
 ### <a name="authenticate-clients-using-an-api-key-optional"></a>API キーを使用してクライアントを認証する (オプション)
 
-API キーはトークンほど安全ではありませんが、このチュートリアルの目的には十分です。 API キーは、[ASP.NET ミドルウェア](https://docs.microsoft.com/aspnet/core/fundamentals/middleware/?view=aspnetcore-3.1)を介して簡単に構成できます。
+API キーはトークンほど安全ではありませんが、このチュートリアルの目的には十分です。 API キーは、[ASP.NET ミドルウェア](/aspnet/core/fundamentals/middleware/?view=aspnetcore-3.1)を介して簡単に構成できます。
 
 1. **API キー**をローカル構成値に追加します。
 
@@ -150,7 +148,7 @@ API キーはトークンほど安全ではありませんが、このチュー�
     ```
 
     > [!NOTE]
-    > [認証ハンドラー](https://docs.microsoft.com/aspnet/core/security/authentication/?view=aspnetcore-3.1#authentication-handler)は、スキームの動作 (この場合はカスタム API キー スキーム) を実装する型です。
+    > [認証ハンドラー](/aspnet/core/security/authentication/?view=aspnetcore-3.1#authentication-handler)は、スキームの動作 (この場合はカスタム API キー スキーム) を実装する型です。
 
 1. *ApiKeyAuthenticationBuilderExtensions.cs* という別の **[空のクラス]** を **Authentication** フォルダーに追加し、次の実装を追加します。
 
@@ -181,6 +179,8 @@ API キーはトークンほど安全ではありませんが、このチュー�
 1. **Startup.cs** で **ConfigureServices** メソッドを更新して、**services.AddControllers** メソッドの呼び出しの下で API キー認証を構成します。
 
     ```csharp
+    using PushDemoApi.Authentication;
+    
     public void ConfigureServices(IServiceCollection services)
     {
         services.AddControllers();
@@ -223,7 +223,7 @@ API キーはトークンほど安全ではありませんが、このチュー�
 
 ### <a name="add-dependencies-and-configure-services"></a>依存関係を追加してサービスを構成する
 
-ASP.NET Core では、[依存関係の挿入 (DI)](https://docs.microsoft.com/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-3.1) ソフトウェア デザイン パターンがサポートされています。これは、クラスと依存関係の間で[制御の反転 (IoC)](https://docs.microsoft.com/dotnet/standard/modern-web-apps-azure-architecture/architectural-principles#dependency-inversion) を実現するための技術です。  
+ASP.NET Core では、[依存関係の挿入 (DI)](/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-3.1) ソフトウェア デザイン パターンがサポートされています。これは、クラスと依存関係の間で[制御の反転 (IoC)](/dotnet/standard/modern-web-apps-azure-architecture/architectural-principles#dependency-inversion) を実現するための技術です。  
 
 通知ハブおよび [Notification Hubs SDK のバックエンド操作](https://www.nuget.org/packages/Microsoft.Azure.NotificationHubs/)への使用は、サービス内にカプセル化されます。 サービスが登録され、適切な抽象化によって使用できるようになります。
 
@@ -260,9 +260,9 @@ ASP.NET Core では、[依存関係の挿入 (DI)](https://docs.microsoft.com/as
     ```
 
     > [!NOTE]
-    > このクラスには、このシナリオで必要とされる汎用およびサイレント通知用のトークン化された通知ペイロードが含まれています。 ペイロードは[インストール](https://docs.microsoft.com/dotnet/api/microsoft.azure.notificationhubs.installation?view=azure-dotnet)の外部で定義されます。これにより、サービスを介して既存のインストールを更新しなくても実験を行うことができます。 この方法でのインストールに対する変更の処理については、このチュートリアルでは扱いません。 運用環境では、[カスタム テンプレート](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-templates-cross-platform-push-messages)を検討してください。
+    > このクラスには、このシナリオで必要とされる汎用およびサイレント通知用のトークン化された通知ペイロードが含まれています。 ペイロードは[インストール](/dotnet/api/microsoft.azure.notificationhubs.installation?view=azure-dotnet)の外部で定義されます。これにより、サービスを介して既存のインストールを更新しなくても実験を行うことができます。 この方法でのインストールに対する変更の処理については、このチュートリアルでは扱いません。 運用環境では、[カスタム テンプレート](/azure/notification-hubs/notification-hubs-templates-cross-platform-push-messages)を検討してください。
 
-1. **[全般]**  >  **[空のクラス]** を選択し、 **[名前]** に「*DeviceInstallation.cs*」と入力して **[新規]** をクリックし、次の実装を追加します。
+1. *DeviceInstallation.cs* という別の **[空のクラス]** を **Models** フォルダーに追加し、次の実装を追加します。
 
     ```csharp
     using System.Collections.Generic;
@@ -326,6 +326,7 @@ ASP.NET Core では、[依存関係の挿入 (DI)](https://docs.microsoft.com/as
 1. *INotificationService.cs* という **[空のインターフェイス]** を **Services** フォルダーに追加し、次の実装を追加します。
 
     ```csharp
+    using System.Threading;
     using System.Threading.Tasks;
     using PushDemoApi.Models;
 
@@ -510,7 +511,7 @@ ASP.NET Core では、[依存関係の挿入 (DI)](https://docs.microsoft.com/as
     ```
 
     > [!NOTE]
-    > **SendTemplateNotificationAsync** に指定するタグ式は、20 個のタグに制限されています。 ほとんどの演算子では 6 に制限されていますが、この場合の式には、OR (||) のみが含まれています。 要求に 20 個を超えるタグがある場合は、複数の要求に分割する必要があります。 詳細については、「[ルーティングとタグ式](https://msdn.microsoft.com/library/azure/Dn530749.aspx?f=255&MSPPError=-2147217396)」のドキュメントを参照してください。
+    > **SendTemplateNotificationAsync** に指定するタグ式は、20 個のタグに制限されています。 ほとんどの演算子では 6 に制限されていますが、この場合の式には、OR (||) のみが含まれています。 要求に 20 個を超えるタグがある場合は、複数の要求に分割する必要があります。 詳細については、「[ルーティングとタグ式](/previous-versions/azure/azure-services/dn530749(v=azure.100)?f=255&MSPPError=-2147217396)」のドキュメントを参照してください。
 
 1. **Startup.cs** で **ConfigureServices** メソッドを更新して、**NotificationHubsService** を **INotificationService** のシングルトン実装として追加します。
 
@@ -606,7 +607,7 @@ ASP.NET Core では、[依存関係の挿入 (DI)](https://docs.microsoft.com/as
     >
     > **SSL 証明書の検証**の警告が表示された場合は、 **[設定]** で SSL 証明書の検証を要求する **[Postman](https://www.postman.com/downloads)** 設定をオフに切り替えることができます。
 
-1. テンプレート クラスのメソッドを次のコードに置き換えます。
+1. **NotificationsController.cs** 内のテンプレート クラスのメソッドを次のコードに置き換えます。
 
     ```csharp
     [HttpPut]
@@ -669,7 +670,7 @@ ASP.NET Core では、[依存関係の挿入 (DI)](https://docs.microsoft.com/as
 
 ### <a name="create-the-api-app"></a>API アプリの作成
 
-ここでは、バックエンド サービスをホストするために [Azure App Service](https://docs.microsoft.com/azure/app-service/) で [API アプリ](https://azure.microsoft.com/services/app-service/api/)を作成します。  
+ここでは、バックエンド サービスをホストするために [Azure App Service](/azure/app-service/) で [API アプリ](https://azure.microsoft.com/services/app-service/api/)を作成します。  
 
 1. [Azure portal](https://portal.azure.com) にサインインします。
 

@@ -1,15 +1,15 @@
 ---
 title: コンテナー化された Node.js アプリからのログを Visual Studio Code からストリーム配信する
-description: 'チュートリアル パート 7: Visual Studio Code にログをストリーム配信する'
-ms.topic: conceptual
+description: Docker チュートリアル パート 7、Visual Studio Code にログをストリーム配信する
+ms.topic: tutorial
 ms.date: 09/20/2019
-ms.custom: devx-track-javascript
-ms.openlocfilehash: ad62a7551013f29d9affad9272b20aad2b1a5dd8
-ms.sourcegitcommit: 0699b984b85782b1c441289fa756f285eae853c3
+ms.custom: devx-track-js
+ms.openlocfilehash: ba651244cc3fac3bf0f39c4f79607d1d3e997988
+ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88218382"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91364605"
 ---
 # <a name="stream-logs-into-visual-studio-code"></a>Visual Studio Code にログをストリーム配信する
 

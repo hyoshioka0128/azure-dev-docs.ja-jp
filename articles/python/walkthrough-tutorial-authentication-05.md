@@ -4,12 +4,12 @@ description: メイン アプリの依存関係 (主に Azure SDK ライブラ�
 ms.date: 08/24/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 2da18ac4b1d27e976d0713fba16dbfc0ba644168
-ms.sourcegitcommit: 324da872a9dfd4c55b34739824fc6a6598f2ae12
+ms.openlocfilehash: 9c6204afd17d86cd8677022a59641e5343c6a543
+ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89379515"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91764732"
 ---
 # <a name="part-5-main-app-dependencies-import-statements-and-environment-variables"></a>パート 5: メイン アプリの依存関係、import ステートメント、および環境変数
 
@@ -19,7 +19,7 @@ ms.locfileid: "89379515"
 
 ## <a name="dependencies-and-import-statements"></a>依存関係と import ステートメント
 
-アプリ コードには、次のようないくつかのライブラリが必要です。Flask、標準の HTTP 要求ライブラリ、および Active Directory ([azure.identity](/python/api/overview/azure/identity-readme?view=azure-python))、Key Vault ([azure.keyvault.secrets](/python/api/overview/azure/keyvault-secrets-readme?view=azure-python))、Queue Storage ([azure.storage.queue](/python/api/overview/azure/storage-queue-readme?view=azure-python)) 用の Azure ライブラリ。 これらのライブラリは、アプリの *requirements.txt* ファイルに含まれています。
+アプリ コードには、次のようないくつかのライブラリが必要です。Flask、標準の HTTP 要求ライブラリ、および Active Directory ([azure.identity](/python/api/overview/azure/identity-readme))、Key Vault ([azure.keyvault.secrets](/python/api/overview/azure/keyvault-secrets-readme))、Queue Storage ([azure.storage.queue](/python/api/overview/azure/storage-queue-readme)) 用の Azure ライブラリ。 これらのライブラリは、アプリの *requirements.txt* ファイルに含まれています。
 
 ```txt
 flask
@@ -57,7 +57,7 @@ from azure.storage.queue import QueueClient
 
 ただし、Azure App Service にデプロイする場合、サーバー自体にはアクセスできません。 この場合は、同じ名前で "*アプリケーション設定*" を作成すると、環境変数としてアプリに表示されます。 
 
-プロビジョニング スクリプトは、Azure CLI コマンド [`az webapp config appsettings set`](/cli/azure/webapp/config/appsettings?view=azure-cli-latest#az-webapp-config-appsettings-set) を使用してこれらの設定を作成します。 4 つの変数はすべて 1 つのコマンドで設定されます。
+プロビジョニング スクリプトは、Azure CLI コマンド [`az webapp config appsettings set`](/cli/azure/webapp/config/appsettings#az-webapp-config-appsettings-set) を使用してこれらの設定を作成します。 4 つの変数はすべて 1 つのコマンドで設定されます。
 
 Azure portal を使用して設定を作成するには、「[Azure portal で App Service アプリを構成する](/azure/app-service/configure-common)」を参照してください。
 

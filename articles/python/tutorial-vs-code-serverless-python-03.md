@@ -4,12 +4,12 @@ description: チュートリアルの手順 3、Azure Functions が提供する�
 ms.topic: conceptual
 ms.date: 09/17/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 1734a89ed2c71604fba5583020e0e93810c900a0
-ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
+ms.openlocfilehash: a88c62bb017cc666b7c8e6c5cabe6df0768a17b0
+ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90772525"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91764520"
 ---
 # <a name="3-examine-the-python-code-files-in-visual-studio-code"></a>3:Visual Studio Code で Python コード ファイルを調べる
 
@@ -86,7 +86,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
 コードの重要な部分は次のとおりです。
 
 - `azure.functions` モジュールをインポートする必要があります。ログ記録モジュールのインポートは任意ですが、お勧めします。
-- 必須の `main` Python 関数は、`req` という名前の `func.HttpRequest` オブジェクトを受け取り、`func.HttpResponse` 型の値を返します。 これらのオブジェクトの機能については、[func.HttpRequest](/python/api/azure-functions/azure.functions.httprequest?view=azure-python&preserve-view=true) と [func.HttpResponse](/python/api/azure-functions/azure.functions.httpresponse?view=azure-python&preserve-view=true) のリファレンスで詳細を確認できます。
+- 必須の `main` Python 関数は、`req` という名前の `func.HttpRequest` オブジェクトを受け取り、`func.HttpResponse` 型の値を返します。 これらのオブジェクトの機能については、[func.HttpRequest](/python/api/azure-functions/azure.functions.httprequest) と [func.HttpResponse](/python/api/azure-functions/azure.functions.httpresponse) のリファレンスで詳細を確認できます。
 - 次に、`main` の本文で要求が処理され、応答が生成されます。 今回のコードでは、URL の `name` パラメーターを探します。 見つからなかった場合、要求本文に JSON が含まれるかどうかが確認され (`func.HttpRequest.get_json` を使用)、また、JSON に `name` 値が含まれることが確認されます (`get_json` によって返される JSON オブジェクトの `get` メソッドを使用)。
 - 名前が見つかった場合は、コードにより、後ろに名前が追加された文字列 "Hello" が返され、見つからなかった場合は汎用メッセージが返されます。
 

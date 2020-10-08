@@ -4,12 +4,12 @@ description: Python 用 Azure SDK ライブラリでの一般的な使用パタ�
 ms.date: 09/21/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 63cd6c85e15fa0ffb44a4da01ffcc27d4ae08f17
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: ae51bee0aea2717c09242f8928a617bf8211f372
+ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831798"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91764781"
 ---
 # <a name="azure-libraries-for-python-usage-patterns"></a>Python 用 Azure ライブラリの使用パターン
 
@@ -37,9 +37,9 @@ pip install azure-storage-blob
 
 ## <a name="asynchronous-operations"></a>非同期操作
 
-クライアントおよび管理クライアント オブジェクト ([`WebSiteManagementClient.web_apps.create_or_update`](/python/api/azure-mgmt-web/azure.mgmt.web.v2019_08_01.operations.webappsoperations?view=azure-python#create-or-update-resource-group-name--name--site-envelope--custom-headers-none--raw-false--polling-true----operation-config-) など) を介して呼び出す多くの操作では、`AzureOperationPoller[<type>]` 型のオブジェクトが返されます。ここで、`<type>` は該当する操作に固有のものです。
+クライアントおよび管理クライアント オブジェクト ([`WebSiteManagementClient.web_apps.create_or_update`](/python/api/azure-mgmt-web/azure.mgmt.web.v2019_08_01.operations.webappsoperations#create-or-update-resource-group-name--name--site-envelope--custom-headers-none--raw-false--polling-true----operation-config-) など) を介して呼び出す多くの操作では、`AzureOperationPoller[<type>]` 型のオブジェクトが返されます。ここで、`<type>` は該当する操作に固有のものです。
 
-戻り値の型 [`AzureOperationPoller`](/python/api/msrestazure/msrestazure.azure_operation.azureoperationpoller?view=azure-python) は、操作が非同期であることを意味します。 したがって、そのポーラーの `result` メソッドを呼び出して、操作の実際の結果が使用可能になるまで待機する必要があります。
+戻り値の型 [`AzureOperationPoller`](/python/api/msrestazure/msrestazure.azure_operation.azureoperationpoller) は、操作が非同期であることを意味します。 したがって、そのポーラーの `result` メソッドを呼び出して、操作の実際の結果が使用可能になるまで待機する必要があります。
 
 次のコードは、[例: Web アプリのプロビジョニングとデプロイ](azure-sdk-example-web-app.md)に関するページから抜粋したものであり、ポーラーを使用して結果を待機する例を示しています。
 
@@ -58,7 +58,7 @@ poller = app_service_client.web_apps.create_or_update(RESOURCE_GROUP_NAME,
 web_app_result = poller.result()
 ```
 
-この場合、`create_or_update` の戻り値の型は `AzureOperationPoller[Site]` であり、`poller.result()` の戻り値が [Site](/python/api/azure-mgmt-web/azure.mgmt.web.v2019_08_01.models.site?view=azure-python) オブジェクトであることを意味します。
+この場合、`create_or_update` の戻り値の型は `AzureOperationPoller[Site]` であり、`poller.result()` の戻り値が [Site](/python/api/azure-mgmt-web/azure.mgmt.web.v2019_08_01.models.site) オブジェクトであることを意味します。
 
 ## <a name="exceptions"></a>例外
 
@@ -112,7 +112,7 @@ web_app_result = poller.result()
 
 Azure ライブラリ内の多くの操作では、オブジェクト引数を個別のオブジェクトまたはインライン JSON として表すことができます。
 
-たとえば、[`ResourceManagementClient`](/python/api/azure-mgmt-resource/azure.mgmt.resource.resources.v2019_10_01.resourcemanagementclient?view=azure-python) オブジェクトがあり、その [`create_or_update`](/python/api/azure-mgmt-resource/azure.mgmt.resource.resources.v2019_10_01.operations.resourcegroupsoperations?view=azure-python#create-or-update-resource-group-name--parameters--custom-headers-none--raw-false----operation-config-) メソッドを使用してリソース グループを作成するとします。 このメソッドの第 2 引数の型は、[`ResourceGroup`](/python/api/azure-mgmt-resource/azure.mgmt.resource.resources.v2019_10_01.models.resourcegroup?view=azure-python) です。
+たとえば、[`ResourceManagementClient`](/python/api/azure-mgmt-resource/azure.mgmt.resource.resources.v2019_10_01.resourcemanagementclient) オブジェクトがあり、その [`create_or_update`](/python/api/azure-mgmt-resource/azure.mgmt.resource.resources.v2019_10_01.operations.resourcegroupsoperations#create-or-update-resource-group-name--parameters--custom-headers-none--raw-false----operation-config-) メソッドを使用してリソース グループを作成するとします。 このメソッドの第 2 引数の型は、[`ResourceGroup`](/python/api/azure-mgmt-resource/azure.mgmt.resource.resources.v2019_10_01.models.resourcegroup) です。
 
 `create_or_update` を呼び出すために、`ResourceGroup` の独立したインスタンスを、その必須の引数 (このケースでは `location`) を使って直接作成することができます。
 
@@ -138,7 +138,7 @@ JSON を使用した場合、Azure ライブラリにより、インライン JS
 
 オブジェクトの中で、オブジェクト引数を入れ子にすることもできます。その場合、JSON を入れ子にして使用することもできます。
 
-たとえば、[`KeyVaultManagementClient`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.keyvaultmanagementclient?view=azure-python) オブジェクトのインスタンスがあり、その [`create_or_update`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.operations.vaultsoperations?view=azure-python#create-or-update-resource-group-name--vault-name--parameters--custom-headers-none--raw-false--polling-true----operation-config-) メソッドを呼び出すとします。 このケースでは、第 3 引数の型が [`VaultCreateOrUpdateParameters`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.models.vaultcreateorupdateparameters?view=azure-python) であり、それ自体に [`VaultProperties`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.models.vaultproperties?view=azure-python) 型の引数が含まれます。 さらに、`VaultProperties` には、[`Sku`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.models.sku?view=azure-python) 型と [`list[AccessPolicyEntry]`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.models.accesspolicyentry?view=azure-python) 型のオブジェクト引数が含まれます。 `Sku` には [`SkuName`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.models.skuname?view=azure-python) オブジェクトが含まれ、個々の `AccessPolicyEntry` には [`Permissions`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.models.permissions?view=azure-python) オブジェクトが含まれています。
+たとえば、[`KeyVaultManagementClient`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.keyvaultmanagementclient) オブジェクトのインスタンスがあり、その [`create_or_update`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.operations.vaultsoperations#create-or-update-resource-group-name--vault-name--parameters--custom-headers-none--raw-false--polling-true----operation-config-) メソッドを呼び出すとします。 このケースでは、第 3 引数の型が [`VaultCreateOrUpdateParameters`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.models.vaultcreateorupdateparameters) であり、それ自体に [`VaultProperties`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.models.vaultproperties) 型の引数が含まれます。 さらに、`VaultProperties` には、[`Sku`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.models.sku) 型と [`list[AccessPolicyEntry]`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.models.accesspolicyentry) 型のオブジェクト引数が含まれます。 `Sku` には [`SkuName`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.models.skuname) オブジェクトが含まれ、個々の `AccessPolicyEntry` には [`Permissions`](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault.v2019_09_01.models.permissions) オブジェクトが含まれています。
 
 埋め込みオブジェクトを使用して `create_or_update` を呼び出すには、次のようなコードを使用します (`tenant_id` と `object_id` は既に定義されているものとします)。 また、関数呼び出しの前に、必要なオブジェクトを作成することもできます。
 

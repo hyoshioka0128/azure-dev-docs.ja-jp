@@ -4,12 +4,12 @@ description: チュートリアルの手順 4. では、Web アプリの起動�
 ms.topic: conceptual
 ms.date: 05/19/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 45c24711131f03c2475d3ecb2a5538cadd6e7c56
-ms.sourcegitcommit: 815cf2acff71e849735f7afce54723f03ffa5df3
+ms.openlocfilehash: 6aa1f03b562eeea01e6e71441e8a12339eeaad26
+ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88501427"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91764797"
 ---
 # <a name="4-configure-a-custom-startup-file-for-python-apps-on-azure-app-service"></a>4:Azure App Service の Python アプリ用のカスタム スタートアップ ファイルを構成する
 
@@ -48,7 +48,7 @@ ms.locfileid: "88501427"
 
 1. 変更を保存すると、App Service が再起動されます。 ただし、まだアプリのコードをデプロイしていないため、この時点でサイトにアクセスしても "アプリケーション エラー" が表示されます。 このメッセージは、Gunicorn サーバーは起動したものの、アプリが見つからないために、何も HTTP 要求に応答していないことを意味します。 アプリのコードは次の手順でデプロイします。
 
-Azure CLI [`az webapp create` コマンド](/cli/azure/webapp?view=azure-cli-latest#az-webapp-create)に `--startup-file` 引数を使用してスタートアップ コマンドを指定することもできます。
+Azure CLI [`az webapp create` コマンド](/cli/azure/webapp#az-webapp-create)に `--startup-file` 引数を使用してスタートアップ コマンドを指定することもできます。
 
 ## <a name="django-startup-commands"></a>Django のスタートアップ コマンド
 

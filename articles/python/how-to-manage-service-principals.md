@@ -4,12 +4,12 @@ description: Azure portal または Azure CLI を使用して、ローカル開�
 ms.date: 08/18/2020
 ms.topic: conceptual
 ms.custom: devx-track-python, devx-track-azurecli
-ms.openlocfilehash: b6d3ffbb7e78b7c4f2405e5363446c1906913aa9
-ms.sourcegitcommit: 800c5e05ad3c0b899295d381964dd3d47436ff90
+ms.openlocfilehash: 9d090a4615621c60485b64fac22929472c0cd175
+ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88614514"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91764793"
 ---
 # <a name="how-to-manage-service-principals"></a>サービス プリンシパルを管理する方法
 
@@ -37,8 +37,8 @@ ms.locfileid: "88614514"
 
 Azure CLI を使用すると、Azure portal を通じて実行できる操作の多くをサービス プリンシパルに対して実行できます。
 
-- サービス プリンシパルを作成、表示、更新、削除する: [az ad sp](/cli/azure/ad/sp?view=azure-cli-latest) コマンド。 「[Azure CLI で Azure サービス プリンシパルを作成する](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest)」も参照してください。
-- ロールの割り当てを管理する: [az role assignment](/cli/azure/role/assignment?view=azure-cli-latest) コマンド。
+- サービス プリンシパルを作成、表示、更新、削除する: [az ad sp](/cli/azure/ad/sp) コマンド。 「[Azure CLI で Azure サービス プリンシパルを作成する](/cli/azure/create-an-azure-service-principal-azure-cli)」も参照してください。
+- ロールの割り当てを管理する: [az role assignment](/cli/azure/role/assignment) コマンド。
 
 関連項目:
 

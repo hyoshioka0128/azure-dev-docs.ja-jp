@@ -4,12 +4,12 @@ description: Azure Functions を使用したサードパーティ API の実装�
 ms.date: 08/24/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 84078a455843cb28f80a633bb5344bc5ab645ac7
-ms.sourcegitcommit: 324da872a9dfd4c55b34739824fc6a6598f2ae12
+ms.openlocfilehash: 7c0098988265fef5b6b0f5e4a654f54c9bed4594
+ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89379534"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91764501"
 ---
 # <a name="part-3-example-third-party-api-implementation"></a>パート 3: サードパーティ API の実装例
 
@@ -42,9 +42,9 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
 
 コードをデプロイするために、サンプルのプロビジョニング スクリプトは次の手順を実行します。
 
-1. Azure CLI コマンド [`az storage account create`](/cli/azure/storage/account?view=azure-cli-latest#az-storage-account-create) を使用して、Azure Functions 用のバッキング ストレージ アカウントを作成します。
+1. Azure CLI コマンド [`az storage account create`](/cli/azure/storage/account#az-storage-account-create) を使用して、Azure Functions 用のバッキング ストレージ アカウントを作成します。
 
-1. Azure CLI コマンド [`az function app create`](/cli/azure/functionapp?view=azure-cli-latest#az-functionapp-create) を使用して、Azure Functions "アプリ" を作成します。
+1. Azure CLI コマンド [`az function app create`](/cli/azure/functionapp#az-functionapp-create) を使用して、Azure Functions "アプリ" を作成します。
 
 1. ホストが完全にプロビジョニングされるまで 60 秒間待機した後、[Azure Functions Core Tools](/azure/azure-functions/functions-run-local?tabs=linux%2Ccsharp%2Cbash) コマンド [`func azure functionapp publish`](/azure/azure-functions/functions-run-local?tabs=linux%2Ccsharp%2Cbash#project-file-deployment) を使用してコードをデプロイします。
 

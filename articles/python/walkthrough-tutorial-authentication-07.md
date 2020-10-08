@@ -4,12 +4,12 @@ description: サードパーティ API エンドポイントを使用して Azur
 ms.date: 08/24/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: e026eca0216147c6614582e0cd070cee81daf99c
-ms.sourcegitcommit: 324da872a9dfd4c55b34739824fc6a6598f2ae12
+ms.openlocfilehash: b6a54f51c53889ba95f86ba194232262f31c2d99
+ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89379524"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91764698"
 ---
 # <a name="part-7-main-application-api-endpoint"></a>パート 7: メイン アプリケーション API エンドポイント
 
@@ -52,7 +52,7 @@ API 呼び出しが成功して数値が返されたと仮定した場合、そ�
 
 ここで `code` 変数には、コード値とタイムスタンプを含む、アプリの API に対する完全な JSON 応答が含まれています。 応答例は、`{"code":"ojE-161-pTv","timestamp":"2020-04-15 16:54:48.816549"}` のようになります。
 
-ただし、その応答を返す前に、キュー クライアントの [`send_message`](/python/api/azure-storage-queue/azure.storage.queue.queueclient?view=azure-python#send-message-content----kwargs-) メソッドを使用して、ストレージ キューにメッセージを書き込みます。
+ただし、その応答を返す前に、キュー クライアントの [`send_message`](/python/api/azure-storage-queue/azure.storage.queue.queueclient#send-message-content----kwargs-) メソッドを使用して、ストレージ キューにメッセージを書き込みます。
 
 ```python
     queue_client.send_message(code)
@@ -62,7 +62,7 @@ API 呼び出しが成功して数値が返されたと仮定した場合、そ�
 
 ## <a name="processing-queue-messages"></a>キュー メッセージの処理
 
-キューに格納されているメッセージは、[Azure portal](/azure/storage/queues/storage-quickstart-queues-portal#view-message-properties)、または Azure CLI コマンド [`az storage message get`](/cli/azure/storage/message?view=azure-cli-latest#az-storage-message-get) を使用して表示および管理できます。 サンプル リポジトリには、アプリ エンドポイントからコードを要求し、メッセージ キューを確認するためのスクリプト (*test.cmd* と *test.sh*) が含まれています。 さらに、[`az storage message clear`](/cli/azure/storage/message?view=azure-cli-latest#az-storage-message-clear) コマンドを使用してキューをクリアするスクリプトもあります。
+キューに格納されているメッセージは、[Azure portal](/azure/storage/queues/storage-quickstart-queues-portal#view-message-properties)、または Azure CLI コマンド [`az storage message get`](/cli/azure/storage/message#az-storage-message-get) を使用して表示および管理できます。 サンプル リポジトリには、アプリ エンドポイントからコードを要求し、メッセージ キューを確認するためのスクリプト (*test.cmd* と *test.sh*) が含まれています。 さらに、[`az storage message clear`](/cli/azure/storage/message#az-storage-message-clear) コマンドを使用してキューをクリアするスクリプトもあります。
 
 通常、この例のようなアプリでは、後続の処理のためにキューからメッセージを非同期的にプルする別のプロセスがあります。 前述のように、この API エンドポイントによって生成された応答は、2 要素ユーザー認証と共にアプリ内の他の場所で使用される場合があります。 その場合、アプリは、一定期間 (たとえば、10 分) 後にコードを無効にする必要があります。 このタスクを実行する簡単な方法は、ユーザー ログイン手順によって使用される有効な 2 要素認証コードのテーブルを保持することです。 そして、アプリは、(擬似コードで) 次のロジックを使用する単純なキュー監視プロセスを持つことになります。
 
@@ -76,7 +76,7 @@ else:
     call queue_client.send_message(code, visibility_timeout=600)
 </pre>
 
-この擬似コードでは、[`send_message`](/python/api/azure-storage-queue/azure.storage.queue.queueclient?view=azure-python#send-message-content----kwargs-) メソッドのオプションの `visibility_timeout` パラメーターを使用して、メッセージがキューに表示されるまでの秒数を指定しています。 既定のタイムアウトはゼロであるため、API エンドポイントによって最初に書き込まれたメッセージは、キュー監視プロセスからすぐに確認できるようになります。 その結果、そのプロセスによって、それらは有効なコード テーブルにすぐに格納されます。 タイムアウトを指定して再度同じメッセージをキューに保持することで、プロセスは 10 分後に再度そのコードを受信することを認識します。その時点で、それはテーブルから削除されます。
+この擬似コードでは、[`send_message`](/python/api/azure-storage-queue/azure.storage.queue.queueclient#send-message-content----kwargs-) メソッドのオプションの `visibility_timeout` パラメーターを使用して、メッセージがキューに表示されるまでの秒数を指定しています。 既定のタイムアウトはゼロであるため、API エンドポイントによって最初に書き込まれたメッセージは、キュー監視プロセスからすぐに確認できるようになります。 その結果、そのプロセスによって、それらは有効なコード テーブルにすぐに格納されます。 タイムアウトを指定して再度同じメッセージをキューに保持することで、プロセスは 10 分後に再度そのコードを受信することを認識します。その時点で、それはテーブルから削除されます。
 
 ## <a name="implementing-the-main-app-api-endpoint-in-azure-functions"></a>Azure Functions でのメイン アプリ API エンドポイントの実装
 
@@ -90,7 +90,7 @@ else:
 
 この例を通して、他の Azure サービスでアプリが認証を行う方法と、アプリが Azure Key Vault を使用してサードパーティ API に必要なその他のシークレットを格納する方法について学習しました。
 
-Azure Key Vault と Azure Storage を使用してここで示したのと同じパターンは、他のすべての Azure サービスにも適用されます。 重要な手順は、Azure portal のそのサービスのページ内で、または Azure CLI を使用して、アプリの適切なロール アクセス許可を設定することです。 ([ロールのアクセス許可を割り当てる方法](how-to-assign-role-permissions.md)に関する記事を参照。) 他のアクセス ポリシーを構成する必要があるかどうかについては、必ずサービスのドキュメントを確認してください。
+Azure Key Vault と Azure Storage を使用してここで示したのと同じパターンは、他のすべての Azure サービスにも適用されます。 重要な手順は、Azure portal のそのサービスのページ内で、または Azure CLI を使用して、アプリの適切なロール アクセス許可を設定することです。 ([ロールのアクセス許可を割り当てる方法](/azure/role-based-access-control/role-assignments-steps)に関する記事を参照。) 他のアクセス ポリシーを構成する必要があるかどうかについては、必ずサービスのドキュメントを確認してください。
 
 ローカル開発に使用しているどのサービス プリンシパルにも同じロールとアクセス ポリシーを割り当てる必要があることに常に注意してください。
 

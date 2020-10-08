@@ -4,12 +4,12 @@ description: Azure リソースのプロビジョニング、使用、管理を�
 ms.date: 09/19/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 81bda5dbe4c39341c2c799ecdbac10c2f0347bcc
-ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
+ms.openlocfilehash: 3c1cd0deb0c1df31ef3b191a9526bc99ad01fbc1
+ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91364435"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91764695"
 ---
 # <a name="use-the-azure-libraries-sdk-for-python"></a>Python 用 Azure ライブラリ (SDK) を使用する
 
@@ -31,7 +31,7 @@ ms.locfileid: "91364435"
   - [管理ライブラリを使用して Azure リソースをプロビジョニングし、管理する](#provision-and-manage-azure-resources-with-management-libraries)
   - [クライアント ライブラリを使用して Azure リソースに接続し、そのリソースを使用する](#connect-to-and-use-azure-resources-with-client-libraries)
 
-- ライブラリのドキュメントは、[Azure for Python のリファレンス](/python/api/overview/azure/?view=azure-python) (Azure サービスごとに編成) または [Python API ブラウザー](/python/api/?view=azure-python) (パッケージ名ごとに編成) でご覧いただけます。 現時点では、多くの場合、目的のクラスやメソッドにたどりつくために多数のレイヤーをクリックしなければなりません。 ご不便をおかけして申し訳ありません。 改善に向けて取り組んでまいります。
+- ライブラリのドキュメントは、[Azure for Python のリファレンス](/python/api/overview/azure/) (Azure サービスごとに編成) または [Python API ブラウザー](/python/api/) (パッケージ名ごとに編成) でご覧いただけます。 現時点では、多くの場合、目的のクラスやメソッドにたどりつくために多数のレイヤーをクリックしなければなりません。 ご不便をおかけして申し訳ありません。 改善に向けて取り組んでまいります。
 
 - 自分でライブラリを試すには、まず、[ローカルの開発環境を設定する](configure-local-development-environment.md)ことをお勧めします。 その後、次のいずれかのスタンドアロンの例を (任意の順序) で試すことができます。[例:リソース グループをプロビジョニングする](azure-sdk-example-resource-group.md)、[例: Azure Storage をプロビジョニングして使用する](azure-sdk-example-storage.md)、[例: Web アプリをプロビジョニングしてコードをデプロイする](azure-sdk-example-web-app.md)、[例: MySQL データベースをプロビジョニングして使用する](azure-sdk-example-database.md)、および[例: 仮想マシンをプロビジョニングする](azure-sdk-example-virtual-machines.md)。
 
@@ -65,13 +65,13 @@ SDK の "*管理*" ("管理プレーン") ライブラリは、いずれも名�
 
 管理ライブラリを使用すると、[Azure portal](https://portal.azure.com) または [Azure CLI](/cli/azure/install-azure-cli) で行うのと同じタスクを実行する構成またはデプロイのスクリプトを作成することができます。 (既に述べたように、Azure CLI は Python で記述されており、その各種コマンドは管理ライブラリを使用して実装されています。)
 
-各管理ライブラリでの操作の詳細については、[SDK GitHub リポジトリ](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk)内のライブラリのプロジェクト フォルダーにある *README.md* または *README.rst* ファイルを参照してください。 また、その他のコード スニペットについては、[リファレンス ドキュメント](/python/api?view=azure-python)および [Azure のサンプル](/samples/browse/?languages=python&products=azure)で確認できます。
+各管理ライブラリでの操作の詳細については、[SDK GitHub リポジトリ](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk)内のライブラリのプロジェクト フォルダーにある *README.md* または *README.rst* ファイルを参照してください。 また、その他のコード スニペットについては、[リファレンス ドキュメント](/python/api)および [Azure のサンプル](/samples/browse/?languages=python&products=azure)で確認できます。
 
 ## <a name="connect-to-and-use-azure-resources-with-client-libraries"></a>クライアント ライブラリを使用して Azure リソースに接続し、そのリソースを使用する
 
 SDK の "*クライアント*" ("データ プレーン") ライブラリを使用すると、既にプロビジョニングされたサービスとやり取りする Python アプリケーション コードを記述するのに役立ちます。 クライアント ライブラリは、クライアント API をサポートするサービスに対してのみ存在します。
 
-各クライアント ライブラリでの操作の詳細については、[SDK の GitHub リポジトリ](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk)内のライブラリのプロジェクト フォルダーにある *README.md* または *README.rst* ファイルを参照してください。 また、その他のコード スニペットについては、[リファレンス ドキュメント](/python/api?view=azure-python)および [Azure のサンプル](/samples/browse/?languages=python&products=azure)で確認できます。
+各クライアント ライブラリでの操作の詳細については、[SDK の GitHub リポジトリ](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk)内のライブラリのプロジェクト フォルダーにある *README.md* または *README.rst* ファイルを参照してください。 また、その他のコード スニペットについては、[リファレンス ドキュメント](/python/api)および [Azure のサンプル](/samples/browse/?languages=python&products=azure)で確認できます。
 
 ## <a name="get-help-and-connect-with-the-sdk-team"></a>SDK チームによるサポートと連絡先
 

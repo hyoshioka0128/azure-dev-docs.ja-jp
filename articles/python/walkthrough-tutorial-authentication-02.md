@@ -4,12 +4,12 @@ description: このサンプル シナリオにおけるさまざまな認証の
 ms.date: 08/24/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: c6719e3c86b590edff551d98e5a961fd08f857c3
-ms.sourcegitcommit: 324da872a9dfd4c55b34739824fc6a6598f2ae12
+ms.openlocfilehash: 2e3755f7049fd091c05cd2aca5ddf8276cebff95
+ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89379539"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91764426"
 ---
 # <a name="part-2-authentication-needs-in-the-scenario"></a>パート 2: シナリオにおける認証のニーズ
 
@@ -33,7 +33,7 @@ ms.locfileid: "89379539"
 
 ## <a name="integrated-authentication-with-managed-identity"></a>マネージド ID を使用した統合認証
 
-Storage や Key Vault などの多くの Azure サービスは、Azure Active Directory (Azure AD) と統合されています。これにより、[マネージド ID](/azure/active-directory/managed-identities-azure-resources/overview) を使用してアプリケーションを Azure AD で認証すると、他の接続されたリソースで自動的に認証されます。 ID の認可の処理は、[ロールベースのアクセス制御 (RBAC)](how-to-assign-role-permissions.md) を使用して行われます。また、場合によっては、他のアクセス ポリシーが使用されることもあります。
+Storage や Key Vault などの多くの Azure サービスは、Azure Active Directory (Azure AD) と統合されています。これにより、[マネージド ID](/azure/active-directory/managed-identities-azure-resources/overview) を使用してアプリケーションを Azure AD で認証すると、他の接続されたリソースで自動的に認証されます。 ID の認可の処理は、[ロールベースのアクセス制御 (RBAC)](/azure/role-based-access-control/role-assignments-steps) を使用して行われます。また、場合によっては、他のアクセス ポリシーが使用されることもあります。
 
 この統合は、Azure に関連した資格情報をアプリ コードで処理する必要がなく、これらの資格情報が決して開発者用ワークステーションやソース管理に表示されないことを意味します。 さらに、サードパーティ API とサービスのキーの処理はすべて実行時に行われるため、これらのキーを安全に保つことができます。
 
@@ -51,7 +51,7 @@ Storage や Key Vault などの多くの Azure サービスは、Azure Active Di
 
 このチュートリアルの残りの部分では、サンプル シナリオとそれに付随するサンプル コードのコンテキストで、プロセスのすべての詳細を示します。
 
-このサンプルのプロビジョニング スクリプトでは、すべてのリソースは、`auth-scenario-rg` という名前のリソース グループの下に作成されます。 このグループは、Azure CLI の [`az group create`](/cli/azure/group?view=azure-cli-latest#az-group-create) コマンドを使用して作成されます。
+このサンプルのプロビジョニング スクリプトでは、すべてのリソースは、`auth-scenario-rg` という名前のリソース グループの下に作成されます。 このグループは、Azure CLI の [`az group create`](/cli/azure/group#az-group-create) コマンドを使用して作成されます。
 
 > [!div class="nextstepaction"]
 > [パート 3 - サードパーティ API の実装例 >>>](walkthrough-tutorial-authentication-03.md)

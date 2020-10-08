@@ -4,12 +4,12 @@ description: Visual Studio Code、Azure SDK ライブラリ、ライブラリ認
 ms.date: 05/29/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: d95584758900eae2c50df5e731fd84f8bca00897
-ms.sourcegitcommit: 800c5e05ad3c0b899295d381964dd3d47436ff90
+ms.openlocfilehash: 14955bc63ab44884254e2304b0e5ceb97e7bcb0d
+ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88614508"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91764807"
 ---
 # <a name="configure-your-local-python-dev-environment-for-azure"></a>Azure 用のローカル Python 開発環境を構成する
 
@@ -122,7 +122,7 @@ Azure CLI では通常、セッション間のサインインが維持されま�
 
     これらのコマンドに示されている値を、お客様固有のサービス プリンシパルの値で置き換えます。
 
-    サブスクリプション ID を取得するには、[`az account show`](/cli/azure/account?view=azure-cli-latest#az-account-show) コマンドを実行し、その出力で `id` プロパティを探します。
+    サブスクリプション ID を取得するには、[`az account show`](/cli/azure/account#az-account-show) コマンドを実行し、その出力で `id` プロパティを探します。
 
     利便性のため、これらの同じコマンドを含むコマンド ライン スクリプト ファイル (macOS/Linux の場合は *setenv.sh*、Windows の場合は *setenv.cmd*) を作成します。 その後、ローカル テストのためにターミナルまたはコマンド プロンプトを開いたときにいつでも、このスクリプトを実行して変数を設定できます。 この場合も、スクリプト ファイルはソース管理には追加せず、ユーザー アカウント内にのみ残します。
 
@@ -138,7 +138,7 @@ Azure CLI では通常、セッション間のサインインが維持されま�
 
 `az ad create-for-rbac` コマンドは、"ロールベースの認証" (RBAC) のサービス プリンシパルを作成します。
 
-- `ad` は Azure Active Directory を意味します。`sp` は "サービス プリンシパル" を意味し、`create-for-rbac` は Azure の主要な承認形式である "ロールベースのアクセス制御用に作成する" ことを意味します。 [az ad sp create-rbac](/cli/azure/ad/sp?view=azure-cli-latest#az-ad-sp-create-for-rbac) のコマンド リファレンスを参照してください。
+- `ad` は Azure Active Directory を意味します。`sp` は "サービス プリンシパル" を意味し、`create-for-rbac` は Azure の主要な承認形式である "ロールベースのアクセス制御用に作成する" ことを意味します。 [az ad sp create-rbac](/cli/azure/ad/sp#az-ad-sp-create-for-rbac) のコマンド リファレンスを参照してください。
 
 - `--name` 引数は組織内で一意である必要があり、通常はそのサービス プリンシパルを使用する開発者の名前を指定します。 この引数を省略した場合、Azure CLI では `azure-cli-<timestamp>` という形式の汎用名が使用されます。 サービス プリンシパルの名前は、必要に応じて Azure portal で変更できます。
 
@@ -238,7 +238,7 @@ git init
 
 そこから、`git add` や `git commit` などのコマンドを実行して変更をコミットできます。 変更を定期的にコミットすることにより、コミット履歴が作成されるので、以前の状態に戻すことができるようになります。
 
-プロジェクトのオンライン バックアップを作成するには、リポジトリを [GitHub](https://github.com) または [Azure DevOps](/azure/devops/user-guide/code-with-git?view=azure-devops) にアップロードすることをお勧めします。 最初にローカル リポジトリを初期化した場合は、`git remote add` を使用して、ローカル リポジトリを GitHub または Azure DevOps にアタッチします。
+プロジェクトのオンライン バックアップを作成するには、リポジトリを [GitHub](https://github.com) または [Azure DevOps](/azure/devops/user-guide/code-with-git?view=azure-devops&preserve-view=true) にアップロードすることをお勧めします。 最初にローカル リポジトリを初期化した場合は、`git remote add` を使用して、ローカル リポジトリを GitHub または Azure DevOps にアタッチします。
 
 Git のドキュメントは、[git-scm.com/docs](https://git-scm.com/docs) と、インターネット上のさまざまな場所で参照できます。
 

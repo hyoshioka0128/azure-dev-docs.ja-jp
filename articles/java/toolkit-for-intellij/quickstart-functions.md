@@ -125,7 +125,7 @@ ms.locfileid: "90831408"
 
 ## <a name="add-more-functions-to-the-project"></a>プロジェクトに関数を追加する
 
-1. パッケージ *org.example.functions* を右クリックして *[New]\(新規\) -> [Azure Function Class]\(Azure 関数クラス\)* を選択します。 
+1. パッケージ *org.example.functions* を右クリックして *[New]\(新規\) -> [Azure Function Class]\(Azure Functions クラス\)* を選択します。 
 
     ![プロジェクト エントリへの関数の追加](media/quickstart-functions/add-functions-entry.png)
 

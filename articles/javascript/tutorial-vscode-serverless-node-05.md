@@ -1,15 +1,15 @@
 ---
 title: Azure Functions アプリケーションをデプロイした後にリソースをクリーンアップする
-description: リソースをクリーンアップするには、Azure:Functions エクスプローラーで Function App を右クリックし、 [Delete Function App]\(関数アプリの削除\) を選択します。
-ms.topic: conceptual
+description: 'サーバーレス - リソースをクリーンアップするには、Azure: Functions エクスプローラーで Function アプリを右クリックし、\関数アプリの削除\ を選択します。'
+ms.topic: tutorial
 ms.date: 08/31/2020
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 7348f367547f0e61daf91f68d6e11b83a1b1a4bc
-ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
+ms.custom: devx-track-js
+ms.openlocfilehash: 30ce0f0f5d79c6fd7a69172fbdfbeb27d12c7a81
+ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90773112"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91364575"
 ---
 # <a name="tutorial-for-azure-functions-clean-up-resources"></a>Azure Functions のチュートリアル: リソースをクリーンアップする
 

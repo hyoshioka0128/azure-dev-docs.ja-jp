@@ -6,12 +6,12 @@ metadata:
   description: Spring は VMware によって開発されたオープンソースのアプリケーション フレームワークであり、Java アプリケーションを作成するための簡素化されたモジュール方式のアプローチを提供します。
   ms.date: 03/13/2020
   ms.topic: landing-page
-  ms.openlocfilehash: 8260997ed17f456b2307a4e2d4092104847ceb6e
-  ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+  ms.openlocfilehash: ec6211311b5eb5eef04af15b5ffe82dbade42ae9
+  ms.sourcegitcommit: 723441eda0eb4ff893123201a9e029b7becf5ecc
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/21/2020
-  ms.locfileid: "90831558"
+  ms.lasthandoff: 10/08/2020
+  ms.locfileid: "91846383"
 landingContent:
 - title: ファースト ステップ ガイド
   linkLists:
@@ -47,10 +47,6 @@ landingContent:
       url: deploy-spring-boot-java-app-on-kubernetes.md
     - text: Web App for Containers にアプリをデプロイする
       url: deploy-spring-boot-java-app-on-linux.md
-    - text: Maven を使用して Web App for Containers にデプロイする
-      url: deploy-containerized-spring-boot-java-app-with-maven-plugin.md
-    - text: ACR から Azure にアプリをデプロイする
-      url: deploy-spring-boot-java-app-from-container-registry-using-maven-plugin.md
 - title: コード サンプル
   linkLists:
   - linkListType: sample

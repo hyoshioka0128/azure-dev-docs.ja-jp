@@ -10,118 +10,118 @@ metadata:
   ms.author: barbkess
   manager: barbkess
   ms.date: 04/15/2020
-  ms.openlocfilehash: 60455122c0ab21dc646938661c4f9489c969bd0d
-  ms.sourcegitcommit: 6e4c1b2d960b3089b8b4537a7e754ed41751ceca
+  ms.openlocfilehash: ed689388bddd3083b1718e05d6d8ad6eccc055f2
+  ms.sourcegitcommit: 723441eda0eb4ff893123201a9e029b7becf5ecc
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 07/28/2020
-  ms.locfileid: "87260389"
+  ms.lasthandoff: 10/08/2020
+  ms.locfileid: "91846663"
 productDirectory:
   items:
   - title: Python
     imageSrc: https://docs.microsoft.com/media/logos/logo_python.svg
     links:
-    - url: https://docs.microsoft.com/en-us/azure/developer/python/tutorial-vs-code-serverless-python-01
+    - url: ./python/tutorial-vs-code-serverless-python-01.md
       text: サーバーレス Python アプリを Azure Functions にデプロイする
-    - url: https://docs.microsoft.com/azure/developer/python/tutorial-deploy-app-service-on-linux-01
+    - url: ./python/tutorial-deploy-app-service-on-linux-01.md
       text: Python アプリを Azure App Service にデプロイする
-    - url: https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-python
+    - url: /azure/storage/blobs/storage-quickstart-blobs-python
       text: Azure SDK for Python を使用して Storage BLOB を管理する
-    - url: https://docs.microsoft.com/azure/sql-database/sql-database-connect-query-python
+    - url: /azure/sql-database/sql-database-connect-query-python
       text: Python を使用して Azure SQL Database のクエリを実行する
-    - url: https://docs.microsoft.com/azure/data-factory/quickstart-create-data-factory-python
+    - url: /azure/data-factory/quickstart-create-data-factory-python
       text: Python を使用して Azure データ ファクトリを作成する
-    - url: https://docs.microsoft.com/azure/developer/python/
+    - url: ./python/index.yml
       text: Python デベロッパー センターで詳細を見る
   - title: JavaScript
     imageSrc: https://docs.microsoft.com/media/logos/logo_js.svg
     links:
-    - url: https://docs.microsoft.com/azure/developer/javascript/tutorial-vscode-static-website-node-01?tabs=bash
+    - url: ./javascript/tutorial-vscode-static-website-node-01.md?tabs=bash
       text: 静的な Web サイトを開発する
-    - url: https://docs.microsoft.com/azure/developer/javascript/tutorial-vscode-azure-app-service-node-01?tabs=bash
+    - url: ./javascript/tutorial-vscode-azure-app-service-node-01.md?tabs=bash
       text: Azure App Service にデプロイする
-    - url: https://docs.microsoft.com/azure/developer/javascript/tutorial-vscode-serverless-node-01?tabs=bash
+    - url: ./javascript/tutorial-vscode-serverless-node-01.md?tabs=bash
       text: サーバーレス アプリケーションをデプロイする
-    - url: https://docs.microsoft.com/azure/developer/javascript/tutorial-vscode-docker-node-01?tabs=bash
+    - url: ./javascript/tutorial-vscode-docker-node-01.md?tabs=bash
       text: Docker コンテナーをデプロイする
-    - url: https://docs.microsoft.com/azure/cosmos-db/create-mongodb-nodejs?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
+    - url: /azure/cosmos-db/create-mongodb-nodejs?bc=%252fazure%252fdeveloper%252fbreadcrumb%252ftoc.json&toc=%252fazure%252fdeveloper%252fjavascript%252ftoc.json
       text: MongoDB アプリを Azure Cosmos DB に移行する
-    - url: https://docs.microsoft.com/azure/developer/javascript/
+    - url: ./javascript/index.yml
       text: デベロッパー センターで詳細を見る
   - title: Java
     imageSrc: https://docs.microsoft.com/media/logos/logo_java.svg
     links:
-    - url: https://docs.microsoft.com/azure/developer/java/fundamentals/java-jdk-install
+    - url: ./java/fundamentals/java-jdk-install.md
       text: Azure 用の JDK および Azure Stack をインストールする
-    - url: https://docs.microsoft.com/azure/spring-cloud/spring-cloud-quickstart-launch-app-portal
+    - url: /azure/spring-cloud/spring-cloud-quickstart-launch-app-portal
       text: Azure portal を使用して Azure Spring Cloud アプリをデプロイする
-    - url: https://docs.microsoft.com/azure/app-service/app-service-web-get-started-java
+    - url: /azure/app-service/app-service-web-get-started-java
       text: Azure App Service で Java アプリを作成する
-    - url: https://docs.microsoft.com/azure/developer/java/spring-framework/configure-spring-boot-starter-java-app-with-azure-active-directory
+    - url: ./java/spring-framework/configure-spring-boot-starter-java-app-with-azure-active-directory.md
       text: Azure Active Directory 用の Spring Boot Starter を使用する
-    - url: https://docs.microsoft.com/azure/developer/java/migration/migration-overview
+    - url: ./java/migration/migration-overview.md
       text: Java アプリケーションを Azure に移行する
-    - url: https://docs.microsoft.com/azure/developer/java/
+    - url: ./java/index.yml
       text: Java デベロッパー センターで詳細を見る
   - title: .NET
     imageSrc: https://docs.microsoft.com/azure/media/index/net-logo.svg
     links:
-    - url: https://docs.microsoft.com/dotnet/azure/sdk/
+    - url: /dotnet/azure/sdk/
       text: Azure SDK for .NET
-    - url: https://docs.microsoft.com/dotnet/azure/intro
+    - url: /dotnet/azure/intro
       text: Azure と .NET の概要
-    - url: https://docs.microsoft.com/azure/app-service/app-service-web-get-started-dotnet
+    - url: /azure/app-service/app-service-web-get-started-dotnet
       text: ASP.NET Web アプリをデプロイする
-    - url: https://docs.microsoft.com/azure/azure-functions/functions-create-your-first-function-visual-studio
+    - url: /azure/azure-functions/functions-create-your-first-function-visual-studio
       text: サーバーレス関数を構築する
-    - url: https://docs.microsoft.com/visualstudio/containers/container-tools?view=vs-2019
+    - url: /visualstudio/containers/container-tools?view=vs-2019
       text: ASP.NET Core と Docker
-    - url: https://docs.microsoft.com/dotnet/azure/
+    - url: /dotnet/azure/
       text: .NET デベロッパー センターで詳細を見る
   - title: Azure PowerShell
     imageSrc: https://docs.microsoft.com/media/logos/logo_powershell.svg
     links:
-    - url: https://docs.microsoft.com/powershell/azure/new-azureps-module-az
+    - url: /powershell/azure/new-azureps-module-az
       text: 新しい Az モジュールとは
-    - url: https://docs.microsoft.com/powershell/azure/migrate-from-azurerm-to-az
+    - url: /powershell/azure/migrate-from-azurerm-to-az
       text: AzureRM から Az への移行
-    - url: https://docs.microsoft.com/powershell/azure/install-az-ps
+    - url: /powershell/azure/install-az-ps
       text: インストール
-    - url: https://docs.microsoft.com/powershell/azure/authenticate-azureps
+    - url: /powershell/azure/authenticate-azureps
       text: サインイン
-    - url: https://docs.microsoft.com/powershell/azure/context-persistence
+    - url: /powershell/azure/context-persistence
       text: 資格情報のコンテキストを保持する
-    - url: https://docs.microsoft.com/powershell/azure/
+    - url: /powershell/azure/
       text: Azure PowerShell デベロッパー センターで詳細を見る
   - title: Azure CLI
     imageSrc: https://docs.microsoft.com/media/logos/logo_CLIgeneric.svg
     links:
-    - url: https://docs.microsoft.com/cli/azure/get-started-with-azure-cli?view=azure-cli-latest
+    - url: /cli/azure/get-started-with-azure-cli?view=azure-cli-latest
       text: はじめに
-    - url: https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest
+    - url: /cli/azure/install-azure-cli?view=azure-cli-latest
       text: インストール
-    - url: https://docs.microsoft.com/cli/azure/authenticate-azure-cli?view=azure-cli-latest
+    - url: /cli/azure/authenticate-azure-cli?view=azure-cli-latest
       text: サインイン
-    - url: https://docs.microsoft.com/en-us/cli/azure/query-azure-cli?view=azure-cli-latest
+    - url: /cli/azure/query-azure-cli?view=azure-cli-latest
       text: CLI コマンドの出力に対してクエリを実行する
-    - url: https://docs.microsoft.com/en-us/cli/azure/azure-cli-vm-tutorial?view=azure-cli-latest
+    - url: /cli/azure/azure-cli-vm-tutorial?view=azure-cli-latest
       text: 仮想マシンの作成
-    - url: https://docs.microsoft.com/cli/azure/
+    - url: /cli/azure/
       text: Azure CLI デベロッパー センターで詳細を見る
   - title: モバイル
     imageSrc: https://static.docs.com/ui/media/product/azure/devices.svg
     links:
-    - url: https://docs.microsoft.com/azure/developer/mobile-apps/serverless-compute
+    - url: ./mobile-apps/serverless-compute.md
       text: サーバーレス モバイル アプリを構築する
-    - url: https://docs.microsoft.com/azure/cosmos-db/create-sql-api-xamarin-dotnet
+    - url: /azure/cosmos-db/create-sql-api-xamarin-dotnet
       text: Azure Cosmos DB を使用してデータを保存する
-    - url: https://docs.microsoft.com/azure/developer/mobile-apps/push-notifications
+    - url: ./mobile-apps/push-notifications.md
       text: ユーザーを引き付けるためにプッシュ通知を送信する
-    - url: https://docs.microsoft.com/azure/developer/mobile-apps/authentication
+    - url: ./mobile-apps/authentication.md
       text: 認証を追加してユーザー ID を管理する
-    - url: https://docs.microsoft.com/azure/devops/pipelines/get-started/key-pipelines-concepts?view=azure-devops
+    - url: /azure/devops/pipelines/get-started/key-pipelines-concepts?view=azure-devops
       text: 新しい Azure Pipelines ユーザー向けの主要な概念
-    - url: https://docs.microsoft.com/azure/developer/mobile-apps
+    - url: ./mobile-apps/index.yml
       text: モバイル アプリ デベロッパー センターで詳細を見る
 additionalContent:
   sections:
@@ -132,34 +132,34 @@ additionalContent:
       url: https://code.visualstudio.com/docs/azure/extensions
     - title: REST API
       summary: REST API を使用して、HTTP 操作を介してサービスのリソースにアクセスします。
-      url: https://docs.microsoft.com/rest/api/
+      url: /rest/api/
     - title: ARM テンプレート
       summary: Azure Resource Manager テンプレートを使用して、JSON ファイルでプロジェクトを定義および構成します。
-      url: https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/
+      url: /azure/azure-resource-manager/templates/
     - title: Azure DevOps
       summary: Azure DevOps を使用して、作業の計画、コード開発での共同作業、アプリケーションのビルドおよびデプロイを行います。
-      url: https://docs.microsoft.com/azure/devops/?view=azure-devops
+      url: /azure/devops/?view=azure-devops
     - title: Azure と GitHub の統合
       summary: GitHub と GitHub Actions を使用して、リポジトリ内からソフトウェア開発ワークフローを自動化、カスタマイズ、実行します。
-      url: https://docs.microsoft.com/azure/developer/github
+      url: ./github/index.yml
     - title: Jenkins
       summary: Jenkins を使用して、ソフトウェア プロジェクトの継続的インテグレーションとデリバリー (CI/CD) を自動化します。
-      url: https://docs.microsoft.com/azure/jenkins/
+      url: /azure/jenkins/
     - title: Terraform
       summary: Hashicorp Terraform を使用して、クラウド インフラストラクチャのプロビジョニングと管理を行います。
-      url: https://docs.microsoft.com/azure/terraform/
+      url: /azure/terraform/
     - title: Ansible
       summary: クラウド プロビジョニング、構成管理、アプリケーションのデプロイを自動化するには、Ansible を使用します。
-      url: https://docs.microsoft.com/azure/developer/ansible/
+      url: ./ansible/index.yml
     - title: Chef
       summary: Chef を使用して、Azure 上の仮想マシン インフラストラクチャをコードに変換します。
-      url: https://docs.microsoft.com/azure/developer/chef/
+      url: ./chef/index.yml
     - title: Maven
       summary: Maven を使用して、Java プロジェクトのビルドと管理の方法を自動化します。 他の言語でも機能します。
       url: https://github.com/Microsoft/azure-maven-plugins#readme
     - title: Azure Toolkit for IntelliJ
       summary: Azure Toolkit for IntelliJ を使用して、IntelliJ IDE 内から Azure アプリケーションを作成、開発、テスト、デプロイします。
-      url: https://docs.microsoft.com/azure/developer/java/toolkit-for-intellij/
+      url: ./java/toolkit-for-intellij/index.yml
     - title: Azure Toolkit for Eclipse
       summary: Azure Toolkit for Eclipse を使用して、Eclipse IDE 内から Azure アプリケーションを作成、開発、テスト、デプロイします。
-      url: https://docs.microsoft.com/azure/developer/java/toolkit-for-eclipse/
+      url: ./java/toolkit-for-eclipse/index.yml

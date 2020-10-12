@@ -1,21 +1,22 @@
 ---
 title: Azure SDK ライブラリの API リファレンス - Python
+description: Python の API リファレンス ドキュメントへのポインター
 ms.date: 05/26/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: aa5462ae28153a631562c6703880a872b51dd048
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: f1a30c02059179f21694d716bcb5e063ae20956d
+ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87982864"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91764819"
 ---
 # <a name="azure-libraries-for-python-api-reference"></a>Python 用の Azure ライブラリの API リファレンス
 
 すべてのサービスの完全なリファレンス:
 
 > [!div class="nextstepaction"]
-> [Python API ブラウザー >>>](/python/api/?view=azure-python)
+> [Python API ブラウザー >>>](/python/api/)
 
 ストレージ (BLOB、ファイル、キュー) から開始して、サービスごとの参照セクションのパイロット テストを実行しています。 このエクスペリエンスに関する[フィードバックをご提供][1]ください。
 

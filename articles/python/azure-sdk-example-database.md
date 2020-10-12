@@ -1,15 +1,15 @@
 ---
 title: Azure SDK ライブラリを使用して Azure MySQL データベースをプロビジョニングする
 description: Python 用 Azure SDK ライブラリの管理ライブラリを使用して、Azure MySQL、PostgresSQL、または MariaDB データベースをプロビジョニングします。
-ms.date: 06/02/2020
+ms.date: 10/05/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 17848311fa713fbe480609d2d49481b5f343eff4
-ms.sourcegitcommit: b03cb337db8a35e6e62b063c347891e44a8a5a13
+ms.openlocfilehash: b1f04dbf2fa12aeab58a05191319a27072db6d28
+ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91110540"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91764684"
 ---
 # <a name="example-use-the-azure-libraries-to-provision-a-database"></a>例:Azure ライブラリを使用してデータベースをプロビジョニングする
 
@@ -17,7 +17,7 @@ ms.locfileid: "91110540"
 
 同様のコードを使用して、PostgreSQL または MariaDB データベースをプロビジョニングできます。
 
-特に記載のない限り、この記事で使用されているコマンドはいずれも、Linux と Mac OS の bash および Windows のコマンド シェルで同じように動作します。
+特に記載のない限り、この記事で使用されているコマンドはいずれも、Linux と macOS の bash および Windows のコマンド シェルで同じように動作します。
 
 ## <a name="1-set-up-your-local-development-environment"></a>1:ローカルの開発環境を設定する
 
@@ -30,12 +30,14 @@ ms.locfileid: "91110540"
 *requirements.txt* という名前のファイルを作成し、内容を次のようにします。
 
 ```text
-azure-mgmt-resource
+azure-mgmt-resource==10.2.0
 azure-mgmt-rdbms
 azure-cli-core
 mysql
 mysql-connector
 ```
+
+azure-mgmt-resource の特定のバージョン要件により、azure-mgmt-web の現在のバージョンと互換性のあるバージョンを使用する必要があります。 これらのバージョンは、azure.core に基づいていないため、以前の認証方法が使用されます。
 
 仮想環境をアクティブ化し、ターミナルまたはコマンド プロンプトで要件をインストールします。
 
@@ -150,15 +152,15 @@ print(f"Provisioned MySQL database {db_result.name} with ID {db_result.id}")
 
 ### <a name="reference-links-for-classes-used-in-the-code"></a>コードで使用されているクラスの参照リンク
 
-- [ResourceManagementClient (azure.mgmt.resource)](/python/api/azure-mgmt-resource/azure.mgmt.resource.resourcemanagementclient?view=azure-python)
-- [MySQLManagementClient (azure.mgmt.rdbms.mysql)](/python/api/azure-mgmt-rdbms/azure.mgmt.rdbms.mysql.mysqlmanagementclient?view=azure-python)
-- [ServerForCreate (azure.mgmt.rdbms.mysql.models)](/python/api/azure-mgmt-rdbms/azure.mgmt.rdbms.mysql.models.serverforcreate?view=azure-python)
-- [ServerPropertiesForDefaultCreate (azure.mgmt.rdbms.mysql.models)](/python/api/azure-mgmt-rdbms/azure.mgmt.rdbms.mysql.models.serverpropertiesfordefaultcreate?view=azure-python)
-- [ServerVersion (azure.mgmt.rdbms.mysql.models)](/python/api/azure-mgmt-rdbms/azure.mgmt.rdbms.mysql.models.serverversion?view=azure-python)
+- [ResourceManagementClient (azure.mgmt.resource)](/python/api/azure-mgmt-resource/azure.mgmt.resource.resourcemanagementclient)
+- [MySQLManagementClient (azure.mgmt.rdbms.mysql)](/python/api/azure-mgmt-rdbms/azure.mgmt.rdbms.mysql.mysqlmanagementclient)
+- [ServerForCreate (azure.mgmt.rdbms.mysql.models)](/python/api/azure-mgmt-rdbms/azure.mgmt.rdbms.mysql.models.serverforcreate)
+- [ServerPropertiesForDefaultCreate (azure.mgmt.rdbms.mysql.models)](/python/api/azure-mgmt-rdbms/azure.mgmt.rdbms.mysql.models.serverpropertiesfordefaultcreate)
+- [ServerVersion (azure.mgmt.rdbms.mysql.models)](/python/api/azure-mgmt-rdbms/azure.mgmt.rdbms.mysql.models.serverversion)
 
 こちらもご覧ください。
-    - [PostgreSQLManagementClient (azure.mgmt.rdbms.postgresql)](/python/api/azure-mgmt-rdbms/azure.mgmt.rdbms.postgresql.postgresqlmanagementclient?view=azure-python)
-    - [MariaDBManagementClient (azure.mgmt.rdbms.mariadb)](/python/api/azure-mgmt-rdbms/azure.mgmt.rdbms.mariadb.mariadbmanagementclient?view=azure-python)
+    - [PostgreSQLManagementClient (azure.mgmt.rdbms.postgresql)](/python/api/azure-mgmt-rdbms/azure.mgmt.rdbms.postgresql.postgresqlmanagementclient)
+    - [MariaDBManagementClient (azure.mgmt.rdbms.mariadb)](/python/api/azure-mgmt-rdbms/azure.mgmt.rdbms.mariadb.mariadbmanagementclient)
 
 ## <a name="4-run-the-script"></a>4:スクリプトを実行する
 
@@ -229,11 +231,11 @@ az group delete -n PythonAzureExample-DB-rg  --no-wait
 
 この例でプロビジョニングしたリソースを残す必要がなければ、今後サブスクリプションに課金されないようにするために、このコマンドを実行してください。
 
-コードから [`ResourceManagementClient.resource_groups.delete`](/python/api/azure-mgmt-resource/azure.mgmt.resource.resources.v2019_10_01.operations.resourcegroupsoperations?view=azure-python#delete-resource-group-name--custom-headers-none--raw-false--polling-true----operation-config-) メソッドを使用してリソース グループを削除することもできます。
+[!INCLUDE [resource_group_begin_delete](includes/resource-group-begin-delete.md)]
 
 ### <a name="for-reference-equivalent-azure-cli-commands"></a>参考: 同等の Azure CLI コマンド
 
-次の Azure CLI コマンドは、Python スクリプトと同じプロビジョニング手順を完了します。 PostgreSQL データベースの場合は、[`az postgres`](/cli/azure/postgres?view=azure-cli-latest) コマンドを使用し、MariaDB の場合は、[`az mariadb`](/cli/azure/mariadb?view=azure-cli-latest) コマンドを使用します。
+次の Azure CLI コマンドは、Python スクリプトと同じプロビジョニング手順を完了します。 PostgreSQL データベースの場合は、[`az postgres`](/cli/azure/postgres) コマンドを使用し、MariaDB の場合は、[`az mariadb`](/cli/azure/mariadb) コマンドを使用します。
 
 # <a name="cmd"></a>[cmd](#tab/cmd)
 

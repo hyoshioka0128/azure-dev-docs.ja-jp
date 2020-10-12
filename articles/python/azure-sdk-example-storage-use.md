@@ -4,18 +4,18 @@ description: Azure SDK for Python ライブラリを使用して、Azure Storage
 ms.date: 08/05/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 161e27f1323053b45c687e60ade90e863ce71c64
-ms.sourcegitcommit: b03cb337db8a35e6e62b063c347891e44a8a5a13
+ms.openlocfilehash: ee9469b4b400879ee5a0b66d16572bc22686ba54
+ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91110490"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91764451"
 ---
 # <a name="example-access-azure-storage-using-the-azure-libraries-for-python"></a>例:Python 用 Azure ライブラリを使用して Azure Storage にアクセスする
 
 この例では、Python アプリケーション コードで Azure クライアント ライブラリを使用して、その Blob Storage コンテナーにファイルをアップロードする方法を示しています。 この例は、[Azure Storage のプロビジョニングの例](azure-sdk-example-storage.md)に示されているリソースをプロビジョニングしていることを前提としています。
 
-特に記載のない限り、この記事で使用されているコマンドはいずれも、Linux と Mac OS の bash および Windows のコマンド シェルで同じように動作します。
+特に記載のない限り、この記事で使用されているコマンドはいずれも、Linux と macOS の bash および Windows のコマンド シェルで同じように動作します。
 
 ## <a name="1-set-up-your-local-development-environment"></a>1:ローカルの開発環境を設定する
 
@@ -115,8 +115,8 @@ Hello there, Azure Storage. I'm a friendly file ready to be stored in a blob.
     ```
 
     参照リンク:
-      - [DefaultAzureCredential (azure.identity)](/python/api/azure-identity/azure.identity.defaultazurecredential?view=azure-python)
-      - [BlobClient (azure.storage.blob)](/python/api/azure-storage-blob/azure.storage.blob.blobclient?view=azure-python)
+      - [DefaultAzureCredential (azure.identity)](/python/api/azure-identity/azure.identity.defaultazurecredential)
+      - [BlobClient (azure.storage.blob)](/python/api/azure-storage-blob/azure.storage.blob.blobclient)
 
 1. コードを実行しようとします (意図的に失敗します)。
 
@@ -126,7 +126,7 @@ Hello there, Azure Storage. I'm a friendly file ready to be stored in a blob.
 
     使用しているローカル サービス プリンシパルには、BLOB コンテナーへのアクセス許可がないため、"This request is not authorized to perform this operation using this permission." (この要求にはこのアクセス許可を使用してこの操作を実行する権限がありません) という内容のエラーが表示されます。
 
-1. Azure CLI コマンド [az role assignment create](/cli/azure/role/assignment?view=azure-cli-latest#az-role-assignment-create) を使用して、サービス プリンシパルにコンテナーのアクセス許可を付与します。コマンドが長いのでご注意ください。
+1. Azure CLI コマンド [az role assignment create](/cli/azure/role/assignment#az-role-assignment-create) を使用して、サービス プリンシパルにコンテナーのアクセス許可を付与します。コマンドが長いのでご注意ください。
 
     # <a name="cmd"></a>[cmd](#tab/cmd)
 
@@ -154,7 +154,7 @@ Hello there, Azure Storage. I'm a friendly file ready to be stored in a blob.
 
 1. アクセス許可が反映されるまで 1、2 分待機した後、コードをもう一度実行して、今度は動作することを確認します。 アクセス許可のエラーが再度表示された場合は、もう少し待ってから、もう一度コードを試してください。
 
-スコープとロールの割り当てについて詳しくは、[ロールのアクセス許可を割り当てる方法](how-to-assign-role-permissions.md)に関するページを参照してください。
+ロールの割り当てについて詳しくは、[Azure CLI を使用してロールのアクセス許可を割り当てる方法](/azure/role-based-access-control/role-assignments-cli)に関するページを参照してください。
 
 ### <a name="4b-use-blob-storage-with-a-connection-string"></a>4b:接続文字列を利用して Blob Storage を使用する
 
@@ -202,7 +202,7 @@ az group delete -n PythonAzureExample-Storage-rg  --no-wait
 
 この例でプロビジョニングしたリソースを残す必要がなければ、今後サブスクリプションに課金されないようにするために、このコマンドを実行してください。
 
-コードから [`ResourceManagementClient.resource_groups.delete`](/python/api/azure-mgmt-resource/azure.mgmt.resource.resources.v2019_10_01.operations.resourcegroupsoperations?view=azure-python#delete-resource-group-name--custom-headers-none--raw-false--polling-true----operation-config-) メソッドを使用してリソース グループを削除することもできます。
+[!INCLUDE [resource_group_begin_delete](includes/resource-group-begin-delete.md)]
 
 ## <a name="see-also"></a>関連項目
 

@@ -1,15 +1,15 @@
 ---
 title: Azure サービスを使用して Python アプリケーションを認証する方法
 description: Azure ライブラリを使用して、Azure サービスで Python アプリを認証するために必要な資格情報オブジェクトを取得する方法
-ms.date: 09/18/2020
+ms.date: 10/05/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: e842e7530cc475e8431fbadfb3767ea56102c33e
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: 1fe206394d05e07b19254520131447770cbbd5b0
+ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831908"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91764666"
 ---
 # <a name="how-to-authenticate-and-authorize-python-apps-on-azure"></a>Azure で Python アプリを認証および認可する方法
 
@@ -53,7 +53,7 @@ Azure では、アプリ ID は**サービス プリンシパル**によって�
 
 ## <a name="assign-roles-and-permissions-to-an-identity"></a>ロールとアクセス許可を ID に割り当てる
 
-Azure 上とローカルで実行する際の両方のアプリ ID を把握したら、ロールベースのアクセス制御 (RBAC) を使用して、Azure portal または Azure CLI を使用してアクセス許可を付与します。 詳細については、「[アプリ ID またはサービス プリンシパルにロールのアクセス許可を割り当てる方法](how-to-assign-role-permissions.md)」を参照してください。
+Azure 上とローカルで実行する際の両方のアプリ ID を把握したら、ロールベースのアクセス制御 (RBAC) を使用して、Azure portal または Azure CLI を使用してアクセス許可を付与します。 詳細については、「[アプリ ID またはサービス プリンシパルにロールのアクセス許可を割り当てる方法](/azure/role-based-access-control/role-assignments-steps)」を参照してください。
 
 ## <a name="when-does-authentication-and-authorization-occur"></a>認証と認可が行われるタイミング
 
@@ -108,7 +108,7 @@ secret_client = SecretClient(vault_url=vault_url, credential=credential)
 retrieved_secret = secret_client.get_secret("secret-name-01")
 ```
 
-ここでも、クライアント オブジェクトを介して Azure REST API への特定の要求がコードによって行われるまでは、認証または認可は行われません。 `DefaultAzureCredential` を作成するステートメント (次のセクションを参照) は、クライアント側のオブジェクトをメモリ内に作成するだけで、他のチェックは実行しません。 
+ここでも、クライアント オブジェクトを介して Azure REST API への特定の要求がコードによって行われるまでは、認証または認可は行われません。 `DefaultAzureCredential` を作成するステートメント (次のセクションを参照) は、クライアント側のオブジェクトをメモリ内に作成するだけで、他のチェックは実行しません。
 
 SDK [`SecretClient`](/python/api/azure-keyvault-secrets/azure.keyvault.secrets.secretclient) オブジェクトを作成する場合も、対象のリソースとの通信は必要ありません。 `SecretClient` オブジェクトは、基になる Azure REST API の単なるラッパーであり、アプリのランタイム メモリにのみ存在します。 
 
@@ -126,7 +126,7 @@ from azure.keyvault.secrets import SecretClient
 # Acquire the resource URL
 vault_url = os.environ["KEY_VAULT_URL"]
 
-# Aquire a credential object
+# Acquire a credential object
 credential = DefaultAzureCredential()
 
 # Acquire a client object
@@ -142,38 +142,30 @@ retrieved_secret = secret_client.get_secret("secret-name-01")
 
 コードをローカルで実行した場合は、`AZURE_TENANT_ID`、`AZURE_CLIENT_ID`、`AZURE_CLIENT_SECRET` という名前の各環境変数によって表されるサービス プリンシパルが `DefaultAzureCredential` によって自動的に使用されます。 その後、クライアント オブジェクトは、API エンドポイントを呼び出すときに、これらの値を (安全に) HTTP 要求ヘッダーに含めます。 ローカルまたはクラウドで実行するときに、コードの変更は必要ありません。 サービス プリンシパルの作成と環境変数の設定について詳しくは、「[Azure 用のローカル Python 開発環境を構成する - 認証を構成する](configure-local-development-environment.md#configure-authentication)」を参照してください。
 
-どちらの場合も、関連する ID には、適切なリソースのアクセス許可が割り当てられている必要があります。 一般的なプロセスについては、[ロールのアクセス許可を割り当てる方法](how-to-assign-role-permissions.md)に関する記事を参照してください。詳細については、個々のサービスのドキュメントをご覧ください。 たとえば、前のコードで必要となる Key Vault のアクセス許可の詳細については、「[アクセス制御ポリシーを使用して Key Vault の認証を提供する](/azure/key-vault/general/group-permissions-for-apps)」を参照してください。
-
-<a name="cli-auth-note"></a>
-> [!IMPORTANT]
-> 将来的には、サービス プリンシパルの環境変数が利用できない場合、`az login` を通じて Azure CLI にサインインした ID が `DefaultAzureCredential` によって使用されます。 結果的に、自分がサブスクリプションの所有者または管理者であれば、個別にアクセス許可を割り当てなくても、そのサブスクリプションのほとんどのリソースに対するアクセス権がコードに最初から割り当てられます。 この動作は、実験目的であれば利便性が高いといえます。 ただし、これから皆さんは、個々の ID に対して厳密にアクセス許可を割り当て、それらを運用環境にデプロイする前に、アクセス許可をテスト環境で正しく検証する方法を身に付けることになるでしょう。そのため、運用環境のコードを作成する段階になったら、個別のサービス プリンシパルを使用し、個別のアクセス許可を割り当てることを強くお勧めします。
+どちらの場合も、関連する ID には、適切なリソースのアクセス許可が割り当てられている必要があります。 一般的なプロセスについては、[ロールのアクセス許可を割り当てる方法](/azure/role-based-access-control/role-assignments-steps)に関する記事を参照してください。詳細については、個々のサービスのドキュメントをご覧ください。 たとえば、前のコードで必要となる Key Vault のアクセス許可の詳細については、「[アクセス制御ポリシーを使用して Key Vault の認証を提供する](/azure/key-vault/general/group-permissions-for-apps)」を参照してください。
 
 ### <a name="using-defaultazurecredential-with-sdk-management-libraries"></a>SDK 管理ライブラリで DefaultAzureCredential を使用する
 
+`DefaultAzureCredential` は、[azure.core を使用するライブラリ](azure-sdk-library-package-index.md#libraries-using-azurecore)の一覧に記載されている Azure SDK 管理ライブラリ (名前に "mgmt" が付いているもの) のバージョンと連携して動作します。 (また、更新されたライブラリの pypi ページには、変更を示す "Credential system has been completely revamped (資格情報システムが完全に改良された)" という行が含まれています)。
+
+たとえば、バージョン 15.0.0 以上の azure-mgmt-resource で `DefaultAzureCredential` を使用できます。
+
 ```python
-# WARNING: this code fails with azure-mgmt-resource versions < 15
-
 from azure.identity import DefaultAzureCredential
-
-# azure.mgmt.resource is an Azure SDK management library
 from azure.mgmt.resource import SubscriptionClient
 
-# Attempt to retrieve the subscription ID
 credential = DefaultAzureCredential()
 subscription_client = SubscriptionClient(credential)
 
-# If using azure-mgmt-resource < version 15 the following line produces
-# a "no attribute 'signed_session'" error:
-subscription = next(subscription_client.subscriptions.list())
-
-print(subscription.subscription_id)
+sub_list = subscription_client.subscriptions.list()
+print(list(sub_list))
 ```
 
-`DefaultAzureCredential` は、Azure SDK クライアント ("データ プレーン") ライブラリと更新されたバージョンの Azure SDK 管理ライブラリを使用した場合にのみ機能します。これは、[azure.core を使用するライブラリ](azure-sdk-library-package-index.md#libraries-using-azurecore)の一覧に表示されます。
+### <a name="defaultazurecredential-object-has-no-attribute-signed-session"></a>「'DefaultAzureCredential' object has no attribute 'signed-session' ('DefaultAzureCredential' オブジェクトに属性 'signed-session' がありません)」
 
-前のコードを azure-mgmt-resource バージョン 15.0.0 以上のバージョンで実行した場合、`subscription_client.subscriptions.list()` の呼び出しは成功します。 それ以前のバージョンのライブラリを使用すると、"'DefaultAzureCredential' オブジェクトに属性 'signed_session' が存在しない" という内容のかなり不明瞭なエラーで呼び出しが失敗します。 古いバージョンの SDK 管理ライブラリは、資格情報オブジェクトに `signed_session` プロパティが存在することを前提としていますが、`DefaultAzureCredential` にはこのプロパティが欠落しています。このエラーが発生するのは、そのためです。
+azure.core を使用するように更新されていないライブラリで `DefaultAzureCredential` を使用しようとした場合、クライアント オブジェクトを通じた呼び出しは、「'DefaultAzureCredential' object has no attribute 'signed-session' ('DefaultAzureCredential' オブジェクトに属性 'signed-session' がありません)」というあいまいなエラーで失敗します。 このようなエラーが発生するのは、たとえば、前のセクションでバージョン 15 より下の azure-mgmt-resource ライブラリを利用するコードを使用した場合です。
 
-このエラーを回避するには、[azure.core を使用したライブラリ](azure-sdk-library-package-index.md#libraries-using-azurecore)の一覧から最新バージョンの管理ライブラリを使用します。 2 つのライブラリが一覧表示されている場合は、新しいバージョン番号を使用します。 また、更新されたライブラリの pypi ページには、変更を示す "Credential system has been completely revamped (資格情報システムが完全に改良された)" という行が含まれています。
+azure.core バージョンでない SDK 管理ライブラリは、資格情報オブジェクトに `signed_session` プロパティが存在することを前提としていますが、`DefaultAzureCredential` にはこれが欠落しています。このエラーが発生するのは、そのためです。
 
 使用する管理ライブラリがまだ更新されていない場合は、次の代替方法を使用できます。
 
@@ -201,7 +193,7 @@ print(subscription.subscription_id)
 
 - それらの方法の大半は、明示的なサービス プリンシパルで動作し、クラウドにデプロイされたコードでマネージド ID の利点が活かされません。 運用環境のコードで使用する場合は、対象のクラウド アプリケーション用に別個のサービス プリンシパルを自分で管理、保守する必要があります。
 
-- CLI ベースの認証など一部の方法はローカル スクリプトでしか機能せず、運用環境のコードでは使用できません。
+- CLI ベースの認証など一部の方法はローカル スクリプトでしか機能せず、運用環境のコードでは使用できません。 CLI ベースの認証では、Azure ログインのアクセス許可が使用され、明示的なロールの割り当てを必要としないため、開発作業の際に便利です。
 
 クラウドにデプロイされたアプリケーションのサービス プリンシパルは、ご利用のサブスクリプションの Active Directory で管理されます。 詳細については、「[サービス プリンシパルを管理する方法](how-to-manage-service-principals.md)」を参照してください。
 
@@ -391,6 +383,31 @@ RESOURCE = AZURE_CHINA_CLOUD.endpoints.active_directory_resource_id
 
 ### <a name="cli-based-authentication-development-purposes-only"></a>CLI ベースの認証 (開発目的のみ)
 
+この方法では、Azure CLI コマンド `az login` でサインインしているユーザーの資格情報を使用してクライアント オブジェクトを作成します。 CLI ベースの認証は、運用環境では使用できないため、開発目的でのみ機能します。
+
+Azure ライブラリでは既定のサブスクリプション ID が使用されます。または、[`az account`](/cli/azure/manage-azure-subscriptions-azure-cli) を使用して、コードを実行する前にサブスクリプションを設定することもできます。
+
+CLI ベースの認証を使用する場合、アプリケーションは、CLI のログイン資格情報で許可されているすべての操作に対して承認されます。 結果的に、自分がサブスクリプションの所有者または管理者であれば、特定のアクセス許可を割り当てなくても、そのサブスクリプションのほとんどのリソースに対するアクセス権がコードに最初から割り当てられます。 この動作は、実験目的であれば利便性が高いといえます。 ただし、これから皆さんは、個々の ID に対して厳密にアクセス許可を割り当て、それらを運用環境にデプロイする前に、アクセス許可をテスト環境で正しく検証する方法を身に付けることになるでしょう。そのため、運用環境のコードを作成する段階になったら、個別のサービス プリンシパルを使用し、個別のアクセス許可を割り当てることを強くお勧めします。
+
+#### <a name="cli-based-authentication-with-azurecore-libraries"></a>azure.core ライブラリを使用した CLI ベースの認証
+
+[azure.core 用に更新された Azure ライブラリ](/azure/developer/python/azure-sdk-library-package-index#libraries-using-azurecore)を使用する場合は、azure-identity ライブラリ (バージョン 1.4.0 以上) の [`AzureCliCredential`](/python/api/azure-identity/azure.identity.azureclicredential) オブジェクトを使用します。 たとえば、次のコードは、azure-mgmt-resource バージョン 15.0.0 以上で使用できます。
+
+```python
+from azure.identity import AzureCliCredential
+from azure.mgmt.resource import SubscriptionClient
+
+credential = AzureCliCredential()
+subscription_client = SubscriptionClient(credential)
+
+subscription = next(subscription_client.subscriptions.list())
+print(subscription.subscription_id)
+```
+
+#### <a name="cli-based-authentication-with-older-non-azurecore-libraries"></a>古い (azure.core でない) ライブラリを使用した CLI ベースの認証
+
+azure.core 用に更新されていない古い Azure ライブラリを使用する場合は、azure-cli-core ライブラリの [`get_client_from_cli_profile`](/python/api/azure-common/azure.common.client_factory#get-client-from-cli-profile-client-class----kwargs-) メソッドを使用できます。 たとえば、次のコードは、15.0.0 より下のバージョンの azure-mgmt-resource で使用できます。
+
 ```python
 from azure.common.client_factory import get_client_from_cli_profile
 from azure.mgmt.resource import SubscriptionClient
@@ -401,11 +418,7 @@ subscription = next(subscription_client.subscriptions.list())
 print(subscription.subscription_id)
 ```
 
-この方法では、Azure CLI コマンド `az login` でサインインしているユーザーの資格情報を使用してクライアント オブジェクトを作成します。 アプリケーションは、ユーザーとしてあらゆる操作を認可されます。
-
-SDK では既定のサブスクリプション ID が使用されます。または、[`az account`](/cli/azure/manage-azure-subscriptions-azure-cli) を使用して、コードを実行する前にサブスクリプションを設定することもできます。 同じスクリプトでさまざまなサブスクリプションを参照する必要がある場合は、この記事で前述した [' get_client_from_auth_file'](#authenticate-with-a-json-file) または [`get_client_from_json_dict`](#authenticate-with-a-json-dictionary) メソッドを使用してください。
-
-`get_client_from_cli_profile` 関数は、初期段階の実験や開発の目的でのみ使用してください。サインイン ユーザーは一般的に所有者や管理者の権限を保持しており、追加のアクセス許可なしで大半のリソースにアクセスできるためです。 詳細については、[`DefaultAzureCredential` での CLI 資格情報の使用](#cli-auth-note)について述べた前出の注意事項を参照してください。
+同じスクリプトでさまざまなサブスクリプションを参照する必要がある場合は、この記事で前述した [' get_client_from_auth_file'](#authenticate-with-a-json-file) または [`get_client_from_json_dict`](#authenticate-with-a-json-dictionary) メソッドを使用してください。
 
 ### <a name="deprecated-authenticate-with-userpasscredentials"></a>非推奨:UserPassCredentials を使用して認証する
 
@@ -414,7 +427,7 @@ SDK では既定のサブスクリプション ID が使用されます。また
 ## <a name="see-also"></a>関連項目
 
 - [Azure 用のローカル Python 開発環境を構成する](configure-local-development-environment.md)
-- [ロールのアクセス許可を割り当てる方法](how-to-assign-role-permissions.md)
+- [ロールのアクセス許可を割り当てる方法](/azure/role-based-access-control/role-assignments-steps)
 - [例:リソース グループをプロビジョニングする](azure-sdk-example-resource-group.md)
 - [例:Azure Storage をプロビジョニングして使用する](azure-sdk-example-storage.md)
 - [例:Web アプリをプロビジョニングしてコードをデプロイする](azure-sdk-example-web-app.md)

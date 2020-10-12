@@ -4,12 +4,12 @@ description: Node.js チュートリアル パート 3、Web サイトをデプ�
 ms.topic: tutorial
 ms.date: 03/04/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 4907a8466828ccaaef0891394ac4f33694264ccf
-ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
+ms.openlocfilehash: 4c96aedf678fb4e28875ceb211c6d2c505afea6f
+ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91365255"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91764561"
 ---
 # <a name="deploy-the-app-to-azure"></a>Azure にアプリケーションをデプロイする
 
@@ -23,7 +23,7 @@ ms.locfileid: "91365255"
     code .
     ```
 
-1. VS Code で、ソース管理アイコンを選択して、**ソース管理**エクスプローラーを開き、[ **+** ] を選択してローカル Git リポジトリを初期化します。
+1. VS Code で、ソース管理アイコンを選択して、**ソース管理**エクスプローラーを開き、 **[リポジトリの初期化]** を選択してローカル Git リポジトリを初期化します。
 
     ![git リポジトリを初期化する](media/deploy-azure/git-init.png)
 

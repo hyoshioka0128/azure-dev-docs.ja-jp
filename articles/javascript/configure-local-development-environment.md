@@ -1,15 +1,15 @@
 ---
 title: Azure で開発するためのローカル JavaScript 環境を構成する
 description: エディター、Azure SDK ライブラリ、オプションのツール、ライブラリ認証に必要な資格情報など、Azure で作業するためのローカル JavaScript 開発環境を設定する方法。
-ms.date: 09/22/2020
+ms.date: 09/30/2020
 ms.topic: conceptual
-ms.custom: devx-track-js
-ms.openlocfilehash: 6d9f86b026a7104e79228d78d5ac27649049a8a4
-ms.sourcegitcommit: 4af22924a0eaf01e6902631c0714045c02557de4
+ms.custom: devx-track-js, azure-sdk-ai-text-analytics-5.0.0
+ms.openlocfilehash: baf9634395d4e0ad7225abb9bebddfa1aa14fe6d
+ms.sourcegitcommit: 8fcb6c2d17be63064090f801f46c9c754821f979
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91208683"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91805943"
 ---
 # <a name="configure-your-local-javascript-dev-environment-for-azure"></a>Azure 用のローカル JavaScript 開発環境を構成する
 
@@ -21,8 +21,11 @@ ms.locfileid: "91208683"
 
 Azure リソースは、Azure を使用するための課金単位であるサブスクリプション内に作成されます。 無料のリソースを作成することはできますが (各サブスクリプションには、ほとんどのサービスに無料のリソースが用意されています)、リソースを運用環境にデプロイする予定の場合は、有料階層のリソースを作成する必要があります。
 
-* 既にサブスクリプションをお持ちの場合は、新しいものを作成する必要はありません。 [Azure portal](https://portal.azure.com) を使用して、既存のサブスクリプションにアクセスしてください。
-* [無料試用版サブスクリプションを開始する](https://azure.microsoft.com/free/cognitive-services)
+|Type|説明|
+|--|--|
+|[無料試用版のサブスクリプション](https://azure.microsoft.com/free/cognitive-services)|_無料_試用版のサブスクリプションを作成します。|
+|[既存のサブスクリプション](https://portal.azure.com)|既にサブスクリプションを持っている場合は、Azure portal、Azure CLI、または JavaScript で既存のサブスクリプションにアクセスします。|
+|[複数のサブスクリプションにまたがる](/azure/governance/management-groups/create-management-group-javascript)|複数のサブスクリプションを管理する必要がある場合は、JavaScript を使用して管理グループを作成する方法を参照してください。|
 
 ## <a name="one-time-installation"></a>1 回限りのインストール
 
@@ -48,44 +51,39 @@ Azure リソースは、Azure を使用するための課金単位であるサ�
 
 ## <a name="one-time-configuration-of-service-principal"></a>サービス プリンシパルの 1 回限りの構成
 
-各 Azure サービスには認証メカニズムがあります。 これには、キーとエンドポイント、接続文字列、またはその他のメカニズムが含まれる場合があります。 ベスト プラクティスに準拠するには、リソースを作成し、サービス プリンシパルを使用してリソースに対して認証を行います。 サービス プリンシパルを使用すると、当面の開発ニーズに対するアクセス スコープを具体的に定義できます。
+各 Azure サービスには認証メカニズムがあります。 これには、キーとエンドポイント、接続文字列、またはその他のメカニズムが含まれる場合があります。 ベスト プラクティスに準拠するには、リソースを作成し、[サービス プリンシパル](node-sdk-azure-authenticate-principal.md)を使用してリソースに対して認証を行います。 サービス プリンシパルを使用すると、当面の開発ニーズに対するアクセス スコープを具体的に定義できます。
 
-概念的には、サービス プリンシパルを作成して使用する手順は次のとおりです。
+**サービス プリンシパルを作成する**手順: 
 
-* joe@microsoft.com など、個々のユーザー アカウントを使用して Azure にログインします。
-* 特定のスコープを持つ名前付きサービス プリンシパルを作成します。 ほとんどのクイックスタートでは Azure リソースを作成するように求められるため、サービス プリンシパルにはリソースを作成する機能が必要です。
-* 自分のユーザー アカウントで Azure からログオフします。
-* サービス プリンシパルを使用して、プログラムで Azure に対する認証を行います。
-* サービス プリンシパルは、Azure リソースを作成し、該当のサービスに関連付けられているサービスを使用します。
+1. 個々のユーザー アカウントを使用して Azure にサインインします。
+1. 特定のスコープを持つ "_名前付き_" サービス プリンシパルを作成します。 ほとんどのクイックスタートでは Azure リソースを作成するように求められるため、サービス プリンシパルにはリソースを作成する機能が必要です。
+1. 個々のユーザー アカウントを使用して Azure からログオフします。
 
-### <a name="create-service-principal"></a>サービス プリンシパルの作成
+**サービス プリンシパルを使用する**手順:
 
-サービス プリンシパルを[作成する方法](node-sdk-azure-authenticate-principal.md)について学習します。 作成ステップからの応答を忘れずに保存してください。 サービス プリンシパルを使用するには、`appId`、`tenant`、および `password` の値が必要です。
+1. 証明書、環境変数、または `.json` ファイルを使用して、サービス プリンシパルをプログラムで Azure に対して認証します。 
+1. サービス プリンシパルを使用して Azure リソースを作成し、サービスを使用します。
+
+[サービス プリンシパルを作成する方法](node-sdk-azure-authenticate-principal.md)について学習してください。 作成ステップからの応答を忘れずに保存してください。 サービス プリンシパルを使用するには、応答の `appId`、`tenant`、および `password` の値が必要です。
+
+[サービス プリンシパルを使用して Azure リソースを作成します](/cli/azure/create-an-azure-service-principal-azure-cli#create-a-resource-using-service-principal)。
 
 ## <a name="steps-for-each-new-development-project-setup"></a>新しい開発プロジェクトのセットアップごとの手順
 
-Azure SDK ライブラリはサービスごとに個別に提供されるため、すべての Azure リソースにアクセスするための、単一のダウンロード可能なパッケージはありません。 各ライブラリは、使用する Azure サービスに基づいてインストールします。
+[Azure SDK ライブラリ](azure-sdk-library-package-index.md) は、各サービスに対して個別に提供されます。 各ライブラリは、使用する必要がある Azure サービスに基づいてインストールします。
 
 Azure を使用する新しいプロジェクトでは、それぞれ次のことを行う必要があります。
-- Azure リソースを作成するか、既存の Azure リソースの認証情報を検索する
-- Azure SDK ライブラリを NPM または Yarn からインストールする。 [ライブラリのバージョン](#library-versions)について確認してください。
-- プロジェクト内の認証情報を安全に管理する。 一般的な方法の 1 つとして、 **[Dotenv](https://www.npmjs.com/package/dotenv)** を使用して、`.env` ファイルから環境変数を読み取る方法があります。 `.env` ファイルがソース管理にチェックインされないように、必ず `.env` ファイルを `.gitignore` ファイルに追加してください。
+- Azure リソースを作成し、関連付けられているキーまたは構成を[安全な場所]()に保存します。
+- Azure SDK ライブラリを NPM または Yarn からインストールする。 
+- サービス プリンシパルを使用して Azure SDK に対する認証を行い、構成情報を使用して特定のサービスにアクセスします。
 
-### <a name="library-versions"></a>ライブラリのバージョン
+## <a name="securing-configuration-information"></a>構成情報の保護
 
-[Azure ライブラリ](azure-sdk-library-package-index.md)では、一般的に `@azure` スコープが使用されます。
+構成情報を保存するには、いくつかのオプションがあります。
+- [Dotenv](https://www.npmjs.com/package/dotenv) は、`.env` ファイルから環境変数を読み取るための一般的な npm パッケージです。 `.env` ファイルがソース管理にチェックインされないように、必ず `.env` ファイルを `.gitignore` ファイルに追加してください。
+- Azure [Key Vault](https://docs.microsoft.com/azure/key-vault/) を使用して、クラウドのリソース、アプリ、ソリューションにアクセスして暗号化するキーを作成および管理します。
 
-最新のライブラリでは、`@azure` スコープが使用されます。 通常、Microsoft の古いパッケージは `azure-` で始まります。 多くのパッケージはこの名前で始まりますが、それらは Microsoft によって生成されたものではありません。 パッケージの所有者が Microsoft または Azure のいずれかであることを確認してください。
-
-## <a name="create-azure-resource-with-service-principal"></a>サービス プリンシパルを使用して Azure リソースを作成する
-
-Azure CLI で、[サービス プリンシパルを使用して Azure リソースを作成します](https://docs.microsoft.com/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest#create-a-resource-using-service-principal)。
-
-## <a name="use-service-principal-in-javascript"></a>JavaScript でサービス プリンシパルを使用する
-
-個人用ユーザー アカウントではなく、Azure クライアント ライブラリに対して認証を行う場合に、[サービス プリンシパルを使用します](node-sdk-azure-authenticate-principal.md#using-the-service-principal)。
-
-## <a name="create-environment-variables-for-the-azure-libraries"></a>Azure ライブラリの環境変数を作成する
+### <a name="create-environment-variables-for-the-azure-libraries"></a>Azure ライブラリの環境変数を作成する
 
 Azure SDK ライブラリに必要な Azure 設定を使用して Azure クラウドにアクセスするには、最も一般的な値を環境変数に設定します。 次のコマンドは、環境変数をローカル ワークステーションに設定します。 もう 1 つの一般的なメカニズムは、`DOTENV` NPM パッケージを使用して、これらの設定用の `.env` ファイルを作成することです。 `.env` を使用する場合は、このファイルをソース管理にチェックインしないようにしてください。 これらの設定がソース管理にチェックインされるようにするための標準的な方法は、`.env` ファイルを git の `.ignore` ファイルに追加することです。
 
@@ -113,7 +111,7 @@ set AZURE_CLIENT_SECRET=abcdef00-4444-5555-6666-1234567890ab
 
 これらのコマンドに示されている値を、お客様固有のサービス プリンシパルの値で置き換えます。
 
-## <a name="install-npm-packages"></a>NPM パッケージのインストール
+## <a name="install-npm-packages"></a>npm パッケージをインストールする
 
 すべてのプロジェクトについて、次の手順に従って、常に個別のフォルダーと独自の `package.json` ファイルを作成することをお勧めします。
 

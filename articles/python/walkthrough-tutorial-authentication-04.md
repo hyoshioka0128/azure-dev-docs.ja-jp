@@ -4,12 +4,12 @@ description: すべてのコードを含む、メイン アプリの実装の概
 ms.date: 08/24/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 0b7ffa1fb855d4b676813f49c545071209f6ce79
-ms.sourcegitcommit: 324da872a9dfd4c55b34739824fc6a6598f2ae12
+ms.openlocfilehash: e2a43f7e204ba3f077beea7cc878076111f71313
+ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89379520"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91764736"
 ---
 # <a name="part-4-example-main-application-implementation"></a>パート 4:メイン アプリケーションの実装例
 
@@ -23,13 +23,13 @@ ms.locfileid: "89379520"
 
 サンプルのプロビジョニング スクリプトでは次の手順が実行されます。
 
-1. App Service ホストを作成し、Azure CLI コマンド [`az webapp up`](/cli/azure/webapp?view=azure-cli-latest#az-webapp-up) を使用してコードをデプロイします。
+1. App Service ホストを作成し、Azure CLI コマンド [`az webapp up`](/cli/azure/webapp#az-webapp-up) を使用してコードをデプロイします。
 
-1. メイン アプリの Azure Storage アカウントをプロビジョニングします ([`az storage account create`](/cli/azure/storage/account?view=azure-cli-latest#az-storage-account-create) を使用)。
+1. メイン アプリの Azure Storage アカウントをプロビジョニングします ([`az storage account create`](/cli/azure/storage/account#az-storage-account-create) を使用)。
 
-1. ストレージ アカウントに "code-requests" という名前のキューを作成します ([`az storage queue create`](/cli/azure/storage/queue?view=azure-cli-latest#az-storage-queue-create) を使用)。
+1. ストレージ アカウントに "code-requests" という名前のキューを作成します ([`az storage queue create`](/cli/azure/storage/queue#az-storage-queue-create) を使用)。
 
-1. アプリがキューへの書き込みを許可されるようにするには、[`az role assignment create`](/cli/azure/role/assignment?view=azure-cli-latest#az-role-assignment-create) を使用して、アプリに "ストレージ キュー データ共同作成者" ロールを割り当てます。 ロールの詳細については、[ロールのアクセス許可を割り当てる方法](how-to-assign-role-permissions.md)に関するページを参照してください。
+1. アプリがキューへの書き込みを許可されるようにするには、[`az role assignment create`](/cli/azure/role/assignment#az-role-assignment-create) を使用して、アプリに "ストレージ キュー データ共同作成者" ロールを割り当てます。 ロールの詳細については、[Azure CLI を使用してロールのアクセス許可を割り当てる方法](/azure/role-based-access-control/role-assignments-cli)に関するページを参照してください。
 
 メイン アプリのコードは次のとおりです。重要な詳細については、このシリーズの次のパートで説明します。
 

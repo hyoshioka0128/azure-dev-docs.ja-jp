@@ -1,21 +1,21 @@
 ---
 title: Azure SDK ライブラリを使用して Web アプリをプロビジョニングしてデプロイする
 description: Python 用 Azure SDK ライブラリ内の管理ライブラリを使用して Web アプリをプロビジョニングし、GitHub リポジトリからアプリ コードをデプロイします。
-ms.date: 05/29/2020
+ms.date: 10/05/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 03a2f8b8f8830916243db0778d16650da1892b04
-ms.sourcegitcommit: b03cb337db8a35e6e62b063c347891e44a8a5a13
+ms.openlocfilehash: 7aa51af92480b0148600786bcb329902aecb44bd
+ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91110464"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91764762"
 ---
 # <a name="example-use-the-azure-libraries-to-provision-and-deploy-a-web-app"></a>例:Azure ライブラリを使用して Web アプリをプロビジョニングしてデプロイする
 
 この例では、Python スクリプトで Azure SDK の管理ライブラリを使用し、Azure App Service に Web アプリをプロビジョニングし、GitHub リポジトリからアプリ コードをデプロイする方法について説明します。 ([同等の Azure CLI コマンド](#for-reference-equivalent-azure-cli-commands)については、この記事の後半で説明します。)
 
-特に記載のない限り、この記事で使用されているコマンドはいずれも、Linux と Mac OS の bash および Windows のコマンド シェルで同じように動作します。
+特に記載のない限り、この記事で使用されているコマンドはいずれも、Linux と macOS の bash および Windows のコマンド シェルで同じように動作します。
 
 ## <a name="1-set-up-your-local-development-environment"></a>1:ローカルの開発環境を設定する
 
@@ -28,10 +28,12 @@ ms.locfileid: "91110464"
 *requirements.txt* という名前のファイルを作成し、内容を次のようにします。
 
 ```text
-azure-mgmt-resource
+azure-mgmt-resource==10.2.0
 azure-mgmt-web
 azure-cli-core
 ```
+
+azure-mgmt-resource の特定のバージョン要件により、azure-mgmt-web の現在のバージョンと互換性のあるバージョンを使用する必要があります。 これらのバージョンは、azure.core に基づいていないため、以前の認証方法が使用されます。
 
 仮想環境をアクティブ化し、ターミナルまたはコマンド プロンプトで要件をインストールします。
 
@@ -144,7 +146,7 @@ print(f"Provisioned web app {web_app_result.name} at {web_app_result.default_hos
 #
 # You can call this method again to change the repo.
 
-REPO_URL = 'https://github.com/<your_fork>/python-docs-hello-world'
+REPO_URL = os.environ[REPO_URL]
 
 poller = app_service_client.web_apps.create_or_update_source_control(RESOURCE_GROUP_NAME,
     WEB_APP_NAME,
@@ -166,8 +168,8 @@ print(f"Set source control on web app to {sc_result.branch} branch of {sc_result
 
 ### <a name="reference-links-for-classes-used-in-the-code"></a>コードで使用されているクラスの参照リンク
 
-- [ResourceManagementClient (azure.mgmt.resource)](/python/api/azure-mgmt-resource/azure.mgmt.resource.resourcemanagementclient?view=azure-python)
-- [WebSiteManagementClient (azure.mgmt.web import)](/python/api/azure-mgmt-web/azure.mgmt.web.websitemanagementclient?view=azure-python)
+- [ResourceManagementClient (azure.mgmt.resource)](/python/api/azure-mgmt-resource/azure.mgmt.resource.resourcemanagementclient)
+- [WebSiteManagementClient (azure.mgmt.web import)](/python/api/azure-mgmt-web/azure.mgmt.web.websitemanagementclient)
 
 ## <a name="5-run-the-script"></a>5:スクリプトを実行する
 
@@ -197,7 +199,7 @@ az group delete -n PythonAzureExample-WebApp-rg --no-wait
 
 この例でプロビジョニングしたリソースを残す必要がなければ、今後サブスクリプションに課金されないようにするために、このコマンドを実行してください。
 
-コードから [`ResourceManagementClient.resource_groups.delete`](/python/api/azure-mgmt-resource/azure.mgmt.resource.resources.v2019_10_01.operations.resourcegroupsoperations?view=azure-python#delete-resource-group-name--custom-headers-none--raw-false--polling-true----operation-config-) メソッドを使用してリソース グループを削除することもできます。
+コードから [`ResourceManagementClient.resource_groups.delete`](/python/api/azure-mgmt-resource/azure.mgmt.resource.resources.v2019_10_01.operations.resourcegroupsoperations#delete-resource-group-name--custom-headers-none--raw-false--polling-true----operation-config-) メソッドを使用してリソース グループを削除することもできます。
 
 ### <a name="for-reference-equivalent-azure-cli-commands"></a>参考: 同等の Azure CLI コマンド
 
@@ -217,7 +219,7 @@ rem You can use --deployment-source-url with the first create command. It's show
 rem to match the sequence of the Python code.
 
 az webapp create -n PythonAzureExample-WebApp-12345 --plan PythonAzureExample-WebApp-plan ^
-    --deployment-source-url https://github.com/<your_fork>/python-docs-hello-world
+    --deployment-source-url %REPO_URL% --runtime "python|3.8"
 
 rem Replace <your_fork> with the specific URL of your forked repository.
 ```

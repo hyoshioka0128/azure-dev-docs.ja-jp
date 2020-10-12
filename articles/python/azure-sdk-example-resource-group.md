@@ -1,21 +1,21 @@
 ---
 title: Python 用 Azure ライブラリを使用してリソース グループをプロビジョニングする
 description: Azure SDK for Python のリソース管理ライブラリを使用して、Python コードからリソース グループを作成します。
-ms.date: 05/29/2020
+ms.date: 10/05/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 992232c23368f3f7dcd173f1f711e6c69650bdb6
-ms.sourcegitcommit: b03cb337db8a35e6e62b063c347891e44a8a5a13
+ms.openlocfilehash: 8a3eb230e40954d25a890db53d33382c07899b7d
+ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91110520"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91764630"
 ---
 # <a name="example-use-the-azure-libraries-to-provision-a-resource-group"></a>例:Azure ライブラリを使用してリソース グループをプロビジョニングする
 
 この例では、Python スクリプトで Azure SDK の管理ライブラリを使用してリソース グループをプロビジョニングする方法について説明します。 ([同等の Azure CLI コマンド](#for-reference-equivalent-azure-cli-commands)については、この記事の後半で説明します。 Azure portal を使用する場合は、[リソース グループの作成](/azure/azure-resource-manager/management/manage-resource-groups-portal)に関する記事を参照してください。)
 
-特に記載のない限り、この記事で使用されているコマンドはいずれも、Linux と Mac OS の bash および Windows のコマンド シェルで同じように動作します。
+特に記載のない限り、この記事で使用されているコマンドはいずれも、Linux と macOS の bash および Windows のコマンド シェルで同じように動作します。
 
 ## <a name="1-set-up-your-local-development-environment"></a>1:ローカルの開発環境を設定する
 
@@ -29,7 +29,7 @@ ms.locfileid: "91110520"
 
 ```text
 azure-mgmt-resource
-azure-cli-core
+azure-identity
 ```
 
 仮想環境をアクティブ化し、ターミナルまたはコマンド プロンプトで要件をインストールします。
@@ -43,17 +43,23 @@ pip install -r requirements.txt
 次のコードを使用して、*provision_rg.py* という名前の Python ファイルを作成します。 詳細はコメントで説明しています。
 
 ```python
-# Import the needed management objects from the libraries. The azure.common library
-# is installed automatically with the other libraries.
-from azure.common.client_factory import get_client_from_cli_profile
+# Import the needed credential and management objects from the libraries.
 from azure.mgmt.resource import ResourceManagementClient
+from azure.identity import AzureCliCredential
+import os
 
-# Obtain the management object for resources, using the credentials from the CLI login.
-resource_client = get_client_from_cli_profile(ResourceManagementClient)
+# Acquire a credential object using CLI-based authentication.
+credential = AzureCliCredential()
+
+# Retrieve subscription ID from environment variable.
+subscription_id = os.environ["AZURE_SUBSCRIPTION_ID"]
+
+# Obtain the management object for resources.
+resource_client = ResourceManagementClient(credential, subscription_id)
 
 # Provision the resource group.
 rg_result = resource_client.resource_groups.create_or_update(
-    "PythonAzureExample-ResourceGroup-rg",
+    "PythonAzureExample-rg",
     {
         "location": "centralus"
     }
@@ -75,17 +81,16 @@ print(f"Provisioned resource group {rg_result.name} in the {rg_result.location} 
 # new group. In this case the call is synchronous: the resource group has been
 # provisioned by the time the call returns.
 
-# Optional line to delete the resource group
-#resource_client.resource_groups.delete("PythonAzureExample-ResourceGroup-rg")
+# Optional lines to delete the resource group. begin_delete is asynchronous.
+# poller = resource_client.resource_groups.begin_delete(rg_result.name)
+# result = poller.result()
 ```
 
-このコードは、Azure CLI で直接認証を行う場合の操作をデモンストレーションしているため、CLI ベースの認証方法 (`get_client_from_cli_profile`) を使用しています。 どちらの場合も、同じ ID を認証に使用することになります。
-
-そのようなコードを本番スクリプトで使用する場合は、代わりに `DefaultAzureCredential` (推奨) またはサービス プリンシパル ベースの方法を使用してください (「[Azure サービスを使用して Python アプリを認証する方法](azure-sdk-authenticate.md)」を参照)。
+[!INCLUDE [cli-auth-note](includes/cli-auth-note.md)]
 
 ### <a name="reference-links-for-classes-used-in-the-code"></a>コードで使用されているクラスの参照リンク
 
-- [ResourceManagementClient (azure.mgmt.resource)](/python/api/azure-mgmt-resource/azure.mgmt.resource.resourcemanagementclient?view=azure-python)
+- [ResourceManagementClient (azure.mgmt.resource)](/python/api/azure-mgmt-resource/azure.mgmt.resource.resourcemanagementclient)
 
 ## <a name="4-run-the-script"></a>4:スクリプトを実行する
 
@@ -102,25 +107,25 @@ python provision_rg.py
 - Azure CLI: 次のコマンドを実行します。
 
     ```azurecli
-    az group show -n PythonAzureExample-ResourceGroup-rg
+    az group show -n PythonAzureExample-rg
     ```
 
 ## <a name="6-clean-up-resources"></a>6: リソースをクリーンアップする
 
 ```azurecli
-az group delete -n PythonAzureExample-ResourceGroup-rg  --no-wait
+az group delete -n PythonAzureExample-rg  --no-wait
 ```
 
-この例でプロビジョニングしたリソース グループを残す必要がなければ、このコマンドを実行してください。 リソース グループの料金がサブスクリプションに課金され続けることはありませんが、実際に使用していないグループは普段からクリーンアップするようにしておきましょう。
+この例でプロビジョニングしたリソース グループを残す必要がなければ、このコマンドを実行してください。 リソース グループの料金がサブスクリプションに課金され続けることはありませんが、実際に使用していないグループは普段からクリーンアップするようにしておきましょう。 `--no-wait` 引数を使用すると、操作が完了するまで待機するのではなく、直ちにコマンドから戻ることができます。
 
-コードから [`ResourceManagementClient.resource_groups.delete`](/python/api/azure-mgmt-resource/azure.mgmt.resource.resources.v2019_10_01.operations.resourcegroupsoperations?view=azure-python#delete-resource-group-name--custom-headers-none--raw-false--polling-true----operation-config-) メソッドを使用してリソース グループを削除することもできます。
+コードから [`ResourceManagementClient.resource_groups.delete`](/python/api/azure-mgmt-resource/azure.mgmt.resource.resources.v2019_10_01.operations.resourcegroupsoperations#delete-resource-group-name--custom-headers-none--raw-false--polling-true----operation-config-) メソッドを使用してリソース グループを削除することもできます。
 
 ### <a name="for-reference-equivalent-azure-cli-commands"></a>参考: 同等の Azure CLI コマンド
 
 次の Azure CLI コマンドは、Python スクリプトと同じプロビジョニング手順を実行するものです。
 
 ```azurecli
-az group create -n PythonAzureExample-ResourceGroup-rg -l centralus
+az group create -n PythonAzureExample-rg -l centralus
 ```
 
 ## <a name="see-also"></a>関連項目

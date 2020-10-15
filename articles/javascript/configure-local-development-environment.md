@@ -4,12 +4,12 @@ description: エディター、Azure SDK ライブラリ、オプションのツ
 ms.date: 09/30/2020
 ms.topic: conceptual
 ms.custom: devx-track-js, azure-sdk-ai-text-analytics-5.0.0
-ms.openlocfilehash: baf9634395d4e0ad7225abb9bebddfa1aa14fe6d
-ms.sourcegitcommit: 8fcb6c2d17be63064090f801f46c9c754821f979
+ms.openlocfilehash: d7f179898c974b1eaf00916bde6ce9df107e0083
+ms.sourcegitcommit: 723441eda0eb4ff893123201a9e029b7becf5ecc
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91805943"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91846713"
 ---
 # <a name="configure-your-local-javascript-dev-environment-for-azure"></a>Azure 用のローカル JavaScript 開発環境を構成する
 
@@ -36,7 +36,7 @@ Azure リソースは、Azure を使用するための課金単位であるサ�
 |[Node.js](https://www.npmjs.com/)|ローカル ワークステーション開発用の最新の長期サポート (LTS) ランタイム環境をインストールします。 |
 | NPM (最新バージョンの Node.js と共にインストールされます) または [Yarn](https://yarnpkg.com/)|Azure SDK ライブラリをインストールするためのパッケージ マネージャー。|
 |[Visual Studio Code](https://code.visualstudio.com/)| Visual Studio Code は、優れた JavaScript 統合とコーディングのエクスペリエンスを提供しますが、必須ではありません。 任意のコード エディターを使用することができます。 このドキュメントにおいては、別のエディターを使用している場合、Azure との統合を確認するか、Azure CLI を使用してください。|
-|[Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli?view=azure-cli-latest)|Azure CLI を使用すると、コマンド ライン、ターミナル、または bash シェルから Azure リソースを再作成したり管理したりすることができます。|
+|[Azure CLI](/cli/azure/get-started-with-azure-cli?view=azure-cli-latest)|Azure CLI を使用すると、コマンド ライン、ターミナル、または bash シェルから Azure リソースを再作成したり管理したりすることができます。|
 
 > [!CAUTION]
 > Azure Web アプリや Azure Container Instance など、コードのランタイム環境として Azure リソースを使用する予定がある場合は、ローカルの Node.js 開発環境が、使用する予定の Azure リソース ランタイムと一致していることを確認する必要があります。

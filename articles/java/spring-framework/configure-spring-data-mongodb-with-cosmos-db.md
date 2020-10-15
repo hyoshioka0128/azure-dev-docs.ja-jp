@@ -3,21 +3,19 @@ title: Azure Cosmos DB で Spring Data MongoDB API を使用する方法
 description: Azure Cosmos DB で Spring Data MongoDB API を使用する方法を説明します。
 services: cosmos-db
 documentationcenter: java
-ms.date: 12/19/2018
+ms.date: 10/10/2020
 ms.service: cosmos-db
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 529fab3977f0398014d74140abcbd807ac129fa5
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: 1d710c6146568011214a330ae0ce4957c6134b3b
+ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831428"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92009957"
 ---
 # <a name="how-to-use-spring-data-mongodb-api-with-azure-cosmos-db"></a>Azure Cosmos DB で Spring Data MongoDB API を使用する方法
-
-## <a name="overview"></a>概要
 
 この記事では、[Spring Data] を使用して、[Azure Cosmos DB MongoDB API](/azure/cosmos-db/mongodb-introduction) を使って情報を格納および取得するサンプル アプリケーションを作成する方法を説明します。
 
@@ -27,7 +25,7 @@ ms.locfileid: "90831428"
 
 * Azure サブスクリプション。Azure サブスクリプションをまだお持ちでない場合は、[MSDN サブスクライバーの特典]を有効にするか、または[無料の Azure アカウント]にサインアップできます。
 * サポートされている Java Development Kit (JDK)。 Azure での開発時に使用可能な JDK の詳細については、<https://aka.ms/azure-jdks> を参照してください。
-* [Apache Maven](http://maven.apache.org/) バージョン 3.0 以降。
+* Apache [Maven](http://maven.apache.org/) バージョン 3.0 以降。
 * [Git](https://git-scm.com/downloads) クライアント。
 
 ## <a name="create-an-azure-cosmos-db-account"></a>Azure Cosmos DB アカウントを作成する
@@ -40,7 +38,7 @@ ms.locfileid: "90831428"
 
 1. Azure portal (<https://portal.azure.com/>) を参照し、サインインします。
 
-1. **[+ リソースの作成]** をクリックし、 **[データベース]** 、 **[Azure Cosmos DB]** の順にクリックします。
+1. **[+ リソースの作成]** をクリックし、**[データベース]**、**[Azure Cosmos DB]** の順にクリックします。
 
    ![Azure Cosmos DB アカウントを作成する][COSMOSDB01]
 
@@ -54,9 +52,9 @@ ms.locfileid: "90831428"
 
    ![Cosmos DB アカウントの設定を指定する][COSMOSDB02]
    
-1. 上記の情報をすべて入力したら、 **[レビュー + 作成]** をクリックします。
+1. 上記の情報をすべて入力したら、**[レビュー + 作成]** をクリックします。
 
-1. レビュー ページに問題がなければ、 **[作成]** をクリックします。
+1. レビュー ページに問題がなければ、**[作成]** をクリックします。
 
    ![Cosmos DB アカウントの設定を確認する][COSMOSDB03]
 
@@ -66,7 +64,7 @@ ms.locfileid: "90831428"
 
 1. **[すべてのリソース]** をクリックしてから、先ほど作成した Azure Cosmos DB アカウントをクリックします。
 
-1. **[接続文字列]** をクリックし、 **[プライマリ接続文字列]** フィールドの値をコピーします。この値は、アプリケーションを構成するために後で使用します。
+1. **[接続文字列]** をクリックし、**[プライマリ接続文字列]** フィールドの値をコピーします。この値は、アプリケーションを構成するために後で使用します。
 
    ![Cosmos DB の接続文字列を取得する][COSMOSDB06]
 
@@ -97,7 +95,7 @@ ms.locfileid: "90831428"
 
 ## <a name="package-and-test-the-sample-application"></a>サンプル アプリケーションをパッケージ化してテストする
 
-アプリケーションをビルドするには、 */gs-accessing-data-mongodb/complete* ディレクトリを参照します。ここには、pom.xml ファイルがあります。
+アプリケーションをビルドするには、*/gs-accessing-data-mongodb/complete* ディレクトリを参照します。ここには、pom.xml ファイルがあります。
 
 1. Maven でサンプル アプリケーションをビルドし、テストをスキップします。次に例を示します。
 
@@ -132,6 +130,10 @@ ms.locfileid: "90831428"
 
 このチュートリアルでは、Spring Data を使用して、Azure Cosmos DB MongoDB API を使って情報を格納および取得する Java のサンプル アプリケーションを作成しました。
 
+## <a name="clean-up-resources"></a>リソースをクリーンアップする
+
+予想外の課金を防ぐために、この記事で作成したリソースが不要になったら、[Azure portal](https://portal.azure.com/) を使用して削除してください。
+
 ## <a name="next-steps"></a>次のステップ
 
 Spring および Azure の詳細については、Azure ドキュメント センターで引き続き Spring に関するドキュメントをご確認ください。
@@ -151,7 +153,6 @@ Java での Azure の使用の詳細については、「[Java 開発者向け�
 [MSDN サブスクライバーの特典]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
 [Spring Boot]: http://projects.spring.io/spring-boot/
 [Spring Data]: https://spring.io/projects/spring-data
-[Spring Initializr]: https://start.spring.io/
 [Spring Framework]: https://spring.io/
 
 <!-- IMG List -->

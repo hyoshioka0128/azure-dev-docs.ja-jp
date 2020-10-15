@@ -7,12 +7,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 17aa931e10f68e08a1d87017a4cdd1238baa7f1f
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 2ce0a20ffd33ba2311de73578338005666779a9d
+ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379936"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92010152"
 ---
 # <a name="managing-redis-caches-using-the-azure-explorer-for-intellij"></a>Azure Explorer for IntelliJ を使用して Redis Cache を管理する
 
@@ -36,15 +36,15 @@ Azure Toolkit for IntelliJ の一部である Azure Explorer は、IntelliJ IDE 
 
    ![新規 Redis Cache 作成ダイアログ ボックス][CR02]
 
-   a. **[DNS 名]** : 新しい Redis Cache の DNS サブドメインを指定します。この名前は、".redis.cache.windows.net" の前に付加されます (例: *wingtiptoys.redis.cache.windows.net*)。
+   a. **[DNS 名]**: 新しい Redis Cache の DNS サブドメインを指定します。この名前は、".redis.cache.windows.net" の前に付加されます (例: *wingtiptoys.redis.cache.windows.net*)。
 
-   b. **[サブスクリプション]** : 新しい Redis Cache に使う Azure サブスクリプションを指定します。
+   b. **サブスクリプション**:新しい Redis Cache に使う Azure サブスクリプションを指定します。
 
-   c. **[リソース グループ]** : Redis Cache のリソース グループを指定します。以下のオプションのいずれかを選ぶ必要があります。 
+   c. **リソース グループ**:Redis Cache のリソース グループを指定します。以下のオプションのいずれかを選ぶ必要があります。 
       * **[新規作成]** : 新しいリソース グループを作成することを指定します。 
-      * **[既存のものを使用]** : Azure アカウントに関連付けられているリソース グループの一覧から選ぶことを指定します。 
+      * **[Use Existing]\(既存の使用\)** :Azure アカウントに関連付けられているリソース グループの一覧から選ぶことを指定します。 
 
-   d. **[場所]** : Redis Cache を作成する場所を指定します (例: *米国西部*)。
+   d. **[場所]** :Redis Cache を作成する場所を指定します (例: *米国西部*)。
 
    e. **[価格レベル]** : Redis Cache が使う価格レベルを指定します。この設定により、クライアント接続の数が決まります。 詳しくは、「[Redis Cache の価格]」をご覧ください。
 
@@ -54,7 +54,7 @@ Azure Toolkit for IntelliJ の一部である Azure Explorer は、IntelliJ IDE 
 
 Redis Cache が作成されて、Azure Explorer に表示されます。
 
-   ![Azure Explorer の Redis Cache][CR03]
+    ![Redis Cache in Azure Explorer][CR03]
 
 > [!NOTE]
 >
@@ -77,7 +77,7 @@ Redis Cache が作成されて、Azure Explorer に表示されます。
 
    ![Redis Cache を削除する Azure Explorer のコンテキスト メニュー][DE01]
 
-1. Redis Cache の削除を確認するメッセージが表示されたら、 **[はい]** をクリックします。
+1. Redis Cache の削除を確認するメッセージが表示されたら、**[はい]** をクリックします。
 
    ![Redis Cache 削除のプロンプト][DE02]
 

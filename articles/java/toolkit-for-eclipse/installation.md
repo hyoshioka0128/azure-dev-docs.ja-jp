@@ -8,12 +8,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 27793d827b60a5977968529377b20c7033170ffe
-ms.sourcegitcommit: a139e25190960ba89c9e31f861f0996a6067cd6c
+ms.openlocfilehash: be90cbf867cfbbb475e1a80655d2ef925069b90a
+ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90534668"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92010211"
 ---
 # <a name="installing-the-azure-toolkit-for-eclipse"></a>Azure Toolkit for Eclipse のインストール
 
@@ -48,8 +48,7 @@ Eclipse IDE の Eclipse Marketplace ウィザードでは、ユーザーは [Ecl
    |---|---| 
    | **Application Insights Plugin for Java** | アプリケーションとサーバー インスタンスに対する Azure のテレメトリ ログと分析サービスを使用できるようにします。 | 
    | **Azure Common Plugin** | 他のツールキット コンポーネントで必要な一般的な機能を提供します。 | 
-   | **Azure Container Tools for Eclipse** | .WAR を Docker コンテナーとして Docker マシンに構築およびデプロイできるようにします。 | 
-   | **Azure Containers for Eclipse** | .WAR または.JAR アーティファクトを Docker コンテナーとして Azure 仮想マシンにデプロイできるようにします。 | 
+   | **Azure Container Tools for Eclipse** | .WAR を Docker コンテナーとして Docker マシンに構築およびデプロイできるようにします。 |
    | **Azure Explorer for Eclipse** | Azure リソースを管理するためのエクスプローラー スタイルのインターフェイスを提供します。 | 
    | **Azure HDInsight plugin for Java** | Scala で Apache Spark アプリケーションを開発できるようにします。 |
    | **Microsoft JDBC Driver 6.1 for SQL Server** | SQL Server と Microsoft Azure SQL Database 向けに、Java Platform Enterprise Edition 8 の JDBC API を提供します。 | 
@@ -69,7 +68,7 @@ Azure Toolkit for Eclipse は、新しいソフトウェアの形式で *[ヘル
 
 1. **[ヘルプ]** メニューをクリックし、 **[新しいソフトウェアのインストール]** をクリックします。
 
-   :::image type="content" source="media/installation/eclipse-install-software-button.png" alt-text="[新しいソフトウェアのインストール]、[ヘルプ] メニュー。"::: 
+   :::image type="content" source="media/installation/eclipse-install-software-button.png" alt-text="Marketplace ウィンドウの [ヘルプ] メニュー。"::: 
 
 1. **[利用可能なソフトウェア]** ダイアログで、 **[操作]** テキスト ボックスに `http://dl.microsoft.com/eclipse/` を入力します。
 
@@ -83,8 +82,7 @@ Azure Toolkit for Eclipse は、新しいソフトウェアの形式で *[ヘル
    |---|---| 
    | **Application Insights Plugin for Java** | アプリケーションとサーバー インスタンスに対する Azure のテレメトリ ログと分析サービスを使用できるようにします。 | 
    | **Azure Common Plugin** | 他のツールキット コンポーネントで必要な一般的な機能を提供します。 | 
-   | **Azure Container Tools for Eclipse** | .WAR を Docker コンテナーとして Docker マシンに構築およびデプロイできるようにします。 | 
-   | **Azure Containers for Eclipse** | .WAR または.JAR アーティファクトを Docker コンテナーとして Azure 仮想マシンにデプロイできるようにします。 | 
+   | **Azure Container Tools for Eclipse** | .WAR を Docker コンテナーとして Docker マシンに構築およびデプロイできるようにします。 |
    | **Azure Explorer for Eclipse** | Azure リソースを管理するためのエクスプローラー スタイルのインターフェイスを提供します。 | 
    | **Azure HDInsight plugin for Java** | Scala で Apache Spark アプリケーションを開発できるようにします。 |
    | **Microsoft JDBC Driver 6.1 for SQL Server** | SQL Server と Microsoft Azure SQL Database 向けに、Java Platform Enterprise Edition 8 の JDBC API を提供します。 | 

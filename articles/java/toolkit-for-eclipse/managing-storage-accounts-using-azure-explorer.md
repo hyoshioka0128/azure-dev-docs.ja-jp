@@ -7,12 +7,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: e5b5c946b5ed4d2480b1040d0925507453cc2408
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: 7a2a3406e43e1bc65ac61b7197399cdce08ef29b
+ms.sourcegitcommit: 723441eda0eb4ff893123201a9e029b7becf5ecc
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831748"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91846413"
 ---
 # <a name="manage-storage-accounts-by-using-the-azure-explorer-for-eclipse"></a>Azure Explorer for Eclipse を使用してストレージ アカウントを管理する
 
@@ -85,7 +85,7 @@ Azure ストレージ アカウント、サイズ、および料金の詳細に�
 [Azure ストレージ アカウントについて]: /azure/storage/storage-create-storage-account
 [Azure Storage のレプリケーション]: /azure/storage/storage-redundancy
 [Azure Storage のスケーラビリティおよびパフォーマンスのターゲット]: /azure/storage/storage-scalability-targets
-[Naming and referencing containers, blobs, and metadata]: https://go.microsoft.com/fwlink/?LinkId=255555
+[Naming and referencing containers, blobs, and metadata]: /rest/api/storageservices/Naming-and-Referencing-Containers--Blobs--and-Metadata
 
 [Azure の Windows ストレージ アカウントのサイズ]: /azure/virtual-machines/sizes
 [Azure の Linux ストレージ アカウントのサイズ]: /azure/virtual-machines/sizes

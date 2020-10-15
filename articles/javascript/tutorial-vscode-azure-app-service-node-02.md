@@ -4,12 +4,12 @@ description: Node.js チュートリアル パート 2、Node.jp アプリを作
 ms.topic: tutorial
 ms.date: 03/04/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 7d627d97987ed41f90972362ab38d436a6157d33
-ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
+ms.openlocfilehash: aceeb9016e098cc707f176e3d767cf7bf72a35a2
+ms.sourcegitcommit: 723441eda0eb4ff893123201a9e029b7becf5ecc
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91365245"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91846703"
 ---
 # <a name="create-and-run-a-local-nodejs-app"></a>ローカル Node.js アプリを作成して実行する
 
@@ -22,7 +22,7 @@ ms.locfileid: "91365245"
 1. 次のコマンドを使用して、Express ジェネレーターを使って、*expressApp1* という名前の新しい Express アプリを作成します。 (`--view pug --git` パラメーターは、[pug](https://pugjs.org/api/getting-started.html) テンプレート エンジン (旧称 Jade) を使用することと、 *.gitignore* ファイルを作成することをジェネレーターに指示します。)
 
     ```bash
-    npx express-generator expressApp1 --view pug -–git
+    npx express-generator expressApp1 -–git --view pug 
     ```
 
 1. アプリ フォルダーに移動します。

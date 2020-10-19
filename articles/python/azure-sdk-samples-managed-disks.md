@@ -2,20 +2,20 @@
 title: Managed Disks
 description: マネージド ディスクの作成、サイズ変更、更新を行います。
 ms.topic: conceptual
-ms.date: 6/15/2017
+ms.date: 10/13/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: b81f9cb848e1b3505e50cd3fde35e1afff16d493
-ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
+ms.openlocfilehash: e596d02aad2cbaf97ef588737bedd58c10d8093f
+ms.sourcegitcommit: acdd366aef550c0a75f2315a6a07e1a230df499f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91764511"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92060200"
 ---
 # <a name="managed-disks"></a>Managed Disks
 
 Azure Managed Disks により、ディスク管理の簡素化、スケーラビリティの強化、セキュリティの向上、スケールが提供されます。 ディスクのストレージ アカウントの概念を取り払い、顧客がストレージ アカウントに関連する制限を気にすることなくスケーリングを行えるようにします。 この記事では、Python のサービスを利用する際の概要とリファレンスを簡単に紹介します。
 
-開発者の視点から見ると、Azure CLI の Managed Disks エクスペリエンスは、他のクロスプラットフォーム ツールの CLI と比べて独特です。 [Azure Python](https://azure.microsoft.com/develop/python/) SDK と [azure-mgmt-compute package 0.33.0](https://pypi.python.org/pypi/azure-mgmt-compute) を使用して、Managed Disks を管理できます。 この[チュートリアル](/python/api/overview/azure/virtualmachines)を使用して、コンピューティング クライアントを作成できます。
+開発者の視点から見ると、Azure CLI の Managed Disks エクスペリエンスは、他のクロスプラットフォーム ツールの CLI と比べて独特です。 [azure-mgmt-compute パッケージ](/python/api/overview/azure/virtualmachines)を使用して Managed Disks を管理できます。 azure-mgmt-compute ライブラリを使用した仮想マシンのプロビジョニングの例については、「[例 - 仮想マシンのプロビジョニング](azure-sdk-example-virtual-machines.md)」をご覧ください。
 
 ## <a name="standalone-managed-disks"></a>スタンドアロンの管理ディスク
 
@@ -89,6 +89,7 @@ from azure.mgmt.compute.models import DiskCreateOption
 
 # If you don't know the id, do a 'get' like this to obtain it
 managed_disk = compute_client.disks.get(self.group_name, 'myImageDisk')
+
 async_creation = compute_client.disks.begin_create_or_update(
     'my_resource_group',
     'my_disk_name',
@@ -108,7 +109,7 @@ disk_resource = async_creation.result()
 
 特定のディスク イメージの暗黙的な管理ディスクを使用した仮想マシンを作成できます。 マネージド ディスクを暗黙的に作成することで、作成が簡素化されます。ディスクの詳細をすべて指定する必要はありません。 ストレージ アカウントの作成と管理についても気にする必要はありません。
 
-管理ディスクは、Azure の OS イメージから VM を作成するときに暗黙的に作成されます。 ``storage_profile`` パラメーターでは、現在 ``os_disk`` は省略可能になっており、仮想マシン作成の必須の前提条件としてストレージ アカウントを作成する必要はありません。
+管理ディスクは、Azure の OS イメージから VM を作成するときに暗黙的に作成されます。 `storage_profile` パラメーターでは、現在 `os_disk` は省略可能になっており、仮想マシン作成の必須の前提条件としてストレージ アカウントを作成する必要はありません。
 
 ```python
 storage_profile = azure.mgmt.compute.models.StorageProfile(
@@ -121,13 +122,14 @@ storage_profile = azure.mgmt.compute.models.StorageProfile(
 )
 ```
 
-この ``storage_profile`` パラメーターは現在有効になっています。 Python で VM を作成する方法 (ネットワークなどを含む) の完全な例を取得するには、[Python の VM チュートリアル](https://github.com/Azure-Samples/virtual-machines-python-manage)全体を確認してください。
+この `storage_profile` パラメーターは現在有効になっています。 Python で VM を作成する方法 (ネットワークなどを含む) の完全な例を取得するには、[Python の VM チュートリアル](https://github.com/Azure-Samples/virtual-machines-python-manage)全体を確認してください。
 
-また、独自のイメージを使用して ``storage_profile`` を作成することもできます。
+また、独自のイメージを使用して `storage_profile` を作成することもできます。
 
 ```python
 # If you don't know the id, do a 'get' like this to obtain it
 image = compute_client.images.get(self.group_name, 'myImageDisk')
+
 storage_profile = azure.mgmt.compute.models.StorageProfile(
     image_reference = azure.mgmt.compute.models.ImageReference(
         id = image.id
@@ -143,6 +145,7 @@ vm = compute.virtual_machines.get(
     'my_vm'
 )
 managed_disk = compute_client.disks.get('my_resource_group', 'myDisk')
+
 vm.storage_profile.data_disks.append({
     'lun': 12, # You choose the value, depending of what is available for you
     'name': managed_disk.name,
@@ -151,6 +154,7 @@ vm.storage_profile.data_disks.append({
         'id': managed_disk.id
     }
 })
+
 async_update = compute_client.virtual_machines.begin_create_or_update(
     'my_resource_group',
     vm.name,
@@ -161,9 +165,9 @@ async_update.wait()
 
 ## <a name="virtual-machine-scale-sets-with-managed-disks"></a>Managed Disks を使用した仮想マシン スケール セット
 
-管理ディスクを使用する前は、スケール セットに含めるすべての VM に対してストレージ アカウントを手動で作成し、その後、リスト パラメーター ``vhd_containers`` を使用してすべてのストレージ アカウント名をスケール セットの RestAPI に渡す必要がありました。 正式な移行ガイドについては、こちらの記事 (`<https://docs.microsoft.com/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-convert-template-to-md>`) を参照してください。
+管理ディスクを使用する前は、スケール セットに含めるすべての VM に対してストレージ アカウントを手動で作成し、その後、リスト パラメーター `vhd_containers` を使用してすべてのストレージ アカウント名をスケール セットの RestAPI に渡す必要がありました。 公式な移行ガイドについては、「[スケール セット テンプレートをマネージド ディスク スケール セット テンプレートに変換する](/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-convert-template-to-md)」の記事をご覧ください。
 
-管理ディスクを使用するようになって、ストレージ アカウントを管理する必要はなくなりました。 仮想マシン スケール セット Python SDK を使い慣れている場合、``storage_profile`` は VM の作成に使用したものとまったく同じになります。
+管理ディスクを使用するようになって、ストレージ アカウントを管理する必要はなくなりました。 仮想マシン スケール セット Python SDK を使い慣れている場合、`storage_profile` は VM の作成に使用したものとまったく同じになります。
 
 ```python
 'storage_profile': {
@@ -180,6 +184,7 @@ async_update.wait()
 
 ```python
 naming_infix = "PyTestInfix"
+
 vmss_parameters = {
     'location': self.region,
     "overprovision": True,
@@ -221,7 +226,7 @@ vmss_parameters = {
 }
 
 # Create VMSS test
-result_create = compute_client.virtual_machine_scale_sets.create_or_update(
+result_create = compute_client.virtual_machine_scale_sets.begin_create_or_update(
     'my_resource_group',
     'my_scale_set',
     vmss_parameters,
@@ -236,7 +241,8 @@ vmss_result = result_create.result()
 ```python
 managed_disk = compute_client.disks.get('my_resource_group', 'myDisk')
 managed_disk.disk_size_gb = 25
-async_update = self.compute_client.disks.create_or_update(
+
+async_update = self.compute_client.disks.begin_create_or_update(
     'my_resource_group',
     'myDisk',
     managed_disk
@@ -251,7 +257,8 @@ from azure.mgmt.compute.models import StorageAccountTypes
 
 managed_disk = compute_client.disks.get('my_resource_group', 'myDisk')
 managed_disk.account_type = StorageAccountTypes.standard_lrs
-async_update = self.compute_client.disks.create_or_update(
+
+async_update = self.compute_client.disks.begin_create_or_update(
     'my_resource_group',
     'myDisk',
     managed_disk
@@ -284,7 +291,8 @@ image = async_create_image.result()
 
 ```python
 managed_disk = compute_client.disks.get('my_resource_group', 'myDisk')
-async_snapshot_creation = self.compute_client.snapshots.create_or_update(
+
+async_snapshot_creation = self.compute_client.snapshots.begin_create_or_update(
         'my_resource_group',
         'mySnapshot',
         {

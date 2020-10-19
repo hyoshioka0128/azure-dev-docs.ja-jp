@@ -13,12 +13,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: devx-track-java
-ms.openlocfilehash: 57cb6f2b731ee6d9522787d70efbaf35e029c632
-ms.sourcegitcommit: 717e32b68fc5f4c986f16b2790f4211967c0524b
+ms.openlocfilehash: a318d5aa7f411add20ee201d48d3640983efefee
+ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91586150"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92010256"
 ---
 # <a name="create-a-hello-world-web-app-for-azure-app-service-using-eclipse"></a>Eclipse を使用して Azure App Service 用の Hello World Web アプリを作成する
 
@@ -53,7 +53,7 @@ ms.locfileid: "91586150"
 
 1. Azure アカウントを選択し、サインインするために必要な認証手順を完了します。
 
-1. サインインしたら、ブラウザーを閉じて Eclipse IDE に戻ります。 **[Select Subscriptions]\(サブスクリプションの選択\)** ダイアログ ボックスで、使用するサブスクリプションを選択し、 **[OK]** をクリックします。
+1. サインインしたら、ブラウザーを閉じて Eclipse IDE に戻ります。 **[Select Subscriptions]\(サブスクリプションの選択\)** ダイアログ ボックスで、使用するサブスクリプションを選択し、 **[Select]\(選択\)** をクリックします。
 
 ### <a name="install-required-software-optional"></a>必要なソフトウェアのインストール " *(省略可能)* "
 

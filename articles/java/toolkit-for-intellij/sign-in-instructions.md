@@ -7,12 +7,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 2891b0c09c43b652fd7dd41e354290c2821bad46
-ms.sourcegitcommit: a139e25190960ba89c9e31f861f0996a6067cd6c
+ms.openlocfilehash: 27442efda23ba24abe6b40f20f7685f6ac7a524e
+ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90534571"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92010234"
 ---
 # <a name="sign-in-instructions-for-the-azure-toolkit-for-intellij"></a>Azure Toolkit for IntelliJ のサインイン手順
 
@@ -50,7 +50,7 @@ ms.locfileid: "90534571"
 
 ## <a name="sign-in-to-your-azure-account-by-service-principal"></a>[サービス プリンシパル] によって Azure アカウントにサインインする
 
-このセクションでは、サービス プリンシパル データを格納する資格情報ファイルを作成します。 このプロセスが完了すると、IntelliJ によって資格情報ファイルが使用され、ユーザーは自分のプロジェクトを開いたときに自動的に Azure にサインインします。
+このセクションでは、サービス プリンシパル データを格納する資格情報ファイルを作成します。 このプロセスが完了すると、ユーザーが自分のプロジェクトを開いたときに、IntelliJ によって資格情報ファイルが使用されて自動的に Azure にサインインします。
 
 1. IntelliJ IDEA でプロジェクトを開きます。
 

@@ -3,14 +3,14 @@ title: チュートリアル:Azure portal を使用して PostgreSQL で Django 
 description: Azure で Web アプリと PostgreSQL データベースをプロビジョニングし、GitHub からアプリ コードをデプロイします。
 ms.devlang: python
 ms.topic: tutorial
-ms.date: 09/23/2020
+ms.date: 10/09/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: 7f363c3e82873e82630cf477ea469627aa528a4e
-ms.sourcegitcommit: b03cb337db8a35e6e62b063c347891e44a8a5a13
+ms.openlocfilehash: 77cb35d31f80b52d1e79c2650c79635dc039e72d
+ms.sourcegitcommit: d5dabc6dde727ed167a9dc8a4eaaf21025b3efa8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91110538"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91947537"
 ---
 # <a name="tutorial-deploy-a-django-web-app-with-postgresql-using-the-azure-portal"></a>チュートリアル:Azure portal を使用して PostgreSQL で Django Web アプリをデプロイする
 
@@ -57,7 +57,7 @@ Azure portal を使用して、データ ドリブンの Python [Django](https:/
     | --- | --- |
     | サブスクリプション | 使用するサブスクリプションを選択します (既定のものとは異なる場合)。 |
     | Resource group | **[新規作成]** を選択し、「DjangoPostgres-Tutorial-rg」と入力します。 |
-    | アプリの名前 | Azure 全体で一意となる Web アプリの名前 (アプリの URL は `https://\<app-name>.azurewebsites.net` です)。 有効な文字は、`A`-`Z`、`0`-`9`、および `-` です。 会社名とアプリ識別子を組み合わせて使用すると、適切なパターンになります。 |
+    | アプリの名前 | Azure 全体で一意となる Web アプリの名前 (アプリの URL は `https://<app-name>.azurewebsites.net` です)。 有効な文字は、`A`-`Z`、`0`-`9`、および `-` です。 会社名とアプリ識別子を組み合わせて使用すると、適切なパターンになります。 |
     | 発行 | **[コード]** を選択します。 |
     | ランタイム スタック | ドロップダウン リストから **[Python 3.8]** を選択します。 |
     | リージョン | お近くの場所を選択します。 |
@@ -86,7 +86,7 @@ Azure portal を使用して、データ ドリブンの Python [Django](https:/
     | --- | --- |
     | サブスクリプション | 使用するサブスクリプションを選択します (既定のものとは異なる場合)。 |
     | Resource group | 前のセクションで作成した "DjangoPostgres-Tutorial-rg" グループを選択します。 |
-    | サーバー名 | Azure 全体で一意となるデータベース サーバーの名前 (アプリの URL は `https://\<server-name>.postgres.database.azure.com` です)。 有効な文字は、`A`-`Z`、`0`-`9`、および `-` です。 会社名とサーバー識別子を組み合わせて使用すると、適切なパターンになります。 |
+    | サーバー名 | Azure 全体で一意となるデータベース サーバーの名前 (データベース サーバーの URL は `https://<server-name>.postgres.database.azure.com` になります)。 有効な文字は、`A`-`Z`、`0`-`9`、および `-` です。 会社名とサーバー識別子を組み合わせて使用すると、適切なパターンになります。 |
     | データ ソース | **なし** |
     | 場所 | お近くの場所を選択します。 |
     | Version | 既定値 (最新バージョン) のままにします。 |
@@ -119,7 +119,7 @@ Azure portal を使用して、データ ドリブンの Python [Django](https:/
     psql --host=<server-name>.postgres.database.azure.com --port=5432 --username=<user-name>@<server-name> --dbname=postgres
     ```
 
-    `<server-name>` と `<user-name>` を、サーバーの構成時に前のセクションで使用した名前に置き換えます。 完全なユーザー名の値は `<user-name>@<server-name>` であることに注意してください。
+    `<server-name>` と `<user-name>` を、サーバーの構成時に前のセクションで使用した名前に置き換えます。 Postgres で必要な完全なユーザー名の値は `<user-name>@<server-name>`であることに注意してください。
 
     上のコマンドをコピーし、右クリックして **[貼り付け]** を選択することで、Cloud Shell に貼り付けることができます。
 
@@ -150,9 +150,9 @@ Azure portal を使用して、データ ドリブンの Python [Django](https:/
     | 設定名 | 値 |
     | --- | --- |
     | DJANGO_ENV | `production` (この値は、上記の[サンプルの概要](#fork-the-sample-repository)で説明したように、運用環境の構成を使用するようにアプリに指示します)。 |
-    | DBHOST | 前のセクションのデータベース サーバーの URL (`<server-name>.postgres.database.azure.com` 形式)。 データベース サーバーの [概要] ページから URL 全体をコピーできます。 |
+    | DBHOST | 前のセクションのデータベース サーバーの名前。つまり、サーバーの URL で `.postgres.database.azure.com` の前にある `<server-name>` 部分です。 (*azuresite/production.py* 内のコードを実行すると、完全な URL が自動的に作成されます。) |
     | DBNAME | `pollsdb` |
-    | DBUSER | 前のセクションで使用した完全な管理者ユーザー名。 完全なユーザー名は、この場合も `<user-name>@<server-name>` です。 |
+    | DBUSER | データベースをプロビジョニングしたときに使用した管理者のユーザー名。 (サンプル コードでは、`@<server-name>` の部分が自動的に追加されます。*azuresite/production.py* をご覧ください。) |
     | DBPASS | 前に作成した管理者パスワード。 |
 
 1. **[保存]** を選択し、 **[続行]** を選択して設定を適用します。

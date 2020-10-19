@@ -4,12 +4,12 @@ description: Azure SDK for Python ライブラリを使用して、Azure Storage
 ms.date: 10/05/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 82d7f83a426e56e4e235d1d4bfcfb8c73042e053
-ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
+ms.openlocfilehash: afc56afac9940a3fc6ffda11bfa68a0570cba0b9
+ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91764551"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92010268"
 ---
 # <a name="example-provision-azure-storage-using-the-azure-libraries-for-python"></a>例:Python 用 Azure ライブラリを使用して Azure Storage をプロビジョニングする
 
@@ -143,6 +143,7 @@ print(f"Provisioned blob container {container.name}")
 
 ### <a name="reference-links-for-classes-used-in-the-code"></a>コードで使用されているクラスの参照リンク
 
+- [AzureCliCredential (azure.identity)](/python/api/azure-identity/azure.identity.azureclicredential)
 - [ResourceManagementClient (azure.mgmt.resource)](/python/api/azure-mgmt-resource/azure.mgmt.resource.resourcemanagementclient)
 - [StorageManagementClient (azure.mgmt.storage)](/python/api/azure-mgmt-storage/azure.mgmt.storage.storagemanagementclient)
 
@@ -238,6 +239,7 @@ az group delete -n PythonAzureExample-Storage-rg  --no-wait
 
 - [例:Azure Storage を使用する](azure-sdk-example-storage-use.md)
 - [例:リソース グループをプロビジョニングする](azure-sdk-example-resource-group.md)
+- [例:サブスクリプション内のリソース グループを一覧表示する](azure-sdk-example-list-resource-groups.md)
 - [例:Web アプリをプロビジョニングしてコードをデプロイする](azure-sdk-example-web-app.md)
 - [例:データベースをプロビジョニングしてクエリを実行する](azure-sdk-example-database.md)
 - [例:仮想マシンをプロビジョニングする](azure-sdk-example-virtual-machines.md)

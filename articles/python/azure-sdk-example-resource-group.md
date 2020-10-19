@@ -4,12 +4,12 @@ description: Azure SDK for Python のリソース管理ライブラリを使用�
 ms.date: 10/05/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 8a3eb230e40954d25a890db53d33382c07899b7d
-ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
+ms.openlocfilehash: 24450fb8b7db3f9df3d08086c90cdf26265b474a
+ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91764630"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92010288"
 ---
 # <a name="example-use-the-azure-libraries-to-provision-a-resource-group"></a>例:Azure ライブラリを使用してリソース グループをプロビジョニングする
 
@@ -21,7 +21,7 @@ ms.locfileid: "91764630"
 
 「[Azure 用のローカル Python 開発環境を構成する](configure-local-development-environment.md)」の手順をすべて実行します (まだ済んでいない場合)。
 
-必ず、ローカル開発用のサービス プリンシパルを作成し、このプロジェクト用の仮想環境を作成してアクティブ化してください。
+必ず、このプロジェクトの仮想環境を作成してアクティブにしてください。
 
 ## <a name="2-install-the-azure-library-packages"></a>2:Azure ライブラリ パッケージをインストールする
 
@@ -90,6 +90,7 @@ print(f"Provisioned resource group {rg_result.name} in the {rg_result.location} 
 
 ### <a name="reference-links-for-classes-used-in-the-code"></a>コードで使用されているクラスの参照リンク
 
+- [AzureCliCredential (azure.identity)](/python/api/azure-identity/azure.identity.azureclicredential)
 - [ResourceManagementClient (azure.mgmt.resource)](/python/api/azure-mgmt-resource/azure.mgmt.resource.resourcemanagementclient)
 
 ## <a name="4-run-the-script"></a>4:スクリプトを実行する
@@ -130,6 +131,7 @@ az group create -n PythonAzureExample-rg -l centralus
 
 ## <a name="see-also"></a>関連項目
 
+- [例:サブスクリプション内のリソース グループを一覧表示する](azure-sdk-example-list-resource-groups.md)
 - [例:Azure Storage をプロビジョニングする](azure-sdk-example-storage.md)
 - [例:Azure Storage を使用する](azure-sdk-example-storage-use.md)
 - [例:Web アプリをプロビジョニングしてコードをデプロイする](azure-sdk-example-web-app.md)

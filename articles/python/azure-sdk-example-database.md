@@ -4,12 +4,12 @@ description: Python 用 Azure SDK ライブラリの管理ライブラリを使�
 ms.date: 10/05/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: b1f04dbf2fa12aeab58a05191319a27072db6d28
-ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
+ms.openlocfilehash: bf205e133f093be654c88e5245eb0a4524f71502
+ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91764684"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92010298"
 ---
 # <a name="example-use-the-azure-libraries-to-provision-a-database"></a>例:Azure ライブラリを使用してデータベースをプロビジョニングする
 
@@ -276,6 +276,7 @@ az mysql db create -g PythonAzureExample-DB-rg --server PythonAzureExample-MySQL
 ## <a name="see-also"></a>関連項目
 
 - [例:リソース グループをプロビジョニングする](azure-sdk-example-resource-group.md)
+- [例:サブスクリプション内のリソース グループを一覧表示する](azure-sdk-example-list-resource-groups.md)
 - [例:Azure Storage をプロビジョニングする](azure-sdk-example-storage.md)
 - [例:Azure Storage を使用する](azure-sdk-example-storage-use.md)
 - [例:仮想マシンをプロビジョニングする](azure-sdk-example-virtual-machines.md)

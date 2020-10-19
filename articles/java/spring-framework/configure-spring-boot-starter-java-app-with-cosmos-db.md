@@ -5,18 +5,18 @@ services: cosmos-db
 documentationcenter: java
 author: KarlErickson
 ms.author: karler
-ms.date: 10/02/2019
+ms.date: 10/06/2020
 ms.service: cosmos-db
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: data-services
 ms.custom: devx-track-java
-ms.openlocfilehash: 800e4d45417c7842d12e92c6e18dfdd6a1bc567f
-ms.sourcegitcommit: 717e32b68fc5f4c986f16b2790f4211967c0524b
+ms.openlocfilehash: bc7754cf3f35bf8d6bc0d0a427dc1c532ff6e834
+ms.sourcegitcommit: 723441eda0eb4ff893123201a9e029b7becf5ecc
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91586189"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91846533"
 ---
 # <a name="how-to-use-the-spring-boot-starter-with-the-azure-cosmos-db-sql-api"></a>Azure Cosmos DB SQL API で Spring Boot Starter を使用する方法
 
@@ -37,7 +37,7 @@ Azure Cosmos DB は、開発者が SQL、MongoDB、Graph、Table API などの�
 
 1. **[データベース]** 、 **[Azure Cosmos DB]** の順にクリックします。
 
-    ![Azure portal][AZ02]
+    ![Azure portal で [Azure Cosmos DB] を選択します。][AZ02]
 
 1. **[Azure Cosmos DB]** ページで、次の情報を入力します。
 
@@ -49,13 +49,13 @@ Azure Cosmos DB は、開発者が SQL、MongoDB、Graph、Table API などの�
 
     これらのオプションを指定したら、 **[Review + create]\(確認と作成\)** をクリックして指定した内容を確認し、 **[作成]** をクリックします。
 
-    ![Azure portal][AZ03]
+    ![[Review + Create]\(確認と作成\) を選択して続行します。][AZ03]
 
 1. データベースが作成されると、それが Azure **ダッシュボード**に表示され、 **[すべてのリソース]** ページと **[Azure Cosmos DB]** ページにも表示されます。 これらのいずれかの場所でデータベースをクリックすると、キャッシュのプロパティ ページを開くことができます。
 
 1. データベースのプロパティ ページが表示されたら、 **[キー]** をクリックし、データベースの URI とアクセス キーをコピーします。これらの値は Spring Boot アプリケーションで使用します。
 
-    ![Azure portal][AZ05]
+    ![[キー] セクションで、URI とアクセス キーをコピーします。][AZ05]
 
 ## <a name="create-a-simple-spring-boot-application-with-the-spring-initializr"></a>Spring Initializr でシンプルな Spring Boot アプリケーションを作成する
 
@@ -421,7 +421,7 @@ Azure での Spring Boot アプリケーションの使用の詳細について�
 
 * [Azure の Spring Boot Cosmos DB Starter]
 
-* [Spring Boot アプリケーションを Azure App Service にデプロイする](deploy-spring-boot-java-app-from-container-registry-using-maven-plugin.md)
+* [Spring Boot アプリケーションを Azure App Service の Linux にデプロイする](deploy-spring-boot-java-app-on-linux.md)
 
 * [Running a Spring Boot Application on a Kubernetes Cluster in the Azure Container Service (Azure Container Service での Kubernetes クラスター上の Spring Boot アプリケーションの実行)](deploy-spring-boot-java-app-on-kubernetes.md)
 

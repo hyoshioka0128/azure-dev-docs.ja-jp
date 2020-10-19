@@ -6,22 +6,20 @@ documentationcenter: java
 author: panli
 manager: kevinzha
 ms.author: edburns
-ms.date: 06/04/2020
+ms.date: 10/10/2020
 ms.service: active-directory-b2c
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
 ms.custom: devx-track-java
-ms.openlocfilehash: 3835d51bbbc7f3226a1b77ba415d5e965ac8a609
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: df9b9f659d504c18c9dfd9afb3b5f201448d4866
+ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831918"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92010139"
 ---
 # <a name="tutorial-secure-a-java-web-app-using-the-spring-boot-starter-for-azure-active-directory-b2c"></a>チュートリアル:Azure Active Directory B2C 用の Spring Boot Starter を使用して Java Web アプリをセキュリティで保護する
-
-## <a name="overview"></a>概要
 
 この記事では、Azure Active Directory (Azure AD) 用 Spring Boot Starter を使用した [Spring Initializr](https://start.spring.io/) で Java アプリを作成する方法について説明します。
 
@@ -49,11 +47,15 @@ ms.locfileid: "90831918"
 
     * **[プロジェクト]** で、 **[Maven プロジェクト]** を選択します。
     * **[言語]** で、 **[Java]** を選択します。
-    * **[Spring Boot]** で、 **[2.2.7]** を選択します。
+    * **[Spring Boot]** で、 **[2.3.4]** を選択します。
     * **[グループ]** 、 **[アーティファクト]** および **[名前]** で、短い説明の文字列を使用して同じ値を入力します。 入力時に、UI によってこれらの一部が自動的に入力される場合があります。
     * **[依存関係]** ペインで、 **[依存関係の追加]** を選択します。 UI を使用して **Spring Web** と、**Spring Security** に対する依存関係を追加します。
 
-   ![プロジェクトを生成するための値を入力する](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/si-n.png)
+   ![プロジェクトを生成するための値を入力する](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/fill-in-the-values-to-generate-the-project.png)
+
+    > [!NOTE]
+    > Spring Initializr では、既定のバージョンとして Java 11 が使用されます。 このトピックで説明されている Spring Boot Starter を使用するには、代わりに Java 8 を選択する必要があります。
+
 
 3. **[プロジェクトの生成]** を選択してから、ローカル コンピューター上のパスにプロジェクトをダウンロードします。 ダウンロードしたファイルを、プロジェクトに基づいて名前が付けられたディレクトリに移動し、そのファイルを解凍します。 ファイルのレイアウトは以下のようになるはずです。`yourProject` の代わりに、 **[グループ]** に入力した値が示されます。
 
@@ -152,11 +154,11 @@ ms.locfileid: "90831918"
 
     「[チュートリアル: Azure Active Directory B2C 内にユーザー フローを作成する](/azure/active-directory-b2c/tutorial-create-user-flows)」のすべての手順に従って、"サインアップとサインイン"、"プロファイルの編集" および "パスワードのリセット" のユーザー フローを作成します。
 
-    AAD B2C は、ローカル アカウントとソーシャル ID プロバイダーをサポートしています。 GitHub ID プロバイダーを作成する例については、「[Azure Active Directory B2C を使用して GitHub アカウントでのサインアップおよびサインインを設定する](/azure/active-directory-b2c/identity-provider-github)」を参照してください。
+    Azure AD B2C は、ローカル アカウントとソーシャル ID プロバイダーをサポートしています。 GitHub ID プロバイダーを作成する例については、「[Azure Active Directory B2C を使用して GitHub アカウントでのサインアップおよびサインインを設定する](/azure/active-directory-b2c/identity-provider-github)」を参照してください。
 
 ## <a name="configure-and-compile-your-app"></a>アプリの構成およびコンパイル
 
-AAD B2C インスタンスといくつかのユーザー フローを作成したので、Spring アプリを AAD B2C インスタンスに接続します。
+Azure AD B2C インスタンスといくつかのユーザー フローを作成したので、Spring アプリを Azure AD B2C インスタンスに接続します。
 
 1. コマンド ラインで、Spring Initializr からダウンロードした .zip ファイルを解凍したディレクトリに移動します。
 
@@ -182,9 +184,9 @@ AAD B2C インスタンスといくつかのユーザー フローを作成し�
     </dependency>
     ```
 
-    `azure-active-directory-b2c-spring-boot-starter` には、使用可能な最新バージョンを使用します。 [mvnrepository.com](https://mvnrepository.com/ artifact/com.microsoft.azure/azure-active-directory-spring-boot-starter) を使用して、これを確認できる場合があります。 このドキュメントの執筆時点では、最新バージョンは `2.2.4` です。
+    `azure-active-directory-b2c-spring-boot-starter` には、使用可能な最新バージョンを使用します。 [mvnrepository.com](https://mvnrepository.com/ artifact/com.microsoft.azure/azure-active-directory-spring-boot-starter) を使用して、これを確認できる場合があります。 このドキュメントの更新時点では、最新バージョンは `2.3.5` です。
 
-    `spring-boot-starter-thymeleaf` には、先ほど選択した Spring Boot のバージョン (`2.2.7.RELASE` など) に対応するバージョンを使用します。
+    `spring-boot-starter-thymeleaf` には、先ほど選択した Spring Boot のバージョン (`2.3.4.RELASE` など) に対応するバージョンを使用します。
 
     `thymeleaf-extras-springsecurity5` には、使用可能な最新バージョンを使用します。 [mvnrepository.com](https://mvnrepository.com/artifact/org.thymeleaf.extras/thymeleaf-extras-springsecurity5) を使用して、これを確認できる場合があります。 このドキュメントの執筆時点では、最新バージョンは `3.0.4.RELEASE` です。
 
@@ -353,6 +355,10 @@ AAD B2C インスタンスといくつかのユーザー フローを作成し�
 ## <a name="summary"></a>まとめ
 
 このチュートリアルでは、Azure Active Directory B2C スターターを使用した新しい Java Web アプリケーションの作成、新しい Azure AD B2C テナントの構成とそこでの新しいアプリケーションの登録を行ってから、Spring の注釈とクラスを使用して Web アプリを保護するようにアプリケーションを構成しました。
+
+## <a name="clean-up-resources"></a>リソースをクリーンアップする
+
+予想外の課金を防ぐために、この記事で作成したリソースが不要になったら、[Azure portal](https://portal.azure.com/) を使用して削除してください。
 
 ## <a name="next-steps"></a>次のステップ
 

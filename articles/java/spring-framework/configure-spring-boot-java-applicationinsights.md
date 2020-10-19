@@ -5,17 +5,17 @@ services: Application-Insights
 documentationcenter: java
 author: dhaval24
 ms.author: dhdoshi
-ms.date: 11/29/2019
+ms.date: 10/06/2020
 ms.service: azure-monitor
 ms.tgt_pltfrm: application-insights
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: ee48999f7d83857c4992e74ad4dc4b248bfe195b
-ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
+ms.openlocfilehash: 59600fa46f463d4fef78de8ebf335c530f26b81e
+ms.sourcegitcommit: 723441eda0eb4ff893123201a9e029b7becf5ecc
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91365215"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91846553"
 ---
 # <a name="configure-a-spring-boot-initializer-app-to-use-application-insights"></a>Application Insights を使用するように Spring Boot Initializer アプリを構成する
 
@@ -67,7 +67,7 @@ ms.locfileid: "91365215"
 
    これらのオプションを指定したら、 **[確認と作成]** をクリックします。
 
-   ![Azure][AZ03]
+   ![Application Insights の [確認と作成]][AZ03]
 
 * 指定した内容を確認し、 **[作成]** をクリックします。
 
@@ -75,7 +75,7 @@ ms.locfileid: "91365215"
 
 この概要ページから、**インストルメンテーション キー**をコピーしてください。
 
-   ![Azure][AZ04]
+   ![インストルメンテーション キーのコピー][AZ04]
 
 ## <a name="configure-your-downloaded-spring-boot-application-to-use-application-insights"></a>Application Insights を使用するように、ダウンロードした Spring Boot Initializer を構成する
 
@@ -179,11 +179,11 @@ ms.locfileid: "91365215"
 
    このデータは、数秒後に Azure に表示されます。 
 
-   ![Azure][AZ05]
+   ![Azure portal でのデータの表示。][AZ05]
 
 **[アプリケーション マップ]** タイルをクリックし、大まかなコンポーネントと、それらの間の相互作用を確認します。 ここで、アプリケーション全体の概要を把握することをお勧めします。 Spring Boot の各マイクロサービスは、Spring のアプリケーション名によって認識されます。 これは忘れずに設定してください。
 
-   ![Azure][AZ08] 
+   ![アプリケーション マップの表示。][AZ08] 
 
 ## <a name="configure-springboot-application-to-send-log4j-logs-to-application-insights"></a>log4j ログを Application Insights に送信するように Springboot アプリケーションを構成する
 
@@ -261,7 +261,7 @@ ms.locfileid: "91365215"
 
 数秒で、すべての Spring ログが Azure で利用できることを確認できます。 Analytics ポータルでは、詳細なログ メッセージを確認したり、分析を実行したりできます。
 
-![Azure][AZ07]
+![Analytics ポータルでのログ メッセージ。][AZ07]
 
 ## <a name="next-steps"></a>次のステップ
 
@@ -274,7 +274,7 @@ Spring および Azure の詳細については、Azure ドキュメント セ�
 
 Azure での Spring Boot アプリケーションの使用の詳細については、次の記事を参照してください。
 
-* [Spring Boot アプリケーションを Azure App Service にデプロイする](deploy-spring-boot-java-app-from-container-registry-using-maven-plugin.md)
+* [Spring Boot アプリケーションを Azure App Service の Linux にデプロイする](deploy-spring-boot-java-app-on-linux.md)
 
 * [Running a Spring Boot Application on a Kubernetes Cluster in the Azure Container Service (Azure Container Service での Kubernetes クラスター上の Spring Boot アプリケーションの実行)](deploy-spring-boot-java-app-on-kubernetes.md)
 

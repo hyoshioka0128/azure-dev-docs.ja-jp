@@ -3,17 +3,17 @@ title: Spring Boot Initializer アプリを作成する - Azure Redis Cache
 description: Spring Initializer で作成された Spring Boot アプリケーションを、Azure Redis Cache によってクラウドで Redis を使用するように構成します。
 services: redis-cache
 documentationcenter: java
-ms.date: 02/06/2020
+ms.date: 10/06/2020
 ms.service: cache
 ms.tgt_pltfrm: cache-redis
 ms.topic: conceptual
 ms.custom: devx-track-java
-ms.openlocfilehash: 330f0b3b1cfa5e92a4e876121b966c3a0b174f02
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: cd8dd2a841a1ccf43f18374f34963c23f1369658
+ms.sourcegitcommit: 723441eda0eb4ff893123201a9e029b7becf5ecc
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90830208"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91846603"
 ---
 # <a name="configure-a-spring-boot-initializer-app-to-use-redis-in-the-cloud-with-azure-redis-cache"></a>Azure Redis Cache によってクラウドで Redis を使用するように Spring Boot Initializer アプリを構成する
 
@@ -57,7 +57,7 @@ ms.locfileid: "90830208"
 
 1. **[データベース]** をクリックし、 **[Redis Cache]** をクリックします。
 
-   ![Azure portal][AZ02]
+   ![Azure portal で [Redis Cache] を選択します。][AZ02]
 
 1. **[新規 Redis Cache]** ページで、以下の情報を指定します。
 
@@ -72,15 +72,15 @@ ms.locfileid: "90830208"
 
    これらのオプションの指定後、 **[作成]** をクリックしてキャッシュを作成します。
 
-   ![Azure portal][AZ03]
+   ![Azure portal でキャッシュを作成します。][AZ03]
 
 1. キャッシュが作成されると、Azure の**ダッシュボード**のほか、 **[すべてのリソース]** ブレードと **[Redis Cach]** ページにも作成したキャッシュが表示されます。 これらのいずれかの場所でキャッシュをクリックすると、そのキャッシュのプロパティ ページを開くことができます。
 
-   ![Azure portal][AZ04]
+   ![Azure portal 内のプロビジョニングされたリソース。][AZ04]
 
 1. キャッシュのプロパティの一覧が含まれているページが表示されたら、 **[アクセス キー]** をクリックし、キャッシュのアクセス キーをコピーします。
 
-   ![Azure portal][AZ05]
+   ![[アクセス キー] セクションでアクセス キーをコピーします。][AZ05]
 
 ## <a name="configure-your-custom-spring-boot-to-use-your-redis-cache"></a>Redis Cache を使用するようにカスタム Spring Boot を構成する
 
@@ -198,7 +198,7 @@ Spring および Azure の詳細については、Azure ドキュメント セ�
 
 Azure での Spring Boot アプリケーションの使用の詳細については、次の記事を参照してください。
 
-* [Spring Boot アプリケーションを Azure App Service にデプロイする](deploy-spring-boot-java-app-from-container-registry-using-maven-plugin.md)
+* [Spring Boot アプリケーションを Azure App Service の Linux にデプロイする](deploy-spring-boot-java-app-on-linux.md)
 
 * [Running a Spring Boot Application on a Kubernetes Cluster in the Azure Container Service (Azure Container Service での Kubernetes クラスター上の Spring Boot アプリケーションの実行)](deploy-spring-boot-java-app-on-kubernetes.md)
 

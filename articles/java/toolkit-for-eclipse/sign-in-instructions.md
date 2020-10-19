@@ -7,12 +7,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: d0dbc16a16ca3a5ff367e6c67fceabcb37e2cce6
-ms.sourcegitcommit: a139e25190960ba89c9e31f861f0996a6067cd6c
+ms.openlocfilehash: d9e3b0de0c6ea20996c54b6ab5cb03083ed25a65
+ms.sourcegitcommit: d5dabc6dde727ed167a9dc8a4eaaf21025b3efa8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90534427"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91947547"
 ---
 # <a name="sign-in-instructions-for-the-azure-toolkit-for-eclipse"></a>Azure Toolkit for Eclipse のサインイン手順
 
@@ -58,7 +58,7 @@ Azure Toolkit for Eclipse には、Azure アカウントにサインインする
 
 ## <a name="sign-in-to-your-azure-account-by-service-principal"></a>[サービス プリンシパル] によって Azure アカウントにサインインする
 
-このセクションでは、サービス プリンシパル データを格納する資格情報ファイルを作成します。 このプロセスが完了すると、Eclipse は資格情報ファイルを使用して、プロジェクトを開いたときにユーザーを自動的に Azure にサインインします。
+このセクションでは、サービス プリンシパル データを格納する資格情報ファイルを作成します。 このプロセスが完了すると、プロジェクトを開いたときに、Eclipse によって資格情報ファイルが使用されて、自動的に Azure にサインインします。
 
 1. Eclipse でプロジェクトを開きます。
 

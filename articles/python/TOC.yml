@@ -136,6 +136,8 @@
       items:
         - name: リソース グループをプロビジョニングする
           href: azure-sdk-example-resource-group.md
+        - name: グループとリソースを一覧表示する
+          href: azure-sdk-example-list-resource-groups.md
         - name: Azure ストレージをプロビジョニングする
           href: azure-sdk-example-storage.md
         - name: Azure ストレージの使用
@@ -178,7 +180,7 @@
       href: /samples/browse/?languages=python&products=azure-cosmos-db%2Cazure-sql-database
     - name: ストレージ
       items:
-        - name: Azure ストレージ
+        - name: Azure Storage
           href: /samples/browse/?languages=python&products=azure-storage
         - name: Redis Cache
           href: /samples/browse/?languages=python&products=azure-redis-cache

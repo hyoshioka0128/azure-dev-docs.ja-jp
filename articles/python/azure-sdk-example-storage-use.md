@@ -4,12 +4,12 @@ description: Azure SDK for Python ライブラリを使用して、Azure Storage
 ms.date: 08/05/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: ee9469b4b400879ee5a0b66d16572bc22686ba54
-ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
+ms.openlocfilehash: 13ca0d10ac24780e5f7f053f85616781553253f5
+ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91764451"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92010272"
 ---
 # <a name="example-access-azure-storage-using-the-azure-libraries-for-python"></a>例:Python 用 Azure ライブラリを使用して Azure Storage にアクセスする
 
@@ -207,6 +207,7 @@ az group delete -n PythonAzureExample-Storage-rg  --no-wait
 ## <a name="see-also"></a>関連項目
 
 - [例:リソース グループをプロビジョニングする](azure-sdk-example-resource-group.md)
+- [例:サブスクリプション内のリソース グループを一覧表示する](azure-sdk-example-list-resource-groups.md)
 - [例:Web アプリをプロビジョニングしてコードをデプロイする](azure-sdk-example-web-app.md)
 - [例:Azure Storage をプロビジョニングする](azure-sdk-example-storage.md)
 - [例:データベースをプロビジョニングしてクエリを実行する](azure-sdk-example-database.md)

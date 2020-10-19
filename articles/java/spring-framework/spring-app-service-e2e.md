@@ -7,12 +7,12 @@ ms.date: 11/12/2019
 ms.service: app-service
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 10d08226e0d97622c492f0e87a1fd0b175c76c4a
-ms.sourcegitcommit: f80537193d3e22eb24cce4a0a5464a996d1e63eb
+ms.openlocfilehash: 5ef1c3cb94064d26ca4081b8bcd1cdebd344a46a
+ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91409964"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92010188"
 ---
 # <a name="deploy-a-spring-app-to-app-service-with-mysql"></a>MySQL を使用して Spring アプリを App Service にデプロイする
 
@@ -57,7 +57,7 @@ cd spring-framework-petclinic
 
 ## <a name="build-and-run-the-hsqldb-sample-locally"></a>HSQLDB サンプルをローカルでビルドして実行する
 
-まず HSQLDB をデータベースとして使用して、サンプルをローカルでテストします。
+まず、HSQLDB をデータベースとして使用して、サンプルをローカルでテストします。
 
 サンプル アプリの HSQLDB バージョンをビルドします。
 

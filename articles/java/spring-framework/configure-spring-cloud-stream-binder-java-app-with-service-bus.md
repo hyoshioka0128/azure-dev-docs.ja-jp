@@ -4,29 +4,29 @@ description: この記事では、Spring Cloud Stream Binder を使用して Azu
 author: seanli1988
 manager: kyliel
 ms.author: seal
-ms.date: 08/21/2019
+ms.date: 10/10/2020
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 1ecedc4f3b3fb3eb92b66403f00aa14660323ce2
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 0df477d203031fecac389660b93e93f00d8e262a
+ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379046"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92010004"
 ---
 # <a name="how-to-use-spring-cloud-azure-stream-binder-for-azure-service-bus"></a>Azure Service Bus 用の Spring Cloud Azure Stream Binder を使用する方法
 
 [!INCLUDE [spring-boot-20-note.md](includes/spring-boot-20-note.md)]
 
-Azure には、[Azure Service Bus](/azure/service-bus-messaging/service-bus-messaging-overview) ("Service Bus") という、[Advanced Message Queueing Protocol 1.0](http://www.amqp.org/) ("AMQP 1.0") 標準に基づいた非同期のメッセージング プラットフォームが用意されています。 Service Bus は、サポートされている Azure プラットフォームの範囲全体で使用することができます。
-
 この記事では、Spring Cloud Stream Binder を使用して Service Bus `queues` および `topics` との間でメッセージを送受信する方法について説明します。
+
+Azure には、[Azure Service Bus](/azure/service-bus-messaging/service-bus-messaging-overview) ("Service Bus") という、[Advanced Message Queueing Protocol 1.0](http://www.amqp.org/) ("AMQP 1.0") 標準に基づいた非同期のメッセージング プラットフォームが用意されています。 Service Bus は、サポートされている Azure プラットフォームの範囲全体で使用することができます。
 
 ## <a name="prerequisites"></a>前提条件
 
 この記事の前提条件は次のとおりです。
 
-1. Azure サブスクリプションをまだお持ちでない場合は、[MSDN サブスクライバーの特典](https://azure.microsoft.com/pricing/member-offers/credit-for-visual-studio-subscribers/)を有効にするか、[無料アカウント](https://azure.microsoft.com/free/)にサインアップしてください。
+1. Azure サブスクリプション。Azure サブスクリプションをまだお持ちでない場合は、[MSDN サブスクライバーの特典](https://azure.microsoft.com/pricing/member-offers/credit-for-visual-studio-subscribers/)を有効にするか、または[無料のアカウント](https://azure.microsoft.com/free/)にサインアップできます。
 
 1. サポートされている Java Development Kit (JDK) (バージョン 8 以降)。 Azure での開発時に使用可能な JDK の詳細については、<https://aka.ms/azure-jdks> を参照してください。
 
@@ -40,7 +40,10 @@ Azure には、[Azure Service Bus](/azure/service-bus-messaging/service-bus-mess
 
 1. 構成済みの Service Bus キューまたはトピックがない場合は、Azure portal を使用して [Service Bus キュー](/azure/service-bus-messaging/service-bus-quickstart-portal)または [Service Bus トピック](/azure/service-bus-messaging/service-bus-quickstart-topics-subscriptions-portal)を作成します。 前の手順で指定された要件を名前空間が確実に満たすようにしてください。 また、名前空間に含まれる接続文字列をメモしてください。これは、このチュートリアルのテスト アプリに必要です。
 
-1. Spring Boot アプリケーションがない場合は、[Spring Initializr で **Maven** プロジェクトを作成](https://start.spring.io/)します。 必ず、 **[Maven プロジェクト]** を選択し、 **[依存関係]** に **[Web]** 依存関係を追加してください。
+1. Spring Boot アプリケーションがない場合は、[Spring Initializr](https://start.spring.io/) で **Maven** プロジェクトを作成します。 必ず、 **[Maven プロジェクト]** を選択し、 **[依存関係]** に **[Web]** 依存関係を追加し、Java のバージョン **8** を選択してください。
+
+    > [!NOTE]
+    > Spring Initializr では、既定のバージョンとして Java 11 が使用されます。 このトピックで説明されている Spring Boot Starter を使用するには、代わりに Java 8 を選択する必要があります。
 
 ## <a name="use-the-spring-cloud-stream-binder-starter"></a>Spring Cloud Stream Binder スターターを使用する
 
@@ -48,7 +51,7 @@ Azure には、[Azure Service Bus](/azure/service-bus-messaging/service-bus-mess
 
     `C:\SpringBoot\servicebus\pom.xml`
 
-    または
+    - または -
 
     `/users/example/home/servicebus/pom.xml`
 
@@ -126,8 +129,8 @@ Azure には、[Azure Service Bus](/azure/service-bus-messaging/service-bus-mess
     |               `spring.cloud.stream.bindings.input.destination`                 |                            このチュートリアルで自分が使用した Service Bus キューまたは Service Bus トピックを指定します。                         |
     |                  `spring.cloud.stream.bindings.input.group`                    |                                            Service Bus トピックを使用した場合は、トピックのサブスクリプションを指定します。                                |
     |               `spring.cloud.stream.bindings.output.destination`                |                               入力先に使用したものと同じ値を指定します。                        |
-    | `spring.cloud.stream.servicebus.queue.bindings.input.consumer.checkpoint-mode` |                                                       `MANUAL` を指定します。                                                   |
-    | `spring.cloud.stream.servicebus.topic.bindings.input.consumer.checkpoint-mode` |                                                       `MANUAL` を指定します。                                                   |
+    | `spring.cloud.stream.servicebus.queue.bindings.input.consumer.checkpoint-mode` |                                                       `MANUAL`を指定します。                                                   |
+    | `spring.cloud.stream.servicebus.topic.bindings.input.consumer.checkpoint-mode` |                                                       `MANUAL`を指定します。                                                   |
 
 1. *application.properties* ファイルを保存して閉じます。
 
@@ -242,7 +245,7 @@ Azure には、[Azure Service Bus](/azure/service-bus-messaging/service-bus-mess
 
     `cd C:\SpringBoot\servicebus`
 
-    または
+    - または -
 
     `cd /users/example/home/servicebus`
 

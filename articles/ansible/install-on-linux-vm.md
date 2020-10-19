@@ -3,14 +3,14 @@ title: クイック スタート - Azure CLI を使用して Ansible を構成�
 description: このクイックスタートでは、Ubuntu、CentOS、SLES で Azure リソースを管理するため、Ansible をインストールして構成する方法を説明します
 keywords: Ansible, Azure, DevOps, Bash, CloudShell, プレイブック, Azure CLI
 ms.topic: quickstart
-ms.date: 08/13/2020
+ms.date: 09/30/2020
 ms.custom: devx-track-ansible,devx-track-cli
-ms.openlocfilehash: bdda836789e9230cffdc14a6ee4bd87ddb2ce5ef
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: aba725cee4b61aeae98ed8d0eb89b3090241ff49
+ms.sourcegitcommit: 0b1c751c5a4a837977fec1c777bca5ad15cf2fc7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831175"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91621628"
 ---
 # <a name="quickstart-configure-ansible-using-azure-cli"></a>クイック スタート:Azure CLI を使用した Ansible の構成
 
@@ -66,7 +66,7 @@ Linux VM に接続する場合、パスワード認証またはキーベース�
     az group create --name QuickstartAnsible-rg --location eastus
     ```
 
-1. [az vm create](/cli/azure/vm#az-vm-create) を使用して仮想マシンを作成します。
+1. [az vm create](/cli/azure/vm#az-vm-create) を使用して仮想マシンを作成します。 プレースホルダーを SSH **公開**キー ファイル名の完全修飾名に置き換えます。
 
     ```azurecli
     az vm create \
@@ -108,7 +108,7 @@ az vm extension set \
 
 ## <a name="connect-to-your-virtual-machine-via-ssh"></a>SSH 経由で仮想マシンに接続する
 
-SSH コマンドを使用して仮想マシンに接続します。
+SSH コマンドを使用して仮想マシンに接続します。 プレースホルダーは、返される適切な値に置き換えてください。
 
 ```azurecli
 ssh -i <ssh_private_key_filename> azureuser@<vm_ip_address>
@@ -126,15 +126,15 @@ Ansible Tower または Jenkins を使っている場合は、サービス プ�
 次のいずれかの方法を使って、Ansible の資格情報を構成します。
 
 - [Ansible の資格情報ファイルの作成](#file-credentials)
-- [Ansible 環境変数の使用](#env-credentials)
+- [Ansible 環境変数の定義](#env-credentials)
 
-### <a name="span-idfile-credentials-create-ansible-credentials-file"></a><span id="file-credentials"/> Ansible の資格情報ファイルの作成
+#### <a name="span-idfile-credentials-create-ansible-credentials-file"></a><span id="file-credentials"/> Ansible の資格情報ファイルの作成
 
 このセクションでは、Ansible に資格情報を提供するためのローカル資格情報ファイルを作成します。
 
 Ansible の資格情報の定義について詳しくは、「[Providing Credentials to Azure Modules (Azure モジュールに資格情報を提供する)](https://docs.ansible.com/ansible/guide_azure.html#providing-credentials-to-azure-modules)」をご覧ください。
 
-1. 開発環境の場合は、ホストの仮想マシンで `credentials` という名前のファイルを作成します。
+1. ホスト仮想マシンに正常に接続したら、`credentials` という名前のファイルを作成して開きます。
 
     ```bash
     mkdir ~/.azure
@@ -153,20 +153,16 @@ Ansible の資格情報の定義について詳しくは、「[Providing Credent
 
 1. ファイルを保存して閉じます。
 
-### <a name="span-idenv-credentialsuse-ansible-environment-variables"></a><span id="env-credentials"/>Ansible 環境変数の使用
+#### <a name="span-idenv-credentialsdefine-ansible-environment-variables"></a><span id="env-credentials"/>Ansible 環境変数の定義
 
-このセクションでは、Ansible の資格情報を構成するためにサービス プリンシパルの値をエクスポートします。
+ホスト仮想マシンで、Ansible の資格情報を構成するためにサービス プリンシパルの値をエクスポートします。
 
-1. ターミナル ウィンドウを開きます。
-
-1. サービス プリンシパルの値をエクスポートします。
-
-    ```bash
-    export AZURE_SUBSCRIPTION_ID=<your-subscription_id>
-    export AZURE_CLIENT_ID=<security-principal-appid>
-    export AZURE_SECRET=<security-principal-password>
-    export AZURE_TENANT=<security-principal-tenant>
-    ```
+```bash
+export AZURE_SUBSCRIPTION_ID=<your-subscription_id>
+export AZURE_CLIENT_ID=<security-principal-appid>
+export AZURE_SECRET=<security-principal-password>
+export AZURE_TENANT=<security-principal-tenant>
+```
 
 ## <a name="test-ansible-installation"></a>Ansible インストールをテストする
 

@@ -7,12 +7,12 @@ ms.service: multiple
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: e457d4fe152f9fa5fa64bafaa4f49311e8ff4475
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: 82dce0ada2824a00e75e9bb00d8943458e09e44f
+ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831888"
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "92010178"
 ---
 # <a name="manage-virtual-machines-by-using-the-azure-explorer-for-eclipse"></a>Azure Explorer for Eclipse を使用して仮想マシンを管理する
 
@@ -28,7 +28,7 @@ Azure Toolkit for Eclipse の一部である Azure Explorer は、Eclipse 統合
 
 1. **Azure Explorer** ビューで、 **[Azure]** ノードを展開し、 **[仮想マシン]** を右クリックし、 **[VM の作成]** をクリックします。
 
-   :::image type="content" source="media/managing-virtual-machines-using-azure-explorer/CR01.png" alt-text="Azure Explorer の [VM の作成] オプション。":::
+   :::image type="content" source="media/managing-virtual-machines-using-azure-explorer/CR01.png" alt-text="Azure Explorer の [VM の作成] オプション。&quot;:::
 
 1. **[サブスクリプションの選択]** ウィンドウで、サブスクリプションを選択し、 **[次へ]** をクリックします。
 
@@ -39,7 +39,7 @@ Azure Toolkit for Eclipse の一部である Azure Explorer は、Eclipse 統合
 
    * **[プラン]** : 選択した発行元の、仮想マシンで使用するプランを指定します (*JDK* など)。
 
-   * **[SKU]** : 選択したプランから、使用する在庫保管単位 (SKU) を指定します ("*JDK_8*" など)。
+   * **[SKU]** : 選択したプランから、使用する在庫保管単位 (SKU) を指定します (&quot;*JDK_8*" など)。
 
    * **[Version #]\(バージョン番号\)** : 選択した SKU で使用するバージョンを指定します。
 
@@ -103,7 +103,7 @@ Eclipse で Azure Explorer を使用して仮想マシンを削除するには�
 
 1. **Azure Explorer** ビューで、仮想マシンを右クリックし、 **[削除]** を選択します。
 
-1. 確認ウィンドウで **[はい]** をクリックします。
+1. 確認ウィンドウで、 **[OK]** をクリックします。
 
    ![仮想マシンの削除の確認ウィンドウ](media/managing-virtual-machines-using-azure-explorer/DE02.png)
 

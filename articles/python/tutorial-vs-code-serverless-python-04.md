@@ -4,12 +4,12 @@ description: チュートリアルの手順 4、VS Code デバッガーをロー
 ms.topic: conceptual
 ms.date: 09/17/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 4a5cb6bb8eedca93ce1e7675d3e7e1959ca066f6
-ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
+ms.openlocfilehash: 622453ab5de1eeeee547cf95687e2585813b7b31
+ms.sourcegitcommit: 050c898df76a1af5feffe99e392a073b8ac9c19c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90773031"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92137081"
 ---
 # <a name="4-debug-the-azure-functions-python-code-locally"></a>4:Azure Functions の Python コードをローカルでデバッグする
 
@@ -79,3 +79,4 @@ Visual Studio Code で Azure Functions の Python コードをローカルでデ
 > [!div class="nextstepaction"]
 > [デバッガーをローカルで実行しました - 手順 5 に進む >>>](tutorial-vs-code-serverless-python-05.md)
 
+[問題がある場合は、お知らせください。](https://aka.ms/python-functions-qs-ms-survey)

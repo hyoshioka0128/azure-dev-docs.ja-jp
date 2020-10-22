@@ -4,12 +4,12 @@ description: チュートリアル ステップ 1、Azure Functions のローカ
 ms.topic: conceptual
 ms.date: 05/19/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 8d7b3d29b1bd8860d87505fd6f3b09a20702f904
-ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
+ms.openlocfilehash: 69f66c51a6e55eff91a7de780ebd0bd6f5500f68
+ms.sourcegitcommit: 050c898df76a1af5feffe99e392a073b8ac9c19c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90772757"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92137221"
 ---
 # <a name="tutorial-create-and-deploy-serverless-azure-functions-in-python-with-visual-studio-code"></a>チュートリアル:Visual Studio Code を使用して Python でサーバーレスの Azure Functions を作成してデプロイする
 
@@ -80,3 +80,5 @@ Azure Functions ロゴで始まる出力は (出力を上方向にスクロー�
 
 > [!div class="nextstepaction"]
 > [Azure にサインインしました - 手順 2 に進む >>>](tutorial-vs-code-serverless-python-02.md)
+
+[問題がある場合は、お知らせください。](https://aka.ms/python-functions-qs-ms-survey)

@@ -4,12 +4,12 @@ description: チュートリアルの手順 3、Azure Functions が提供する�
 ms.topic: conceptual
 ms.date: 09/17/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: a88c62bb017cc666b7c8e6c5cabe6df0768a17b0
-ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
+ms.openlocfilehash: f2f39b4ba2c6274c81052b21b4d66d1c7c854ede
+ms.sourcegitcommit: 050c898df76a1af5feffe99e392a073b8ac9c19c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91764520"
+ms.lasthandoff: 10/16/2020
+ms.locfileid: "92137181"
 ---
 # <a name="3-examine-the-python-code-files-in-visual-studio-code"></a>3:Visual Studio Code で Python コード ファイルを調べる
 
@@ -93,3 +93,4 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
 > [!div class="nextstepaction"]
 > [コード ファイルを確認しました - 手順 4 に進む >>>](tutorial-vs-code-serverless-python-04.md)
 
+[問題がある場合は、お知らせください。](https://aka.ms/python-functions-qs-ms-survey)

@@ -6,12 +6,12 @@ ms.service: mobile-services
 ms.topic: tutorial
 ms.date: 07/27/2020
 ms.author: miparker
-ms.openlocfilehash: f173f8431cc7bed0ae56bf14cfc6efcf37dcf230
-ms.sourcegitcommit: e97cb81a245ce7dcabeac3260abc3db7c30edd79
+ms.openlocfilehash: 308e727f57ed086899d4fb5906235cb5a17bda16
+ms.sourcegitcommit: ced8331ba36b28e6e2eacd23a64b39ddc7ffe6ab
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91493272"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92337186"
 ---
 # <a name="tutorial-send-push-notifications-to-xamarinforms-apps-using-azure-notification-hubs-via-a-backend-service"></a>チュートリアル:バックエンド サービス経由で Azure Notification Hubs を使用して Xamarin.Forms アプリにプッシュ通知を送信する  
 
@@ -42,8 +42,9 @@ ms.locfileid: "91493272"
 
 手順を進めてゆくには、以下が必要です。
 
-* リソースを作成および管理できる [Azure サブスクリプション](https://portal.azure.com)。
-* [Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac/) がインストールされている Mac (または **.NET によるモバイル開発**のワークロードを備えた、[Visual Studio 2019](https://visualstudio.microsoft.com/vs) を実行している PC)。
+* リソースを作成および管理できる [Azure サブスクリプション](https://azure.microsoft.com/free/dotnet)。
+* [Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac/) がインストールされている Mac または [Visual Studio 2019](https://visualstudio.microsoft.com/vs) を実行している PC。
+* [Visual Studio 2019](https://visualstudio.microsoft.com/vs) のユーザーは、 **.NET によるモバイル開発**と **ASP.NET および Web の開発**のワークロードもインストールしておく必要があります。
 * **Android** (物理デバイスまたはエミュレーター デバイス) または **iOS** (物理デバイスのみ) のいずれかでアプリを実行する機能。
 
 Android の場合は次のものが必要です。
@@ -62,12 +63,13 @@ iOS の場合は次のものが必要です。
 以前に経験がなくとも、この第一原理の例に記載されている手順に従うことができます。 ただし、以下の面について知識があると役立ちます。
 
 * [Apple Developer ポータル](https://developer.apple.com)
-* [ASP.NET Core](/aspnet/core/introduction-to-aspnet-core?view=aspnetcore-3.1)
+* [ASP.NET Core](/aspnet/core/introduction-to-aspnet-core?view=aspnetcore-3.1) と [Web API](https://dotnet.microsoft.com/apps/aspnet/apis)
 * [Google Firebase Console](https://console.firebase.google.com/u/0/)
 * [Microsoft Azure](https://portal.azure.com) と、[Azure Notification Hubs を使用して iOS アプリにプッシュ通知を送信すること](/azure/notification-hubs/ios-sdk-get-started)。
 * [Xamarin](https://dotnet.microsoft.com/apps/xamarin) と [Xamarin.Forms](https://dotnet.microsoft.com/apps/xamarin/xamarin-forms)。
 
-示される手順は [Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac/) を対象としていますが、[Visual Studio 2019](https://visualstudio.microsoft.com/vs) を使用して進めることができます。
+> [!IMPORTANT]
+> 示されている手順は、[Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac/) に固有のものです。 [Visual Studio 2019](https://visualstudio.microsoft.com/vs) を使用して従うこともできますが、調整すべきいくつかの違いがある場合があります。 たとえば、ユーザー インターフェイスとワークフローの説明、テンプレート名、環境構成などです。
 
 ## <a name="set-up-push-notification-services-and-azure-notification-hub"></a>プッシュ通知サービスと Azure Notification Hubs を設定する
 

@@ -4,13 +4,13 @@
     - name: JavaScript を使用した Azure の概要
       items:
         - name: 開発環境を設定する
-          href: configure-local-development-environment.md
+          href: core/configure-local-development-environment.md
         - name: サービス プリンシパルを設定する
-          href: node-sdk-azure-authenticate-principal.md
+          href: core/node-sdk-azure-authenticate-principal.md
         - name: Azure に対して認証します
-          href: node-sdk-azure-authenticate.md
+          href: core/node-sdk-azure-authenticate.md
     - name: クイックスタート
-      expanded: true
+      expanded: false
       items:
         - name: アプリ ホスティング
           items:
@@ -30,8 +30,6 @@
               href: /azure/aks/kubernetes-walkthrough?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
             - name: Linux VM
               href: /azure/virtual-machines/linux/quick-create-cli?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-            - name: Express.js と MongoDB
-              href: tutorial-visualstudiocode-app-service-mongodb/tutorial-azure-web-app-mongodb-feedback.yml
         - name: DevOps
           items:
             - name: Azure Repos
@@ -104,6 +102,10 @@
               href: node-sdk-logging.md
     - name: チュートリアル
       items:
+        - name: Storage BLOB にイメージをアップロードする
+          href: tutorial/browser-file-upload.yml?preview=tutorialFeedback
+        - name: Express.js と MongoDB
+          href: tutorial/web-app-mongodb.yml?preview=tutorialFeedback
         - name: VS Code で Azure Functions をデプロイする
           items:
             - name: 概要と前提条件
@@ -128,8 +130,6 @@
               href: tutorial-vscode-azure-app-service-node-04.md
             - name: リソースをクリーンアップする
               href: tutorial-vscode-azure-app-service-node-05.md
-        - name: Express.js と MongoDB
-          href: tutorial-visualstudiocode-app-service-mongodb/tutorial-azure-web-app-mongodb-feedback.yml?tabs=bash&preview=tutorialFeedback
         - name: VS Code で Deno を App Service にデプロイする
           items:
             - name: 概要と前提条件
@@ -193,19 +193,19 @@
     - name: ハウツー ガイド
       items:
         - name: VS Code を使用したエンド ツー エンドの Node.js
-          href: node-howto-e2e.md
+          href: how-to/develop-nodejs-on-azure.md
         - name: Web アプリをデプロイする
-          href: node-howto-deploy-web-app.md
+          href: how-to/deploy-web-app.md
         - name: コンテナーをデプロイする
-          href: node-howto-deploy-containers.md
+          href: how-to/deploy-containers.md
         - name: 継続的デリバリーを通じてデプロイする
           href: /azure/devops/pipelines/languages/javascript?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
         - name: データベースとの統合
-          href: node-howto-integrate-databases.md
+          href: how-to/integrate-database.md
         - name: サーバーレス コードを記述する
-          href: node-howto-write-serverless-code.md
+          href: how-to/develop-serverless-apps.md
         - name: 静的な (JAMstack) サイトを作成する
-          href: node-howto-create-static-site-jamstack.md
+          href: how-to/create-static-site.md
         - name: 監視の自動化
           href: /azure/azure-monitor/learn/nodejs-quick-start?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
         - name: REST API の作成

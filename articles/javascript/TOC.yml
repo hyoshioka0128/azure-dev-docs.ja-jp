@@ -1,6 +1,8 @@
 - name: JavaScript および Node.js 開発者向けの Azure
   href: index.yml
   items:
+    - name: ドキュメントの最新情報
+      href: whats-new-docs.md
     - name: JavaScript を使用した Azure の概要
       items:
         - name: 開発環境を設定する
@@ -50,8 +52,6 @@
               href: 'https://code.visualstudio.com/docs/azure/remote-debugging'
             - name: VS Code でローカルの Node.js アプリをデバッグする
               href: 'https://code.visualstudio.com/docs/nodejs/nodejs-debugging'
-        - name: ツールと拡張機能
-          href: node-azure-tools.md
         - name: データの保存
           items:
             - name: BLOB ストレージ
@@ -96,10 +96,6 @@
               href: /azure/cognitive-services/Computer-vision/Quickstarts/node-analyze?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
             - name: 音声認識
               href: /azure/cognitive-services/speech-service/get-started?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-        - name: ログとメトリック
-          items:
-            - name: Azure SDK でのログ記録
-              href: node-sdk-logging.md
     - name: チュートリアル
       items:
         - name: Storage BLOB にイメージをアップロードする
@@ -190,6 +186,8 @@
               href: tutorial-vscode-static-website-node-06.md
     - name: Learn
       href: learn-azure-javascript.md
+    - name: Azure ツール
+      href: node-azure-tools.md
     - name: ハウツー ガイド
       items:
         - name: VS Code を使用したエンド ツー エンドの Node.js
@@ -206,10 +204,10 @@
           href: how-to/develop-serverless-apps.md
         - name: 静的な (JAMstack) サイトを作成する
           href: how-to/create-static-site.md
-        - name: 監視の自動化
-          href: /azure/azure-monitor/learn/nodejs-quick-start?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
         - name: REST API の作成
           href: /azure/app-service/app-service-web-tutorial-rest-api?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
+        - name: ログとメトリック
+          href: how-to/node-sdk-logging.md
     - name: サンプル
       items:
         - name: Web アプリとサーバーレス

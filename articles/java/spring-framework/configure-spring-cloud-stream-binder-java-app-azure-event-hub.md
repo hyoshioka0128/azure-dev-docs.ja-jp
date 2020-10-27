@@ -28,11 +28,11 @@ ms.locfileid: "92337160"
 > [!IMPORTANT]
 > この記事の手順を完了するには、Spring Boot 2.2 以上のバージョンが必要です。
 
-## <a name="create-an-azure-event-hub-using-the-azure-portal"></a>Azure portal を使用して Azure イベント ハブを作成する
+## <a name="create-an-azure-event-hub-using-the-azure-portal"></a>Azure portal を使用して Azure Event Hub を作成する
 
 次の手順では、Azure イベント ハブを作成します。
 
-### <a name="create-an-azure-event-hub-namespace"></a>Azure イベント ハブの名前空間を作成する
+### <a name="create-an-azure-event-hub-namespace"></a>Azure Event Hub の名前空間を作成する
 
 1. Azure portal (<https://portal.azure.com/>) を参照し、サインインします。
 
@@ -57,7 +57,7 @@ ms.locfileid: "92337160"
 
 1. 上記のオプションを指定したら、 **[確認および作成]** を選択し、指定した内容を確認し、 **[作成]** を選択して名前空間を作成します。
 
-## <a name="create-an-azure-event-hub-in-your-namespace"></a>名前空間に Azure イベント ハブを作成する
+## <a name="create-an-azure-event-hub-in-your-namespace"></a>名前空間に Azure Event Hub を作成する
 
 名前空間をデプロイしたら、 **[リソースに移動]** を選択して **[Event Hubs 名前空間]** のページを開きます。ここで、名前空間にイベント ハブを作成できます。
 
@@ -233,7 +233,7 @@ ms.locfileid: "92337160"
    }
    ```
 
-## <a name="configure-your-spring-boot-app-to-use-your-azure-event-hub"></a>Azure イベント ハブを使用するように Spring Boot アプリを構成する
+## <a name="configure-your-spring-boot-app-to-use-your-azure-event-hub"></a>Azure Event Hub を使用するように Spring Boot アプリを構成する
 
 1. アプリの *resources* ディレクトリで *application.properties* を探します。次に例を示します。
 
@@ -261,13 +261,13 @@ ms.locfileid: "92337160"
    |                          フィールド                           |                                                                                   説明                                                                                    |
    |----------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
    |        `spring.cloud.azure.credential-file-path`         |                                                    このチュートリアルで作成した Azure 資格情報ファイルを指定します。                                                    |
-   |           `spring.cloud.azure.resource-group`            |                                                      Azure イベント ハブを含む Azure リソース グループを指定します。                                                      |
-   |               `spring.cloud.azure.region`                |                                           Azure イベント ハブの作成時に指定した地理的リージョンを指定します。                                            |
-   |         `spring.cloud.azure.eventhub.namespace`          |                                          Azure イベント ハブの名前空間の作成時に指定した一意の名前を指定します。                                           |
+   |           `spring.cloud.azure.resource-group`            |                                                      Azure Event Hub を含む Azure リソース グループを指定します。                                                      |
+   |               `spring.cloud.azure.region`                |                                           Azure Event Hub の作成時に指定した地理的リージョンを指定します。                                            |
+   |         `spring.cloud.azure.eventhub.namespace`          |                                          Azure Event Hub の名前空間の作成時に指定した一意の名前を指定します。                                           |
    | `spring.cloud.azure.eventhub.checkpoint-storage-account` |                                                    このチュートリアルで作成した Azure ストレージ アカウントを指定します。                                                    |
-   |     `spring.cloud.stream.bindings.input.destination`     |                            入力先の Azure イベント ハブを指定します。ここでは、このチュートリアルで作成したハブを指定します。                            |
-   |       `spring.cloud.stream.bindings.input.group `        | Azure イベント ハブのコンシューマー グループを指定します。Azure イベント ハブの作成時に作成された基本コンシューマー グループを使用するには、"$ Default" に設定します。 |
-   |    `spring.cloud.stream.bindings.output.destination`     |                               出力先の Azure イベント ハブを指定します。ここでは、入力先と同じものになります。                               |
+   |     `spring.cloud.stream.bindings.input.destination`     |                            入力先の Azure Event Hub を指定します。ここでは、このチュートリアルで作成したハブを指定します。                            |
+   |       `spring.cloud.stream.bindings.input.group `        | Azure Event Hub のコンシューマー グループを指定します。Azure Event Hub の作成時に作成された基本コンシューマー グループを使用するには、"$ Default" に設定します。 |
+   |    `spring.cloud.stream.bindings.output.destination`     |                               出力先の Azure Event Hub を指定します。ここでは、入力先と同じものになります。                               |
 
 3. *application.properties* ファイルを保存して閉じます。
 

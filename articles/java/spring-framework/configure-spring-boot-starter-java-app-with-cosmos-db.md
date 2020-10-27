@@ -5,18 +5,18 @@ services: cosmos-db
 documentationcenter: java
 author: KarlErickson
 ms.author: karler
-ms.date: 10/06/2020
+ms.date: 10/13/2020
 ms.service: cosmos-db
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: data-services
 ms.custom: devx-track-java
-ms.openlocfilehash: bc7754cf3f35bf8d6bc0d0a427dc1c532ff6e834
-ms.sourcegitcommit: 723441eda0eb4ff893123201a9e029b7becf5ecc
+ms.openlocfilehash: fdc0892298c18e3be5db1b97b1ad5fe77ac6a537
+ms.sourcegitcommit: 76f1a47c58810486856e0d128bd154cf7d355e65
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91846533"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92200626"
 ---
 # <a name="how-to-use-the-spring-boot-starter-with-the-azure-cosmos-db-sql-api"></a>Azure Cosmos DB SQL API で Spring Boot Starter を使用する方法
 
@@ -25,8 +25,6 @@ Azure Cosmos DB は、開発者が SQL、MongoDB、Graph、Table API などの�
 この記事では、Azure portal を使用して Azure Cosmos DB を作成する方法、 **[Spring Initializr]** を使用してカスタム Spring Boot アプリケーションを作成する方法、カスタム アプリケーションに [Azure の Spring Boot Cosmos DB Starter] を追加し、Spring Data と Cosmos DB SQL API を使用して Azure Cosmos DB にデータを格納またはデータを取得する方法を示します。
 
 ## <a name="prerequisites"></a>前提条件
-
-この記事の手順に従うには、次の前提条件が必要です。
 
 * Azure サブスクリプション。Azure サブスクリプションをまだお持ちでない場合は、[MSDN サブスクライバーの特典]を有効にするか、または[無料の Azure アカウント]にサインアップできます。
 * サポートされている Java Development Kit (JDK)。 Azure での開発時に使用可能な JDK の詳細については、<https://aka.ms/azure-jdks> を参照してください。
@@ -41,17 +39,17 @@ Azure Cosmos DB は、開発者が SQL、MongoDB、Graph、Table API などの�
 
 1. **[Azure Cosmos DB]** ページで、次の情報を入力します。
 
-    * データベースに使用する**サブスクリプション**を選択します。
-    * データベースに対して新しい**リソース グループ**を作成するか、既存のリソース グループを選択するかを指定します。
-    * データベースの URI として使用する一意の**アカウント名**を入力します。 例: *wingtiptoysdata*
-    * API の**コア (SQL)** を選択します。
-    * データベースの**場所**を指定します。
+    * データベースに使用する **サブスクリプション** を選択します。
+    * データベースに対して新しい **リソース グループ** を作成するか、既存のリソース グループを選択するかを指定します。
+    * データベースの URI として使用する一意の **アカウント名** を入力します。 例: *wingtiptoysdata*
+    * API の **コア (SQL)** を選択します。
+    * データベースの **場所** を指定します。
 
     これらのオプションを指定したら、 **[Review + create]\(確認と作成\)** をクリックして指定した内容を確認し、 **[作成]** をクリックします。
 
     ![[Review + Create]\(確認と作成\) を選択して続行します。][AZ03]
 
-1. データベースが作成されると、それが Azure **ダッシュボード**に表示され、 **[すべてのリソース]** ページと **[Azure Cosmos DB]** ページにも表示されます。 これらのいずれかの場所でデータベースをクリックすると、キャッシュのプロパティ ページを開くことができます。
+1. データベースが作成されると、それが Azure **ダッシュボード** に表示され、 **[すべてのリソース]** ページと **[Azure Cosmos DB]** ページにも表示されます。 これらのいずれかの場所でデータベースをクリックすると、キャッシュのプロパティ ページを開くことができます。
 
 1. データベースのプロパティ ページが表示されたら、 **[キー]** をクリックし、データベースの URI とアクセス キーをコピーします。これらの値は Spring Boot アプリケーションで使用します。
 
@@ -63,12 +61,21 @@ Azure Cosmos DB は、開発者が SQL、MongoDB、Graph、Table API などの�
 
 1. <https://start.spring.io/> を参照します。
 
-1. **Java** で **Maven プロジェクト**を生成することを指定し、**Spring Boot** のバージョンを指定して、アプリケーションの **[グループ]** と **[アーティファクト]** に名前を入力します。依存関係に **Azure サポート**を追加してから、 **[プロジェクトの生成]** のボタンをクリックします。
+1. 次のオプションを指定します。
 
-    ![基本的な Spring Initializr オプション][SI01]
+   * **Java** で **Maven** プロジェクトを生成します。
+   * **Spring Boot** のバージョンを指定します。
+   * アプリケーションの **グループ (Group)** と **成果物 (Artifact)** の名前を指定します。
+   * Java バージョンとして **8** を選択します。
+   * **Azure サポート** を依存関係に追加します。
 
-    > [!NOTE]
-    > Spring Initializr では、 **[グループ]** と **[アーティファクト]** の名前を使用してパッケージ名を作成します (例: *com.example.wingtiptoysdata*)。
+   >[!div class="mx-imgBorder"]
+   >![基本的な Spring Initializr オプション][SI01]
+
+   > [!NOTE]
+   > Spring Initializr では、 **[グループ]** と **[アーティファクト]** の名前を使用してパッケージ名を作成します (例: *com.example.wingtiptoysdata* )。
+
+1. 上記のオプションを指定したら、 **[生成]** を選択します。
 
 1. メッセージが表示されたら、ローカル コンピューター上のパスにプロジェクトをダウンロードして、ファイルを抽出します。
 
@@ -132,7 +139,7 @@ Azure Cosmos DB は、開発者が SQL、MongoDB、Graph、Table API などの�
 
 ## <a name="add-sample-code-to-implement-basic-database-functionality"></a>基本的なデータベース機能を実装するサンプル コードを追加する
 
-このセクションでは、ユーザー データを格納するための 2 つの Java クラスを作成します。その後、アプリケーションのメイン クラスを変更して "*ユーザー*" クラスのインスタンスを作成し、それをデータベースに保存します。
+このセクションでは、ユーザー データを格納するための 2 つの Java クラスを作成します。その後、アプリケーションのメイン クラスを変更して " *ユーザー* " クラスのインスタンスを作成し、それをデータベースに保存します。
 
 ### <a name="define-a-base-class-for-storing-user-data"></a>ユーザー データを格納するための基本クラスを定義する
 
@@ -325,7 +332,7 @@ Azure Cosmos DB は、開発者が SQL、MongoDB、Graph、Table API などの�
 
 ## <a name="build-and-test-your-app"></a>アプリのビルドとテスト
 
-1. コマンド プロンプトを開き、*pom.xml* ファイルが置かれているフォルダーに移動します。次に例を示します。
+1. コマンド プロンプトを開き、 *pom.xml* ファイルが置かれているフォルダーに移動します。次に例を示します。
 
     `cd C:\SpringBoot\wingtiptoysdata`
 

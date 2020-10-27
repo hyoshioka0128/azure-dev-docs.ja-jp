@@ -8,16 +8,16 @@ ms.service: storage
 ms.topic: article
 ms.workload: storage
 ms.custom: devx-track-java
-ms.openlocfilehash: a944739722a657636200d31bd7bf04242c8ea040
-ms.sourcegitcommit: a4131409651d6d4f56733fe8311ca77b2004bc59
+ms.openlocfilehash: 18b02ab5ffbb5fc84878685d4301f284d431a216
+ms.sourcegitcommit: ced8331ba36b28e6e2eacd23a64b39ddc7ffe6ab
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88830406"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92337150"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-storage"></a>Azure Storage 用の Spring Boot Starter の使用方法
 
-この記事では、**Spring Initializr** を使用してカスタム アプリケーションを作成し、そのアプリケーションに Azure Storage スターターを追加した後、アプリケーションを使用して Azure ストレージ アカウントに BLOB をアップロードする手順について説明します。
+この記事では、 **Spring Initializr** を使用してカスタム アプリケーションを作成し、そのアプリケーションに Azure Storage スターターを追加した後、アプリケーションを使用して Azure ストレージ アカウントに BLOB をアップロードする手順について説明します。
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -47,8 +47,8 @@ ms.locfileid: "88830406"
 
    * **[サブスクリプション]** を選択します。
    * **リソース グループ** を選択するか、新しいリソース グループを作成します。
-   * 一意の**ストレージ アカウント名**を入力します。この名前は、ストレージ アカウントの URI の一部になります。 たとえば、 **[名前]** に「**wingtiptoysstorage**」と入力した場合、URI は *wingtiptoysstorage.core.windows.net* になります。
-   * ストレージ アカウントの**場所**を指定します。
+   * 一意の **ストレージ アカウント名** を入力します。この名前は、ストレージ アカウントの URI の一部になります。 たとえば、 **[名前]** に「 **wingtiptoysstorage** 」と入力した場合、URI は *wingtiptoysstorage.core.windows.net* になります。
+   * ストレージ アカウントの **場所** を指定します。
 1. 上記のオプションを指定したら、 **[Review + create]\(確認と作成\)** をクリックします。 
 1. 指定した内容を確認し、 **[作成]** をクリックしてストレージ アカウントを作成します。
 1. デプロイが完了したら、 **[リソースに移動]** をクリックします。
@@ -72,14 +72,14 @@ ms.locfileid: "88830406"
    * **Maven** プロジェクトを作成します。
    * **[Java]** を指定します。
    * **Spring Boot** のバージョンとして、2.0 以上を指定します。
-   * アプリケーションの**グループ (Group)** と**成果物 (Artifact)** の名前を指定します。
+   * アプリケーションの **グループ (Group)** と **成果物 (Artifact)** の名前を指定します。
    * **Web** 依存関係を追加します。
 
       ![基本的な Spring Initializr オプション][SI01]
 
    > [!NOTE]
    >
-   > Spring Initializr では、**グループ (Group)** と**成果物 (Artifact)** の名前を使用してパッケージ名を作成します (例: *com.wingtiptoys.storage*)。
+   > Spring Initializr では、 **グループ (Group)** と **成果物 (Artifact)** の名前を使用してパッケージ名を作成します (例: *com.wingtiptoys.storage* )。
    >
 
 1. 上記のオプションを指定したら、 **[生成]** をクリックします。
@@ -107,6 +107,22 @@ ms.locfileid: "88830406"
       <groupId>com.microsoft.azure</groupId>
       <artifactId>spring-starter-azure-storage</artifactId>
       <version>1.2.7</version>
+   </dependency>
+   ```
+
+1. JDK バージョン 9 以上を使用している場合は、次の依存関係を追加します。
+
+   ```xml
+   <dependency>
+       <groupId>javax.xml.bind</groupId>
+       <artifactId>jaxb-api</artifactId>
+       <version>2.3.1</version>
+   </dependency>
+   <dependency>
+       <groupId>org.glassfish.jaxb</groupId>
+       <artifactId>jaxb-runtime</artifactId>
+       <version>2.3.1</version>
+       <scope>runtime</scope>
    </dependency>
    ```
 
@@ -172,7 +188,7 @@ ms.locfileid: "88830406"
    az ad sp create-for-rbac --sdk-auth > my.azureauth
    ```
 
-   このコマンドにより、*resources* ディレクトリに、次の例のような内容の *my.azureauth* ファイルが作成されます。
+   このコマンドにより、 *resources* ディレクトリに、次の例のような内容の *my.azureauth* ファイルが作成されます。
 
    ```json
    {
@@ -256,7 +272,7 @@ ms.locfileid: "88830406"
 
 ### <a name="add-a-blob-controller-class"></a>BLOB コントローラー クラスを追加する
 
-1. アプリのパッケージ ディレクトリに、*BlobController.java* という名前の新しい Java ファイルを作成します。次に例を示します。
+1. アプリのパッケージ ディレクトリに、 *BlobController.java* という名前の新しい Java ファイルを作成します。次に例を示します。
 
    `C:\SpringBoot\storage\src\main\java\com\wingtiptoys\storage\BlobController.java`
 
@@ -264,7 +280,7 @@ ms.locfileid: "88830406"
 
    `/users/example/home/storage/src/main/java/com/wingtiptoys/storage/BlobController.java`
 
-1. テキスト エディターで BLOB コントローラー Java ファイルを開き、ファイルに次の行を追加します。  *wingtiptoys* を実際のリソース グループに変更し、*storage* を実際の成果物名に変更します。
+1. テキスト エディターで BLOB コントローラー Java ファイルを開き、ファイルに次の行を追加します。  *wingtiptoys* を実際のリソース グループに変更し、 *storage* を実際の成果物名に変更します。
 
    ```java
    package com.wingtiptoys.storage;
@@ -320,7 +336,7 @@ ms.locfileid: "88830406"
    mvn spring-boot:run
    ```
 
-1. アプリケーションが実行されたら、*curl* を使用してアプリケーションをテストできます。次に例を示します。
+1. アプリケーションが実行されたら、 *curl* を使用してアプリケーションをテストできます。次に例を示します。
 
    a. POST 要求を送信して、ファイルの内容を更新します。
 

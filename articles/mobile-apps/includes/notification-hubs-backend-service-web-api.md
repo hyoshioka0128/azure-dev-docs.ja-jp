@@ -4,12 +4,12 @@ ms.author: miparker
 ms.date: 07/27/2020
 ms.service: mobile-services
 ms.topic: include
-ms.openlocfilehash: 06fc0e0986a41b2d37aa38d5557b0efbae08994e
-ms.sourcegitcommit: e97cb81a245ce7dcabeac3260abc3db7c30edd79
+ms.openlocfilehash: 3103fd6c75dbaeed3b5a0dd23d7cd68b6394ee76
+ms.sourcegitcommit: ced8331ba36b28e6e2eacd23a64b39ddc7ffe6ab
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91493161"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92337187"
 ---
 ### <a name="create-a-web-project"></a>Web プロジェクトの作成
 
@@ -19,12 +19,12 @@ ms.locfileid: "91493161"
   
 1. **[Configure your new ASP.NET Core Web API] (新しい ASP.NET Core Web API の構成)** ダイアログで、 **.NET Core 3.1** の **[ターゲット フレームワーク]** を選択します。
 
-1. **[プロジェクト名]** に「*PushDemoApi*」と入力して、 **[作成]** を選択します。
+1. **[プロジェクト名]** に「 *PushDemoApi* 」と入力して、 **[作成]** を選択します。
 
 1. デバッグを開始して ( **[Command]**  +  **[Enter]** )、テンプレート アプリをテストします。
 
     > [!NOTE]
-    > テンプレート アプリは、*launchUrl* として **WeatherForecastController** を使用するように構成されています。 これは **[プロパティ]**  >  **[launchSettings.json]** で設定されます。  
+    > テンプレート アプリは、 *launchUrl* として **WeatherForecastController** を使用するように構成されています。 これは **[プロパティ]**  >  **[launchSettings.json]** で設定されます。  
     >
     > **[Invalid development certificate found] (無効な開発証明書が見つかりました)** というメッセージが表示された場合は、以下を実行します。
     >
@@ -32,11 +32,11 @@ ms.locfileid: "91493161"
     >
     > 1. **[Install and trust the new certificate] (新しい証明書をインストールして信頼する)** の確認を求められたら、 **[はい]** をクリックします。次に、キーチェーンのパスワードを入力します。
 
-1. **Controllers** フォルダーを展開して、**WeatherForecastController.cs** を削除します。
+1. **Controllers** フォルダーを展開して、 **WeatherForecastController.cs** を削除します。
 
 1. **WeatherForecast.cs** を削除します。
 
-1. [シークレット マネージャー ツール](/aspnet/core/security/app-secrets?view=aspnetcore-3.1&tabs=linux#secret-manager)を使用して、ローカル構成値を設定します。 ソリューションからシークレットを分離することによって、ソース管理で終了することがないようにできます。 **ターミナル**を開き、プロジェクト ファイルのディレクトリに移動して、次のコマンドを実行します。
+1. [シークレット マネージャー ツール](/aspnet/core/security/app-secrets?view=aspnetcore-3.1&tabs=linux#secret-manager)を使用して、ローカル構成値を設定します。 ソリューションからシークレットを分離することによって、ソース管理で終了することがないようにできます。 **ターミナル** を開き、プロジェクト ファイルのディレクトリに移動して、次のコマンドを実行します。
 
     ```bash
     dotnet user-secrets init
@@ -46,11 +46,11 @@ ms.locfileid: "91493161"
 
     プレースホルダーの値は、実際の通知ハブの名前と接続文字列の値に置き換えてください。 それらは「[通知ハブの作成](#create-a-notification-hub)」セクションでメモしました。 それ以外の場合は、[Azure](https://portal.azure.com) で確認できます。
 
-    **NotificationsHub:Name**:  
+    **NotificationsHub:Name** :  
     **[概要]** の上部にある **[要点]** サマリーの *[名前]* を参照してください。  
 
-    **NotificationHub:ConnectionString**:  
-    **アクセス ポリシー**の *DefaultFullSharedAccessSignature* を参照してください。
+    **NotificationHub:ConnectionString** :  
+    **アクセス ポリシー** の *DefaultFullSharedAccessSignature* を参照してください。
 
     > [!NOTE]
     > 運用環境のシナリオでは、[Azure KeyVault](https://azure.microsoft.com/services/key-vault) などのオプションを参照して、接続文字列を安全に格納することができます。 わかりやすくするために、シークレットは [Azure App Service](https://azure.microsoft.com/services/app-service/) のアプリケーション設定に追加されます。
@@ -59,7 +59,7 @@ ms.locfileid: "91493161"
 
 API キーはトークンほど安全ではありませんが、このチュートリアルの目的には十分です。 API キーは、[ASP.NET ミドルウェア](/aspnet/core/fundamentals/middleware/?view=aspnetcore-3.1)を介して簡単に構成できます。
 
-1. **API キー**をローカル構成値に追加します。
+1. **API キー** をローカル構成値に追加します。
 
     ```bash
     dotnet user-secrets set "Authentication:ApiKey" <value>
@@ -68,11 +68,11 @@ API キーはトークンほど安全ではありませんが、このチュー�
     > [!NOTE]
     > プレースホルダーの値を実際の値に置き換え、メモする必要があります。
 
-1. **PushDemoApi** プロジェクトで **[Control]**  + **クリック**を実行し、 **[追加]** メニューから **[新しいフォルダー]** を選択します。次に、 **[フォルダー名]** として「*Authentication*」を使用して **[追加]** をクリックします。
+1. **PushDemoApi** プロジェクトで **[Control]**  + **クリック** を実行し、 **[追加]** メニューから **[新しいフォルダー]** を選択します。次に、 **[フォルダー名]** として「 *Authentication* 」を使用して **[追加]** をクリックします。
 
-1. **Authentication** フォルダーで **[Control]**  + **クリック**を実行し、 **[追加]** メニューから **[新しいファイル...]** を選択します。
+1. **Authentication** フォルダーで **[Control]**  + **クリック** を実行し、 **[追加]** メニューから **[新しいファイル...]** を選択します。
 
-1. **[全般]**  >  **[空のクラス]** を選択し、 **[名前]** に「*ApiKeyAuthOptions.cs*」と入力して **[新規]** をクリックし、次の実装を追加します。
+1. **[全般]**  >  **[空のクラス]** を選択し、 **[名前]** に「 *ApiKeyAuthOptions.cs* 」と入力して **[新規]** をクリックし、次の実装を追加します。
 
     ```csharp
     using Microsoft.AspNetCore.Authentication;
@@ -176,11 +176,13 @@ API キーはトークンほど安全ではありませんが、このチュー�
     > [!NOTE]
     > この拡張メソッドを利用すると **Startup.cs** のミドルウェア構成コードが簡素化され、より読みやすくなります。
 
-1. **Startup.cs** で **ConfigureServices** メソッドを更新して、**services.AddControllers** メソッドの呼び出しの下で API キー認証を構成します。
+1. **Startup.cs** で **ConfigureServices** メソッドを更新して、 **services.AddControllers** メソッドの呼び出しの下で API キー認証を構成します。
 
     ```csharp
     using PushDemoApi.Authentication;
-    
+    using PushDemoApi.Models;
+    using PushDemoApi.Services;
+
     public void ConfigureServices(IServiceCollection services)
     {
         services.AddControllers();
@@ -193,7 +195,7 @@ API キーはトークンほど安全ではありませんが、このチュー�
     }
     ```
 
-1. さらに **Startup.cs** で **Configure** メソッドを更新して、アプリの **IApplicationBuilder** で **UseAuthentication** および **UseAuthorization** 拡張メソッドを呼び出します。 これらのメソッドが **UseRouting** の後、**app.UseEndpoints** の前に呼び出されていることを確認します。
+1. さらに **Startup.cs** で **Configure** メソッドを更新して、アプリの **IApplicationBuilder** で **UseAuthentication** および **UseAuthorization** 拡張メソッドを呼び出します。 これらのメソッドが **UseRouting** の後、 **app.UseEndpoints** の前に呼び出されていることを確認します。
 
     ```csharp
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -219,7 +221,7 @@ API キーはトークンほど安全ではありませんが、このチュー�
     ```
 
     > [!NOTE]
-    > **UseAuthentication** を呼び出すと、(**ConfigureServices** から) 以前に登録した認証方式を使用するミドルウェアが登録されます。 これは、認証されているユーザーに依存するミドルウェアの前に呼び出す必要があります。
+    > **UseAuthentication** を呼び出すと、( **ConfigureServices** から) 以前に登録した認証方式を使用するミドルウェアが登録されます。 これは、認証されているユーザーに依存するミドルウェアの前に呼び出す必要があります。
 
 ### <a name="add-dependencies-and-configure-services"></a>依存関係を追加してサービスを構成する
 
@@ -227,17 +229,17 @@ ASP.NET Core では、[依存関係の挿入 (DI)](/aspnet/core/fundamentals/dep
 
 通知ハブおよび [Notification Hubs SDK のバックエンド操作](https://www.nuget.org/packages/Microsoft.Azure.NotificationHubs/)への使用は、サービス内にカプセル化されます。 サービスが登録され、適切な抽象化によって使用できるようになります。
 
-1. **Dependencies** フォルダーで **[Control]**  + **クリック**を実行し、 **[NuGet パッケージの管理...]** を選択します。
+1. **Dependencies** フォルダーで **[Control]**  + **クリック** を実行し、 **[NuGet パッケージの管理...]** を選択します。
 
 1. **Microsoft.Azure.NotificationHubs** を検索し、オンになっていることを確認します。
 
 1. **[パッケージの追加]** をクリックし、ライセンス条項への同意を求めるメッセージが表示されたら、 **[同意する]** をクリックします。
 
-1. **PushDemoApi** プロジェクトで **[Control]**  + **クリック**を実行し、 **[追加]** メニューから **[新しいフォルダー]** を選択します。次に、 **[フォルダー名]** として「*Models*」を使用して **[追加]** をクリックします。
+1. **PushDemoApi** プロジェクトで **[Control]**  + **クリック** を実行し、 **[追加]** メニューから **[新しいフォルダー]** を選択します。次に、 **[フォルダー名]** として「 *Models* 」を使用して **[追加]** をクリックします。
 
-1. **Control** +  キーを押しながら **Models** フォルダーを**クリック**し、 **[追加]** メニューから **[新しいファイル...]** を選択します。
+1. **Control** +  キーを押しながら **Models** フォルダーを **クリック** し、 **[追加]** メニューから **[新しいファイル...]** を選択します。
 
-1. **[全般]**  >  **[空のクラス]** を選択し、 **[名前]** に「*PushTemplates.cs*」と入力して **[新規]** をクリックし、次の実装を追加します。
+1. **[全般]**  >  **[空のクラス]** を選択し、 **[名前]** に「 *PushTemplates.cs* 」と入力して **[新規]** をクリックし、次の実装を追加します。
 
     ```csharp
     namespace PushDemoApi.Models
@@ -513,7 +515,7 @@ ASP.NET Core では、[依存関係の挿入 (DI)](/aspnet/core/fundamentals/dep
     > [!NOTE]
     > **SendTemplateNotificationAsync** に指定するタグ式は、20 個のタグに制限されています。 ほとんどの演算子では 6 に制限されていますが、この場合の式には、OR (||) のみが含まれています。 要求に 20 個を超えるタグがある場合は、複数の要求に分割する必要があります。 詳細については、「[ルーティングとタグ式](/previous-versions/azure/azure-services/dn530749(v=azure.100)?f=255&MSPPError=-2147217396)」のドキュメントを参照してください。
 
-1. **Startup.cs** で **ConfigureServices** メソッドを更新して、**NotificationHubsService** を **INotificationService** のシングルトン実装として追加します。
+1. **Startup.cs** で **ConfigureServices** メソッドを更新して、 **NotificationHubsService** を **INotificationService** のシングルトン実装として追加します。
 
     ```csharp
     public void ConfigureServices(IServiceCollection services)
@@ -530,9 +532,12 @@ ASP.NET Core では、[依存関係の挿入 (DI)](/aspnet/core/fundamentals/dep
 
 ### <a name="create-the-notifications-api"></a>通知 API の作成
 
-1. **Controllers** フォルダーで **[Control]**  + **クリック**を実行し、 **[追加]** メニューから **[新しいファイル...]** を選択します。
+1. **Controllers** フォルダーで **[Control]**  + **クリック** を実行し、 **[追加]** メニューから **[新しいファイル...]** を選択します。
 
-1. **[ASP.NET Core]**  >  **[Web API コントローラー クラス]** を選択し、 **[名前]** に「*NotificationsController*」と入力して **[新規]** をクリックします。
+1. **[ASP.NET Core]**  >  **[Web API コントローラー クラス]** を選択し、 **[名前]** に「 *NotificationsController* 」と入力して **[新規]** をクリックします。
+
+    > [!NOTE]
+    > [Visual Studio 2019](https://visualstudio.microsoft.com/vs/) を使用している場合は、 **読み取り/書き込みアクションがある API コントローラー** テンプレートを選択します。
 
 1. 次の名前空間をファイルの先頭に追加します。
 
@@ -547,7 +552,7 @@ ASP.NET Core では、[依存関係の挿入 (DI)](/aspnet/core/fundamentals/dep
     using PushDemoApi.Services;
     ```
 
-1. **ControllerBase** から派生し、**ApiController** 属性で修飾されるように、テンプレート コントローラーを更新します。
+1. **ControllerBase** から派生し、 **ApiController** 属性で修飾されるように、テンプレート コントローラーを更新します。
 
     ```cs
     [ApiController]
@@ -559,15 +564,15 @@ ASP.NET Core では、[依存関係の挿入 (DI)](/aspnet/core/fundamentals/dep
     ```
 
     > [!NOTE]
-    > **Controller** 基底クラスではビューのサポートが提供されますが、この場合は必要ありません。そのため **ControllerBase** を代わりに使用することができます。
+    > **Controller** 基底クラスではビューのサポートが提供されますが、この場合は必要ありません。そのため **ControllerBase** を代わりに使用することができます。 [Visual Studio 2019](https://visualstudio.microsoft.com/vs/) を使用している場合は、この手順を省略できます。
 
-1. 「[API キーを使用してクライアントを認証する](#authenticate-clients-using-an-api-key-optional)」セクションを完了した場合は、**NotificationsController** を **Authorize** 属性でも装飾する必要があります。
+1. 「 [API キーを使用してクライアントを認証する](#authenticate-clients-using-an-api-key-optional)」セクションを完了した場合は、 **NotificationsController** を **Authorize** 属性でも装飾する必要があります。
 
     ```cs
     [Authorize]
     ```
 
-1. コンストラクターを更新して、**INotificationService** の登録済みインスタンスを引数として受け取り、それを readonly メンバーに割り当てます。
+1. コンストラクターを更新して、 **INotificationService** の登録済みインスタンスを引数として受け取り、それを readonly メンバーに割り当てます。
 
     ```cs
     readonly INotificationService _notificationService;
@@ -578,23 +583,23 @@ ASP.NET Core では、[依存関係の挿入 (DI)](/aspnet/core/fundamentals/dep
     }
     ```
 
-1. **launchSettings.json** (**Properties** フォルダー内) で、**RegistrationsController** **Route** 属性に指定されている URL と一致するように **launchUrl** を `weatherforecast` から *api/notifications* に変更します。
+1. **launchSettings.json** ( **Properties** フォルダー内) で、 **RegistrationsController** **Route** 属性に指定されている URL と一致するように **launchUrl** を `weatherforecast` から *api/notifications* に変更します。
 
-1. デバッグを開始して ( **[Command]**  +  **[Enter]** )、アプリが新しい **NotificationsController** で動作し、**401 Unauthorized** 状態を返すことを確認します。
+1. デバッグを開始して ( **[Command]**  +  **[Enter]** )、アプリが新しい **NotificationsController** で動作し、 **401 Unauthorized** 状態を返すことを確認します。
 
     > [!NOTE]
     > Visual Studio では、ブラウザーでアプリが自動的に起動しない場合があります。 この時点から API をテストするには [Postman](https://www.postman.com/downloads) を使用します。
 
-1. 新しい **[[Postman]](https://www.postman.com/downloads)** タブで、要求を **[GET]** に設定し、以下のアドレスを入力します。
+1. 新しい **[[Postman]](https://www.postman.com/downloads)** タブで、要求を **[GET]** に設定します。 次のアドレスを入力して、プレースホルダー **&lt;applicationUrl>** を、 **[プロパティー]**  > **launchSettings.json** にある https **applicationUrl** に置き換えます。
 
     ```bash
-    https://localhost:5001/api/notifications
+    <applicationUrl>/api/notifications
     ```
 
     > [!NOTE]
-    > localhost アドレスは、**Properties** > **launchSettings.json** の **applicationUrl** の値と一致している必要があります。 既定値は `https://localhost:5001;http://localhost:5000` ですが、これは 404 応答を受信するかどうかを確認するためのものです。
+    > 既定のプロファイルでは、 **applicationUrl** は "https://localhost:5001" になります。 **IIS** (Windows 上の [Visual Studio 2019](https://visualstudio.microsoft.com/vs/) での既定) を使用している場合は、代わりに **iisSettings** 項目に指定されている **applicationUrl** を使用してください。 アドレスが正しくない場合は、404 応答が返されます。
 
-1. 「[API キーを使用してクライアントを認証する](#authenticate-clients-using-an-api-key-optional)」セクションを完了した場合は、**apikey** 値を含めるように要求ヘッダーを構成してください。
+1. 「 [API キーを使用してクライアントを認証する](#authenticate-clients-using-an-api-key-optional)」セクションを完了した場合は、 **apikey** 値を含めるように要求ヘッダーを構成してください。
 
    | Key                            | 値                          |
    | ------------------------------ | ------------------------------ |
@@ -605,7 +610,7 @@ ASP.NET Core では、[依存関係の挿入 (DI)](/aspnet/core/fundamentals/dep
     > [!NOTE]
     > **JSON** コンテンツを含む **200 OK** 状態が表示されます。
     >
-    > **SSL 証明書の検証**の警告が表示された場合は、 **[設定]** で SSL 証明書の検証を要求する **[Postman](https://www.postman.com/downloads)** 設定をオフに切り替えることができます。
+    > **SSL 証明書の検証** の警告が表示された場合は、 **[設定]** で SSL 証明書の検証を要求する **[Postman](https://www.postman.com/downloads)** 設定をオフに切り替えることができます。
 
 1. **NotificationsController.cs** 内のテンプレート クラスのメソッドを次のコードに置き換えます。
 
@@ -674,12 +679,12 @@ ASP.NET Core では、[依存関係の挿入 (DI)](/aspnet/core/fundamentals/dep
 
 1. [Azure portal](https://portal.azure.com) にサインインします。
 
-1. **[リソースの作成]** をクリックし、**API アプリ**を検索して選択し、 **[作成]** をクリックします。
+1. **[リソースの作成]** をクリックし、 **API アプリ** を検索して選択し、 **[作成]** をクリックします。
 
 1. 次のフィールドを更新してから、 **[作成]** をクリックします。
 
     **[アプリ名]:**  
-    **API アプリ**のグローバルに一意の名前を入力します。
+    **API アプリ** のグローバルに一意の名前を入力します。
 
     **サブスクリプション:**  
     通知ハブを作成したのと同じターゲット **[サブスクリプション]** を選択します。
@@ -688,17 +693,17 @@ ASP.NET Core では、[依存関係の挿入 (DI)](/aspnet/core/fundamentals/dep
     通知ハブを作成したのと同じ **[リソース グループ]** を選択します。
 
     **[App Service プラン/場所]:**  
-    新しい **App Service プラン**を作成します。  
+    新しい **App Service プラン** を作成します。  
 
     > [!NOTE]
-    > 既定のオプションから **SSL** サポートを含むプランに変更します。 そうでない場合は、**http** 要求がブロックされないように、モバイル アプリを操作するときに適切な手順を実行する必要があります。
+    > 既定のオプションから **SSL** サポートを含むプランに変更します。 そうでない場合は、 **http** 要求がブロックされないように、モバイル アプリを操作するときに適切な手順を実行する必要があります。
 
     **Application Insights:**  
     提案されたオプションをそのまま使用するか (その名前を使用して新しいリソースが作成されます)、または既存のリソースを選択します。
 
-1. **API アプリ**がプロビジョニングされたら、そのリソースに移動します。
+1. **API アプリ** がプロビジョニングされたら、そのリソースに移動します。
 
-1. **[概要]** の上部にある **[要点]** サマリーの **[URL]** プロパティをメモしておきます。 この URL は、後で使用する*バックエンド エンドポイント*です。
+1. **[概要]** の上部にある **[要点]** サマリーの **[URL]** プロパティをメモしておきます。 この URL は、後で使用する *バックエンド エンドポイント* です。
 
     > [!NOTE]
     > URL は、前に指定した API アプリ名を `https://<app_name>.azurewebsites.net` という形式で使用します。
@@ -714,7 +719,7 @@ ASP.NET Core では、[依存関係の挿入 (DI)](/aspnet/core/fundamentals/dep
    | `NotificationHub:ConnectionString` | <hub_connection_string_value>  |
 
    > [!NOTE]
-   > これらは、以前にユーザー設定で定義したものと同じ設定です。 それをコピーすることができます。 **Authentication:ApiKey** 設定は、「[API キーを使用してクライアントを認証する](#authenticate-clients-using-an-api-key-optional)」セクションを完了した場合にのみ必要です。 運用環境のシナリオでは、[Azure KeyVault](https://azure.microsoft.com/services/key-vault) などのオプションを参照できます。 この場合、わかりやすくするためにアプリケーション設定として追加されています。
+   > これらは、以前にユーザー設定で定義したものと同じ設定です。 それをコピーすることができます。 **Authentication:ApiKey** 設定は、「 [API キーを使用してクライアントを認証する](#authenticate-clients-using-an-api-key-optional)」セクションを完了した場合にのみ必要です。 運用環境のシナリオでは、[Azure KeyVault](https://azure.microsoft.com/services/key-vault) などのオプションを参照できます。 この場合、わかりやすくするためにアプリケーション設定として追加されています。
 
 1. すべてのアプリケーション設定が追加されたら、 **[保存]** 、 **[続行]** の順にクリックします。
 
@@ -722,19 +727,22 @@ ASP.NET Core では、[依存関係の挿入 (DI)](/aspnet/core/fundamentals/dep
 
 次に、このアプリを API アプリにデプロイして、すべてのデバイスからアクセスできるようにします。  
 
+>[!NOTE]
+> 次の手順は、[Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac/) に固有のものです。 Windows で [Visual Studio 2019](https://visualstudio.microsoft.com/vs/) を使用している場合は、発行フローが異なります。 「[Windows 上の Azure App Service へ発行する](https://docs.microsoft.com/visualstudio/deployment/quickstart-deploy-to-azure?view=vs-2019#publish-to-azure-app-service-on-windows)」を参照してください。
+
 1. 構成を **[デバッグ]** から **[リリース]** に変更します (まだ行っていない場合)。
 
-1. **PushDemoApi** プロジェクトで **[Control]**  + **クリック**を実行し、 **[発行]** メニューから **[Azure への発行...]** を選択します。
+1. **PushDemoApi** プロジェクトで **[Control]**  + **クリック** を実行し、 **[発行]** メニューから **[Azure への発行...]** を選択します。
 
 1. メッセージが表示されたら、認証フローに従います。 前の「[API アプリの作成](#create-the-api-app)」セクションで使用したアカウントを使用します。
 
-1. 発行先としてリストから以前に作成した **Azure App Service API アプリ**を選択し、 **[発行]** をクリックします。
+1. 発行先としてリストから以前に作成した **Azure App Service API アプリ** を選択し、 **[発行]** をクリックします。
 
-ウィザードの完了後に、Azure にアプリを発行してからアプリを開きます。 まだ行っていない場合は、**URL** をメモしておきます。 この URL は、後で使用する*バックエンド エンドポイント*です。
+ウィザードの完了後に、Azure にアプリを発行してからアプリを開きます。 まだ行っていない場合は、 **URL** をメモしておきます。 この URL は、後で使用する *バックエンド エンドポイント* です。
 
 ### <a name="validating-the-published-api"></a>発行された API の検証
 
-1. **[[Postman]](https://www.postman.com/downloads)** で新しいタブを開いて要求を **[POST]** に設定し、以下のアドレスを入力します。 プレースホルダーを、前の「[バックエンド サービスの発行](#publish-the-backend-service)」セクションでメモしたベース アドレスに置き換えます。
+1. **[[Postman]](https://www.postman.com/downloads)** で新しいタブを開いて要求を **[PUT]** に設定し、以下のアドレスを入力します。 プレースホルダーを、前の「[バックエンド サービスの発行](#publish-the-backend-service)」セクションでメモしたベース アドレスに置き換えます。
 
     ```csharp
     https://<app_name>.azurewebsites.net/api/notifications/installations
@@ -743,7 +751,7 @@ ASP.NET Core では、[依存関係の挿入 (DI)](/aspnet/core/fundamentals/dep
     > [!NOTE]
     > ベース アドレスは、``https://<app_name>.azurewebsites.net/`` の形式にする必要があります。
 
-1. 「[API キーを使用してクライアントを認証する](#authenticate-clients-using-an-api-key-optional)」セクションを完了した場合は、**apikey** 値を含めるように要求ヘッダーを構成してください。
+1. 「 [API キーを使用してクライアントを認証する](#authenticate-clients-using-an-api-key-optional)」セクションを完了した場合は、 **apikey** 値を含めるように要求ヘッダーを構成してください。
 
    | Key                            | 値                          |
    | ------------------------------ | ------------------------------ |
@@ -758,9 +766,9 @@ ASP.NET Core では、[依存関係の挿入 (DI)](/aspnet/core/fundamentals/dep
 1. **[送信]** をクリックします。
 
     > [!NOTE]
-    > サービスから **400 Bad Request** 状態が返されます。
+    > サービスから **422 UnprocessableEntity** 状態が返されます。
 
-1. もう一度手順 1 ～ 4 を実行しますが、今度は要求エンドポイントを指定して、同じ **400 Bad Request** 応答を受信することを確認します。
+1. もう一度手順 1 から 4 を実行しますが、今度は要求エンドポイントを指定して、 **400 Bad Request** 応答が返されることを確認します。
 
     ```bash
     https://<app_name>.azurewebsites.net/api/notifications/requests

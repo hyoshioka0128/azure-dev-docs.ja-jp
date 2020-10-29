@@ -4,13 +4,13 @@ description: GitHub からの継続的インテグレーション (CI) と Azure
 keywords: jenkins, azure, devops, aks, azure kubernetes service, github
 ms.topic: article
 ms.date: 01/09/2019
-ms.custom: devx-track-jenkins
-ms.openlocfilehash: c73e5c567f237c6f859b52230742ae74b87326f5
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.custom: devx-track-jenkins, devx-track-azurecli
+ms.openlocfilehash: 5d72a9bd05683f50375204db9cc95b012db6dfa3
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88241004"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92688642"
 ---
 # <a name="tutorial-deploy-from-github-to-azure-kubernetes-service-using-jenkins"></a>チュートリアル:Jenkins を使用して GitHub から Azure Kubernetes Service にデプロイする
 
@@ -35,7 +35,7 @@ ms.locfileid: "88241004"
 
 - [ACR レジストリで認証を行う](/azure/aks/cluster-container-registry-integration) ために構成されている [Azure Container Registry (ACR) レジストリ](/azure/container-registry/container-registry-get-started-azure-cli)、ACR ログイン サーバー名、および AKS クラスター。
 
-- インストールおよび構成済みの Azure CLI バージョン 2.0.46 以降。 バージョンを確認するには、 `az --version` を実行します。 インストールまたはアップグレードする必要がある場合は、「 [Azure CLI のインストール](/cli/azure/install-azure-cli)」を参照してください。
+- インストールおよび構成済みの Azure CLI バージョン 2.0.46 以降。 バージョンを確認するには、`az --version` を実行します。 インストールまたはアップグレードする必要がある場合は、[Azure CLI のインストール](/cli/azure/install-azure-cli)に関するページを参照してください。
 
 - 開発システムに[インストールされた Docker](https://docs.docker.com/install/)
 
@@ -81,7 +81,7 @@ redis                        latest     a1b99da73d05        7 days ago          
 tiangolo/uwsgi-nginx-flask   flask      788ca94b2313        9 months ago        694MB
 ```
 
-*azure-vote-front* コンテナー イメージを ACR にプッシュする前に、[az acr list](/cli/azure/acr#az-acr-list) コマンドを使用して ACR ログイン サーバーを取得します。 次の例では、*myResourceGroup* という名前のリソース グループでレジストリの ACR ログイン サーバー アドレスを取得します。
+*azure-vote-front* コンテナー イメージを ACR にプッシュする前に、 [az acr list](/cli/azure/acr#az-acr-list) コマンドを使用して ACR ログイン サーバーを取得します。 次の例では、 *myResourceGroup* という名前のリソース グループでレジストリの ACR ログイン サーバー アドレスを取得します。
 
 ```azurecli
 az acr list --resource-group myResourceGroup --query "[].{acrLoginServer:loginServer}" --output table
@@ -93,7 +93,7 @@ az acr list --resource-group myResourceGroup --query "[].{acrLoginServer:loginSe
 docker tag azure-vote-front <acrLoginServer>/azure-vote-front:v1
 ```
 
-最後に、*azure-vote-front* イメージを ACR レジストリにプッシュします。 ここでも、`<acrLoginServer>` を `myacrregistry.azurecr.io` などの独自の ACR レジストリのログイン サーバー名と置き換えます。
+最後に、 *azure-vote-front* イメージを ACR レジストリにプッシュします。 ここでも、`<acrLoginServer>` を `myacrregistry.azurecr.io` などの独自の ACR レジストリのログイン サーバー名と置き換えます。
 
 ```console
 docker push <acrLoginServer>/azure-vote-front:v1
@@ -115,7 +115,7 @@ containers:
 kubectl apply -f azure-vote-all-in-one-redis.yaml
 ```
 
-アプリケーションをインターネットに公開するための Kubernetes ロード バランサー サービスが作成されます。 このプロセスには数分かかることがあります。 ロード バランサーのデプロイの進行状況を監視するには、[kubectl get service](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#get) コマンドを使用し、`--watch` 引数を指定します。 *EXTERNAL-IP* アドレスが "*保留中*" から "*IP アドレス*" に変わったら、`Control + C` を使用して kubectl ウォッチ プロセスを停止します。
+アプリケーションをインターネットに公開するための Kubernetes ロード バランサー サービスが作成されます。 このプロセスには数分かかることがあります。 ロード バランサーのデプロイの進行状況を監視するには、[kubectl get service](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#get) コマンドを使用し、`--watch` 引数を指定します。 *EXTERNAL-IP* アドレスが " *保留中* " から " *IP アドレス* " に変わったら、`Control + C` を使用して kubectl ウォッチ プロセスを停止します。
 
 ```console
 $ kubectl get service azure-vote-front --watch
@@ -173,7 +173,7 @@ ACR ログイン サーバー名を保持するために Jenkins の環境変数
 
 ## <a name="create-a-jenkins-credential-for-acr"></a>ACR の Jenkins 資格情報を作成する
 
-Jenkins が更新されたコンテナー イメージをビルドして ACR にプッシュできるようにするには、ACR の資格情報を指定する必要があります。 この認証では、Azure Active Directory サービス プリンシパルを使用できます。 前提条件として、ACR レジストリへの *Reader* アクセス許可で AKS クラスターのサービス プリンシパルを構成しました。 これらのアクセス許可では、AKS クラスターが ACR レジストリからイメージを*プル*できます。 CI/CD プロセス中に、Jenkins がアプリケーションの更新プログラムに基づいて新しいコンテナーのイメージをビルドし、その後これらのイメージを ACR レジストリに*プッシュ*する必要があります。 ロールとアクセス許可を分離するために、ここで、ACR レジストリへの *Contributor* アクセス許可で Jenkins 用のサービス プリンシパルを構成します。
+Jenkins が更新されたコンテナー イメージをビルドして ACR にプッシュできるようにするには、ACR の資格情報を指定する必要があります。 この認証では、Azure Active Directory サービス プリンシパルを使用できます。 前提条件として、ACR レジストリへの *Reader* アクセス許可で AKS クラスターのサービス プリンシパルを構成しました。 これらのアクセス許可では、AKS クラスターが ACR レジストリからイメージを *プル* できます。 CI/CD プロセス中に、Jenkins がアプリケーションの更新プログラムに基づいて新しいコンテナーのイメージをビルドし、その後これらのイメージを ACR レジストリに *プッシュ* する必要があります。 ロールとアクセス許可を分離するために、ここで、ACR レジストリへの *Contributor* アクセス許可で Jenkins 用のサービス プリンシパルを構成します。
 
 ### <a name="create-a-service-principal-for-jenkins-to-use-acr"></a>ACR を使用する Jenkins 用のサービス プリンシパルを作成する
 
@@ -214,7 +214,7 @@ Jenkins ポータルの左側に戻り、 **[Credentials]\(資格情報\)**  >  
 資格情報の種類が **[Username with password]\(ユーザー名とパスワード\)** であることを確認し、次の項目を入力します。
 
 - **[Username]\(ユーザー名\)** - ACR レジストリでの認証に作成されるサービス プリンシパルの *appId* です。
-- **パスワード** - ACR レジストリでの認証に作成されるサービス プリンシパルの*パスワード*です。
+- **パスワード** - ACR レジストリでの認証に作成されるサービス プリンシパルの *パスワード* です。
 - **ID** - *acr-credentials* などの資格情報の識別子
 
 完了すると、資格情報の形式は、次の例のようになります。
@@ -227,9 +227,9 @@ Jenkins ポータルの左側に戻り、 **[Credentials]\(資格情報\)**  >  
 
 Jenkins ポータルのホーム ページから左側の **[新しい項目]** を選択します。
 
-1. ジョブ名として *azure-vote* を入力します。 **Freestyle プロジェクト**を選択し､ **[OK]** をクリックします
-1. **[General]\(一般\)** セクションで **[GitHub project]\(GitHub プロジェクト\)** を選択し、フォークしたリポジトリの URL (例: *https:\//github.com/\<your-github-account\>/azure-voting-app-redis*) を入力します
-1. **[Source code management]\(ソース コードの管理\)** セクションで **[Git]** を選択し、フォークしたリポジトリの *.git* の URL (例: *https:\//github.com/\<your-github-account\>/azure-voting-app-redis.git*) を入力します
+1. ジョブ名として *azure-vote* を入力します。 **Freestyle プロジェクト** を選択し､ **[OK]** をクリックします
+1. **[General]\(一般\)** セクションで **[GitHub project]\(GitHub プロジェクト\)** を選択し、フォークしたリポジトリの URL (例: *https:\//github.com/\<your-github-account\>/azure-voting-app-redis* ) を入力します
+1. **[Source code management]\(ソース コードの管理\)** セクションで **[Git]** を選択し、フォークしたリポジトリの *.git* の URL (例: *https:\//github.com/\<your-github-account\>/azure-voting-app-redis.git* ) を入力します
 
 1. **[Build Triggers]** セクションから **GitHub hook trigger for GITscm polling** を選択します
 1. **[Build Environment]\(ビルド環境\)** で、 **[Use secret texts or files]\(シークレット テキストまたはファイルを使用する\)** を選びます
@@ -238,7 +238,7 @@ Jenkins ポータルのホーム ページから左側の **[新しい項目]** 
 
      ![Jenkins のバインド](media/deploy-from-github-to-aks/bindings.png)
 
-1. **実行シェル**タイプの**ビルド ステップ**を追加し、次のテキストを使います。 このスクリプトは、新しいコンテナー イメージをビルドし、ACR レジストリにプッシュします。
+1. **実行シェル** タイプの **ビルド ステップ** を追加し、次のテキストを使います。 このスクリプトは、新しいコンテナー イメージをビルドし、ACR レジストリにプッシュします。
 
     ```bash
     # Build new image and push to ACR.
@@ -248,7 +248,7 @@ Jenkins ポータルのホーム ページから左側の **[新しい項目]** 
     docker push $WEB_IMAGE_NAME
     ```
 
-1. **実行シェル**タイプの**ビルド ステップ**をもう 1 つ追加し、次のテキストを使います。 このスクリプトは、AKS のアプリケーションの展開を ACR からの新しいコンテナー イメージで更新します。
+1. **実行シェル** タイプの **ビルド ステップ** をもう 1 つ追加し、次のテキストを使います。 このスクリプトは、AKS のアプリケーションの展開を ACR からの新しいコンテナー イメージで更新します。
 
     ```bash
     # Update kubernetes deployment with new image.
@@ -270,7 +270,7 @@ Docker イメージ レイヤーが Jenkins サーバーにプルダウンされ
 
 このビルド プロセスの間に、GitHub リポジトリが Jenkins ビルド サーバーに複製されます。 新しいコンテナー イメージがビルドされて、ACR レジストリにプッシュされます。 最後に、AKS クラスターで実行されている Azure 投票アプリケーションが新しいイメージを使うように更新されます。 アプリケーション コードが変更されていないため、Web ブラウザーでサンプル アプリを表示する場合、アプリケーションは変更されません。
 
-ビルド ジョブが完了したら、ビルド履歴の下の**ビルド #1**をクリックします。 **[コンソール出力]** を選択し、ビルド プロセスからの出力を表示します。 最後の行でビルドの成功が示されている必要があります。
+ビルド ジョブが完了したら、ビルド履歴の下の **ビルド #1** をクリックします。 **[コンソール出力]** を選択し、ビルド プロセスからの出力を表示します。 最後の行でビルドの成功が示されている必要があります。
 
 ## <a name="create-a-github-webhook"></a>GitHub Webhook の作成
 
@@ -293,7 +293,7 @@ Docker イメージ レイヤーが Jenkins サーバーにプルダウンされ
 1. この新しいコンテナー イメージが Azure Container Registry にプッシュされます。
 1. Azure Kubernetes Service のレジストリにデプロイされたアプリケーションは、Azure Container Registry レジストリからの最新コンテナー イメージで更新されます。
 
-開発マシンで、複製されたアプリケーションをコード エディターで開きます。 */azure-vote/azure-vote* ディレクトリで、**config_file.cfg** という名前のファイルを開きます。 次の例に示すように、このファイルの投票値を cats と dogs 以外のものに更新します。
+開発マシンで、複製されたアプリケーションをコード エディターで開きます。 */azure-vote/azure-vote* ディレクトリで、 **config_file.cfg** という名前のファイルを開きます。 次の例に示すように、このファイルの投票値を cats と dogs 以外のものに更新します。
 
 ```
 # UI Configurations

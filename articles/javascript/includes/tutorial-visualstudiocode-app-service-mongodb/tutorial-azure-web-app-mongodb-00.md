@@ -4,12 +4,12 @@ description: インクルード ファイル tutorial-azure-web-app-mongodb-00.m
 ms.date: 10/13/2020
 ms.topic: include
 ms.custom: devx-track-javascript
-ms.openlocfilehash: c0d904935992b54b63f45f76a022947375414c55
-ms.sourcegitcommit: 8a2a7df568c69fff2080ffab248409040efda1ac
+ms.openlocfilehash: 9903ca1ae761cb2e16a7f72fcc4c0942f7fa5991
+ms.sourcegitcommit: c3a1c9051b89870f6bfdb3176463564963b97ba4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92183915"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92437320"
 ---
 このチュートリアルでは、MongoDB ネイティブ API を使用して、MongoDB データベースで Node.js アプリを使用します。 Node.js アプリケーションを (Linux 上の) Azure App Service にデプロイし、クラウドベースのアプリが動作することを確認します。 
 
@@ -43,7 +43,7 @@ GitHub で入手できる[サンプル Node.js アプリ](https://github.com/Azu
 
 ## <a name="limited-time-to-work-on-the-tutorial"></a>このチュートリアルに取り組む時間が限られている場合
 
-このチュートリアルでは、Cosmos DB 用の Azure リソースを作成します。これは、Azure が MongoDB データベースをホストする方法です。 このリソース作成プロセスは、最長で 20 分かかる場合があります。 時間が限られている場合は、[そのプロセスを今すぐに開始](../../tutorial-visualstudiocode-app-service-mongodb/tutorial-azure-web-app-mongodb-feedback.yml?tutorial-step=5)できます。その後、必要なときにリソースを使用できるようになります。 
+このチュートリアルでは、Cosmos DB 用の Azure リソースを作成します。これは、Azure が MongoDB データベースをホストする方法です。 このリソース作成プロセスは、最長で 20 分かかる場合があります。 時間が限られている場合は、[そのプロセスを今すぐに開始](../../tutorial/web-app-mongodb.yml?tutorial-step=5)できます。その後、必要なときにリソースを使用できるようになります。 
 
 ## <a name="want-to-know-more"></a>詳細について 
 

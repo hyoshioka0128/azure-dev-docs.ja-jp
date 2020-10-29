@@ -3,13 +3,13 @@ title: Azure SDK ライブラリを使用して Web アプリをプロビジョ�
 description: Python 用 Azure SDK ライブラリ内の管理ライブラリを使用して Web アプリをプロビジョニングし、GitHub リポジトリからアプリ コードをデプロイします。
 ms.date: 10/05/2020
 ms.topic: conceptual
-ms.custom: devx-track-python
-ms.openlocfilehash: 3312b55927e7a72d4ee1e0fee3658c1b2f5a513d
-ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
+ms.custom: devx-track-python, devx-track-azurecli
+ms.openlocfilehash: ac678bef07fb660ca3ad094d56455e3b85db9f19
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "92010305"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92688988"
 ---
 # <a name="example-use-the-azure-libraries-to-provision-and-deploy-a-web-app"></a>例:Azure ライブラリを使用して Web アプリをプロビジョニングしてデプロイする
 
@@ -65,7 +65,7 @@ REPO_URL=<url_of_your_fork>
 
 ## <a name="4-write-code-to-provision-and-deploy-a-web-app"></a>4:Web アプリのプロビジョニングとデプロイを行うコードを作成する
 
-次のコードを使用して、*provision_deploy_webapp.py* という名前の Python ファイルを作成します。 詳細はコメントで説明しています。
+次のコードを使用して、 *provision_deploy_webapp.py* という名前の Python ファイルを作成します。 詳細はコメントで説明しています。
 
 ```python
 import random, os

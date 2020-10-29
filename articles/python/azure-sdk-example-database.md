@@ -3,13 +3,13 @@ title: Azure SDK ライブラリを使用して Azure MySQL データベース�
 description: Python 用 Azure SDK ライブラリの管理ライブラリを使用して、Azure MySQL、PostgresSQL、または MariaDB データベースをプロビジョニングします。
 ms.date: 10/05/2020
 ms.topic: conceptual
-ms.custom: devx-track-python
-ms.openlocfilehash: bf205e133f093be654c88e5245eb0a4524f71502
-ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
+ms.custom: devx-track-python, devx-track-azurecli
+ms.openlocfilehash: 873b854ac2702ac62484a8ed37a5367084eb4b00
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "92010298"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92689015"
 ---
 # <a name="example-use-the-azure-libraries-to-provision-a-database"></a>例:Azure ライブラリを使用してデータベースをプロビジョニングする
 
@@ -46,11 +46,11 @@ pip install -r requirements.txt
 ```
 
 > [!NOTE]
-> Windows では、mysql ライブラリを 32 ビットの Python ライブラリにインストールしようとすると、*mysql.h* ファイルに関するエラーが生成されます。 この場合は、64 ビット バージョンの Python をインストールして、もう一度やり直してください。
+> Windows では、mysql ライブラリを 32 ビットの Python ライブラリにインストールしようとすると、 *mysql.h* ファイルに関するエラーが生成されます。 この場合は、64 ビット バージョンの Python をインストールして、もう一度やり直してください。
 
 ## <a name="3-write-code-to-provision-the-database"></a>3:データベースをプロビジョニングするコードを記述する
 
-次のコードを使用して、*provision_db.py* という名前の Python ファイルを作成します。 詳細はコメントで説明しています。
+次のコードを使用して、 *provision_db.py* という名前の Python ファイルを作成します。 詳細はコメントで説明しています。
 
 ```python
 import random, os

@@ -4,13 +4,13 @@ description: Azure Key Vault を使って VM セキュリティを構成する�
 keywords: ansible、azure、devops、キー コンテナー、セキュリティ、資格情報、シークレット、キー、証明書、azure 用 ansible モジュール、リソース グループ、azure_rm_resourcegroup、
 ms.topic: tutorial
 ms.date: 04/20/2020
-ms.custom: devx-track-ansible
-ms.openlocfilehash: 4891b277f8c1f9fcd7fe4c1d54ed13b39f19d2e4
-ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
+ms.custom: devx-track-ansible, devx-track-azurecli
+ms.openlocfilehash: 472a155b172de06cff4df99db7a4861f1cb60f52
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90682017"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92688943"
 ---
 # <a name="tutorial-use-azure-key-vault-with-a-linux-virtual-machine-in-ansible"></a>チュートリアル:Ansible で Linux 仮想マシンと共に Azure Key Vault を使用する
 
@@ -40,15 +40,15 @@ ms.locfileid: "90682017"
 
 Azure CLI を使用して、Azure 用の Ansible モジュールを使用するときに必要な Azure サブスクリプション情報を取得します。 
 
-1. `az account show` コマンドを使用して、Azure サブスクリプション ID と Azure サブスクリプション テナント ID を取得します。 `<Subscription>` プレースホルダーには、Azure サブスクリプション名または Azure サブスクリプション ID を指定します。 このコマンドを実行すると、既定の Azure サブスクリプションに関連付けられている多くのキー値が表示されます。 複数のサブスクリプションがある場合は、[az account set](/cli/azure/account#az-account-set) コマンドを使用して、現在のサブスクリプションを設定する必要がある場合があります。 コマンドの出力から、**ID** と **tenantID** の両方の値をメモします。
+1. `az account show` コマンドを使用して、Azure サブスクリプション ID と Azure サブスクリプション テナント ID を取得します。 `<Subscription>` プレースホルダーには、Azure サブスクリプション名または Azure サブスクリプション ID を指定します。 このコマンドを実行すると、既定の Azure サブスクリプションに関連付けられている多くのキー値が表示されます。 複数のサブスクリプションがある場合は、[az account set](/cli/azure/account#az-account-set) コマンドを使用して、現在のサブスクリプションを設定する必要がある場合があります。 コマンドの出力から、 **ID** と **tenantID** の両方の値をメモします。
 
     ```azurecli
     az account show --subscription "<Subscription>" --query tenantId
     ```
 
-1. Azure サブスクリプションのサービス プリンシパルがない場合、 [Azure CLI で Azure サービス プリンシパルを作成します](/cli/azure/create-an-azure-service-principal-azure-cli)。 コマンドの出力から、**appId** の値をメモします。
+1. Azure サブスクリプションのサービス プリンシパルがない場合、 [Azure CLI で Azure サービス プリンシパルを作成します](/cli/azure/create-an-azure-service-principal-azure-cli)。 コマンドの出力から、 **appId** の値をメモします。
 
-1. `az ad sp show` コマンドを使用してサービス プリンシパルのオブジェクト ID を取得します。 `<ApplicationID>` プレースホルダーに、サービス プリンシパルの appId を指定します。 `--query` パラメーターでは、*stdout* に出力する値を指定します。 この場合、サービス プリンシパルのオブジェクト ID です。
+1. `az ad sp show` コマンドを使用してサービス プリンシパルのオブジェクト ID を取得します。 `<ApplicationID>` プレースホルダーに、サービス プリンシパルの appId を指定します。 `--query` パラメーターでは、 *stdout* に出力する値を指定します。 この場合、サービス プリンシパルのオブジェクト ID です。
 
     ```azurecli
     az ad sp show --id <ApplicationID> --query objectId
@@ -109,7 +109,7 @@ Azure CLI を使用して、Azure 用の Ansible モジュールを使用する�
 **注:**
 
 - このデモでは、キー コンテナーはリソース グループ内の唯一のリソースとして作成します。 キー コンテナーは、それを使用するリソースから分離するのが一般的です。 このパターンによって、他のリソースを削除するときに、キー コンテナーが誤って削除されないようにすることができます。
-- キー コンテナー名は Azure 内で一意である必要があるため、このデモでは、ランダムな "*ポストフィックス*" 値を作成します。 この値は、(次のセクションで作成される) キー コンテナー リソース グループとキー コンテナーの名前に付加されます。 タスク `Prepare random postfix` のコードによって、`rpfx` 変数に割り当てられるランダムなポストフィックス値が生成されます。
+- キー コンテナー名は Azure 内で一意である必要があるため、このデモでは、ランダムな " *ポストフィックス* " 値を作成します。 この値は、(次のセクションで作成される) キー コンテナー リソース グループとキー コンテナーの名前に付加されます。 タスク `Prepare random postfix` のコードによって、`rpfx` 変数に割り当てられるランダムなポストフィックス値が生成されます。
 - タスク `Set facts` では、`lookup` コマンドを使用して、環境変数として保存されている Azure サブスクリプション ID を取得します。
 - 新しいリソース グループを作成するために、[azure_rm_resourcegroup モジュール](https://docs.ansible.com/ansible/latest/modules/azure_rm_resourcegroup_module.html)を使用します。
 - プレイブックの最後の `debug` タスクによって、新しいリソース グループの名前が表示されます。
@@ -241,7 +241,7 @@ tasks:
 
 **注:**
 
-- キー コンテナーのシークレットを取得するために、**azure_rm_keyvaultsecret_info モジュール**を使用します。 このモジュールは、Azure モジュールの Ansible コレクションを使用する場合にのみ使用できます。 
+- キー コンテナーのシークレットを取得するために、 **azure_rm_keyvaultsecret_info モジュール** を使用します。 このモジュールは、Azure モジュールの Ansible コレクションを使用する場合にのみ使用できます。 
 - このスニペットの実行中にエラーが発生した場合は、[「前提条件」セクション](#prerequisites)のすべての説明に従っていることを確認してください。
 - わかりやすくするために、このデモには `secret_name` と `secret_value` が含まれています。 ただし、プレイブックは、プロジェクトのソース コードと同様に、コードとしてのインフラストラクチャ (IaC) ファイルです。 そのため、このような値は、運用環境で使用する場合には、プレーンテキスト ファイルに保存しないでください。
 

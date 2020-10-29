@@ -4,13 +4,13 @@ description: Azure App Service Jenkins プラグインを使用して、Jenkins 
 keywords: Jenkins, Azure, 開発, App Service
 ms.topic: tutorial
 ms.date: 08/10/2018
-ms.custom: devx-track-jenkins
-ms.openlocfilehash: 1be8e126a5fee2dd83682ece559998a45645ac36
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.custom: devx-track-jenkins, devx-track-azurecli
+ms.openlocfilehash: 2179002df5f387e2656cf116b369d035c7c68e18
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831688"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92688630"
 ---
 # <a name="tutorial-deploy-to-azure-app-service-using-the-jenkins-plugin"></a>チュートリアル:Jenkins プラグインを使用した Azure App Service へのデプロイ
 
@@ -58,7 +58,7 @@ Web App for Containers にデプロイする場合は、ビルドに使用する
 Azure にデプロイするには、Azure サービス プリンシパルが必要です。 
 
 
-1. Azure サービス プリンシパルを作成するには、[Azure CLI](/cli/azure/create-an-azure-service-principal-azure-cli?toc=%2fazure%2fazure-resource-manager%2ftoc.json)  または [Azure portal](/azure/azure-resource-manager/resource-group-create-service-principal-portal) を使用します。
+1. Azure サービス プリンシパルを作成するには、[Azure CLI](/cli/azure/create-an-azure-service-principal-azure-cli?toc=%2fazure%2fazure-resource-manager%2ftoc.json) または [Azure Portal](/azure/azure-resource-manager/resource-group-create-service-principal-portal) を使用します。
 
 1. Jenkins ダッシュボードで、 **[Credentials]\(資格情報\)**  >  **[System]\(システム\)** を選択します。 次に、 **[Global credentials(unrestricted)]\(グローバル資格情報 (制限なし)\)** を選択します。
 
@@ -75,7 +75,7 @@ Azure にデプロイするには、Azure サービス プリンシパルが必�
 
 Jenkins でジョブを設定する前に、Java アプリを実行するための Azure App Service プランと Web アプリが必要です。
 
-1. `az appservice plan create` [Azure CLI コマンド](/cli/azure/appservice/plan#az-appservice-plan-create)を使用して、**Free** 価格レベルで Azure App Service プランを作成します。 App Service プランでは、アプリをホストするために使用される物理リソースを定義します。 App Service プランに割り当てられたすべてのアプリケーションがこれらのリソースを共有します。 共有リソースにより、複数のアプリをホストするときにコストを節約できます。
+1. `az appservice plan create` [Azure CLI コマンド](/cli/azure/appservice/plan#az-appservice-plan-create)を使用して、 **Free** 価格レベルで Azure App Service プランを作成します。 App Service プランでは、アプリをホストするために使用される物理リソースを定義します。 App Service プランに割り当てられたすべてのアプリケーションがこれらのリソースを共有します。 共有リソースにより、複数のアプリをホストするときにコストを節約できます。
 
 1. Web アプリを作成します。 [Azure Portal](/azure/app-service/configure-common) または次の `az` Azure CLI コマンドをご利用いただけます。
 
@@ -96,7 +96,7 @@ Jenkins でジョブを設定する前に、Java アプリを実行するため�
 
 ### <a name="set-up-the-jenkins-job"></a>Jenkins ジョブを設定する
 
-1. Jenkins ダッシュボードで新しい**フリースタイル** プロジェクトを作成します。
+1. Jenkins ダッシュボードで新しい **フリースタイル** プロジェクトを作成します。
 
 1. [Azure 用の単純な Java Web アプリ](https://github.com/azure-devops/javawebappsample)のローカル フォークを使用するように **[Source Code Management]\(ソース コード管理\)** フィールドを構成します。 **リポジトリの URL** 値を指定します  (例: http:\//github.com/&lt;your_ID>/javawebappsample)。
 
@@ -115,7 +115,7 @@ Jenkins でジョブを設定する前に、Java アプリを実行するため�
 
 1. デプロイするファイルを入力します。 たとえば、Java を使用している場合は WAR パッケージを指定します。 オプションの **[Source Directory]\(ソース ディレクトリ\)** および **[Target Directory]\(ターゲット ディレクトリ\)** パラメーターを使用して、ファイル アップロードに使用するソース フォルダーとターゲット フォルダーを指定します。 Azure の Java Web アプリは、Tomcat サーバーで実行されます。 そのため、Java の場合、WAR パッケージを webapps フォルダーにアップロードします。 この例では、 **[Source Directory]\( ソース ディレクトリ\)** の値を **[target]\(ターゲット\)** に設定し、 **[Target Directory]\(ターゲット ディレクトリ\)** の値を **[webapps]** に設定します。
 
-1. 運用環境以外のスロットにデプロイする場合は、**スロット**名を設定することもできます。
+1. 運用環境以外のスロットにデプロイする場合は、 **スロット** 名を設定することもできます。
 
 1. プロジェクトを保存してビルドします。 ビルドが完了すると、Web アプリが Azure にデプロイされます。
 
@@ -123,7 +123,7 @@ Jenkins でジョブを設定する前に、Java アプリを実行するため�
 
 Azure App Service Jenkins プラグインは、パイプラインに対応しています。 GitHub リポジトリの次のサンプルを参照できます。
 
-1. GitHub インターフェイスで、**Jenkinsfile_ftp_plugin** ファイルを開きます。 ファイルを編集するには、鉛筆アイコンをクリックします。 11 行目と 12 行目にある、Web アプリの **resourceGroup** と **webAppName** の定義を更新します。
+1. GitHub インターフェイスで、 **Jenkinsfile_ftp_plugin** ファイルを開きます。 ファイルを編集するには、鉛筆アイコンをクリックします。 11 行目と 12 行目にある、Web アプリの **resourceGroup** と **webAppName** の定義を更新します。
 
     ```java
     def resourceGroup = '<myResourceGroup>'
@@ -165,7 +165,7 @@ Jenkins でジョブを設定するには、Linux 上の Web アプリが必要�
 
 ### <a name="set-up-the-jenkins-job-for-docker"></a>Docker の Jenkins ジョブを設定する
 
-1. Jenkins ダッシュボードで新しい**フリースタイル** プロジェクトを作成します。
+1. Jenkins ダッシュボードで新しい **フリースタイル** プロジェクトを作成します。
 
 1. [Azure 用の単純な Java Web アプリ](https://github.com/azure-devops/javawebappsample)のローカル フォークを使用するように **[Source Code Management]\(ソース コード管理\)** フィールドを構成します。 **リポジトリの URL** 値を指定します  (例: http:\//github.com/&lt;your_ID>/javawebappsample)。
 
@@ -196,13 +196,13 @@ Jenkins でジョブを設定するには、Linux 上の Web アプリが必要�
 
 1. 組み込みの Docker イメージ設定を使用すると、デプロイは失敗します。 Azure Portal の **[Docker コンテナー]** 設定のカスタム イメージを使用するように Docker 構成を変更します。 組み込みのイメージの場合は、ファイル アップロードの方法を使用してデプロイします。
 
-1. ファイル アップロードの方法と同様に、**運用環境**以外の別の**スロット**名を選択できます。
+1. ファイル アップロードの方法と同様に、 **運用環境** 以外の別の **スロット** 名を選択できます。
 
 1. プロジェクトを保存してビルドします。 コンテナー イメージがレジストリにプッシュされ、Web アプリがデプロイされます。
 
 ### <a name="deploy-web-app-for-containers-by-using-jenkins-pipeline"></a>Jenkins パイプラインを使用して Web App for Containers をデプロイする
 
-1. GitHub インターフェイスで、**Jenkinsfile_container_plugin** ファイルを開きます。 ファイルを編集するには、鉛筆アイコンをクリックします。 11 行目と 12 行目にある、Web アプリの **resourceGroup** と **webAppName** の定義を更新します。
+1. GitHub インターフェイスで、 **Jenkinsfile_container_plugin** ファイルを開きます。 ファイルを編集するには、鉛筆アイコンをクリックします。 11 行目と 12 行目にある、Web アプリの **resourceGroup** と **webAppName** の定義を更新します。
 
     ```java
     def resourceGroup = '<myResourceGroup>'

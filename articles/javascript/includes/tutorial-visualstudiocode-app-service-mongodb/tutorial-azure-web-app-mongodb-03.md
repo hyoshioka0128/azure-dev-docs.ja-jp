@@ -4,12 +4,12 @@ description: インクルード ファイル tutorial-azure-web-app-mongodb-03.m
 ms.date: 10/13/2020
 ms.topic: include
 ms.custom: devx-track-javascript
-ms.openlocfilehash: adea87271b1332f77ab254530410787d1a9baa3c
-ms.sourcegitcommit: 8a2a7df568c69fff2080ffab248409040efda1ac
+ms.openlocfilehash: 9d6fb0beaa19503541196c72ecbdae52a642648b
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92183932"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92755351"
 ---
 チュートリアルのこのセクションでは、サンプル アプリケーションを Azure にデプロイします。 その後、リモートで実行されているアプリをブラウザーで表示できます。 
 
@@ -55,6 +55,6 @@ Visual Studio Code 拡張機能を使用して App Service リソースを作成
 初期の Web サービスはポート 8080 で実行されるように構成されており、公開されています。 このような種類の Web サイト設定は構成可能です。
 * [アプリ設定](/azure/app-service/configure-common)
 * [認証](/azure/app-service/configure-authentication-provider-microsoft)
-* [ネットワークごとにアクセスを制限する](/azure/azure/app-service/app-service-ip-restrictions)
+* [ネットワークごとにアクセスを制限する](/azure/app-service/app-service-ip-restrictions)
 
 この App Service 拡張機能を使用して Web サイトを Azure クラウドにデプロイする場合は、[そのデプロイの構成](https://github.com/microsoft/vscode-azureappservice/wiki/Configuring-Zip-Deployment#additional-zip-deploy-configuration-settings)方法について理解を深めてください

@@ -3,13 +3,13 @@ title: Azure SDK for Python で Azure Storage を使用する
 description: Azure SDK for Python ライブラリを使用して、Azure Storage アカウントの事前にプロビジョニングされた BLOB コンテナーにアクセスし、そのコンテナーにファイルをアップロードします。
 ms.date: 08/05/2020
 ms.topic: conceptual
-ms.custom: devx-track-python
-ms.openlocfilehash: 13ca0d10ac24780e5f7f053f85616781553253f5
-ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
+ms.custom: devx-track-python, devx-track-azurecli
+ms.openlocfilehash: f1ada9de2cdf52fac1b4219f1f9b8253d58ca881
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "92010272"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92689230"
 ---
 # <a name="example-access-azure-storage-using-the-azure-libraries-for-python"></a>例:Python 用 Azure ライブラリを使用して Azure Storage にアクセスする
 
@@ -63,7 +63,7 @@ Hello there, Azure Storage. I'm a friendly file ready to be stored in a blob.
 
 [2 つ目の方法 (以下のセクション 4b)](#4b-use-blob-storage-with-a-connection-string) は、接続文字列を使用してストレージ アカウントに直接アクセスします。 こちらの方法の方が一見シンプルに見えますが、大きな欠点が 2 つあります。
 
-- 接続文字列は本質的に、接続元のエージェントをストレージ "*アカウント*" に対して認証するものであり、そのアカウント内の個々のリソースに対して認証を行うものではありません。 そのため、接続文字列では、許可する承認の範囲が必要以上に広くなってしまう可能性があります。
+- 接続文字列は本質的に、接続元のエージェントをストレージ " *アカウント* " に対して認証するものであり、そのアカウント内の個々のリソースに対して認証を行うものではありません。 そのため、接続文字列では、許可する承認の範囲が必要以上に広くなってしまう可能性があります。
 
 - 接続文字列はアクセス キーをプレーンテキストで保持するため、適切に構築されていなかったり、セキュリティが適切に確保されていなかったりした場合に脆弱性のリスクが生じます。 そのような接続文字列が公開されれば、ストレージ アカウント内の広範なリソースへのアクセスに使用される可能性があります。
 
@@ -146,7 +146,7 @@ Hello there, Azure Storage. I'm a friendly file ready to be stored in a blob.
 
     ---
 
-    `--scope` 引数は、対象となるロールの割り当て先を指定するものです。 この例では、"ストレージ BLOB データ共同作成者" ロールを、"blob-container-01" という名前の "*特定*" のコンテナーに付与しています。
+    `--scope` 引数は、対象となるロールの割り当て先を指定するものです。 この例では、"ストレージ BLOB データ共同作成者" ロールを、"blob-container-01" という名前の " *特定* " のコンテナーに付与しています。
 
     `pythonazurestorage12345` は、ストレージ アカウントの正確な名前に置き換えてください。 必要であれば、リソース グループと BLOB コンテナーの名前を調整することもできます。 間違った名前を使用すると、"Can not perform requested operation on nested resource. Parent resource 'pythonazurestorage12345' not found." (ネストされたリソースに対して要求された操作を実行できません。親リソース 'pythonazurestorage12345' が見つかりません) というエラーが表示されます。
 
@@ -160,7 +160,7 @@ Hello there, Azure Storage. I'm a friendly file ready to be stored in a blob.
 
 1. `AZURE_STORAGE_CONNECTION_STRING` という名前の環境変数を作成します。この値は、ストレージ アカウントの完全な接続文字列です。 (この環境変数は、さまざまな Azure CLI のコメントでも使用されます。)
 
-1. 次のコードを使用して、*use_blob_conn_string.py* という名前の Python ファイルを作成します。 ステップは、コメントで説明しています。
+1. 次のコードを使用して、 *use_blob_conn_string.py* という名前の Python ファイルを作成します。 ステップは、コメントで説明しています。
 
     ```python
     import os
@@ -190,7 +190,7 @@ Hello there, Azure Storage. I'm a friendly file ready to be stored in a blob.
 
 ## <a name="5-verify-blob-creation"></a>5.BLOB の作成を確認する
 
-どちらかの方法のコードを実行した後、[Azure portal](https://portal.azure.com) にアクセスし、BLOB コンテナーに移動して、*sample-source.txt* ファイルと同じ内容の新しい BLOB が *sample-blob.txt* という名前で存在することを確認します。
+どちらかの方法のコードを実行した後、 [Azure portal](https://portal.azure.com) にアクセスし、BLOB コンテナーに移動して、 *sample-source.txt* ファイルと同じ内容の新しい BLOB が *sample-blob.txt* という名前で存在することを確認します。
 
 ![BLOB コンテナーの Azure portal ページに表示されるアップロード済みのファイル](media/azure-sdk-example-storage/portal-blob-container-file.png)
 

@@ -6,18 +6,19 @@ ms.author: ushan
 ms.topic: conceptual
 ms.service: azure
 ms.date: 05/05/2020
-ms.openlocfilehash: f3245aa3d75510352d89d26c1c61825dbac1e2c8
-ms.sourcegitcommit: e97cb81a245ce7dcabeac3260abc3db7c30edd79
+ms.custom: github-actions-azure
+ms.openlocfilehash: dd0e13f5756a337e1b1f820b9d810924af966fe8
+ms.sourcegitcommit: 3d3ee59f73c966da7df65bada49e059d02e74b91
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91493090"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92898743"
 ---
 # <a name="deploy-to-azure-using-github-actions"></a>GitHub Actions を使用して Azure にデプロイする
 
 開発者は、[GitHub Actions](https://help.github.com/articles/about-github-actions) を使用することで、自動化されたソフトウェア開発ライフサイクル ワークフローを構築できます。  
 
-Azure 用 GitHub Actions を使用すると、ビルド、テスト、パッケージ化、リリース、および Azure への**デプロイ**を行うために設定可能なワークフローをリポジトリ内に作成できます。 [Azure との他のすべての統合の詳細については、こちらを参照してください](https://aka.ms/GitHubonAzure)。
+Azure 用 GitHub Actions を使用すると、ビルド、テスト、パッケージ化、リリース、および Azure への **デプロイ** を行うために設定可能なワークフローをリポジトリ内に作成できます。 [Azure との他のすべての統合の詳細については、こちらを参照してください](https://aka.ms/GitHubonAzure)。
 
 [無料の Azure アカウント](https://azure.com/free/open-source)を使用して今すぐ始めましょう。
 

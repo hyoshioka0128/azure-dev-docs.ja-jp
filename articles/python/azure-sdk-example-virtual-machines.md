@@ -3,13 +3,13 @@ title: Python 用 Azure SDK ライブラリを使用して仮想マシンをプ�
 description: Python と Azure SDK の管理ライブラリを使用して Azure 仮想マシンをプロビジョニングする方法。
 ms.date: 10/05/2020
 ms.topic: conceptual
-ms.custom: devx-track-python
-ms.openlocfilehash: e01121047d42200e956345df611f82706b1e081e
-ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
+ms.custom: devx-track-python, devx-track-azurecli
+ms.openlocfilehash: 7074b23a3a0c5f47624e821e02fe5093ad98149b
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "92010223"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92689246"
 ---
 # <a name="example-use-the-azure-libraries-to-provision-a-virtual-machine"></a>例:Azure ライブラリを使用して仮想マシンをプロビジョニングする
 
@@ -37,7 +37,7 @@ ms.locfileid: "92010223"
     azure-identity
     ```
 
-1. 仮想環境がアクティブになっているターミナルまたはコマンド プロンプトで、*requirements.txt* にリストされている管理ライブラリをインストールします。
+1. 仮想環境がアクティブになっているターミナルまたはコマンド プロンプトで、 *requirements.txt* にリストされている管理ライブラリをインストールします。
 
     ```cmd
     pip install -r requirements.txt
@@ -45,7 +45,7 @@ ms.locfileid: "92010223"
 
 ## <a name="3-write-code-to-provision-a-virtual-machine"></a>3:仮想マシンをプロビジョニングするコードを作成する
 
-次のコードを使用して、*provision_vm.py* という名前の Python ファイルを作成します。 詳細はコメントで説明しています。
+次のコードを使用して、 *provision_vm.py* という名前の Python ファイルを作成します。 詳細はコメントで説明しています。
 
 ```python
 # Import the needed credential and management objects from the libraries.

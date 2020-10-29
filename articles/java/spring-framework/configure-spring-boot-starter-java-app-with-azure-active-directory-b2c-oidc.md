@@ -12,12 +12,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
 ms.custom: devx-track-java
-ms.openlocfilehash: df9b9f659d504c18c9dfd9afb3b5f201448d4866
-ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
+ms.openlocfilehash: 7cd477bfa511f44cf8dfacbd7d10e0f6299ad4f5
+ms.sourcegitcommit: 3d3ee59f73c966da7df65bada49e059d02e74b91
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "92010139"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92898782"
 ---
 # <a name="tutorial-secure-a-java-web-app-using-the-spring-boot-starter-for-azure-active-directory-b2c"></a>チュートリアル:Azure Active Directory B2C 用の Spring Boot Starter を使用して Java Web アプリをセキュリティで保護する
 
@@ -49,7 +49,7 @@ ms.locfileid: "92010139"
     * **[言語]** で、 **[Java]** を選択します。
     * **[Spring Boot]** で、 **[2.3.4]** を選択します。
     * **[グループ]** 、 **[アーティファクト]** および **[名前]** で、短い説明の文字列を使用して同じ値を入力します。 入力時に、UI によってこれらの一部が自動的に入力される場合があります。
-    * **[依存関係]** ペインで、 **[依存関係の追加]** を選択します。 UI を使用して **Spring Web** と、**Spring Security** に対する依存関係を追加します。
+    * **[依存関係]** ペインで、 **[依存関係の追加]** を選択します。 UI を使用して **Spring Web** と、 **Spring Security** に対する依存関係を追加します。
 
    ![プロジェクトを生成するための値を入力する](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/fill-in-the-values-to-generate-the-project.png)
 
@@ -67,14 +67,14 @@ ms.locfileid: "92010139"
     ├── pom.xml
     └── src
         ├── main
-        │   ├── java
-        │   │   └── yourProject
-        │   │       └── yourProject
-        │   │           └── YourProjectApplication.java
-        │   └── resources
-        │       ├── application.properties
-        │       ├── static
-        │       └── templates
+        │   ├── java
+        │   │   └── yourProject
+        │   │       └── yourProject
+        │   │           └── YourProjectApplication.java
+        │   └── resources
+        │       ├── application.properties
+        │       ├── static
+        │       └── templates
         └── test
             └── java
                 └── yourProject
@@ -136,7 +136,7 @@ ms.locfileid: "92010139"
 
     > [!NOTE]
     > **[キー]** セクションをそのままにして戻ると、キーの値を表示できなくなります。 その場合は、別のキーを作成し、今後の使用のためにコピーする必要があります。
-    > 場合によっては、生成されたキーに、*application.yml* ファイルに含める場合に問題となる文字 (円記号やアクサングラーブなど) が含まれていることがあります。 その場合は、そのキーを破棄し、別のものを生成します。
+    > 場合によっては、生成されたキーに、 *application.yml* ファイルに含める場合に問題となる文字 (円記号やアクサングラーブなど) が含まれていることがあります。 その場合は、そのキーを破棄し、別のものを生成します。
 
     ![シークレットを作成する](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/b2c3-n.png)
 
@@ -186,7 +186,7 @@ Azure AD B2C インスタンスといくつかのユーザー フローを作成
 
     `azure-active-directory-b2c-spring-boot-starter` には、使用可能な最新バージョンを使用します。 [mvnrepository.com](https://mvnrepository.com/ artifact/com.microsoft.azure/azure-active-directory-spring-boot-starter) を使用して、これを確認できる場合があります。 このドキュメントの更新時点では、最新バージョンは `2.3.5` です。
 
-    `spring-boot-starter-thymeleaf` には、先ほど選択した Spring Boot のバージョン (`2.3.4.RELASE` など) に対応するバージョンを使用します。
+    `spring-boot-starter-thymeleaf` には、先ほど選択した Spring Boot のバージョン (`2.3.4.RELEASE` など) に対応するバージョンを使用します。
 
     `thymeleaf-extras-springsecurity5` には、使用可能な最新バージョンを使用します。 [mvnrepository.com](https://mvnrepository.com/artifact/org.thymeleaf.extras/thymeleaf-extras-springsecurity5) を使用して、これを確認できる場合があります。 このドキュメントの執筆時点では、最新バージョンは `3.0.4.RELEASE` です。
 
@@ -203,7 +203,7 @@ Azure AD B2C インスタンスといくつかのユーザー フローを作成
       activedirectory:
         b2c:
           tenant: ejb0518domain
-          client-id: ejb0518
+          client-id: 11111111-1111-1111-1111-1111111111111111
           client-secret: '<yourAppKey>'
           reply-url: http://localhost:8080/home
           logout-success-url: http://localhost:8080/home
@@ -216,7 +216,7 @@ Azure AD B2C インスタンスといくつかのユーザー フローを作成
     `client-secret` 値が単一引用符で囲まれていることに注目してください。 これが必要なのは、`<yourAppKey>` の値には、YAML に存在する場合に単一引用符で囲む必要があるいくつかの文字がほぼ確実に含まれるためです。
 
     > [!NOTE]
-    > このドキュメントの執筆時点で、*application.yml* で使用できる Active Directory B2C Spring の統合の値の完全な一覧を以下に示します。
+    > このドキュメントの執筆時点で、 *application.yml* で使用できる Active Directory B2C Spring の統合の値の完全な一覧を以下に示します。
     >
     > ```
     > azure:
@@ -240,7 +240,7 @@ Azure AD B2C インスタンスといくつかのユーザー フローを作成
 
 8. *src/main/java/<yourGroupId>/<yourGroupId>* に *controller* という名前のフォルダーを作成し、`<yourGroupId>` を、 **[グループ]** で入力した値に置き換えます。
 
-9. *controller* フォルダーに "*java*" という名前の新しい Java ファイルを作成し、テキスト エディターで開きます。
+9. *controller* フォルダーに " *java* " という名前の新しい Java ファイルを作成し、テキスト エディターで開きます。
 
 10. 次のコードを入力し、適宜、`yourGroupId` を変更してから、ファイルを保存して閉じます。
 
@@ -288,11 +288,11 @@ Azure AD B2C インスタンスといくつかのユーザー フローを作成
     }
     ```
 
-    コントローラー内のすべてのメソッドで `initializeModel()` が呼び出され、そのメソッドで `model.addAllAttributes(user.getAttributes());` が呼び出されるため、*src/main/resources/templates* 内の任意の HTML ページから、`${name}`、`${grant_type}`、`${auth_time}` など、それらの属性のいずれかにアクセスできます。 `user.getAttributes()` から返される値は、実際には認証用の `id_token` の要求です。 使用可能な要求の完全な一覧については、「[Microsoft ID プラットフォームの ID トークン](/azure/active-directory/develop/id-tokens#payload-claims)」を参照してください。
+    コントローラー内のすべてのメソッドで `initializeModel()` が呼び出され、そのメソッドで `model.addAllAttributes(user.getAttributes());` が呼び出されるため、 *src/main/resources/templates* 内の任意の HTML ページから、`${name}`、`${grant_type}`、`${auth_time}` など、それらの属性のいずれかにアクセスできます。 `user.getAttributes()` から返される値は、実際には認証用の `id_token` の要求です。 使用可能な要求の完全な一覧については、「[Microsoft ID プラットフォームの ID トークン](/azure/active-directory/develop/id-tokens#payload-claims)」を参照してください。
 
 11. *src/main/java/<yourGroupId>/<yourGroupId>* に *security* という名前のフォルダーを作成し、`yourGroupId` を、 **[グループ]** で入力した値に置き換えます。
 
-12. *security* フォルダーに "*WebSecurityConfiguration.java*" という名前の新しい Java ファイルを作成し、テキスト エディターで開きます。
+12. *security* フォルダーに " *WebSecurityConfiguration.java* " という名前の新しい Java ファイルを作成し、テキスト エディターで開きます。
 
 13. 次のコードを入力し、適宜、`yourGroupId` を変更してから、ファイルを保存して閉じます。
 

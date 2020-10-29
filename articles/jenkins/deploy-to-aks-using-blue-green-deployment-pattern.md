@@ -4,13 +4,13 @@ description: Jenkins とブルー/グリーン デプロイ パターンを使�
 keywords: Jenkins, Azure, 開発, Kubernetes, k8s, AKS, ブルー/グリーン デプロイ, 継続的デリバリー, CD
 ms.topic: tutorial
 ms.date: 10/23/2019
-ms.custom: devx-track-jenkins
-ms.openlocfilehash: 6a33227f7a5a0aa3e82e48d821e9f37bdfeadd6e
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.custom: devx-track-jenkins, devx-track-azurecli
+ms.openlocfilehash: 1ddf85a5ad1a9415d4143873f674b7104a4bd4d8
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90832048"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92688666"
 ---
 # <a name="tutorial-deploy-to-azure-kubernetes-service-aks-using-the-bluegreen-deployment-pattern"></a>チュートリアル:ブルー/グリーン デプロイ パターンを使用した Azure Kubernetes Service (AKS) へのデプロイ
 
@@ -54,7 +54,7 @@ GitHub の Microsoft リポジトリに、Jenkins とブルー/グリーン パ�
 
     ![リポジトリを複製またはダウンロードする GitHub オプションのスクリーンショット](./media/deploy-to-aks-using-blue-green-deployment-pattern/github-sample-clone.png)
 
-1. **[Clone with HTTPS]\(HTTPS で複製する\)** ウィンドウで、**コピー** アイコンを選択します。
+1. **[Clone with HTTPS]\(HTTPS で複製する\)** ウィンドウで、 **コピー** アイコンを選択します。
 
     ![複製 URL をクリップボードにコピーする GitHub オプションのスクリーンショット](./media/deploy-to-aks-using-blue-green-deployment-pattern/github-sample-copy.png)
 
@@ -144,7 +144,7 @@ AKS でのブルー/グリーン デプロイの設定は、手動で行うこ�
     kubectl apply -f  test-endpoint-green.yml
     ```
 
-1. パブリック エンドポイントとテスト エンドポイントの DNS 名を更新します。 Kubernetes クラスターの作成時に、**MC_&lt;your-resource-group-name> _&lt;your-kubernetes-cluster-name>_ &lt;your-location>** という名前付けパターンで、[追加のリソース グループ](https://github.com/Azure/AKS/issues/3)も作成されます。
+1. パブリック エンドポイントとテスト エンドポイントの DNS 名を更新します。 Kubernetes クラスターの作成時に、 **MC_&lt;your-resource-group-name> _&lt;your-kubernetes-cluster-name>_ &lt;your-location>** という名前付けパターンで、 [追加のリソース グループ](https://github.com/Azure/AKS/issues/3)も作成されます。
 
     リソース グループ内のパブリック IP を特定します。
 
@@ -215,11 +215,11 @@ AKS でのブルー/グリーン デプロイの設定は、手動で行うこ�
     1. **[Manage Jenkins]\(Jenkins の管理\)、[Manage Plugins]\(プラグインの管理\)、[Available]\(使用可能\)** の順に選択します。
     1. Azure Container Service プラグインを検索してインストールします。
 
-1. Azure でリソースを管理するための資格情報を追加します。 まだプラグインを持っていない場合は、**Azure 資格情報**プラグインをインストールします。
+1. Azure でリソースを管理するための資格情報を追加します。 まだプラグインを持っていない場合は、 **Azure 資格情報** プラグインをインストールします。
 
-1. Azure サービス プリンシパルの資格情報を、タイプ **Microsoft Azure サービス プリンシパル**として追加します。
+1. Azure サービス プリンシパルの資格情報を、タイプ **Microsoft Azure サービス プリンシパル** として追加します。
 
-1. タイプ **ユーザー名とパスワード**として、(「Container Registry のインスタンスを作成する」セクションで取得したとおりに)、Azure Docker Registry のユーザー名とパスワードを追加します。
+1. タイプ **ユーザー名とパスワード** として、(「Container Registry のインスタンスを作成する」セクションで取得したとおりに)、Azure Docker Registry のユーザー名とパスワードを追加します。
 
 ## <a name="edit-the-jenkinsfile"></a>Jenkinsfile の編集
 
@@ -246,7 +246,7 @@ AKS でのブルー/グリーン デプロイの設定は、手動で行うこ�
     ```
 
 ## <a name="create-the-job"></a>ジョブを作成する
-1. タイプ **パイプライン**で新しいジョブを追加します。
+1. タイプ **パイプライン** で新しいジョブを追加します。
 
 1. **[Pipeline]\(パイプライン\)**  >  **[Definition]\(定義\)**  >  **[Pipeline script from SCM]\(SCM からのパイプライン スクリプト\)** の順に選択します。
 

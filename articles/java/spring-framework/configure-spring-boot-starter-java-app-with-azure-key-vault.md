@@ -8,13 +8,13 @@ ms.service: key-vault
 ms.tgt_pltfrm: multiple
 ms.topic: tutorial
 ms.workload: identity
-ms.custom: devx-track-java
-ms.openlocfilehash: e06d09d4f44366ba995ecaa401df901dc6270c6d
-ms.sourcegitcommit: f80537193d3e22eb24cce4a0a5464a996d1e63eb
+ms.custom: devx-track-java, devx-track-azurecli
+ms.openlocfilehash: c6a81f5fb08985626909fe499584e67351a70ad0
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91409974"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92688845"
 ---
 # <a name="tutorial-reading-a-secret-from-azure-key-vault-in-a-spring-boot-application"></a>チュートリアル:Spring Boot アプリケーションでの Azure Key Vault からのシークレットの読み取り
 
@@ -96,7 +96,7 @@ Spring Boot アプリケーションは、ユーザー名やパスワードな�
 
 ### <a name="create-a-service-principal-for-use-in-by-your-app"></a>アプリで使用するサービス プリンシパルを作成する
 
-Azure AD の*サービス プリンシパル*は、サブスクリプション内の Azure リソースへのアクセスを提供します。 サービス プリンシパルは、サービスのユーザー ID と考えることができます。  "サービス" とは、このチュートリアルでビルドするサンプル アプリを含む、Azure リソースにアクセスする必要があるアプリケーション、サービス、またはプラットフォームのことです。 指定したそれらのリソースのみをスコープとするアクセス権を持つサービス プリンシパルを構成できます。 その後、サービス プリンシパルの資格情報を使用してそれらのリソースにアクセスするようにアプリケーションまたはサービスを構成します。
+Azure AD の *サービス プリンシパル* は、サブスクリプション内の Azure リソースへのアクセスを提供します。 サービス プリンシパルは、サービスのユーザー ID と考えることができます。  "サービス" とは、このチュートリアルでビルドするサンプル アプリを含む、Azure リソースにアクセスする必要があるアプリケーション、サービス、またはプラットフォームのことです。 指定したそれらのリソースのみをスコープとするアクセス権を持つサービス プリンシパルを構成できます。 その後、サービス プリンシパルの資格情報を使用してそれらのリソースにアクセスするようにアプリケーションまたはサービスを構成します。
 
 次のコマンドを使用して、サービス プリンシパルを作成します。
 
@@ -236,13 +236,13 @@ Key Vault を作成し、シークレットを保存したので、次のセク�
 
 1. <https://start.spring.io/> を参照します。
 1. この一覧に続く図に示すように項目を選択します。
-   1. **Project**: `Maven Project`
-   1. **Language**: `Java`
-   1. **Spring Boot**: `2.3.3`
-   1. **グループ**: `com.contoso` (任意の有効な Java パッケージ名をここに入力できます)。
-   1. **Artifact**: *keyvault* (任意の有効な Java クラス名をここに入力できます。)
-   1. **Packaging**: `Jar`
-   1. **Java**: `11` (8 を選択できますが、このチュートリアルは 11 で検証されています。)
+   1. **Project** : `Maven Project`
+   1. **Language** : `Java`
+   1. **Spring Boot** : `2.3.3`
+   1. **グループ** : `com.contoso` (任意の有効な Java パッケージ名をここに入力できます)。
+   1. **Artifact** : *keyvault* (任意の有効な Java クラス名をここに入力できます。)
+   1. **Packaging** : `Jar`
+   1. **Java** : `11` (8 を選択できますが、このチュートリアルは 11 で検証されています。)
 1. **[Add Dependencies...]** を選択します。
 1. テキスト フィールドに「`Spring Web`」と入力し、Ctrl + Enter キーを押します。
 1. テキスト フィールドに「`Azure Key Vault`」と入力し、Enter キーを押します。  画面は次のようになります。
@@ -252,7 +252,7 @@ Key Vault を作成し、シークレットを保存したので、次のセク�
 
 アプリケーションを確認してローカルで実行するには、次の手順に従います。
 
-1. *keyvault.zip* ファイルを解凍します。  ファイル レイアウトは次のようになります。  このチュートリアルでは、*test* ディレクトリとその内容は無視します。
+1. *keyvault.zip* ファイルを解凍します。  ファイル レイアウトは次のようになります。  このチュートリアルでは、 *test* ディレクトリとその内容は無視します。
 
    ```bash
    ├── HELP.md
@@ -261,15 +261,15 @@ Key Vault を作成し、シークレットを保存したので、次のセク�
    ├── pom.xml
    └── src
        ├── main
-       │   ├── java
-       │   │   └── com
-       │   │       └── contoso
-       │   │           └── keyvault
-       │   │               └── KeyvaultApplication.java
-       │   └── resources
-       │       ├── application.properties
-       │       ├── static
-       │       └── templates
+       │   ├── java
+       │   │   └── com
+       │   │       └── contoso
+       │   │           └── keyvault
+       │   │               └── KeyvaultApplication.java
+       │   └── resources
+       │       ├── application.properties
+       │       ├── static
+       │       └── templates
    ```
 
 1. テキスト エディターで *KeyvaultApplication.java* ファイルを開きます。  ファイルを以下のように変更します。
@@ -307,7 +307,7 @@ Key Vault を作成し、シークレットを保存したので、次のセク�
    ```
 
 1. *pom.xml* ファイルがある最上位の *keyvault* ディレクトリ で、「`mvn spring-boot:run`」と入力します。  
-1. コマンド出力の「**Completed initialization**」(初期化が完了しました) というメッセージは、サーバーの準備ができていることを意味します。  別のシェル ウィンドウに、次のコマンドを入力します。
+1. コマンド出力の「 **Completed initialization** 」(初期化が完了しました) というメッセージは、サーバーの準備ができていることを意味します。  別のシェル ウィンドウに、次のコマンドを入力します。
 
    ```bash
    $ curl http://localhost:8080/get
@@ -323,7 +323,7 @@ Key Vault を作成し、シークレットを保存したので、次のセク�
 
 次の手順では、Spring Boot アプリケーション `KeyvaultApplication` に必要な変更について説明します。
 
-Key Vault がシークレットをアプリケーション コードから外部化できるのと同様に、Spring 構成では構成をコードから外部化できます。  Spring 構成の最も単純な形式は、*application.properties* ファイルです。  Maven プロジェクトでは、このファイルは *src/main/resources/application.properties* にあります。  Spring Initializer ではこの場所に長さゼロのファイルが含まれています。
+Key Vault がシークレットをアプリケーション コードから外部化できるのと同様に、Spring 構成では構成をコードから外部化できます。  Spring 構成の最も単純な形式は、 *application.properties* ファイルです。  Maven プロジェクトでは、このファイルは *src/main/resources/application.properties* にあります。  Spring Initializer ではこの場所に長さゼロのファイルが含まれています。
 
 このファイルに必要な構成を追加するには、次の手順に従います。
 
@@ -370,7 +370,7 @@ Key Vault がシークレットをアプリケーション コードから外部
    Key Vault 統合により、Key Vault の値から取り込まれる Spring `PropertySource` が提供されます。  その他の実装の詳細については、[リファレンス ドキュメント](https://aka.ms/azure-spring-boot-starter-keyvault-secrets)を参照してください。
 
 1. *pom.xml* ファイルがある最上位の *keyvault* ディレクトリ で、「`mvn clean package spring-boot:run`」と入力します。  
-1. コマンド出力の「**initialization completed**」(初期化が完了しました) というメッセージは、サーバーの準備ができていることを意味します。  別のシェル ウィンドウに、次のコマンドを入力します。
+1. コマンド出力の「 **initialization completed** 」(初期化が完了しました) というメッセージは、サーバーの準備ができていることを意味します。  別のシェル ウィンドウに、次のコマンドを入力します。
 
    ```bash
    $ curl http://localhost:8080/get
@@ -391,14 +391,14 @@ Key Vault がシークレットをアプリケーション コードから外部
 
 次の手順に従って、`KeyvaultApplication` を Azure App Service にデプロイできるようにします。
 
-1. 最上位の *keyvault* ディレクトリで、*pom.xml* ファイルを開きます。
+1. 最上位の *keyvault* ディレクトリで、 *pom.xml* ファイルを開きます。
 1. `<build><plugins>` セクションで、次の XML を挿入して `azure-webapp-maven-plugin` を追加します。
 
    ```xml
     <plugin>
      <groupId>com.microsoft.azure</groupId>
      <artifactId>azure-webapp-maven-plugin</artifactId>
-     <version>1.11.0</version>
+     <version>1.12.0</version>
     </plugin>
    ```
 
@@ -413,7 +413,7 @@ Key Vault がシークレットをアプリケーション コードから外部
    ```
 
 1. `Subscription` では、作成した Key Vault と同じサブスクリプション ID が選択されていることを確認します。
-1. `Web App` では、既存の Web アプリを選択するか、`<create>` を選択して新規作成できます。既存の Web アプリを選択した場合は、最後の**確認**の手順に直接移動します。
+1. `Web App` では、既存の Web アプリを選択するか、`<create>` を選択して新規作成できます。既存の Web アプリを選択した場合は、最後の **確認** の手順に直接移動します。
 1. `OS` では、`linux` が選択されていることを確認します。
 1. `javaVersion` には、Spring Initializr で選択した Java のバージョンが選択されていることを確認します。  上記で `11` を選択したので、ここでは 11 を選択します。
 1. 残りの質問については既定値を受け入れます。
@@ -421,7 +421,7 @@ Key Vault がシークレットをアプリケーション コードから外部
 
 次の手順に従って、POM にさらに必要な編集を行います。
 
-1. 最上位の *keyvault* ディレクトリで、*pom.xml* ファイルを開きます。
+1. 最上位の *keyvault* ディレクトリで、 *pom.xml* ファイルを開きます。
 1. `<plugins> セクションで `azure-webapp-maven-plugin` エントリを探します。
 1. `<resourceGroup>`、`<appName>`、`<region>` の値を変更します。  
    1. `<resourceGroup>` の値を、Key Vault の作成時に指定した値に設定します。
@@ -439,7 +439,7 @@ Key Vault がシークレットをアプリケーション コードから外部
      <plugin> 
        <groupId>com.microsoft.azure</groupId>  
        <artifactId>azure-webapp-maven-plugin</artifactId>  
-       <version>1.11.0</version>  
+       <version>1.12.0</version>  
        <configuration>
          <schemaVersion>V2</schemaVersion>
          *<subscriptionId>********-****-****-****-************</subscriptionId>
@@ -449,8 +449,8 @@ Key Vault がシークレットをアプリケーション コードから外部
          *<region>eastus</region>
          <runtime>
            <os>linux</os>
-           <javaVersion>java11</javaVersion>
-           <webContainer>java11</webContainer>
+           <javaVersion>java 11</javaVersion>
+           <webContainer>Java SE</webContainer>
          </runtime>
          *<!-- Begin of App Settings  -->
          *<appSettings>
@@ -608,7 +608,7 @@ Azure Spring Cloud は、Azure で Spring Boot アプリケーションをデプ
    | runtime-version | Java ランタイム バージョン。  **値は、上記の Spring Initializr で選択した値と一致する必要があります。** |
    | サービス (service) | 既存のサービスの名前です。 |
 
-   "*サービス*" と "*アプリ*" の違いを理解するには、「[Azure Spring Cloud でのアプリとデプロイについて](/azure/spring-cloud/spring-cloud-concept-understand-app-and-deployment)」を参照してください。
+   " *サービス* " と " *アプリ* " の違いを理解するには、「 [Azure Spring Cloud でのアプリとデプロイについて](/azure/spring-cloud/spring-cloud-concept-understand-app-and-deployment)」を参照してください。
 
 1. Azure リソースのマネージド ID を取得します。  これを使用して、既存の Key Vault がこのアプリからのアクセスを許可するように構成します。
 
@@ -624,7 +624,7 @@ Azure Spring Cloud は、Azure で Spring Boot アプリケーションをデプ
      --service "contososvc"
    ```
 
-   このコマンドは、サービス内のアプリ内に "*デプロイ*" を作成します。  サービス インスタンス、アプリ、デプロイの概念の詳細については、「[Azure Spring Cloud でのアプリとデプロイについて](/azure/spring-cloud/spring-cloud-concept-understand-app-and-deployment)」を参照してください。
+   このコマンドは、サービス内のアプリ内に " *デプロイ* " を作成します。  サービス インスタンス、アプリ、デプロイの概念の詳細については、「[Azure Spring Cloud でのアプリとデプロイについて](/azure/spring-cloud/spring-cloud-concept-understand-app-and-deployment)」を参照してください。
 
    デプロイが正常に完了しない場合は、「[アプリケーション ログの構成](https://aka.ms/azure-spring-cloud-configure-logs)」の説明に従って、トラブルシューティング用のログを構成します。  ログには、問題の診断と解決に役立つ情報が含まれている可能性があります。
 

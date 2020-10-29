@@ -3,13 +3,13 @@ title: Azure CLI を使用して Azure App Service にアプリ コードをデ�
 description: チュートリアル パート 4、Azure CLI で Web サイトをデプロイする
 ms.topic: tutorial
 ms.date: 09/24/2019
-ms.custom: devx-track-js
-ms.openlocfilehash: 8e6075b8a1e526f916ab43c9a1f52ef1b66e8614
-ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
+ms.custom: devx-track-js, devx-track-azurecli
+ms.openlocfilehash: 6006c25b9f2cb77ed472d8e4cb7d0eb96e85da48
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91364785"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92689120"
 ---
 # <a name="deploy-the-app-to-app-service"></a>アプリを App Service にデプロイする
 
@@ -17,7 +17,7 @@ ms.locfileid: "91364785"
 
 この手順では、ローカル Git リポジトリを Azure にプッシュする基本的なプロセスを使用して、Azure App Service に Node.js アプリ コードをデプロイします。
 
-1. ターミナルまたはコマンド プロンプトで、次のコマンドを実行してローカル Git リポジトリを初期化し、初期コミットを行います。 (*node_modules* フォルダーは無視されます。これは、Express Generator を以前に実行したときに作成された *.gitignore* ファイルに指定されているからです。)
+1. ターミナルまたはコマンド プロンプトで、次のコマンドを実行してローカル Git リポジトリを初期化し、初期コミットを行います。 ( *node_modules* フォルダーは無視されます。これは、Express Generator を以前に実行したときに作成された *.gitignore* ファイルに指定されているからです。)
 
     ```bash
     git init
@@ -45,7 +45,7 @@ ms.locfileid: "91364785"
     }
     </pre>
 
-1. 次のコマンドを実行して、`azure` という名前の新しいリモートを Git に設定します。前の手順の URL から*ユーザー名を省略*したものを使用します。 前の手順の例を使用すると、コマンドは次のようになります。
+1. 次のコマンドを実行して、`azure` という名前の新しいリモートを Git に設定します。前の手順の URL から *ユーザー名を省略* したものを使用します。 前の手順の例を使用すると、コマンドは次のようになります。
 
     ```bash
     git remote add azure https://msdocs-node-cli.scm.azurewebsites.net/msdocs-node-cli.git

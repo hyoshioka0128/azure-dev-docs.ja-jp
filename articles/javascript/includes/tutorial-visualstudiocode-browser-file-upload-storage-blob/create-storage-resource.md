@@ -4,12 +4,12 @@ description: インクルード ファイル create-storage-resource.md
 ms.date: 10/13/2020
 ms.topic: include
 ms.custom: devx-track-javascript
-ms.openlocfilehash: a4eb48afd578de7ddc3426a3907b8b4192387cbb
-ms.sourcegitcommit: ced8331ba36b28e6e2eacd23a64b39ddc7ffe6ab
+ms.openlocfilehash: 6862d9cf56ee86f7137495b021144b518459d979
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92344247"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92755626"
 ---
 チュートリアルのこのセクションでは、Visual Studio 拡張機能を使用して Azure Storage リソースを作成し、Azure portal でリソースを構成します。 
 
@@ -123,9 +123,9 @@ SAS トークンとストレージ アカウント名を `src/uploadToBlob.ts` �
 ## <a name="want-to-know-more"></a>詳細について 
 
 ストレージ アカウントを構成するその他の方法は次のとおりです。
-* [PowerShell](/azure/powershell/module/azure.storage/new-azurestorageblobsastoken) を使用した SAS トークン
+* [PowerShell](/powershell/module/azure.storage/new-azurestorageblobsastoken) を使用した SAS トークン
 * ポータルを使用した SAS トークン
-* [PowerShell](/azure/powershell/module/azure.storage/set-azurestoragecorsrule) を使用した CORS
+* [PowerShell](/powershell/module/azure.storage/set-azurestoragecorsrule) を使用した CORS
 * ポータルを使用した CORS
 
-[Shared Access Signatures](/azure/storage/common/storage-sas-overview.md) の詳細について参照してください。
+[Shared Access Signatures](/azure/storage/common/storage-sas-overview) の詳細について参照してください。

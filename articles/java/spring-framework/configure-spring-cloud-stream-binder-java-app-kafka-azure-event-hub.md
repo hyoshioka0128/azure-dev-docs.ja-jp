@@ -6,13 +6,13 @@ documentationcenter: java
 ms.date: 12/19/2018
 ms.service: event-hubs
 ms.topic: article
-ms.custom: devx-track-java
-ms.openlocfilehash: 523d7b7eb0465bc9b1e367b7b450591319f5995a
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.custom: devx-track-java, devx-track-azurecli
+ms.openlocfilehash: 452119b467d3b92e7b8deec3b0e22d2d1d18ee9e
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831268"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92689204"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-apache-kafka-with-azure-event-hubs"></a>Azure Event Hubs で Apache Kafka 用 Spring Boot Starter を使用する方法
 
@@ -45,12 +45,12 @@ ms.locfileid: "90831268"
 
 1. **[名前空間の作成]** ページで、次の情報を入力します。
 
-   * 一意の**名前**を入力します。この名前は、イベント ハブの名前空間の URI の一部になります。 たとえば、 **[名前]** に「**wingtiptoys**」と入力した場合、URI は *wingtiptoys.servicebus.windows.net* になります。
+   * 一意の **名前** を入力します。この名前は、イベント ハブの名前空間の URI の一部になります。 たとえば、 **[名前]** に「 **wingtiptoys** 」と入力した場合、URI は *wingtiptoys.servicebus.windows.net* になります。
    * 価格レベル。
    * 名前空間に対して **[Kafka を有効にする]** を指定します。
-   * 名前空間に使用する**サブスクリプション**を選択します。
-   * 名前空間の新しい**リソース グループ**を作成するか、既存のリソース グループを選択するかを指定します。
-   * イベント ハブの名前空間の**場所**を指定します。
+   * 名前空間に使用する **サブスクリプション** を選択します。
+   * 名前空間の新しい **リソース グループ** を作成するか、既存のリソース グループを選択するかを指定します。
+   * イベント ハブの名前空間の **場所** を指定します。
    * 名前空間の **[スループット ユニット]** を指定することもできます。
 
    ![Azure イベント ハブの名前空間のオプションを指定する][IMG02]
@@ -79,14 +79,14 @@ ms.locfileid: "90831268"
 
    * **Java** で **Maven** プロジェクトを生成します。
    * **Spring Boot** のバージョンとして、2.0 以上を指定します。
-   * アプリケーションの**グループ (Group)** と**成果物 (Artifact)** の名前を指定します。
+   * アプリケーションの **グループ (Group)** と **成果物 (Artifact)** の名前を指定します。
    * **Web** 依存関係を追加します。
 
       ![基本的な Spring Initializr オプション][SI01]
 
    > [!NOTE]
    >
-   > Spring Initializr では、**グループ (Group)** と**成果物 (Artifact)** の名前を使用してパッケージ名を作成します (例: *com.wingtiptoys.kafka*)。
+   > Spring Initializr では、 **グループ (Group)** と **成果物 (Artifact)** の名前を使用してパッケージ名を作成します (例: *com.wingtiptoys.kafka* )。
    >
 
 1. 上記のオプションを指定したら、 **[Generate Project]\(プロジェクトの生成\)** をクリックします。
@@ -182,7 +182,7 @@ ms.locfileid: "90831268"
    az ad sp create-for-rbac --sdk-auth > my.azureauth
    ```
 
-   このコマンドにより、*resources* ディレクトリに、次の例のような内容の *my.azureauth* ファイルが作成されます。
+   このコマンドにより、 *resources* ディレクトリに、次の例のような内容の *my.azureauth* ファイルが作成されます。
 
    ```json
    {
@@ -344,7 +344,7 @@ ms.locfileid: "90831268"
    mvn spring-boot:run
    ```
 
-1. アプリケーションが実行されたら、*curl* を使用してアプリケーションをテストできます。次に例を示します。
+1. アプリケーションが実行されたら、 *curl* を使用してアプリケーションをテストできます。次に例を示します。
 
    ```shell
    curl -X POST -H "Content-Type: text/plain" -d "hello" http://localhost:8080/messages
@@ -360,7 +360,7 @@ ms.locfileid: "90831268"
 
 > [!NOTE]
 > 
-> テストのために、*KafkaSource.java* を変更して、次の例のような簡単な HTML フォームを含めることができます。
+> テストのために、 *KafkaSource.java* を変更して、次の例のような簡単な HTML フォームを含めることができます。
 > 
 > ```java
 > package com.wingtiptoys.kafka;

@@ -4,12 +4,12 @@ ms.author: miparker
 ms.date: 07/27/2020
 ms.service: mobile-services
 ms.topic: include
-ms.openlocfilehash: 3103fd6c75dbaeed3b5a0dd23d7cd68b6394ee76
-ms.sourcegitcommit: ced8331ba36b28e6e2eacd23a64b39ddc7ffe6ab
+ms.openlocfilehash: 7a7128a475b428243f3c7280fc154d1d4c8fe8a6
+ms.sourcegitcommit: c3a1c9051b89870f6bfdb3176463564963b97ba4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92337187"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92438845"
 ---
 ### <a name="create-a-web-project"></a>Web プロジェクトの作成
 
@@ -518,6 +518,10 @@ ASP.NET Core では、[依存関係の挿入 (DI)](/aspnet/core/fundamentals/dep
 1. **Startup.cs** で **ConfigureServices** メソッドを更新して、 **NotificationHubsService** を **INotificationService** のシングルトン実装として追加します。
 
     ```csharp
+    
+    using PushDemoApi.Models;
+    using PushDemoApi.Services;
+
     public void ConfigureServices(IServiceCollection services)
     {
         ...

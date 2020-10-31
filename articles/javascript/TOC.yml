@@ -11,91 +11,6 @@
           href: core/node-sdk-azure-authenticate-principal.md
         - name: Azure に対して認証します
           href: core/node-sdk-azure-authenticate.md
-    - name: クイックスタート
-      expanded: false
-      items:
-        - name: アプリ ホスティング
-          items:
-            - name: Azure Static Web Apps
-              href: /azure/static-web-apps/getting-started
-            - name: Storage からの静的サイト
-              href: tutorial-vscode-static-website-node-01.md
-            - name: Node.js Web アプリと API
-              href: tutorial-vscode-azure-app-service-node-01.md
-            - name: Deno API
-              href: tutorial-visual-studio-code-azure-app-service-deno-01.md
-            - name: サーバーレス
-              href: tutorial-vscode-serverless-node-01.md
-            - name: Docker
-              href: tutorial-vscode-docker-node-01.md
-            - name: Kubernetes
-              href: /azure/aks/kubernetes-walkthrough?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-            - name: Linux VM
-              href: /azure/virtual-machines/linux/quick-create-cli?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-        - name: DevOps
-          items:
-            - name: Azure Repos
-              href: /azure/devops/repos/get-started/index?view=azure-devops&toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-            - name: Azure Pipelines を使用した CI/CD
-              href: /azure/devops/pipelines/languages/javascript?view=azure-devops&toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-            - name: Azure DevOps Projects を使用した CI/CD
-              href: /azure/devops-project/azure-devops-project-nodejs?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-            - name: Application Insights と Azure Monitor
-              href: /azure/azure-monitor/learn/nodejs-quick-start?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-            - name: Log Analytics と Azure Monitor
-              href: /azure/azure-monitor/learn/quick-collect-linux-computer?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-            - name: GitHub のアクション
-              href: 'https://azure.microsoft.com/resources/videos/azure-friday-deploy-to-azure-using-github-actions'
-        - name: デバッグと診断
-          items:
-            - name: Azure App Service 用のリモート デバッグ
-              href: 'https://code.visualstudio.com/docs/azure/remote-debugging'
-            - name: VS Code でローカルの Node.js アプリをデバッグする
-              href: 'https://code.visualstudio.com/docs/nodejs/nodejs-debugging'
-        - name: データの保存
-          items:
-            - name: BLOB ストレージ
-              href: /azure/storage/blobs/storage-quickstart-blobs-nodejs?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-            - name: SQL Database
-              href: /azure/sql-database/sql-database-connect-query-nodejs?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-            - name: Cosmos DB
-              href: /azure/cosmos-db/create-mongodb-nodejs?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-            - name: Redis Cache
-              href: /azure/azure-cache-for-redis/cache-nodejs-get-started?toc=/azure/developer/javascript/toc.json&bc=/
-            - name: PostgreSQL
-              href: /azure/postgresql/connect-nodejs?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-            - name: MySQL
-              href: /azure/mysql/connect-nodejs?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-        - name: セキュリティと認証
-          items:
-            - name: Azure Active Directory
-              href: /azure/active-directory/develop/quickstart-v1-nodejs-webapi?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-            - name: Azure AD B2C
-              href: /azure/active-directory-b2c/active-directory-b2c-tutorials-spa?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-            - name: Key Vault
-              href: /azure/key-vault/quick-create-cli?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-        - name: メッセージングと統合
-          items:
-            - name: Event Grid
-              href: /azure/event-grid/custom-event-quickstart?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-            - name: Service Bus
-              href: /azure/service-bus-messaging/service-bus-nodejs-how-to-use-queues?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-            - name: ストレージ
-              href: /azure/storage/queues/storage-nodejs-how-to-use-queues?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-        - name: IoT
-          items:
-            - name: IoT Hub
-              href: /azure/iot-hub/quickstart-control-device-node?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-            - name: ビッグ データ ストリーミング
-              href: /azure/iot-hub/quickstart-send-telemetry-node?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-        - name: Cognitive Services
-          items:
-            - name: Text Analytics
-              href: /azure/cognitive-services/text-analytics/quickstarts/nodejs?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-            - name: Computer Vision
-              href: /azure/cognitive-services/Computer-vision/Quickstarts/node-analyze?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
-            - name: 音声認識
-              href: /azure/cognitive-services/speech-service/get-started?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
     - name: チュートリアル
       items:
         - name: Storage BLOB にイメージをアップロードする
@@ -196,16 +111,12 @@
           href: how-to/deploy-web-app.md
         - name: コンテナーをデプロイする
           href: how-to/deploy-containers.md
-        - name: 継続的デリバリーを通じてデプロイする
-          href: /azure/devops/pipelines/languages/javascript?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
         - name: データベースとの統合
           href: how-to/integrate-database.md
         - name: サーバーレス コードを記述する
           href: how-to/develop-serverless-apps.md
         - name: 静的な (JAMstack) サイトを作成する
           href: how-to/create-static-site.md
-        - name: REST API の作成
-          href: /azure/app-service/app-service-web-tutorial-rest-api?toc=/azure/developer/javascript/toc.json&bc=/azure/developer/breadcrumb/toc.json
         - name: ログとメトリック
           href: how-to/node-sdk-logging.md
     - name: サンプル

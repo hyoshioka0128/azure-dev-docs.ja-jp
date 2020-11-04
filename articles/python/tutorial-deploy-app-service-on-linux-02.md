@@ -4,12 +4,12 @@ description: チュートリアルの手順 2、アプリケーションの設�
 ms.topic: conceptual
 ms.date: 09/12/2019
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 464807b8a4e637db7a0911d23770246dfc7fb0ae
-ms.sourcegitcommit: 723441eda0eb4ff893123201a9e029b7becf5ecc
+ms.openlocfilehash: 4aaaa1833a42c40786fc6923b10876561adac859
+ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91846693"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92688896"
 ---
 # <a name="2-prepare-your-app-for-deployment-to-azure-app-service"></a>2:Azure App Service にデプロイするためにアプリを準備する
 
@@ -23,7 +23,7 @@ ms.locfileid: "91846693"
 
 ## <a name="option-1-vs-code-flask-tutorial-sample"></a>オプション 1: VS Code Flask チュートリアル サンプル
 
-[https://github.com/Microsoft/python-sample-vscode-flask-tutorial](https://github.com/Microsoft/python-sample-vscode-flask-tutorial) をダウンロードまたは複製します。これは [Flask チュートリアル](https://code.visualstudio.com/docs/python/tutorial-flask)に従って得られた結果です。
+[https://github.com/Microsoft/python-sample-vscode-flask-tutorial](https://github.com/Microsoft/python-sample-vscode-flask-tutorial) をダウンロードまたは複製します。これは [Flask チュートリアル](https://code.visualstudio.com/docs/python/tutorial-flask)に従って得られた結果です。 アプリコードは、具体的には *hello_app* フォルダー内にあることに注意してください。 アプリをローカルで実行する方法については、サンプルの *readme.md* ファイルを確認してください。
 
 ## <a name="option-2-vs-code-django-tutorial-sample"></a>オプション 2:VS Code Django チュートリアル サンプル
 

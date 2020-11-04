@@ -5,12 +5,12 @@ ms.devlang: python
 ms.topic: tutorial
 ms.date: 10/09/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: 77cb35d31f80b52d1e79c2650c79635dc039e72d
-ms.sourcegitcommit: d5dabc6dde727ed167a9dc8a4eaaf21025b3efa8
+ms.openlocfilehash: 333cda811133e9ce4e83730b038a7d84b40b7fa1
+ms.sourcegitcommit: ca7b58f60dd02709977b35175b43be582b868b03
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91947537"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92629936"
 ---
 # <a name="tutorial-deploy-a-django-web-app-with-postgresql-using-the-azure-portal"></a>チュートリアル:Azure portal を使用して PostgreSQL で Django Web アプリをデプロイする
 
@@ -35,9 +35,9 @@ Azure portal を使用して、データ ドリブンの Python [Django](https:/
 
 このリポジトリのフォークを作成すると、後の手順で変更を行ったり、コードを再デプロイしたりすることができます。
 
-**(省略可能) サンプルについて:** djangoapp サンプルには、データ ドリブンの Django 投票アプリが含まれます。これを、Django ドキュメントの「[はじめての Django アプリ作成](https://docs.djangoproject.com/en/2.1/intro/tutorial01/)」に従って取得します。 また、このサンプルは、[Django デプロイ チェックリスト](https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/)を使用して変更され、Azure App Service などの運用環境で実行されます。 (これらの変更は運用環境に対して行われ、Azure に固有ではありません)。
+**(省略可能) サンプルについて:** djangoapp サンプルには、データ ドリブンの Django 投票アプリが含まれます。これを、Django ドキュメントの「 [はじめての Django アプリ作成](https://docs.djangoproject.com/en/2.1/intro/tutorial01/)」に従って取得します。 また、このサンプルは、[Django デプロイ チェックリスト](https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/)を使用して変更され、Azure App Service などの運用環境で実行されます。 (これらの変更は運用環境に対して行われ、Azure に固有ではありません)。
 
-- 運用環境の設定は、*azuresite/production.py* ファイルにあります。 開発の詳細は *azuresite/settings.py* にあります。
+- 運用環境の設定は、 *azuresite/production.py* ファイルにあります。 開発の詳細は *azuresite/settings.py* にあります。
 
 - `DJANGO_ENV` 環境変数を "production" に設定した場合に、アプリで運用環境の設定が使用されます。 この環境変数は、PostgreSQL データベース構成に使用する他のものと共に、チュートリアルの後半で作成します。
 
@@ -91,7 +91,7 @@ Azure portal を使用して、データ ドリブンの Python [Django](https:/
     | 場所 | お近くの場所を選択します。 |
     | Version | 既定値 (最新バージョン) のままにします。 |
     | コンピューティングとストレージ | **[サーバーの構成]** を選択し、 **[Basic]** および **[Gen 5]** を選択します。 **[仮想コア]** を 1 に設定し、 **[ストレージ]** を 5 GB に設定し、 **[OK]** を選択します。 これらの選択により、Azure で PostgreSQL 用に使用できる最もコストの低いサーバーがプロビジョニングされます。 また、サーバーのコストをカバーするクレジットを Azure アカウントで使用することもできます。 |
-    | 管理者ユーザー名、パスワード、パスワードの確認入力 | データベース サーバーの管理者アカウントの資格情報を入力します。 これらの資格情報は、このチュートリアルの後半で必要になるため、記録しておいてください。 |
+    | 管理者ユーザー名、パスワード、パスワードの確認入力 | データベース サーバーの管理者アカウントの資格情報を入力します。 これらの資格情報は、このチュートリアルの後半で必要になるため、記録しておいてください。 注: ユーザー名とパスワードに `$` 文字は使用しないでください。 後で、これらの値を使用して環境変数を作成しますが、Python アプリの実行に使用する Linux コンテナー内では、環境変数内の `$` 文字に特殊な意味があります。 |
 
 1. **[確認および作成]** 、 **[作成]** の順に選択します。 Azure での Web アプリのプロビジョニングには数分かかります。
 
@@ -150,10 +150,12 @@ Azure portal を使用して、データ ドリブンの Python [Django](https:/
     | 設定名 | 値 |
     | --- | --- |
     | DJANGO_ENV | `production` (この値は、上記の[サンプルの概要](#fork-the-sample-repository)で説明したように、運用環境の構成を使用するようにアプリに指示します)。 |
-    | DBHOST | 前のセクションのデータベース サーバーの名前。つまり、サーバーの URL で `.postgres.database.azure.com` の前にある `<server-name>` 部分です。 (*azuresite/production.py* 内のコードを実行すると、完全な URL が自動的に作成されます。) |
+    | DBHOST | 前のセクションのデータベース サーバーの名前。つまり、サーバーの URL で `.postgres.database.azure.com` の前にある `<server-name>` 部分です。 ( *azuresite/production.py* 内のコードを実行すると、完全な URL が自動的に作成されます。) |
     | DBNAME | `pollsdb` |
-    | DBUSER | データベースをプロビジョニングしたときに使用した管理者のユーザー名。 (サンプル コードでは、`@<server-name>` の部分が自動的に追加されます。*azuresite/production.py* をご覧ください。) |
+    | DBUSER | データベースをプロビジョニングしたときに使用した管理者のユーザー名。 (サンプル コードでは、`@<server-name>` の部分が自動的に追加されます。 *azuresite/production.py* をご覧ください。) |
     | DBPASS | 前に作成した管理者パスワード。 |
+
+    前述のように、ユーザー名またはパスワードには `$` 文字を使用しないでください。この文字は、Python アプリをホストする Linux コンテナーの環境変数内でエスケープされるためです。
 
 1. **[保存]** を選択し、 **[続行]** を選択して設定を適用します。
 
@@ -222,7 +224,7 @@ Azure portal を使用して、データ ドリブンの Python [Django](https:/
     python manage.py createsuperuser
    ```
 
-    `createsuperuser` コマンドを実行すると、Web アプリ内で使用される、Django スーパーユーザー (または管理者) の資格情報を入力するように求められます。 このチュートリアルでは、既定のユーザー名である `root` を使用し、**Enter** キーを押してメール アドレスを空白のままにして、パスワードとして `Pollsdb1` を入力します。
+    `createsuperuser` コマンドを実行すると、Web アプリ内で使用される、Django スーパーユーザー (または管理者) の資格情報を入力するように求められます。 このチュートリアルでは、既定のユーザー名である `root` を使用し、 **Enter** キーを押してメール アドレスを空白のままにして、パスワードとして `Pollsdb1` を入力します。
 
 [問題がある場合は、お知らせください。](https://aka.ms/DjangoPortalTutorialHelp)
 

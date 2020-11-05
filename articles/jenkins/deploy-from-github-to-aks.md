@@ -3,14 +3,14 @@ title: チュートリアル - Jenkins を使用して GitHub から Azure Kuber
 description: GitHub からの継続的インテグレーション (CI) と Azure Kubernetes Service (AKS) への継続的配置 (CD) のために Jenkins 構成する方法について説明します。
 keywords: jenkins, azure, devops, aks, azure kubernetes service, github
 ms.topic: article
-ms.date: 01/09/2019
+ms.date: 10/29/2019
 ms.custom: devx-track-jenkins, devx-track-azurecli
-ms.openlocfilehash: 5d72a9bd05683f50375204db9cc95b012db6dfa3
-ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
+ms.openlocfilehash: 51b0531946d4fde0e9141744e62bab35a3e1a734
+ms.sourcegitcommit: e1175aa94709b14b283645986a34a385999fb3f7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92688642"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93192504"
 ---
 # <a name="tutorial-deploy-from-github-to-azure-kubernetes-service-using-jenkins"></a>チュートリアル:Jenkins を使用して GitHub から Azure Kubernetes Service にデプロイする
 
@@ -106,7 +106,7 @@ docker push <acrLoginServer>/azure-vote-front:v1
 ```yaml
 containers:
 - name: azure-vote-front
-  image: microsoft/azure-vote-front:v1
+  image: azuredocs/azure-vote-front
 ```
 
 次に、[kubectl apply](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#apply) コマンドを使用して、アプリケーションを AKS クラスターにデプロイします。

@@ -3,14 +3,14 @@ title: Azure Kubernetes Service で Application Gateway イングレス コン�
 description: イングレス コントローラーとして Application Gateway を備えた Kubernetes クラスターを Azure Kubernetes Service で作成する方法について説明します。
 keywords: Azure DevOps Terraform アプリケーション ゲートウェイ イングレス AKS Kubernetes
 ms.topic: how-to
-ms.date: 03/09/2020
+ms.date: 10/30/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 10e52f4cc05bfa4127ee519ed265f0607d4745be
-ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
+ms.openlocfilehash: fe4f7b06388a7a26f61067e4a67e6b310e2a1958
+ms.sourcegitcommit: e1175aa94709b14b283645986a34a385999fb3f7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91401662"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93192554"
 ---
 # <a name="create-an-application-gateway-ingress-controller-in-azure-kubernetes-service"></a>Azure Kubernetes Service で Application Gateway イングレス コントローラーを作成する
 
@@ -31,13 +31,13 @@ ms.locfileid: "91401662"
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
 
-- **Terraform の構成**:[Terraform および Azure へのアクセスの構成](get-started-cloud-shell.md)に関する記事の指示に従ってください
+- **Terraform の構成** : [Terraform および Azure へのアクセスの構成](get-started-cloud-shell.md)に関する記事の指示に従ってください
 
-- **Azure リソース グループ**:デモに使用する Azure リソース グループがない場合は、[Azure リソース グループを作成してください](/azure/azure-resource-manager/manage-resource-groups-portal#create-resource-groups)。 リソース グループの名前と場所がデモで使用されるため、それらの値をメモしてください。
+- **Azure リソース グループ** :デモに使用する Azure リソース グループがない場合は、 [Azure リソース グループを作成してください](/azure/azure-resource-manager/manage-resource-groups-portal#create-resource-groups)。 リソース グループの名前と場所がデモで使用されるため、それらの値をメモしてください。
 
-- **Azure サービス プリンシパル**:「[Azure CLI で Azure サービス プリンシパルを作成する](/cli/azure/create-an-azure-service-principal-azure-cli)」の「**サービス プリンシパルを作成する**」セクションの指示に従ってください。 `appId`、`displayName`、`password` の各値をメモします。
+- **Azure サービス プリンシパル** :「 [Azure CLI で Azure サービス プリンシパルを作成する](/cli/azure/create-an-azure-service-principal-azure-cli)」の「 **サービス プリンシパルを作成する** 」セクションの指示に従ってください。 `appId`、`displayName`、`password` の各値をメモします。
 
-- **サービス プリンシパル オブジェクト ID を取得する**:Cloud Shell で次のコマンドを実行します。`az ad sp list --display-name <displayName>`
+- **サービス プリンシパル オブジェクト ID を取得する** :Cloud Shell で次のコマンドを実行します。`az ad sp list --display-name <displayName>`
 
 ## <a name="create-the-directory-structure"></a>ディレクトリ構造を作成する
 
@@ -131,42 +131,42 @@ Azure プロバイダーを宣言する Terraform 構成ファイルを作成し
     }
 
     variable "virtual_network_address_prefix" {
-      description = "Containers DNS server IP address."
+      description = "VNET address prefix"
       default     = "15.0.0.0/8"
     }
 
     variable "aks_subnet_name" {
-      description = "AKS Subnet Name."
+      description = "Subnet Name."
       default     = "kubesubnet"
     }
 
     variable "aks_subnet_address_prefix" {
-      description = "Containers DNS server IP address."
+      description = "Subnet address prefix."
       default     = "15.0.0.0/16"
     }
 
     variable "app_gateway_subnet_address_prefix" {
-      description = "Containers DNS server IP address."
+      description = "Subnet server IP address."
       default     = "15.1.0.0/16"
     }
 
     variable "app_gateway_name" {
-      description = "Name of the Application Gateway."
+      description = "Name of the Application Gateway"
       default = "ApplicationGateway1"
     }
 
     variable "app_gateway_sku" {
-      description = "Name of the Application Gateway SKU."
+      description = "Name of the Application Gateway SKU"
       default = "Standard_v2"
     }
 
     variable "app_gateway_tier" {
-      description = "Tier of the Application Gateway SKU."
+      description = "Tier of the Application Gateway tier"
       default = "Standard_v2"
     }
 
     variable "aks_name" {
-      description = "Name of the AKS cluster."
+      description = "AKS cluster name"
       default     = "aks-cluster1"
     }
     variable "aks_dns_prefix" {
@@ -185,27 +185,27 @@ Azure プロバイダーを宣言する Terraform 構成ファイルを作成し
     }
 
     variable "aks_agent_vm_size" {
-      description = "The size of the Virtual Machine."
+      description = "VM size"
       default     = "Standard_D3_v2"
     }
 
     variable "kubernetes_version" {
-      description = "The version of Kubernetes."
+      description = "Kubernetes version"
       default     = "1.11.5"
     }
 
     variable "aks_service_cidr" {
-      description = "A CIDR notation IP range from which to assign service cluster IPs."
+      description = "CIDR notation IP range from which to assign service cluster IPs"
       default     = "10.0.0.0/16"
     }
 
     variable "aks_dns_service_ip" {
-      description = "Containers DNS server IP address."
+      description = "DNS server IP address"
       default     = "10.0.0.10"
     }
 
     variable "aks_docker_bridge_cidr" {
-      description = "A CIDR notation IP for Docker bridge."
+      description = "CIDR notation IP for Docker bridge."
       default     = "172.17.0.1/16"
     }
 
@@ -235,8 +235,9 @@ Azure プロバイダーを宣言する Terraform 構成ファイルを作成し
 
 1. ファイルを保存し ( **&lt;Ctrl> + S** キー)、エディターを終了します ( **&lt;Ctrl> + Q** キー)。
 
-## <a name="define-the-resources"></a>リソースを定義する 
-すべてのリソースを作成する Terraform 構成ファイルを作成します。 
+## <a name="define-the-resources"></a>リソースを定義する
+
+すべてのリソースを作成する Terraform 構成ファイルを作成します。
 
 1. Cloud Shell で、`resources.tf` という名前のファイルを作成します。
 
@@ -670,13 +671,13 @@ Azure Active Directory ポッド ID は、[Azure Resource Manager](/azure/azure-
   - [Managed Identity Controller (MIC)](https://github.com/Azure/aad-pod-identity#managed-identity-controllermic) コンポーネント
   - [Node Managed Identity (NMI)](https://github.com/Azure/aad-pod-identity#node-managed-identitynmi) コンポーネント
 
-RBAC が**有効**な場合は、次のコマンドを実行して Azure AD ポッド ID をクラスターにインストールします。
+RBAC が **有効** な場合は、次のコマンドを実行して Azure AD ポッド ID をクラスターにインストールします。
 
 ```bash
 kubectl create -f https://raw.githubusercontent.com/Azure/aad-pod-identity/master/deploy/infra/deployment-rbac.yaml
 ```
 
-RBAC が**無効**な場合は、次のコマンドを実行して Azure AD ポッド ID をクラスターにインストールします。
+RBAC が **無効** な場合は、次のコマンドを実行して Azure AD ポッド ID をクラスターにインストールします。
 
 ```bash
 kubectl create -f https://raw.githubusercontent.com/Azure/aad-pod-identity/master/deploy/infra/deployment.yaml
@@ -686,7 +687,7 @@ kubectl create -f https://raw.githubusercontent.com/Azure/aad-pod-identity/maste
 
 このセクションのコードでは、[Helm](/azure/aks/kubernetes-helm) (Kubernetes パッケージ マネージャー) を使用して `application-gateway-kubernetes-ingress` パッケージをインストールします。
 
-1. RBAC が**有効**な場合は、次の一連のコマンドを実行して、Helm のインストールと構成を行います。
+1. RBAC が **有効** な場合は、次の一連のコマンドを実行して、Helm のインストールと構成を行います。
 
     ```bash
     kubectl create serviceaccount --namespace kube-system tiller-sa
@@ -694,7 +695,7 @@ kubectl create -f https://raw.githubusercontent.com/Azure/aad-pod-identity/maste
     helm init --tiller-namespace kube-system --service-account tiller-sa
     ```
 
-1. RBAC が**無効**な場合は、次のコマンドを実行して、Helm のインストールと構成を行います。
+1. RBAC が **無効** な場合は、次のコマンドを実行して、Helm のインストールと構成を行います。
 
     ```bash
     helm init

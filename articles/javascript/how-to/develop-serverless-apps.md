@@ -3,13 +3,13 @@ title: Azure Functions を使用したサーバーレス Node.js コード
 description: Azure Functions が提供するサーバーレス コードのインフラストラクチャにより、応答性の高いオンデマンドの HTTP エンドポイントを作成できます。
 ms.topic: how-to
 ms.date: 10/27/2020
-ms.custom: seo-javascript-september2019, seo-javascript-october2019, devx-track-js
-ms.openlocfilehash: bcf8528bbb5011f10fdbb57b31b08a426fd8d8d8
-ms.sourcegitcommit: 3d3ee59f73c966da7df65bada49e059d02e74b91
+ms.custom: seo-javascript-september2019, seo-javascript-october2019, devx-track-js, contperfq2
+ms.openlocfilehash: eb33717761d492051737b0c4ec86a93a6e2b6256
+ms.sourcegitcommit: e1175aa94709b14b283645986a34a385999fb3f7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92898755"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93192544"
 ---
 # <a name="use-azure-functions-to-develop-nodejs-serverless-code"></a>Azure Functions を使用して Node.js サーバーレス コードを開発する
 

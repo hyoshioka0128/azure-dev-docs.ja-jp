@@ -2,18 +2,18 @@
 title: Azure Database for PostgreSQL で Spring Data JDBC を使用する
 description: Azure Database for PostgreSQL データベースで Spring Data JDBC を使用する方法を説明します。
 documentationcenter: java
-ms.date: 05/18/2020
+ms.date: 10/13/2020
 ms.service: postgresql
 ms.tgt_pltfrm: multiple
 ms.author: judubois
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: c700d78fa8cb7568e207fd020714cda25abb2bc5
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: a7d0c007b2f4c21dc6387e28d5753e67d504cd3a
+ms.sourcegitcommit: 5c7f5fef798413b1a304cc9ee31c8518b73f27eb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831818"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93066191"
 ---
 # <a name="use-spring-data-jdbc-with-azure-database-for-postgresql"></a>Azure Database for PostgreSQL で Spring Data JDBC を使用する
 
@@ -34,9 +34,11 @@ ms.locfileid: "90831818"
 以下のコマンドを使用して、コマンド ラインでアプリケーションを生成します。
 
 ```bash
-curl https://start.spring.io/starter.tgz -d dependencies=web,data-jdbc,postgresql -d baseDir=azure-database-workshop -d bootVersion=2.3.1.RELEASE -d javaVersion=8 | tar -xzvf -
+curl https://start.spring.io/starter.tgz -d dependencies=web,data-jdbc,postgresql -d baseDir=azure-database-workshop -d bootVersion=2.3.4.RELEASE -d javaVersion=8 | tar -xzvf -
 ```
-
+ > [!NOTE]
+ > Spring Initializr では、既定のバージョンとして Java 11 が使用されます。 このトピックで説明されている Spring Boot Starter を使用するには、代わりに Java 8 を選択する必要があります。
+ 
 ### <a name="configure-spring-boot-to-use-azure-database-for-postgresql"></a>Azure Database for PostgreSQL を使用するように Spring Boot を構成する
 
 *src/main/resources/application.properties* ファイルを開き、以下のテキストを追加します。
@@ -54,7 +56,7 @@ spring.datasource.initialization-mode=always
 2 つの `$AZ_DATABASE_NAME` 変数と、`$AZ_POSTGRESQL_PASSWORD` 変数を、この記事の冒頭で構成した値に置き換えます。
 
 > [!WARNING]
-> 構成プロパティ `spring.datasource.initialization-mode=always` は、サーバーが起動されるたびに、*schema.sql* ファイル (後ほど作成します) を使用して、Spring Boot がデータベース スキーマを自動的に生成することを意味します。 これはテストには適していますが、再起動するたびにデータが削除されるため、運用環境では使用しないでください。
+> 構成プロパティ `spring.datasource.initialization-mode=always` は、サーバーが起動されるたびに、 *schema.sql* ファイル (後ほど作成します) を使用して、Spring Boot がデータベース スキーマを自動的に生成することを意味します。 これはテストには適していますが、再起動するたびにデータが削除されるため、運用環境では使用しないでください。
 
 これで、次のように、提供されている Maven Wrapper を使用してアプリケーションを起動できるはずです。
 

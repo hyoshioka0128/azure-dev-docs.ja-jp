@@ -41,16 +41,8 @@
               href: tutorial-vscode-azure-app-service-node-04.md
             - name: リソースをクリーンアップする
               href: tutorial-vscode-azure-app-service-node-05.md
-        - name: VS Code で Deno を App Service にデプロイする
-          items:
-            - name: 概要と前提条件
-              href: tutorial-visual-studio-code-azure-app-service-deno-01.md
-            - name: アプリを作成する
-              href: tutorial-visual-studio-code-azure-app-service-deno-02.md
-            - name: Azure にアプリケーションをデプロイする
-              href: tutorial-visual-studio-code-azure-app-service-deno-03.md
-            - name: リソースをクリーンアップする
-              href: tutorial-visual-studio-code-azure-app-service-deno-04.md
+        - name: Deno を App Service にデプロイする
+          href: tutorial/deno-visual-studio-code-azure-app-service.yml?&preview=tutorialFeedback
         - name: VS Code を使用したコンテナーのデプロイ
           items:
             - name: 概要と前提条件

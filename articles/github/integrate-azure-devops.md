@@ -19,7 +19,7 @@ ms.locfileid: "92898704"
 Azure DevOps が GitHub とどのように連動するかについては、次の記事を参照してください。  
 
 - [Azure Boards と GitHub を接続する](/azure/devops/boards/github)   
-- [Azure Boards の作業項目を GitHub のコミット、プル要求、およびイシューにリンクする](/azure/devops/boards/github/link-to-from-github)  
+- [Azure Boards の作業項目を GitHub のコミット、プルリクエスト、およびイシューにリンクする](/azure/devops/boards/github/link-to-from-github)  
 - [Azure Pipelines を使用して GitHub リポジトリを構築する](/azure/devops/pipelines/repos/github)   
 - [Azure Pipelines から GitHub リリースを作成する](/azure/devops/pipelines/tasks/utility/github-release)  
  

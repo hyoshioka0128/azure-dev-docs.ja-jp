@@ -197,7 +197,7 @@ Jenkins をセットアップした後は、次のセクション、「[Jenkins 
 
 1. **[全般]** タブで **[GitHub プロジェクト]** のチェック ボックスをオンにし、GitHub プロジェクトの URL を指定します。 この URL では、Jenkins の継続的インテグレーション/継続的デプロイ (CI/CD) フローと統合する Service Fabric Java アプリケーションがホストされます (例: `https://github.com/{your-github-account}/service-fabric-java-getting-started`)。
 
-1. **[Source Code Management (ソース コードの管理)]** タブで **[Git]** を選択します。 Jenkins CI/CD フローと統合する Service Fabric Java アプリケーションをホストするリポジトリの URL を指定します (例: `https://github.com/{your-github-account}/service-fabric-java-getting-started`)。 ビルドする分岐を指定することもできます (例: `/master`)。
+1. **[Source Code Management (ソース コードの管理)]** タブで **[Git]** を選択します。 Jenkins CI/CD フローと統合する Service Fabric Java アプリケーションをホストするリポジトリの URL を指定します (例: `https://github.com/{your-github-account}/service-fabric-java-getting-started`)。 ビルドするブランチを指定することもできます (例: `/master`)。
 1. Jenkins と対話するように *GitHub* リポジトリを構成します。
 
    1. GitHub リポジトリのページで **[Settings (設定)]**  >  **[Integrations and Services (統合とサービス)]** の順に移動します。
@@ -314,7 +314,7 @@ Jenkins プラグインでバグが発生した場合は、[Jenkins JIRA](https:
 
 ## <a name="ideas-to-try"></a>試してみましょう
 
-GitHub と Jenkins の構成が完了しました。 リポジトリ (https://github.com/Azure-Samples/service-fabric-java-getting-started ) のフォークの `reliable-services-actor-sample/Actors/ActorCounter` プロジェクトにサンプルの変更を加えてみましょう。 リモートの `master` 分岐 (または動作するように構成したいずれかの分岐) に変更をプッシュすると、 構成した Jenkins ジョブ `MyJob` がトリガーされます。 GitHub から変更内容がフェッチされてビルドが行われ、ビルド後のアクションで指定したクラスターにアプリケーションがデプロイされます。  
+GitHub と Jenkins の構成が完了しました。 リポジトリ (https://github.com/Azure-Samples/service-fabric-java-getting-started ) のフォークの `reliable-services-actor-sample/Actors/ActorCounter` プロジェクトにサンプルの変更を加えてみましょう。 リモートの `master` ブランチ (または動作するように構成したいずれかのブランチ) に変更をプッシュすると、 構成した Jenkins ジョブ `MyJob` がトリガーされます。 GitHub から変更内容がフェッチされてビルドが行われ、ビルド後のアクションで指定したクラスターにアプリケーションがデプロイされます。  
 
 ## <a name="next-steps"></a>次のステップ
 

@@ -3,17 +3,17 @@ title: Spring Boot Initializer アプリを作成する - Azure Redis Cache
 description: Spring Initializer で作成された Spring Boot アプリケーションを、Azure Redis Cache によってクラウドで Redis を使用するように構成します。
 services: redis-cache
 documentationcenter: java
-ms.date: 10/06/2020
+ms.date: 10/13/2020
 ms.service: cache
 ms.tgt_pltfrm: cache-redis
 ms.topic: conceptual
 ms.custom: devx-track-java
-ms.openlocfilehash: cd8dd2a841a1ccf43f18374f34963c23f1369658
-ms.sourcegitcommit: 723441eda0eb4ff893123201a9e029b7becf5ecc
+ms.openlocfilehash: 7d8ee875339adb741fbddeba6d4328eb22cd3e46
+ms.sourcegitcommit: 5c7f5fef798413b1a304cc9ee31c8518b73f27eb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91846603"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93066277"
 ---
 # <a name="configure-a-spring-boot-initializer-app-to-use-redis-in-the-cloud-with-azure-redis-cache"></a>Azure Redis Cache によってクラウドで Redis を使用するように Spring Boot Initializer アプリを構成する
 
@@ -31,16 +31,16 @@ ms.locfileid: "91846603"
 
 1. [https://www.microsoft.com](<https://start.spring.io/>) を参照します。
 
-1. **Java** で **Maven** プロジェクトを生成することを指定し、アプリケーションの **[グループ]** と **[アーティファクト]** に名前を入力します。
+1. **Java** で **Maven** プロジェクトを生成することを指定して、Java バージョン **8** を選択し、アプリケーションの **[グループ]** と **[アーティファクト]** の名前を入力します。
 
-1. **Spring Web** セクションの依存関係を追加し、**Web** のチェックボックスをオンにします。次に、**NoSQL** セクションまで下にスクロールし、 **[Spring Data Reactive Redis]\(Spring Data Reactive Redis\)** のチェックボックスをオンにします。 
+1. **Spring Web** セクションの依存関係を追加し、 **Web** のチェックボックスをオンにします。次に、 **NoSQL** セクションまで下にスクロールし、 **[Spring Data Reactive Redis]\(Spring Data Reactive Redis\)** のチェックボックスをオンにします。 
 1. ページの下部までスクロールし、 **[Generate Project]\(プロジェクトの生成\)** をクリックします。
 
    ![基本的な Spring Initializr オプション][SI01]
 
    > [!NOTE]
    >
-   > Spring Initializr では、 **[Group]\(グループ\)** と **[Aritifact]\(アーティファクト\)** の名前を使用してパッケージ名を作成します (例: *com.contoso.myazuredemo*)。
+   > Spring Initializr では、 **[Group]\(グループ\)** と **[Aritifact]\(アーティファクト\)** の名前を使用してパッケージ名を作成します (例: *com.contoso.myazuredemo* )。
    >
 
 1. メッセージが表示されたら、ローカル コンピューター上のパスにプロジェクトをダウンロードします。
@@ -74,7 +74,7 @@ ms.locfileid: "91846603"
 
    ![Azure portal でキャッシュを作成します。][AZ03]
 
-1. キャッシュが作成されると、Azure の**ダッシュボード**のほか、 **[すべてのリソース]** ブレードと **[Redis Cach]** ページにも作成したキャッシュが表示されます。 これらのいずれかの場所でキャッシュをクリックすると、そのキャッシュのプロパティ ページを開くことができます。
+1. キャッシュが作成されると、Azure の **ダッシュボード** のほか、 **[すべてのリソース]** ブレードと **[Redis Cach]** ページにも作成したキャッシュが表示されます。 これらのいずれかの場所でキャッシュをクリックすると、そのキャッシュのプロパティ ページを開くことができます。
 
    ![Azure portal 内のプロビジョニングされたリソース。][AZ04]
 

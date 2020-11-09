@@ -3,14 +3,14 @@ title: チュートリアル:Azure portal を使用して PostgreSQL で Django 
 description: Azure で Web アプリと PostgreSQL データベースをプロビジョニングし、GitHub からアプリ コードをデプロイします。
 ms.devlang: python
 ms.topic: tutorial
-ms.date: 10/09/2020
+ms.date: 11/02/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: 333cda811133e9ce4e83730b038a7d84b40b7fa1
-ms.sourcegitcommit: ca7b58f60dd02709977b35175b43be582b868b03
+ms.openlocfilehash: 503a899150edc3f8dc22d7e0361a4888590ab61c
+ms.sourcegitcommit: 10d4133c8abb3e7473dcdf6418ebadd3e08275f7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92629936"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93284534"
 ---
 # <a name="tutorial-deploy-a-django-web-app-with-postgresql-using-the-azure-portal"></a>チュートリアル:Azure portal を使用して PostgreSQL で Django Web アプリをデプロイする
 
@@ -38,8 +38,7 @@ Azure portal を使用して、データ ドリブンの Python [Django](https:/
 **(省略可能) サンプルについて:** djangoapp サンプルには、データ ドリブンの Django 投票アプリが含まれます。これを、Django ドキュメントの「 [はじめての Django アプリ作成](https://docs.djangoproject.com/en/2.1/intro/tutorial01/)」に従って取得します。 また、このサンプルは、[Django デプロイ チェックリスト](https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/)を使用して変更され、Azure App Service などの運用環境で実行されます。 (これらの変更は運用環境に対して行われ、Azure に固有ではありません)。
 
 - 運用環境の設定は、 *azuresite/production.py* ファイルにあります。 開発の詳細は *azuresite/settings.py* にあります。
-
-- `DJANGO_ENV` 環境変数を "production" に設定した場合に、アプリで運用環境の設定が使用されます。 この環境変数は、PostgreSQL データベース構成に使用する他のものと共に、チュートリアルの後半で作成します。
+- `WEBSITE_HOSTNAME` 環境変数を設定すると、アプリで運用環境の設定が使用されます。 この変数は、Azure App Service によって Web アプリの URL (`msdocs-django.azurewebsites.net` など) に自動的に設定され ます。
 
 [問題がある場合は、お知らせください。](https://aka.ms/DjangoPortalTutorialHelp)
 
@@ -149,7 +148,6 @@ Azure portal を使用して、データ ドリブンの Python [Django](https:/
 
     | 設定名 | 値 |
     | --- | --- |
-    | DJANGO_ENV | `production` (この値は、上記の[サンプルの概要](#fork-the-sample-repository)で説明したように、運用環境の構成を使用するようにアプリに指示します)。 |
     | DBHOST | 前のセクションのデータベース サーバーの名前。つまり、サーバーの URL で `.postgres.database.azure.com` の前にある `<server-name>` 部分です。 ( *azuresite/production.py* 内のコードを実行すると、完全な URL が自動的に作成されます。) |
     | DBNAME | `pollsdb` |
     | DBUSER | データベースをプロビジョニングしたときに使用した管理者のユーザー名。 (サンプル コードでは、`@<server-name>` の部分が自動的に追加されます。 *azuresite/production.py* をご覧ください。) |

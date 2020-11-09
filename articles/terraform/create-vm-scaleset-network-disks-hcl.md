@@ -4,12 +4,12 @@ description: Terraform を使用して Azure 仮想マシン スケール セッ
 ms.topic: how-to
 ms.date: 11/07/2019
 ms.custom: devx-track-terraform
-ms.openlocfilehash: d261a5c9ca76dd66c5c79333186079b92ea54bae
-ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
+ms.openlocfilehash: d157a9aa6b59281dc34f172fb58eedd87f06ffae
+ms.sourcegitcommit: 5541f993c01ce356e1b0eaa8f95aea9051c3c21e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91401632"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93278447"
 ---
 # <a name="create-an-azure-virtual-machine-scale-set-using-terraform"></a>Terraform を使用して Azure 仮想マシン スケール セットを作成する
 
@@ -31,9 +31,9 @@ ms.locfileid: "91401632"
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
 
-- **Terraform のインストール**:[Terraform および Azure へのアクセスの構成](get-started-cloud-shell.md)に関する記事の指示に従ってください
+- **Terraform のインストール** : [Terraform および Azure へのアクセスの構成](get-started-cloud-shell.md)に関する記事の指示に従ってください
 
-- **SSH キー ペアの作成**:詳細については、「[Azure に Linux VM 用の SSH 公開キーと秘密キーのペアを作成して使用する方法](/azure/virtual-machines/linux/mac-create-ssh-keys)」を参照してください。
+- **SSH キー ペアの作成** :詳細については、「 [Azure に Linux VM 用の SSH 公開キーと秘密キーのペアを作成して使用する方法](/azure/virtual-machines/linux/mac-create-ssh-keys)」を参照してください。
 
 ## <a name="create-the-directory-structure"></a>ディレクトリ構造を作成する
 
@@ -323,11 +323,7 @@ Cloud Shell で、次の手順を実行します。
    }
    ```
 
-1. ファイルを保存し、次のコマンドを入力して vi エディターを終了します。
-
-    ```bash
-    :wq
-    ```
+1. ファイルを保存し ( **&lt;Ctrl> + S** キー)、エディターを終了します ( **&lt;Ctrl> + Q** キー)。
 
 1. スケール セットの一部である仮想マシンの cloud-init 構成として機能する `web.conf` という名前のファイルを作成します。
 
@@ -343,11 +339,7 @@ Cloud Shell で、次の手順を実行します。
     - nginx
    ```
 
-1. ファイルを保存し、次のコマンドを入力して vi エディターを終了します。
-
-     ```bash
-     :wq
-     ```
+1. ファイルを保存し ( **&lt;Ctrl> + S** キー)、エディターを終了します ( **&lt;Ctrl> + Q** キー)。
 
 1. `variables.tf` 構成ファイルを開きます。
 
@@ -355,7 +347,7 @@ Cloud Shell で、次の手順を実行します。
     code variables.tf
     ```
 
-1. ファイルの末尾に移動し、A キーを選択して追加モードに入ります。
+1. ファイルの最後に移動します。
 
 1. 次のコードをファイルの末尾に貼り付けてデプロイをカスタマイズします。
 
@@ -398,7 +390,7 @@ Cloud Shell で、次の手順を実行します。
     ![FQDN の参照の結果](./media/create-vm-scaleset-network-disks-hcl/browser-fqdn.png)
 
 ## <a name="add-an-ssh-jumpbox"></a>SSH ジャンプボックスを追加する
-SSH "*ジャンプボックス*" は、ネットワーク上の他のサーバーにアクセスするために "ジャンプ" する単一のサーバーです。 この手順では、次のリソースを構成します。
+SSH " *ジャンプボックス* " は、ネットワーク上の他のサーバーにアクセスするために "ジャンプ" する単一のサーバーです。 この手順では、次のリソースを構成します。
 
 - 仮想マシン スケール セットと同じサブネットに接続されているネットワーク インターフェイス (またはジャンプボックス)。
 
@@ -410,7 +402,7 @@ SSH "*ジャンプボックス*" は、ネットワーク上の他のサーバ�
    code vmss.tf
    ```
 
-1. ファイルの末尾に移動し、A キーを選択して追加モードに入ります。
+1. ファイルの最後に移動します。
 
 1. ファイルの末尾に次のコードを貼り付けます。
 
@@ -473,6 +465,7 @@ SSH "*ジャンプボックス*" は、ネットワーク上の他のサーバ�
     tags = var.tags
    }
    ```
+1. ファイルを保存し ( **&lt;Ctrl> + S** キー)、エディターを終了します ( **&lt;Ctrl> + Q** キー)。
 
 1. `output.tf` 構成ファイルを開きます。
 
@@ -480,7 +473,7 @@ SSH "*ジャンプボックス*" は、ネットワーク上の他のサーバ�
    code output.tf
    ```
 
-1. ファイルの末尾に移動し、A キーを選択して追加モードに入ります。
+1. ファイルの最後に移動します。
 
 1. 次のコードをファイルの末尾に貼り付けて、デプロイの完了時にジャンプボックスのホスト名が表示されるようにします。
 
@@ -498,7 +491,7 @@ SSH "*ジャンプボックス*" は、ネットワーク上の他のサーバ�
    terraform apply
    ```
 
-**注**:
+**注** :
 
 - パスワードを使用してログインする機能は、デプロイしたジャンプボックスと仮想マシン スケール セットでは無効にされています。 仮想マシンにアクセスするには、SSH を使用してログインします。
 

@@ -7,12 +7,12 @@ ms.author: seal
 ms.date: 08/21/2019
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: efccf07733cb4ae509753f5e384453a46e2bf678
-ms.sourcegitcommit: 44016b81a15b1625c464e6a7b2bfb55938df20b6
+ms.openlocfilehash: 1d849ed17a2201be1595b6bc80e613691ac778c8
+ms.sourcegitcommit: e1175aa94709b14b283645986a34a385999fb3f7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86379216"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93192454"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-service-bus-jms"></a>Azure Service Bus JMS 用の Spring Boot スターターの使用方法
 
@@ -42,7 +42,7 @@ Azure Service Bus JMS 用の Spring Boot スターターを使用すると、Spr
 
 1. 構成済みの Service Bus キューまたはトピックがない場合は、Azure portal を使用して [Service Bus キュー](/azure/service-bus-messaging/service-bus-quickstart-portal)または [Service Bus トピック](/azure/service-bus-messaging/service-bus-quickstart-topics-subscriptions-portal)を作成します。 前の手順で指定された要件を名前空間が確実に満たすようにしてください。 また、名前空間に含まれる接続文字列をメモしてください。これは、このチュートリアルのテスト アプリに必要です。
 
-1. Spring Boot アプリケーションがない場合は、[Spring Initializer で **Maven** プロジェクトを作成](https://start.spring.io/)します。 必ず、 **[Maven プロジェクト]** を選択し、 **[依存関係]** に **[Web]** 依存関係を追加してください。
+1. Spring Boot アプリケーションがない場合は、 [Spring Initializer で **Maven** プロジェクトを作成](https://start.spring.io/)します。 必ず、 **[Maven プロジェクト]** を選択し、 **[依存関係]** に **[Web]** 依存関係を追加してください。
 
 ## <a name="use-the-azure-service-bus-jms-starter"></a>Azure Service Bus JMS スターターを使用する
 
@@ -86,7 +86,7 @@ Azure Service Bus JMS 用の Spring Boot スターターを使用すると、Spr
 
 1. テキスト エディターで *application.properties* ファイルを開きます。
 
-1. *application.properties* ファイルの最後に次のコードを追加します。 サンプルの値は、実際のサービス バスの適切な値に置き換えてください。
+1. *application.properties* ファイルの最後に次のコードを追加します。 プレースホルダーの値をサービス バスの適切な値で置き換えます。値は引用符で囲まないでください。
 
     ```yml
     spring.jms.servicebus.connection-string=<ServiceBusNamespaceConnectionString>
@@ -114,11 +114,11 @@ Azure Service Bus JMS 用の Spring Boot スターターを使用すると、Spr
 
 1. テキスト エディターで *application.properties* ファイルを開きます。
 
-1. *application.properties* ファイルの最後に次のコードを追加します。 サンプルの値は、実際のサービス バスの適切な値に置き換えてください。
+1. *application.properties* ファイルの最後に次のコードを追加します。 プレースホルダーの値をサービス バスの適切な値で置き換えます。値は引用符で囲まないでください。
 
     ```yml
     spring.jms.servicebus.connection-string=<ServiceBusNamespaceConnectionString>
-    spring.jms.servicebus.topic-client-id=<ServiceBusTopicClientId>
+    spring.jms.servicebus.topic-client-id=<ServiceBusSubscriptionID>
     spring.jms.servicebus.idle-timeout=<IdleTimeout>
     ```
 
@@ -127,7 +127,7 @@ Azure Service Bus JMS 用の Spring Boot スターターを使用すると、Spr
     | フィールド                                     | 説明                                                                                       |
     |-------------------------------------------|---------------------------------------------------------------------------------------------------|
     | `spring.jms.servicebus.connection-string` | Azure portal の自分の Service Bus 名前空間で取得した接続文字列を指定します。   |
-    | `spring.jms.servicebus.topic-client-id`   | 持続的サブスクリプションで Azure Service Bus トピックを使用している場合は、JMS クライアント ID を指定します。 |
+    | `spring.jms.servicebus.topic-client-id`   | JMS クライアント ID を指定します。これは、Azure portal 内の Service Bus のサブスクリプション ID です。                | 
     | `spring.jms.servicebus.idle-timeout`      | アイドル タイムアウトをミリ秒単位で指定します。 このチュートリアルで推奨される値は 1800000 です。     |
 
 1. *application.properties* ファイルを保存して閉じます。
@@ -169,7 +169,7 @@ Azure Service Bus JMS 用の Spring Boot スターターを使用すると、Spr
 
 ### <a name="define-a-test-java-class"></a>テスト Java クラスを定義する
 
-1. テキスト エディターを使用して、*User.java* という名前の Java ファイルを自分のアプリのパッケージ ディレクトリに作成します。
+1. テキスト エディターを使用して、 *User.java* という名前の Java ファイルを自分のアプリのパッケージ ディレクトリに作成します。
 
 1. ユーザーの名前を格納したり取得したりする汎用的なユーザー クラスを定義します。
 
@@ -209,7 +209,7 @@ Azure Service Bus JMS 用の Spring Boot スターターを使用すると、Spr
 
 ### <a name="create-a-new-class-for-the-message-send-controller"></a>メッセージ送信コントローラー用の新しいクラスを作成する
 
-1. テキスト エディターを使用して、*SendController.java* という名前の Java ファイルを自分のアプリのパッケージ ディレクトリに作成します。
+1. テキスト エディターを使用して、 *SendController.java* という名前の Java ファイルを自分のアプリのパッケージ ディレクトリに作成します。
 
 1. この新しいファイルに次のコードを追加します。
 
@@ -252,7 +252,7 @@ Azure Service Bus JMS 用の Spring Boot スターターを使用すると、Spr
 
 #### <a name="receive-messages-from-a-service-bus-queue"></a>Service Bus キューからメッセージを受信する
 
-1. テキスト エディターを使用して、*QueueReceiveController.java* という名前の Java ファイルを自分のアプリのパッケージ ディレクトリに作成します。
+1. テキスト エディターを使用して、 *QueueReceiveController.java* という名前の Java ファイルを自分のアプリのパッケージ ディレクトリに作成します。
 
 1. この新しいファイルに次のコードを追加します。
 
@@ -285,7 +285,7 @@ Azure Service Bus JMS 用の Spring Boot スターターを使用すると、Spr
 
 #### <a name="receive-messages-from-a-service-bus-subscription"></a>Service Bus サブスクリプションからメッセージを受信する
 
-1. テキスト エディターを使用して、*TopicReceiveController.java* という名前の Java ファイルを自分のアプリのパッケージ ディレクトリに作成します。 
+1. テキスト エディターを使用して、 *TopicReceiveController.java* という名前の Java ファイルを自分のアプリのパッケージ ディレクトリに作成します。 
 
 1. この新しいファイルに次のコードを追加します。 `<ServiceBusTopicName>` プレースホルダーは、自分の Service Bus 名前空間に構成されている実際のトピック名に置き換えてください。 `<ServiceBusSubscriptionName>` プレースホルダーは、自分の Service Bus トピックの実際のサブスクリプション名に置き換えてください。
 
@@ -332,7 +332,7 @@ Azure Service Bus JMS 用の Spring Boot スターターを使用すると、Spr
     mvn clean spring-boot:run
     ```
 
-1. 自分のアプリケーションが実行されたら、*curl* を使用してアプリケーションをテストできます。
+1. 自分のアプリケーションが実行されたら、 *curl* を使用してアプリケーションをテストできます。
 
     ```shell
     curl -X POST localhost:8080/messages?message=hello

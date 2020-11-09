@@ -3,18 +3,18 @@ title: Spring Boot アプリケーションでの Azure Key Vault からのシ�
 description: Spring Boot アプリケーションでの Azure Key Vault からのシークレットの読み取りに関するチュートリアル
 services: key-vault
 documentationcenter: java
-ms.date: 08/15/2020
+ms.date: 10/14/2020
 ms.service: key-vault
 ms.tgt_pltfrm: multiple
 ms.topic: tutorial
 ms.workload: identity
 ms.custom: devx-track-java, devx-track-azurecli
-ms.openlocfilehash: c6a81f5fb08985626909fe499584e67351a70ad0
-ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
+ms.openlocfilehash: 9636ae27950f0ffabf6c9a433c802b3101447dab
+ms.sourcegitcommit: e1175aa94709b14b283645986a34a385999fb3f7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92688845"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93192404"
 ---
 # <a name="tutorial-reading-a-secret-from-azure-key-vault-in-a-spring-boot-application"></a>チュートリアル:Spring Boot アプリケーションでの Azure Key Vault からのシークレットの読み取り
 
@@ -108,11 +108,11 @@ az ad sp create-for-rbac --name contososp
 
 ```json
 {
-  "appId": "8r7o486s-o5q9-450s-8457-pr26p86n0497",
+  "appId": "sample-app-id",
   "displayName": "ejbcontososp",
   "name": "http://ejbcontososp",
-  "password": "4bt.lCKJKlbYLn_3XF~wWtUwyHU0jKggu2",
-  "tenant": "72s988os-86s1-41ns-91no-2d7cd011db47"
+  "password": "sample-password",
+  "tenant": "sample-tenant"
 }
 ```
 
@@ -218,7 +218,7 @@ az ad sp create-for-rbac --name contososp
        "updated": "2020-08-24T21:48:09+00:00"
      },
      "contentType": null,
-     "id": "https://contosokv.vault.azure.net/secrets/connectionString/123456789abcdef123456789abcdef",
+     "id": "https://contosokv.vault.azure.net/secrets/connectionString/sample-id",
      "kid": null,
      "managed": null,
      "tags": {
@@ -323,7 +323,7 @@ Key Vault を作成し、シークレットを保存したので、次のセク�
 
 次の手順では、Spring Boot アプリケーション `KeyvaultApplication` に必要な変更について説明します。
 
-Key Vault がシークレットをアプリケーション コードから外部化できるのと同様に、Spring 構成では構成をコードから外部化できます。  Spring 構成の最も単純な形式は、 *application.properties* ファイルです。  Maven プロジェクトでは、このファイルは *src/main/resources/application.properties* にあります。  Spring Initializer ではこの場所に長さゼロのファイルが含まれています。
+Key Vault がシークレットをアプリケーション コードから外部化できるのと同様に、Spring 構成では構成をコードから外部化できます。  Spring 構成の最も単純な形式は、 *application.properties* ファイルです。  Maven プロジェクトでは、このファイルは *src/main/resources/application.properties* にあります。  Spring Initializr ではこの場所に長さゼロのファイルが含まれています。
 
 このファイルに必要な構成を追加するには、次の手順に従います。
 
@@ -639,6 +639,10 @@ Azure Spring Cloud は、Azure で Spring Boot アプリケーションをデプ
 ## <a name="summary"></a>まとめ
 
 **Spring Initializr** を使用して新しい Java Web アプリケーションを作成しました。  次に、機密情報を格納する Azure Key Vault を作成し、Key Vault から情報を取得するようにアプリケーションを構成しました。  ローカルでテストした後、Azure App Service と Azure Spring Cloud にアプリをデプロイしました。
+
+## <a name="clean-up-resources"></a>リソースをクリーンアップする
+
+予想外の課金を防ぐために、この記事で作成したリソースが不要になったら、[Azure portal](https://portal.azure.com/) を使用して削除してください。
 
 ## <a name="next-steps"></a>次のステップ
 

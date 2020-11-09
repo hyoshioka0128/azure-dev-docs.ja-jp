@@ -3,14 +3,14 @@ title: チュートリアル - Ansible を使用して Azure リソースの動�
 description: Ansible を使用して Azure の動的インベントリを管理する方法について説明します
 keywords: Ansible, Azure, DevOps, Bash, Cloud Shell, 動的インベントリ
 ms.topic: tutorial
-ms.date: 10/23/2019
+ms.date: 10/30/2020
 ms.custom: devx-track-ansible, devx-track-azurecli
-ms.openlocfilehash: 42ac7ef120a2bb364197509d8c36bb7e1a300242
-ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
+ms.openlocfilehash: dd9a6f2b76c6d653eba9542d3b5dfdda4cb75ba5
+ms.sourcegitcommit: e1175aa94709b14b283645986a34a385999fb3f7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92688628"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93192354"
 ---
 # <a name="tutorial-configure-dynamic-inventories-of-your-azure-resources-using-ansible"></a>チュートリアル:Ansible を使用して Azure リソースの動的インベントリを構成する
 
@@ -42,7 +42,7 @@ Ansible を使用して、(Azure などのクラウド ソースを含む) さ�
     > [!IMPORTANT]
     > この手順で作成する Azure リソース グループには、名前をすべて小文字で指定する必要があります。 それ以外の場合、動的インベントリの生成は失敗します。
 
-    ```azurecli-interactive
+    ```azurecli
     az group create --resource-group ansible-inventory-test-rg --location eastus
     ```
 
@@ -52,13 +52,13 @@ Ansible を使用して、(Azure などのクラウド ソースを含む) さ�
 
     - **Azure CLI** - Cloud Shell で次の各コマンドを発行して、2 つの仮想マシンを作成します。
 
-        ```azurecli-interactive
+        ```azurecli
         az vm create --resource-group ansible-inventory-test-rg \
                      --name ansible-inventory-test-vm1 \
                      --image UbuntuLTS --generate-ssh-keys
         ```
 
-        ```azurecli-interactive
+        ```azurecli
         az vm create --resource-group ansible-inventory-test-rg \
                      --name ansible-inventory-test-vm2 \
                      --image UbuntuLTS --generate-ssh-keys
@@ -71,14 +71,14 @@ Ansible を使用して、(Azure などのクラウド ソースを含む) さ�
 ### <a name="using-ansible-version--28"></a>Ansible バージョン 2.8 未満を使用する
 次の [az resource tag](/cli/azure/resource#az-resource-tag) コマンドを入力して、仮想マシン `ansible-inventory-test-vm1` にキー `nginx` を使用してタグを付けます。
 
-```azurecli-interactive
+```azurecli
 az resource tag --tags nginx --id /subscriptions/<YourAzureSubscriptionID>/resourceGroups/ansible-inventory-test-rg/providers/Microsoft.Compute/virtualMachines/ansible-inventory-test-vm1
 ```
 
 ### <a name="using-ansible-version--28"></a>Ansible バージョン 2.8 以上を使用する
 次の [az resource tag](/cli/azure/resource#az-resource-tag) コマンドを入力して、仮想マシン `ansible-inventory-test-vm1` にキー `Ansible=nginx` を使用してタグを付けます。
 
-```azurecli-interactive
+```azurecli
 az resource tag --tags Ansible=nginx --id /subscriptions/<YourAzureSubscriptionID>/resourceGroups/ansible-inventory-test-rg/providers/Microsoft.Compute/virtualMachines/ansible-inventory-test-vm1
 ```
 
@@ -92,36 +92,23 @@ Ansible には、Azure リソースの動的インベントリを生成する [a
 
 1. GNU `wget` コマンドを使用して、`azure_rm.py` スクリプトを取得します。
 
-    ```python
-    wget https://raw.githubusercontent.com/ansible-collections/community.general/main/scripts/inventory/azure_rm.py
+    ```bash
+    wget https://raw.githubusercontent.com/ansible-collections/azure/dev/plugins/inventory/azure_rm.py
     ```
 
 1. `chmod` コマンドを使用して、`azure_rm.py` スクリプトへのアクセス許可を変更します。 次のコマンドでは、`+x` パラメーターを使用して、指定されたファイル (`azure_rm.py`) の実行を許可しています。
 
-    ```python
+    ```bash
     chmod +x azure_rm.py
     ```
 
-1. [ansible コマンド](https://docs.ansible.com/ansible/2.4/ansible.html)を使用して、リソース グループに接続します。 
+1. [ansible コマンド](https://docs.ansible.com/ansible/2.4/ansible.html)を使用して、リソース グループに接続します。
 
-    ```python
-    ansible -i azure_rm.py ansible-inventory-test-rg -m ping 
+    ```bash
+    ansible -i azure_rm.py ansible-inventory-test-rg -m ping
     ```
 
-1. 接続されると、次の出力のような結果が表示されます。
-
-    ```output
-    ansible-inventory-test-vm1 | SUCCESS => {
-        "changed": false,
-        "failed": false,
-        "ping": "pong"
-    }
-    ansible-inventory-test-vm2 | SUCCESS => {
-        "changed": false,
-        "failed": false,
-        "ping": "pong"
-    }
-    ```
+1. 接続されると、作成される仮想マシンの結果を示す結果が表示されます。
 
 ### <a name="ansible-version--28"></a>Ansible バージョン 2.8 以上
 
@@ -146,7 +133,7 @@ Ansible 2.8 以降、Ansible では [Azure 動的インベントリ プラグイ
     ansible all -m ping -i ./myazure_rm.yml
     ```
 
-1. 上記のコマンドを実行しているときに、次のエラーを受け取る場合があります。
+1. 上記のコマンドを実行しているときに、エラーが発生する場合があります。 このエラーは、ホストへの接続に失敗したことを示しています。 
 
     ```output
     Failed to connect to the host via ssh: Host key verification failed.
@@ -278,7 +265,7 @@ Ansible 2.8 以降、Ansible では [Azure 動的インベントリ プラグイ
 
 1. [az vm list-ip-addresses](/cli/azure/vm#az-vm-list-ip-addresses) コマンドを使用して、`ansible-inventory-test-vm1` 仮想マシンの IP アドレスを取得します。 次に、返された値 (仮想マシンの IP アドレス) を、仮想マシンに接続するための SSH コマンドのパラメーターとして使用します。
 
-    ```azurecli-interactive
+    ```azurecli
     ssh `az vm list-ip-addresses \
     -n ansible-inventory-test-vm1 \
     --query [0].virtualMachine.network.publicIpAddresses[0].ipAddress -o tsv`

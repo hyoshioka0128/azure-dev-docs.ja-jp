@@ -2,16 +2,16 @@
 title: Azure での JavaScript 開発者向けツール
 description: Azure での Node.js および JavaScript 開発用の各ツールをインストールします
 ms.topic: reference
-ms.date: 11/07/2017
-ms.custom: seo-javascript-september2019, seo-javascript-october2019, devx-track-js, devx-track-azurecli
-ms.openlocfilehash: fbfc22eb0c9455900b6fe511b52f443289815931
-ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
+ms.date: 10/30/2020
+ms.custom: seo-javascript-september2019, seo-javascript-october2019, devx-track-js
+ms.openlocfilehash: 80b42337f6acccda4a6d85b64908107cb4230195
+ms.sourcegitcommit: 5c7f5fef798413b1a304cc9ee31c8518b73f27eb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92689159"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93066261"
 ---
-# <a name="azure-tools-for-javascript-developers"></a>JavaScript 開発者向け Azure ツール
+# <a name="tools-for-javascript-developers"></a>JavaScript 開発者向けツール
 Azure での JavaScript アプリの開発には、次のツールが推奨されます。
 
 ## <a name="azure-cli"></a>Azure CLI
@@ -22,6 +22,19 @@ Azure CLI は、コマンド ラインから Azure リソースを管理する�
 > [!div class="nextstepaction"]
 > [Azure CLI 2.0 をインストールします](/cli/azure/install-az-cli2)
 
+> [!div class="nextstepaction"]
+> [Azure CLI 2.0 コンテナーを使用する](/cli/azure/run-azure-cli-docker)
+
+## <a name="typescript"></a>TypeScript
+
+[TypeScript](https://www.typescriptlang.org/) は、JavaScript と独特な関係にあります。 TypeScript は、JavaScript のすべての機能と、その上に次の追加のレイヤーを提供しています。TypeScript の型システム。
+
+つまり、既存の動作している JavaScript コードも TypeScript コードです。 TypeScript の主な利点は、コード内の予期しない動作を強調表示し、バグの可能性を減らせることです。
+
+> [!div class="nextstepaction"]
+> [TypeScript をインストールする](https://www.typescriptlang.org/download)
+
+
 ## <a name="visual-studio-code"></a>Visual Studio Code
 任意の OS で JavaScript アプリを編集してデバッグします。
 
@@ -30,7 +43,7 @@ Azure CLI は、コマンド ラインから Azure リソースを管理する�
 > [!div class="nextstepaction"]
 > [Visual Studio Code をダウンロードする](https://code.visualstudio.com)
 
-### <a name="azure-extensions"></a>Azure 拡張機能
+## <a name="visual-studio-code-extensions"></a>Visual Studio Code の拡張機能
 Visual Studio Code で直接 Azure サービスとやり取りするには、次の無料の拡張機能を使用します。
 
 | ツール | 説明  |

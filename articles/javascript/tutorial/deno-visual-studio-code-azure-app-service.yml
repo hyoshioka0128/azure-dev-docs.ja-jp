@@ -1,0 +1,38 @@
+### YamlMime:Tutorial
+title: Azure CLI から Azure App Service に Deno アプリをデプロイする
+metadata:
+  title: Azure CLI から Azure App Service に Deno アプリをデプロイする
+  description: このチュートリアルでは、Azure CLI を使用して、Deno アプリケーションを Azure App Service (Linux または Windows 上) にデプロイします。
+  audience: Developer
+  level: Beginner
+  displayType: one-column
+  ms.date: 10/13/2020
+  ms.topic: tutorial
+  ms.custom: scenarios:getting-started, languages:JavaScript, devx-track-javascript
+  ms.openlocfilehash: 71caf561f5bbff42ffe066c3f89eb168595e7086
+  ms.sourcegitcommit: 5541f993c01ce356e1b0eaa8f95aea9051c3c21e
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 11/03/2020
+  ms.locfileid: "93278675"
+items:
+- durationInMinutes: 1
+  content: >
+    [!INCLUDE [Tutorial introduction](../includes/tutorial-deno/introduction.md)]
+- title: 環境を構成する
+  durationInMinutes: 2
+  content: >
+    [!INCLUDE [Tutorial introduction](../includes/tutorial-deno/configure-your-environment.md)]
+- title: ローカル Deno アプリを作成する
+  durationInMinutes: 2
+  content: >
+    [!INCLUDE [Test local Deno apps](../includes/tutorial-deno/create-local-deno-app.md)]
+- title: Deno アプリを Azure にデプロイする
+  durationInMinutes: 2
+  content: >
+    [!INCLUDE [Deploy Deno apps to Azure](../includes/tutorial-deno/deploy-to-azure.md)]
+- title: クリーンアップ
+  durationInMinutes: 2
+  content: >
+    [!INCLUDE [Clean up](../includes/tutorial-deno/cleanup.md)]
+- content: '[!INCLUDE [Completed tutorial](../includes/tutorial-deno/completed.md)]'

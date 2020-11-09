@@ -1,34 +1,65 @@
 ---
-title: Azure に Node.js Web アプリをデプロイする
-description: Azure App Service をはじめとする、Web アプリのホスティング方法について説明します。プログレッシブ Web アプリ (PWA) についても取り上げます。
+title: JavaScript アプリを Azure にデプロイする
+description: ホスティング オプションとデプロイ シナリオには、Azure 用のサービスとツールがいくつか含まれています。 アプリを発行し、Azure でサービスを提供します。
 ms.topic: how-to
-ms.date: 08/20/2019
-ms.custom: seo-javascript-september2019, seo-javascript-october2019, devx-track-js
-ms.openlocfilehash: ee2d9a58baa306309df28f1a4bf6515481fccf3e
-ms.sourcegitcommit: c3a1c9051b89870f6bfdb3176463564963b97ba4
+ms.date: 10/28/2020
+ms.custom: seo-javascript-september2019, seo-javascript-october2019, devx-track-js, contperfq2
+ms.openlocfilehash: 93c9fa67e7fd928640478650d23207d48dd07531
+ms.sourcegitcommit: e1175aa94709b14b283645986a34a385999fb3f7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92437272"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93192514"
 ---
-# <a name="deploy-nodejs-web-apps-to-azure-app-service"></a>Azure App Service に Node.js Web アプリをデプロイする
+# <a name="deploy-and-host-your-nodejs-apps-on-azure"></a>Azure で Node.js アプリをデプロイしてホストする
 
-Web アプリのデプロイとホスティングに関して、Azure にはいくつかの方法が用意されています。
+ホスティング オプションとデプロイ シナリオには、Azure 用のサービスとツールがいくつか含まれています。 Azure には、ホスティングの多数のオプションと、ローカルまたはクラウドのリポジトリから Azure へのアプリの移動に役立つ多数のツールが用意されています。 
 
-- Web アプリの最適なホスティング方法は、PaaS (サービスとしてのプラットフォーム) プランである Azure App Service です。 その足がかりとして、次のリソースが参考になります。
+## <a name="choose-a-hosting-provider-from-azure"></a>Azure からホスティング プロバイダーを選択する
 
-  - [Azure で Node.js Web アプリを作成する](/azure/app-service/app-service-web-get-started-nodejs)
-  - [Azure App Service を試す - テンプレートから Express アプリを作成する](https://code.visualstudio.com/tryappservice/?utm_source=msftdocs&utm_medium=microsoft&utm_campaign=tryappservice)
-  - [Azure App Service で Web アプリをホストする - Learn モジュール](/learn/modules/host-a-web-app-with-azure-app-service/index)
-  - [Azure で Node.js と MongoDB のアプリを構築する](/azure/app-service/app-service-web-tutorial-nodejs-mongodb-app)
-  - [App Service サンプル](/samples/browse/?languages=javascript%2Cnodejs&products=azure-app-service)
+Azure でのクライアント、サーバー、またはバックグラウンド タスク アプリのホスティングには、さまざまなソリューションが用意されており、その中から選択することができます。 次の表を使用して選択してください。 ほとんどのユース ケースで推奨されるソリューションは、[Azure App Service](/azure/app-service/overview.md) です。 
 
-- Azure Container Registry と Azure Kubernetes Service を使用すれば、独自のコンテナーを作成して Azure にデプロイすることができます。 詳細については、「[Node.js コンテナーを Azure にデプロイする方法](deploy-containers.md)」を参照してください。
+| サービス | 推奨される対象 |
+|--|--|
+|[App Service](/azure/app-service/overview.md) - **推奨**|コードまたはコンテナーからアプリをホストします。 これにより、基盤となる環境を管理することなく、Web サーバーを管理できます。|
+|[静的 Web アプリ](/azure/static-web-apps/)|静的クライアント アプリ (Angular、Vue、React など) をホストします。 必要に応じて、フルスタック アプリをホストするサーバーレス関数エンドポイントを追加します。 この単純なサービスにより Web サーバーの多くが抽象化されるため、ユーザーはクライアント アプリケーションにとって重要な機能に専念できます。 |
+|[関数](/azure/azure-functions/)|サーバーレス アプリケーション エンドポイントをホストします。|
+|[Storage](/azure/storage/blobs/storage-blob-static-website-how-to.md?tabs=azure-portal)|Azure Storage は、静的 Web アプリをホストすることもできます。 これは、堅牢な Storage とクライアント アプリケーションの間で緊密な統合が必要な場合に役立ちます。|
+|[Container Instances](/azure/container-instances/)|1 つのコンテナーをすばやく設定します。|
+|[Kubernetes Service](/azure/aks/)|複数コンテナーのオーケストレーション。|
+|[仮想マシン](/azure/virtual-machines) (VM)|Windows または Linux VM のフル コントロール。 [動作保証済みの Linux ディストリビューションを見つける](/azure/virtual-machines/linux/endorsed-distros?toc=/azure/virtual-machines/linux/toc.json)か、Azure Marketplace で Linux VM イメージを[検索する方法を確認](/azure/virtual-machines/linux/cli-ps-findimage.md)してください。|
+|[Content Delivery Network](/azure/cdn/) (CDN)|最も近いポイント オブ プレゼンス (POP) サーバーを使用して、Azure BLOB ストレージ、Web アプリケーション、またはパブリックにアクセスできる任意の Web サーバーから読み込まれた静的オブジェクトをキャッシュします。 さらに Azure CDN では、各種のネットワーク最適化とルーティング最適化を利用して、キャッシュできない動的なコンテンツも高速化できます。|
 
-- 主にサーバーレス コードを扱う場合は、「[Azure でサーバーレス Node.js コードを作成する方法](develop-serverless-apps.md)」を参照してください。
+さまざまなホスティング方法を包括的に把握するには、「[Azure コンピューティング サービスのデシジョン ツリー](/azure/architecture/guide/technology-choices/compute-decision-tree)」のほか、Microsoft Learn の「[コア Cloud Services - Azure コンピューティング オプション](/learn/modules/intro-to-azure-compute.md)」モジュールを参照してください。
 
-- JAMstack (静的) サイトの作成について詳しくは、「[Azure で JAMstack (静的サイト) Web アプリを作成する方法](create-static-site.md)」を参照してください。
+## <a name="choose-your-deployment-process-for-azure"></a>Azure に対するデプロイ プロセスを選択する
 
-- インフラストラクチャを制御したい場合は、どうしても仮想マシンを利用することになるでしょう。 まず、Microsoft Learn の「[Azure Virtual Machines を使用して Web サイトをデプロイする](/learn/paths/deploy-a-website-with-azure-virtual-machines/)」というラーニング パスに従ってください。
+アプリケーションをホストするサービスを選択したら、デプロイ プロセスとツールを選択します。 クライアントおよびサーバーのアプリを Azure サービスにデプロイするということは、ファイルまたはファイルのセットを Azure に移動して、HTTP エンドポイント経由でサービスを提供することを意味します。 
 
-さまざまなホスティング方法を包括的に把握するには、「[Azure コンピューティング サービスのデシジョン ツリー](/azure/architecture/guide/technology-choices/compute-decision-tree)」のほか、Microsoft Learn の「[コア Cloud Services - Azure コンピューティング オプション](/learn/modules/intro-to-azure-compute/)」モジュールを参照してください。
+次の表に、Azure クラウドにファイルを移動するための一般的な方法を示します。
+
+| メソッド | 詳細 |
+|--|--|
+|[GitHub のアクション](/azure/app-service/deploy-github-actions.md?tabs=applevel)|これは、自動化またはトリガーによる継続的なデプロイに使用します。|
+|[Visual Studio Code 拡張機能](https://marketplace.visualstudio.com/search?term=azure&target=VSCode&category=All%20categories&sortBy=Relevance)|これは、手動の場合やテスト、まれにデプロイに使用されます。 サービスの拡張機能がローカルにインストールされている必要があります。|
+|[Azure CLI](../tutorial-vscode-azure-cli-node-04.md)|これは、手動の場合か、まれにデプロイに使用されます。 サービスの拡張機能がローカルにインストールされている必要があります。|
+
+特定のサービスに基づいて他のデプロイ方法が存在する場合があります。 たとえば、Azure App Service では、多種多様なデプロイ方法がサポートされています。
+* [ZIP ファイルから](/azure/app-service/deploy-zip.md)
+* [FTP を使用](/azure/app-service/deploy-ftp.md)
+* [Dropbox または OneDrive](/app-service/deploy-content-sync.md)
+* [ローカル Git](/azure/app-service/deploy-local-git.md)
+
+## <a name="verify-your-deployment-with-your-http-endpoint"></a>HTTP エンドポイントでデプロイを確認する
+
+デプロイを確認するには、HTTP エンドポイントにアクセスします。 HTTP エンドポイントは、 **[概要]** ページですべてのサービスに表示されます。 
+
+### <a name="view-http-endpoint-in-azure-portal"></a>Azure portal で Azure エンドポイントを表示する
+
+Azure portal のサービスの [概要] ページで HTTP エンドポイントを表示します。 
+
+:::image type="content" source="../media/howto-deploy/azure-portal-hosting-url.png" alt-text="Azure portal のサービスの [概要] ページで HTTP エンドポイントを表示する。":::
+
+## <a name="next-steps"></a>次のステップ
+
+* [コンテナーを使用したデプロイ](deploy-containers.md)

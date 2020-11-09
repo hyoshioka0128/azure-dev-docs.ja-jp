@@ -6,18 +6,18 @@ documentationcenter: java
 author: panli
 manager: kevinzha
 ms.author: edburns
-ms.date: 10/10/2020
+ms.date: 10/23/2020
 ms.service: active-directory-b2c
 ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
 ms.custom: devx-track-java
-ms.openlocfilehash: 7cd477bfa511f44cf8dfacbd7d10e0f6299ad4f5
-ms.sourcegitcommit: 3d3ee59f73c966da7df65bada49e059d02e74b91
+ms.openlocfilehash: aa2d60f969895acbcb56f74e909993ceb9b0d7d5
+ms.sourcegitcommit: 5c7f5fef798413b1a304cc9ee31c8518b73f27eb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92898782"
+ms.lasthandoff: 10/30/2020
+ms.locfileid: "93066303"
 ---
 # <a name="tutorial-secure-a-java-web-app-using-the-spring-boot-starter-for-azure-active-directory-b2c"></a>チュートリアル:Azure Active Directory B2C 用の Spring Boot Starter を使用して Java Web アプリをセキュリティで保護する
 
@@ -110,29 +110,31 @@ ms.locfileid: "92898782"
 
 ### <a name="add-an-application-registration-for-your-spring-boot-app"></a>Spring Boot アプリのアプリケーション登録を追加する
 
-1. 左側の **[管理]** ペインで、 **[アプリケーション]** 、 **[追加]** の順に選択します。
+1. 左の **[管理]** ペインで、 **[アプリの登録]** を選択し、次に **[新しい登録]** を選択します。
 
-    ![新しいアプリ登録を追加する](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/b2c1-n.png)
+   ![Azure AD B2C [アプリの登録] 画面を示す Azure portal のスクリーンショット](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/b2c1-n.png)
 
-2. **[名前]** フィールドに、上記の **[グループ]** の値を入力してから、 **[Web アプリ/Web API を含める]** コントロールを **[はい]** に設定します。
+2. **[名前]** フィールドに上記の **[グループ]** の値を入力し、 **[リダイレクト URI (推奨)]** を「 *http://localhost:8080/home* 」に設定して、 **[登録]** を選択します。
 
-3. **[応答 URL]** を `http://localhost:8080/home` に設定します。
+   ![新しいアプリ登録を構成する](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/b2c4-n.png)
 
-4. 他のフィールドは既定値のままにします。
+3. **[管理]** ペインに戻り、 **[Applications (Legacy)]\(アプリケーション (レガシ)\)** を選択し、作成したアプリケーション名を選択します。
 
-5. **［作成］** を選択します アプリケーションが表示されるまでしばらく時間がかかることがあります。
+   ![アプリケーションを更新する](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/b2c5-n.png)
 
-    ![アプリケーションのリダイレクト URI を追加する](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/b2c2-n.png)
+4. **[プロパティ]** を選択し、 **[暗黙的フローを許可する]** コントロールを **[はい]** に設定します。
+   
+5. 他のフィールドは既定値のままにします。
+    
+6. **[保存]** を選択します。 アプリケーションの準備ができるまでしばらく時間がかかることがあります。
+    
+   ![アプリ キーを更新する](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/b2c6-n.png)
 
-6. **[概要]** 、 **[アプリケーション]** の順に選択します。
+7. **[全般]** ペインで **[キー]** を選択し、 **[キーの生成]** を選択します。
 
-7. アプリケーションのテーブルで、ご自分のプロジェクトの名前が含まれている行を選択します。
+8. **[アプリ キー]** を、上で **[グループ]** に入力した値に設定します。
 
-8. **[全般]** ペインでキーを選んでから、 **[キーの生成]** を選択します。
-
-9. **[アプリ キー]** を `yourGroupIdkey` に設定し、`yourGroupId` を、先ほど **[グループ]** で入力した値に置き換えます。
-
-10. **[保存]** を選択します。 キーがアプリ キー セクションに表示されるのを待ってから、この記事の後半で使用するためにコピーします。
+9. **[保存]** を選択します。 キーがアプリ キー セクションに表示されるのを待ってから、この記事の後半で使用するためにコピーします。
 
     > [!NOTE]
     > **[キー]** セクションをそのままにして戻ると、キーの値を表示できなくなります。 その場合は、別のキーを作成し、今後の使用のためにコピーする必要があります。
@@ -140,11 +142,11 @@ ms.locfileid: "92898782"
 
     ![シークレットを作成する](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/b2c3-n.png)
 
-11. **[概要]** を選択します。
+10. **[概要]** を選択します。
 
-12. 左ペインの **[ポリシー]** セクションで、 **[ユーザー フロー]** 、 **[新しいユーザー フロー]** の順に選択します。
+11. 左ペインの **[ポリシー]** セクションで、 **[ユーザー フロー]** 、 **[新しいユーザー フロー]** の順に選択します。
 
-13. ここでこのチュートリアルから離れて、別のチュートリアルを実行し、完了したらこのチュートリアルに戻ります。 他のチュートリアルに移動するときに注意すべきいくつかの点を以下に示します。
+12. ここでこのチュートリアルから離れて、別のチュートリアルを実行し、完了したらこのチュートリアルに戻ります。 他のチュートリアルに移動するときに注意すべきいくつかの点を以下に示します。
 
     * **[新しいユーザー フロー]** を選択するよう求める手順から開始します。
     * このチュートリアルで `webapp1` が示された場合は、代わりに **[グループ]** に入力した値を使用します。

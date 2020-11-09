@@ -1,0 +1,11 @@
+- name: 開発者エクスペリエンス ラボ
+  href: index.yml
+  items:
+    - name: チュートリアル形式ラボ
+      items:
+        - name: Python flask のシングル ページ
+          href: quickstart-python-flask.md
+        - name: Python flask のマルチページ
+          href: quickstart-python-flask-multipage.yml?preview=tutorialFeedback
+        - name: Python flask の最小化されたシングル ページ
+          href: quickstart-python-flask-minimized.md

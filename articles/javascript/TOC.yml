@@ -17,18 +17,18 @@
           href: tutorial/browser-file-upload.yml?preview=tutorialFeedback
         - name: Express.js と MongoDB
           href: tutorial/web-app-mongodb.yml?preview=tutorialFeedback
-        - name: VS Code で Azure Functions をデプロイする
+        - name: サーバーレス Functions の作成とデプロイ
           items:
-            - name: 概要と前提条件
-              href: tutorial-vscode-serverless-node-01.md
-            - name: Functions アプリを作成する
-              href: tutorial-vscode-serverless-node-02.md
-            - name: 関数をローカルでテストする
-              href: tutorial-vscode-serverless-node-03.md
-            - name: Functions アプリをデプロイする
-              href: tutorial-vscode-serverless-node-04.md
-            - name: リソースをクリーンアップする
-              href: tutorial-vscode-serverless-node-05.md
+            - name: 1. 概要と前提条件
+              href: tutorial/tutorial-vscode-serverless-node-install.md
+            - name: 2. Functions アプリを作成する
+              href: tutorial/tutorial-vscode-serverless-node-create-local.md
+            - name: 3. 関数をローカルでテストする
+              href: tutorial/tutorial-vscode-serverless-node-test-local.md
+            - name: 4. Functions アプリをデプロイする
+              href: tutorial/tutorial-vscode-serverless-node-deploy-hosting.md
+            - name: 5. リソースをクリーンアップする
+              href: tutorial/tutorial-vscode-serverless-node-remove-resource.md
         - name: VS Code で Node.js を App Service にデプロイする
           items:
             - name: 概要と前提条件

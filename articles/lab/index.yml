@@ -1,0 +1,32 @@
+### YamlMime:Landing
+title: 開発者エクスペリエンス ラボ
+summary: >
+  クイックスタート、攻略ガイド、コード サンプルなどを通じて、Azure の機能を体験します。
+metadata:
+  title: 開発者エクスペリエンス ラボ
+  description: '...'
+  author: diberry
+  ms.author: diberry
+  ms.date: 09/21/2020
+  ms.topic: landing-page
+  ms.collection: collection
+  ms.technology: azure
+  ms.service: multiple
+  robots: noindex
+  ms.openlocfilehash: 30decb3bc113d9bd56ebdba4e91a262d43e13086
+  ms.sourcegitcommit: 5f64710b2b0822e789c7f15acba5a3a257c033f9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 11/05/2020
+  ms.locfileid: "93405349"
+landingContent:
+- title: チュートリアル ラボ
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: Python flask のシングル ページ
+      url: quickstart-python-flask.md
+    - text: Python flask のマルチページ
+      url: quickstart-python-flask-multipage.yml?preview=tutorialFeedback
+    - text: Python flask の最小化されたシングル ページ
+      url: quickstart-python-flask-minimized.md

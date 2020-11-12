@@ -4,12 +4,12 @@ ms.author: miparker
 ms.date: 07/27/2020
 ms.service: mobile-services
 ms.topic: include
-ms.openlocfilehash: 7a7128a475b428243f3c7280fc154d1d4c8fe8a6
-ms.sourcegitcommit: c3a1c9051b89870f6bfdb3176463564963b97ba4
+ms.openlocfilehash: 6fbc1036b06a318d81729691331adb6b868e1d5c
+ms.sourcegitcommit: cbcde17e91e7262a596d813243fd713ce5e97d06
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92438845"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93406739"
 ---
 ### <a name="create-a-web-project"></a>Web プロジェクトの作成
 
@@ -732,7 +732,7 @@ ASP.NET Core では、[依存関係の挿入 (DI)](/aspnet/core/fundamentals/dep
 次に、このアプリを API アプリにデプロイして、すべてのデバイスからアクセスできるようにします。  
 
 >[!NOTE]
-> 次の手順は、[Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac/) に固有のものです。 Windows で [Visual Studio 2019](https://visualstudio.microsoft.com/vs/) を使用している場合は、発行フローが異なります。 「[Windows 上の Azure App Service へ発行する](https://docs.microsoft.com/visualstudio/deployment/quickstart-deploy-to-azure?view=vs-2019#publish-to-azure-app-service-on-windows)」を参照してください。
+> 次の手順は、[Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac/) に固有のものです。 Windows で [Visual Studio 2019](https://visualstudio.microsoft.com/vs/) を使用している場合は、発行フローが異なります。 「[Windows 上の Azure App Service へ発行する](/visualstudio/deployment/quickstart-deploy-to-azure?view=vs-2019#publish-to-azure-app-service-on-windows)」を参照してください。
 
 1. 構成を **[デバッグ]** から **[リリース]** に変更します (まだ行っていない場合)。
 

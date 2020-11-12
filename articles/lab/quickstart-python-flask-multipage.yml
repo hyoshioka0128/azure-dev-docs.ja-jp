@@ -1,0 +1,58 @@
+### YamlMime:Tutorial
+title: クイック スタート:Azure App Service on Linux で Python アプリを作成する
+metadata:
+  title: クイック スタート:Python アプリを作成する
+  description: Azure App Service で Linux コンテナーに初めての Python アプリをデプロイして、App Service の使用を開始します。
+  audience: Developer
+  level: Beginner
+  displayType: one-column
+  ms.date: 09/22/2020
+  ms.topic: tutorial
+  robots: noindex
+  ms.openlocfilehash: bc789056970531a624009293f483d6c0f489434b
+  ms.sourcegitcommit: 5f64710b2b0822e789c7f15acba5a3a257c033f9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 11/05/2020
+  ms.locfileid: "93405237"
+items:
+- durationInMinutes: 2
+  content: >
+    [!INCLUDE [Tutorial introduction](includes/python-tutorial-multipage/intro.md)]
+- title: 1. 初期環境を設定する
+  durationInMinutes: 2
+  content: >
+    [!INCLUDE [Set up your initial environment](includes/python-tutorial-multipage/set-up-environment.md)]
+- title: 2. サンプルを複製する
+  durationInMinutes: 2
+  content: >
+    [!INCLUDE [Clone the sample](includes/python-tutorial-multipage/clone-sample.md)]
+- title: 3. サンプルを実行する
+  durationInMinutes: 2
+  content: >
+    [!INCLUDE [Run the sample](includes/python-tutorial-multipage/run-sample.md)]
+- title: 4. サンプルのデプロイ
+  durationInMinutes: 2
+  content: >
+    [!INCLUDE [Deploy the sample](includes/python-tutorial-multipage/deploy-sample.md)]
+- title: 5. アプリの参照
+  durationInMinutes: 2
+  content: >
+    [!INCLUDE [Browse to the app](includes/python-tutorial-multipage/browse-app.md)]
+- title: 6. 更新の再デプロイ
+  durationInMinutes: 2
+  content: >
+    [!INCLUDE [ Redeploy updates](includes/python-tutorial-multipage/redeploy-updates.md)]
+- title: 7. ログのストリーミング
+  durationInMinutes: 2
+  content: >
+    [!INCLUDE [Stream logs](includes/python-tutorial-multipage/stream-logs.md)]
+- title: 8. Azure アプリの管理
+  durationInMinutes: 2
+  content: >
+    [!INCLUDE [Manage the Azure app](includes/python-tutorial-multipage/manage-app.md)]
+- title: 9. リソースをクリーンアップする
+  durationInMinutes: 2
+  content: >
+    [!INCLUDE [Clean up resources](includes/python-tutorial-multipage/clean-up-resources.md)]
+- content: '[!INCLUDE [Completed tutorial](includes/python-tutorial-multipage/next-steps.md)]'

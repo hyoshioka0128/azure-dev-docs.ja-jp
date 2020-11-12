@@ -4,12 +4,12 @@ description: 静的 Web アプリのチュートリアル パート 6、リソ�
 ms.topic: tutorial
 ms.date: 09/24/2019
 ms.custom: devx-track-js
-ms.openlocfilehash: e0cbbbe0471080fc4ca0a3eb46eb9f22e8ecf013
-ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
+ms.openlocfilehash: a07a6ae33a99d759a5451d75b0cbc7e0214a9ac5
+ms.sourcegitcommit: cbcde17e91e7262a596d813243fd713ce5e97d06
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91365275"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93405961"
 ---
 # <a name="part-6-clean-up-resources"></a>パート 6: リソースをクリーンアップする
 
@@ -22,4 +22,4 @@ ms.locfileid: "91365275"
 [!INCLUDE [tutorial-next-steps](includes/tutorial-next-steps.md)]
 
 > [!div class="nextstepaction"]
-> [終わりました](node-howto-create-static-site-jamstack.md) [問題が発生しました](https://www.research.net/r/PWZWZ52?tutorial=node-deployment-staticwebsite&step=clean-up-resources)
+> [終わりました](./how-to/create-static-site.md) [問題が発生しました](https://www.research.net/r/PWZWZ52?tutorial=node-deployment-staticwebsite&step=clean-up-resources)

@@ -4,20 +4,20 @@ description: Azure ライブラリを使用して、Azure サービスで Python
 ms.date: 10/05/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 1fe206394d05e07b19254520131447770cbbd5b0
-ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
+ms.openlocfilehash: 8122db43c979bcf55d5aa3d1f4f5fa9aa0c200dd
+ms.sourcegitcommit: cbcde17e91e7262a596d813243fd713ce5e97d06
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91764666"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93405902"
 ---
 # <a name="how-to-authenticate-and-authorize-python-apps-on-azure"></a>Azure で Python アプリを認証および認可する方法
 
 Azure にデプロイされたほとんどのクラウド アプリケーションは、ストレージ、データベース、格納されているシークレットなど、他の Azure リソースにアクセスする必要があります。 これらのリソースにアクセスするには、アプリケーションは認証され、認可される必要があります。
 
-- **認証**では、Azure Active Directory を使用してアプリの ID が確認されます。
+- **認証** では、Azure Active Directory を使用してアプリの ID が確認されます。
 
-- **認可**では、認証されたアプリが特定のリソースに対して実行できる操作が決定されます。 認可された操作は、そのリソースのアプリ ID に割り当てられた**ロール**によって定義されています。 Azure Key Vault などのいくつかのケースでは、認可は、アプリ ID に割り当てられた追加の**アクセス ポリシー**によっても決定されます。
+- **認可** では、認証されたアプリが特定のリソースに対して実行できる操作が決定されます。 認可された操作は、そのリソースのアプリ ID に割り当てられた **ロール** によって定義されています。 Azure Key Vault などのいくつかのケースでは、認可は、アプリ ID に割り当てられた追加の **アクセス ポリシー** によっても決定されます。
 
 この記事では、認証と認可の詳細について説明します。
 
@@ -28,13 +28,13 @@ Azure にデプロイされたほとんどのクラウド アプリケーショ�
 
 ## <a name="how-to-assign-an-app-identity"></a>アプリ ID を割り当てる方法
 
-Azure では、アプリ ID は**サービス プリンシパル**によって定義されます。 (サービス プリンシパルとは、人間のユーザーやユーザー グループではなく、いわば 1 つのコードであるアプリやサービスを識別するために使用される特定の種類の "セキュリティ プリンシパル" です。)
+Azure では、アプリ ID は **サービス プリンシパル** によって定義されます。 (サービス プリンシパルとは、人間のユーザーやユーザー グループではなく、いわば 1 つのコードであるアプリやサービスを識別するために使用される特定の種類の "セキュリティ プリンシパル" です。)
 
 使用されるサービス プリンシパルは、次のセクションで説明するように、アプリが実行されている場所によって異なります。
 
 ### <a name="identity-when-running-the-app-on-azure"></a>Azure でアプリを実行しているときの ID
 
-クラウド (たとえば、運用環境) で実行している場合、アプリでは、**システムによって割り当てられたマネージド ID** が使用されるのが最も一般的です。 [マネージド ID](/azure/active-directory/managed-identities-azure-resources/overview) では、リソースのロールとアクセス許可を割り当てるときにアプリの名前を使用します。 Azure は、基になるサービス プリンシパルを自動的に管理し、他の Azure リソースで自動的にアプリを認証します。 そのため、サービス プリンシパルを直接処理する必要はありません。 さらに、アプリ コードでは、Azure リソースのアクセス トークン、シークレット、または接続文字列を処理する必要はありません。そのため、このような情報が漏洩したり侵害されたりするリスクが軽減されます。
+クラウド (たとえば、運用環境) で実行している場合、アプリでは、 **システムによって割り当てられたマネージド ID** が使用されるのが最も一般的です。 [マネージド ID](/azure/active-directory/managed-identities-azure-resources/overview) では、リソースのロールとアクセス許可を割り当てるときにアプリの名前を使用します。 Azure は、基になるサービス プリンシパルを自動的に管理し、他の Azure リソースで自動的にアプリを認証します。 そのため、サービス プリンシパルを直接処理する必要はありません。 さらに、アプリ コードでは、Azure リソースのアクセス トークン、シークレット、または接続文字列を処理する必要はありません。そのため、このような情報が漏洩したり侵害されたりするリスクが軽減されます。
 
 マネージド ID の構成は、アプリをホストするために使用するサービスによって異なります。 各サービスの手順へのリンクについては、[マネージド ID をサポートするサービス](/azure/active-directory/managed-identities-azure-resources/services-support-managed-identities)に関する記事を参照してください。 たとえば、Azure App Service にデプロイされた Web アプリの場合、マネージド ID を有効にするには、Azure portal の **[ID]**  >  **[システム割り当て済み]** オプションを使用するか、Azure CLI で `az webapp identity assign` コマンドを使用します。
 
@@ -169,7 +169,7 @@ azure.core バージョンでない SDK 管理ライブラリは、資格情報�
 
 使用する管理ライブラリがまだ更新されていない場合は、次の代替方法を使用できます。
 
-1. この記事の後続のセクションで取り上げる他のいずれかの認証方法を使用します。SDK 管理ライブラリ "*のみ*" を使用し、なおかつクラウドにデプロイされないコードであれば、これらの認証方法がうまく機能します。この場合、利用できるのはローカルのサービス プリンシパルのみです。
+1. この記事の後続のセクションで取り上げる他のいずれかの認証方法を使用します。SDK 管理ライブラリ " *のみ* " を使用し、なおかつクラウドにデプロイされないコードであれば、これらの認証方法がうまく機能します。この場合、利用できるのはローカルのサービス プリンシパルのみです。
 
 1. Azure SDK エンジニアリング チームのメンバーから提供されている [CredentialWrapper クラス (cred_wrapper.py)](https://gist.github.com/lmazuel/cc683d82ea1d7b40208de7c9fc8de59d) を `DefaultAzureCredential` の代わりに使用します。 目的の管理ライブラリが使用可能になったら、`DefaultAzureCredential` に切り替えます。 この方法の利点は、SDK クライアントと管理ライブラリの両方で同じ資格情報を使用できる点、またローカルでもクラウドでも使用できる点です。
 
@@ -225,7 +225,7 @@ azure.core バージョンでない SDK 管理ライブラリは、資格情報�
     > [!TIP]
     > [ローカル開発環境の構成](configure-local-development-environment.md#create-a-service-principal-and-environment-variables-for-development)に関するセクションで説明されているように、[az ad sp create-for-rbac](/cli/azure/ad/sp#az-ad-sp-create-for-rbac) コマンドに `--sdk-auth` パラメーターを指定することで、この JSON 形式をすぐに生成できます。
 
-1. ファイルに名前 (*credentials.json* など) を付けて、コードからアクセスできる安全な場所に保存します。 資格情報の安全性を確保するため、このファイルはソース管理から除外し、他の開発者と共有しないようにしてください。 つまり、サービス プリンシパルのテナント ID、クライアント ID、クライアント シークレットは、常に自分の開発ワークステーションで隔離されている必要があります。
+1. ファイルに名前 ( *credentials.json* など) を付けて、コードからアクセスできる安全な場所に保存します。 資格情報の安全性を確保するため、このファイルはソース管理から除外し、他の開発者と共有しないようにしてください。 つまり、サービス プリンシパルのテナント ID、クライアント ID、クライアント シークレットは、常に自分の開発ワークステーションで隔離されている必要があります。
 
 1. JSON ファイルのパスを値とする `AZURE_AUTH_LOCATION` という名前の環境変数を作成します。
 
@@ -391,7 +391,7 @@ CLI ベースの認証を使用する場合、アプリケーションは、CLI 
 
 #### <a name="cli-based-authentication-with-azurecore-libraries"></a>azure.core ライブラリを使用した CLI ベースの認証
 
-[azure.core 用に更新された Azure ライブラリ](/azure/developer/python/azure-sdk-library-package-index#libraries-using-azurecore)を使用する場合は、azure-identity ライブラリ (バージョン 1.4.0 以上) の [`AzureCliCredential`](/python/api/azure-identity/azure.identity.azureclicredential) オブジェクトを使用します。 たとえば、次のコードは、azure-mgmt-resource バージョン 15.0.0 以上で使用できます。
+[azure.core 用に更新された Azure ライブラリ](./azure-sdk-library-package-index.md#libraries-using-azurecore)を使用する場合は、azure-identity ライブラリ (バージョン 1.4.0 以上) の [`AzureCliCredential`](/python/api/azure-identity/azure.identity.azureclicredential) オブジェクトを使用します。 たとえば、次のコードは、azure-mgmt-resource バージョン 15.0.0 以上で使用できます。
 
 ```python
 from azure.identity import AzureCliCredential

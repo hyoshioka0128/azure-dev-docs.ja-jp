@@ -4,12 +4,12 @@ description: Azure を使用して JAMstack アプリ (JavaScript、API、Markup
 ms.topic: how-to
 ms.date: 08/20/2019
 ms.custom: seo-javascript-september2019, devx-track-js
-ms.openlocfilehash: b126cb60341733451be555fa7759773aac99f6ce
-ms.sourcegitcommit: c3a1c9051b89870f6bfdb3176463564963b97ba4
+ms.openlocfilehash: 421464b76a8276ef87b84596a6434e991a3c2b25
+ms.sourcegitcommit: 801682d3fc9651bf95d44e58574d5a4564be6feb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92437287"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94333800"
 ---
 # <a name="build-jamstack-static-site-web-apps-on-azure-with-nodejs"></a>Node.js を使用して Azure で JAMstack (静的サイト) Web アプリを作成する
 
@@ -34,14 +34,14 @@ Azure で静的 (JAMstack) サイトを実装するには、さまざまなツ�
   
 - **サーバーレス API** :
 
-  - 「[Visual Studio Code から Azure Functions をデプロイする](../tutorial-vscode-serverless-node-01.md)」からお始めください。Azure Functions が Visual Studio Code のコンテキストで紹介されており、多くの細かい点がわかりやすくなっています。
+  - 「[Visual Studio Code から Azure Functions をデプロイする](../tutorial/tutorial-vscode-serverless-node-install.md)」からお始めください。Azure Functions が Visual Studio Code のコンテキストで紹介されており、多くの細かい点がわかりやすくなっています。
   - 記事を完了すると、関数にちなんだ (その HTTP エンドポイントと同じ) 名前のサブフォルダーが格納された Azure Functions プロジェクト (フォルダー) が得られます。 その関数フォルダーに、コードを含んだ *index.js* ファイルが格納されています。
   - 必要に応じてその関数を変更したり、他の関数をプロジェクトに追加したりしたうえで、それらを再び Azure にデプロイしてパブリックに公開することができます。
   - サーバーレス開発に関するその他のリソースについては、「[Azure でサーバーレス Node.js コードを作成する方法](develop-serverless-apps.md)」を参照してください。
 
 - **Azure Storage へのフロントエンドのデプロイ** : 自分の API が完成したら、任意のフレームワークを使用して、それらの API を使用するためのフロントエンド コードを書くことができます。 準備ができたら、記事「[チュートリアル:Blob Storage で静的な Web サイトをホストする](/azure/storage/blobs/storage-blob-static-website-host)」に従って、それらのファイルを Azure にアップロードし、静的な Web サイトのホスティングを有効にします。
 
-- **リバース プロキシの作成** : リバース プロキシ (「[Azure Functions プロキシの操作](/azure/azure-functions/functions-proxies)」を参照) を使用すると、特定の要求をさまざまな URL に簡単に誘導できます。 このケースでは、自分のフロントエンド ファイルの要求を、それらのファイルがデプロイされている Azure Storage の URL に、また、API 要求を Azure Functions の URL に誘導する必要があります。
+- **リバース プロキシの作成** : リバース プロキシ (「 [Azure Functions プロキシの操作](/azure/azure-functions/functions-proxies)」を参照) を使用すると、特定の要求をさまざまな URL に簡単に誘導できます。 このケースでは、自分のフロントエンド ファイルの要求を、それらのファイルがデプロイされている Azure Storage の URL に、また、API 要求を Azure Functions の URL に誘導する必要があります。
 
   - それらのプロキシを作成するには、自分の Functions プロジェクトの *proxies.json* ファイルを次のように編集します。`<storage_url>` と `<api_url>` は、実際の URL に置き換えてください。
   

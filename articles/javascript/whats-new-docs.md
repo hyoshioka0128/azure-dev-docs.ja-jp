@@ -3,12 +3,12 @@ title: 'JavaScript ドキュメントの新着情報: '
 description: 2020 年 10 月の JavaScript ドキュメントの新着情報
 ms.topic: conceptual
 ms.date: 10/28/2020
-ms.openlocfilehash: ba92f04d60fb49181ee5741225073270ec45c0f5
-ms.sourcegitcommit: 3c904d8d89d0cb4f13209cde3425c5307b83237c
+ms.openlocfilehash: 1b95a18d3ea8cb5947dfd5525326d69460c3a00b
+ms.sourcegitcommit: cbcde17e91e7262a596d813243fd713ce5e97d06
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "93024086"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93405951"
 ---
 # <a name="javascript-docs-whats-new-for-october-2020"></a>JavaScript ドキュメント:2020 年 10 月の新着情報
 
@@ -22,8 +22,8 @@ JavaScript および TypeScript 開発者向けの新規および更新された
 
 |名前|Notes|
 |---------------------------------------|--|
-|[チュートリアル: イメージを Blob Storage にアップロードする](/azure/developer/javascript/tutorial/browser-file-upload?preview=tutorialFeedback)|このチュートリアルでは、 **React アプリ** を使用して、ファイルを **Azure Storage** BLOB にアップロードします。 プログラミング作業は完了しており、このチュートリアルでは、Azure 拡張機能を使用して Visual Studio Code 内部からローカルおよびリモートの Azure 環境を正常に使用することに焦点を当てています。|
-|[チュートリアル: Visual Studio Code から App Service に Node.js MongoDB アプリをデプロイする](/azure/developer/javascript/tutorial/web-app-mongodb?preview=tutorialFeedback)|このチュートリアルでは、MongoDB ネイティブ API を使用して、 **MongoDB** データベースで **Express** Node.js アプリを使用します。 Node.js アプリケーションを (Linux 上の) Azure App Service にデプロイし、クラウドベースのアプリが動作することを確認します。 プログラミング作業は完了しており、このチュートリアルでは、Azure 拡張機能を使用して Visual Studio Code 内部からローカルおよびリモートの Azure 環境を正常に使用することに焦点を当てています。|
+|[チュートリアル: イメージを Blob Storage にアップロードする](./tutorial/browser-file-upload.yml?preview=tutorialFeedback)|このチュートリアルでは、 **React アプリ** を使用して、ファイルを **Azure Storage** BLOB にアップロードします。 プログラミング作業は完了しており、このチュートリアルでは、Azure 拡張機能を使用して Visual Studio Code 内部からローカルおよびリモートの Azure 環境を正常に使用することに焦点を当てています。|
+|[チュートリアル: Visual Studio Code から App Service に Node.js MongoDB アプリをデプロイする](./tutorial/web-app-mongodb.yml?preview=tutorialFeedback)|このチュートリアルでは、MongoDB ネイティブ API を使用して、 **MongoDB** データベースで **Express** Node.js アプリを使用します。 Node.js アプリケーションを (Linux 上の) Azure App Service にデプロイし、クラウドベースのアプリが動作することを確認します。 プログラミング作業は完了しており、このチュートリアルでは、Azure 拡張機能を使用して Visual Studio Code 内部からローカルおよびリモートの Azure 環境を正常に使用することに焦点を当てています。|
 
 ### <a name="whats-updated"></a>更新内容
 
@@ -34,4 +34,4 @@ JavaScript および TypeScript 開発者向けの新規および更新された
 
 ## <a name="next-steps"></a>次のステップ
 
-* [開発環境を設定する](/azure/developer/javascript/core/configure-local-development-environment)
+* [開発環境を設定する](./core/configure-local-development-environment.md)

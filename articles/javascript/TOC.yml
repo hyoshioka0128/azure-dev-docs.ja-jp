@@ -17,6 +17,22 @@
           href: tutorial/browser-file-upload.yml?preview=tutorialFeedback
         - name: Express.js と MongoDB
           href: tutorial/web-app-mongodb.yml?preview=tutorialFeedback
+        - name: Linux 仮想マシンにアプリをデプロイする
+          items:
+            - name: 1. 概要と前提条件
+              href: tutorial/nodejs-virtual-machine-vm/introduction.md
+            - name: 2. Application Insights リソースを作成する
+              href: tutorial/nodejs-virtual-machine-vm/create-azure-monitoring-application-insights-web-resource.md
+            - name: 3. 仮想マシンの作成
+              href: tutorial/nodejs-virtual-machine-vm/create-linux-virtual-machine-azure-cli.md
+            - name: 4. Linux 仮想マシンに接続する
+              href: tutorial/nodejs-virtual-machine-vm/connect-linux-virtual-machine-ssh.md
+            - name: 5. クラウド ログをアプリに追加する
+              href: tutorial/nodejs-virtual-machine-vm/azure-monitor-application-insights-nodejs-expressjs-code.md
+            - name: 6. ログを表示する
+              href: tutorial/nodejs-virtual-machine-vm/azure-monitor-application-insights-logs.md
+            - name: 7. リソースをクリーンアップする
+              href: tutorial/nodejs-virtual-machine-vm/clean-up-resources.md
         - name: サーバーレス Functions の作成とデプロイ
           items:
             - name: 1. 概要と前提条件

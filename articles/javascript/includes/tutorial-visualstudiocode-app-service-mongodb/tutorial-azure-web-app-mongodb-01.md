@@ -4,12 +4,12 @@ description: インクルード ファイル tutorial-azure-web-app-mongodb-01.m
 ms.date: 10/13/2020
 ms.topic: include
 ms.custom: devx-track-javascript
-ms.openlocfilehash: a8c9fcca1b7374ae5122cfabb3fcbfc6ba8cdd07
-ms.sourcegitcommit: 8a2a7df568c69fff2080ffab248409040efda1ac
+ms.openlocfilehash: 61bb61d147e01061dcf58701132feddd09c53b59
+ms.sourcegitcommit: 801682d3fc9651bf95d44e58574d5a4564be6feb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92183908"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "94340999"
 ---
 チュートリアルのこのセクションでは、Azure サブスクリプションと、このチュートリアルを使用するためのすべてのソフトウェアが必要です。
 
@@ -19,7 +19,7 @@ ms.locfileid: "92183908"
 
 ## <a name="install-software"></a>ソフトウェアをインストールする
 
-- [Node.js と npm](https://nodejs.org/en/download) (ローカ ル コンピューターにインストールされている Node.js パッケージ マネージャー)。
+- [Node.js 8.x 以降と npm](https://nodejs.org/en/download) (ローカ ル コンピューターにインストールされている Node.js パッケージ マネージャー)。
 - [Docker](https://docs.docker.com/get-docker/) - Docker は、MongoDB をインストールすることなく、ローカルの MongoDB データベースを提供するために使用されます。 
     - Docker を使用してローカルの MongoDB データベースを用意する必要がある場合は、次のものも使用する必要があります。
         -  Visual Studio [開発コンテナー](https://code.visualstudio.com/docs/remote/containers)は、JavaScript 開発用の一般的なコンテナーをいくつか提供しています。 

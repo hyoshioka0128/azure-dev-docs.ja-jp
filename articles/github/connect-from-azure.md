@@ -7,22 +7,20 @@ ms.topic: reference
 ms.service: azure
 ms.date: 08/31/2020
 ms.custom: github-actions-azure, devx-track-azurecli
-ms.openlocfilehash: 926bd35fe7c0fb7d7a043955e0fd340950a658db
-ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
+ms.openlocfilehash: d03f8631d985b97a46a711620c847475171f9438
+ms.sourcegitcommit: cbcde17e91e7262a596d813243fd713ce5e97d06
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92689214"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93405751"
 ---
 # <a name="use-github-actions-to-connect-to-azure"></a>GitHub Actions を使用して Azure に接続する
 
 [Azure ログイン](https://github.com/Azure/login)を [Azure PowerShell](https://github.com/Azure/PowerShell) または [Azure CLI](https://github.com/Azure/CLI) とともに使用して Azure リソースを操作する方法について説明します。
 
-Azure PowerShell または Azure CLI を使用するには、最初に [Azure ログイン](https://github.com/marketplace/actions/azure-login)でログインする必要があります。 Azure ログイン アクションは、サービス プリンシパルを使用して Azure サブスクリプションを GitHub に接続します。
+GitHub Actions ワークフローで Azure PowerShell または Azure CLI を使用するには、まず、[Azure login](https://github.com/marketplace/actions/azure-login) アクションを使用してログインする必要があります。 Azure login アクションを使用すると、[Azure AD サービス プリンシパル](/azure/active-directory/develop/app-objects-and-service-principals#service-principal-object)のコンテキストでワークフロー内のコマンドを実行できます。
 
-ログイン アクションを設定したら、Azure CLI または Azure PowerShell を使用できます。  
-Azure CLI は、Azure CLI の GitHub アクション ランナー環境を設定します。 Azure PowerShell は、Azure PowerShell モジュールを使用して GitHub アクション ランナー環境を設定します。
-
+login アクションを設定したら、Azure CLI または Azure PowerShell を使用できます。 既定では、このアクションは Azure CLI を使用してログインし、Azure CLI に対して GitHub アクション ランナー環境を設定します。 Azure login アクションの enable-AzPSSession プロパティを使用すると、Azure PowerShell を使用できます。  これは、Azure PowerShell モジュールを使用して GitHub アクション ランナー環境を設定します。
 
 ## <a name="create-a-service-principal-and-add-it-to-github-secret"></a>サービス プリンシパルを作成して GitHub シークレットに追加する
 
@@ -67,21 +65,21 @@ Azure CLI は、Azure CLI の GitHub アクション ランナー環境を設定
 
 1. **[Settings]\(設定\)** 、 **[New Secret]\([新しいシークレット\)]** の順に選択します。
 
-    :::image type="content" source="media/select-secrets.png" alt-text="ナビゲーションで [Settings]\(設定\) を選択する":::
+    :::image type="content" source="media/select-secrets.png" alt-text="シークレットの追加を選択する":::
 
 1. `AZURE_CREDENTIALS` という名前のサービス プリンシパルの JSON オブジェクトを貼り付けます。 
 
-    :::image type="content" source="media/azure-secret-add.png" alt-text="ナビゲーションで [Settings]\(設定\) を選択する":::
+    :::image type="content" source="media/azure-secret-add.png" alt-text="GitHub でシークレットを追加する":::
 
 1. **[Add secret]\(シークレットの追加\)** を選択して保存します。
 
 ## <a name="use-the-azure-login-action"></a>Azure ログイン アクションを使用する
 
-Azure で認証するには、サービス プリンシパル シークレットと [Azure ログイン アクション](https://github.com/Azure/login)を使用します。
+Azure で認証するには、サービス プリンシパル シークレットと [Azure Login アクション](https://github.com/Azure/login)を使用します。
 
-このワークフローでは、`secrets.AZURE_CREDENTIALS` を使用して認証し、Azure CLI アクションを実行します。
+このワークフローでは、`secrets.AZURE_CREDENTIALS` に格納されているサービス プリンシパルの詳細を使用して、Azure login アクションを使って認証を行います。 次に、Azure CLI アクションを実行します。 ワークフロー ファイルで GitHub シークレットを参照する方法の詳細については、GitHub Docs の「[ワークフローでの暗号化されたシークレットの使用](https://docs.github.com/en/free-pro-team@latest/actions/reference/encrypted-secrets#using-encrypted-secrets-in-a-workflow)」をご覧ください。
 
-動作する Azure ログインを作成したら、Azure PowerShell または Azure CLI アクションを使用できます。 [Azure Webapp のデプロイ](https://github.com/Azure/webapps-deploy)や [Azure Functions](https://github.com/Azure/functions-action) など、その他の Azure アクションを使用することもできます。
+動作する Azure ログイン ステップを作成したら、[Azure PowerShell](https://github.com/Azure/PowerShell) または[ Azure CLI](https://github.com/Azure/CLI) のアクションを使用できます。 [Azure Webapp のデプロイ](https://github.com/Azure/webapps-deploy)や [Azure Functions](https://github.com/Azure/functions-action) など、その他の Azure Actions を使用することもできます。
 
 ```yaml
 on: [push]
@@ -100,7 +98,7 @@ jobs:
 
 ## <a name="use-the-azure-powershell-action"></a>Azure PowerShell アクションを使用する
 
-この例では、[Azure ログイン アクション](https://github.com/Azure/login)を使用してログインし、[Azure CLI アクション](https://github.com/azure/powershell)を使用してリソース グループを取得します。
+この例では、[Azure Login アクション](https://github.com/Azure/login)を使用してログインし、[Azure PowerShell アクション](https://github.com/azure/powershell)を使用してリソース グループを取得します。
 
 ```yaml
 on: [push]

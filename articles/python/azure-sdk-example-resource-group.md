@@ -1,15 +1,15 @@
 ---
 title: Python 用 Azure ライブラリを使用してリソース グループをプロビジョニングする
 description: Azure SDK for Python のリソース管理ライブラリを使用して、Python コードからリソース グループを作成します。
-ms.date: 10/05/2020
+ms.date: 11/12/2020
 ms.topic: conceptual
-ms.custom: devx-track-python
-ms.openlocfilehash: 24450fb8b7db3f9df3d08086c90cdf26265b474a
-ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
+ms.custom: devx-track-python, devx-track-azurecli
+ms.openlocfilehash: 65c78e480336f689096ccbd9f75420febf732f20
+ms.sourcegitcommit: dc74b60217abce66fe6cc93923e869e63ac86a8f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "92010288"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94872843"
 ---
 # <a name="example-use-the-azure-libraries-to-provision-a-resource-group"></a>例:Azure ライブラリを使用してリソース グループをプロビジョニングする
 
@@ -80,6 +80,17 @@ print(f"Provisioned resource group {rg_result.name} in the {rg_result.location} 
 # The return value is another ResourceGroup object with all the details of the
 # new group. In this case the call is synchronous: the resource group has been
 # provisioned by the time the call returns.
+
+# Update the resource group with tags
+rg_result = resource_client.resource_groups.create_or_update(
+    "PythonAzureExample-rg",
+    {
+        "location": "centralus",
+        "tags": { "environment":"test", "department":"tech" }
+    }
+)
+
+print(f"Updated resource group {rg_result.name} with tags")
 
 # Optional lines to delete the resource group. begin_delete is asynchronous.
 # poller = resource_client.resource_groups.begin_delete(rg_result.name)

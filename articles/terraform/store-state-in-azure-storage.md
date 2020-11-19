@@ -3,13 +3,13 @@ title: チュートリアル - Terraform 状態を Azure Storage に格納する
 description: Terraform 状態を Azure Storage に格納する方法について説明します。
 ms.topic: tutorial
 ms.date: 11/07/2019
-ms.custom: devx-track-terraform
-ms.openlocfilehash: 33a49a9c6b8f62dd5f9a47f7171ba1cd3c55195b
-ms.sourcegitcommit: 801682d3fc9651bf95d44e58574d5a4564be6feb
+ms.custom: devx-track-terraform, devx-track-azurecli
+ms.openlocfilehash: 7f1c200a96efa16d65a8f94bc3bc70a236f969a7
+ms.sourcegitcommit: dc74b60217abce66fe6cc93923e869e63ac86a8f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94333790"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94872883"
 ---
 # <a name="tutorial-store-terraform-state-in-azure-storage"></a>チュートリアル:Terraform 状態を Azure Storage に格納する
 
@@ -59,10 +59,10 @@ echo "access_key: $ACCOUNT_KEY"
 
 Terraform 状態バックエンドは、`terraform init` コマンドを実行すると構成されます。 状態バックエンドを構成するには、次のデータが必要です。
 
-- **storage_account_name** :Azure ストレージ アカウントの名前。
-- **container_name** :BLOB コンテナーの名前。
-- **key** :作成する状態ストア ファイルの名前。
-- **access_key** :ストレージ アクセス キー。
+- **storage_account_name**:Azure ストレージ アカウントの名前。
+- **container_name**:BLOB コンテナーの名前。
+- **key**:作成する状態ストア ファイルの名前。
+- **access_key**:ストレージ アクセス キー。
 
 これらの各値は、Terraform 構成ファイルまたはコマンド ラインで指定できます。 `access_key` 値には環境変数を使用することをお勧めします。 環境変数を使用することで、キーがディスクに書き込まれるのを防ぐことができます。
 

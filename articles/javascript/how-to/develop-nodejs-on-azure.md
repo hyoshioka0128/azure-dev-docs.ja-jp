@@ -3,13 +3,13 @@ title: コンテナー化された Node.js アプリを VS Code と Azure を使
 description: Node.js アプリの作成、コンテナー化、Azure へのデプロイの方法を紹介する完全なエンド ツー エンドのチュートリアル
 ms.topic: how-to
 ms.date: 06/25/2017
-ms.custom: seo-javascript-september2019, seo-javascript-october2019, devx-track-js
-ms.openlocfilehash: 658d25726b8cdedb8925ebaac5bdc4da66eafd0f
-ms.sourcegitcommit: c3a1c9051b89870f6bfdb3176463564963b97ba4
+ms.custom: seo-javascript-september2019, seo-javascript-october2019, devx-track-js, devx-track-azurecli
+ms.openlocfilehash: 7ecaa972bb00fa7c07461e3679996332e7f33451
+ms.sourcegitcommit: dc74b60217abce66fe6cc93923e869e63ac86a8f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92437300"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94872893"
 ---
 # <a name="develop-and-deploy-a-containerized-nodejs-app-with-visual-studio-code-and-azure"></a>コンテナー化された Node.js アプリを Visual Studio Code と Azure を使用して開発してデプロイする
 
@@ -38,11 +38,11 @@ ms.locfileid: "92437300"
 
 1. **F1** キーを押してコマンド パレットを表示します。
 
-1. コマンド パレットのプロンプトに「`gitcl`」と入力し、 **Git: Clone** コマンドを選択して、 **Enter** キーを押します。
+1. コマンド パレットのプロンプトに「`gitcl`」と入力し、**Git: Clone** コマンドを選択して、**Enter** キーを押します。
 
     ![Visual Studio Code コマンド パレットのプロンプトに gitcl コマンドを入力](../media/node-howto-e2e/visual-studio-code-git-clone.png)
 
-1. **リポジトリの URL** の入力を求められたら、「`https://github.com/scotch-io/node-todo`」と入力し、 **Enter** キーを押します。
+1. **リポジトリの URL** の入力を求められたら、「`https://github.com/scotch-io/node-todo`」と入力し、**Enter** キーを押します。
 
 1. プロジェクトの複製先となるローカル ディレクトリを選択 (または作成) します。
 
@@ -54,19 +54,19 @@ ms.locfileid: "92437300"
 
 1. **Ctrl**+ **`** キーを押して Visual Studio Code の統合ターミナルを表示します。 
 
-1. 「`yarn`」と入力し、 **Enter** キーを押します。  
+1. 「`yarn`」と入力し、**Enter** キーを押します。  
 
      ![Visual Studio Code 内で yarn コマンドを実行](../media/node-howto-e2e/visual-studio-code-install-yarn.png)
 
 ## <a name="integrated-git-version-control"></a>Git バージョン コントロールの統合
 
-Yarn でアプリの依存関係をインストールすると、 *yarn.lock* ファイルが作成されます。このファイルによって、将来、CI (継続的インテグレーション) ビルドや運用環境のデプロイ、他の開発者のマシンに不測の事態を招くことなく、まったく同じ依存関係を予測可能な方法で再取得できます。
+Yarn でアプリの依存関係をインストールすると、*yarn.lock* ファイルが作成されます。このファイルによって、将来、CI (継続的インテグレーション) ビルドや運用環境のデプロイ、他の開発者のマシンに不測の事態を招くことなく、まったく同じ依存関係を予測可能な方法で再取得できます。
 
-次の手順で、 *yarn.lock* ファイルをソース管理にチェックインする方法を説明します。
+次の手順で、*yarn.lock* ファイルをソース管理にチェックインする方法を説明します。
 
 1. Visual Studio Code 内で、統合された Git タブ (Git ロゴのあるタブ) に切り替えます。
 
-1. **[メッセージ]** ボックスにコミット メッセージを入力し、 **Ctrl**+**Enter** キーを押します。
+1. **[メッセージ]** ボックスにコミット メッセージを入力し、**Ctrl**+**Enter** キーを押します。
 
     ![yarn.lock ファイルを Git に追加](../media/node-howto-e2e/visual-studio-code-add-yarn-lock.png)
 
@@ -86,11 +86,11 @@ Yarn でアプリの依存関係をインストールすると、 *yarn.lock* �
 
     ![ホバー ヘルプを使用して Visual Studio Code で型を検出する](../media/node-howto-e2e/visual-studio-code-hover-help.png)
 
-1. 変数 ( **database** など) 内のどこかでマウスをクリックすると、同じファイル内でその変数が使われている箇所をすべて確認できます。 プロジェクト内である変数が使われている箇所をすべて表示するには、その変数を右クリックし、コンテキスト メニューから、 **[すべての参照の検索]** を選択します。
+1. 変数 (**database** など) 内のどこかでマウスをクリックすると、同じファイル内でその変数が使われている箇所をすべて確認できます。 プロジェクト内である変数が使われている箇所をすべて表示するには、その変数を右クリックし、コンテキスト メニューから、 **[すべての参照の検索]** を選択します。
 
     ![Visual Studio Code ですべての参照を検索する](../media/node-howto-e2e/visual-studio-code-find-all-references.png)
 
-1. マウス カーソルを変数に合わせることによってその型を調べることに加え、変数の定義を調べることもできます。別のファイルに存在していても問題ありません。 たとえば、 **database.localUrl** (12 行目) を右クリックして、コンテキスト メニューから **[定義をここに表示]** を選択します。
+1. マウス カーソルを変数に合わせることによってその型を調べることに加え、変数の定義を調べることもできます。別のファイルに存在していても問題ありません。 たとえば、**database.localUrl** (12 行目) を右クリックして、コンテキスト メニューから **[定義をここに表示]** を選択します。
 
     ![Visual Studio Code で変数の定義を表示する](../media/node-howto-e2e/visual-studio-code-peek-definition.png)
 
@@ -132,15 +132,15 @@ mongoose.connection.on("error", () => { console.log("DB connection error"); });
 
 ## <a name="running-the-app"></a>アプリの実行
 
-コードをひととおり確認したら、実際にアプリを実行してみましょう。 Visual Studio Code でアプリを実行するには、 **F5** キーを押します。 **F5** (デバッグ モード) でコードを実行すると、Visual Studio Code によってアプリが起動され、 **[デバッグ コンソール]** ウィンドウが表示されて、アプリの StdOut が表示されます。
+コードをひととおり確認したら、実際にアプリを実行してみましょう。 Visual Studio Code でアプリを実行するには、**F5** キーを押します。 **F5** (デバッグ モード) でコードを実行すると、Visual Studio Code によってアプリが起動され、 **[デバッグ コンソール]** ウィンドウが表示されて、アプリの StdOut が表示されます。
 
 ![デバッグ コンソールでアプリの StdOut を監視](../media/node-howto-e2e/visual-studio-code-debug-console.png)
 
-また、 **デバッグ コンソール** は最近実行したアプリにアタッチされるので、JavaScript の式を入力すれば、そのアプリ内で評価されます。オートコンプリートも機能します。 この動作を確認するには、コンソールに「`process.env`」と入力します。
+また、**デバッグ コンソール** は最近実行したアプリにアタッチされるので、JavaScript の式を入力すれば、そのアプリ内で評価されます。オートコンプリートも機能します。 この動作を確認するには、コンソールに「`process.env`」と入力します。
 
 ![デバッグ コンソールにコードを入力](../media/node-howto-e2e/visual-studio-code-debug-console-autocomplete.png)
 
-先ほど **F5** キーを押してアプリを実行できたのは、現在開いているファイルが JavaScript ファイル ( *server.js* ) であるためです。 その結果、プロジェクトが Node.js アプリであると Visual Studio Code によって認識されました。 Visual Studio Code で JavaScript ファイルをすべて閉じて、 **F5** キーを押した場合は、環境を選択するように求められます。
+先ほど **F5** キーを押してアプリを実行できたのは、現在開いているファイルが JavaScript ファイル (*server.js*) であるためです。 その結果、プロジェクトが Node.js アプリであると Visual Studio Code によって認識されました。 Visual Studio Code で JavaScript ファイルをすべて閉じて、**F5** キーを押した場合は、環境を選択するように求められます。
 
 ![ランタイム環境の指定](../media/node-howto-e2e/visual-studio-code-select-environment.png)
 
@@ -150,7 +150,7 @@ mongoose.connection.on("error", () => { console.log("DB connection error"); });
 
 ## <a name="debugging"></a>デバッグ
 
-Visual Studio Code では、統合コンソールでアプリを実行したり対話的に操作したりすることに加え、コード内に直接ブレークポイントを設定することができます。 たとえば、 **Ctrl**+**P** キーを押して、ファイル ピッカーを表示します。 ファイル ピッカーが表示されたら、「`route`」と入力して *route.js* ファイルを選択します。
+Visual Studio Code では、統合コンソールでアプリを実行したり対話的に操作したりすることに加え、コード内に直接ブレークポイントを設定することができます。 たとえば、**Ctrl**+**P** キーを押して、ファイル ピッカーを表示します。 ファイル ピッカーが表示されたら、「`route`」と入力して *route.js* ファイルを選択します。
 
 28 行目にブレークポイントを設定します。これは、アプリが To Do エントリを追加しようとしたときに呼び出される Express ルートを表します。 ブレークポイントは、次の図のようにエディター内で行番号の左側の領域をクリックするだけで設定できます。
 
@@ -179,7 +179,7 @@ Visual Studio Code では、統合コンソールでアプリを実行したり�
 
 Node.js コードの実行とデバッグを行ううえで Visual Studio Code に特別な構成は必要ありませんでしたが、フロントエンド Web アプリをデバッグするためには、アプリの実行方法を Visual Studio Code に伝える *launch.json* ファイルを生成する必要があります。
 
-*launch.json* ファイルを生成するには、 **[デバッグ]** タブに切り替えて、歯車アイコン (上部に小さな赤色の点が表示されます) をクリックし、 **node.js** 環境を選択します。
+*launch.json* ファイルを生成するには、 **[デバッグ]** タブに切り替えて、歯車アイコン (上部に小さな赤色の点が表示されます) をクリックし、**node.js** 環境を選択します。
 
 ![launch.json ファイルを構成するための Visual Studio Code オプション](../media/node-howto-e2e/visual-studio-code-debug-gear.png)
 
@@ -208,13 +208,13 @@ Node.js コードの実行とデバッグを行ううえで Visual Studio Code �
 
 このアプリのスタートアップ スクリプトが *server.js* であることを Visual Studio Code が検出できたことに注目してください。
 
-*launch.json* ファイルを開いた状態で、 **[構成の追加]** (右下) を選択し、 **Chrome:Launch with userDataDir** を選択します。
+*launch.json* ファイルを開いた状態で、 **[構成の追加]** (右下) を選択し、**Chrome:Launch with userDataDir** を選択します。
 
 ![Chrome の構成を Visual Studio Code に追加](../media/node-howto-e2e/visual-studio-code-add-chrome-config.png)
 
 Chrome 用に新しい実行構成を追加することで、フロントエンド JavaScript コードをデバッグできるようになります。 
 
-指定されているいずれかの設定にマウス カーソルを合わせると、その設定の内容についてのドキュメントが表示されます。 さらに、アプリの URL が Visual Studio Code によって自動的に検出されることがわかります。 アプリのフロントエンド アセットの検索対象となる場所を Chrome デバッガーが認識できるように、 **webRoot** プロパティを `${workspaceRoot}/public` に更新します。
+指定されているいずれかの設定にマウス カーソルを合わせると、その設定の内容についてのドキュメントが表示されます。 さらに、アプリの URL が Visual Studio Code によって自動的に検出されることがわかります。 アプリのフロントエンド アセットの検索対象となる場所を Chrome デバッガーが認識できるように、**webRoot** プロパティを `${workspaceRoot}/public` に更新します。
 
 ```json
 {
@@ -227,7 +227,7 @@ Chrome 用に新しい実行構成を追加することで、フロントエン�
 }
 ```
 
-フロントエンドとバックエンドの両方を同時に起動/デバッグするためには、" *複合* " 実行構成を作成して、並列実行する一連の構成を Visual Studio Code に伝える必要があります。
+フロントエンドとバックエンドの両方を同時に起動/デバッグするためには、"*複合*" 実行構成を作成して、並列実行する一連の構成を Visual Studio Code に伝える必要があります。
 
 次のスニペットを *launch.json* ファイル内の最上位のプロパティとして (既存の **configurations** プロパティの兄弟として) 追加します。
 
@@ -240,13 +240,13 @@ Chrome 用に新しい実行構成を追加することで、フロントエン�
 ]
 ```
 
-**compounds.configurations** 配列に指定した文字列値は、 **configurations** のリストに含まれる各エントリの **name** を表します。 これらの名前を変更した場合は、配列に適宜変更を加える必要があります。 たとえば、[デバッグ] タブに切り替えて、選択構成を **[Full-Stack]** (複合構成の名前) に変更し、 **F5** キーを押して実行します。
+**compounds.configurations** 配列に指定した文字列値は、**configurations** のリストに含まれる各エントリの **name** を表します。 これらの名前を変更した場合は、配列に適宜変更を加える必要があります。 たとえば、[デバッグ] タブに切り替えて、選択構成を **[Full-Stack]** (複合構成の名前) に変更し、**F5** キーを押して実行します。
 
 ![Visual Studio Code での構成の実行](../media/node-howto-e2e/visual-studio-code-full-stack-configuration.png)
 
 この構成を実行すると、デバッグ コンソール出力に見られるような Node.js アプリと、`http://localhost:8080` の Node.js アプリに移動するように構成された Chrome が起動します。
 
-**Ctrl**+**P** キーを押して、 *todos.js* と入力 (または選択) します。これが、アプリのフロントエンドのメイン Angular コントローラーになります。
+**Ctrl**+**P** キーを押して、*todos.js* と入力 (または選択) します。これが、アプリのフロントエンドのメイン Angular コントローラーになります。
 
 11 行目 (作成中の新しい To Do エントリのエントリ ポイント) にブレークポイントを設定します。
 
@@ -258,9 +258,9 @@ Node.js のデバッグと同様、式にマウス カーソルを置くこと�
 
 ここで便利な機能を 2 つ紹介します。
 
-1. **[呼び出し履歴]** ウィンドウには、2 つの異なるスタックが表示されます: **Node** と **Chrome** 。これにより、現在どちらが一時停止されているのかがわかります。
+1. **[呼び出し履歴]** ウィンドウには、2 つの異なるスタックが表示されます: **Node** と **Chrome**。これにより、現在どちらが一時停止されているのかがわかります。
 
-1. フロントエンドとバックエンドのコードの間でステップ実行することができます。 **F5** キーを押すと、Express ルートに先ほど設定したブレークポイントに到達します。
+1. フロントエンドとバックエンドのコードの間でステップ実行することができます。**F5** キーを押すと、Express ルートに先ほど設定したブレークポイントに到達します。
 
 この設定によって、フロントエンド、バックエンド、またはフルスタックの JavaScript コードを Visual Studio Code 内から直接効率的にデバッグすることができます。
 
@@ -270,7 +270,7 @@ Node.js のデバッグと同様、式にマウス カーソルを置くこと�
 
 このセクションでは、[Docker](https://www.docker.com/) を使った開発のために Visual Studio Code が備えている機能について重点的に説明します。 Node.js の開発者は、CI (継続的インテグレーション) と運用環境のどちらの開発においても、Docker を使ってポータブルなアプリのデプロイを提供することができます。 Docker は習得が容易であることから、Visual Studio Code には、アプリに Docker を使って作業を単純化する拡張機能が用意されています。
 
-**[拡張機能]** タブに切り替え、「`docker`」を検索して、 **Docker** 拡張機能を選択します。
+**[拡張機能]** タブに切り替え、「`docker`」を検索して、**Docker** 拡張機能を選択します。
 
 Docker 拡張機能をインストールし、Visual Studio Code を再度読み込みます。
 
@@ -278,7 +278,7 @@ Docker 拡張機能をインストールし、Visual Studio Code を再度読み
 
 Visual Studio Code 用 Docker 拡張機能には、既存プロジェクト用の *Dockerfile* および *docker-compose.yml* ファイルを生成するためのコマンドが含まれています。
 
-利用可能な Docker コマンドを確認するには、コマンド パレットを表示し ( **F1** キー)、「`docker`」と入力します。
+利用可能な Docker コマンドを確認するには、コマンド パレットを表示し (**F1** キー)、「`docker`」と入力します。
 
 ![Visual Studio Code 用 Docker 拡張機能でサポートされているコマンド ](../media/node-howto-e2e/visual-studio-code-available-docker-codes.png)
 
@@ -288,7 +288,7 @@ Visual Studio Code 用 Docker 拡張機能には、既存プロジェクト用�
 
 ![Visual Studio Code で生成された Dockerfile](../media/node-howto-e2e/visual-studio-code-complete-dockerfile.png)
 
-Docker 拡張機能では、 *Dockerfile* と *docker-compose.yml* ファイルのオートコンプリートも提供されます。 たとえば、 *Dockerfile* を開き、2 行目を変更します。変更前:
+Docker 拡張機能では、*Dockerfile* と *docker-compose.yml* ファイルのオートコンプリートも提供されます。 たとえば、*Dockerfile* を開き、2 行目を変更します。変更前:
 
 ```docker
 FROM node:latest
@@ -300,7 +300,7 @@ FROM node:latest
 FROM mhart
 ```
 
-`mhart` の `t` の後にカーソルを置いて、 **Ctrl** +**Space** キーを押すと、`mhart` が DockerHub で公開しているすべてのイメージ リポジトリが表示されます。
+`mhart` の `t` の後にカーソルを置いて、**Ctrl** +**Space** キーを押すと、`mhart` が DockerHub で公開しているすべてのイメージ リポジトリが表示されます。
 
 ![DockerHub のイメージ リポジトリを表示する](../media/node-howto-e2e/visual-studio-code-dockerhub-image-repositories.png)
 
@@ -314,7 +314,7 @@ FROM mhart
 
 このコマンドによって、`docker build` を実行するプロセスが自動化され、ここでも高い生産性が実現されていることに注目してください。この方法を選ばずに、単に Docker CLI を直接使用してもかまいません。
 
-この時点で、このイメージを簡単に取得してデプロイできるようにするために、DockerHub にイメージをプッシュする必要があります。 イメージをプッシュするには、CLI から `docker login` を実行し、アカウントの資格情報を入力して、あらかじめ DockerHub に対して認証を行っておく必要があります。 そのうえで、Visual Studio Code でコマンド パレットを呼び出し、「`dockerpush`」を入力して、`Docker: Push` コマンドを選択します。 先ほどビルドしたイメージ タグ (例: `lostintangent/node`) を選択して、 **Enter** キーを押します。 このコマンドによって自動的に `docker push` が呼び出され、統合ターミナルに出力結果が表示されます。
+この時点で、このイメージを簡単に取得してデプロイできるようにするために、DockerHub にイメージをプッシュする必要があります。 イメージをプッシュするには、CLI から `docker login` を実行し、アカウントの資格情報を入力して、あらかじめ DockerHub に対して認証を行っておく必要があります。 そのうえで、Visual Studio Code でコマンド パレットを呼び出し、「`dockerpush`」を入力して、`Docker: Push` コマンドを選択します。 先ほどビルドしたイメージ タグ (例: `lostintangent/node`) を選択して、**Enter** キーを押します。 このコマンドによって自動的に `docker push` が呼び出され、統合ターミナルに出力結果が表示されます。
 
 ## <a name="deploying-the-app"></a>アプリのデプロイ
 
@@ -325,7 +325,7 @@ Docker でコンテナー化したアプリを作成して DockerHub にプッ�
 
 最初に、Visual Studio ターミナルを開きます。 Azure アカウントを管理したり、必要なインフラストラクチャをプロビジョニングして To Do アプリを実行したりするには、新しい Azure CLI 2.0 を使います。 「前提条件」で触れたように、この CLI で `az login` コマンドを使ってアカウントにログインした後、次の手順を実行して App Service インスタンスをプロビジョニングし、To Do アプリのコンテナーをデプロイします。
 
-1. リソース グループを作成します。これは、Azure リソースを体系化するための " *名前空間* " または " *ディレクトリ* " と考えることができます。 グループの名前は `-n` オプションで指定します。任意の名前を使用できます。
+1. リソース グループを作成します。これは、Azure リソースを体系化するための "*名前空間*" または "*ディレクトリ*" と考えることができます。 グループの名前は `-n` オプションで指定します。任意の名前を使用できます。
 
     ```shell
     az group create -n nina-demo -l westus
@@ -339,7 +339,7 @@ Docker でコンテナー化したアプリを作成して DockerHub にプッ�
    az configure -d group=nina-demo
    ```
 
-1. App Service " *プラン* " を作成します。アプリのデプロイ先となるベースの仮想マシンの作成とスケーリングは、このプランによって管理されます。 この場合も、`n` オプションには任意の値を指定してください。
+1. App Service "*プラン*" を作成します。アプリのデプロイ先となるベースの仮想マシンの作成とスケーリングは、このプランによって管理されます。 この場合も、`n` オプションには任意の値を指定してください。
 
     ```shell
     az appservice plan create -n nina-demo-plan --is-linux
@@ -480,7 +480,7 @@ az webapp config hostname add --hostname <DOMAIN>
 
 ## <a name="scaling-up-and-out"></a>スケールアップとスケールアウト
 
-将来的に Web アプリの利用者が増えてくると、割り当て済みのリソース (CPU と RAM) では、運用上の需要やトラフィックの増大に追い付かなくなる可能性があります。 先ほど作成した App Service プラン ( **B1** ) で利用できるのは 1 CPU コアと 1.75 GB の RAM であり、これはたやすく過負荷状態になる可能性があります。 **B2** プランではその 2 倍の RAM と CPU が利用できるため、アプリでいずれかが不足し始めたら、次のコマンドを実行することで、基になる仮想マシンをスケールアップすることができます。
+将来的に Web アプリの利用者が増えてくると、割り当て済みのリソース (CPU と RAM) では、運用上の需要やトラフィックの増大に追い付かなくなる可能性があります。 先ほど作成した App Service プラン (**B1**) で利用できるのは 1 CPU コアと 1.75 GB の RAM であり、これはたやすく過負荷状態になる可能性があります。 **B2** プランではその 2 倍の RAM と CPU が利用できるため、アプリでいずれかが不足し始めたら、次のコマンドを実行することで、基になる仮想マシンをスケールアップすることができます。
 
 ```shell
 az appservice plan update -n nina-demo-plan --sku B2
@@ -491,7 +491,7 @@ az appservice plan update -n nina-demo-plan --sku B2
 
 少しすると、要求したハードウェアに Web アプリが移行され、そのリソースを活用できるようになります。 スケールアップだけではありません。より少ないリソースをより低価格で利用できる `--sku` オプションを指定して、先ほどと同じコマンドを実行すれば、スケールダウンすることもできます。
 
-また、仮想マシンの仕様をスケールアップする以外にも、Web アプリがステートレスであれば、基になる仮想マシン インスタンスを増やすことによる " *スケールアウト* " を行うこともできます。 先ほど作成した App Service プランには仮想マシンが 1 つ ( *worker* ) しか含まれていないので、結局のところ、その 1 つのインスタンスで利用できるリソースの上限が、全受信トラフィックの限界となります。 仮想マシン インスタンスをもう 1 つ追加する必要がある場合も、先ほどと同じコマンドを使用できます。ただし、SKU をスケールアップするのではなく、worker 仮想マシンの数をスケールアウトします。
+また、仮想マシンの仕様をスケールアップする以外にも、Web アプリがステートレスであれば、基になる仮想マシン インスタンスを増やすことによる "*スケールアウト*" を行うこともできます。 先ほど作成した App Service プランには仮想マシンが 1 つ (*worker*) しか含まれていないので、結局のところ、その 1 つのインスタンスで利用できるリソースの上限が、全受信トラフィックの限界となります。 仮想マシン インスタンスをもう 1 つ追加する必要がある場合も、先ほどと同じコマンドを使用できます。ただし、SKU をスケールアップするのではなく、worker 仮想マシンの数をスケールアウトします。
 
 ```shell
 az appservice plan update -n nina-demo-plan --number-of-workers 2

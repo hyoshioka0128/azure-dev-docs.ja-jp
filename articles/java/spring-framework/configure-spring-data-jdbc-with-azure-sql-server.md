@@ -2,18 +2,18 @@
 title: Azure SQL Database で Spring Data JDBC を使用する
 description: Azure SQL Database で Spring Data JDBC を使用する方法を説明します。
 documentationcenter: java
-ms.date: 05/18/2020
+ms.date: 10/13/2020
 ms.service: sql-database
 ms.tgt_pltfrm: multiple
 ms.author: judubois
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: abf197e0626925dd836243a207ddf0c49ee32470
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: 2bfa70765c8c98b4a590b86cacb979a2ca0d95ce
+ms.sourcegitcommit: 8e1d3a384ccb0e083589418d65a70b3a01afebff
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831248"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94560245"
 ---
 # <a name="use-spring-data-jdbc-with-azure-sql-database"></a>Azure SQL Database で Spring Data JDBC を使用する
 
@@ -36,6 +36,9 @@ ms.locfileid: "90831248"
 ```bash
 curl https://start.spring.io/starter.tgz -d dependencies=web,data-jdbc,sqlserver -d baseDir=azure-database-workshop -d bootVersion=2.3.1.RELEASE -d javaVersion=8 | tar -xzvf -
 ```
+
+> [!NOTE]
+> Spring Initializr では、既定のバージョンとして Java 11 が使用されます。 このトピックで説明されている Spring Boot Starter を使用するには、代わりに Java 8 を選択する必要があります。
 
 ### <a name="configure-spring-boot-to-use-azure-sql-database"></a>Azure SQL Database を使用するように Spring Boot を構成する
 
@@ -100,3 +103,7 @@ CREATE TABLE todo (id INT IDENTITY PRIMARY KEY, description VARCHAR(255), detail
 Spring Data JDBC の詳細については、Spring の[リファレンス ドキュメント](https://docs.spring.io/spring-data/jdbc/docs/current/reference/html/#reference)を参照してください。
 
 Java での Azure の使用の詳細については、「[Java 開発者向けの Azure](../index.yml)」および [Azure DevOps と Java の操作](/azure/devops/)に関するページを参照してください。
+
+### <a name="clean-up-resources"></a>リソースをクリーンアップする
+
+予想外の課金を防ぐために、この記事で作成したリソースが不要になったら、[Azure portal](https://portal.azure.com/) を使用して削除してください。

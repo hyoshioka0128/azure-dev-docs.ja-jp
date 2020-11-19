@@ -7,12 +7,12 @@ ms.author: seal
 ms.date: 10/10/2020
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 0df477d203031fecac389660b93e93f00d8e262a
-ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
+ms.openlocfilehash: e4958d65e06a77181a00a7dc4d221e02f4f6b188
+ms.sourcegitcommit: 6514a061ba5b8003ce29d67c81a9f0795c3e3e09
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "92010004"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94601254"
 ---
 # <a name="how-to-use-spring-cloud-azure-stream-binder-for-azure-service-bus"></a>Azure Service Bus 用の Spring Cloud Azure Stream Binder を使用する方法
 
@@ -63,32 +63,29 @@ Azure には、[Azure Service Bus](/azure/service-bus-messaging/service-bus-mess
 
     ```xml
     <dependency>
-        <groupId>com.microsoft.azure</groupId>
-        <artifactId>spring-cloud-azure-servicebus-queue-stream-binder</artifactId>
-        <version>1.1.0.RC5</version>
+        <groupId>com.azure.spring</groupId>
+        <artifactId>azure-spring-cloud-stream-binder-servicebus-queue</artifactId>
+        <version>2.0.0-beta.1</version> <!-- {x-version-update;com.azure.spring:azure-spring-cloud-stream-binder-servicebus-queue;current} -->
     </dependency>
     ```
-
-    ![Service Bus キューの pom.xml ファイルを編集します。](media/configure-spring-cloud-stream-binder-java-app-with-service-bus/add-stream-binder-starter-pom-file-dependency-for-service-bus-queue.png)
 
     **Service Bus トピック**
 
     ```xml
     <dependency>
-        <groupId>com.microsoft.azure</groupId>
-        <artifactId>spring-cloud-azure-servicebus-topic-stream-binder</artifactId>
-        <version>1.1.0.RC5</version>
+        <groupId>com.azure.spring</groupId>
+        <artifactId>azure-spring-cloud-stream-binder-servicebus-topic</artifactId>
+        <version>2.0.0-beta.1</version> <!-- {x-version-update;com.azure.spring:azure-spring-cloud-stream-binder-servicebus-topic;current} -->
     </dependency>
     ```
 
-    ![Service Bus トピックの pom.xml ファイルを編集します。](media/configure-spring-cloud-stream-binder-java-app-with-service-bus/add-stream-binder-starter-pom-file-dependency-for-service-bus-topic.png)
 
 1. *pom.xml* ファイルを保存して閉じます。
 
 ## <a name="configure-the-app-for-your-service-bus"></a>アプリでサービス バス用の構成を行う
 
-接続文字列または資格情報ファイルに基づいて、自分のアプリを構成できます。 このチュートリアルでは、接続文字列を使用します。 資格情報ファイルの使用の詳細については、「[Service Bus キュー用 Spring Cloud Azure Stream Binder のコード サンプル](https://github.com/microsoft/spring-cloud-azure/tree/release/1.1.0.RC4/spring-cloud-azure-samples/servicebus-queue-binder-sample#credential-file-based-usage
-)」と「[Service Bus トピック用 Spring Cloud Azure Stream Binder のコード サンプル](https://github.com/microsoft/spring-cloud-azure/tree/release/1.1.0.RC4/spring-cloud-azure-samples/servicebus-topic-binder-sample#credential-file-based-usage)」を参照してください。
+接続文字列または資格情報ファイルに基づいて、自分のアプリを構成できます。 このチュートリアルでは、接続文字列を使用します。 資格情報ファイルの使用の詳細については、「[Service Bus キュー用 Spring Cloud Azure Stream Binder のコード サンプル](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/spring/azure-spring-boot-samples/azure-spring-cloud-sample-servicebus-queue-binder
+)」と「[Service Bus トピック用 Spring Cloud Azure Stream Binder のコード サンプル](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/spring/azure-spring-cloud-stream-binder-servicebus-topic)」を参照してください。
 
 1. アプリの *resources* ディレクトリ内で *application.properties* ファイルを探します。次に例を示します。
 

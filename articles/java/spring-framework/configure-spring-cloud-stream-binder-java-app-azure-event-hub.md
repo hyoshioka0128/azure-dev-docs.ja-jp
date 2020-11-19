@@ -8,12 +8,12 @@ ms.service: event-hubs
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.custom: devx-track-java, devx-track-azurecli
-ms.openlocfilehash: 2cee5871b49574fd4e4643b206c1454404219b9b
-ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
+ms.openlocfilehash: 0cc3289243c1a146cf59ecb15c5150327f49c236
+ms.sourcegitcommit: 8e1d3a384ccb0e083589418d65a70b3a01afebff
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92688694"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94560305"
 ---
 # <a name="how-to-create-a-spring-cloud-stream-binder-application-with-azure-event-hubs"></a>Azure Event Hubs を使用する Spring Cloud Stream Binder アプリケーションを作成する方法
 
@@ -47,7 +47,7 @@ ms.locfileid: "92688694"
 
    * 名前空間に使用する **サブスクリプション** を選択します。
    * 名前空間の新しい **リソース グループ** を作成するか、既存のリソース グループを選択するかを指定します。
-   * 一意の **名前空間名** を入力します。この名前は、イベント ハブの名前空間の URI の一部になります。 たとえば、 **[名前空間名]** に「 *wingtiptoys-space* 」と入力した場合、URI は `wingtiptoys-space.servicebus.windows.net` になります。
+   * 一意の **名前空間名** を入力します。この名前は、イベント ハブの名前空間の URI の一部になります。 たとえば、 **[名前空間名]** に「*wingtiptoys-space*」と入力した場合、URI は `wingtiptoys-space.servicebus.windows.net` になります。
    * イベント ハブの名前空間の **場所** を指定します。
    * 価格レベル。
    * 名前空間の **[スループット ユニット]** を指定することもできます。
@@ -112,7 +112,7 @@ ms.locfileid: "92688694"
    >![基本的な Spring Initializr オプション][SI01]
 
    > [!NOTE]
-   > Spring Initializr では、 **グループ (Group)** と **成果物 (Artifact)** の名前を使用してパッケージ名を作成します (例: *com.contoso.eventhubs.sample* )。
+   > Spring Initializr では、**グループ (Group)** と **成果物 (Artifact)** の名前を使用してパッケージ名を作成します (例: *com.contoso.eventhubs.sample*)。
 
 1. 上記のオプションを指定したら、 **[生成]** を選択します。
 
@@ -164,7 +164,7 @@ ms.locfileid: "92688694"
 
 1. Spring Boot アプリの *resources* ディレクトリに移動します。次に例を示します。
 
-   ```bash
+   ```cmd
    cd C:\SpringBoot\eventhubs-sample\src\main\resources
    ```
 
@@ -216,7 +216,7 @@ ms.locfileid: "92688694"
    az ad sp create-for-rbac --sdk-auth > my.azureauth
    ```
 
-   このコマンドにより、 *resources* ディレクトリに、次の例のような内容の *my.azureauth* ファイルが作成されます。
+   このコマンドにより、*resources* ディレクトリに、次の例のような内容の *my.azureauth* ファイルが作成されます。
 
    ```json
    {
@@ -378,7 +378,7 @@ ms.locfileid: "92688694"
 
 1. コマンド プロンプトを開き、ディレクトリを *pom.xml* ファイルが置かれているフォルダーに変更します。次に例を示します。
 
-   ```bash
+   ```cmd
     cd C:\SpringBoot\eventhubs-sample
    ```
    または
@@ -401,7 +401,7 @@ ms.locfileid: "92688694"
    ```
    アプリケーションのログに送信された "hello" が表示されます。 次に例を示します。
 
-   ```text
+   ```output
    2020-09-11 15:11:12.138  INFO 7616 --- [      elastic-4] c.contoso.eventhubs.sample.EventhubSink  : New message received: 'hello'
    2020-09-11 15:11:12.406  INFO 7616 --- [ctor-http-nio-1] c.contoso.eventhubs.sample.EventhubSink  : Message 'hello' successfully checkpointed
    ```

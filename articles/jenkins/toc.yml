@@ -31,14 +31,10 @@
               maintainContext: true
             - name: 青/緑パターンを使用した AKS へのデプロイ
               href: deploy-to-aks-using-blue-green-deployment-pattern.md
-            - name: CI/CD と Azure Dev Spaces
-              href: azure-dev-spaces-and-aks.md
         - name: App Service
           items:
             - name: パイプライン ジョブでの Azure リソースの作成
               href: deploy-to-azure-app-service-using-azure-cli.md
-            - name: GitHub から App Service へのアプリのデプロイ
-              href: deploy-from-github-to-azure-app-service.md
         - name: Azure DevOps での Jenkins の使用
           href: deploy-to-linux-vm-using-azure-devops-services.md
           maintainContext: true
@@ -53,10 +49,6 @@
         - name: Service Fabric への CI/CD
           href: deploy-to-service-fabric-cluster.md
           maintainContext: true
-- name: 操作方法
-  items:
-    - name: App Service プラグインの使用
-      href: deploy-to-azure-app-service-using-plugin.md
 - name: サンプル
   items:
     - name: サンプルのジョブとスクリプト

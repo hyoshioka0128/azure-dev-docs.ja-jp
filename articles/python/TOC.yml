@@ -148,6 +148,8 @@
           href: azure-sdk-example-database.md
         - name: 仮想マシンのプロビジョニング
           href: azure-sdk-example-virtual-machines.md
+        - name: VM で Azure Managed Disks を使用する
+          href: azure-sdk-samples-managed-disks.md
     - name: ログの構成
       href: azure-sdk-logging.md
     - name: プロキシを構成する

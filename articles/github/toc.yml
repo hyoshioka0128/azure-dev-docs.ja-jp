@@ -2,12 +2,19 @@
   href: index.yml
   items:
     - name: Azure 向けの GitHub Actions
-      href: github-actions.md
-    - name: GitHub から Azure にアプリをデプロイする
-      href: deploy-to-azure.md
-    - name: GitHub Actions 用のツール統合
-      href: deploy-with-visual-studio.md
-    - name: Azure DevOps と GitHub の統合
+      expanded: true
+      items:
+        - name: Azure 向けの GitHub Actions の概要
+          href: github-actions.md
+        - name: Azure から GitHub への認証
+          href: connect-from-azure.md
+        - name: アプリを Azure にデプロイする
+          href: deploy-to-azure.md
+        - name: データーベースを Azure にデプロイする
+          href: database-actions-deploy.md
+        - name: Azure Policy の管理
+          href: manage-azure-policy.md
+    - name: Azure DevOps と GitHub
       href: integrate-azure-devops.md
-    - name: Azure から GitHub への接続
-      href: connect-from-azure.md
+    - name: Visual Studio と Visual Studio Code
+      href: deploy-with-visual-studio.md

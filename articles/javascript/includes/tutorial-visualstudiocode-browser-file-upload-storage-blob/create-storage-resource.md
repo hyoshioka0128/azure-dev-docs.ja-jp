@@ -1,15 +1,15 @@
 ---
 title: インクルード ファイル create-storage-resource.md
 description: インクルード ファイル create-storage-resource.md
-ms.date: 10/13/2020
+ms.date: 11/13/2020
 ms.topic: include
-ms.custom: devx-track-javascript
-ms.openlocfilehash: 6862d9cf56ee86f7137495b021144b518459d979
-ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
+ms.custom: devx-track-javascript, devx-track-azurecli
+ms.openlocfilehash: 19a21dbf557c31f7eeae6afdb4722bfed35c86fe
+ms.sourcegitcommit: dc74b60217abce66fe6cc93923e869e63ac86a8f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92755626"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94885129"
 ---
 チュートリアルのこのセクションでは、Visual Studio 拡張機能を使用して Azure Storage リソースを作成し、Azure portal でリソースを構成します。 
 
@@ -33,7 +33,7 @@ Visual Studio Code 拡張機能を使って Storage リソースを作成しま�
 
 1. アプリの作成プロセスが完了すると、新しいリソースに関する情報を含む通知が表示されます。 
 
-    :::image type="content" source="../../media/tutorial-browser-file-upload/visualstudiocode-storage-extension-create-resource-complete.png" alt-text="Azure Storage 拡張機能に移動します。サブスクリプションを右クリックし、[ストレージ アカウントの作成] を選択します。":::
+    :::image type="content" source="../../media/tutorial-browser-file-upload/visualstudiocode-storage-extension-create-resource-complete.png" alt-text="アプリの作成プロセスが完了すると、新しいリソースに関する情報を含む通知が表示されます。":::
 
 ## <a name="set-storage-account-name-in-code-file"></a>コード ファイルにストレージ アカウント名を設定する
 
@@ -62,7 +62,7 @@ CORS を構成する前に、SAS トークンを生成してください。
     |優先ルーティング レベル|Basic|
     |署名キー|key1 が選択済み|
 
-    :::image type="content" source="../../media/tutorial-browser-file-upload/azure-portal-storage-blob-generate-sas-token.png" alt-text="Azure Storage 拡張機能に移動します。サブスクリプションを右クリックし、[ストレージ アカウントの作成] を選択します。":::
+    :::image type="content" source="../../media/tutorial-browser-file-upload/azure-portal-storage-blob-generate-sas-token.png" alt-text="図に示されているように SAS トークンを構成します。図の下に設定に関する説明があります。":::
 
 1.  **[SAS と接続文字列を生成する]** を選択します。 SAS トークンを直ちにコピーします。 このトークンを一覧表示することはできません。したがって、コピーしていない場合は、新しい SAS トークンの生成が必要になります。 
 
@@ -71,8 +71,8 @@ CORS を構成する前に、SAS トークンを生成してください。
 SAS トークンの値は、クエリ文字列の一部であり、クラウドベースのリソースに対してクエリを実行するときに URL で使用されます。
 
 トークンの形式は、作成に使用したツールによって異なります。 
-* **Azure ポータル** :ポータルで SAS トークンを作成すると、トークンには文字列の最初の文字として `?` が含まれます。
-* **Azure CLI** :Azure CLI を使用して SAS トークンを作成した場合、返された値には文字列の最初の文字として `?` は含まれません。 
+* **Azure ポータル**:ポータルで SAS トークンを作成すると、トークンには文字列の最初の文字として `?` が含まれます。
+* **Azure CLI**:Azure CLI を使用して SAS トークンを作成した場合、返された値には文字列の最初の文字として `?` は含まれません。 
 
 1. `?` がトークンの最初の文字である場合は、それを削除します。 `?` は、コード ファイルによって自動的に提供されるため、トークン内には必要ありません。
 
@@ -87,7 +87,7 @@ const sasToken = process.env.storagesastoken || "";
 
 クライアント側の React コードがストレージ アカウントにアクセスできるように、リソースに対して CORS を構成します。 
 
-1. 引き続き Azure portal から、 **[設定]** セクションで **[CORS]** を選択します。 
+1. 引き続き Azure portal から、[設定] セクションで **[CORS]** を選択します。 
 1. 図に示されているように CORS を構成します。 この設定の説明は、図の下にあります。 
 
     | プロパティ|値|
@@ -98,7 +98,7 @@ const sasToken = process.env.storagesastoken || "";
     |公開されるヘッダー|`*`|
     |最長有効期間|86400|
 
-    :::image type="content" source="../../media/tutorial-browser-file-upload/azure-portal-storage-blob-cors.png" alt-text="Azure Storage 拡張機能に移動します。サブスクリプションを右クリックし、[ストレージ アカウントの作成] を選択します。":::
+    :::image type="content" source="../../media/tutorial-browser-file-upload/azure-portal-storage-blob-cors.png" alt-text="図に示されているように CORS を構成します。図の下に設定に関する説明があります。":::
 
 1. 設定の上の **[保存]** を選択すると、リソースに保存されます。 これらの CORS 設定に合わせるために、コードを変更する必要はありません。 
 
@@ -114,11 +114,19 @@ SAS トークンとストレージ アカウント名を `src/uploadToBlob.ts` �
 
 1. ターミナルに `http://localhost:3000` などの URL が表示されたら、アプリの準備ができています。 ブラウザーを開き、その URL を入力します。 Azure Storage BLOB に接続されている Web サイトには、[ファイルの選択] ボタンと [ファイルのアップロード] ボタンが表示されます。 
 
-    :::image type="content" source="../../media/tutorial-browser-file-upload/browser-react-app-azure-storage-resource-configured-upload-button-displayed.png" alt-text="Azure Storage 拡張機能に移動します。サブスクリプションを右クリックし、[ストレージ アカウントの作成] を選択します。":::
+    :::image type="content" source="../../media/tutorial-browser-file-upload/browser-react-app-azure-storage-resource-configured-upload-button-displayed.png" alt-text="Azure Storage BLOB に接続されている React Web サイトには、[ファイルの選択] ボタンと [ファイルのアップロード] ボタンが表示されます。":::
 
 1. `images` フォルダーから、アップロードするイメージを選択します。 `spring-flowers.jpg` は、このテストに適したビジュアルです。 **[アップロード]** ボタンを選択します。 を追加します。 
 
-    React フロントエンド クライアント コードによって、`src/uploadToBlob.ts` が呼び出されて Azure に対する認証が行われ、ストレージ コンテナーが作成され (まだ存在しない場合)、そのコンテナーに BLOB がアップロードされます。 
+    React フロントエンド クライアント コードによって、`src/uploadToBlob.ts` が呼び出されて Azure に対する認証が行われ、ストレージ コンテナーが作成され (まだ存在しない場合)、そのコンテナーにファイルがアップロードされます。 
+
+## <a name="troubleshooting"></a>トラブルシューティング
+
+エラーが発生したか、ファイルがコンテナーにアップロードされない場合は、次のことを確認してください。
+
+* SAS トークンを再作成して、トークンがコンテナー レベルではなくストレージ リソース レベルで作成されていることを確認します。 コードの正しい場所に新しいトークンをコピーします。
+* コードにコピーしたトークン文字列の先頭に `?` (疑問符) が含まれていないことを確認します。
+* ストレージ リソースの CORS 設定を確認します。
 
 ## <a name="want-to-know-more"></a>詳細について 
 

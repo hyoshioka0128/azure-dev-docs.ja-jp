@@ -1,15 +1,15 @@
 ---
 title: Python 用 Azure ライブラリでの使用パターン
 description: Python 用 Azure SDK ライブラリでの一般的な使用パターンの概要
-ms.date: 09/21/2020
+ms.date: 11/12/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: ae51bee0aea2717c09242f8928a617bf8211f372
-ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
+ms.openlocfilehash: 6f1a2c07bbda4ebe409722d2381e046ee45f7902
+ms.sourcegitcommit: 6514a061ba5b8003ce29d67c81a9f0795c3e3e09
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91764781"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94601394"
 ---
 # <a name="azure-libraries-for-python-usage-patterns"></a>Python 用 Azure ライブラリの使用パターン
 
@@ -37,9 +37,11 @@ pip install azure-storage-blob
 
 ## <a name="asynchronous-operations"></a>非同期操作
 
-クライアントおよび管理クライアント オブジェクト ([`WebSiteManagementClient.web_apps.create_or_update`](/python/api/azure-mgmt-web/azure.mgmt.web.v2019_08_01.operations.webappsoperations#create-or-update-resource-group-name--name--site-envelope--custom-headers-none--raw-false--polling-true----operation-config-) など) を介して呼び出す多くの操作では、`AzureOperationPoller[<type>]` 型のオブジェクトが返されます。ここで、`<type>` は該当する操作に固有のものです。
+クライアントおよび管理クライアント オブジェクトを介して呼び出す多くの操作 ([`ComputeManagementClient.virtual_machines.begin_create_or_update`](/python/api/azure-mgmt-compute/azure.mgmt.compute.v2020_06_01.operations.virtualmachinesoperations#begin-create-or-update-resource-group-name--vm-name--parameters----kwargs-)、[`WebSiteManagementClient.web_apps.create_or_update`](/python/api/azure-mgmt-web/azure.mgmt.web.v2019_08_01.operations.webappsoperations#create-or-update-resource-group-name--name--site-envelope--custom-headers-none--raw-false--polling-true----operation-config-) など) では、`AzureOperationPoller[<type>]` 型のオブジェクトが返されます。ここで、`<type>` は該当する操作に固有のものです。
 
-戻り値の型 [`AzureOperationPoller`](/python/api/msrestazure/msrestazure.azure_operation.azureoperationpoller) は、操作が非同期であることを意味します。 したがって、そのポーラーの `result` メソッドを呼び出して、操作の実際の結果が使用可能になるまで待機する必要があります。
+これらのメソッドはどちらも非同期です。 メソッド名が異なるのは、バージョンが異なるためです。 azure.core に基づいていない以前のライブラリでは、通常、`create_or_update` などの名前が使用されます。 azure.core に基づくライブラリでは、非同期であることを示すために、メソッド名の前に `begin_` が付加されます。 新しい azure.core ベースのライブラリへの以前のコードの移行は、ほとんどのメソッド シグネチャが同じままであるため、通常、メソッド名の前に `begin_` を付加することを意味します。
+
+どちらの場合も、戻り値の型 [`AzureOperationPoller`](/python/api/msrestazure/msrestazure.azure_operation.azureoperationpoller) は、操作が非同期であることを明確に意味します。 したがって、そのポーラーの `result` メソッドを呼び出して、操作が完了するまで待機し、その結果を取得する必要があります。
 
 次のコードは、[例: Web アプリのプロビジョニングとデプロイ](azure-sdk-example-web-app.md)に関するページから抜粋したものであり、ポーラーを使用して結果を待機する例を示しています。
 
@@ -87,8 +89,8 @@ web_app_result = poller.result()
 | logging_enable             | [bool] | False       | ログ記録を有効にします。 詳細については、[Azure ライブラリでのログ記録](azure-sdk-logging.md)に関するページを参照してください。 |
 | proxies                    | dict | {}          | プロキシ サーバーの URL。 詳細については、[プロキシの構成方法](azure-sdk-configure-proxy.md)に関するページを参照してください。 |
 | use_env_settings           | [bool] | True        | True の場合、`HTTP_PROXY` および `HTTPS_PROXY` 環境変数をプロキシで使用できるようにします。 False の場合、環境変数は無視されます。 詳細については、[プロキシの構成方法](azure-sdk-configure-proxy.md)に関するページを参照してください。 |
-| connection_timeout         | INT  | 該当なし         | Azure REST API エンドポイントへの接続を確立するときのタイムアウト (秒)。 |
-| read_timeout               | INT  | 該当なし         | Azure REST API 操作を完了するとき (つまり、応答を待機するとき) のタイムアウト (秒)。 |
+| connection_timeout         | INT  | 300         | Azure REST API エンドポイントへの接続を確立するときのタイムアウト (秒)。 |
+| read_timeout               | INT  | 300         | Azure REST API 操作を完了するとき (つまり、応答を待機するとき) のタイムアウト (秒)。 |
 | retry_total                | INT  | 10          | REST API 呼び出しに対して許容される再試行の回数。 再試行を無効にするには `retry_total=0` を使用します。 |
 | retry_mode                 | enum | exponential | 再試行のタイミングを直線的または指数関数的に適用します。 'single' の場合、再試行は一定の間隔で行われます。 'exponential' の場合、各再試行の待機時間は、前の再試行の 2 倍となります。 |
 

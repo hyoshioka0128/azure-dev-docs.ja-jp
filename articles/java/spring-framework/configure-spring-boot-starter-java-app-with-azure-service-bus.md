@@ -4,15 +4,15 @@ description: この記事では、Spring JMS スターターを使用して Azur
 author: seanli1988
 manager: kyliel
 ms.author: seal
-ms.date: 08/21/2019
+ms.date: 10/13/2019
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 1d849ed17a2201be1595b6bc80e613691ac778c8
-ms.sourcegitcommit: e1175aa94709b14b283645986a34a385999fb3f7
+ms.openlocfilehash: 4d035ae35c8e1e8a4db886f7b5743b143de1992c
+ms.sourcegitcommit: 8e1d3a384ccb0e083589418d65a70b3a01afebff
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93192454"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94560290"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-service-bus-jms"></a>Azure Service Bus JMS 用の Spring Boot スターターの使用方法
 
@@ -28,11 +28,11 @@ Azure Service Bus JMS 用の Spring Boot スターターを使用すると、Spr
 
 この記事の前提条件は次のとおりです。
 
-1. Azure サブスクリプションをまだお持ちでない場合は、[MSDN サブスクライバーの特典](https://azure.microsoft.com/pricing/member-offers/credit-for-visual-studio-subscribers/)を有効にするか、[無料アカウント](https://azure.microsoft.com/free/)にサインアップしてください。
+1. Azure サブスクリプション。Azure サブスクリプションをまだお持ちでない場合は、[MSDN サブスクライバーの特典](https://azure.microsoft.com/pricing/member-offers/credit-for-visual-studio-subscribers/)を有効にするか、または[無料のアカウント](https://azure.microsoft.com/free/)にサインアップできます。
 
 1. サポートされている Java Development Kit (JDK) (バージョン 8 以降)。 Azure での開発時に使用可能な JDK の詳細については、<https://aka.ms/azure-jdks> を参照してください。
 
-1. Apache [Maven](http://maven.apache.org/) バージョン 3.2 以降。
+1. [Apache Maven](http://maven.apache.org/) バージョン 3.2 以降。
 
 1. 構成済みの Service Bus キューまたはトピックが既にある場合は、Service Bus 名前空間が次の要件を満たすようにしてください。
 
@@ -42,17 +42,20 @@ Azure Service Bus JMS 用の Spring Boot スターターを使用すると、Spr
 
 1. 構成済みの Service Bus キューまたはトピックがない場合は、Azure portal を使用して [Service Bus キュー](/azure/service-bus-messaging/service-bus-quickstart-portal)または [Service Bus トピック](/azure/service-bus-messaging/service-bus-quickstart-topics-subscriptions-portal)を作成します。 前の手順で指定された要件を名前空間が確実に満たすようにしてください。 また、名前空間に含まれる接続文字列をメモしてください。これは、このチュートリアルのテスト アプリに必要です。
 
-1. Spring Boot アプリケーションがない場合は、 [Spring Initializer で **Maven** プロジェクトを作成](https://start.spring.io/)します。 必ず、 **[Maven プロジェクト]** を選択し、 **[依存関係]** に **[Web]** 依存関係を追加してください。
+1. Spring Boot アプリケーションがない場合は、[Spring Initializr](https://start.spring.io/) で **Maven** プロジェクトを作成します。 必ず、 **[Maven プロジェクト]** を選択し、 **[依存関係]** に **[Web]** 依存関係を追加してください。
+
+   > [!NOTE]
+   > Spring Initializr では、既定のバージョンとして Java 11 が使用されます。 このトピックで説明されている Spring Boot Starter を使用するには、代わりに Java 8 を選択する必要があります。
 
 ## <a name="use-the-azure-service-bus-jms-starter"></a>Azure Service Bus JMS スターターを使用する
 
 1. 自分のアプリの親ディレクトリで *pom.xml* ファイルを探します。例:
 
-    `C:\SpringBoot\servicebus\pom.xml`
+    *C:\SpringBoot\servicebus\pom.xml*
 
-    または
+    \- または -
 
-    `/users/example/home/servicebus/pom.xml`
+    */users/example/home/servicebus/pom.xml*
 
 1. テキスト エディターで *pom.xml* ファイルを開きます。
 
@@ -62,7 +65,7 @@ Azure Service Bus JMS 用の Spring Boot スターターを使用すると、Spr
     <dependency>
         <groupId>com.microsoft.azure</groupId>
         <artifactId>azure-servicebus-jms-spring-boot-starter</artifactId>
-        <version>2.1.7</version>
+        <version>2.3.5</version>
     </dependency>
     ```
 
@@ -78,11 +81,11 @@ Azure Service Bus JMS 用の Spring Boot スターターを使用すると、Spr
 
 1. アプリの *resources* ディレクトリで *application.properties* を探します。次に例を示します。
 
-    `C:\SpringBoot\servicebus\application.properties`
+    *C:\SpringBoot\servicebus\application.properties*
 
-    または
+    \- または -
 
-    `/users/example/home/servicebus/application.properties`
+    */users/example/home/servicebus/application.properties*
 
 1. テキスト エディターで *application.properties* ファイルを開きます。
 
@@ -106,11 +109,11 @@ Azure Service Bus JMS 用の Spring Boot スターターを使用すると、Spr
 
 1. アプリの *resources* ディレクトリで *application.properties* を探します。次に例を示します。
 
-    `C:\SpringBoot\servicebus\application.properties`
+    *C:\SpringBoot\servicebus\application.properties*
 
-    または
+    \- または -
 
-    `/users/example/home/servicebus/application.properties`
+    */users/example/home/servicebus/application.properties*
 
 1. テキスト エディターで *application.properties* ファイルを開きます。
 
@@ -140,11 +143,11 @@ Azure Service Bus JMS 用の Spring Boot スターターを使用すると、Spr
 
 1. アプリのパッケージ ディレクトリでメイン アプリケーションの Java ファイルを探します。次に例を示します。
 
-    `C:\SpringBoot\servicebus\src\main\java\com\wingtiptoys\servicebus\ServiceBusJmsStarterApplication.java`
+    *C:\SpringBoot\servicebus\src\main\java\com\wingtiptoys\servicebus\ServiceBusJmsStarterApplication.java*
 
-    または
+    \- または -
 
-    `/users/example/home/servicebus/src/main/java/com/wingtiptoys/servicebus/ServiceBusJmsStarterApplication.java`
+    */users/example/home/servicebus/src/main/java/com/wingtiptoys/servicebus/ServiceBusJmsStarterApplication.java*
 
 1. テキスト エディターでメイン アプリケーションの Java ファイルを開きます。
 
@@ -169,7 +172,7 @@ Azure Service Bus JMS 用の Spring Boot スターターを使用すると、Spr
 
 ### <a name="define-a-test-java-class"></a>テスト Java クラスを定義する
 
-1. テキスト エディターを使用して、 *User.java* という名前の Java ファイルを自分のアプリのパッケージ ディレクトリに作成します。
+1. テキスト エディターを使用して、*User.java* という名前の Java ファイルを自分のアプリのパッケージ ディレクトリに作成します。
 
 1. ユーザーの名前を格納したり取得したりする汎用的なユーザー クラスを定義します。
 
@@ -209,7 +212,7 @@ Azure Service Bus JMS 用の Spring Boot スターターを使用すると、Spr
 
 ### <a name="create-a-new-class-for-the-message-send-controller"></a>メッセージ送信コントローラー用の新しいクラスを作成する
 
-1. テキスト エディターを使用して、 *SendController.java* という名前の Java ファイルを自分のアプリのパッケージ ディレクトリに作成します。
+1. テキスト エディターを使用して、*SendController.java* という名前の Java ファイルを自分のアプリのパッケージ ディレクトリに作成します。
 
 1. この新しいファイルに次のコードを追加します。
 
@@ -252,7 +255,7 @@ Azure Service Bus JMS 用の Spring Boot スターターを使用すると、Spr
 
 #### <a name="receive-messages-from-a-service-bus-queue"></a>Service Bus キューからメッセージを受信する
 
-1. テキスト エディターを使用して、 *QueueReceiveController.java* という名前の Java ファイルを自分のアプリのパッケージ ディレクトリに作成します。
+1. テキスト エディターを使用して、*QueueReceiveController.java* という名前の Java ファイルを自分のアプリのパッケージ ディレクトリに作成します。
 
 1. この新しいファイルに次のコードを追加します。
 
@@ -285,7 +288,7 @@ Azure Service Bus JMS 用の Spring Boot スターターを使用すると、Spr
 
 #### <a name="receive-messages-from-a-service-bus-subscription"></a>Service Bus サブスクリプションからメッセージを受信する
 
-1. テキスト エディターを使用して、 *TopicReceiveController.java* という名前の Java ファイルを自分のアプリのパッケージ ディレクトリに作成します。 
+1. テキスト エディターを使用して、*TopicReceiveController.java* という名前の Java ファイルを自分のアプリのパッケージ ディレクトリに作成します。 
 
 1. この新しいファイルに次のコードを追加します。 `<ServiceBusTopicName>` プレースホルダーは、自分の Service Bus 名前空間に構成されている実際のトピック名に置き換えてください。 `<ServiceBusSubscriptionName>` プレースホルダーは、自分の Service Bus トピックの実際のサブスクリプション名に置き換えてください。
 
@@ -320,11 +323,15 @@ Azure Service Bus JMS 用の Spring Boot スターターを使用すると、Spr
 
 1. コマンド プロンプトを開き、ディレクトリを自分の *pom.xml* の保存先に変更します。例:
 
-    `cd C:\SpringBoot\servicebus`
+    ```cmd
+    cd C:\SpringBoot\servicebus 
+    ```
 
     または
 
-    `cd cd /users/example/home/servicebus`
+    ```bash
+    cd /users/example/home/servicebus 
+    ```
 
 1. 自分の Spring Boot アプリケーションを Maven でビルドし、実行します。
 
@@ -332,7 +339,7 @@ Azure Service Bus JMS 用の Spring Boot スターターを使用すると、Spr
     mvn clean spring-boot:run
     ```
 
-1. 自分のアプリケーションが実行されたら、 *curl* を使用してアプリケーションをテストできます。
+1. 自分のアプリケーションが実行されたら、*curl* を使用してアプリケーションをテストできます。
 
     ```shell
     curl -X POST localhost:8080/messages?message=hello

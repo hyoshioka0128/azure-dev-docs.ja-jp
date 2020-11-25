@@ -1,15 +1,15 @@
 ---
 title: Azure サービスを使用して Python アプリケーションを認証する方法
 description: Azure ライブラリを使用して、Azure サービスで Python アプリを認証するために必要な資格情報オブジェクトを取得する方法
-ms.date: 10/05/2020
+ms.date: 11/12/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 8122db43c979bcf55d5aa3d1f4f5fa9aa0c200dd
-ms.sourcegitcommit: cbcde17e91e7262a596d813243fd713ce5e97d06
+ms.openlocfilehash: 7c609c7e218be1fd5e7c259a5aa7c5bec3e507d2
+ms.sourcegitcommit: 6514a061ba5b8003ce29d67c81a9f0795c3e3e09
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93405902"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94601364"
 ---
 # <a name="how-to-authenticate-and-authorize-python-apps-on-azure"></a>Azure で Python アプリを認証および認可する方法
 
@@ -34,7 +34,7 @@ Azure では、アプリ ID は **サービス プリンシパル** によって
 
 ### <a name="identity-when-running-the-app-on-azure"></a>Azure でアプリを実行しているときの ID
 
-クラウド (たとえば、運用環境) で実行している場合、アプリでは、 **システムによって割り当てられたマネージド ID** が使用されるのが最も一般的です。 [マネージド ID](/azure/active-directory/managed-identities-azure-resources/overview) では、リソースのロールとアクセス許可を割り当てるときにアプリの名前を使用します。 Azure は、基になるサービス プリンシパルを自動的に管理し、他の Azure リソースで自動的にアプリを認証します。 そのため、サービス プリンシパルを直接処理する必要はありません。 さらに、アプリ コードでは、Azure リソースのアクセス トークン、シークレット、または接続文字列を処理する必要はありません。そのため、このような情報が漏洩したり侵害されたりするリスクが軽減されます。
+クラウド (たとえば、運用環境) で実行している場合、アプリでは、**システムによって割り当てられたマネージド ID** が使用されるのが最も一般的です。 [マネージド ID](/azure/active-directory/managed-identities-azure-resources/overview) では、リソースのロールとアクセス許可を割り当てるときにアプリの名前を使用します。 Azure は、基になるサービス プリンシパルを自動的に管理し、他の Azure リソースで自動的にアプリを認証します。 そのため、サービス プリンシパルを直接処理する必要はありません。 さらに、アプリ コードでは、Azure リソースのアクセス トークン、シークレット、または接続文字列を処理する必要はありません。そのため、このような情報が漏洩したり侵害されたりするリスクが軽減されます。
 
 マネージド ID の構成は、アプリをホストするために使用するサービスによって異なります。 各サービスの手順へのリンクについては、[マネージド ID をサポートするサービス](/azure/active-directory/managed-identities-azure-resources/services-support-managed-identities)に関する記事を参照してください。 たとえば、Azure App Service にデプロイされた Web アプリの場合、マネージド ID を有効にするには、Azure portal の **[ID]**  >  **[システム割り当て済み]** オプションを使用するか、Azure CLI で `az webapp identity assign` コマンドを使用します。
 
@@ -146,7 +146,7 @@ retrieved_secret = secret_client.get_secret("secret-name-01")
 
 ### <a name="using-defaultazurecredential-with-sdk-management-libraries"></a>SDK 管理ライブラリで DefaultAzureCredential を使用する
 
-`DefaultAzureCredential` は、[azure.core を使用するライブラリ](azure-sdk-library-package-index.md#libraries-using-azurecore)の一覧に記載されている Azure SDK 管理ライブラリ (名前に "mgmt" が付いているもの) のバージョンと連携して動作します。 (また、更新されたライブラリの pypi ページには、変更を示す "Credential system has been completely revamped (資格情報システムが完全に改良された)" という行が含まれています)。
+`DefaultAzureCredential` は、[azure.core を使用するライブラリ](azure-sdk-library-package-index.md#libraries-using-azurecore)の一覧にも記載されている Azure SDK 管理ライブラリ (つまり、名前に "mgmt" が付いている "リソース管理" ライブラリ) の新しいバージョンと連携して動作します。 (また、更新されたライブラリの pypi ページには、通常、変更を示す "Credential system has been completely revamped (資格情報システムが完全に改良された)" という行が含まれています。)
 
 たとえば、バージョン 15.0.0 以上の azure-mgmt-resource で `DefaultAzureCredential` を使用できます。
 
@@ -161,6 +161,8 @@ sub_list = subscription_client.subscriptions.list()
 print(list(sub_list))
 ```
 
+ライブラリが更新されていない場合、次のセクションで説明するように、`DefaultAzureCredential` を使用したコードを実行すると、「object has no attribute 'signed-session' (オブジェクトに属性 'signed-session' がありません)」というメッセージが表示されます。
+
 ### <a name="defaultazurecredential-object-has-no-attribute-signed-session"></a>「'DefaultAzureCredential' object has no attribute 'signed-session' ('DefaultAzureCredential' オブジェクトに属性 'signed-session' がありません)」
 
 azure.core を使用するように更新されていないライブラリで `DefaultAzureCredential` を使用しようとした場合、クライアント オブジェクトを通じた呼び出しは、「'DefaultAzureCredential' object has no attribute 'signed-session' ('DefaultAzureCredential' オブジェクトに属性 'signed-session' がありません)」というあいまいなエラーで失敗します。 このようなエラーが発生するのは、たとえば、前のセクションでバージョン 15 より下の azure-mgmt-resource ライブラリを利用するコードを使用した場合です。
@@ -169,7 +171,7 @@ azure.core バージョンでない SDK 管理ライブラリは、資格情報�
 
 使用する管理ライブラリがまだ更新されていない場合は、次の代替方法を使用できます。
 
-1. この記事の後続のセクションで取り上げる他のいずれかの認証方法を使用します。SDK 管理ライブラリ " *のみ* " を使用し、なおかつクラウドにデプロイされないコードであれば、これらの認証方法がうまく機能します。この場合、利用できるのはローカルのサービス プリンシパルのみです。
+1. この記事の後続のセクションで取り上げる他のいずれかの認証方法を使用します。SDK 管理ライブラリ "*のみ*" を使用し、なおかつクラウドにデプロイされないコードであれば、これらの認証方法がうまく機能します。この場合、利用できるのはローカルのサービス プリンシパルのみです。
 
 1. Azure SDK エンジニアリング チームのメンバーから提供されている [CredentialWrapper クラス (cred_wrapper.py)](https://gist.github.com/lmazuel/cc683d82ea1d7b40208de7c9fc8de59d) を `DefaultAzureCredential` の代わりに使用します。 目的の管理ライブラリが使用可能になったら、`DefaultAzureCredential` に切り替えます。 この方法の利点は、SDK クライアントと管理ライブラリの両方で同じ資格情報を使用できる点、またローカルでもクラウドでも使用できる点です。
 
@@ -225,7 +227,7 @@ azure.core バージョンでない SDK 管理ライブラリは、資格情報�
     > [!TIP]
     > [ローカル開発環境の構成](configure-local-development-environment.md#create-a-service-principal-and-environment-variables-for-development)に関するセクションで説明されているように、[az ad sp create-for-rbac](/cli/azure/ad/sp#az-ad-sp-create-for-rbac) コマンドに `--sdk-auth` パラメーターを指定することで、この JSON 形式をすぐに生成できます。
 
-1. ファイルに名前 ( *credentials.json* など) を付けて、コードからアクセスできる安全な場所に保存します。 資格情報の安全性を確保するため、このファイルはソース管理から除外し、他の開発者と共有しないようにしてください。 つまり、サービス プリンシパルのテナント ID、クライアント ID、クライアント シークレットは、常に自分の開発ワークステーションで隔離されている必要があります。
+1. ファイルに名前 (*credentials.json* など) を付けて、コードからアクセスできる安全な場所に保存します。 資格情報の安全性を確保するため、このファイルはソース管理から除外し、他の開発者と共有しないようにしてください。 つまり、サービス プリンシパルのテナント ID、クライアント ID、クライアント シークレットは、常に自分の開発ワークステーションで隔離されている必要があります。
 
 1. JSON ファイルのパスを値とする `AZURE_AUTH_LOCATION` という名前の環境変数を作成します。
 
@@ -303,6 +305,37 @@ print(subscription.subscription_id)
 
 ### <a name="authenticate-with-token-credentials"></a>トークン資格情報で認証を行う
 
+明示的なサブスクリプション、テナント、およびクライアントの識別子とクライアント シークレットを使用して、Azure ライブラリで認証を行うことができます。
+
+azure.core に基づく新しい SDK ライブラリを使用する場合は、[azure.identity ライブラリの `ClientSecretCredential` オブジェクト](#using-clientsecretcredential-azureidentity)を使用します。 以前の SDK ライブラリを使用する場合は、[azure.common ライブラリの `ServicePrincipalCredentials`](#using-serviceprincipalcredentials-azurecommon) を使用します。
+
+`ServicePrincipalCredentials` を使用する既存のコードを新しいライブラリ バージョンに移行するには、次のセクションに示すように、このクラスを使用している部分を `ClientSecretCredential` に置き換えます。 パラメーター名が 2 つのコンストラクターでわずかに異なることに注意してください。`tenant` が `tenant_id` に、`secret` が `client_secret` になっています。
+
+#### <a name="using-clientsecretcredential-azureidentity"></a>ClientSecretCredential (azure.identity) を使用する
+
+```python
+import os
+from azure.mgmt.resource import SubscriptionClient
+from azure.identity import ClientSecretCredential
+
+# Retrieve the IDs and secret to use with ClientSecretCredential
+subscription_id = os.environ["AZURE_SUBSCRIPTION_ID"]
+tenant_id = os.environ["AZURE_TENANT_ID"]
+client_id = os.environ["AZURE_CLIENT_ID"]
+client_secret = os.environ["AZURE_CLIENT_SECRET"]
+
+credential = ClientSecretCredential(tenant_id=tenant_id, client_id=client_id, client_secret=client_secret)
+
+subscription_client = SubscriptionClient(credential)
+
+subscription = next(subscription_client.subscriptions.list())
+print(subscription.subscription_id)
+```
+
+この方法 (前述のとおり、azure.core に基づく新しいライブラリで使用されます) では、Azure Key Vault や環境変数など、安全な記憶域から取得した資格情報を使用して [`ClientSecretCredential`](/python/api/azure-identity/azure.identity.clientsecretcredential) オブジェクトを作成します。 前のコードは、[ローカル開発環境の構成](configure-local-development-environment.md#create-a-service-principal-and-environment-variables-for-development)に関するセクションで説明されている環境変数が作成済みであることを想定しています。
+
+#### <a name="using-serviceprincipalcredentials-azurecommon"></a>ServicePrincipalCredentials (azure.common) を使用する
+
 ```python
 import os
 from azure.mgmt.resource import SubscriptionClient
@@ -322,9 +355,11 @@ subscription = next(subscription_client.subscriptions.list())
 print(subscription.subscription_id)
 ```
 
-この方法では、Azure Key Vault や環境変数など、安全な記憶域から取得した資格情報を使用して [`ServicePrincipalCredentials`](/python/api/msrestazure/msrestazure.azure_active_directory.serviceprincipalcredentials) オブジェクトを作成します。 前のコードは、[ローカル開発環境の構成](configure-local-development-environment.md#create-a-service-principal-and-environment-variables-for-development)に関するセクションで説明されている環境変数が作成済みであることを想定しています。
+この方法 (前述のとおり、azure.core に基づいていない以前のライブラリで使用されます) では、Azure Key Vault や環境変数など、安全な記憶域から取得した資格情報を使用して [`ServicePrincipalCredentials`](/python/api/msrestazure/msrestazure.azure_active_directory.serviceprincipalcredentials) オブジェクトを作成します。 前のコードは、[ローカル開発環境の構成](configure-local-development-environment.md#create-a-service-principal-and-environment-variables-for-development)に関するセクションで説明されている環境変数が作成済みであることを想定しています。
 
-この方法を使用した場合は、クライアント オブジェクトに `base_url` 引数を指定することで、Azure パブリック クラウドではなく [Azure ソブリン クラウド (国内クラウド)](/azure/active-directory/develop/authentication-national-cloud) を使用できます。
+#### <a name="use-an-azure-sovereign-national-cloud"></a>Azure ソブリン (国内) クラウド を使用する
+
+これらのトークン資格情報の方法のいずれかを使用する場合は、クライアント オブジェクトに `base_url` 引数を指定することで、Azure パブリック クラウドではなく [Azure ソブリン クラウド (国内クラウド)](/azure/active-directory/develop/authentication-national-cloud) を使用できます。
 
 ```python
 from msrestazure.azure_cloud import AZURE_CHINA_CLOUD

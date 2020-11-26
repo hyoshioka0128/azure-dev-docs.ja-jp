@@ -3,14 +3,14 @@ title: Jenkins と Azure の概要
 description: Azure で Jenkins ビルドをホストし、オートメーション サーバーをデプロイします。また、Azure のコンピューティング リソースとストレージ リソースを使用することで、継続的インテグレーションとデプロイ (CI/CD) パイプラインを拡張します。
 keywords: Jenkins, Azure, 開発, 概要
 ms.topic: overview
-ms.date: 08/08/2020
+ms.date: 11/10/2020
 ms.custom: devx-track-jenkins
-ms.openlocfilehash: 43e38bd609f00257859c5976dc0b4e0fa4ae9e8f
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: d7de868651c50b7c3e39f1a0286ddd3ebf740b21
+ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240634"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94983561"
 ---
 # <a name="azure-and-jenkins"></a>Azure と Jenkins
 
@@ -37,5 +37,4 @@ Jenkins プラグインを使用して、アプリケーションを Jenkins CI/
 
  次のサービスおよび環境にデプロイするためのプラグインが用意されています。
 
-- [Azure App Service on Linux](/azure/app-service/containers/app-service-linux-intro)。 作業を開始するには、こちらの[チュートリアル](deploy-from-github-to-azure-app-service.md)を参照してください。
-- [Azure App Service](/azure/app-service/overview)。 作業を開始するには、こちらの[操作方法](deploy-to-azure-app-service-using-plugin.md)を参照してください。
+- [Azure App Service on Linux](/azure/app-service/containers/app-service-linux-intro)。 作業を開始するには、こちらの[チュートリアル](deploy-to-azure-app-service-using-azure-cli.md)を参照してください。

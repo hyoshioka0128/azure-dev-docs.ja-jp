@@ -5,14 +5,16 @@ keywords: Jenkins, Azure, DevOps, パイプライン, CICD, Docker
 ms.topic: tutorial
 ms.date: 03/27/2017
 ms.custom: devx-track-jenkins, devx-track-azurecli
-ms.openlocfilehash: eb4c12fe249b485941221d382ab0090f7aa88227
-ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
+ms.openlocfilehash: debcd94b885813a8f1a1640d4eb46e75b36c4d6c
+ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92689055"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "96035460"
 ---
 # <a name="tutorial-create-a-jenkins-pipeline-using-github-and-docker"></a>チュートリアル:GitHub と Docker を使用して Jenkins パイプラインを作成する
+
+[!INCLUDE [jenkins-integration-with-azure.md](includes/jenkins-integration-with-azure.md)]
 
 アプリケーション開発のビルドおよびテスト フェーズを自動化する場合は、継続的インテグレーション/デプロイ (CI/CD) パイプラインを使用できます。 このチュートリアルでは、Azure VM で CI/CD パイプラインを作成します｡この作成は､以下のような手順で構成されます｡
 
@@ -31,7 +33,7 @@ CLI をローカルにインストールして使用する場合、このチュ�
 ## <a name="create-jenkins-instance"></a>Jenkins インスタンスを作成する
 [Linux 仮想マシンを初回起動時にカスタマイズする方法](/azure/virtual-machines/linux/tutorial-automate-vm-deployment)に関する先行のチュートリアルで、cloud-init を使用して VM のカスタマイズを自動化する方法を学習しました。 このチュートリアルでは、cloud-init ファイルを使用して、Jenkins と Docker を VM にインストールします。 Jenkins は、広く普及しているオープンソースのオートメーション サーバーで、Azure とシームレスに統合することで、継続的インテグレーション (CI) と継続的デリバリー (CD) が可能になります。 Jenkins の使用方法に関する詳しいチュートリアルについては、[Azure ハブでの Jenkins](/azure/jenkins/) に関する記事をご覧ください。
 
-現在のシェルで、 *cloud-init-jenkins.txt* というファイルを作成し、次の構成を貼り付けます。 たとえば、ローカル コンピューター上にない Cloud Shell でファイルを作成します。 `sensible-editor cloud-init-jenkins.txt` を入力し、ファイルを作成して使用可能なエディターの一覧を確認します。 cloud-init ファイル全体 (特に最初の行) が正しくコピーされたことを確認してください。
+現在のシェルで、*cloud-init-jenkins.txt* というファイルを作成し、次の構成を貼り付けます。 たとえば、ローカル コンピューター上にない Cloud Shell でファイルを作成します。 `sensible-editor cloud-init-jenkins.txt` を入力し、ファイルを作成して使用可能なエディターの一覧を確認します。 cloud-init ファイル全体 (特に最初の行) が正しくコピーされたことを確認してください。
 
 ```yaml
 #cloud-config
@@ -58,7 +60,7 @@ runcmd:
   - service jenkins restart
 ```
 
-VM を作成する前に、[az group create](/cli/azure/group) を使用してリソース グループを作成します。 次の例では、 *myResourceGroupJenkins* という名前のリソース グループを場所 *eastus* に作成します。
+VM を作成する前に、[az group create](/cli/azure/group) を使用してリソース グループを作成します。 次の例では、*myResourceGroupJenkins* という名前のリソース グループを場所 *eastus* に作成します。
 
 ```azurecli-interactive 
 az group create --name myResourceGroupJenkins --location eastus
@@ -77,7 +79,7 @@ az vm create --resource-group myResourceGroupJenkins \
 
 VM が作成されて構成されるには､数分､時間がかかります｡
 
-VM に対して Web 通信が行えるようにするには､ [az vm open-port](/cli/azure/vm) を使用して､Jenkins 通信用にポート *8080* ､サンプル アプリの実行に使用する Node.js アプリ用にポート *1337* を開きます｡
+VM に対して Web 通信が行えるようにするには､[az vm open-port](/cli/azure/vm) を使用して､Jenkins 通信用にポート *8080*､サンプル アプリの実行に使用する Node.js アプリ用にポート *1337* を開きます｡
 
 ```azurecli-interactive 
 az vm open-port --resource-group myResourceGroupJenkins --name myVM --port 8080 --priority 1001
@@ -138,7 +140,7 @@ GitHub との統合を構成するには､Azures サンプル リポジトリ�
 作成したフォーク内に webhook を作成します｡
 
 - **[Settings]\(設定\)** を選択して、左側の **[Integrations & services]\(統合とサービス\)** を選択します。
-- **[Webhook の追加]** を選択し、フィルター ボックスに「 *Jenkins* 」と入力します。
+- **[Webhook の追加]** を選択し、フィルター ボックスに「*Jenkins*」と入力します。
 - **[Payload URL]\(ペイロード URL\)** に、「`http://<publicIps>:8080/github-webhook/`」と入力します。 末尾のスラッシュ (/) を含めていることを確認します。
 - **[コンテンツの種類]** で、 *[application/x-www-form-urlencoded]* を選択します。
 - **[Which events would you like to trigger this webhook?]\(この Webhook でトリガーするイベント\)** で、 *[Just the push event]\(プッシュ イベントのみ\)* を選択します。
@@ -164,7 +166,7 @@ Jenkins Web サイトのホームページから **[Create new jobs]** を選択
 ## <a name="test-github-integration"></a>GitHub 統合をテストする
 Jenkins との GitHub の統合をテストするには､フォークの変更をコミットします｡ 
 
-GitHub の Web UI に戻り、フォークしたレポジトリを選択して、 **index.js** ファイルを選択します。 鉛筆アイコンを選択して、このファイルを編集し、6 行目を次のように変更します。
+GitHub の Web UI に戻り、フォークしたレポジトリを選択して、**index.js** ファイルを選択します。 鉛筆アイコンを選択して、このファイルを編集し、6 行目を次のように変更します。
 
 ```javascript
 response.end("Hello World!");

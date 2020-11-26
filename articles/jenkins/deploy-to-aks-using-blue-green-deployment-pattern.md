@@ -5,12 +5,12 @@ keywords: Jenkins, Azure, 開発, Kubernetes, k8s, AKS, ブルー/グリーン �
 ms.topic: tutorial
 ms.date: 10/23/2019
 ms.custom: devx-track-jenkins, devx-track-azurecli
-ms.openlocfilehash: 1ddf85a5ad1a9415d4143873f674b7104a4bd4d8
-ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
+ms.openlocfilehash: b4284fdfa82ada4098df4a37983e364bdcd70d90
+ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92688666"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94984011"
 ---
 # <a name="tutorial-deploy-to-azure-kubernetes-service-aks-using-the-bluegreen-deployment-pattern"></a>チュートリアル:ブルー/グリーン デプロイ パターンを使用した Azure Kubernetes Service (AKS) へのデプロイ
 
@@ -29,7 +29,7 @@ Azure Kubernetes Service (AKS) を使用すると、ホストされている Kub
 
 ## <a name="prerequisites"></a>前提条件
 - [GitHub アカウント](https://github.com):サンプル リポジトリを複製するために GitHub アカウントが必要です。
-- [Azure CLI 2.0](/cli/azure/install-azure-cli?view=azure-cli-latest):Kubernetes クラスターを作成するために Azure CLI 2.0 を使用します。
+- [Azure CLI 2.0](/cli/azure/install-azure-cli):Kubernetes クラスターを作成するために Azure CLI 2.0 を使用します。
 - [Chocolatey](https://chocolatey.org):kubectl をインストールするために使用するパッケージ マネージャーです。
 - [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/):Kubernetes クラスターに対してコマンドを実行するために使用するコマンド ライン インターフェイスです。
 - [jq](https://stedolan.github.io/jq/download/):簡便なコマンド ライン JSON プロセッサです。
@@ -54,7 +54,7 @@ GitHub の Microsoft リポジトリに、Jenkins とブルー/グリーン パ�
 
     ![リポジトリを複製またはダウンロードする GitHub オプションのスクリーンショット](./media/deploy-to-aks-using-blue-green-deployment-pattern/github-sample-clone.png)
 
-1. **[Clone with HTTPS]\(HTTPS で複製する\)** ウィンドウで、 **コピー** アイコンを選択します。
+1. **[Clone with HTTPS]\(HTTPS で複製する\)** ウィンドウで、**コピー** アイコンを選択します。
 
     ![複製 URL をクリップボードにコピーする GitHub オプションのスクリーンショット](./media/deploy-to-aks-using-blue-green-deployment-pattern/github-sample-copy.png)
 
@@ -81,7 +81,7 @@ GitHub の Microsoft リポジトリに、Jenkins とブルー/グリーン パ�
 - Azure Container Registry サービスのインスタンスを作成する。
 
 ### <a name="use-the-azure-cli-20-to-create-a-managed-kubernetes-cluster"></a>Azure CLI 2.0 を使用したマネージド Kubernetes クラスターの作成
-[Azure CLI 2.0](/cli/azure/install-azure-cli?view=azure-cli-latest) を使用してマネージド Kubernetes クラスターを作成する場合は、Azure CLI バージョン 2.0.25 以降を使用していることを確認してください。
+[Azure CLI 2.0](/cli/azure/install-azure-cli) を使用してマネージド Kubernetes クラスターを作成する場合は、Azure CLI バージョン 2.0.25 以降を使用していることを確認してください。
 
 1. Azure アカウントにサインインします。 次のコマンドを入力した後に、サインインを完了する方法を説明する手順が示されます。 
     
@@ -144,7 +144,7 @@ AKS でのブルー/グリーン デプロイの設定は、手動で行うこ�
     kubectl apply -f  test-endpoint-green.yml
     ```
 
-1. パブリック エンドポイントとテスト エンドポイントの DNS 名を更新します。 Kubernetes クラスターの作成時に、 **MC_&lt;your-resource-group-name> _&lt;your-kubernetes-cluster-name>_ &lt;your-location>** という名前付けパターンで、 [追加のリソース グループ](https://github.com/Azure/AKS/issues/3)も作成されます。
+1. パブリック エンドポイントとテスト エンドポイントの DNS 名を更新します。 Kubernetes クラスターの作成時に、**MC_&lt;your-resource-group-name> _&lt;your-kubernetes-cluster-name>_ &lt;your-location>** という名前付けパターンで、[追加のリソース グループ](https://github.com/Azure/AKS/issues/3)も作成されます。
 
     リソース グループ内のパブリック IP を特定します。
 
@@ -215,7 +215,7 @@ AKS でのブルー/グリーン デプロイの設定は、手動で行うこ�
     1. **[Manage Jenkins]\(Jenkins の管理\)、[Manage Plugins]\(プラグインの管理\)、[Available]\(使用可能\)** の順に選択します。
     1. Azure Container Service プラグインを検索してインストールします。
 
-1. Azure でリソースを管理するための資格情報を追加します。 まだプラグインを持っていない場合は、 **Azure 資格情報** プラグインをインストールします。
+1. Azure でリソースを管理するための資格情報を追加します。 まだプラグインを持っていない場合は、**Azure 資格情報** プラグインをインストールします。
 
 1. Azure サービス プリンシパルの資格情報を、タイプ **Microsoft Azure サービス プリンシパル** として追加します。
 

@@ -5,14 +5,16 @@ keywords: jenkins, azure, devops, container instances, ビルド エージェン
 ms.topic: article
 ms.date: 08/31/2018
 ms.custom: devx-track-jenkins
-ms.openlocfilehash: 408ff0e5cc67e975c09fd108e9f5709c0a0cf510
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 20e8180ab0ac721366c2071fdfaa0882f913f945
+ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240904"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "96035440"
 ---
 # <a name="tutorial-use-azure-container-instances-as-a-jenkins-build-agent"></a>チュートリアル:Azure Container Instances を Jenkins ビルド エージェントとして使用する
+
+[!INCLUDE [jenkins-integration-with-azure.md](includes/jenkins-integration-with-azure.md)]
 
 Azure Container Instances (ACI) は、コンテナー化ワークロードを実行するためのバースト対応のオンデマンド分離環境を提供します。 これらの特性により、ACI は大規模な環境で Jenkins ビルド ジョブを実行するための優れたプラットフォームを作成します。 この記事では、ビルド ターゲットとして ACI で事前に構成されている Jenkins サーバーの展開と使用の手順について説明します。
 

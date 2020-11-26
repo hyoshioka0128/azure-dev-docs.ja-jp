@@ -4,12 +4,12 @@ description: 統合テストと、Azure DevOps を使用した Terraform プロ�
 ms.topic: tutorial
 ms.date: 10/08/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: bd05bfa2a07ee6cfa2f4a5dc4f4771559af9a2e7
-ms.sourcegitcommit: e1175aa94709b14b283645986a34a385999fb3f7
+ms.openlocfilehash: b9a533475bd291cc0d1fd9fffa418b0ce4498fb0
+ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93192564"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94983991"
 ---
 # <a name="tutorial-configure-integration-tests-for-terraform-projects-in-azure"></a>チュートリアル:Azure で Terraform プロジェクトの統合テストを構成する
 
@@ -28,11 +28,11 @@ ms.locfileid: "93192564"
 ## <a name="prerequisites"></a>前提条件
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
-- **Azure DevOps 組織とプロジェクト** :まだお持ちでない場合は、 [Azure DevOps 組織を作成します](/azure/devops/organizations/projects/create-project)。
-- **Terraform の Build & Release Tasks 拡張機能** :Azure DevOps 組織に [Terraform のビルド/リリース タスク拡張機能をインストール](https://marketplace.visualstudio.com/items?itemName=charleszipp.azure-pipelines-tasks-terraform)します。
-- **Azure サブスクリプションへの Azure DevOps のアクセスを許可する** :`terraform-basic-testing-azure-connection` という名前の [Azure サービス接続](/azure/devops/pipelines/library/connect-to-azure)を作成して、Azure Pipelines を Azure サブスクリプションに接続できるようにします。
-- **Terraform のインストール** :ご使用の環境に応じて、 [Terraform をダウンロードしてインストール](https://www.terraform.io/downloads.html)します。
-- **テスト用サンプルをフォークする** : [GitHub の Terraform サンプル プロジェクト](https://github.com/Azure/terraform)をフォークし、開発/テスト用コンピューターに複製します。
+- **Azure DevOps 組織とプロジェクト**:まだお持ちでない場合は、[Azure DevOps 組織を作成します](/azure/devops/organizations/projects/create-project)。
+- **Terraform の Build & Release Tasks 拡張機能**:Azure DevOps 組織に [Terraform のビルド/リリース タスク拡張機能をインストール](https://marketplace.visualstudio.com/items?itemName=charleszipp.azure-pipelines-tasks-terraform)します。
+- **Azure サブスクリプションへの Azure DevOps のアクセスを許可する**:`terraform-basic-testing-azure-connection` という名前の [Azure サービス接続](/azure/devops/pipelines/library/connect-to-azure)を作成して、Azure Pipelines を Azure サブスクリプションに接続できるようにします。
+- **Terraform のインストール**:ご使用の環境に応じて、[Terraform をダウンロードしてインストール](https://www.terraform.io/downloads.html)します。
+- **テスト用サンプルをフォークする**:[GitHub の Terraform サンプル プロジェクト](https://github.com/Azure/terraform)をフォークし、開発/テスト用コンピューターに複製します。
 
 ## <a name="validate-a-local-terraform-configuration"></a>ローカルの Terraform の構成を検証する
 
@@ -78,7 +78,7 @@ Terraform ファイルをバージョン管理システムにプッシュする�
 
 前のセクションでは、Terraform の構成を検証する方法を確認しました。 このレベルのテストは、構文のみに対するものです。 そのテストでは、既に Azure にデプロイされているものは考慮されませんでした。
 
-Terraform は " *宣言型言語* " です。つまり、最終的な結果として何が必要かを宣言します。 たとえば、1 つのリソース グループに 10 台の仮想マシンがあるとします。 この場合に、3 つの仮想マシンを定義する Terraform ファイルを作成します。 このプランを適用しても、合計数は 13 に増えません。 代わりに、Terraform によって仮想マシンのうちの 7 台が削除され、最終的に 3 台になります。 `terraform plan` を実行すると、実行プランを適用したときの想定される結果を確認し、想定外の事態を避けることができます。
+Terraform は "*宣言型言語*" です。つまり、最終的な結果として何が必要かを宣言します。 たとえば、1 つのリソース グループに 10 台の仮想マシンがあるとします。 この場合に、3 つの仮想マシンを定義する Terraform ファイルを作成します。 このプランを適用しても、合計数は 13 に増えません。 代わりに、Terraform によって仮想マシンのうちの 7 台が削除され、最終的に 3 台になります。 `terraform plan` を実行すると、実行プランを適用したときの想定される結果を確認し、想定外の事態を避けることができます。
 
 Terraform の実行プランを生成するには、[terraform plan](https://www.terraform.io/docs/commands/plan.html) を実行します。 このコマンドは、ターゲットの Azure サブスクリプションに接続して、構成のどの部分が既にデプロイされているかを確認します。 その後、Terraform によって、Terraform ファイルに記載されている要件を満たすために必要な変更が 特定されます。 この段階では、Terraform によって何もデプロイされていません。 プランを適用した場合に何が生じるかが示されます。
 
@@ -99,8 +99,8 @@ terraform plan
 次のツールによって、Terraform ファイルの静的分析を行うことができます。
 
 - [Checkov](https://github.com/bridgecrewio/checkov/)
-- [Terrascan](https://github.com/cesar-rodriguez/terrascan)
-- [tfsec](https://github.com/liamg/tfsec) 
+- [Terrascan](https://github.com/accurics/terrascan)
+- [tfsec](https://github.com/tfsec/tfsec)
 - [Deepsource](https://deepsource.io/blog/release-terraform-static-analysis/) 
 
 静的分析は、多くの場合、継続的インテグレーション パイプラインの一環として実行されます。 これらのテストでは、実行プランまたはデプロイを作成する必要ありません。 そのため、これらは他のテストより短時間で実行され、通常は継続的インテグレーション プロセスで最初に実行されます。

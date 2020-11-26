@@ -5,14 +5,16 @@ keywords: Jenkins, Azure, 開発,仮想マシン, エージェント
 ms.topic: tutorial
 ms.date: 08/19/2020
 ms.custom: devx-track-jenkins
-ms.openlocfilehash: d081861eac98495d125a1a5eb5dd9700fb7783a8
-ms.sourcegitcommit: 800c5e05ad3c0b899295d381964dd3d47436ff90
+ms.openlocfilehash: 4918b548fb98f27fffaa8d836ec125cc325da79d
+ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88614541"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "96035470"
 ---
 # <a name="tutorial-scale-jenkins-deployments-with-azure-vm-agents"></a>チュートリアル:Azure VM エージェントを使用した Jenkins デプロイのスケーリング
+
+[!INCLUDE [jenkins-integration-with-azure.md](includes/jenkins-integration-with-azure.md)]
 
 このチュートリアルでは、Jenkins の [Azure VM エージェント プラグイン](https://plugins.jenkins.io/azure-vm-agents)を使用して、Azure 上で実行している Linux 仮想マシンにオンデマンドで容量を追加します。
 
@@ -83,7 +85,7 @@ ms.locfileid: "88614541"
             }
      ```
 
-    完了したサービス プリンシパルには、**サブスクリプション ID** に `id` フィールドを、**クライアント ID** に `appId` の値を、**クライアント シークレット**に `password` を、**テナント ID** に `tenant` を、それぞれ使用する必要があります。 **[追加]** を選択してサービス プリンシパルを追加し、プラグインを構成して新しく作成された資格情報を使用します。
+    完了したサービス プリンシパルには、**サブスクリプション ID** に `id` フィールドを、**クライアント ID** に `appId` の値を、**クライアント シークレット** に `password` を、**テナント ID** に `tenant` を、それぞれ使用する必要があります。 **[追加]** を選択してサービス プリンシパルを追加し、プラグインを構成して新しく作成された資格情報を使用します。
 
     ![Azure サービス プリンシパルを構成する](./media/scale-deployments-using-vm-agents/new-service-principal.png)
 
@@ -121,7 +123,7 @@ Azure VM エージェントの定義に使用するテンプレートを構成�
 1. **[全般]** タブで、**[Restrict where project can be run]\(プロジェクトを実行できる場所を制限する\)** をオンにして、**[ラベル式]** に `ubuntu` と入力します。 前の手順で作成したクラウドの構成によってラベルが提供されていることを確認するメッセージが表示されます。 
    ![ジョブを設定する](./media/scale-deployments-using-vm-agents/job-config.png)
 1. **[ソース コード管理]** タブで **[Git]** を選択し、**[リポジトリの URL]** フィールドに `https://github.com/spring-projects/spring-petclinic.git` のURL を追加します。
-1. **[ビルド]** タブで **[Add build step]\(ビルド ステップの追加\)** を選択し、**Maven の最上位のターゲットを呼び出し**ます。 **[Goals]\(目標\)** フィールドに `package` を入力します。
+1. **[ビルド]** タブで **[Add build step]\(ビルド ステップの追加\)** を選択し、**Maven の最上位のターゲットを呼び出し** ます。 **[Goals]\(目標\)** フィールドに `package` を入力します。
 1. **[保存]** を選択してジョブ定義を保存します。
 
 ## <a name="build-the-new-job-on-an-azure-vm-agent"></a>Azure VM エージェントで新しいジョブを作成する

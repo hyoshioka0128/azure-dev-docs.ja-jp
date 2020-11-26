@@ -3,14 +3,14 @@ title: チュートリアル - Jenkins と Azure CLI を使用して Azure App S
 description: Azure CLI を使用して Java Web アプリを Jenkins パイプラインで Azure にデプロイする方法について説明します
 keywords: Jenkins, Azure, 開発, App Service, CLI
 ms.topic: tutorial
-ms.date: 08/08/2020
+ms.date: 11/10/2020
 ms.custom: devx-track-jenkins, devx-track-azurecli
-ms.openlocfilehash: 4a6fde1eb8830c897c438fa89e7da6fe93b5a3a8
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: 88db3702221b8e18acff71514fcddc9ff7e875b0
+ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831338"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94983641"
 ---
 # <a name="tutorial-deploy-to-azure-app-service-with-jenkins-and-the-azure-cli"></a>チュートリアル:Jenkins と Azure CLI を使用して Azure App Service にデプロイする
 
@@ -82,7 +82,7 @@ az appservice plan create \
 
 ### <a name="create-an-azure-web-app"></a>Azure Web アプリを作成する
 
- [az webapp create](/cli/azure/webapp?view=azure-cli-latest#az-webapp-create) CLI コマンドを使用して、`myAppServicePlan` App Service プランで Web アプリ定義を作成します。 Web アプリ定義によって、アプリケーションにアクセスするための URL が提供され、Azure にコードをデプロイするためのいくつかのオプションが構成されます。 
+ [az webapp create](/cli/azure/webapp#az-webapp-create) CLI コマンドを使用して、`myAppServicePlan` App Service プランで Web アプリ定義を作成します。 Web アプリ定義によって、アプリケーションにアクセスするための URL が提供され、Azure にコードをデプロイするためのいくつかのオプションが構成されます。 
 
 ```azurecli-interactive
 az webapp create \

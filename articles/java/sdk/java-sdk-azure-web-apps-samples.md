@@ -2,18 +2,19 @@
 title: Azure Management Libraries for Java Web アプリ サンプル
 description: Azure Management Libraries for Java を使用して、App Service でホストされる Azure Web アプリの作成と更新を行うサンプル コードを入手しましょう。
 keywords: Azure, Java, SDK, API, Maven, Gradle, Web アプリ, App Service
-author: rloutlaw
+author: bmitchell287
+ms.author: brendm
 ms.date: 04/16/2017
 ms.topic: article
 ms.service: multiple
 ms.assetid: 43633e5c-9fb1-4807-ba63-e24c126754e2
 ms.custom: seo-java-august2019, seo-java-september2019, devx-track-java
-ms.openlocfilehash: d28fb164b4b7ba862e5297225bd34ac2f93c1a54
-ms.sourcegitcommit: cbcde17e91e7262a596d813243fd713ce5e97d06
+ms.openlocfilehash: 1e7867b8014fdaeda3801e0289edbaf60b361d03
+ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93405811"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94983801"
 ---
 # <a name="azure-management-libraries-for-java---web-app-samples"></a>Azure Management Libraries for Java - Web アプリ サンプル 
 

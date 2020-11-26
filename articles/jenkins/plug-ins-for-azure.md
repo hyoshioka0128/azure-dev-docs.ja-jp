@@ -5,14 +5,16 @@ keywords: jenkins, plugis, azure, devops
 ms.date: 04/25/2020
 ms.topic: article
 ms.custom: devx-track-jenkins
-ms.openlocfilehash: a8738ad8a66f85467527051f383975890fb5dcd2
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: d5f470c7355314b488d811f03f175379ad211c96
+ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240614"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "96035450"
 ---
 # <a name="jenkins-plug-ins-for-azure"></a>Azure 用の Jenkins プラグイン
+
+[!INCLUDE [jenkins-integration-with-azure.md](includes/jenkins-integration-with-azure.md)]
 
 Azure の多くのサービスと機能に、Jenkins プラグインを介してアクセスできます。これらのサービスでは、DevOps 環境の継続的インテグレーションと継続的配置 (CI/CD) に関する一連の可能性がサポートされます。 任意の Jenkins プラグインをクリックして、そのプラグインの詳細を確認してください。
 

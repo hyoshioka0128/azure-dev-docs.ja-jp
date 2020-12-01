@@ -49,7 +49,7 @@ ms.locfileid: "93066303"
     * **[言語]** で、 **[Java]** を選択します。
     * **[Spring Boot]** で、 **[2.3.4]** を選択します。
     * **[グループ]** 、 **[アーティファクト]** および **[名前]** で、短い説明の文字列を使用して同じ値を入力します。 入力時に、UI によってこれらの一部が自動的に入力される場合があります。
-    * **[依存関係]** ペインで、 **[依存関係の追加]** を選択します。 UI を使用して **Spring Web** と、 **Spring Security** に対する依存関係を追加します。
+    * **[依存関係]** ペインで、 **[依存関係の追加]** を選択します。 UI を使用して **Spring Web** と、**Spring Security** に対する依存関係を追加します。
 
    ![プロジェクトを生成するための値を入力する](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/fill-in-the-values-to-generate-the-project.png)
 
@@ -138,7 +138,7 @@ ms.locfileid: "93066303"
 
     > [!NOTE]
     > **[キー]** セクションをそのままにして戻ると、キーの値を表示できなくなります。 その場合は、別のキーを作成し、今後の使用のためにコピーする必要があります。
-    > 場合によっては、生成されたキーに、 *application.yml* ファイルに含める場合に問題となる文字 (円記号やアクサングラーブなど) が含まれていることがあります。 その場合は、そのキーを破棄し、別のものを生成します。
+    > 場合によっては、生成されたキーに、*application.yml* ファイルに含める場合に問題となる文字 (円記号やアクサングラーブなど) が含まれていることがあります。 その場合は、そのキーを破棄し、別のものを生成します。
 
     ![シークレットを作成する](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/b2c3-n.png)
 
@@ -218,7 +218,7 @@ Azure AD B2C インスタンスといくつかのユーザー フローを作成
     `client-secret` 値が単一引用符で囲まれていることに注目してください。 これが必要なのは、`<yourAppKey>` の値には、YAML に存在する場合に単一引用符で囲む必要があるいくつかの文字がほぼ確実に含まれるためです。
 
     > [!NOTE]
-    > このドキュメントの執筆時点で、 *application.yml* で使用できる Active Directory B2C Spring の統合の値の完全な一覧を以下に示します。
+    > このドキュメントの執筆時点で、*application.yml* で使用できる Active Directory B2C Spring の統合の値の完全な一覧を以下に示します。
     >
     > ```
     > azure:
@@ -242,7 +242,7 @@ Azure AD B2C インスタンスといくつかのユーザー フローを作成
 
 8. *src/main/java/<yourGroupId>/<yourGroupId>* に *controller* という名前のフォルダーを作成し、`<yourGroupId>` を、 **[グループ]** で入力した値に置き換えます。
 
-9. *controller* フォルダーに " *java* " という名前の新しい Java ファイルを作成し、テキスト エディターで開きます。
+9. *controller* フォルダーに "*java*" という名前の新しい Java ファイルを作成し、テキスト エディターで開きます。
 
 10. 次のコードを入力し、適宜、`yourGroupId` を変更してから、ファイルを保存して閉じます。
 
@@ -290,11 +290,11 @@ Azure AD B2C インスタンスといくつかのユーザー フローを作成
     }
     ```
 
-    コントローラー内のすべてのメソッドで `initializeModel()` が呼び出され、そのメソッドで `model.addAllAttributes(user.getAttributes());` が呼び出されるため、 *src/main/resources/templates* 内の任意の HTML ページから、`${name}`、`${grant_type}`、`${auth_time}` など、それらの属性のいずれかにアクセスできます。 `user.getAttributes()` から返される値は、実際には認証用の `id_token` の要求です。 使用可能な要求の完全な一覧については、「[Microsoft ID プラットフォームの ID トークン](/azure/active-directory/develop/id-tokens#payload-claims)」を参照してください。
+    コントローラー内のすべてのメソッドで `initializeModel()` が呼び出され、そのメソッドで `model.addAllAttributes(user.getAttributes());` が呼び出されるため、*src/main/resources/templates* 内の任意の HTML ページから、`${name}`、`${grant_type}`、`${auth_time}` など、それらの属性のいずれかにアクセスできます。 `user.getAttributes()` から返される値は、実際には認証用の `id_token` の要求です。 使用可能な要求の完全な一覧については、「[Microsoft ID プラットフォームの ID トークン](/azure/active-directory/develop/id-tokens#payload-claims)」を参照してください。
 
 11. *src/main/java/<yourGroupId>/<yourGroupId>* に *security* という名前のフォルダーを作成し、`yourGroupId` を、 **[グループ]** で入力した値に置き換えます。
 
-12. *security* フォルダーに " *WebSecurityConfiguration.java* " という名前の新しい Java ファイルを作成し、テキスト エディターで開きます。
+12. *security* フォルダーに "*WebSecurityConfiguration.java*" という名前の新しい Java ファイルを作成し、テキスト エディターで開きます。
 
 13. 次のコードを入力し、適宜、`yourGroupId` を変更してから、ファイルを保存して閉じます。
 

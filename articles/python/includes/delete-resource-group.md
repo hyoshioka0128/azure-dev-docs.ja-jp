@@ -1,14 +1,14 @@
 ---
-ms.openlocfilehash: 4215099ae39963448b7a94d389ded0c9096b1c67
-ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
+ms.openlocfilehash: c45bda8b08ec963febbc6497136cda71086423a3
+ms.sourcegitcommit: 418e446e6ada5d50df283401df4f6b6370a356b9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90772681"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96035494"
 ---
 [Azure portal](https://portal.azure.com) または Azure CLI を使用して、リソース グループを削除できます。
 
-- ポータルで、左側にあるナビゲーション ウィンドウから **[リソース グループ]** を選択し、このチュートリアルで作成したリソース グループを選択し、**[リソース グループの削除]** コマンドを使用します。
+- [Azure portal](https://portal.azure.com) で、左側にあるナビゲーション ウィンドウから **[リソース グループ]** を選択し、このチュートリアルのプロセスで作成されたリソース グループを選択し、 **[リソース グループの削除]** コマンドを使用します。
 
 - 次の Azure CLI コマンドを (ローカルでまたは [Cloud Shell](/azure/cloud-shell/overview) を使用して) 実行します。`<resource_group>` はこのチュートリアルで使用したグループ名に置き換えます。
 

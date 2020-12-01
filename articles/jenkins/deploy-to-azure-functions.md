@@ -5,14 +5,16 @@ keywords: Jenkins, Azure, DevOps, Java, Azure Functions
 ms.topic: tutorial
 ms.date: 10/23/2019
 ms.custom: devx-track-jenkins
-ms.openlocfilehash: fa63ebf5a41a3c515f92b0c551ee63d683b665c7
-ms.sourcegitcommit: 16ce1d00586dfa9c351b889ca7f469145a02fad6
+ms.openlocfilehash: 7258e3d20262e214bbe9461564210c0d84fe2e89
+ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88240933"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "96035386"
 ---
 # <a name="tutorial-deploy-to-azure-functions-using-jenkins"></a>チュートリアル:Jenkins を使用して Azure Functions にデプロイする
+
+[!INCLUDE [jenkins-integration-with-azure.md](includes/jenkins-integration-with-azure.md)]
 
 [Azure Functions](/azure/azure-functions/) はサーバーレス コンピューティング サービスです。 Azure Functions を使用すると、インフラストラクチャをプロビジョニングまたは管理することなく、オンデマンドでコードを実行できます。 このチュートリアルでは、Azure Functions プラグインを使用して Java 関数を Azure Functions にデプロイする方法を説明します。
 
@@ -21,12 +23,13 @@ ms.locfileid: "88240933"
 - **Azure サブスクリプション**:Azure サブスクリプションをお持ちでない場合は、開始する前に [無料アカウント](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio) を作成してください。
 - **Jenkins サーバー**: Jenkins サーバーがインストールされていない場合は、[Azure での Jenkins サーバーの作成](./configure-on-linux-vm.md)に関する記事を参照してください。
 
-  > [!TIP]
-  > このチュートリアルに使用されているソース コードは [Visual Studio China GitHub リポジトリ](https://github.com/VSChina/odd-or-even-function/blob/master/src/main/java/com/microsoft/azure/Function.java)にあります。
+## <a name="view-the-source-code"></a>ソース コードを表示する
+
+このチュートリアルに使用されているソース コードは [Visual Studio China GitHub リポジトリ](https://github.com/VSChina/odd-or-even-function/blob/master/src/main/java/com/microsoft/azure/Function.java)にあります。
 
 ## <a name="create-a-java-function"></a>Java 関数の作成
 
-Java ランタイム スタックを備えた Java 関数を作成するには、[Azure portal](https://portal.azure.com) または [Azure CLI](/cli/azure/?view=azure-cli-latest) を使用します。
+Java ランタイム スタックを備えた Java 関数を作成するには、[Azure portal](https://portal.azure.com) または [Azure CLI](/cli/azure/) を使用します。
 
 次の手順では、Azure CLI を使用して Java 関数を作成する方法を説明します。
 
@@ -104,7 +107,7 @@ Java ランタイム スタックを備えた Java 関数を作成するには�
     FUNCTION_NAME=<function_name>
     ```
     
-1. **[Pipeline]\(パイプライン\)、[Definition]\(定義\)** セクションの順に移動し、 **[Pipeline script from SCM]\(SCM からのパイプライン スクリプト\)** を選択します。
+1. **[Pipeline]\(パイプライン\)、[Definition]\(定義\)** セクションの順に移動し、**[Pipeline script from SCM]\(SCM からのパイプライン スクリプト\)** を選択します。
 
 1. GitHub フォークの URL とスクリプト パス ("doc/resources/jenkins/JenkinsFile") を入力し、[JenkinsFile の例](https://github.com/VSChina/odd-or-even-function/blob/master/doc/resources/jenkins/JenkinsFile)で使用します。
 
@@ -153,7 +156,7 @@ Java ランタイム スタックを備えた Java 関数を作成するには�
 az group delete -y --no-wait -n <resource_group>
 ```
 
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次の手順
 
 > [!div class="nextstepaction"]
 > [Azure Functions](/azure/azure-functions/)

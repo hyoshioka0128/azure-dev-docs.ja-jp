@@ -2,14 +2,14 @@
 title: 手順 2:Visual Studio Code から Azure App Service on Linux にデプロイするアプリを準備する
 description: チュートリアルの手順 2、アプリケーションの設定
 ms.topic: conceptual
-ms.date: 09/12/2019
+ms.date: 11/20/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 4aaaa1833a42c40786fc6923b10876561adac859
-ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
+ms.openlocfilehash: 252bfc02e3c70cc207b29ee0b8f8c58d9802f090
+ms.sourcegitcommit: 29930f1593563c5e968b86117945c3452bdefac1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92688896"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95485661"
 ---
 # <a name="2-prepare-your-app-for-deployment-to-azure-app-service"></a>2:Azure App Service にデプロイするためにアプリを準備する
 
@@ -17,23 +17,32 @@ ms.locfileid: "92688896"
 
 この記事では、このチュートリアルの Azure App Service にデプロイするアプリを準備します。 既存のアプリを使用することも、アプリを作成またはダウンロードすることもできます。
 
-作業対象のアプリが既にある場合は、フレームワーク (Flask、Django など) を含む依存関係を記述した *requirements.txt* ファイルがあることを確認してください。 任意のフレームワークを使用できます。
+## <a name="if-you-already-have-an-app"></a>アプリが既にある場合
 
-まだアプリがない場合は、次のいずれかの方法を使用します。 アプリがローカルで動作することを確認してください。
+作業対象のアプリが既にある場合は、フレームワーク (Flask、Django など) を含む依存関係を一覧表示した *requirements.txt* ファイルがプロジェクト ルートにあることを確認してください。 任意のフレームワークを使用できます。
 
-## <a name="option-1-vs-code-flask-tutorial-sample"></a>オプション 1: VS Code Flask チュートリアル サンプル
+> [!div class="nextstepaction"]
+> [独自のアプリの準備ができました - 手順 3 に進む >>>](tutorial-deploy-app-service-on-linux-03.md)
+
+## <a name="if-you-dont-already-have-an-app"></a>まだアプリがない場合
+
+まだアプリがない場合は、次の "*いずれか*" の方法を使用します。 アプリがローカルで動作することを確認してください。
+
+このチュートリアルの残りの部分では、[オプション 3](#option-3-create-a-minimal-flask-app) に示されているコードを使用します。
+
+### <a name="option-1-use-the-vs-code-flask-tutorial-sample"></a>オプション 1: VS Code Flask チュートリアル サンプルを使用する
 
 [https://github.com/Microsoft/python-sample-vscode-flask-tutorial](https://github.com/Microsoft/python-sample-vscode-flask-tutorial) をダウンロードまたは複製します。これは [Flask チュートリアル](https://code.visualstudio.com/docs/python/tutorial-flask)に従って得られた結果です。 アプリコードは、具体的には *hello_app* フォルダー内にあることに注意してください。 アプリをローカルで実行する方法については、サンプルの *readme.md* ファイルを確認してください。
 
-## <a name="option-2-vs-code-django-tutorial-sample"></a>オプション 2:VS Code Django チュートリアル サンプル
+### <a name="option-2-use-the-vs-code-django-tutorial-sample"></a>オプション 2:VS Code Django チュートリアル サンプルを使用する
 
 [https://github.com/Microsoft/python-sample-vscode-django-tutorial](https://github.com/Microsoft/python-sample-vscode-django-tutorial) をダウンロードまたは複製します。これは [Django チュートリアル](https://code.visualstudio.com/docs/python/tutorial-django)に従って得られた結果です。
 
-このサンプルのようにローカル SQLite データベースが Django アプリに使用されている場合、事前初期化済みかつ事前設定済みの *db.sqlite3* ファイルのコピーをリポジトリに追加する必要があります。 これは、現在 App Service for Linux には、デプロイの過程で Django の `migrate` コマンドを実行する手段が用意されていないため、あらかじめ作成しておいたデータベースを自分でデプロイしなければならないためです。 その場合でも、データベースは事実上読み取り専用であり、また、データベースに書き込みを行うとエラーが発生します。
+クラウドにデプロイされた Django アプリでは、Azure 用 PostgreSQL などのクラウドベースのデータベースも使用するのが理想的です。 詳細については、[Azure portal を使用して PostgreSQL で Django Web アプリをデプロイする](tutorial-python-postgresql-app-portal.md)に関するページを参照してください。
 
-いずれのケースも最善の方法は、アプリのコードとは無関係にデプロイおよび初期化された別個のデータベースを使用することです。
+このサンプルのようにローカル SQLite データベースが Django アプリに使用されている場合、このチュートリアルでは事前初期化済みかつ事前設定済みの *db.sqlite3* ファイルのコピーをリポジトリに追加するのが最も簡単です。 それ以外の場合は、アプリがデプロイされているコンテナーで Django の `migrate` コマンドを実行するようにビルド後のコマンドを構成する必要があります。 詳細については、[App Service の構成 - ビルドの自動化のカスタマイズ](/app-service/configure-language-python#customize-build-automation)に関する記事を参照してください。
 
-## <a name="option-3-create-a-minimal-flask-app"></a>オプション 3:最小限の Flask アプリを作成する
+### <a name="option-3-create-a-minimal-flask-app"></a>オプション 3:最小限の Flask アプリを作成する
 
 このセクションでは、このチュートリアルで使用する最小限の Flask アプリについて説明します。
 
@@ -51,12 +60,12 @@ ms.locfileid: "92688896"
 1. *requirements.txt* という名前のファイルを作成し、内容を次のようにします。
 
     ```text
-    Flask==1.1.2
+    Flask
     ```
 
 1. メニュー コマンド **Terminal** > **New Terminal** を使用してターミナルを開きます。
 
-1. 次に、`env` という名前の仮想環境を作成してアクティブ化します。
+1. ターミナルで、`.venv` という名前の仮想環境を作成してアクティブ化します。 
 
     # <a name="macoslinux"></a>[macOS/Linux](#tab/linux)
 
@@ -74,6 +83,8 @@ ms.locfileid: "92688896"
     ```
 
     ---
+
+1. VS Code で、新しく作成された環境をアクティブ化することの確認を求められたら **[Yes]\(はい\)** と答えます。
 
 1. アプリの依存関係をインストールします:
 
@@ -109,7 +120,9 @@ ms.locfileid: "92688896"
     flask run
     ```
 
-1. その後、`http://127.0.0.1:5000/` という URL を使用してアプリをブラウザーで開くことができます。
+1. URL `http://127.0.0.1:5000/` を使用してアプリをブラウザーで開きます。 "Hello Flask, on Azure App Service on Linux." というメッセージが表示されます。
+
+1. ターミナルで **Ctrl**+**C** を押して Flask サーバーを停止します。
 
 > [!div class="nextstepaction"]
 > [アプリの準備ができました - 手順 3 に進む >>>](tutorial-deploy-app-service-on-linux-03.md)

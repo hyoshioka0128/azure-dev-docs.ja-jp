@@ -3,14 +3,14 @@ title: Jenkins と Azure CLI を使用して Azure Spring Cloud にアプリを�
 description: 継続的インテグレーションおよびデプロイ パイプラインで Azure CLI を使用してマイクロサービスを Azure Spring Cloud サービスにデプロイする方法について学習します
 keywords: Jenkins, Azure, DevOps, Azure Spring Cloud, Azure CLI
 ms.topic: tutorial
-ms.date: 09/01/2020
+ms.date: 11/10/2020
 ms.custom: devx-track-jenkins,devx-track-azurecli
-ms.openlocfilehash: 7b8eaf783e909e9291dc7b0e6781bf4e8cb0d4c3
-ms.sourcegitcommit: 717e32b68fc5f4c986f16b2790f4211967c0524b
+ms.openlocfilehash: e0b98f31ac7f7b079f655c4cb795fe7b38af4508
+ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91586137"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94983971"
 ---
 # <a name="tutorial-deploy-apps-to-azure-spring-cloud-using-jenkins-and-the-azure-cli"></a>チュートリアル:Jenkins と Azure CLI を使用して Azure Spring Cloud にアプリをデプロイする
 
@@ -26,20 +26,19 @@ ms.locfileid: "91586137"
 ## <a name="prerequisites"></a>前提条件
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
-
 - **Jenkins**:[Linux VM に Jenkins をインストールします](configure-on-linux-vm.md)
-
-- **GitHub アカウント**:GitHub アカウントをお持ちでない場合は、開始する前に[無料アカウント](https://github.com/)を作成してください。
+- **GitHub アカウント**:GitHub アカウントをお持ちでない場合は、開始する前に [無料アカウント](https://github.com/)を作成してください。
 
 ## <a name="provision-a-service-instance-and-launch-a-java-spring-application"></a>サービス インスタンスをプロビジョニングし、Java Spring アプリケーションを起動する
 
 ここでは、サンプル Microsoft サービス アプリケーションとして [Piggy Metrics](https://github.com/Azure-Samples/piggymetrics) を使用し、「[クイックスタート: Azure CLI を使用して Java Spring アプリケーションを起動する](/azure/spring-cloud/spring-cloud-quickstart-launch-app-cli)」と同じ手順に従ってサービス インスタンスをプロビジョニングして、アプリケーションを設定します。 同じプロセスを既に完了している場合は、次のセクションにスキップできます。 それ以外の場合、Azure CLI コマンドは次のとおりです。 「[クイックスタート: Azure CLI を使用して Java Spring アプリケーションを起動する](/azure/spring-cloud/spring-cloud-quickstart-launch-app-cli)」を参照して、追加の背景情報を確認してください。
 
 お使いのローカル コンピューターは、Jenkins ビルド サーバーと同じ前提条件を満たしている必要があります。 マイクロサービス アプリケーションをビルドしてデプロイするために、次のものがインストールされていることを確認します。
-    * [Git](https://git-scm.com/)
-    * [JDK 8](/java/azure/jdk/?view=azure-java-stable)
-    * [Maven 3.0 以降](https://maven.apache.org/download.cgi)
-    * [Azure CLI のインストール](/cli/azure/install-azure-cli?view=azure-cli-latest) (バージョン 2.0.67 以上)
+
+* [Git](https://git-scm.com/)
+* [JDK 8](/java/azure/jdk)
+* [Maven 3.0 以降](https://maven.apache.org/download.cgi)
+* [Azure CLI のインストール](/cli/azure/install-azure-cli) (バージョン 2.0.67 以上)
 
 1. Azure Spring Cloud 拡張機能をインストールします。
 
@@ -130,7 +129,7 @@ ms.locfileid: "91586137"
 
 ### <a name="add-your-azure-service-principal-credential-in-jenkins-credential-store"></a>Azure サービス プリンシパルの資格情報を Jenkins 資格情報ストアに追加する
 
-1. Azure にデプロイするには、Azure サービス プリンシパルが必要です。 詳細については、Azure App Service へのデプロイに関するチュートリアルの「 [サービス プリンシパルの作成](deploy-from-github-to-azure-app-service.md#create-service-principal) 」セクションを参照してください。 `az ad sp create-for-rbac` からの出力は次のようになります。
+1. Azure にデプロイするには、Azure サービス プリンシパルが必要です。 詳細については、Azure App Service へのデプロイに関するチュートリアルの「[サービス プリンシパルの作成](deploy-from-github-to-azure-app-service.md#create-service-principal)」セクションを参照してください。 `az ad sp create-for-rbac` からの出力は次のようになります。
 
     ```
     {
@@ -234,7 +233,7 @@ ms.locfileid: "91586137"
 
 1. フォークしたリポジトリの GitHub URL を入力します ( **https://github.com/&lt ;対象の GitHub ID&gt; /piggymetrics.git**)
 
-1. **[Branch Specifier (black for 'any')]\(ブランチ指定子 (空欄は "すべて" を指定)\)** が * **/Azure** になっていることを確認してください
+1. **[Branch Specifier (black for 'any')]\(ブランチ指定子 (空欄は "すべて" を指定)\)** が **_/Azure_* になっていることを確認してください
 
 1. **[Script path]\(スクリプトのパス\)** は **Jenkinsfile** のままにしておきます
 

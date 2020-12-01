@@ -4,12 +4,12 @@ description: Azure リソースのプロビジョニング、使用、管理を�
 ms.date: 09/19/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 3c1cd0deb0c1df31ef3b191a9526bc99ad01fbc1
-ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
+ms.openlocfilehash: 276230cf5e5999f7d188d138e3b4e7361c3e4114
+ms.sourcegitcommit: b70a38d46616f5e519d5b9c1a1eaf3fe0ecb9605
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91764695"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94932386"
 ---
 # <a name="use-the-azure-libraries-sdk-for-python"></a>Python 用 Azure ライブラリ (SDK) を使用する
 
@@ -27,7 +27,7 @@ ms.locfileid: "91764695"
 
 - 必要なライブラリ パッケージは、`pip install <library_name>` を使ってインストールします ([Python SDK パッケージ インデックス](azure-sdk-library-package-index.md)に関するページにあるライブラリ名を使用)。 詳細については、[Azure ライブラリのインストール](azure-sdk-install.md)に関するページを参照してください。
 
-- "管理" と "クライアント" という別個のライブラリが存在します ("管理プレーン" ライブラリおよび "データ プレーン" ライブラリと呼ばれることもあります)。 各セットはさまざまな目的を果たし、さまざまな種類のコードで使用されます。 詳細については、この記事の次のセクションを参照してください。
+- **管理** と **クライアント** という別個のライブラリが存在します ("管理プレーン" および "データ プレーン" のライブラリと呼ばれることもあります)。 各セットはさまざまな目的を果たし、さまざまな種類のコードで使用されます。 詳細については、この記事の次のセクションを参照してください。
   - [管理ライブラリを使用して Azure リソースをプロビジョニングし、管理する](#provision-and-manage-azure-resources-with-management-libraries)
   - [クライアント ライブラリを使用して Azure リソースに接続し、そのリソースを使用する](#connect-to-and-use-azure-resources-with-client-libraries)
 
@@ -65,11 +65,37 @@ SDK の "*管理*" ("管理プレーン") ライブラリは、いずれも名�
 
 管理ライブラリを使用すると、[Azure portal](https://portal.azure.com) または [Azure CLI](/cli/azure/install-azure-cli) で行うのと同じタスクを実行する構成またはデプロイのスクリプトを作成することができます。 (既に述べたように、Azure CLI は Python で記述されており、その各種コマンドは管理ライブラリを使用して実装されています。)
 
-各管理ライブラリでの操作の詳細については、[SDK GitHub リポジトリ](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk)内のライブラリのプロジェクト フォルダーにある *README.md* または *README.rst* ファイルを参照してください。 また、その他のコード スニペットについては、[リファレンス ドキュメント](/python/api)および [Azure のサンプル](/samples/browse/?languages=python&products=azure)で確認できます。
+次の例は、いくつかの主要な管理ライブラリを使用する方法を示しています。
+
+- [リソース グループをプロビジョニングする](azure-sdk-example-resource-group.md)
+- [サブスクリプション内のリソース グループを一覧表示する](azure-sdk-example-list-resource-groups.md)
+- [Azure Storage をプロビジョニングする](azure-sdk-example-storage.md)
+- [Web アプリをプロビジョニングしてコードをデプロイする](azure-sdk-example-web-app.md)
+- [データベースをプロビジョニングしてクエリを実行する](azure-sdk-example-database.md)
+- [仮想マシンのプロビジョニング](azure-sdk-example-virtual-machines.md)
+
+各管理ライブラリでの操作の詳細については、[SDK GitHub リポジトリ](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk)内のライブラリのプロジェクト フォルダーにある *README.md* または *README.rst* ファイルを参照してください。 また、その他のコード スニペットについては、[リファレンス ドキュメント](/python/api)および [Azure のサンプル](/samples/browse/?languages=python&term=Getting%20started%20-%20Managing)で確認できます。
+
+以前のバージョンの管理ライブラリからコードを移行する場合は、次の詳細を参照してください。
+
+- `ServicePrincipalCredentials` クラスを使用する場合、[認証方法 - トークン資格情報の使用](azure-sdk-authenticate.md#authenticate-with-token-credentials)に関する記事を参照してください。
+- 「[ライブラリの使用パターン - 非同期操作](azure-sdk-library-usage-patterns.md#asynchronous-operations)」の説明に従って、非同期 API の名前が変更されました。 単純に言うと、新しいライブラリの非同期 API の名前は `begin_` から始まります。 ほとんどの場合、API 署名は変わりません。
 
 ## <a name="connect-to-and-use-azure-resources-with-client-libraries"></a>クライアント ライブラリを使用して Azure リソースに接続し、そのリソースを使用する
 
 SDK の "*クライアント*" ("データ プレーン") ライブラリを使用すると、既にプロビジョニングされたサービスとやり取りする Python アプリケーション コードを記述するのに役立ちます。 クライアント ライブラリは、クライアント API をサポートするサービスに対してのみ存在します。
+
+[例:Azure Storage の使用](azure-sdk-example-storage-use.md)に関する記事に、クライアント ライブラリの使用の基本的な説明が提供されています。
+
+これらのライブラリを使用した例は、さまざまな Azure サービスでも提供されています。 その他のリンクについては、次のインデックス ページを参照してください。
+
+- [アプリ ホスティング](quickstarts-app-hosting.md)
+- [Cognitive Services](quickstarts-cognitive-services.md)
+- [データ ソリューション](quickstarts-data-solutions.md)
+- [ID とセキュリティ](quickstarts-identity-security.md)
+- [Machine Learning](quickstarts-machine-learning.md)
+- [メッセージングと IoT](quickstarts-messaging-iot.md)
+- [その他のサービス](quickstarts-other-services.md)
 
 各クライアント ライブラリでの操作の詳細については、[SDK の GitHub リポジトリ](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk)内のライブラリのプロジェクト フォルダーにある *README.md* または *README.rst* ファイルを参照してください。 また、その他のコード スニペットについては、[リファレンス ドキュメント](/python/api)および [Azure のサンプル](/samples/browse/?languages=python&products=azure)で確認できます。
 

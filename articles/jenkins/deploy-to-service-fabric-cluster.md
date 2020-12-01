@@ -5,12 +5,12 @@ keywords: jenkins, azure, devops, cicd, linux, service fabric, クラスター
 ms.topic: tutorial
 ms.date: 07/31/2018
 ms.custom: devx-track-jenkins
-ms.openlocfilehash: cc42d33b68b0c8e8417d5eb0245b33d12bb53b52
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: 012a827870d648b7a50e1685b5fab8b2730eb548
+ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831548"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94983981"
 ---
 # <a name="tutorial-deploy-to-a-service-fabric-cluster"></a>チュートリアル:Service Fabric クラスターへのデプロイ
 
@@ -23,7 +23,7 @@ ms.locfileid: "90831548"
    * [既存の Jenkins 環境への Service Fabric プラグインのインストール](#install-service-fabric-plugin-in-an-existing-jenkins-environment)。
 1. Jenkins を設定したら、「[Jenkins ジョブの作成と構成](#create-and-configure-a-jenkins-job)」の手順に従って、アプリケーションに変更が加えられたときに Jenkins をトリガーするように GitHub をセットアップしたり、GitHub から変更をプルしてアプリケーションをビルドするビルド ステップを使用して Jenkins ジョブ パイプラインを構成したりします。 
 1. 最後に、アプリケーションを Service Fabric クラスターにデプロイするように、Jenkins ジョブのビルド後のステップを構成します。 アプリケーションをクラスターにデプロイするように Jenkins を構成する方法は 2 つあります。    
-   * 開発およびテスト環境では、「[クラスター管理エンドポイントを使用してデプロイを構成する](#configure-deployment-using-cluster-management-endpoint)」に従ってください。 これはデプロイの最も簡単なセットアップ方法です。
+   * 開発およびテスト環境では、「[クラスター管理エンドポイントを使用してデプロイを構成する](#configure-deployment-using-cluster-management-endpoint)」に従ってください。 この方法は、デプロイの最も簡単なセットアップ方法です。
    * 運用環境では、「[Azure 資格情報を使用してデプロイを構成する](#configure-deployment-using-azure-credentials)」に従ってください。 運用環境にはこの方法をお勧めします。Azure 資格情報を使えば、Jenkins ジョブによる Azure リソースへのアクセス権を制限できるためです。 
 
 ## <a name="prerequisites"></a>前提条件
@@ -66,7 +66,7 @@ Jenkins は、Service Fabric クラスター内外でセットアップできま
    ```
 
 1. ファイル共有内の Jenkins コンテナーの状態を維持します。
-   1. クラスターと**同じリージョン**に Azure Storage アカウント (例: `sfjenkinsstorage1`) を作成します。
+   1. クラスターと **同じリージョン** に Azure Storage アカウント (例: `sfjenkinsstorage1`) を作成します。
    1. そのストレージ アカウントの下に、**ファイル共有** (例: `sfjenkins`) を作成します。
    1. そのファイル共有の **[接続]** をクリックして、 **[Linux からの接続]** の下に表示される、以下のような値をメモします。
 
@@ -192,7 +192,7 @@ Jenkins をセットアップした後は、次のセクション、「[Jenkins 
 このセクションの手順は、GitHub リポジトリ内の変更に対応し、変更内容を取り込んでビルドするように Jenkins ジョブを構成する方法を示しています。 このセクションの最後には、開発/テスト環境または運用環境のどちらにデプロイするかに応じてアプリケーションをデプロイするようにジョブを構成する、最後の手順が指示されます。 
 
 1. Jenkins ダッシュボードで **[New Item (新しい項目)]** をクリックします。
-1. 項目の名前を入力します (例: **MyJob**)。 **フリースタイル プロジェクト**を選択し、 **[OK]** をクリックします。
+1. 項目の名前を入力します (例: **MyJob**)。 **フリースタイル プロジェクト** を選択し、 **[OK]** をクリックします。
 1. ジョブを構成するページが開きます。 (Jenkins ダッシュボードから構成を始めるには、ジョブをクリックしてから、 **[構成]** をクリックします)。
 
 1. **[全般]** タブで **[GitHub プロジェクト]** のチェック ボックスをオンにし、GitHub プロジェクトの URL を指定します。 この URL では、Jenkins の継続的インテグレーション/継続的デプロイ (CI/CD) フローと統合する Service Fabric Java アプリケーションがホストされます (例: `https://github.com/{your-github-account}/service-fabric-java-getting-started`)。
@@ -224,7 +224,7 @@ Jenkins をセットアップした後は、次のセクション、「[Jenkins 
 
      次のスクリーンショットは、Jenkins ジョブの名前が `CounterServiceApplication` の、[カウンター サービス](https://github.com/Azure-Samples/service-fabric-dotnet-core-getting-started/tree/master/Services/CounterService) サンプルをビルドするときに使用されるコマンド例を示しています。
 
-      ![Service Fabric Jenkins のビルド アクション](./media/deploy-to-service-fabric-cluster/build-step-dotnet.png)
+      ![サービスをビルドするために使用されるコマンドの例](./media/deploy-to-service-fabric-cluster/build-step-dotnet.png)
 
 1. ビルド後のアクションでアプリを Service Fabric クラスターにデプロイするように Jenkins を構成するには、Jenkins コンテナー内のそのクラスターの証明書の位置が必要です。 Jenkins コンテナーをクラスター内またはクラスター外のどちらで実行するかに応じて、次のいずれかを選択し、クラスター証明書の位置を書き留めます。
 
@@ -282,10 +282,10 @@ Jenkins をセットアップした後は、次のセクション、「[Jenkins 
 
 1. Azure Active Directory サービス プリンシパルを作成し、Azure サブスクリプションで権限を割り当てるには、「[Azure Active Directory アプリケーションとサービス プリンシパルをポータルで作成する](/azure/azure-resource-manager/resource-group-create-service-principal-portal)」の手順に従ってください。 次の点に注意してください。
 
-   * トピック内の手順を実行しているときに、必ず次の値をコピーして保存してください:*アプリケーション ID*、*アプリケーション キー*、*ディレクトリ ID (テナント ID)* 、および*サブスクリプション ID*。 それらは Jenkins で Azure 資格情報を構成するために必要です。
-   * ディレクトリに[必要な権限](/azure/azure-resource-manager/resource-group-create-service-principal-portal#required-permissions)がない場合は、管理者に依頼して、権限を付与するかサービス プリンシパルを作成してもらう必要があります。または、Jenkins のジョブ用に **[Post-Build Actions (ビルド後のアクション)]** でクラスターの管理エンドポイントを構成する必要があります。
+   * トピック内の手順を実行しているときに、必ず次の値をコピーして保存してください:*アプリケーション ID*、*アプリケーション キー*、*ディレクトリ ID (テナント ID)* 、および *サブスクリプション ID*。 それらは Jenkins で Azure 資格情報を構成するために必要です。
+   * ディレクトリに [必要な権限](/azure/azure-resource-manager/resource-group-create-service-principal-portal#required-permissions)がない場合は、管理者に依頼して、権限を付与するかサービス プリンシパルを作成してもらう必要があります。または、Jenkins のジョブ用に **[Post-Build Actions (ビルド後のアクション)]** でクラスターの管理エンドポイントを構成する必要があります。
    * 「[Azure Active Directory アプリケーションを作成する](/azure/azure-resource-manager/resource-group-create-service-principal-portal#create-an-azure-active-directory-application)」のセクションでは、 **[サインオン URL]** に適切な形式の URL を入力することができます。
-   * 「[アプリケーションをロールに割り当てる](/azure/azure-resource-manager/resource-group-create-service-principal-portal)」のセクションでは、アプリケーションにクラスターのリソース グループの*閲覧者*ロールを割り当てることができます。
+   * 「[アプリケーションをロールに割り当てる](/azure/azure-resource-manager/resource-group-create-service-principal-portal)」のセクションでは、アプリケーションにクラスターのリソース グループの *閲覧者* ロールを割り当てることができます。
 
 1. Jenkins ジョブに戻って、 **[Post-build Actions (ビルド後のアクション)]** タブをクリックします。
 1. **[Post-Build Actions (ビルド後のアクション)]** ボックスの一覧の **[Deploy Service Fabric Project (Service Fabric プロジェクトのデプロイ)]** を選択します。 

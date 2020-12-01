@@ -4,12 +4,12 @@ description: Docker チュートリアル パート2、コンテナー レジス
 ms.topic: tutorial
 ms.date: 09/20/2019
 ms.custom: devx-track-js
-ms.openlocfilehash: eb029d8e4dc2e6eddc68e0ee9112324b38e84ffe
-ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
+ms.openlocfilehash: 975ea12307a6b6488ba331e1075cea2ea4850dbb
+ms.sourcegitcommit: 6c112c184273d9df7b59de3caadc83c471532696
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91365135"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95783002"
 ---
 # <a name="use-a-container-registry"></a>コンテナー レジストリを使用する
 
@@ -21,7 +21,7 @@ ms.locfileid: "91365135"
 
 ## <a name="create-an-azure-container-registry"></a>Azure コンテナー レジストリの作成
 
-1. Visual Studio Code で、**F1** キーを選択してコマンド パレットを開きます。
+1. Visual Studio Code で、**F1** または **Ctrl + Shift + P** キーを押してコマンド パレットを開きます。
 
 1. [検索] ボックスに「**レジストリ**」と入力します。 結果から、 **[Azure Container Registry:レジストリの作成]** を選択します。
 

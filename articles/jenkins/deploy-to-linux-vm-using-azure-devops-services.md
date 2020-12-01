@@ -1,16 +1,16 @@
 ---
 title: Jenkins と Azure DevOps Services を使用して Linux 仮想マシンにデプロイする
-description: Jenkins と Azure DevOps Services を使用して、継続的インテグレーションと配置 (CI/CD) を利用して Linux 仮想マシンにアプリをデプロイする方法について説明します
+description: Jenkins と Azure DevOps Services を使用して、Linux 仮想マシンにアプリをデプロイするための継続的インテグレーションとデプロイ (CI/CD) を容易にする方法について説明します
 keywords: jenkins, azure, devops, 仮想マシン, cicd, azure devops services
 ms.topic: tutorial
 ms.date: 07/31/2018
 ms.custom: devx-track-jenkins
-ms.openlocfilehash: 3eedcc72a7c272f1cacf97b9071e750aab5a446e
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: e1c5c9b06cff7419ac98b08553d143c7449746b8
+ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831328"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94983651"
 ---
 # <a name="tutorial-deploy-to-linux-virtual-machine-using-jenkins-and-azure-devops-services"></a>チュートリアル:Jenkins と Azure DevOps Services を使用して Linux 仮想マシンにデプロイする
 
@@ -18,7 +18,7 @@ ms.locfileid: "90831328"
 
 このチュートリアルでは、Jenkins を使用して Node.js Web アプリをビルドします。 次に、Azure DevOps を使用して、
 
-Linux 仮想マシン (VM) を含む[配置グループ](/azure/devops/pipelines/release/deployment-groups/index?view=vsts)にアプリをデプロイします。 学習内容は次のとおりです。
+Linux 仮想マシン (VM) を含む[配置グループ](/azure/devops/pipelines/release/deployment-groups/index)にアプリをデプロイします。 学習内容は次のとおりです。
 
 > [!div class="checklist"]
 > * サンプル アプリを入手する。
@@ -38,7 +38,7 @@ Linux 仮想マシン (VM) を含む[配置グループ](/azure/devops/pipelines
   [無料の Azure DevOps Services 組織](https://go.microsoft.com/fwlink/?LinkId=307137&clcid=0x409&wt.mc_id=o~msft~vscom~home-vsts-hero~27308&campaign=o~msft~vscom~home-vsts-hero~27308)を取得できます。
 
   > [!NOTE]
-  > 詳細については、[Azure DevOps Services への接続](/azure/devops/organizations/projects/connect-to-projects?view=vsts)に関する記事をご覧ください。
+  > 詳細については、[Azure DevOps Services への接続](/azure/devops/organizations/projects/connect-to-projects)に関する記事をご覧ください。
 
 *  デプロイ ターゲットの Linux 仮想マシンが必要です。  詳細については、「[Azure CLI を使用した Linux VM の作成と管理](/azure/virtual-machines/linux/tutorial-manage-vm)」をご覧ください。
 
@@ -86,16 +86,16 @@ Linux 仮想マシン (VM) を含む[配置グループ](/azure/devops/pipelines
 ## <a name="configure-jenkins-for-azure-devops-services-integration"></a>Azure DevOps Services との統合のために Jenkins を構成する
 
 > [!NOTE]
-> 次の手順で使用する個人用アクセス トークン (PAT) に Azure DevOps Services の*リリース* (読み取り、書き込み、実行、管理) アクセス許可が含まれるようにします。
+> 次の手順で使用する個人用アクセス トークン (PAT) に Azure DevOps Services の *リリース* (読み取り、書き込み、実行、管理) アクセス許可が含まれるようにします。
  
 1.  Azure DevOps Services 組織で PAT を作成します (まだない場合)。 Jenkins から Azure DevOps Services 組織にアクセスするには、この情報が必要です。 必ず、このセクションの以降の手順で必要なトークンの情報を保存します。
   
-    トークンの生成方法については、[Azure DevOps Services の個人用アクセス トークンを作成する方法](/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=vsts)に関する記事をご覧ください。
+    トークンの生成方法については、[Azure DevOps Services の個人用アクセス トークンを作成する方法](/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate)に関する記事をご覧ください。
 2. **[Post-build Actions]\(ビルド後のアクション)** タブで **[Add post-build action]\(ビルド後のアクションを追加する)** を選択します。 **[Archive the artifacts] \(成果物のアーカイブ)** を選択します。
 3. **[Files to archive]\(アーカイブするファイル\)** に `**/*` と入力してすべてのファイルが含まれるようにします。
 4. 別のアクションを作成するには **[Add post-build action] \(ビルド後のアクションを追加する)** をクリックします。
 5. **[Trigger release in TFS/Team Services]\(TFS/Team Services でリリースをトリガーする)** を選択します。 Azure DevOps Services 組織の URI を入力します (例: **https://{your-organization-name}.visualstudio.com**)。
-6. **プロジェクト**の名前を入力します。
+6. **プロジェクト** の名前を入力します。
 7. リリース パイプラインの名前を選択します  (このリリース パイプラインは、後で Azure DevOps Services で作成します)。
 8. Azure DevOps Services 環境または Azure DevOps Server 環境に接続するための資格情報を選択します。
    - Azure DevOps Services を使用している場合は、 **[ユーザー名]** を空白のままにしておきます。 
@@ -121,7 +121,7 @@ Linux 仮想マシン (VM) を含む[配置グループ](/azure/devops/pipelines
 リリース パイプラインを仮想マシンにデプロイできるように、Azure DevOps Services エージェントを登録する[配置グループ](https://www.visualstudio.com/docs/build/concepts/definitions/release/deployment-groups/)が必要です。 デプロイ グループを使用すると、デプロイ用にターゲット マシンの論理グループを定義し、各コンピューターに必要なエージェントをインストールするのが簡単になります。
 
    > [!NOTE]
-   > 次の手順では前提条件となるものをインストールしますが、*スクリプトは sudo 権限で実行しない*ようにします。
+   > 次の手順では前提条件となるものをインストールしますが、*スクリプトは sudo 権限で実行しない* ようにします。
 
 1. **[ビルドと&amp;リリース]** ハブの **[リリース]** タブを開き、 **[Deployment groups] \(デプロイ グループ)** を開いて **[+ 新規]** を選択します。
 2. 配置グループの名前と、説明 (省略可能) を入力します。 **[作成]** を選択します。

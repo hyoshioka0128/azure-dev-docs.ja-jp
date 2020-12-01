@@ -5,18 +5,18 @@ keywords: jenkins, azure, devops, azure dev spaces, aks, azure kubernetes servic
 ms.topic: tutorial
 ms.date: 10/23/2019
 ms.custom: devx-track-jenkins, devx-track-azurecli
-ms.openlocfilehash: b5de1c470b5b47184b1c8fe33c31e6958e0a45e9
-ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
+ms.openlocfilehash: 3652d0bc1dc418c4037296fdacc3a56384b592c3
+ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92689104"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94983711"
 ---
 # <a name="tutorial-use-azure-dev-spaces-with-azure-kubernetes-service"></a>チュートリアル:Azure Kubernetes Service で Azure Dev Spaces を使用する
 
 Azure Dev Spaces では、Azure Kubernetes Service (AKS) で実行されるマイクロサービス アプリケーションをテストして反復的に開発でき、依存関係を複製したりモックしたりする必要がありません。 Jenkins 用の Azure Dev Spaces プラグインは、継続的インテグレーションとデリバリー (CI/CD) のパイプラインで開発空間を使用するのに役立ちます。
 
-このチュートリアルでは、Azure Container Registry (ACR) も使用します。 ACR でイメージを格納し、ACR タスクで Docker と Helm の成果物をビルドします。 成果物の生成に ACR と ACR タスクを使用すると、追加のソフトウェア (Docker など) を自分の Jenkins サーバーにインストールする必要がなくなります。 
+このチュートリアルでは、Azure Container Registry (ACR) も使用します。 ACR でイメージを格納し、ACR タスクで Docker と Helm の成果物をビルドします。 成果物の生成に ACR と ACR タスクを使用すると、追加のソフトウェア (Docker など) を自分の Jenkins サーバーにインストールする必要がなくなります。
 
 このチュートリアルでは、以下のタスクを完了します。
 
@@ -36,9 +36,9 @@ Azure Dev Spaces では、Azure Kubernetes Service (AKS) で実行されるマ�
 
 * [Azure Dev Spaces](https://marketplace.visualstudio.com/items?itemName=azuredevspaces.azds) 拡張機能がインストールされた [Visual Studio Code](https://code.visualstudio.com/download)。
 
-* [Azure CLI のインストール](/cli/azure/install-azure-cli?view=azure-cli-latest) (バージョン 2.0.43 以上)。
+* [Azure CLI のインストール](/cli/azure/install-azure-cli) (バージョン 2.0.43 以上)。
 
-* Jenkins マスター サーバー Jenkins マスターがまだない場合は、この[クイックスタート](/azure/jenkins/install-jenkins-solution-template)の手順に従って、Azure で [Jenkins](https://azuremarketplace.microsoft.com/marketplace/apps/bitnami.production-jenkins) をデプロイしてください。 
+* Jenkins サーバー。 Jenkins がまだない場合は、この[クイックスタート](/azure/jenkins/install-jenkins-solution-template)の手順に従って、Azure で [Jenkins](https://azuremarketplace.microsoft.com/marketplace/apps/bitnami.production-jenkins) をデプロイしてください。 
 
 * このチュートリアルの後ろで説明されているとおり、Jenkins サーバーには Helm と kubectl をインストールし、それらを Jenkins アカウントで使用できるようにする必要があります。
 
@@ -80,7 +80,7 @@ Azure Dev Spaces では、Azure Kubernetes Service (AKS) で実行されるマ�
 
 ## <a name="deploy-sample-apps-to-the-aks-cluster"></a>サンプル アプリを AKS クラスターにデプロイする
 
-このセクションでは、開発空間を設定し、前のセクションで作成した AKS クラスターにサンプル アプリケーションをデプロイします。 アプリケーションは、 *webfrontend* と *mywebapi* の 2 つの部分で構成されます。 どちらのコンポーネントも開発空間でデプロイされます。 このチュートリアルの後半で、mywebapi に対して pull request を送信し、Jenkins で CI パイプラインをトリガーします。
+このセクションでは、開発空間を設定し、前のセクションで作成した AKS クラスターにサンプル アプリケーションをデプロイします。 アプリケーションは、*webfrontend* と *mywebapi* の 2 つの部分で構成されます。 どちらのコンポーネントも開発空間でデプロイされます。 このチュートリアルの後半で、mywebapi に対して pull request を送信し、Jenkins で CI パイプラインをトリガーします。
 
 Azure Dev Spaces の使用、および Azure Dev Spaces を使用したマルチサービスの開発の詳細については、「[Azure Dev Spaces での Java の使用](/azure/dev-spaces/get-started-java)」と「[Azure Dev Spaces を使用したマルチサービスの開発](/azure/dev-spaces/multi-service-java)」を参照してください。 これらのチュートリアルでは、ここには記載されていないその他の背景情報が提供されます。
 
@@ -147,7 +147,7 @@ Azure Dev Spaces の使用、および Azure Dev Spaces を使用したマルチ
     ```
     ブラウザー ウィンドウでこの URL を開くと、Web アプリが表示されるはずです。 コンテナーが実行されると、`stdout` と `stderr` の出力がターミナル ウィンドウにストリーミングされます。
 
-8. 次に、 *mywebapi* を設定してデプロイします。
+8. 次に、*mywebapi* を設定してデプロイします。
 
     1. ディレクトリを `dev-spaces/samples/java/getting-started/mywebapi` に変更します
 
@@ -188,7 +188,7 @@ Azure Dev Spaces の使用、および Azure Dev Spaces を使用したマルチ
 
 ### <a name="install-helm-and-kubectl"></a>Helm と kubectl をインストールする
 
-サンプル パイプラインでは、開発空間へのデプロイに Helm と kubectl を使用します。 Jenkins のインストール時に、 *jenkins* という名前の管理者アカウントが作成されます。 jenkins ユーザーが Helm と kubectl の両方にアクセスできる必要があります。
+サンプル パイプラインでは、開発空間へのデプロイに Helm と kubectl を使用します。 Jenkins のインストール時に、*jenkins* という名前の管理者アカウントが作成されます。 jenkins ユーザーが Helm と kubectl の両方にアクセスできる必要があります。
 
 1. Jenkins マスターに SSH 接続を行います。 
 
@@ -199,7 +199,7 @@ Azure Dev Spaces の使用、および Azure Dev Spaces を使用したマルチ
 
 3. Helm CLI をインストールします。 詳細については、「[Installing Helm (Helm のインストール)](https://helm.sh/docs/using_helm/#installing-helm)」を参照してください。
 
-4. kubectl をインストールします。 詳細については、 [**az acs kubernetes install-cli**](https://helm.sh/docs/using_helm/#installing-helm) に関するページを参照してください。
+4. kubectl をインストールします。 詳細については、[**az acs kubernetes install-cli**](https://helm.sh/docs/using_helm/#installing-helm) に関するページを参照してください。
 
 ### <a name="add-credentials-to-jenkins"></a>資格情報を Jenkins に追加する
 
@@ -215,7 +215,7 @@ Azure Dev Spaces の使用、および Azure Dev Spaces を使用したマルチ
     }
     ```
 
-2. 前の手順のサービス プリンシパル情報を使用して、Jenkins で種類が " *Microsoft Azure サービス プリンシパル* " の資格情報を追加します。 下記のスクリーンショットにある名前は、`create-for-rbac` の出力に対応します。
+2. 前の手順のサービス プリンシパル情報を使用して、Jenkins で種類が "*Microsoft Azure サービス プリンシパル*" の資格情報を追加します。 下記のスクリーンショットにある名前は、`create-for-rbac` の出力に対応します。
 
     **[ID]** フィールドは、自分のサービス プリンシパル用の Jenkins 資格情報名です。 例では、`displayName` の値 (この場合 `xxxxxxxjenkinssp`) が使用されていますが、任意のテキストを使用できます。 この資格情報名は、次のセクションにある AZURE_CRED_ID 環境変数の値です。
 
@@ -249,9 +249,9 @@ Azure Dev Spaces の使用、および Azure Dev Spaces を使用したマルチ
     }
     ```
 
-4. Jenkins で種類が " *ユーザー名とパスワード* " の資格情報を追加します。 **username** は前の手順のユーザー名です (この例では `acr01`)。 **password** は 1 つ目のパスワードの値です (この例では `vGBP=zzzzzzzzzzzzzzzzzzzzzzzzzzz`)。 この資格情報の **ID** は、ACR_CRED_ID の値です。
+4. Jenkins で種類が "*ユーザー名とパスワード*" の資格情報を追加します。 **username** は前の手順のユーザー名です (この例では `acr01`)。 **password** は 1 つ目のパスワードの値です (この例では `vGBP=zzzzzzzzzzzzzzzzzzzzzzzzzzz`)。 この資格情報の **ID** は、ACR_CRED_ID の値です。
 
-5. AKS の資格情報を設定します。 Jenkins で種類が " *Kubernetes 構成 (kubeconfig)* " の資格情報を追加します ([Enter directly]\(直接入力する\) オプションを使用します)。 自分の AKS クラスターのアクセス資格情報を取得するには、次のコマンドを実行します。
+5. AKS の資格情報を設定します。 Jenkins で種類が "*Kubernetes 構成 (kubeconfig)* " の資格情報を追加します ([Enter directly]\(直接入力する\) オプションを使用します)。 自分の AKS クラスターのアクセス資格情報を取得するには、次のコマンドを実行します。
 
     ```azurecli
     az aks get-credentials -g MyResourceGroup -n <yourAKSName> -f -
@@ -267,7 +267,7 @@ Jenkins パイプラインの構成と Jenkinsfile では、CI パイプライ�
 
 ![Jenkins パイプラインのフロー](media/azure-dev-spaces-and-aks/jenkins-pipeline-flow.png)
 
-1. [https://github.com/azure-devops/mywebapi](https://github.com/azure-devops/mywebapi) から、変更されたバージョンの *mywebapi* プロジェクトをダウンロードします。 このプロジェクトには、 *Jenkinsfile* 、 *Dockerfile* 、Helm チャートなど、パイプラインの作成に必要ないくつかのファイルが含まれています。
+1. [https://github.com/azure-devops/mywebapi](https://github.com/azure-devops/mywebapi) から、変更されたバージョンの *mywebapi* プロジェクトをダウンロードします。 このプロジェクトには、*Jenkinsfile*、*Dockerfile*、Helm チャートなど、パイプラインの作成に必要ないくつかのファイルが含まれています。
 
 2. Jenkins にログインします。 左側のメニューで **[Add Item]\(項目の追加\)** を選択します。
 

@@ -5,22 +5,25 @@ author: N-Usha
 ms.author: ushan
 ms.topic: reference
 ms.service: azure
-ms.date: 08/31/2020
+ms.date: 11/17/2020
 ms.custom: github-actions-azure, devx-track-azurecli
-ms.openlocfilehash: d03f8631d985b97a46a711620c847475171f9438
-ms.sourcegitcommit: cbcde17e91e7262a596d813243fd713ce5e97d06
+ms.openlocfilehash: 5462d7ca3618869232296a9a6739ebe5adcefdb1
+ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93405751"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94983631"
 ---
 # <a name="use-github-actions-to-connect-to-azure"></a>GitHub Actions を使用して Azure に接続する
 
 [Azure ログイン](https://github.com/Azure/login)を [Azure PowerShell](https://github.com/Azure/PowerShell) または [Azure CLI](https://github.com/Azure/CLI) とともに使用して Azure リソースを操作する方法について説明します。
 
-GitHub Actions ワークフローで Azure PowerShell または Azure CLI を使用するには、まず、[Azure login](https://github.com/marketplace/actions/azure-login) アクションを使用してログインする必要があります。 Azure login アクションを使用すると、[Azure AD サービス プリンシパル](/azure/active-directory/develop/app-objects-and-service-principals#service-principal-object)のコンテキストでワークフロー内のコマンドを実行できます。
+GitHub Actions ワークフローで Azure PowerShell または Azure CLI を使用するには、まず、[Azure login](https://github.com/marketplace/actions/azure-login) アクションを使用してログインする必要があります。
+Azure login アクションを使用すると、[Azure AD サービス プリンシパル](/azure/active-directory/develop/app-objects-and-service-principals#service-principal-object)のコンテキストでワークフロー内のコマンドを実行できます。
 
-login アクションを設定したら、Azure CLI または Azure PowerShell を使用できます。 既定では、このアクションは Azure CLI を使用してログインし、Azure CLI に対して GitHub アクション ランナー環境を設定します。 Azure login アクションの enable-AzPSSession プロパティを使用すると、Azure PowerShell を使用できます。  これは、Azure PowerShell モジュールを使用して GitHub アクション ランナー環境を設定します。
+login アクションを設定したら、Azure CLI または Azure PowerShell を使用できます。
+
+既定では、このアクションは Azure CLI を使用してログインし、Azure CLI に対して GitHub アクション ランナー環境を設定します。 Azure login アクションの `enable-AzPSSession` プロパティを使用すると、Azure PowerShell を使用できます。 これは、Azure PowerShell モジュールを使用して GitHub アクション ランナー環境を設定します。
 
 ## <a name="create-a-service-principal-and-add-it-to-github-secret"></a>サービス プリンシパルを作成して GitHub シークレットに追加する
 
@@ -39,7 +42,7 @@ login アクションを設定したら、Azure CLI または Azure PowerShell �
         --identifier-uris http://localhost/$appName
     ```
 
-1. Azure portal でアプリ用の[新しいサービス プリンシパルを作成します](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest)。 
+1. Azure portal でアプリ用の[新しいサービス プリンシパルを作成します](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest&preserve-view=true)。 
 
     ```azurecli-interactive
         az ad sp create-for-rbac --name "myApp" --role contributor \

@@ -2,14 +2,14 @@
 title: チュートリアル:Visual Studio Code から Azure App Service on Linux に Python アプリをデプロイする
 description: チュートリアル ステップ 1、App Service の環境を構成する
 ms.topic: conceptual
-ms.date: 09/12/2019
+ms.date: 11/20/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: b35fc41707b31bec8e889d2b60becdad56f4e7d9
-ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
+ms.openlocfilehash: 31695cb929188723cc608547849eb88a76b2d003
+ms.sourcegitcommit: 29930f1593563c5e968b86117945c3452bdefac1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90773075"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "96035516"
 ---
 # <a name="tutorial-deploy-python-apps-to-azure-app-service-on-linux-from-visual-studio-code"></a>チュートリアル:Visual Studio Code から Azure App Service on Linux に Python アプリをデプロイする
 
@@ -23,25 +23,22 @@ ms.locfileid: "90773075"
 > CLI を使用してアプリをデプロイする場合は、「 **[クイックスタート: Azure App Service on Linux で Python アプリを作成する](/azure/app-service/quickstart-python)** 」を参照してください。
 
 > [!TIP]
-> [Azure App Service on Linux](/azure/app-service/overview#app-service-on-linux) は、定義済みの Docker コンテナーでソース コードを実行します。 そのコンテナーでは、Python 3.7 と [Gunicorn](https://gunicorn.org) Web サーバーを使用してアプリが実行されます。 このコンテナーの特性は、[App Service on Linux 向けの Python アプリの構成](/azure/app-service/configure-language-python)に関するページで説明されています。 コンテナーの定義自体は [github.com/Azure-App-Service/python](https://github.com/Azure-App-Service/python/tree/master/3.7) にあります。
+> [Azure App Service on Linux](/azure/app-service/overview#app-service-on-linux) は、定義済みの Docker コンテナーでソース コードを実行します。 そのコンテナーでは、Python 3.6+ で [Gunicorn](https://gunicorn.org) Web サーバーを使用してアプリが実行されます。 このコンテナーの特性は、[App Service on Linux 向けの Python アプリの構成](/azure/app-service/configure-language-python)に関するページで説明されています。 コンテナーの定義は [github.com/Azure-App-Service/python](https://github.com/Azure-App-Service/python/tree/master/) にあります。
 
 ## <a name="configure-your-environment"></a>環境を構成する
 
-- [Azure サブスクリプション](#azure-subscription)。
-- [Visual Studio Code と Azure App Service 拡張機能](#visual-studio-code-python-and-the-azure-app-service-extension)。
-- Python 環境
+- Azure アカウントとアクティブなサブスクリプションをお持ちでない場合は、[無料で作成できます](https://azure.microsoft.com/free/?utm_source=campaign&utm_campaign=vscode-tutorial-appservice-extension&mktingSource=vscode-tutorial-appservice-extension)。
 
-### <a name="azure-subscription"></a>Azure サブスクリプション
+- [Python 3.7 または 3.8 がローカルにインストールされている](https://python.org/downloads)ことを確認します。 バージョンを確認するには、次のコマンドを実行します。
 
-Azure サブスクリプションをお持ちでない場合は、無料アカウントに[今すぐご登録](https://azure.microsoft.com/free/?utm_source=campaign&utm_campaign=vscode-tutorial-appservice-extension&mktingSource=vscode-tutorial-appservice-extension)いただけます。Azure クレジットの 200 ドルを使用してさまざまな組み合わせのサービスをお試しください。
+    ```bash
+    python --version
+    ```
 
-### <a name="visual-studio-code-python-and-the-azure-app-service-extension"></a>Visual Studio Code、Python、Azure App Service 拡張機能
-
-次のソフトウェアをインストールします。
-
-- [Visual Studio Code](https://code.visualstudio.com/)。
-- Python および [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) 拡張機能。[VS Code Python チュートリアルの前提条件](https://code.visualstudio.com/docs/python/python-tutorial)に説明があります。
-- [Azure App Service](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azureappservice) 拡張機能。VS Code 内から Azure App Service と対話できるようにする機能です。 全般的な情報については、[App Service 拡張機能のチュートリアル](https://code.visualstudio.com/tutorials/app-service-extension/getting-started)をご覧のうえ、[vscode-azureappservice GitHub リポジトリ](https://github.com/Microsoft/vscode-azureappservice)にアクセスしてください。
+- 次のソフトウェアをインストールします。
+  - [Visual Studio Code](https://code.visualstudio.com/)。
+  - Python および [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) 拡張機能。[VS Code Python チュートリアルの前提条件](https://code.visualstudio.com/docs/python/python-tutorial)に説明があります。
+  - [Azure App Service](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azureappservice) 拡張機能。VS Code 内から Azure App Service と対話できるようにする機能です。 全般的な情報については、[App Service 拡張機能のチュートリアル](https://code.visualstudio.com/tutorials/app-service-extension/getting-started)をご覧のうえ、[vscode-azureappservice GitHub リポジトリ](https://github.com/Microsoft/vscode-azureappservice)にアクセスしてください。
 
 ## <a name="sign-in-to-azure"></a>Azure へのサインイン
 

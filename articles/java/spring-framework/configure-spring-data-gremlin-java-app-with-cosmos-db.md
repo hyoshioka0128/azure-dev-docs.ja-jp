@@ -9,12 +9,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: data-services
 ms.custom: devx-track-java
-ms.openlocfilehash: b00a3a3f0f5e6f4f391cd70d2e7d2a2904c089eb
-ms.sourcegitcommit: e1175aa94709b14b283645986a34a385999fb3f7
+ms.openlocfilehash: 9a04f3eac457d22c728a11850d4a85aba88a71df
+ms.sourcegitcommit: 709fa38a137b30184a7397e0bfa348822f3ea0a7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93192470"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96441991"
 ---
 # <a name="how-to-use-the-spring-data-gremlin-starter-with-the-azure-cosmos-db-sql-api"></a>Azure Cosmos DB SQL API で Spring Data Gremlin Starter を使用する方法
 
@@ -94,14 +94,13 @@ Spring Data Gremlin Starter は、Apache の Gremlin クエリ言語に Spring D
 
 1. <https://start.spring.io/> を参照します。
 
-1. **Java** で **Maven** プロジェクトを生成することを指定し、アプリケーションの **[Group]\(グループ\)** と **[Artifact]\(アーティファクト\)** の名前を入力します。 **Spring Boot** のバージョンにバージョン 2.3.4 を指定し、 **[GENERATE]\(生成\)** を選択します。
+1. **Java** で **Maven** プロジェクトを生成することを指定し、アプリケーションの **[Group]\(グループ\)** と **[Artifact]\(アーティファクト\)** の名前を入力します。**Spring Boot** のバージョンにバージョン 2.3.4 を指定し、 **[GENERATE]\(生成\)** を選択します。
 
    >[!div class="mx-imgBorder"]
    >![spring-initializr][spring-initializr-01]
    
    > [!NOTE]
-   > 1. Spring Initializr では、 **[グループ]** と **[アーティファクト]** の名前を使用してパッケージ名を作成します (例: `com.example.wintiptoysdata`)。
-   > 2. Spring Initializr では、既定のバージョンとして Java 11 が使用されます。 このトピックで説明されている Spring Boot Starter を使用するには、代わりに Java 8 を選択する必要があります。
+   > Spring Initializr では、 **[グループ]** と **[アーティファクト]** の名前を使用してパッケージ名を作成します (例: `com.example.wintiptoysdata`)。
 
 1. メッセージが表示されたら、ローカル コンピューター上のパスにプロジェクトをダウンロードします。
 
@@ -145,7 +144,7 @@ Spring Data Gremlin Starter は、Apache の Gremlin クエリ言語に Spring D
    | `username`         | このクイックスタートで先ほどグラフを追加したときに使用した一意の **データベース ID** と **グラフ ID** を指定します。"/dbs/ **{Database ID}** /colls/ **{Graph ID}** " という構文を使用して入力する必要があります。 |
    | `password`         | このクイックスタートで先ほどコピーしたプライマリまたはセカンダリの **アクセス キー** を指定します。                                                                                                                      |
    | `sslEnabled`       | SSL を有効にするかどうかを指定します。                                                                                                                                                                                           |
-   | `telemetryAllowed` | 利用統計情報を有効にする場合は **true** 、それ以外の場合は **false** を指定します。
+   | `telemetryAllowed` | 利用統計情報を有効にする場合は **true**、それ以外の場合は **false** を指定します。
    | `maxContentLength` | 内容の最大長を指定します。                                                                                                                                                                                           |
 
 ## <a name="build-and-run-the-project"></a>プロジェクトをビルドして実行する

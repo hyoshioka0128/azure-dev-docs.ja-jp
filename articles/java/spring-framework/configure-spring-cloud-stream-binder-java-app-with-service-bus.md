@@ -7,12 +7,12 @@ ms.author: seal
 ms.date: 10/10/2020
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: e4958d65e06a77181a00a7dc4d221e02f4f6b188
-ms.sourcegitcommit: 6514a061ba5b8003ce29d67c81a9f0795c3e3e09
+ms.openlocfilehash: 170d3727b661f18252edb39396739e2791101534
+ms.sourcegitcommit: 709fa38a137b30184a7397e0bfa348822f3ea0a7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94601254"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96441804"
 ---
 # <a name="how-to-use-spring-cloud-azure-stream-binder-for-azure-service-bus"></a>Azure Service Bus 用の Spring Cloud Azure Stream Binder を使用する方法
 
@@ -42,8 +42,6 @@ Azure には、[Azure Service Bus](/azure/service-bus-messaging/service-bus-mess
 
 1. Spring Boot アプリケーションがない場合は、[Spring Initializr](https://start.spring.io/) で **Maven** プロジェクトを作成します。 必ず、 **[Maven プロジェクト]** を選択し、 **[依存関係]** に **[Web]** 依存関係を追加し、Java のバージョン **8** を選択してください。
 
-    > [!NOTE]
-    > Spring Initializr では、既定のバージョンとして Java 11 が使用されます。 このトピックで説明されている Spring Boot Starter を使用するには、代わりに Java 8 を選択する必要があります。
 
 ## <a name="use-the-spring-cloud-stream-binder-starter"></a>Spring Cloud Stream Binder スターターを使用する
 
@@ -51,7 +49,7 @@ Azure には、[Azure Service Bus](/azure/service-bus-messaging/service-bus-mess
 
     `C:\SpringBoot\servicebus\pom.xml`
 
-    - または -
+    または
 
     `/users/example/home/servicebus/pom.xml`
 

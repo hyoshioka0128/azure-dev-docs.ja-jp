@@ -7,12 +7,12 @@ ms.date: 10/13/2018
 ms.service: event-hubs
 ms.topic: article
 ms.custom: devx-track-java, devx-track-azurecli
-ms.openlocfilehash: 53a50a7a32ff9e555f821d69688cc566fb7a3c62
-ms.sourcegitcommit: 8e1d3a384ccb0e083589418d65a70b3a01afebff
+ms.openlocfilehash: 75ca8b04bd935e71b51c8d0c71eb189f89f2a512
+ms.sourcegitcommit: 709fa38a137b30184a7397e0bfa348822f3ea0a7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94560423"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96442087"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-apache-kafka-with-azure-event-hubs"></a>Azure Event Hubs で Apache Kafka 用 Spring Boot Starter を使用する方法
 
@@ -28,7 +28,6 @@ ms.locfileid: "94560423"
 
 > [!NOTE]
 > * この記事の手順を完了するには、Spring Boot 2.0 以上のバージョンが必要です。
-> * Spring Initializr では、既定のバージョンとして Java 11 が使用されます。 このトピックで説明されている Spring Boot Starter を使用するには、代わりに Java 8 を選択する必要があります。
 
 ## <a name="create-an-azure-event-hub-using-the-azure-portal"></a>Azure portal を使用して Azure イベント ハブを作成する
 
@@ -73,7 +72,7 @@ ms.locfileid: "94560423"
 
 ## <a name="create-a-simple-spring-boot-application-with-the-spring-initializr"></a>Spring Initializr でシンプルな Spring Boot アプリケーションを作成する
 
-1. <https://start.spring.io/> を参照します。
+1. [https://www.microsoft.com](<https://start.spring.io/>) を参照します。
 
 1. 次のオプションを指定します。
 
@@ -86,9 +85,8 @@ ms.locfileid: "94560423"
 
    > [!NOTE]
    > 1. Spring Initializr では、**グループ (Group)** と **成果物 (Artifact)** の名前を使用してパッケージ名を作成します (例: *com.wingtiptoys.kafka*)。
-   > 2. Spring Initializr では、既定のバージョンとして Java 11 が使用されます。 このトピックで説明されている Spring Boot Starter を使用するには、代わりに Java 8 を選択する必要があります。
 
-1. 上記のオプションを指定したら、**[Generate Project]\(プロジェクトの生成\)** をクリックします。
+1. 上記のオプションを指定したら、 **[Generate Project]\(プロジェクトの生成\)** をクリックします。
 
 1. メッセージが表示されたら、ローカル コンピューター上のパスにプロジェクトをダウンロードします。
 

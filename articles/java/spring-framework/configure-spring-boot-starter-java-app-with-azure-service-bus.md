@@ -7,12 +7,12 @@ ms.author: seal
 ms.date: 10/13/2019
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 4d035ae35c8e1e8a4db886f7b5743b143de1992c
-ms.sourcegitcommit: 8e1d3a384ccb0e083589418d65a70b3a01afebff
+ms.openlocfilehash: c1b8baa716fbe24efbf635bc5f8a17833590137a
+ms.sourcegitcommit: 709fa38a137b30184a7397e0bfa348822f3ea0a7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94560290"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96442143"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-service-bus-jms"></a>Azure Service Bus JMS 用の Spring Boot スターターの使用方法
 
@@ -44,8 +44,6 @@ Azure Service Bus JMS 用の Spring Boot スターターを使用すると、Spr
 
 1. Spring Boot アプリケーションがない場合は、[Spring Initializr](https://start.spring.io/) で **Maven** プロジェクトを作成します。 必ず、 **[Maven プロジェクト]** を選択し、 **[依存関係]** に **[Web]** 依存関係を追加してください。
 
-   > [!NOTE]
-   > Spring Initializr では、既定のバージョンとして Java 11 が使用されます。 このトピックで説明されている Spring Boot Starter を使用するには、代わりに Java 8 を選択する必要があります。
 
 ## <a name="use-the-azure-service-bus-jms-starter"></a>Azure Service Bus JMS スターターを使用する
 

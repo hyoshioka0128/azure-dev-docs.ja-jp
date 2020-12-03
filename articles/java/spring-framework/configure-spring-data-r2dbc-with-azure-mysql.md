@@ -8,12 +8,12 @@ ms.tgt_pltfrm: multiple
 ms.author: judubois
 ms.topic: article
 ms.custom: devx-track-java
-ms.openlocfilehash: 4b76368f46c7172375b6e6dbf88d99b9cc3ad7a1
-ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
+ms.openlocfilehash: 7cdcae8f20101702e19757c270e81cafb712f8bf
+ms.sourcegitcommit: 709fa38a137b30184a7397e0bfa348822f3ea0a7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "92010065"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96441975"
 ---
 # <a name="use-spring-data-r2dbc-with-azure-database-for-mysql"></a>Azure Database for MySQL で Spring Data R2DBC を使用する
 
@@ -39,8 +39,6 @@ ms.locfileid: "92010065"
 curl https://start.spring.io/starter.tgz -d dependencies=webflux,data-r2dbc -d baseDir=azure-database-workshop -d bootVersion=2.3.4.RELEASE -d javaVersion=8 | tar -xzvf -
 ```
 
-> [!NOTE]
-> Spring Initializr では、既定のバージョンとして Java 11 が使用されます。 このトピックで説明されている Spring Boot Starter を使用するには、代わりに Java 8 を選択する必要があります。
 
 ### <a name="add-the-reactive-mysql-driver-implementation"></a>リアクティブ MySQL ドライバー実装を追加する
 

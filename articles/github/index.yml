@@ -8,45 +8,49 @@ metadata:
   ms.topic: landing-page
   author: N-Usha
   ms.author: ushan
-  ms.date: 05/05/2020
+  ms.date: 11/24/2020
   ms.custom: github-actions-azure
-  ms.openlocfilehash: f2dddbae2eac63fdab7e5956ebcda6003e3c2028
-  ms.sourcegitcommit: 2540e91f7b6aa077158e25a0b718737abff904d4
+  ms.openlocfilehash: 5dd30cbc8737ecd644f235d0494052cbf6f2b4e1
+  ms.sourcegitcommit: 709fa38a137b30184a7397e0bfa348822f3ea0a7
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 11/10/2020
-  ms.locfileid: "94432783"
+  ms.lasthandoff: 12/01/2020
+  ms.locfileid: "96442126"
 landingContent:
 - title: Azure 向けの GitHub Actions
   linkLists:
   - linkListType: get-started
     links:
-    - text: GitHub Actions を使用して Azure にデプロイする
+    - text: Azure 向けの GitHub Actions とは
       url: github-actions.md
 - title: Deploy to Azure (Azure へのデプロイ)
   linkLists:
-  - linkListType: how-to-guide
+  - linkListType: deploy
     links:
     - text: GitHub から Azure にアプリをデプロイする
       url: deploy-to-azure.md
+    - text: GitHub から Azure にデータベースをデプロイする
+      url: database-actions-deploy.md
+- title: GitHub Actions と対話するためのツール
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: Azure から GitHub への認証
+      url: connect-from-azure.md
+    - text: 変数の代入を使用する
+      url: github-variable-substitution.md
 - title: Visual Studio と Visual Studio Code
   linkLists:
   - linkListType: deploy
     links:
     - text: Visual Studio または Visual Studio Code を使用して GitHub からアプリをデプロイする
       url: deploy-with-visual-studio.md
-- title: Azure DevOps と GitHub の統合
+- title: Azure Pipelines と GitHub の統合
   linkLists:
   - linkListType: how-to-guide
     links:
     - text: Azure DevOps と GitHub の操作
       url: integrate-azure-devops.md
-- title: Azure から GitHub への接続
-  linkLists:
-  - linkListType: get-started
-    links:
-    - text: Azure およびその他のサービスから GitHub に接続する
-      url: connect-from-azure.md
 - title: GitHub を使用して Azure ポリシーを管理する
   linkLists:
   - linkListType: get-started

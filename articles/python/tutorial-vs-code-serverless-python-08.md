@@ -1,21 +1,21 @@
 ---
-title: 手順 8:Azure Functions の Python コードで使用されるリソースをクリーンアップする
+title: 手順 8:Azure Functions のサーバーレス Python コードで使用されるリソースをクリーンアップする
 description: チュートリアルの手順 8、引き続き料金を請求されないように Azure リソースをクリーンアップする。
 ms.topic: conceptual
-ms.date: 09/17/2020
+ms.date: 11/30/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: ec97faa440dcfb79240b0805e44de7d3d3447bad
-ms.sourcegitcommit: 050c898df76a1af5feffe99e392a073b8ac9c19c
+ms.openlocfilehash: af1ce614671d3da67725ca358a018026c76ccb5c
+ms.sourcegitcommit: 709fa38a137b30184a7397e0bfa348822f3ea0a7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92137211"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96441725"
 ---
 # <a name="8-clean-up-azure-resources-for-azure-functions"></a>8:Azure Functions の Azure リソースをクリーンアップする
 
 [前の手順: ストレージ バインドを追加する](tutorial-vs-code-serverless-python-07.md)
 
-この記事では、このチュートリアルで作成した Azure リソースを削除する方法について説明します。 Visual Studio Code で作成した Azure 関数アプリには、最小限のコストが発生する可能性があるリソースが含まれます。 (詳細については、[Functions の価格](https://azure.microsoft.com/pricing/details/functions/)に関するページを参照してください。)
+このチュートリアルの中で Visual Studio Code で作成した Azure 関数アプリには、最小限のコストが発生する可能性があるリソースが含まれます。 (詳細については、[Functions の価格](https://azure.microsoft.com/pricing/details/functions/)に関するページを参照してください。)
 
 リソースをクリーンアップする最善の方法は、このチュートリアルで使用されている個々のリソースをすべて含むリソース グループを削除することです。 リソースには、関数アプリ、ストレージ アカウント、および バッキング App Service プランが含まれています。
 

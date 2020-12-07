@@ -1,31 +1,31 @@
 ---
-title: 手順 7:VS Code を使用して Python で Azure Functions のストレージ バインドを追加する
-description: チュートリアルの手順 7、メッセージを Azure Storage に書き込むバインドを Python で追加する。
+title: 手順 7:VS Code を使用して Python でサーバーレス Azure Functions のストレージ バインドを追加する
+description: チュートリアルの手順 7、メッセージを Azure Storage に書き込むバインドをサーバーレス Python コードに追加する。
 ms.topic: conceptual
-ms.date: 09/17/2020
+ms.date: 11/30/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: c260d2b8708d770b62c9f94d651a1ba630660cab
-ms.sourcegitcommit: 050c898df76a1af5feffe99e392a073b8ac9c19c
+ms.openlocfilehash: aa0913f35915a4d4a97b1d0183976614509b704d
+ms.sourcegitcommit: 709fa38a137b30184a7397e0bfa348822f3ea0a7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92137191"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96442176"
 ---
 # <a name="7-add-a-storage-binding-for-azure-functions-in-python"></a>7:Python で Azure Functions のストレージ バインドを追加する
 
 [前の手順: 2 つ目の関数をデプロイする](tutorial-vs-code-serverless-python-06.md)
 
-Azure Functions のストレージ バインドを追加できます。 "_バインド_" を追加すると、データ アクセス コードを記述しなくても、Azure Storage などのリソースに関数コードを接続できます。
+"_バインド_" を追加すると、データ アクセス コードを記述しなくても、Azure Storage などのリソースに関数コードを接続できます。
 
 バインドは "*function.json*" ファイルに定義され、入力と出力の両方を表すことができます。 関数では複数の入力と出力のバインドを使用できますが、トリガーは 1 つだけです。 詳細については、「[Azure Functions でのトリガーとバインドの概念](/azure/azure-functions/functions-triggers-bindings)」を参照してください。
 
-このセクションでは、このチュートリアルで前に作成した HttpExample 関数にストレージ バインドを追加します。 関数でこのバインドを使用し、要求ごとにストレージにメッセージを書き込みます。 ストレージでは、関数アプリで使用されているものと同じ既定のストレージ アカウントが使用されます。 ただし、ストレージを頻繁に利用する予定がある場合は、別アカウントの作成を検討してください。
+このセクションでは、このチュートリアルで前に作成した HttpExample 関数にストレージ バインドを追加します。 関数でこのバインドを使用し、要求ごとにストレージにメッセージを書き込みます。 (対象のストレージでは、関数アプリで使用されているものと同じ既定のストレージ アカウントが使用されます。 ただし、ストレージを頻繁に利用する予定がある場合は、別アカウントの作成を検討してください。)
 
 1. Azure Functions プロジェクトのリモート設定を "*local.settings.json*" ファイルに同期します。その際、コマンド パレットを開き、 **[Azure Functions:リモート設定のダウンロード]** を選択します。
- 
+
     "*local.settings.json*" を開き、`AzureWebJobsStorage` の値が含まれていることを確認します。 その値はストレージ アカウントの接続文字列です。
 
-1. `HttpExample` フォルダーで、"*function.json*" を右クリックし、 **[バインドの追加]** を選択します。
+1. Azure Functions エクスプローラーの **[Local Project]** で、`HttpExample` 関数を右クリックし、 **[バインドの追加]** を選択します。
 
     ![Visual Studio Code エクスプローラーの [バインドの追加] コマンド](media/tutorial-vs-code-serverless-python/add-binding-command-to-azure-functions-in-visual-studio-code.png)
 
@@ -33,8 +33,8 @@ Azure Functions のストレージ バインドを追加できます。 "_バイ
 
     | Prompt | 指定する値 |
     | --- | --- |
-    | Set binding direction (バインド方向を設定してください) | out |
-    | Select binding with direction out (外方向のバインドを選択してください) | Azure Queue Storage |
+    | Select binding direction (バインド方向を選択する) | out |
+    | Select binding with direction "out" ("外" 方向のバインドを選択する) | Azure Queue Storage |
     | The name used to identify this binding in your code (コードでこのバインドの識別に使用する名前) | msg |
     | The queue to which the message will be sent (メッセージの送信先のキュー) | outqueue |
     | Select setting from "*local.settings.json*" (asking for the storage connection) ("local.settings.json" から設定を選択してください (ストレージ接続を要求)) | AzureWebJobsStorage |
@@ -78,7 +78,7 @@ Azure Functions のストレージ バインドを追加できます。 "_バイ
             # MODIFICATION: write the a message to the message queue, using msg.set
             msg.set(f"Request made for {name} at {datetime.datetime.now()}")
 
-            return func.HttpResponse(f"Hello {name}!")
+            return func.HttpResponse(f"Hello, {name}. This HTTP triggered function executed successfully.")
         else:
             return func.HttpResponse(
                  "Please pass a name on the query string or in the request body",
@@ -86,7 +86,7 @@ Azure Functions のストレージ バインドを追加できます。 "_バイ
             )
     ```
 
-1. このような変更をローカルでテストするには、F5 を押すか、 **[デバッグ]**  >  **[デバッグの開始]** メニュー コマンドを選択し、Visual Studio Code で再度、デバッガーを起動します。
+1. このような変更をローカルでテストするには、F5 を押すか、 **[実行]**  >  **[デバッグの開始]** メニュー コマンドを選択し、Visual Studio Code で再度、デバッガーを起動します。
 
     前と同じように、 **[出力]** ウィンドウには、プロンプトのエンドポイントが表示されるはずです。
 

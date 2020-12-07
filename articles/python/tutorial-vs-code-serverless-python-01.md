@@ -1,39 +1,43 @@
 ---
 title: チュートリアル:VS Code を使用して Python でサーバーレスの Azure Functions を作成してデプロイする
-description: チュートリアル ステップ 1、Azure Functions のローカル環境を構成する
+description: チュートリアルの手順 1、サーバーレス Azure Functions のローカル環境を構成する
 ms.topic: conceptual
-ms.date: 05/19/2020
+ms.date: 11/30/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 69f66c51a6e55eff91a7de780ebd0bd6f5500f68
-ms.sourcegitcommit: 050c898df76a1af5feffe99e392a073b8ac9c19c
+ms.openlocfilehash: a7eea7fd73f13f9ca2f93cf3184c5ab7a1889614
+ms.sourcegitcommit: 709fa38a137b30184a7397e0bfa348822f3ea0a7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92137221"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96442250"
 ---
 # <a name="tutorial-create-and-deploy-serverless-azure-functions-in-python-with-visual-studio-code"></a>チュートリアル:Visual Studio Code を使用して Python でサーバーレスの Azure Functions を作成してデプロイする
 
-この記事では、Visual Studio Code と Azure Functions 拡張機能を使用して Python でサーバーレス HTTP エンドポイントを作成し、さらに接続 ("バインド") をストレージに追加します。
+この記事では、Visual Studio Code と Azure Functions 拡張機能を使用して Python で "サーバーレス" HTTP エンドポイントを作成し、さらに接続 ("バインド") をストレージに追加します。 Visual Studio Code 用の Azure Functions 拡張により、さまざまな構成問題が自動的に処理され、Functions の使用プロセスが大幅に簡素化されます。
 
-Azure Functions では、サーバーレス環境でコードが実行されますが、仮想マシンをプロビジョニングしたり、Web アプリを公開したりする必要がありません。 Visual Studio Code 用の Azure Functions 拡張により、さまざまな構成問題が自動的に処理され、Functions の使用プロセスが大幅に簡素化されます。
+Azure Functions のサーバーレス環境は、仮想マシンのプロビジョニング、Web アプリの公開、その他サーバーやリソースの管理を必要とせずに、Azure がアプリのエンドポイントと公開 URL を提示することを意味します。 Azure はこれらすべてのリソースを効率的に管理するため、アプリケーションのホストにかかるオーバーヘッドとコストを大幅に削減できます。 (詳細については、[Azure Functions の概要](/azure/azure-functions/functions-overview)に関する記事をご覧ください。)
 
 このチュートリアルのいずれかの手順で問題が発生した場合は、詳細をお知らせください。 各記事の最後にある **[このページ]** フィードバック ボタンを使用してください。
 
-デモ ビデオについては、仮想 PyCon 2020 の <a href="https://www.youtube.com/watch?v=9bMsdBYy-D0&feature=youtu.be&ocid=AID3006292" target="_blank">VS Code での Azure Functions のビルド</a>に関する動画 (youtube.com) をご覧ください。 より長いセッションに関心があれば、<a href="https://www.youtube.com/watch?v=PV7iy6FPjAY&feature=youtu.be&t=13&ocid=AID3006292" target="_blank">Azure Functions での簡単なデータ処理</a>に関する動画 (youtube.com) もご覧ください。 
+デモ ビデオについては、仮想 PyCon 2020 の <a href="https://www.youtube.com/watch?v=9bMsdBYy-D0&feature=youtu.be&ocid=AID3006292" target="_blank">VS Code での Azure Functions のビルド</a>に関する動画 (youtube.com) をご覧ください。 より長いセッションに関心があれば、<a href="https://www.youtube.com/watch?v=PV7iy6FPjAY&feature=youtu.be&t=13&ocid=AID3006292" target="_blank">Azure Functions での簡単なデータ処理</a>に関する動画 (youtube.com) もご覧ください。
 
 ## <a name="configure-your-environment"></a>環境を構成する
 
-- [Azure サブスクリプション](#azure-subscription)。
-- [Azure Functions Core Tools](#azure-functions-core-tools)。
-- [Azure Functions 拡張機能を搭載した Visual Studio Code](#visual-studio-code-python-and-the-azure-functions-extension)。
+- Azure アカウントとアクティブなサブスクリプションをお持ちでない場合は、[無料で作成できます](https://azure.microsoft.com/free/?utm_source=campaign&utm_campaign=vscode-tutorial-functions-extension&mktingSource=vscode-tutorial-functions-extension)。
 
-### <a name="azure-subscription"></a>Azure サブスクリプション
+- 次のセクションの指示に従います。
 
-Azure サブスクリプションをお持ちでない場合は、30 日間の無料アカウントに[今すぐご登録](https://azure.microsoft.com/free/?utm_source=campaign&utm_campaign=vscode-tutorial-functions-extension&mktingSource=vscode-tutorial-functions-extension)いただけます。Azure クレジットの 200 ドルを使用してさまざまな組み合わせのサービスをお試しください。
+  - [Azure Functions Core Tools をインストールします](#azure-functions-core-tools)。
 
+  - [Azure Functions 拡張機能とともに Python と Visual Studio Code をインストールします](#visual-studio-code-python-and-the-azure-functions-extension)。
+
+  - [Azure へのサインイン](#sign-in-to-azure)
+
+  - [環境の確認](#verify-your-environment)
+ 
 ### <a name="azure-functions-core-tools"></a>Azure Functions Core Tools
 
-Azure Functions Core Tools をインストールするには、「[Azure Functions Core Tools の操作](/azure/azure-functions/functions-run-local#v2)」で、ご使用のオペレーティング システム向けの指示に従います。 Chocolatey パッケージ マネージャーに関する記事のコメントは無視してください。このチュートリアルを完了するためには必要ありません。
+ご利用のオペレーティング システムに対する指示は、「[Azure Functions Core Tools のインストール](/azure/azure-functions/functions-run-local#v2)」に従います。 Chocolatey パッケージ マネージャーに関する記事のコメントは無視してください。このチュートリアルを完了するためには必要ありません。
 
 Node.js をインストールする場合は、既定のオプションを使用し、必要なツールを自動的にインストールするオプションは選択 "*しない*" でください。  また、`npm install` コマンドで `-g` オプションを必ず使用して、Core Tools を以降のコマンドで使用できるようにしてください。
 

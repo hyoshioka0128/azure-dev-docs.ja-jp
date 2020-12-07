@@ -8,16 +8,16 @@ ms.service: storage
 ms.topic: article
 ms.workload: storage
 ms.custom: devx-track-java, devx-track-azurecli
-ms.openlocfilehash: a459f9eba2661cefddf5c90ae4764fade415ac4d
-ms.sourcegitcommit: e1175aa94709b14b283645986a34a385999fb3f7
+ms.openlocfilehash: 7e6437859b7b5e67edd9386d0391535dd6537ff7
+ms.sourcegitcommit: 709fa38a137b30184a7397e0bfa348822f3ea0a7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93192434"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96442110"
 ---
 # <a name="how-to-use-the-spring-boot-starter-for-azure-storage"></a>Azure Storage 用の Spring Boot Starter の使用方法
 
-この記事では、 **Spring Initializr** を使用してカスタム アプリケーションを作成し、そのアプリケーションに Azure Storage スターターを追加した後、アプリケーションを使用して Azure ストレージ アカウントに BLOB をアップロードする手順について説明します。
+この記事では、**Spring Initializr** を使用してカスタム アプリケーションを作成し、そのアプリケーションに Azure Storage スターターを追加した後、アプリケーションを使用して Azure ストレージ アカウントに BLOB をアップロードする手順について説明します。
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -47,7 +47,7 @@ ms.locfileid: "93192434"
 
    * **[サブスクリプション]** を選択します。
    * **リソース グループ** を選択するか、新しいリソース グループを作成します。
-   * 一意の **ストレージ アカウント名** を入力します。この名前は、ストレージ アカウントの URI の一部になります。 たとえば、 **[名前]** に「 **wingtiptoysstorage** 」と入力した場合、URI は *wingtiptoysstorage.core.windows.net* になります。
+   * 一意の **ストレージ アカウント名** を入力します。この名前は、ストレージ アカウントの URI の一部になります。 たとえば、 **[名前]** に「**wingtiptoysstorage**」と入力した場合、URI は *wingtiptoysstorage.core.windows.net* になります。
    * ストレージ アカウントの **場所** を指定します。
 1. 上記のオプションを指定したら、 **[確認と作成]** を選択します。 
 1. 指定した内容を確認し、 **[作成]** を選択してストレージ アカウントを作成します。
@@ -104,7 +104,7 @@ ms.locfileid: "93192434"
 1. 次のオプションを指定します。
 
    * **Maven** プロジェクトを作成します。
-   * **Java 8** を指定します。
+   * **Java 11** を指定します。
    * **Spring Boot** のバージョンとして、2.3 以上を指定します。
    * アプリケーションの **グループ (Group)** と **成果物 (Artifact)** の名前を指定します。
    * **Spring Web** の依存関係を追加します。
@@ -112,8 +112,7 @@ ms.locfileid: "93192434"
       ![基本的な Spring Initializr オプション][SI01]
 
    > [!NOTE]
-   > 1. Spring Initializr では、 **グループ (Group)** と **成果物 (Artifact)** の名前を使用してパッケージ名を作成します (例: *com.wingtiptoys.storage* )。
-   > 2. Spring Initializr では、既定のバージョンとして Java 11 が使用されます。 このトピックで説明されている Spring Boot Starter を使用するには、代わりに Java 8 を選択する必要があります。
+   > Spring Initializr では、**グループ (Group)** と **成果物 (Artifact)** の名前を使用してパッケージ名を作成します (例: *com.wingtiptoys.storage*)。
 
 1. 上記のオプションを指定したら、 **[生成]** を選択します。
 
@@ -221,7 +220,7 @@ ms.locfileid: "93192434"
    az ad sp create-for-rbac --sdk-auth > my.azureauth
    ```
 
-   このコマンドにより、 *resources* ディレクトリに、次の例のような内容の *my.azureauth* ファイルが作成されます。
+   このコマンドにより、*resources* ディレクトリに、次の例のような内容の *my.azureauth* ファイルが作成されます。
 
    ```json
    {
@@ -305,7 +304,7 @@ ms.locfileid: "93192434"
 
 ### <a name="add-a-blob-controller-class"></a>BLOB コントローラー クラスを追加する
 
-1. アプリのパッケージ ディレクトリに、 *BlobController.java* という名前の新しい Java ファイルを作成します。次に例を示します。
+1. アプリのパッケージ ディレクトリに、*BlobController.java* という名前の新しい Java ファイルを作成します。次に例を示します。
 
    `C:\SpringBoot\storage\src\main\java\com\wingtiptoys\storage\BlobController.java`
 
@@ -313,7 +312,7 @@ ms.locfileid: "93192434"
 
    `/users/example/home/storage/src/main/java/com/wingtiptoys/storage/BlobController.java`
 
-1. テキスト エディターで BLOB コントローラー Java ファイルを開き、ファイルに次の行を追加します。  *wingtiptoys* を実際のリソース グループに変更し、 *storage* を実際の成果物名に変更します。
+1. テキスト エディターで BLOB コントローラー Java ファイルを開き、ファイルに次の行を追加します。  *wingtiptoys* を実際のリソース グループに変更し、*storage* を実際の成果物名に変更します。
 
    ```java
    package com.wingtiptoys.storage;
@@ -373,7 +372,7 @@ ms.locfileid: "93192434"
    mvn spring-boot:run
    ```
 
-1. アプリケーションが実行されたら、 *curl* を使用してアプリケーションをテストできます。次に例を示します。
+1. アプリケーションが実行されたら、*curl* を使用してアプリケーションをテストできます。次に例を示します。
 
    a. POST 要求を送信して、ファイルの内容を更新します。
 

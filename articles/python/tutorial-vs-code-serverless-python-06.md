@@ -1,21 +1,21 @@
 ---
-title: 手順 6:VS Code を使用して 2 つ目の Python 関数を Azure Functions に追加する
-description: チュートリアルの手順 6、2 つ目の関数を追加して Azure Functions プロジェクトを展開する。
+title: 手順 6:VS Code を使用して 2 つ目の Python サーバーレス関数を Azure Functions に追加する
+description: チュートリアルの手順 6、2 つ目のサーバーレス関数を追加して Azure Functions プロジェクトを展開する。
 ms.topic: conceptual
-ms.date: 09/17/2020
+ms.date: 11/30/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: bbf89352bbbb93a90ac6f41bea97ba0def9bf815
-ms.sourcegitcommit: 050c898df76a1af5feffe99e392a073b8ac9c19c
+ms.openlocfilehash: 18cc5b138a46e4194c82bd0339c1566e20107347
+ms.sourcegitcommit: 709fa38a137b30184a7397e0bfa348822f3ea0a7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92137101"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96441715"
 ---
 # <a name="6-add-a-second-python-function-to-azure-functions"></a>6: 2 つ目の Python 関数を Azure Functions に追加する
 
 [前の手順: Azure にデプロイする](tutorial-vs-code-serverless-python-05.md)
 
-最初のデプロイ後、Python 関数を追加するなど、コードを変更し、同じ Azure Functions アプリに再デプロイできます。
+最初のデプロイ後、Python 関数を追加するなど、コードを変更してから、同じ Azure Functions アプリに再デプロイできます。
 
 1. **[Azure: Functions]** エクスプローラーで **[関数の作成]** コマンドを選択するか、コマンド パレットの **[Azure Functions:関数の作成]** を使用します。 関数には次の詳細を指定します。
 
@@ -23,7 +23,7 @@ ms.locfileid: "92137101"
     - 名前:"DigitsOfPi"
     - 承認レベル:Anonymous
 
-1. Visual Studio Code では、ファイル エクスプローラーは関数名を持つサブフォルダーになりますが、ここにも " *\_\_init\_\_.py*"、"*function.json*"、"*sample.dat*" という名前のファイルが含まれています。
+    Azure Functions エクスプローラーの **[Local Project]** セクションに "*DigitsOfPi*" 関数が表示されるようになりました。 エディターで、関数の *\_\_init\_\_.py*、*function.json*、*sample.dat* の各ファイルを切り替えることができます。
 
 1. " *\_\_init\_\_.py*" の内容を次のコードに一致するように置換します。次のコードでは、URL に指定されている桁数まで PI の値を含む文字列が生成されます (このコードでは、URL パラメーターのみが使用されます)。
 
@@ -102,7 +102,7 @@ ms.locfileid: "92137101"
     }
     ```
 
-1. F5 を押すか、 **[デバッグ]**  >  **[デバッグの開始]** メニュー コマンドを選択し、デバッガーを開始します。 **[出力]** ウィンドウには、プロジェクトの両方のエンドポイントが表示されるはずです。
+1. F5 を押すか、 **[実行]**  >  **[デバッグの開始]** メニュー コマンドを選択し、ローカル デバッガーを開始します。 **[出力]** ウィンドウには、プロジェクトの両方のエンドポイントが表示されるはずです。
 
     <pre>
     Http Functions:
@@ -110,11 +110,11 @@ ms.locfileid: "92137101"
             HttpExample: [GET,POST] http://localhost:7071/api/HttpExample
     </pre>
 
-1. ブラウザーで、あるいは curl から、`http://localhost:7071/api/DigitsOfPi?digits=125` に要求を行い、出力を確認します  (コード アルゴリズムは完全には正しくないことに気付かれるかもしれませんが、改善は皆様におまかせします!)完了したらデバッガーを停止します。
+1. ブラウザーで、あるいは curl から、`http://localhost:7071/api/DigitsOfPi?digits=125` に要求を行い、出力を確認します  (コード アルゴリズムは完全には正しくないことに気付かれるかもしれませんが、改善は皆様におまかせします)完了したらデバッガーを停止します。
 
 1. **[Deploy to Function App]\(Function App にデプロイする\)** を **[Azure:Functions]** エクスプローラーで使用し、コードを再デプロイします。 プロンプトが表示されたら、前に作成した Function App を選択します。
 
-1. デプロイが完了したら (数分かかります!)、 **[出力]** ウィンドウに、テストを繰り返すことができる公開エンドポイントが表示されます。
+1. 数分後、デプロイが完了し、 **[出力]** ウィンドウに、テストを繰り返すことができる公開エンドポイントが表示されます。
 
 > [!div class="nextstepaction"]
 > [2 つ目の関数を追加しました - ステップ 7 に進む >>>](tutorial-vs-code-serverless-python-07.md)

@@ -28,7 +28,7 @@
             - name: 6. リソースをクリーンアップする
               href: tutorial/static-web-app/clean-up-resources.md
         - name: Storage BLOB にイメージをアップロードする
-          href: tutorial/browser-file-upload.yml?preview=tutorialFeedback
+          href: tutorial/browser-file-upload-azure-storage-blob.md
         - name: ログイン ボタンを追加する
           href: tutorial/single-page-application-azure-login-button-sdk-msal.md
         - name: Express.js と MongoDB
@@ -74,7 +74,7 @@
             - name: リソースをクリーンアップする
               href: tutorial-vscode-azure-app-service-node-05.md
         - name: Deno を App Service にデプロイする
-          href: tutorial/deno-visual-studio-code-azure-app-service.yml?&preview=tutorialFeedback
+          href: tutorial/deploy-deno-app-azure-app-service-azure-cli.md
         - name: VS Code を使用したコンテナーのデプロイ
           items:
             - name: 概要と前提条件

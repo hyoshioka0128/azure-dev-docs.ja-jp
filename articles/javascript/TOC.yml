@@ -5,6 +5,8 @@
       href: whats-new-docs.md
     - name: JavaScript を使用した Azure の概要
       items:
+        - name: JavaScript 開発者向け Azure ツール
+          href: node-azure-tools.md
         - name: 開発環境を設定する
           href: core/configure-local-development-environment.md
         - name: サービス プリンシパルを設定する
@@ -13,120 +15,120 @@
           href: core/node-sdk-azure-authenticate.md
     - name: チュートリアル
       items:
-        - name: 静的 Web アプリを作成する
+        - name: デプロイとホスト
           items:
-            - name: 1. 概要と前提条件
-              href: tutorial/static-web-app/introduction.md
-            - name: 2. アプリをダウンロードしてローカルで実行する
-              href: tutorial/static-web-app/run-the-react-cognitive-services-image-analyzer-app-locally.md
-            - name: 3. Computer Vision リソースを作成する
-              href: tutorial/static-web-app/create-computer-vision-resource-use-in-code.md
-            - name: 4. 静的 Web アプリを構築およびデプロイする
-              href: tutorial/static-web-app/create-static-web-app-visual-studio-code-extension.md
-            - name: 5. Computer Vision React コードを確認する
-              href: tutorial/static-web-app/add-computer-vision-react-app.md
-            - name: 6. リソースをクリーンアップする
-              href: tutorial/static-web-app/clean-up-resources.md
-        - name: Storage BLOB にイメージをアップロードする
-          href: tutorial/browser-file-upload-azure-storage-blob.md
-        - name: ログイン ボタンを追加する
-          href: tutorial/single-page-application-azure-login-button-sdk-msal.md
-        - name: Express.js と MongoDB
-          href: tutorial/deploy-nodejs-mongodb-app-service-from-visual-studio-code.md
-        - name: Linux 仮想マシンにアプリをデプロイする
-          items:
-            - name: 1. 概要と前提条件
-              href: tutorial/nodejs-virtual-machine-vm/introduction.md
-            - name: 2. Application Insights リソースを作成する
-              href: tutorial/nodejs-virtual-machine-vm/create-azure-monitoring-application-insights-web-resource.md
-            - name: 3. 仮想マシンの作成
-              href: tutorial/nodejs-virtual-machine-vm/create-linux-virtual-machine-azure-cli.md
-            - name: 4. Linux 仮想マシンに接続する
-              href: tutorial/nodejs-virtual-machine-vm/connect-linux-virtual-machine-ssh.md
-            - name: 5. クラウド ログをアプリに追加する
-              href: tutorial/nodejs-virtual-machine-vm/azure-monitor-application-insights-nodejs-expressjs-code.md
-            - name: 6. ログを表示する
-              href: tutorial/nodejs-virtual-machine-vm/azure-monitor-application-insights-logs.md
-            - name: 7. リソースをクリーンアップする
-              href: tutorial/nodejs-virtual-machine-vm/clean-up-resources.md
-        - name: サーバーレス Functions の作成とデプロイ
-          items:
-            - name: 1. 概要と前提条件
-              href: tutorial/tutorial-vscode-serverless-node-install.md
-            - name: 2. Functions アプリを作成する
-              href: tutorial/tutorial-vscode-serverless-node-create-local.md
-            - name: 3. 関数をローカルでテストする
-              href: tutorial/tutorial-vscode-serverless-node-test-local.md
-            - name: 4. Functions アプリをデプロイする
-              href: tutorial/tutorial-vscode-serverless-node-deploy-hosting.md
-            - name: 5. リソースをクリーンアップする
-              href: tutorial/tutorial-vscode-serverless-node-remove-resource.md
-        - name: VS Code で Node.js を App Service にデプロイする
-          items:
-            - name: 概要と前提条件
-              href: tutorial-vscode-azure-app-service-node-01.md
-            - name: アプリを作成する
-              href: tutorial-vscode-azure-app-service-node-02.md
-            - name: Web サイトのデプロイ
-              href: tutorial-vscode-azure-app-service-node-03.md
-            - name: ログのストリーミング
-              href: tutorial-vscode-azure-app-service-node-04.md
-            - name: リソースをクリーンアップする
-              href: tutorial-vscode-azure-app-service-node-05.md
-        - name: Deno を App Service にデプロイする
-          href: tutorial/deploy-deno-app-azure-app-service-azure-cli.md
-        - name: VS Code を使用したコンテナーのデプロイ
-          items:
-            - name: 概要と前提条件
-              href: tutorial-vscode-docker-node-01.md
-            - name: コンテナー レジストリを使用する
-              href: tutorial-vscode-docker-node-02.md
-            - name: ローカル Node.js アプリを作成する
-              href: tutorial-vscode-docker-node-03.md
-            - name: アプリ イメージを作成する
-              href: tutorial-vscode-docker-node-04.md
-            - name: アプリ イメージをデプロイする
-              href: tutorial-vscode-docker-node-05.md
-            - name: 変更を加えて再デプロイする
-              href: tutorial-vscode-docker-node-06.md
-            - name: ログのストリーミング
-              href: tutorial-vscode-docker-node-07.md
-            - name: リソースをクリーンアップする
-              href: tutorial-vscode-docker-node-08.md
-        - name: Azure CLI を使用して App Service へデプロイする
-          items:
-            - name: 概要と前提条件
-              href: tutorial-vscode-azure-cli-node-01.md
-            - name: アプリを作成する
-              href: tutorial-vscode-azure-cli-node-02.md
-            - name: App Service の作成
-              href: tutorial-vscode-azure-cli-node-03.md
-            - name: アプリケーションのデプロイ
-              href: tutorial-vscode-azure-cli-node-04.md
-            - name: ログのストリーミング
-              href: tutorial-vscode-azure-cli-node-05.md
-            - name: 変更を加えて再デプロイする
-              href: tutorial-vscode-azure-cli-node-06.md
-            - name: リソースをクリーンアップする
-              href: tutorial-vscode-azure-cli-node-07.md
-        - name: Azure Storage から静的 Web サイトを作成する
-          items:
-            - name: 概要と前提条件
-              href: tutorial-vscode-static-website-node-01.md
-            - name: アプリ コードの作成
-              href: tutorial-vscode-static-website-node-02.md
-            - name: ストレージ アカウントの作成
-              href: tutorial-vscode-static-website-node-03.md
-            - name: Azure Storage へのデプロイ
-              href: tutorial-vscode-static-website-node-04.md
-            - name: 変更を加えて再デプロイする
-              href: tutorial-vscode-static-website-node-05.md
-            - name: リソースをクリーンアップする
-              href: tutorial-vscode-static-website-node-06.md
+            - name: 'クライアント アプリ:Cognitive Services'
+              items:
+                - name: 1. 概要と前提条件
+                  href: tutorial/static-web-app/introduction.md
+                - name: 2. アプリをダウンロードしてローカルで実行する
+                  href: tutorial/static-web-app/run-the-react-cognitive-services-image-analyzer-app-locally.md
+                - name: 3. Computer Vision リソースを作成する
+                  href: tutorial/static-web-app/create-computer-vision-resource-use-in-code.md
+                - name: 4. 静的 Web アプリを構築およびデプロイする
+                  href: tutorial/static-web-app/create-static-web-app-visual-studio-code-extension.md
+                - name: 5. Computer Vision React コードを確認する
+                  href: tutorial/static-web-app/add-computer-vision-react-app.md
+                - name: 6. リソースをクリーンアップする
+                  href: tutorial/static-web-app/clean-up-resources.md
+            - name: 'クライアント アプリ: Storage へのアップロード'
+              href: tutorial/browser-file-upload-azure-storage-blob.md
+            - name: 'クライアント アプリ:ログイン ボタンを追加する'
+              href: tutorial/single-page-application-azure-login-button-sdk-msal.md
+            - name: 'クライアント アプリ:Azure Storage からのホスティング'
+              items:
+                - name: 概要と前提条件
+                  href: tutorial-vscode-static-website-node-01.md
+                - name: アプリ コードの作成
+                  href: tutorial-vscode-static-website-node-02.md
+                - name: ストレージ アカウントの作成
+                  href: tutorial-vscode-static-website-node-03.md
+                - name: Azure Storage へのデプロイ
+                  href: tutorial-vscode-static-website-node-04.md
+                - name: 変更を加えて再デプロイする
+                  href: tutorial-vscode-static-website-node-05.md
+                - name: リソースをクリーンアップする
+                  href: tutorial-vscode-static-website-node-06.md
+            - name: 'サーバーレス:Create and deploy'
+              items:
+                - name: 1. 概要と前提条件
+                  href: tutorial/tutorial-vscode-serverless-node-install.md
+                - name: 2. Functions アプリを作成する
+                  href: tutorial/tutorial-vscode-serverless-node-create-local.md
+                - name: 3. 関数をローカルでテストする
+                  href: tutorial/tutorial-vscode-serverless-node-test-local.md
+                - name: 4. Functions アプリをデプロイする
+                  href: tutorial/tutorial-vscode-serverless-node-deploy-hosting.md
+                - name: 5. リソースをクリーンアップする
+                  href: tutorial/tutorial-vscode-serverless-node-remove-resource.md
+            - name: 'サーバー: Express.js/MongoDB'
+              href: tutorial/deploy-nodejs-mongodb-app-service-from-visual-studio-code.md
+            - name: 'サーバー: VS Code を使用した Express.js のデプロイ'
+              items:
+                - name: 概要と前提条件
+                  href: tutorial-vscode-azure-app-service-node-01.md
+                - name: アプリを作成する
+                  href: tutorial-vscode-azure-app-service-node-02.md
+                - name: Web サイトのデプロイ
+                  href: tutorial-vscode-azure-app-service-node-03.md
+                - name: ログのストリーミング
+                  href: tutorial-vscode-azure-app-service-node-04.md
+                - name: リソースをクリーンアップする
+                  href: tutorial-vscode-azure-app-service-node-05.md
+            - name: 'サーバー: Azure CLI を使用してデプロイする'
+              items:
+                - name: 概要と前提条件
+                  href: tutorial-vscode-azure-cli-node-01.md
+                - name: アプリを作成する
+                  href: tutorial-vscode-azure-cli-node-02.md
+                - name: App Service の作成
+                  href: tutorial-vscode-azure-cli-node-03.md
+                - name: アプリケーションのデプロイ
+                  href: tutorial-vscode-azure-cli-node-04.md
+                - name: ログのストリーミング
+                  href: tutorial-vscode-azure-cli-node-05.md
+                - name: 変更を加えて再デプロイする
+                  href: tutorial-vscode-azure-cli-node-06.md
+                - name: リソースをクリーンアップする
+                  href: tutorial-vscode-azure-cli-node-07.md
+            - name: 'サーバー: Azure CLI を使用した Deno のデプロイ'
+              href: tutorial/deploy-deno-app-azure-app-service-azure-cli.md
+            - name: 'コンテナー: VS Code を使用した Express.js のデプロイ'
+              items:
+                - name: 概要と前提条件
+                  href: tutorial-vscode-docker-node-01.md
+                - name: コンテナー レジストリを使用する
+                  href: tutorial-vscode-docker-node-02.md
+                - name: ローカル Node.js アプリを作成する
+                  href: tutorial-vscode-docker-node-03.md
+                - name: アプリ イメージを作成する
+                  href: tutorial-vscode-docker-node-04.md
+                - name: アプリ イメージをデプロイする
+                  href: tutorial-vscode-docker-node-05.md
+                - name: 変更を加えて再デプロイする
+                  href: tutorial-vscode-docker-node-06.md
+                - name: ログのストリーミング
+                  href: tutorial-vscode-docker-node-07.md
+                - name: リソースをクリーンアップする
+                  href: tutorial-vscode-docker-node-08.md
+            - name: 'VM:ログを使用してコンテナーをデプロイする'
+              items:
+                - name: 1. 概要と前提条件
+                  href: tutorial/nodejs-virtual-machine-vm/introduction.md
+                - name: 2. Application Insights リソースを作成する
+                  href: tutorial/nodejs-virtual-machine-vm/create-azure-monitoring-application-insights-web-resource.md
+                - name: 3. 仮想マシンの作成
+                  href: tutorial/nodejs-virtual-machine-vm/create-linux-virtual-machine-azure-cli.md
+                - name: 4. Linux 仮想マシンに接続する
+                  href: tutorial/nodejs-virtual-machine-vm/connect-linux-virtual-machine-ssh.md
+                - name: 5. クラウド ログをアプリに追加する
+                  href: tutorial/nodejs-virtual-machine-vm/azure-monitor-application-insights-nodejs-expressjs-code.md
+                - name: 6. ログを表示する
+                  href: tutorial/nodejs-virtual-machine-vm/azure-monitor-application-insights-logs.md
+                - name: 7. リソースをクリーンアップする
+                  href: tutorial/nodejs-virtual-machine-vm/clean-up-resources.md
     - name: Learn
       href: learn-azure-javascript.md
-    - name: Azure ツール
-      href: node-azure-tools.md
     - name: ハウツー ガイド
       items:
         - name: VS Code を使用したエンド ツー エンドの Node.js

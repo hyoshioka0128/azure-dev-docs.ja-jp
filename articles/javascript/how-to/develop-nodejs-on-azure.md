@@ -4,12 +4,12 @@ description: Node.js アプリの作成、コンテナー化、Azure へのデ�
 ms.topic: how-to
 ms.date: 06/25/2017
 ms.custom: seo-javascript-september2019, seo-javascript-october2019, devx-track-js, devx-track-azurecli
-ms.openlocfilehash: 7ecaa972bb00fa7c07461e3679996332e7f33451
-ms.sourcegitcommit: dc74b60217abce66fe6cc93923e869e63ac86a8f
+ms.openlocfilehash: de07137ca6fd21aaf3d5dfe33bf6d599a745555d
+ms.sourcegitcommit: ae2fa266a36958c04625bb0ab212e6f2db98e026
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94872893"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96857820"
 ---
 # <a name="develop-and-deploy-a-containerized-nodejs-app-with-visual-studio-code-and-azure"></a>コンテナー化された Node.js アプリを Visual Studio Code と Azure を使用して開発してデプロイする
 
@@ -77,8 +77,6 @@ Yarn でアプリの依存関係をインストールすると、*yarn.lock* フ
 1. **Ctrl**+**P** キーを押します。
 
 1. 「`.js`」と入力すると、プロジェクトに含まれているすべての JavaScript/JSON ファイルが、各ファイルの親ディレクトリと共に表示されます。 
-
-    ![Visual Studio Code ですべての .js* ファイルを表示する](../media/node-howto-e2e/visual-studio-code-javascript-json-file-list.png)
 
 1. *server.js* (アプリのスタートアップ スクリプト) を選択します。
 

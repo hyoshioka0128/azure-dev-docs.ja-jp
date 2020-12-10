@@ -4,12 +4,12 @@ description: GitHub アクションを使用して、React クライアント �
 ms.topic: tutorial
 ms.date: 11/13/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 5d70e14a9a5247f99c8b6e033af0a225b27da30b
-ms.sourcegitcommit: 291768a67862336267c67819e913c16710e3875e
+ms.openlocfilehash: 1a034d2746fae453019325d01f20c7073a6ce9a3
+ms.sourcegitcommit: 09b4a2dbe13601fdf16fcc4082a5075b46ad3459
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95820677"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96559257"
 ---
 # <a name="1-build-and-deploy-a-static-web-app-to-azure"></a>1.静的 Webアプリを構築して Azure にデプロイする
 
@@ -36,7 +36,7 @@ React (create-react-app) は次の機能を提供します。
 
 ## <a name="prerequisites"></a>前提条件
 
-- [Azure CLI をインストールする](/cli/azure/install-azure-cli)か、[Azure Cloud Shell](https://shell.azure.com.) を使用します
+- [Azure CLI をインストールする](/cli/azure/install-azure-cli)か、[Azure Cloud Shell](https://shell.azure.com) を使用します
 - [Node.js および npm](https://nodejs.org/en/download) - ローカル コンピューターにインストール済み。
 - [Visual Studio Code](https://code.visualstudio.com/) - ローカル コンピューターにインストール済み。 
     - [Azure Static Web Apps (プレビュー)](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurestaticwebapps) - React アプリを Azure Static Web アプリにデプロイするために使用されます。

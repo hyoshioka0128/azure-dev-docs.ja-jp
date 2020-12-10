@@ -3,13 +3,13 @@ title: 手順 5:VS Code を使用して Python でサーバーレス Azure Funct
 description: チュートリアルの手順 5、Python のサーバーレス関数コードを Azure にデプロイし、ローカル プロジェクトと Azure の間でのログのストリーム配信や設定の同期の方法を学習する。
 ms.topic: conceptual
 ms.date: 11/30/2020
-ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 294ecb106ab55c87e0191f5a0df807da89a8acee
-ms.sourcegitcommit: 709fa38a137b30184a7397e0bfa348822f3ea0a7
+ms.custom: devx-track-python, seo-python-october2019, contperfq2
+ms.openlocfilehash: bcbc7116c1c0bc0cf323d56e46471856ebc5e9ea
+ms.sourcegitcommit: 0cda024089784b92c1db3a4506c1dccd6bfe6339
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96442220"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96759299"
 ---
 # <a name="5-deploy-azure-functions-in-python"></a>5:Python で Azure Functions をデプロイする
 

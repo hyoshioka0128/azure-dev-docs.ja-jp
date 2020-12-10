@@ -4,12 +4,12 @@ description: チュートリアルの手順 2、アプリケーションの設�
 ms.topic: conceptual
 ms.date: 11/20/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 252bfc02e3c70cc207b29ee0b8f8c58d9802f090
-ms.sourcegitcommit: 29930f1593563c5e968b86117945c3452bdefac1
+ms.openlocfilehash: 7197f8afc28bd62e7247c3955c888199ee69c509
+ms.sourcegitcommit: 09b4a2dbe13601fdf16fcc4082a5075b46ad3459
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95485661"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96559196"
 ---
 # <a name="2-prepare-your-app-for-deployment-to-azure-app-service"></a>2:Azure App Service にデプロイするためにアプリを準備する
 
@@ -40,7 +40,7 @@ ms.locfileid: "95485661"
 
 クラウドにデプロイされた Django アプリでは、Azure 用 PostgreSQL などのクラウドベースのデータベースも使用するのが理想的です。 詳細については、[Azure portal を使用して PostgreSQL で Django Web アプリをデプロイする](tutorial-python-postgresql-app-portal.md)に関するページを参照してください。
 
-このサンプルのようにローカル SQLite データベースが Django アプリに使用されている場合、このチュートリアルでは事前初期化済みかつ事前設定済みの *db.sqlite3* ファイルのコピーをリポジトリに追加するのが最も簡単です。 それ以外の場合は、アプリがデプロイされているコンテナーで Django の `migrate` コマンドを実行するようにビルド後のコマンドを構成する必要があります。 詳細については、[App Service の構成 - ビルドの自動化のカスタマイズ](/app-service/configure-language-python#customize-build-automation)に関する記事を参照してください。
+このサンプルのようにローカル SQLite データベースが Django アプリに使用されている場合、このチュートリアルでは事前初期化済みかつ事前設定済みの *db.sqlite3* ファイルのコピーをリポジトリに追加するのが最も簡単です。 それ以外の場合は、アプリがデプロイされているコンテナーで Django の `migrate` コマンドを実行するようにビルド後のコマンドを構成する必要があります。 詳細については、[App Service の構成 - ビルドの自動化のカスタマイズ](/azure/app-service/configure-language-python#customize-build-automation)に関する記事を参照してください。
 
 ### <a name="option-3-create-a-minimal-flask-app"></a>オプション 3:最小限の Flask アプリを作成する
 

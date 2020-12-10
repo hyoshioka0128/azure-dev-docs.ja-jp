@@ -4,12 +4,12 @@ description: チュートリアル パート 1、Azure CLI の概要と前提条
 ms.topic: tutorial
 ms.date: 09/24/2019
 ms.custom: devx-track-js, devx-track-azurecli
-ms.openlocfilehash: fab8d3af108fb5b81f8360ec84320da5e4ca5c15
-ms.sourcegitcommit: 291768a67862336267c67819e913c16710e3875e
+ms.openlocfilehash: 6e16b4baacf845648f021d1bb7cbbd9080e29804
+ms.sourcegitcommit: 09b4a2dbe13601fdf16fcc4082a5075b46ad3459
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95820664"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96559286"
 ---
 # <a name="deploy-to-azure-app-service-using-the-azure-cli"></a>Azure CLI を使用して Azure App Service にデプロイする
 
@@ -20,7 +20,7 @@ ms.locfileid: "95820664"
 - [Azure サブスクリプション](#azure-subscription)。
 - [Node.js と npm 6.x 以上](https://nodejs.org/en/download)、Node.js パッケージ マネージャー。
 - [Git](https://git-scm.com/downloads)。インストール後に、コマンド `git --version` を実行するとバージョン番号が表示されます。
-- [Azure CLI をインストールする](/cli/azure/install-azure-cli)か、[Azure Cloud Shell](https://shell.azure.com.) を使用します
+- [Azure CLI をインストールする](/cli/azure/install-azure-cli)か、[Azure Cloud Shell](https://shell.azure.com) を使用します
 
 ### <a name="azure-subscription"></a>Azure サブスクリプション
 

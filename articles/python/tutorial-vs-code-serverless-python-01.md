@@ -3,13 +3,13 @@ title: チュートリアル:VS Code を使用して Python でサーバーレ�
 description: チュートリアルの手順 1、サーバーレス Azure Functions のローカル環境を構成する
 ms.topic: conceptual
 ms.date: 11/30/2020
-ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: a7eea7fd73f13f9ca2f93cf3184c5ab7a1889614
-ms.sourcegitcommit: 709fa38a137b30184a7397e0bfa348822f3ea0a7
+ms.custom: devx-track-python, seo-python-october2019, contperfq2
+ms.openlocfilehash: a4fbf9d46a4158fe67660db9f9b7eae8ff83e810
+ms.sourcegitcommit: 0cda024089784b92c1db3a4506c1dccd6bfe6339
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96442250"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96759439"
 ---
 # <a name="tutorial-create-and-deploy-serverless-azure-functions-in-python-with-visual-studio-code"></a>チュートリアル:Visual Studio Code を使用して Python でサーバーレスの Azure Functions を作成してデプロイする
 

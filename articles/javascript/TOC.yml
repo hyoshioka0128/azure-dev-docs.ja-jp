@@ -131,6 +131,8 @@
       href: learn-azure-javascript.md
     - name: ハウツー ガイド
       items:
+        - name: アプリの構成
+          href: how-to/configure-web-app-settings.md
         - name: VS Code を使用したエンド ツー エンドの Node.js
           href: how-to/develop-nodejs-on-azure.md
         - name: Web アプリをデプロイする

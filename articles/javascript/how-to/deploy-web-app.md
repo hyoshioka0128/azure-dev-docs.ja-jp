@@ -2,41 +2,56 @@
 title: JavaScript アプリを Azure にデプロイする
 description: ホスティング オプションとデプロイ シナリオには、Azure 用のサービスとツールがいくつか含まれています。 アプリを発行し、Azure でサービスを提供します。
 ms.topic: how-to
-ms.date: 10/28/2020
+ms.date: 12/09/2020
 ms.custom: seo-javascript-september2019, seo-javascript-october2019, devx-track-js, contperfq2
-ms.openlocfilehash: e0c3df78dd44e6879f24773dbbce86a5af76a35c
-ms.sourcegitcommit: 801682d3fc9651bf95d44e58574d5a4564be6feb
+ms.openlocfilehash: 27a923313f7ccbb3f3a4deff368cd6ff8b5121dc
+ms.sourcegitcommit: 1901759f41adfac3c3f2ff135bcf72206543b639
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94333810"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96933305"
 ---
 # <a name="deploy-and-host-your-nodejs-apps-on-azure"></a>Azure で Node.js アプリをデプロイしてホストする
 
 ホスティング オプションとデプロイ シナリオには、Azure 用のサービスとツールがいくつか含まれています。 Azure には、ホスティングの多数のオプションと、ローカルまたはクラウドのリポジトリから Azure へのアプリの移動に役立つ多数のツールが用意されています。 
 
-## <a name="choose-a-hosting-provider-from-azure"></a>Azure からホスティング プロバイダーを選択する
+## <a name="choose-a-recommended-azure-host-provider"></a>推奨される Azure ホスト プロバイダーの選択
 
 Azure でのクライアント、サーバー、またはバックグラウンド タスク アプリのホスティングには、さまざまなソリューションが用意されており、その中から選択することができます。 次の表を使用して選択してください。 ほとんどのユース ケースで推奨されるソリューションは、[Azure App Service](/azure/app-service/overview) です。 
 
-| サービス | 推奨される対象 |
-|--|--|
-|[App Service](/azure/app-service/overview) - **推奨**|コードまたはコンテナーからアプリをホストします。 これにより、基盤となる環境を管理することなく、Web サーバーを管理できます。|
-|[静的 Web アプリ](/azure/static-web-apps/)|静的クライアント アプリ (Angular、Vue、React など) をホストします。 必要に応じて、フルスタック アプリをホストするサーバーレス関数エンドポイントを追加します。 この単純なサービスにより Web サーバーの多くが抽象化されるため、ユーザーはクライアント アプリケーションにとって重要な機能に専念できます。 |
-|[関数](/azure/azure-functions/)|サーバーレス アプリケーション エンドポイントをホストします。|
-|[Storage](/azure/storage/blobs/storage-blob-static-website-how-to?tabs=azure-portal)|Azure Storage は、静的 Web アプリをホストすることもできます。 これは、堅牢な Storage とクライアント アプリケーションの間で緊密な統合が必要な場合に役立ちます。|
-|[Container Instances](/azure/container-instances/)|1 つのコンテナーをすばやく設定します。|
-|[Kubernetes Service](/azure/aks/)|複数コンテナーのオーケストレーション。|
-|[仮想マシン](/azure/virtual-machines) (VM)|Windows または Linux VM のフル コントロール。 [動作保証済みの Linux ディストリビューションを見つける](/azure/virtual-machines/linux/endorsed-distros?toc=/azure/virtual-machines/linux/toc.json)か、Azure Marketplace で Linux VM イメージを[検索する方法を確認](/azure/virtual-machines/linux/cli-ps-findimage)してください。|
-|[Content Delivery Network](/azure/cdn/) (CDN)|最も近いポイント オブ プレゼンス (POP) サーバーを使用して、Azure BLOB ストレージ、Web アプリケーション、またはパブリックにアクセスできる任意の Web サーバーから読み込まれた静的オブジェクトをキャッシュします。 さらに Azure CDN では、各種のネットワーク最適化とルーティング最適化を利用して、キャッシュできない動的なコンテンツも高速化できます。|
-
 さまざまなホスティング方法を包括的に把握するには、「[Azure コンピューティング サービスのデシジョン ツリー](/azure/architecture/guide/technology-choices/compute-decision-tree)」のほか、Microsoft Learn の「[コア Cloud Services - Azure コンピューティング オプション](/learn/modules/intro-to-azure-compute)」モジュールを参照してください。
 
-## <a name="choose-your-deployment-process-for-azure"></a>Azure に対するデプロイ プロセスを選択する
+
+ サービス |サポートされているアプリの種類| 推奨される対象 |
+|--|--|--|
+|[*App Service](/azure/app-service/overview) - **推奨**|クライアント、サーバー、クライアント/サーバー、API、サーバー レンダー|コードまたはコンテナーからアプリをホストします。 これにより、基盤となる環境を管理することなく、Web サーバーを管理できます。|
+|[(プレビュー) Static Web Apps](/azure/static-web-apps/)|静的フロントエンド、事前レンダー、サーバー API を使用した静的フロントエンド|静的クライアント アプリ (Angular、Vue、React など) をホストします。 必要に応じて、フルスタック アプリをホストするサーバーレス関数エンドポイントを追加します。 この単純なサービスにより Web サーバーの多くが抽象化されるため、ユーザーはクライアント アプリケーションにとって重要な機能に専念できます。 |
+|[関数](/azure/azure-functions/)|サーバー API|サーバーレス API エンドポイントをホストします。 Azure には、一般的なシナリオをブートストラップするためのトリガーと呼ばれる多数のテンプレートが用意されています。|
+
+## <a name="host-web-apps-with-more-control"></a>より詳細な制御で Web アプリをホストする
+
+次の選択肢を使用すると、アプリケーション環境をより細かく制御できます。 
+
+| サービス | 推奨される対象 |
+|--|--|
+|[仮想マシン](/azure/virtual-machines) (VM)|Windows または Linux VM のフル コントロール。 [動作保証済みの Linux ディストリビューションを見つける](/azure/virtual-machines/linux/endorsed-distros?toc=/azure/virtual-machines/linux/toc.json)か、Azure Marketplace で Linux VM イメージを[検索する方法を確認](/azure/virtual-machines/linux/cli-ps-findimage)してください。|
+|[Container Instances](/azure/container-instances/)|1 つのコンテナーをすばやく設定します。|
+|[Kubernetes Service](/azure/aks/)|複数コンテナーのオーケストレーション。|
+
+## <a name="alternative-choices-for-web-app-hosting-on-azure"></a>Azure での Web アプリ ホスティングの代替選択肢
+
+これらの選択は、特定のユース ケースに合わせて調整されます。 
+
+| サービス | 推奨される対象 |
+|--|--|
+|[Storage](/azure/storage/blobs/storage-blob-static-website-how-to?tabs=azure-portal)|Azure Storage は、静的 Web アプリをホストすることもできます。 これは、堅牢な Storage とクライアント アプリケーションの間で緊密な統合が必要な場合に役立ちます。|
+|[Content Delivery Network](/azure/cdn/) (CDN)|事前にレンダリングされた Web サイトを配信します。 最も近いポイント オブ プレゼンス (POP) サーバーを使用して、Azure BLOB ストレージ、Web アプリケーション、またはパブリックにアクセスできる任意の Web サーバーから読み込まれた静的オブジェクトをキャッシュします。 さらに Azure CDN では、各種のネットワーク最適化とルーティング最適化を利用して、キャッシュできない動的なコンテンツも高速化できます。|
+
+## <a name="deploy-your-web-app-to-azure"></a>Azure への Web アプリのデプロイ
 
 アプリケーションをホストするサービスを選択したら、デプロイ プロセスとツールを選択します。 クライアントおよびサーバーのアプリを Azure サービスにデプロイするということは、ファイルまたはファイルのセットを Azure に移動して、HTTP エンドポイント経由でサービスを提供することを意味します。 
 
-次の表に、Azure クラウドにファイルを移動するための一般的な方法を示します。
+Azure クラウドにファイルを移動する一般的な方法は次のとおりです。
 
 | メソッド | 詳細 |
 |--|--|
@@ -49,6 +64,8 @@ Azure でのクライアント、サーバー、またはバックグラウン�
 * [FTP を使用](/azure/app-service/deploy-ftp)
 * [Dropbox または OneDrive](/azure/app-service/deploy-content-sync)
 * [ローカル Git](/azure/app-service/deploy-local-git)
+* [cURL](/azure/app-service/deploy-zip#with-curl)
+* [SSH](/azure/app-service/configure-linux-open-ssh-session)
 
 ## <a name="verify-your-deployment-with-your-http-endpoint"></a>HTTP エンドポイントでデプロイを確認する
 

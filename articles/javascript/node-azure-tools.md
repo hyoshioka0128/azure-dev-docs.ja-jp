@@ -1,47 +1,62 @@
 ---
-title: Azure での JavaScript 開発者向けツール
+title: ツールの選択 - JavaScript - Azure
 description: Azure での Node.js および JavaScript 開発用の各ツールをインストールします
 ms.topic: reference
-ms.date: 10/30/2020
+ms.date: 12/07/2020
 ms.custom: seo-javascript-september2019, seo-javascript-october2019, devx-track-js
-ms.openlocfilehash: 80b42337f6acccda4a6d85b64908107cb4230195
-ms.sourcegitcommit: 5c7f5fef798413b1a304cc9ee31c8518b73f27eb
+ms.openlocfilehash: 714d096e4afde345bffa2582026f28fa2126a38c
+ms.sourcegitcommit: ae2fa266a36958c04625bb0ab212e6f2db98e026
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93066261"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96857796"
 ---
-# <a name="tools-for-javascript-developers"></a>JavaScript 開発者向けツール
-Azure での JavaScript アプリの開発には、次のツールが推奨されます。
+# <a name="tools-for-javascript-developers-on-azure"></a>Azure での JavaScript 開発者向けツール 
+
+JavaScript は多くのツールからなるエコシステムです。 この記事は、Microsoft が JavaScript 開発者向けに構築して管理するツールを選択したものです。 新しい Azure サービスやデプロイ/ホスティングのシナリオに対応するツールが向上しています。 
+
+これらのツールを使用して Azure を使用する必要はありません。これらは単に機能とサポートの両方でエクスペリエンスを大幅に向上させるものです。 
+
+## <a name="azure-portal"></a>Azure portal
+
+[Azure portal](https://portal.azure.com/) を使用すると、アカウントのすべてのサブスクリプションとリソースにアクセスできます。 
 
 ## <a name="azure-cli"></a>Azure CLI
-Azure CLI は、コマンド ラインから Azure リソースを管理する目的に最適化されています。
+Azure CLI は、コマンド ラインから Azure リソースを管理する目的に最適化されています。 
 
-![Azure リソースを管理するための Azure CLI](media/node-azure-tools/azure-cli.png)
- 
-> [!div class="nextstepaction"]
-> [Azure CLI 2.0 をインストールします](/cli/azure/install-az-cli2)
+Azure CLI には、次の使用シナリオがあります。
 
-> [!div class="nextstepaction"]
-> [Azure CLI 2.0 コンテナーを使用する](/cli/azure/run-azure-cli-docker)
+* [ローカル インストール](/cli/azure/install-az-cli2)
+* [Web シェル](https://shell.azure.com/)
+* [コンテナー](/cli/azure/run-azure-cli-docker)
+
+Azure portal を使用する場合、ポータルの上部のナビゲーション バーから Azure CLI を使用できます。
+
+:::image type="content" source="media/azure-tools/azure-portal-select-azure-cloud-shell.png" alt-text="Azure portal を使用する場合、ポータルの上部のナビゲーション バーから Azure CLI を使用できる。":::
 
 ## <a name="typescript"></a>TypeScript
 
-[TypeScript](https://www.typescriptlang.org/) は、JavaScript と独特な関係にあります。 TypeScript は、JavaScript のすべての機能と、その上に次の追加のレイヤーを提供しています。TypeScript の型システム。
+[TypeScript](https://www.typescriptlang.org/download) は、JavaScript のすべての機能と、その上にこれらの追加のレイヤーを提供しています。TypeScript の型システム。 既存の動作している JavaScript コードも TypeScript コードです。 TypeScript の主な利点は、コード内の予期しない動作を強調表示し、バグの可能性を減らせることです。
 
-つまり、既存の動作している JavaScript コードも TypeScript コードです。 TypeScript の主な利点は、コード内の予期しない動作を強調表示し、バグの可能性を減らせることです。
+## <a name="typescript-and-the-azure-sdk-client-libraries"></a>TypeScript と Azure SDK クライアント ライブラリ
 
-> [!div class="nextstepaction"]
-> [TypeScript をインストールする](https://www.typescriptlang.org/download)
+クライアント ライブラリは TypeScript で記述されているため、Azure SDK クライアント ライブラリのリファレンス ドキュメントは TypeScript で記述されています。 Azure SDK クライアント ライブラリを使用するために TypeScript を使用する必要はありません。 
 
+Azure SDK の TypeScript ガイドラインの詳細については、[こちら](https://azure.github.io/azure-sdk/typescript_introduction.html)を参照してください。
 
 ## <a name="visual-studio-code"></a>Visual Studio Code
-任意の OS で JavaScript アプリを編集してデバッグします。
 
-![Visual Studio Code を使用した JavaScript の編集](media/node-azure-tools/visual-studio-code-debug-javascript.png)
+[Visual Studio Code](https://code.visualstudio.com) は、Azure の JavaScript 開発に適した IDE です。 インターフェイス、機能、および拡張機能が連携することで、開発時間が短縮され、開発のフラストレーションが軽減されます。 
 
-> [!div class="nextstepaction"]
-> [Visual Studio Code をダウンロードする](https://code.visualstudio.com)
+ローカル開発プロジェクトのルートにプロジェクト ワークスペースを作成し、関連するすべての構成、設定、および拡張機能を追加します。 ワークスペース ファイルをプロジェクトにチェックインし、すべてのチーム メンバーがプロジェクトに必要な設定とツールにアクセスできるようにします。
+
+Visual Studio Code の使用には、いくつかの利点があります。
+
+* Visual Studio Code には、Azure のリファレンス ドキュメントがインラインで表示されます
+* Visual Studio Code では、ステートメント入力候補が表示されます
+* あいまいな型やオブジェクトがほとんどありません
+
+Visual Studio Code には、[JavaScript プロジェクトで使用する](https://code.visualstudio.com/docs/nodejs/working-with-javascript)ための豊富なドキュメントが用意されています。 
 
 ## <a name="visual-studio-code-extensions"></a>Visual Studio Code の拡張機能
 Visual Studio Code で直接 Azure サービスとやり取りするには、次の無料の拡張機能を使用します。

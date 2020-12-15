@@ -3,17 +3,24 @@ title: 'JavaScript ドキュメントの新着情報: '
 description: 2020 年 10 月の JavaScript ドキュメントの新着情報
 ms.topic: conceptual
 ms.date: 11/13/2020
-ms.openlocfilehash: db784cead94e66fd69232abd782039891ab7e63e
-ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
+ms.openlocfilehash: f54af7f5f89b38cc32191fc2acd4f32e386c29fb
+ms.sourcegitcommit: 0cda024089784b92c1db3a4506c1dccd6bfe6339
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94983671"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96759289"
 ---
 # <a name="javascript-docs-whats-new-for-october-2020"></a>JavaScript ドキュメント:2020 年 10 月の新着情報
 
 JavaScript および TypeScript 開発者向けの新規および更新されたコンテンツを紹介します。
 
+## <a name="2020-december"></a>2020 年 12 月
+
+### <a name="whats-new"></a>新機能
+
+|名前|Notes|
+|---------------------------------------|--|
+|[チュートリアル: Microsoft 認証用の React Static Web アプリにログイン ボタンを追加する](./tutorial/single-page-application-azure-login-button-sdk-msal.md)|このチュートリアルで示されている Azure 認証は、ログインとログアウトのボタンであり、ユーザーのアカウントへのアクセスを提供します。 シングルページ アプリケーション (SPA) でのユーザーの操作を管理するために、Azure クライアント側 SDK (`@azure/msal-browser`) を使用してアプリケーションを開発します。|
 
 ## <a name="2020-november"></a>2020 年 11 月
 
@@ -40,8 +47,8 @@ JavaScript および TypeScript 開発者向けの新規および更新された
 
 |名前|Notes|
 |---------------------------------------|--|
-|[チュートリアル: イメージを Blob Storage にアップロードする](./tutorial/browser-file-upload.yml?preview=tutorialFeedback)|このチュートリアルでは、**React アプリ** を使用して、ファイルを **Azure Storage** BLOB にアップロードします。 プログラミング作業は完了しており、このチュートリアルでは、Azure 拡張機能を使用して Visual Studio Code 内部からローカルおよびリモートの Azure 環境を正常に使用することに焦点を当てています。|
-|[チュートリアル: Visual Studio Code から App Service に Node.js MongoDB アプリをデプロイする](./tutorial/web-app-mongodb.yml?preview=tutorialFeedback)|このチュートリアルでは、MongoDB ネイティブ API を使用して、**MongoDB** データベースで **Express** Node.js アプリを使用します。 Node.js アプリケーションを (Linux 上の) Azure App Service にデプロイし、クラウドベースのアプリが動作することを確認します。 プログラミング作業は完了しており、このチュートリアルでは、Azure 拡張機能を使用して Visual Studio Code 内部からローカルおよびリモートの Azure 環境を正常に使用することに焦点を当てています。|
+|[チュートリアル: イメージを Blob Storage にアップロードする](./tutorial/browser-file-upload-azure-storage-blob.md)|このチュートリアルでは、**React アプリ** を使用して、ファイルを **Azure Storage** BLOB にアップロードします。 プログラミング作業は完了しており、このチュートリアルでは、Azure 拡張機能を使用して Visual Studio Code 内部からローカルおよびリモートの Azure 環境を正常に使用することに焦点を当てています。|
+|[チュートリアル: Visual Studio Code から App Service に、データベースを持つ Node.js アプリをデプロイする](./tutorial/deploy-nodejs-mongodb-app-service-from-visual-studio-code.md)|このチュートリアルでは、MongoDB ネイティブ API を使用して、**MongoDB** データベースで **Express.js** Node.js アプリを使用します。 Node.js アプリケーションを (Linux 上の) Azure App Service にデプロイし、クラウドベースのアプリが動作することを確認します。 プログラミング作業は完了しており、このチュートリアルでは Azure 拡張機能を使用して、Visual Studio Code 内部からの Azure リソースの作成と Azure へのデプロイに焦点を当てています。|
 
 ### <a name="whats-updated"></a>更新内容
 

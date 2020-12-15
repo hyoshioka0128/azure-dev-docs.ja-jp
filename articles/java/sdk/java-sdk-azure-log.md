@@ -8,18 +8,18 @@ ms.date: 03/25/2020
 ms.topic: article
 ms.service: multiple
 ms.custom: devx-track-java
-ms.openlocfilehash: 5bb7f711eae230a08893d2f94c242a06af809f88
-ms.sourcegitcommit: cf23d382eee2431a3958b1c87c897b270587bde0
+ms.openlocfilehash: 927f20601ded9a0ea6b2793ef1b0c8e1b5e6ac19
+ms.sourcegitcommit: ae2fa266a36958c04625bb0ab212e6f2db98e026
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87400620"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96857770"
 ---
 # <a name="configure-logging-with-the-azure-sdk-for-java"></a>Azure SDK for Java でのログ記録の構成
 
 この記事では、[Azure SDK](https://azure.microsoft.com/downloads/) for Java のログ記録の構成例を示します。 クラス別のログ レベルやカスタム ログ記録の設定など、構成オプションの詳細については、選択したログ記録フレームワークのドキュメントを参照してください。
 
-Azure SDK for Java クライアント ライブラリでは、[Simple Logging Facade for Java](https://www.slf4j.org/) (SLF4J) が使用されます。 SLF4J を使用すると、任意のログ記録フレームワークを使用できます。これは、アプリケーションのデプロイ時に呼び出されます。
+Azure SDK for Java クライアント ライブラリでは、[Simple Logging Facade for Java](https://www.slf4j.org/) (SLF4J) が使用されます。 SLF4J を使用すると、任意のログ記録フレームワークを使用できます。これは、アプリケーションのデプロイ時に呼び出されます。 クライアント ビルダーで [HttpLogOptions](/java/api/com.azure.core.http.policy.httplogoptions?view=azure-java-stable) を設定する機能が提供されている場合は、すべてのログを出力するために、[HttpLogDetailLevel](/java/api/com.azure.core.http.policy.httplogdetaillevel?view=azure-java-stable) および許容されるすべてのヘッダーとクエリ パラメーターも指定する必要があります。
 
 > [!NOTE]
 > この記事は、Azure SDK クライアント ライブラリの最新バージョンに適用されます。 ライブラリがサポートされているかどうかを確認するには、「[Azure SDK の最新リリース](https://azure.github.io/azure-sdk/releases/latest/java.html)」の一覧を参照してください。 Azure SDK クライアント ライブラリの古いバージョンをアプリケーションで使用している場合は、該当するサービスのドキュメントで具体的な手順を参照してください。
@@ -249,6 +249,20 @@ SLF4J ロガーでアプリケーションを再デプロイできない場合�
 |情報|"info"、"information"、"informational"  |
 |WARNING     |"warn"、"warning"       |
 |ERROR    |"err"、"error"  |
+
+## <a name="setting-an-httplogdetaillevel"></a>HttpLogDetailLevel の設定
+使用されるログ メカニズムに関係なく、クライアント ビルダーで [HttpLogOptions](/java/api/com.azure.core.http.policy.httplogoptions?view=azure-java-stable) を設定する機能が提供されている場合、ログを出力するにはこれらのオプションを追加で構成する必要があります。 ログに記録する情報を示すには、[HttpLogDetailLevel](/java/api/com.azure.core.http.policy.httplogdetaillevel?view=azure-java-stable) を指定する必要があります。  この値は既定で `NONE` に設定されているため、これが指定されていない場合、ログ記録フレームワークまたはフォールバック ログ記録が適切に構成されていても、ログは出力されません。 セキュリティ上の理由により、ヘッダーとクエリ パラメーターは既定で修正されているため、安全に出力できるヘッダーおよびクエリ パラメーターを示す `Set<String>` でログ オプションも指定する必要があります。 これらの値は下のように構成できます。 ログ記録は、本文の内容とヘッダーの両方の値を出力するように設定されます。すべてのヘッダー値は、キー `"foo"` に対応するユーザー指定のメタデータの値を除いて修正され、すべてのクエリ パラメーターは、存在する可能性があるすべての SAS の署名済みバージョンを示す SAS トークン クエリ パラメーター `"sv"` を除いて修正されます。 
+
+```
+new BlobClientBuilder().endpoint(<endpoint>)
+            .httpLogOptions(new HttpLogOptions()
+                .setLogLevel(HttpLogDetailLevel.BODY_AND_HEADERS)
+                .setAllowedHeaderNames(Set.of("x-ms-meta-foo"))
+                .setAllowedQueryParamNames(Set.of("sv")))
+            .buildClient();
+```
+> [!NOTE]
+> この例ではストレージ クライアント ビルダーを使用していますが、この原則は、`HttpLogOptions` を受け入れるすべてのビルダーに適用されます。 さらに、この例はクライアントの完全な構成を例示するものではなく、ログ記録の構成を示すことだけを目的としています。 クライアントの構成の詳細については、各ビルダーのドキュメントを参照してください。
 
 ## <a name="next-steps"></a>次の手順
 

@@ -4,23 +4,24 @@ description: チュートリアル パート 1、Azure CLI の概要と前提条
 ms.topic: tutorial
 ms.date: 09/24/2019
 ms.custom: devx-track-js, devx-track-azurecli
-ms.openlocfilehash: 6e16b4baacf845648f021d1bb7cbbd9080e29804
-ms.sourcegitcommit: 09b4a2dbe13601fdf16fcc4082a5075b46ad3459
+ms.openlocfilehash: f1e2cc68cce3a07f2b2b63bcf8c5f59e626fc025
+ms.sourcegitcommit: c8330128d5d6a71859933a890ecdf047cb950996
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96559286"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97522408"
 ---
 # <a name="deploy-to-azure-app-service-using-the-azure-cli"></a>Azure CLI を使用して Azure App Service にデプロイする
 
-このチュートリアルでは、すべてのオペレーティング システムで実行される [Azure コマンド ライン インターフェイス (CLI)](/cli/azure/overview?view=azure-cli-latest) を使用して、Node.js アプリケーションを Azure App Service にデプロイします。 この CLI を使用すると、Azure リソースを作成し、Git リポジトリと Azure 間のデプロイ パイプラインを設定し、アプリの `console.log` 出力を表示することができます。
+このチュートリアルでは、すべてのオペレーティング システムで実行される [Azure コマンド ライン インターフェイス (CLI)](/cli/azure/overview?view=azure-cli-latest&preserve-view=false) を使用して、Node.js アプリケーションを Azure App Service にデプロイします。 この CLI を使用すると、Azure リソースを作成し、Git リポジトリと Azure 間のデプロイ パイプラインを設定し、アプリの `console.log` 出力を表示することができます。
 
 ## <a name="prerequisites"></a>前提条件
 
 - [Azure サブスクリプション](#azure-subscription)。
 - [Node.js と npm 6.x 以上](https://nodejs.org/en/download)、Node.js パッケージ マネージャー。
 - [Git](https://git-scm.com/downloads)。インストール後に、コマンド `git --version` を実行するとバージョン番号が表示されます。
-- [Azure CLI をインストールする](/cli/azure/install-azure-cli)か、[Azure Cloud Shell](https://shell.azure.com) を使用します
+[!INCLUDE [Azure CLI](../includes/azure-cli-prepare-your-environment-no-header.md)]
+
 
 ### <a name="azure-subscription"></a>Azure サブスクリプション
 

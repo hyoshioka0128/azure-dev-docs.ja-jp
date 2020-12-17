@@ -2,14 +2,14 @@
 title: 手順 3:Visual Studio Code を使用して変更を加えた後に Azure App Service にコンテナーを再デプロイする
 description: チュートリアルの手順 3、コンテナー イメージをリビルドして再デプロイするための簡単な手順。
 ms.topic: conceptual
-ms.date: 09/12/2019
+ms.date: 12/09/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 79498685492d57a22884b30c551c3a28b6e0fe15
-ms.sourcegitcommit: 69933dcce571b2686897b295b7822e207d944617
+ms.openlocfilehash: f760720755a170e6ff47c5971384f3f83b2b07be
+ms.sourcegitcommit: c8330128d5d6a71859933a890ecdf047cb950996
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/18/2020
-ms.locfileid: "90772635"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97522096"
 ---
 # <a name="2-redeploy-a-container-to-azure-app-service-after-making-changes"></a>2:変更を加えた後に Azure App Service にコンテナーを再デプロイする
 

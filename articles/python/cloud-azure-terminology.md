@@ -4,12 +4,12 @@ description: Microsoft Azure を利用する際に理解しておく必要があ
 ms.date: 12/07/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 0be44d246af0f34b60b9ca1403f1889cc5708e9c
-ms.sourcegitcommit: 1901759f41adfac3c3f2ff135bcf72206543b639
+ms.openlocfilehash: f79864b39bb70c7ae703468f205e420417698200
+ms.sourcegitcommit: c8330128d5d6a71859933a890ecdf047cb950996
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96934299"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97521979"
 ---
 # <a name="azure-terminology-in-brief"></a>Azure 用語の概略
 
@@ -73,7 +73,7 @@ App Service Web アプリの直接 URL は常に `<web-app-name>.azurewebsites.n
 
 ## <a name="azure-command-line-interface-cli"></a>Azure コマンド ライン インターフェイス (CLI)
 
-[Azure CLI](/azure/what-is-azure-cli) は、Azure リソースを作成および管理するためのコマンド セットです。特に自動化の役に立ちます。 Azure CLI は、すべてのオペレーティング システムで使用でき、ほとんどの Azure サービスで動作します。
+[Azure CLI](/cli/azure/what-is-azure-cli) は、Azure リソースを作成および管理するためのコマンド セットです。特に自動化の役に立ちます。 Azure CLI は、すべてのオペレーティング システムで使用でき、ほとんどの Azure サービスで動作します。
 
 PowerShell を使用する場合は、[Azure PowerShell モジュール](/powershell/azure)を使用することもできます。
 

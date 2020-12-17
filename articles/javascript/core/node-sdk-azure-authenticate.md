@@ -4,12 +4,12 @@ description: Node.js 用 Azure 管理モジュールへの認証にサービス 
 ms.topic: how-to
 ms.date: 10/19/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: a3f51cd40f1f1029fbdd6e8e806cb1f7c3cd02c7
-ms.sourcegitcommit: 3c904d8d89d0cb4f13209cde3425c5307b83237c
+ms.openlocfilehash: 58acb71741f7e3b381e492b9ac3c06d6a94c331b
+ms.sourcegitcommit: c1ef7aa8ed2e88e98b190e42cffde52cf301958d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "93024066"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97034533"
 ---
 # <a name="authenticate-with-the-azure-management-modules-for-javascript"></a>JavaScript 用 Azure 管理モジュールを使用した認証
 
@@ -89,7 +89,7 @@ billingManagementClient.enrollmentAccounts.list().then((enrollmentList) => {
 
 | Azure 認証の種類|目的|
 |--|--|
-|**サービス プリンシパル**|この認証は " _推奨されている方法_ " です。 [Azure サービス プリンシパルを作成する](node-sdk-azure-authenticate-principal.md)方法をご覧ください。 サービス プリンシパルを使用すると、個人用の Azure アカウントとは別の Azure に接続できます。 これは、一時的なアカウントでも、個人用アカウントの代わりとなる長期存続アカウントでもかまいません。|
+|**サービス プリンシパル**|この認証は "_推奨されている方法_" です。 [Azure サービス プリンシパルを作成する](node-sdk-azure-authenticate-principal.md)方法をご覧ください。 サービス プリンシパルを使用すると、個人用の Azure アカウントとは別の Azure に接続できます。 これは、一時的なアカウントでも、個人用アカウントの代わりとなる長期存続アカウントでもかまいません。|
 | **対話**| これは、Azure サービスを試す場合の最も簡単な認証方法です。 ブラウザーで個人用アカウントを使用してログインする必要があります。 |
 |**Basic**|この認証では、個人のユーザー名とパスワードを入力する必要があります。 これは安全性が最も低い方法であり、推奨されません。| 
 
@@ -109,8 +109,6 @@ billingManagementClient.enrollmentAccounts.list().then((enrollmentList) => {
 |[@azure/ms-rest-nodeauth](https://www.npmjs.com/package/@azure/ms-rest-nodeauth) <br>(推奨)|[証明書を使用したサービス プリンシパル](https://github.com/Azure/ms-rest-nodeauth/blob/master/samples/authFileWithSpCert.ts)<br>[ファイルからのサービス プリンシパル](https://github.com/Azure/ms-rest-nodeauth/blob/master/samples/authFileWithSpSecret.ts)<br>[対話](https://github.com/Azure/ms-rest-nodeauth/blob/master/samples/interactivePersonalAccount.ts)<br>[Basic](https://github.com/Azure/ms-rest-nodeauth/blob/master/samples/usernamePassword.ts)|
 |[@azure/ms-rest-browserauth](https://www.npmjs.com/package/@azure/ms-rest-browserauth)<br>(推奨)|[ポップアップを使用した認証 (create-react-app)](https://github.com/Azure/ms-rest-browserauth/tree/master/samples/authentication-with-popup)<br>[ポップアップを使用しない react](https://github.com/Azure/ms-rest-browserauth/tree/master/samples/react-app)<br>[[ログイン] ボタンを使用した HTML](https://github.com/Azure/ms-rest-browserauth/tree/master/samples/vanilla)|
 |[ms-rest-azure](https://www.npmjs.com/package/ms-rest-azure)|[サービス プリンシパル](https://github.com/Azure/azure-sdk-for-node/blob/master/Documentation/Authentication.md#service-principal-authentication)<br>[対話](https://github.com/Azure/azure-sdk-for-node/blob/master/Documentation/Authentication.md#interactive-login)<br>[Basic](https://github.com/Azure/azure-sdk-for-node/blob/master/Documentation/Authentication.md#basic-authentication)|
-
-[!INCLUDE [chrome-note](../includes/chrome-note.md)]
 
 ## <a name="next-steps"></a>次のステップ   
 

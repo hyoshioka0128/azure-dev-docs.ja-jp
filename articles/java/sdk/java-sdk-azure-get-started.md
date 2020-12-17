@@ -9,18 +9,16 @@ ms.topic: article
 ms.service: multiple
 ms.assetid: b1e10b79-f75e-4605-aecd-eed64873e2d3
 ms.custom: seo-java-august2019, devx-track-java, devx-track-azurecli
-ms.openlocfilehash: c98e9194d7c9b391206104f249f1356351938d32
-ms.sourcegitcommit: 709fa38a137b30184a7397e0bfa348822f3ea0a7
+ms.openlocfilehash: 7c34254cbe45fdb6e60f9f1a30ab409f72c2aee4
+ms.sourcegitcommit: c1ef7aa8ed2e88e98b190e42cffde52cf301958d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96442289"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97034543"
 ---
 # <a name="get-started-with-cloud-development-using-java-on-azure"></a>Azure での Java を使用したクラウド開発の開始
 
 この記事では、Java での Azure 開発用の開発環境を設定する手順について説明します。 Azure リソースをいくつか作成し、それらに接続して基本的なタスク (ファイルのアップロードや Web アプリケーションのデプロイなど) を実行します。 作業が完了すると、独自の Java アプリケーションで Azure サービスの使用を開始できるようになります。
-
-[!INCLUDE [chrome-note](includes/chrome-note.md)]
 
 ## <a name="prerequisites"></a>前提条件
 

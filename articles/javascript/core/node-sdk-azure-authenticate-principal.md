@@ -4,12 +4,12 @@ description: Azure で Node.js および JavaScript を使用してサービス 
 ms.topic: how-to
 ms.date: 11/05/2020
 ms.custom: devx-track-js, devx-track-azurecli
-ms.openlocfilehash: e837ca7f83f115a9d7c2bbe34e46d884a02dffe0
-ms.sourcegitcommit: dc74b60217abce66fe6cc93923e869e63ac86a8f
+ms.openlocfilehash: dc9b82ad8e664beeeedaa0002f76457bb01793e3
+ms.sourcegitcommit: c1ef7aa8ed2e88e98b190e42cffde52cf301958d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94872773"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97034503"
 ---
 # <a name="create-an-azure-service-principal-for-nodejs"></a>Node.js の Azure サービス プリンシパルを作成する
 
@@ -23,8 +23,6 @@ ms.locfileid: "94872773"
 
 - Azure portal
 - Azure CLI 2.0
-
-[!INCLUDE [chrome-note](../includes/chrome-note.md)]
 
 ## <a name="create-a-service-principal-using-the-azure-cli-20"></a>Azure CLI 2.0 を使用してサービス プリンシパルを作成する
 

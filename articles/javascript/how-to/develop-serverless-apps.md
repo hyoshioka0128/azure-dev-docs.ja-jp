@@ -3,13 +3,13 @@ title: Azure Functions を使用したサーバーレス Node.js コード
 description: Azure Functions が提供するサーバーレス コードのインフラストラクチャにより、応答性の高いオンデマンドの HTTP エンドポイントを作成できます。
 ms.topic: how-to
 ms.date: 10/27/2020
-ms.custom: seo-javascript-september2019, seo-javascript-october2019, devx-track-js, contperfq2
-ms.openlocfilehash: eb33717761d492051737b0c4ec86a93a6e2b6256
-ms.sourcegitcommit: e1175aa94709b14b283645986a34a385999fb3f7
+ms.custom: seo-javascript-september2019, seo-javascript-october2019, devx-track-js, contperf-fy21q2
+ms.openlocfilehash: b90837cdb144e433a7d776e571291ff09610a845
+ms.sourcegitcommit: c8330128d5d6a71859933a890ecdf047cb950996
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93192544"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97522298"
 ---
 # <a name="use-azure-functions-to-develop-nodejs-serverless-code"></a>Azure Functions を使用して Node.js サーバーレス コードを開発する
 
@@ -27,7 +27,7 @@ Azure の関数リソースとは、1 つの Azure の地理的な場所にあ�
 
 ## <a name="durable-stateful-functions"></a>永続的なステートフル関数 
 
-[Durable Functions](/azure/azure-functions/durable/durable-functions-overview) では " *状態* " が保持されます。つまり、Azure で長時間実行される関数を管理することができます。 [JavaScript で最初の Durable Functions を作成する](/azure/azure-functions/durable/quickstart-js-vscode)。
+[Durable Functions](/azure/azure-functions/durable/durable-functions-overview) では "*状態*" が保持されます。つまり、Azure で長時間実行される関数を管理することができます。 [JavaScript で最初の Durable Functions を作成する](/azure/azure-functions/durable/quickstart-js-vscode)。
 
 ## <a name="static-web-apps-include-functions"></a>静的 Web アプリに関数を含める 
 
@@ -87,7 +87,7 @@ export default httpTrigger;
 
 ## <a name="configuring-the-function"></a>関数の構成
 
-関数は、 **function.json** ファイルで構成されます。 この構成を使用すると、関数のトリガー方法 ("direction": in) と、関数が返すもの ("direction": out) を構成できます。 また、環境変数、および関数が動作するために必要なその他の情報を設定することもできます。 [トリガーとバインド](/azure/azure-functions/functions-triggers-bindings?tabs=javascript.md)の詳細については、こちらを参照してください。 
+関数は、**function.json** ファイルで構成されます。 この構成を使用すると、関数のトリガー方法 ("direction": in) と、関数が返すもの ("direction": out) を構成できます。 また、環境変数、および関数が動作するために必要なその他の情報を設定することもできます。 [トリガーとバインド](/azure/azure-functions/functions-triggers-bindings?tabs=javascript.md)の詳細については、こちらを参照してください。 
 
 ```json
 {

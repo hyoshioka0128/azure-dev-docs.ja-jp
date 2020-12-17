@@ -42,17 +42,17 @@
             - name: 'クライアント アプリ:Azure Storage からのホスティング'
               items:
                 - name: 概要と前提条件
-                  href: tutorial-vscode-static-website-node-01.md
+                  href: tutorial/tutorial-vscode-static-website-node/tutorial-vscode-static-website-node-01.md
                 - name: アプリ コードの作成
-                  href: tutorial-vscode-static-website-node-02.md
+                  href: tutorial/tutorial-vscode-static-website-node/tutorial-vscode-static-website-node-02.md
                 - name: ストレージ アカウントの作成
-                  href: tutorial-vscode-static-website-node-03.md
+                  href: tutorial/tutorial-vscode-static-website-node/tutorial-vscode-static-website-node-03.md
                 - name: Azure Storage へのデプロイ
-                  href: tutorial-vscode-static-website-node-04.md
+                  href: tutorial/tutorial-vscode-static-website-node/tutorial-vscode-static-website-node-04.md
                 - name: 変更を加えて再デプロイする
-                  href: tutorial-vscode-static-website-node-05.md
+                  href: tutorial/tutorial-vscode-static-website-node/tutorial-vscode-static-website-node-05.md
                 - name: リソースをクリーンアップする
-                  href: tutorial-vscode-static-website-node-06.md
+                  href: tutorial/tutorial-vscode-static-website-node/tutorial-vscode-static-website-node-06.md
             - name: 'サーバーレス:Create and deploy'
               items:
                 - name: 1. 概要と前提条件
@@ -90,21 +90,21 @@
             - name: 'コンテナー: VS Code を使用した Express.js のデプロイ'
               items:
                 - name: 概要と前提条件
-                  href: tutorial-vscode-docker-node-01.md
+                  href: tutorial/tutorial-vscode-docker-node/tutorial-vscode-docker-node-01.md
                 - name: コンテナー レジストリを使用する
-                  href: tutorial-vscode-docker-node-02.md
+                  href: tutorial/tutorial-vscode-docker-node/tutorial-vscode-docker-node-02.md
                 - name: ローカル Node.js アプリを作成する
-                  href: tutorial-vscode-docker-node-03.md
+                  href: tutorial/tutorial-vscode-docker-node/tutorial-vscode-docker-node-03.md
                 - name: アプリ イメージを作成する
-                  href: tutorial-vscode-docker-node-04.md
+                  href: tutorial/tutorial-vscode-docker-node/tutorial-vscode-docker-node-04.md
                 - name: アプリ イメージをデプロイする
-                  href: tutorial-vscode-docker-node-05.md
+                  href: tutorial/tutorial-vscode-docker-node/tutorial-vscode-docker-node-05.md
                 - name: 変更を加えて再デプロイする
-                  href: tutorial-vscode-docker-node-06.md
+                  href: tutorial/tutorial-vscode-docker-node/tutorial-vscode-docker-node-06.md
                 - name: ログのストリーミング
-                  href: tutorial-vscode-docker-node-07.md
+                  href: tutorial/tutorial-vscode-docker-node/tutorial-vscode-docker-node-07.md
                 - name: リソースをクリーンアップする
-                  href: tutorial-vscode-docker-node-08.md
+                  href: tutorial/tutorial-vscode-docker-node/tutorial-vscode-docker-node-08.md
             - name: 'VM:ログを使用してコンテナーをデプロイする'
               items:
                 - name: 1. 概要と前提条件
@@ -143,7 +143,7 @@
           href: how-to/create-static-site.md
         - name: ログとメトリック
           href: how-to/node-sdk-logging.md
-    - name: Learn
+    - name: 学習する
       href: learn-azure-javascript.md
     - name: サンプル
       href: 'https://docs.microsoft.com/samples/browse/?languages=javascript%2Cnodejs%2Ctypescript'

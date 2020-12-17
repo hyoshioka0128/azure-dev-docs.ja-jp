@@ -49,6 +49,10 @@
           href: create-vm-scaleset-network-disks-hcl.md
         - name: Packer イメージからの仮想マシン スケール セット
           href: create-vm-scaleset-network-disks-using-packer-hcl.md
+    - name: Security
+      items:
+        - name: Azure Attestation
+          href: create-attestation-provider.md
 - name: チュートリアル
   items:
     - name: ネットワーク

@@ -17,6 +17,8 @@
           href: core/node-sdk-azure-authenticate-principal.md
         - name: Azure に対して認証します
           href: core/node-sdk-azure-authenticate.md
+        - name: Azure CLI での自動化
+          href: core/automate-tasks-with-azure-cli.md
     - name: チュートリアル
       items:
         - name: デプロイとホスト
@@ -72,19 +74,19 @@
             - name: 'サーバー: Azure CLI を使用してデプロイする'
               items:
                 - name: 概要と前提条件
-                  href: tutorial-vscode-azure-cli-node-01.md
+                  href: tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-01.md
                 - name: アプリを作成する
-                  href: tutorial-vscode-azure-cli-node-02.md
+                  href: tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-02.md
                 - name: App Service の作成
-                  href: tutorial-vscode-azure-cli-node-03.md
+                  href: tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-03.md
                 - name: アプリケーションのデプロイ
-                  href: tutorial-vscode-azure-cli-node-04.md
+                  href: tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-04.md
                 - name: ログのストリーミング
-                  href: tutorial-vscode-azure-cli-node-05.md
+                  href: tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-05.md
                 - name: 変更を加えて再デプロイする
-                  href: tutorial-vscode-azure-cli-node-06.md
+                  href: tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-06.md
                 - name: リソースをクリーンアップする
-                  href: tutorial-vscode-azure-cli-node-07.md
+                  href: tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-07.md
             - name: 'サーバー: Azure CLI を使用した Deno のデプロイ'
               href: tutorial/deploy-deno-app-azure-app-service-azure-cli.md
             - name: 'コンテナー: VS Code を使用した Express.js のデプロイ'

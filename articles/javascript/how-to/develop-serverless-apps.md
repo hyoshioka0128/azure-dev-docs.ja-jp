@@ -113,7 +113,7 @@ export default httpTrigger;
 
 ## <a name="develop-functions-remotely-using-the-azure-portal"></a>Azure portal を使用して関数をリモートで開発する
 
-[Azure portal を使用して Azure 関数を作成する](https://ms.portal.azure.com/#create/Microsoft.FunctionApp)と、関数を構成し、事前に設定されたテンプレート内にコードを記述して、関数をテストすることができます。 
+[Azure portal を使用して Azure Function を作成する](https://ms.portal.azure.com/#create/Microsoft.FunctionApp)と、関数を構成し、事前に設定されたテンプレート内にコードを記述して、関数をテストすることができます。 
 
 ポータルでは、TypeScript ではなく、JavaScript 関数のみが作成されます。 TypeScript を使用して開発する場合は、関数をダウンロードするか、関数の拡張機能を使用して Visual Studio Code で関数をローカルに作成します。 
 

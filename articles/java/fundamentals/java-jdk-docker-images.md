@@ -19,7 +19,7 @@ ms.locfileid: "86379826"
 
 * [JDK](https://hub.docker.com/_/microsoft-java-jdk)
 * [JRE](https://hub.docker.com/_/microsoft-java-jre)
-* [JRE ヘッドレス](https://hub.docker.com/_/microsoft-java-jre-headless)
+* [JRE-headless](https://hub.docker.com/_/microsoft-java-jre-headless)
 
 ## <a name="running-a-docker-image"></a>Docker イメージの実行
 

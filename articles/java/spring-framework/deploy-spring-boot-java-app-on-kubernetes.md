@@ -138,7 +138,7 @@ ms.locfileid: "92689196"
    </properties>
    ```
 
-1. 以下の例に示すように *pom.xml* ファイルの `<plugins>` コレクションを更新し、`<plugin>` 要素に `jib-maven-plugin` のエントリが含まれるようにします。 ここでは、Microsoft Container Registry (MCR) の基本イメージ (`mcr.microsoft.com/java/jdk:8-zulu-alpine`) が使用されていることに注目してください。このイメージには、公式にサポートされた Azure 用の JDK が含まれています。 その他公式にサポートされた JDK を含む MCR 基本イメージについては、「[Java SE JDK](https://hub.docker.com/_/microsoft-java-jdk)」、「[Java SE JRE](https://hub.docker.com/_/microsoft-java-jre)」、「[Java SE ヘッドレス JRE](https://hub.docker.com/_/microsoft-java-jre-headless)」、「[Java SE JDK と Maven](https://hub.docker.com/_/microsoft-java-maven)」を参照してください。
+1. 以下の例に示すように *pom.xml* ファイルの `<plugins>` コレクションを更新し、`<plugin>` 要素に `jib-maven-plugin` のエントリが含まれるようにします。 ここでは、Microsoft Container Registry (MCR) の基本イメージ (`mcr.microsoft.com/java/jdk:8-zulu-alpine`) が使用されていることに注目してください。このイメージには、公式にサポートされた Azure 用の JDK が含まれています。 その他公式にサポートされた JDK を含む MCR 基本イメージについては、「[Java SE JDK](https://hub.docker.com/_/microsoft-java-jdk)」、「[Java SE JRE](https://hub.docker.com/_/microsoft-java-jre)」、「[Java SE Headless JRE](https://hub.docker.com/_/microsoft-java-jre-headless)」、「[Java SE JDK と Maven](https://hub.docker.com/_/microsoft-java-maven)」を参照してください。
 
    ```xml
    <plugin>

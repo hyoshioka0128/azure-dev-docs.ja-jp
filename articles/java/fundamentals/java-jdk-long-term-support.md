@@ -115,7 +115,7 @@ Azul Zulu for Azure - Enterprise Edition JDK リリース:
 
      * [JDK](https://hub.docker.com/_/microsoft-java-jdk)
      * [JRE](https://hub.docker.com/_/microsoft-java-jre)
-     * [ヘッドレス JRE](https://hub.docker.com/_/microsoft-java-jre-headless)
+     * [Headless JRE](https://hub.docker.com/_/microsoft-java-jre-headless)
 
 - 無料です。
 

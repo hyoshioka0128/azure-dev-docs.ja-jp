@@ -4,12 +4,12 @@ description: Azure リソースのプロビジョニング、使用、管理を�
 ms.date: 09/19/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 276230cf5e5999f7d188d138e3b4e7361c3e4114
-ms.sourcegitcommit: b70a38d46616f5e519d5b9c1a1eaf3fe0ecb9605
+ms.openlocfilehash: d610099b3b877f0916079ca2000a5268f3f08c2a
+ms.sourcegitcommit: c8330128d5d6a71859933a890ecdf047cb950996
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94932386"
+ms.lasthandoff: 12/15/2020
+ms.locfileid: "97522007"
 ---
 # <a name="use-the-azure-libraries-sdk-for-python"></a>Python 用 Azure ライブラリ (SDK) を使用する
 
@@ -75,6 +75,8 @@ SDK の "*管理*" ("管理プレーン") ライブラリは、いずれも名�
 - [仮想マシンのプロビジョニング](azure-sdk-example-virtual-machines.md)
 
 各管理ライブラリでの操作の詳細については、[SDK GitHub リポジトリ](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk)内のライブラリのプロジェクト フォルダーにある *README.md* または *README.rst* ファイルを参照してください。 また、その他のコード スニペットについては、[リファレンス ドキュメント](/python/api)および [Azure のサンプル](/samples/browse/?languages=python&term=Getting%20started%20-%20Managing)で確認できます。
+
+### <a name="migrating-from-older-management-libraries"></a>古い管理ライブラリからの移行
 
 以前のバージョンの管理ライブラリからコードを移行する場合は、次の詳細を参照してください。
 

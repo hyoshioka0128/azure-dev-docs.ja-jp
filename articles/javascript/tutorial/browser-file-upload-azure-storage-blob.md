@@ -1,21 +1,21 @@
 ---
 title: VSCode を使用してイメージを Blob Storage にアップロードする - App Service/CosmosDB
-description: React アプリを使用して、ファイルを Azure Storage BLOB にアップロードします。 このチュートリアルでは、Visual Studio Code の拡張機能でローカルとリモートの環境を使用する方法について説明します。
+description: React/TypeScript アプリを使用して、ファイルを Azure Storage Blob にアップロードします。 このチュートリアルでは、Visual Studio Code の拡張機能でローカルとリモートの環境を使用する方法について説明します。
 ms.topic: tutorial
 ms.date: 11/13/2020
 ms.custom: scenarios:getting-started, languages:JavaScript, devx-track-javascript, azure-sdk-storage-blob-typescript-version-12.2.1
-ms.openlocfilehash: 514c4cf3c5d54c30451759958b1cef5e465c5c8e
-ms.sourcegitcommit: 0cda024089784b92c1db3a4506c1dccd6bfe6339
+ms.openlocfilehash: 2e38e7e293f87dc9fa8cafc69a0780a10d31d730
+ms.sourcegitcommit: 525c4b41d85aae9c3026a070b07e00c2241ea716
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96772609"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97393901"
 ---
 # <a name="upload-an-image-to-an-azure-storage-blob"></a>イメージを Azure Storage Blob にアップロードする
 
 クライアント側の React アプリを使用して、Azure Storage npm パッケージを使用してイメージ ファイルを Azure Storage Blob にアップロードします。 
 
-プログラミング作業は完了しており、このチュートリアルでは、Azure 拡張機能を使用して Visual Studio Code 内部からローカルおよびリモートの Azure 環境を正常に使用することに焦点を当てています。
+TypeScript のプログラミングは完了しており、このチュートリアルでは、Azure 拡張機能を使用して Visual Studio Code 内からローカルとリモートの Azure 環境を正常に使用することに焦点を当てます。
 
 * [ソース コード](https://github.com/Azure-Samples/js-e2e-browser-file-upload-storage-blob)
 
@@ -23,7 +23,7 @@ ms.locfileid: "96772609"
 
 このチュートリアルには、JavaScript 開発者向けの **上位の Azure タスク** がいくつか含まれています。
 
-* Visual Studio Code で React アプリをローカルで実行する
+* Visual Studio Code を使用してローカル環境で React/TypeScript アプリを実行する
 * Storage リソースを作成し、ファイル アップロード用に構成する
     * CORS を構成する
     * Shared Access Signature (SAS) トークンを作成する
@@ -188,7 +188,7 @@ SAS トークンとストレージ アカウント名を `src/uploadToBlob.ts` �
 
 ## <a name="upload-button-functionality"></a>[アップロード] ボタンの機能
 
-`src/app` ファイルは、create-react-app を使用したそのアプリ作成の一部として提供されています。 このファイルは、[ファイルの選択] ボタンと [アップロード] ボタン、およびその機能を提供するためのサポート コードを提供するように変更されています。 
+create-react-app でのそのアプリ作成の一部として、`src/App.tsx` TypeScript ファイルが提供されています。 このファイルは、[ファイルの選択] ボタンと [アップロード] ボタン、およびその機能を提供するためのサポート コードを提供するように変更されています。 
 
 Azure BLOB ストレージ コードに接続するコードは強調表示されています。 `uploadFileToBlob` を呼び出すと、コンテナー内のすべての BLOB (ファイル) がフラット リストとして返されます。 そのリストは、`DisplayImagesFromContainer` 関数を使用して表示されます。
 
@@ -202,7 +202,7 @@ Azure BLOB ストレージ コードに接続するコードは強調表示さ�
 
 ### <a name="dependencies-and-variables"></a>依存関係と変数
 
-`uploadToBlob.ts` ファイルは、依存関係を読み込み、環境変数またはハードコーディングされた文字列によって、必要な変数を取り込みます。
+`uploadToBlob.ts` TypeScript ファイルにより、依存関係が読み込まれ、環境変数またはハードコーディングされた文字列から必要な変数がプルされます。
 
 | 変数 | 説明 |
 |--|--|

@@ -4,16 +4,16 @@ description: このサンプルには、Computer Vision を React アプリに�
 ms.topic: tutorial
 ms.date: 11/13/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: a246e2e367aef4027516468ae691aa31117cd6c7
-ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
+ms.openlocfilehash: 44999c92ef2a938327a379d0d4993b000466fb3f
+ms.sourcegitcommit: 525c4b41d85aae9c3026a070b07e00c2241ea716
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94993541"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97394066"
 ---
 # <a name="5-review-how-to-add-computer-vision-to-the-react-app"></a>5.Computer Vision を React アプリに追加する方法を確認する
 
-このサンプルには、Computer Vision を React アプリに追加するために必要なすべてのコードが含まれています。 チュートリアルのこのセクションでは、手順とコードを "_確認_" します。 このチュートリアルでは、こちらの手順を実行する必要はありません。 
+このサンプルには、Computer Vision を React アプリに追加するために必要なすべての TypeScript コードが含まれています。 チュートリアルのこのセクションでは、手順とコードを "_確認_" します。 このチュートリアルでは、こちらの手順を実行する必要はありません。 
 
 ## <a name="add-computer-vision-to-local-react-app"></a>Computer Vision をローカルの React アプリに追加する
 

@@ -1,19 +1,19 @@
 ---
 title: チュートリアル:Microsoft ログイン ボタンを React SPA に追加する
-description: このチュートリアルで示されている Azure Active Directory 認証は、ログインとログアウトのボタンであり、ユーザーのユーザー名　(メールアドレス) へのアクセスを提供します。 シングルページ アプリケーション (SPA) でのユーザーの操作を管理するために、Azure クライアント側 SDK (`@azure/msal-browser`) を使用してアプリケーションを開発します。
+description: このチュートリアルで示されている Azure Active Directory 認証は、ログインとログアウトのボタンであり、ユーザーのユーザー名　(メールアドレス) へのアクセスを提供します。 シングルページ アプリケーション (SPA) でのユーザーの操作を管理するために、Azure クライアント側 SDK (`@azure/msal-browser`) を使用して TypeScript アプリケーションを開発します。
 ms.topic: tutorial
 ms.date: 12/01/2020
 ms.custom: devx-track-js, "azure-sdk-javascript-@azure/msal-browser-2.7.0"
-ms.openlocfilehash: a5c07696c6c774408bf2772542234e59f5c0b58c
-ms.sourcegitcommit: 09b4a2dbe13601fdf16fcc4082a5075b46ad3459
+ms.openlocfilehash: e6d91f1654b14d7b83c7ae2fa2c0a313914314b2
+ms.sourcegitcommit: 525c4b41d85aae9c3026a070b07e00c2241ea716
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96563726"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97393891"
 ---
 # <a name="add-microsoft-login-button-to-a-single-page-application-for-authentication"></a>認証用のシングルページ アプリケーションに Microsoft ログイン ボタンを追加する
 
-このチュートリアルで示されている Azure 認証は、ログインとログアウトのボタンであり、ユーザーのアカウントへのアクセスを提供します。 シングルページ アプリケーション (SPA) でのユーザーの操作を管理するために、Azure クライアント側 SDK (`@azure/msal-browser`) を使用してアプリケーションを開発します。
+この TypeScript チュートリアルで示されている Azure 認証はログインとログアウトのボタンであり、それによってユーザーのアカウントへのアクセスが提供されます。 シングルページ アプリケーション (SPA) でのユーザーの操作を管理するために、Azure クライアント側 SDK (`@azure/msal-browser`) を使用してアプリケーションを開発します。
 
 * [ソース コード](https://github.com/Azure-Samples/js-e2e-client-azure-login-button)
 

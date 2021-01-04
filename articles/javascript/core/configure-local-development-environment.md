@@ -4,12 +4,12 @@ description: エディター、Azure SDK ライブラリ、オプションのツ
 ms.date: 11/05/2020
 ms.topic: conceptual
 ms.custom: devx-track-js, azure-sdk-javascript-ai-text-analytics-5.0.0
-ms.openlocfilehash: 0da3357fc24f65a43303f6c23d5aa6b679f211d4
-ms.sourcegitcommit: 801682d3fc9651bf95d44e58574d5a4564be6feb
+ms.openlocfilehash: 9d542d188205b305a0909e229ed2e71e003e95f7
+ms.sourcegitcommit: 525c4b41d85aae9c3026a070b07e00c2241ea716
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94333832"
+ms.lasthandoff: 12/14/2020
+ms.locfileid: "97393871"
 ---
 # <a name="configure-your-local-javascript-dev-environment-for-azure"></a>Azure 用のローカル JavaScript 開発環境を構成する
 
@@ -33,7 +33,7 @@ Azure リソースは、Azure を使用するための課金単位であるサ�
 
 |名前またはインストーラー|説明|
 |--|--|
-[!INCLUDE [Node.js](../includes/environment-nodejs-table-row-2-columns.md)]
+|[Node.js 8 以降](https://www.npmjs.com/)|ローカル ワークステーション開発用の最新の長期サポート (LTS) ランタイム環境をインストールします。 パッケージ マネージャーも必要です。 Node.js により、8.x バージョンの NPM がインストールされます。 通常、Azure SDK に必要な Node.js の最小バージョンは 8.x です。 Azure アプリ サービスなどの Azure ホスティング サービスは、より新しいバージョンの Node.jsのランタイムを提供します。 ローカルとリモートの開発で最小の 8.x を対象とすると、そのコードは正常に実行されるはずです。|
 |[Visual Studio Code](https://code.visualstudio.com/)| Visual Studio Code は、優れた JavaScript 統合とコーディングのエクスペリエンスを提供しますが、必須ではありません。 任意のコード エディターを使用することができます。 このドキュメントにおいては、別のエディターを使用している場合、Azure との統合を確認するか、Azure CLI を使用してください。|
 
 > [!CAUTION]
@@ -65,12 +65,12 @@ Azure を使用する新しいプロジェクトでは、それぞれ次のこ�
 ## <a name="securing-configuration-information"></a>構成情報の保護
 
 構成情報を保存するには、いくつかのオプションがあります。
-- [Dotenv](https://www.npmjs.com/package/dotenv) は、`.env` ファイルから環境変数を読み取るための一般的な npm パッケージです。 `.env` ファイルがソース管理にチェックインされないように、必ず `.env` ファイルを `.gitignore` ファイルに追加してください。
+- [Dotenv](https://www.npmjs.com/package/dotenv) は、`.env` ファイルから環境変数を読み取るための一般的な npm パッケージです。 `.env` ファイルがソース管理にチェックインされないように、必ず `.env` ファイルを `.gitignore` ファイルに追加してください。 Azure 用 Web アプリでの[環境変数](../how-to/configure-web-app-settings.md)の詳細を確認してしてください。 
 - Azure [Key Vault](/azure/key-vault/) を使用して、クラウドのリソース、アプリ、ソリューションにアクセスして暗号化するキーを作成および管理します。
 
 ### <a name="create-environment-variables-for-the-azure-libraries"></a>Azure ライブラリの環境変数を作成する
 
-Azure SDK ライブラリに必要な Azure 設定を使用して Azure クラウドにアクセスするには、最も一般的な値を環境変数に設定します。 次のコマンドは、環境変数をローカル ワークステーションに設定します。 もう 1 つの一般的なメカニズムは、`DOTENV` NPM パッケージを使用して、これらの設定用の `.env` ファイルを作成することです。 `.env` を使用する場合は、このファイルをソース管理にチェックインしないようにしてください。 これらの設定がソース管理にチェックインされるようにするための標準的な方法は、`.env` ファイルを git の `.ignore` ファイルに追加することです。
+Azure SDK ライブラリで Azure クラウドにアクセスするために必要な Azure の設定を使用するには、最も一般的な値を[環境変数](../how-to/configure-web-app-settings.md)に設定します。 次のコマンドは、環境変数をローカル ワークステーションに設定します。 もう 1 つの一般的なメカニズムは、`DOTENV` NPM パッケージを使用して、これらの設定用の `.env` ファイルを作成することです。 `.env` を使用する場合は、このファイルをソース管理にチェックインしないようにしてください。 これらの設定がソース管理にチェックインされるようにするための標準的な方法は、`.env` ファイルを git の `.ignore` ファイルに追加することです。
 
 次の例では、クライアント ID は、サービス プリンシパル ID とサービス プリンシパル シークレットです。
 

@@ -7,26 +7,28 @@ metadata:
   description: 各種のチュートリアル、ツール、SDK リファレンスを活用して、ブラウザーまたは Node.js で Azure SDK for JavaScript を使用したアプリの開発を開始しましょう。
   author: diberry
   ms.author: diberry
-  ms.date: 09/21/2020
+  ms.date: 012/16/2020
   ms.topic: landing-page
   ms.collection: collection
   ms.technology: azure
   ms.service: multiple
   ms.devlang: javascript
   ms.custom: 2020Aug21Redesign, devx-track-js
-  ms.openlocfilehash: c0e7382b6c04c20d65f41c1a5a41922a4b658de4
-  ms.sourcegitcommit: f723980ade4cbc13548a5d8ac3f3fa681b8a2dbd
+  ms.openlocfilehash: 55e5b258ccafc2fc9e93f8a27efbc5b543b6450d
+  ms.sourcegitcommit: 1dfcc022a3098b1a1505e9458eada35f527ef070
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 12/16/2020
-  ms.locfileid: "97601073"
+  ms.lasthandoff: 12/17/2020
+  ms.locfileid: "97636391"
 landingContent:
 - title: Azure を利用するのが初めてであれば、
   linkLists:
   - linkListType: get-started
     links:
-    - text: Azure の基礎
-      url: /learn/paths/azure-fundamentals/
+    - text: Azure とは
+      url: core/what-is-azure-for-javascript-development.md
+    - text: Node.js をインストールする
+      url: core/install-nodejs-develop-azure-sdk-project.md
     - text: 開発環境を設定する
       url: core/configure-local-development-environment.md
     - text: クライアント ライブラリの認証
@@ -89,16 +91,16 @@ landingContent:
       url: /azure/cognitive-services/translator/quickstart-translator?pivots=programming-language-javascript
     - text: 画像内のオブジェクトを検出する
       url: tutorial/static-web-app/introduction.md
-- title: セキュリティ、メッセージング、ログ
+- title: ラーニング パスとモジュール
   linkLists:
-  - linkListType: quickstart
+  - linkListType: learn
     links:
-    - text: 認証
-      url: /azure/active-directory/develop/quickstart-v2-javascript
-    - text: メッセージ キュー
-      url: /azure/service-bus-messaging/service-bus-nodejs-how-to-use-queues-new-package
-    - text: ログと分析
-      url: /azure/azure-monitor/learn/nodejs-quick-start
+    - text: Azure の基礎
+      url: /learn/modules/intro-to-azure-fundamentals/
+    - text: Node.js を使用して JavaScript アプリケーションを構築する
+      url: /learn/paths/build-javascript-applications-nodejs/
+    - text: Azure Static Web Apps
+      url: /learn/paths/azure-static-web-apps/
 - title: Azure クライアント ライブラリ (SDK) の使用
   linkLists:
   - linkListType: get-started

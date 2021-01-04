@@ -7,12 +7,12 @@ ms.date: 11/12/2019
 ms.service: app-service
 ms.topic: article
 ms.custom: devx-track-java, devx-track-azurecli
-ms.openlocfilehash: a8e0614547fa7bfca3a8d66af8a1c1d4240fe161
-ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
+ms.openlocfilehash: 24b023469e4557a62a83f35a3fe6475daed1b3b0
+ms.sourcegitcommit: 0d2ea78f18430c845a32e0d2311427ab81033465
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92689175"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97754158"
 ---
 # <a name="deploy-a-spring-app-to-app-service-with-mysql"></a>MySQL を使用して Spring アプリを App Service にデプロイする
 
@@ -182,7 +182,7 @@ set REGION=<region>
 
 Maven では、指定した名前で Azure リソースを作成するためにこれらの値が使用されます。 環境変数を使用すると、プロジェクト ファイルのアカウントのシークレットを保持することができます。
 
-次に、 *pom.xml* ファイルを更新して、Azure へのデプロイ用に Maven を構成します。 以前に追加した `<plugin>` 要素の後に、次の XML を追加します。 必要に応じて、`1.11.0` を [Azure App Service 用 Maven プラグイン](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme)の最新バージョンに変更します。
+次に、*pom.xml* ファイルを更新して、Azure へのデプロイ用に Maven を構成します。 以前に追加した `<plugin>` 要素の後に、次の XML を追加します。 必要に応じて、`1.11.0` を [Azure App Service 用 Maven プラグイン](https://github.com/microsoft/azure-maven-plugins/blob/develop/azure-webapp-maven-plugin/README.md)の最新バージョンに変更します。
 
 ```xml
 <plugin>
@@ -390,7 +390,7 @@ show databases;
 </profile>
 ```
 
-次に、 *pom.xml* ファイルを構成して、Azure のデプロイと MySQL の使用のために Maven を構成します。 以前に追加した `<plugin>` 要素の後に、次の XML を追加します。 必要に応じて、`1.11.0` を [Azure App Service 用 Maven プラグイン](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme)の最新バージョンに変更します。
+次に、*pom.xml* ファイルを構成して、Azure のデプロイと MySQL の使用のために Maven を構成します。 以前に追加した `<plugin>` 要素の後に、次の XML を追加します。 必要に応じて、`1.11.0` を [Azure App Service 用 Maven プラグイン](https://github.com/microsoft/azure-maven-plugins/blob/develop/azure-webapp-maven-plugin/README.md)の最新バージョンに変更します。
 
 ```xml
 <plugin>

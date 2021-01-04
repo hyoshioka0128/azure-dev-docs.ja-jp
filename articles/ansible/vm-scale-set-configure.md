@@ -4,13 +4,13 @@ description: Ansible を使用して、Azure で仮想マシン スケール セ
 keywords: ansible, azure, devops, bash, プレイブック, 仮想マシン, 仮想マシン スケール セット, vmss
 ms.topic: tutorial
 ms.date: 04/30/2019
-ms.custom: devx-track-ansible, devx-track-azurecli
-ms.openlocfilehash: 64bf3cbd79f2b2b1e68a3019669bce1115ac7333
-ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
+ms.custom: devx-track-ansible
+ms.openlocfilehash: e8f2db42ee43db5fa9b8a61acb3f60119f84145d
+ms.sourcegitcommit: e43be891c643ba2ddc3189ad98e4a49f03dfeedc
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92689226"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97824405"
 ---
 # <a name="tutorial-configure-virtual-machine-scale-sets-in-azure-using-ansible"></a>チュートリアル:Ansible を使用して Azure 内に仮想マシン スケール セットを構成する
 
@@ -35,13 +35,13 @@ ms.locfileid: "92689226"
 
 このセクションのプレイブック コードは、次のリソースを定義します。
 
-* **リソース グループ** 。すべてのリソースがデプロイされるリソース グループです。
-* **仮想ネットワーク** 。10.0.0.0/16 アドレス空間内の仮想ネットワークです。
-* **サブネット** 。仮想ネットワーク内のサブネットです。
-* **パブリック IP アドレス** 。このアドレスを使用して、インターネットのリソースにアクセスできます。
-* **ネットワーク セキュリティ グループ** 。スケール セットへのネットワーク トラフィックおよびスケール セットからのネットワーク トラフィックのフローを制御します。
-* **ロード バランサー** 。ロード バランサー ルールを使用して、定義された一連の VM にトラフィックを分散します。
-* **仮想マシン スケール セット** 。作成されたすべてのリソースを使用します。
+* **リソース グループ**。すべてのリソースがデプロイされるリソース グループです。
+* **仮想ネットワーク**。10.0.0.0/16 アドレス空間内の仮想ネットワークです。
+* **サブネット**。仮想ネットワーク内のサブネットです。
+* **パブリック IP アドレス**。このアドレスを使用して、インターネットのリソースにアクセスできます。
+* **ネットワーク セキュリティ グループ**。スケール セットへのネットワーク トラフィックおよびスケール セットからのネットワーク トラフィックのフローを制御します。
+* **ロード バランサー**。ロード バランサー ルールを使用して、定義された一連の VM にトラフィックを分散します。
+* **仮想マシン スケール セット**。作成されたすべてのリソースを使用します。
 
 サンプル プレイブックを取得するには、次の 2 つの方法があります。
 

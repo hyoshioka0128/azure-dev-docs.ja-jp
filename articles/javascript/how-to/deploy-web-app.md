@@ -4,12 +4,12 @@ description: ホスティング オプションとデプロイ シナリオに�
 ms.topic: how-to
 ms.date: 12/09/2020
 ms.custom: seo-javascript-september2019, seo-javascript-october2019, devx-track-js, contperf-fy21q2
-ms.openlocfilehash: 9f9f28204abf8537aeda933083ca5802210b6c20
-ms.sourcegitcommit: c8330128d5d6a71859933a890ecdf047cb950996
+ms.openlocfilehash: e2020d90260af4fbab8d6a37ef475eddb7754b90
+ms.sourcegitcommit: 1dfcc022a3098b1a1505e9458eada35f527ef070
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97522323"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97636527"
 ---
 # <a name="deploy-and-host-your-nodejs-apps-on-azure"></a>Azure で Node.js アプリをデプロイしてホストする
 
@@ -57,7 +57,7 @@ Azure クラウドにファイルを移動する一般的な方法は次のと�
 |--|--|
 |[GitHub のアクション](/azure/app-service/deploy-github-actions?tabs=applevel)|これは、自動化またはトリガーによる継続的なデプロイに使用します。|
 |[Visual Studio Code 拡張機能](https://marketplace.visualstudio.com/search?term=azure&target=VSCode&category=All%20categories&sortBy=Relevance)|これは、手動の場合やテスト、まれにデプロイに使用されます。 サービスの拡張機能がローカルにインストールされている必要があります。|
-|[Azure CLI](../tutorial-vscode-azure-cli-node-04.md)|これは、手動の場合か、まれにデプロイに使用されます。 サービスの拡張機能がローカルにインストールされている必要があります。|
+|[Azure CLI](../tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-04.md)|これは、手動の場合か、まれにデプロイに使用されます。 サービスの拡張機能がローカルにインストールされている必要があります。|
 
 特定のサービスに基づいて他のデプロイ方法が存在する場合があります。 たとえば、Azure App Service では、多種多様なデプロイ方法がサポートされています。
 * [ZIP ファイルから](/azure/app-service/deploy-zip)

@@ -9,12 +9,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
 ms.custom: devx-track-java
-ms.openlocfilehash: 25164bb67f717acfc7aa8f12e77c1b158528c2e8
-ms.sourcegitcommit: 709fa38a137b30184a7397e0bfa348822f3ea0a7
+ms.openlocfilehash: 57afae188dab9ad09adf344fbc360d4cf85aa0f0
+ms.sourcegitcommit: 0d2ea78f18430c845a32e0d2311427ab81033465
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96442351"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97754188"
 ---
 # <a name="tutorial-secure-a-java-web-app-using-the-spring-boot-starter-for-azure-active-directory"></a>チュートリアル:Azure Active Directory 用の Spring Boot Starter を使用して Java Web アプリをセキュリティで保護する
 
@@ -375,7 +375,7 @@ Spring および Azure の詳細については、Azure ドキュメント セ�
 [Spring Boot]: http://projects.spring.io/spring-boot/
 [Spring Initializr]: https://start.spring.io/
 [Spring Framework]: https://spring.io/
-[AAD Spring Boot Sample]: https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/spring/azure-spring-boot-samples/azure-spring-boot-sample-active-directory-backend
+[AAD Spring Boot Sample]: https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/spring/azure-spring-boot-samples/
 
 <!-- IMG List -->
 

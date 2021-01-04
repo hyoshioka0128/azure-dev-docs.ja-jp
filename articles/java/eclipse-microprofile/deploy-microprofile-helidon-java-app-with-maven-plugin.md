@@ -7,16 +7,16 @@ ms.date: 06/10/2020
 ms.service: app-service
 ms.topic: article
 ms.custom: ''
-ms.openlocfilehash: eaf9d71f469f1b0008a0ea085b13dbebf28f320a
-ms.sourcegitcommit: 723441eda0eb4ff893123201a9e029b7becf5ecc
+ms.openlocfilehash: ad3ccbc729b768d8aa72162506d44dea7906e424
+ms.sourcegitcommit: 0d2ea78f18430c845a32e0d2311427ab81033465
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91846683"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97754138"
 ---
 # <a name="deploy-a-helidon-web-app-to-azure-app-service-with-maven"></a>Maven を使用して Helidon Web アプリを Azure App Service にデプロイする
 
-このクイックスタートでは、[Azure App Service Web Apps 用の Maven プラグイン](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme)を使用して、Helidon アプリケーションを [Azure App Service on Linux](/azure/app-service/containers/) にデプロイします。 アプリの依存関係、ランタイム、構成を 1 つのデプロイ可能な成果物に統合する必要がある場合は、[Tomcat および WAR ファイル](/azure/app-service/containers/quickstart-java)での Java SE デプロイを選択します。
+このクイックスタートでは、[Azure App Service Web Apps 用の Maven プラグイン](https://github.com/microsoft/azure-maven-plugins/blob/develop/azure-webapp-maven-plugin/README.md)を使用して、Helidon アプリケーションを [Azure App Service on Linux](/azure/app-service/containers/) にデプロイします。 アプリの依存関係、ランタイム、構成を 1 つのデプロイ可能な成果物に統合する必要がある場合は、[Tomcat および WAR ファイル](/azure/app-service/containers/quickstart-java)での Java SE デプロイを選択します。
 
 Azure サブスクリプションがない場合は、開始する前に[無料アカウント](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)を作成してください。
 
@@ -124,7 +124,7 @@ az login
    </build>
    ```
 
-3. 次にデプロイを構成し、コマンド プロンプトで次の maven コマンドを実行して、**数字**を使用してプロンプトで以下のオプションを選択できます。
+3. 次にデプロイを構成し、コマンド プロンプトで次の maven コマンドを実行して、**数字** を使用してプロンプトで以下のオプションを選択できます。
 
    ```bash
    mvn azure-webapp:config
@@ -298,7 +298,7 @@ MicroProfile および Azure の詳細については、Azure ドキュメント
 [Working with Azure DevOps and Java]: /azure/devops/
 [Maven]: http://maven.apache.org/
 [MSDN subscriber benefits]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
-[Maven Plugin for Azure Web Apps (Azure Web Apps 用の Maven プラグイン)]: /java/api/overview/azure/maven/azure-webapp-maven-plugin/readme
+[Maven Plugin for Azure Web Apps (Azure Web Apps 用の Maven プラグイン)]: https://github.com/microsoft/azure-maven-plugins/blob/develop/azure-webapp-maven-plugin/README.md
 
 [Java Development Kit (JDK)]: ../fundamentals/java-jdk-long-term-support.md
 <!-- http://www.oracle.com/technetwork/java/javase/downloads/ -->

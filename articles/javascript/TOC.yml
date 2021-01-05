@@ -27,15 +27,17 @@
               items:
                 - name: 1. 概要と前提条件
                   href: tutorial/static-web-app/introduction.md
-                - name: 2. アプリをダウンロードしてローカルで実行する
+                - name: 2. アプリケーションのアーキテクチャ
+                  href: tutorial/static-web-app/application-architecture.md
+                - name: 3. アプリをダウンロードしてローカルで実行する
                   href: tutorial/static-web-app/run-the-react-cognitive-services-image-analyzer-app-locally.md
-                - name: 3. Computer Vision リソースを作成する
+                - name: 4. Computer Vision リソースを作成する
                   href: tutorial/static-web-app/create-computer-vision-resource-use-in-code.md
-                - name: 4. 静的 Web アプリを構築およびデプロイする
+                - name: 5. 静的 Web アプリを構築およびデプロイする
                   href: tutorial/static-web-app/create-static-web-app-visual-studio-code-extension.md
-                - name: 5. Computer Vision React コードを確認する
+                - name: 6. Computer Vision React コードを確認する
                   href: tutorial/static-web-app/add-computer-vision-react-app.md
-                - name: 6. リソースをクリーンアップする
+                - name: 7. リソースをクリーンアップする
                   href: tutorial/static-web-app/clean-up-resources.md
             - name: 'クライアント アプリ: Storage へのアップロード'
               href: tutorial/browser-file-upload-azure-storage-blob.md
@@ -131,6 +133,8 @@
       items:
         - name: アプリの構成
           href: how-to/configure-web-app-settings.md
+        - name: 一般的な JavaScript タスク
+          href: how-to/common-javascript-tasks.md
         - name: VS Code を使用したエンド ツー エンドの Node.js
           href: how-to/develop-nodejs-on-azure.md
         - name: Web アプリをデプロイする

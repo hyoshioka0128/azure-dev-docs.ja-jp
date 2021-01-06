@@ -2,14 +2,14 @@
 title: Azure と JavaScript を使用した開発について学習する
 description: Microsoft Learn プラットフォームを使用して、JavaScript を使用した Azure の理解を深める
 ms.topic: reference
-ms.date: 11/20/2020
+ms.date: 12/16/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: dd09feba608e9483597a60554f7c53e88565ffab
-ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
+ms.openlocfilehash: b126894943bf409439b965a631d07029281438f7
+ms.sourcegitcommit: 1dfcc022a3098b1a1505e9458eada35f527ef070
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94983961"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97636537"
 ---
 # <a name="learn-to-develop-with-azure-and-javascript"></a>Azure と JavaScript を使用した開発について学習する 
 
@@ -28,14 +28,33 @@ Microsoft Learn プラットフォームまたは Microsoft ラーニング パ�
 
 次の Microsoft Learn モジュールでは、JavaScript を使用して Azure を使用する方法について説明します。
 
+### <a name="static-web-apps"></a>静的 Web アプリ
+
+* [静的 Web アプリ、JavaScript、CodeTour:バスケットボールの統計を使用して、Visual Studio Code でゲーム プレイを最適化する (SPACE JAM にインスパイアされています):新しいレガシ](https://docs.microsoft.com/learn/paths/optimize-basketball-games-with-machine-learning/)
 * [Azure Static Web Apps を使用して Angular、React、Svelte、または Vue の JavaScript アプリを発行する](/learn/modules/publish-app-service-static-web-app-api/)
-* [Azure Functions で Node.js と Express API をサーバーレス API にリファクターする](/learn/modules/shift-nodejs-express-apis-serverless/)
 * [Gatsby と Azure Static Web Apps で静的 Web アプリを作成して発行する](/learn/modules/create-deploy-static-webapp-gatsby-app-service/)
-* [Azure Pipelines を使用して Node.js のデプロイを自動化する](/learn/modules/deploy-nodejs/)
-* [Visual Studio Code で Azure Cosmos DB 用の Node.js アプリを構築する](/learn/modules/build-node-cosmos-app-vscode/)
-* [Azure Linux 仮想マシン上の MEAN スタックで Web アプリケーションを構築して実行する](/learn/modules/build-a-web-app-with-mean-on-a-linux-vm/)
-* [GitHub Actions を使用して継続的インテグレーション (CI) ワークフローを作成する](/learn/modules/github-actions-ci/)
+* [HTML、CSS、および JavaScript を使用してシンプルな Web サイトを構築する](https://docs.microsoft.com/learn/modules/build-simple-website/)
+
+### <a name="serverless-apis"></a>サーバーレス API
+
 * [Azure Functions を使用してサーバーレス API をビルドする](/learn/modules/build-api-azure-functions/)
+* [Azure Functions で Node.js と Express API をサーバーレス API にリファクターする](/learn/modules/shift-nodejs-express-apis-serverless/)
+* [Visual Studio Code を使用して、Azure Functions と Node.js を備えたサーバーレス API で JavaScript と Vue.js ダッシュボードを構築します。](https://docs.microsoft.com/learn/modules/build-api-azure-functions)
+
+### <a name="devops-cicd"></a>DevOps (CI/CD)
+
+* [GitHub Actions を使用して継続的インテグレーション (CI) ワークフローを作成する](/learn/modules/github-actions-ci/)
+* [Azure Pipelines を使用して Node.js のデプロイを自動化する](/learn/modules/deploy-nodejs/)
+
+### <a name="data-apps"></a>データ アプリ
+
+* [Visual Studio Code で Azure Cosmos DB 用の Node.js アプリを構築する](/learn/modules/build-node-cosmos-app-vscode/)
+
+### <a name="virtual-machines"></a>Virtual Machines
+* [Azure Linux 仮想マシン上の MEAN スタックで Web アプリケーションを構築して実行する](/learn/modules/build-a-web-app-with-mean-on-a-linux-vm/)
+
+
+
 
 [その他の Learn のリソース](/search/?category=Learn&terms=JavaScript)については検索してください。
 
@@ -59,6 +78,10 @@ Microsoft Learn プラットフォームまたは Microsoft ラーニング パ�
 
 * [MTA:JavaScript を使用したプログラミングの概要](/learn/certifications/mta-introduction-to-programming-using-javascript)
 * [MCSA:Web アプリケーション](/learn/certifications/mcsa-web-applications-certification)
+
+## <a name="rss-feed"></a>RSS フィード
+
+* [新しいリリース](https://aka.ms/mslearn-rss)
 
 ## <a name="next-steps"></a>次のステップ
 

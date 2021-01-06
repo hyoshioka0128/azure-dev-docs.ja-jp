@@ -1,19 +1,24 @@
 ---
 title: Computer Vision を使用する React コード
-description: このサンプルには、Computer Vision を React アプリに追加するために必要なすべてのコードが含まれています。 チュートリアルのこのセクションでは、手順とコードを "_確認_" します。
+description: チュートリアルのこのセクションでは、手順とコードを "_確認_" します。 このチュートリアルでは、こちらの手順を実行する必要はありません。
 ms.topic: tutorial
-ms.date: 11/13/2020
+ms.date: 12/17/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 44999c92ef2a938327a379d0d4993b000466fb3f
-ms.sourcegitcommit: 525c4b41d85aae9c3026a070b07e00c2241ea716
+ms.openlocfilehash: 84140472c4bb57e208cc0e2c0665e72680664a2f
+ms.sourcegitcommit: 1c508f5ba73a12e4baeacc88ad9a8359301acb50
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97394066"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97687486"
 ---
-# <a name="5-review-how-to-add-computer-vision-to-the-react-app"></a>5.Computer Vision を React アプリに追加する方法を確認する
+# <a name="6-review-how-to-add-computer-vision-to-the-react-app"></a>6.Computer Vision を React アプリに追加する方法を確認する
 
 このサンプルには、Computer Vision を React アプリに追加するために必要なすべての TypeScript コードが含まれています。 チュートリアルのこのセクションでは、手順とコードを "_確認_" します。 このチュートリアルでは、こちらの手順を実行する必要はありません。 
+
+* [サンプル コード](https://github.com/Azure-Samples/js-e2e-client-cognitive-services)
+* Azure サービス
+    * [静的 Web アプリ](https://docs.microsoft.com/azure/static-web-apps)
+    * [Cognitive Services の Computer Vision](https://docs.microsoft.com/azure/cognitive-services/computer-vision/)
 
 ## <a name="add-computer-vision-to-local-react-app"></a>Computer Vision をローカルの React アプリに追加する
 
@@ -25,9 +30,9 @@ npm install @azure/cognitiveservices-computervision
 
 ## <a name="add-computer-vision-code-as-separate-module"></a>Computer Vision コードを別のモジュールとして追加する
 
-Computer Vision コードは、`./src/VisualAI.js` という名前の別のファイルに含まれています。 このモジュールの主要な関数が強調表示されています。 
+Computer Vision コードは、`./src/azure-cognitiveservices-computervision.js` という名前の別のファイルに含まれています。 このモジュールの主要な関数が強調表示されています。 
 
-:::code language="javascript" source="~/../js-e2e-client-cognitive-services/src/VisualAI.js" highlight="55-75" :::
+:::code language="javascript" source="~/../js-e2e-client-cognitive-services/src/azure-cognitiveservices-computervision.js" highlight="55-75" :::
 
 ## <a name="add-catalog-of-images-as-separate-module"></a>イメージのカタログを個別のモジュールとして追加する
 

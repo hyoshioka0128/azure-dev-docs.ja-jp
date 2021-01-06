@@ -2,16 +2,16 @@
 title: Computer Vision リソースを作成する
 description: Cognitive Services Computer Vision リソースを作成して環境変数に設定します。
 ms.topic: tutorial
-ms.date: 11/13/2020
+ms.date: 12/16/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 4ac324171f47ab8795169c5dd453d1e6451e8906
-ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
+ms.openlocfilehash: 338a3040381768e5987e84676339e8ee46c49fc7
+ms.sourcegitcommit: 1c508f5ba73a12e4baeacc88ad9a8359301acb50
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94993508"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97687479"
 ---
-# <a name="3-create-computer-vision-resource-and-use-in-code"></a>3.Computer Vision リソースを作成してコード内で使用する
+# <a name="4-create-computer-vision-resource-and-use-in-code"></a>4.Computer Vision リソースを作成してコード内で使用する
 
 この手順では、Computer Vision リソースを作成し、環境変数に設定します。 
 
@@ -108,13 +108,15 @@ Azure Static Web Apps を使用する場合、シークレットなどの環境�
 
 ## <a name="run-react-app-with-computervision-resource"></a>ComputerVision リソースで React アプリを実行する
 
-この React アプリは、変更がないか監視して、アプリのリビルドと再実行を行います。 リビルドを強制するために、変更を加えます。
+1. コマンドラインで再度アプリを起動します。
 
-1. `./src/VisualAi.js` の最初の空白行の直後 (4 行目) に **新しい行を入力します**。 この変更により、ローカルで実行されている Web サイトがリビルドされます。
+    ```bash
+    npm start
+    ```
 
     :::image type="content" source="../../media/static-web-app/browser-screenshot-react-computervision-app-start-up.png" alt-text="URL の指定または Enter を押す準備ができた React Cognitive Service Computer Vision サンプルの部分的なブラウザー スクリーンショット。":::
 
-1. テキスト フィールドを空のままにし、 **[Analyze]\(分析\)** ボタンを選択します。 
+1. 既定のカタログからイメージを選択するために、テキスト フィールドを空のままにして、 **[Analyze]** ボタンを選択します。 
 
     :::image type="content" source="../../media/static-web-app/browser-screenshot-react-computervision-app-image-analysis-result.png" alt-text="React Cognitive Service Computer Vision サンプル結果の部分的なブラウザー スクリーンショット。":::
 

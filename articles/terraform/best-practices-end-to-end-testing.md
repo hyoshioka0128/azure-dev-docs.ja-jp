@@ -4,12 +4,12 @@ description: Terraform プロジェクトでの Terratest を使用したエン�
 ms.topic: tutorial
 ms.date: 07/31/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: b760908bf1950751b93ba1787f444ca37ee8bf83
-ms.sourcegitcommit: e20f6c150bfb0f76cd99c269fcef1dc5ee1ab647
+ms.openlocfilehash: a70352f5ff6826dc7d07537cf773e76b6d1a6f49
+ms.sourcegitcommit: 485a88d1671a66df34493545488ab34e434f40d8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91401712"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97809760"
 ---
 # <a name="tutorial-setup-end-to-end-terratest-testing-on-terraform-projects"></a>チュートリアル:Terraform プロジェクトでエンド ツー エンドの Terratest テストを設定する
 
@@ -56,7 +56,7 @@ ms.locfileid: "91401712"
 
 [サンプルをダウンロード](#prerequisites)した場合、このシナリオの Terraform の構成は `src/main.tf` ファイルにあります。 このファイルには、前の図に示されている Azure インフラストラクチャをデプロイするために必要なものがすべて含まれています。
 
-仮想マシンの作成に慣れていない場合は、「[Terraform を使用して Azure に Linux VM とインフラストラクチャを作成する](create-linux-virtual-machine-with-infrastructure.md)」を参照してください。
+仮想マシンの作成方法に慣れていない場合は、「[Terraform を使用して Azure に Linux VM とインフラストラクチャを作成する](create-linux-virtual-machine-with-infrastructure.md)」を参照してください。
 
 > [!CAUTION]
 > この記事に記載されているサンプル シナリオは、例示のみを目的としています。 エンド ツー エンド テストの手順に集中するために、内容を意図的に単純化しています。 運用仮想マシンでパブリック IP アドレスを介して SSH ポートを公開することはお勧めしません。

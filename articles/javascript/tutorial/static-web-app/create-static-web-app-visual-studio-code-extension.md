@@ -4,14 +4,14 @@ description: 静的 Web アプリ リソースを作成します。その際、�
 ms.date: 10/13/2020
 ms.topic: include
 ms.custom: devx-track-javascript
-ms.openlocfilehash: c6daa3f2a7ceb7f981cdaf57bdba61a722edbaa3
-ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
+ms.openlocfilehash: dac91157531b3d26dddebe411d2c79883f77d4b9
+ms.sourcegitcommit: 1c508f5ba73a12e4baeacc88ad9a8359301acb50
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94993588"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97687463"
 ---
-# <a name="4-create-azure-static-web-app-resource"></a>4.Azure Static Web アプリ リソースを作成する
+# <a name="5-create-azure-static-web-app-resource"></a>5.Azure Static Web アプリ リソースを作成する
 
 チュートリアルのこのセクションでは、静的 Web アプリ リソースを作成します。その際、このサービスのための Visual Studio Code 拡張機能を使用し、ローカル コードをリモート リポジトリにプッシュしてビルドしてから、アプリを Azure にデプロイします。
 

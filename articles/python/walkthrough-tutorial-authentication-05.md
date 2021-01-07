@@ -4,12 +4,12 @@ description: メイン アプリの依存関係 (主に Azure SDK ライブラ�
 ms.date: 08/24/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 9c6204afd17d86cd8677022a59641e5343c6a543
-ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
+ms.openlocfilehash: 666ddd3222e724c316c6cf975bbb1e292f4525cd
+ms.sourcegitcommit: 075f39972e390e79ed09a3fcfdbfc776727e08fc
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91764732"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97952464"
 ---
 # <a name="part-5-main-app-dependencies-import-statements-and-environment-variables"></a>パート 5: メイン アプリの依存関係、import ステートメント、および環境変数
 
@@ -48,7 +48,7 @@ from azure.storage.queue import QueueClient
 
 | 変数 | 値 |
 | --- | --- |
-| THIRD_PARTY_API_ENDPOINT | サードパーティ API の URL。[パート 3](walkthrough-tutorial-authentication-03.md) で説明されている `https://msdocs-api-example.azurewebsites.net/api/RandomNumber` など。 |
+| THIRD_PARTY_API_ENDPOINT | サードパーティ API の URL。[パート 3](walkthrough-tutorial-authentication-03.md) で説明されている `https://msdocs-example-api.azurewebsites.net/api/RandomNumber` など。 |
 | KEY_VAULT_URL | サードパーティ API のアクセス キーを格納した Azure Key Vault の URL。 |
 | THIRD_PARTY_API_SECRET_NAME | サードパーティ API のアクセス キーを含む Key Vault 内のシークレットの名前。 |
 | STORAGE_QUEUE_URL | Azure に構成されている Azure Storage Queue の URL。`https://msdocsmainappexample.queue.core.windows.net/code-requests` など ([パート 4](walkthrough-tutorial-authentication-04.md) を参照)。 キュー名は URL の末尾に含まれているので、コード内のどこにも名前は表示されません。 |

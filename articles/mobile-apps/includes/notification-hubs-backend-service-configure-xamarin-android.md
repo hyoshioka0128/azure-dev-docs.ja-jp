@@ -4,23 +4,23 @@ ms.author: miparker
 ms.date: 07/27/2020
 ms.service: mobile-services
 ms.topic: include
-ms.openlocfilehash: d3c472b66ffc622fb3ff3e5d149a902f99fcd6f1
-ms.sourcegitcommit: e97cb81a245ce7dcabeac3260abc3db7c30edd79
+ms.openlocfilehash: faacb54f9e8a16cf4ef5b39aed0a3e42a4b3f255
+ms.sourcegitcommit: 84f64dec74b4b041b8830a4e7489e22f0e943440
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91493270"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97866070"
 ---
 ### <a name="validate-package-name-and-permissions"></a>パッケージ名とアクセス許可を検証する
 
 1. **PushDemo.Android** で、 **[Project Options] (プロジェクト オプション)** を開き、 **[ビルド]** セクションから **[Android アプリケーション]** を開きます。
 
-1. **パッケージ名**が、[Firebase Console](https://console.firebase.google.com) の **PushDemo** プロジェクトで使用した値と一致していることを確認します。 **パッケージ名**は、``com.<organization>.pushdemo`` という形式でした。
+1. **パッケージ名** が、[Firebase Console](https://console.firebase.google.com) の **PushDemo** プロジェクトで使用した値と一致していることを確認します。 **パッケージ名** は、``com.<organization>.pushdemo`` という形式でした。
 
-1. **[Minimum Android Version] (最小 Android バージョン)** を **[Android 8.0 (API level 26)] (Android 8.0 (API レベル 26))** に設定し、 **[Target Android Version] (対象の Android バージョン)** を最新の **API レベル**に設定します。
+1. **[Minimum Android Version] (最小 Android バージョン)** を **[Android 8.0 (API level 26)] (Android 8.0 (API レベル 26))** に設定し、 **[Target Android Version] (対象の Android バージョン)** を最新の **API レベル** に設定します。
 
     > [!NOTE]
-    > このチュートリアルでは、**API レベル 26 以上**が実行されているデバイスのみがサポートされていますが、より前のバージョンを実行しているデバイスをサポートするように拡張できます。
+    > このチュートリアルでは、**API レベル 26 以上** が実行されているデバイスのみがサポートされていますが、より前のバージョンを実行しているデバイスをサポートするように拡張できます。
 
 1. **[必要なアクセス許可]** で、 **[INTERNET]** と **[READ_PHONE_STATE]** のアクセス許可が有効になっていることを確認します。
 
@@ -28,29 +28,29 @@ ms.locfileid: "91493270"
 
 ### <a name="add-the-xamarin-google-play-services-base-and-xamarinfirebasemessaging-packages"></a>Xamarin Google Play 開発者サービス ベースおよび Xamarin.Firebase.Messaging の各パッケージを追加する
 
-1. **PushDemo.Android** で、**Control** キーを押しながら **Packages** フォルダーを**クリック**し、 **[NuGet パッケージの管理...]** を選択します。
+1. **PushDemo.Android** で、**Control** キーを押しながら **Packages** フォルダーを **クリック** し、 **[NuGet パッケージの管理...]** を選択します。
 
 1. **Xamarin.GooglePlayServices.Base** (**Basement** ではありません) を探し、チェック ボックスがオンになっていることを確認します。
 
 1. **Xamarin.Firebase.Messaging** を探し、チェック ボックスがオンになっていることを確認します。
 
-1. **[パッケージの追加]** をクリックし、**ライセンス条項**への同意を求めるメッセージが表示されたら、 **[同意する]** をクリックします。
+1. **[パッケージの追加]** をクリックし、**ライセンス条項** への同意を求めるメッセージが表示されたら、 **[同意する]** をクリックします。
 
 ### <a name="add-the-google-services-json-file"></a>Google Services JSON ファイルを追加する
 
-1. **Control** キーを押しながら `PushDemo.Android` プロジェクトを**クリック**し、 **[追加]** メニューから **[既存のファイル...]** を選択します。
+1. **Control** キーを押しながら `PushDemo.Android` プロジェクトを **クリック** し、 **[追加]** メニューから **[既存のファイル...]** を選択します。
 
 1. [Firebase Console](https://console.firebase.google.com) で以前 **PushDemo** プロジェクトを設定したときにダウンロードした *google-services.json* ファイルを選択し、 **[開く]** をクリックします。
 
-1. メッセージが表示されたら、**ファイルをディレクトリにコピーする**ように選択します。
+1. メッセージが表示されたら、**ファイルをディレクトリにコピーする** ように選択します。
 
-1. **Control**キーを押しながら `PushDemo.Android` プロジェクト内からの *google-services.json* を**クリック**して、**GoogleServicesJson** が**ビルド アクション**として設定されていることを確認します。
+1. **Control** キーを押しながら `PushDemo.Android` プロジェクト内からの *google-services.json* を **クリック** して、**GoogleServicesJson** が **ビルド アクション** として設定されていることを確認します。
 
 ### <a name="handle-push-notifications-for-android"></a>Android 用のプッシュ通知を処理する
 
-1. **Control** キーを押しながら `PushDemo.Android` プロジェクトを**クリック**し、 **[追加]** メニューから **[新しいフォルダー]** を選択します。次に、 **[フォルダー名]** として「*Services*」を使用して **[追加]** をクリックします。
+1. **Control** キーを押しながら `PushDemo.Android` プロジェクトを **クリック** し、 **[追加]** メニューから **[新しいフォルダー]** を選択します。次に、 **[フォルダー名]** として「*Services*」を使用して **[追加]** をクリックします。
 
-1. **Control** +  キーを押しながら **Services** フォルダーを**クリック**し、 **[追加]** メニューから **[新しいファイル...]** を選択します。
+1. **Control** +  キーを押しながら **Services** フォルダーを **クリック** し、 **[追加]** メニューから **[新しいファイル...]** を選択します。
 
 1. **[全般]**  >  **[空のクラス]** と選択し、 **[名前]** には「*DeviceInstallationService.cs*」と入力します。次に **[新規]** をクリックして以下の実装を追加します。
 
@@ -80,7 +80,7 @@ ms.locfileid: "91493270"
                 if (!NotificationsSupported)
                     throw new Exception(GetPlayServicesError());
 
-                if (string.isNullOrWhitespace(Token))
+                if (string.IsNullOrWhitespace(Token))
                     throw new Exception("Unable to resolve token for FCM");
 
                 var installation = new DeviceInstallation
@@ -113,7 +113,7 @@ ms.locfileid: "91493270"
     > [!NOTE]
     > このクラスでは、通知ハブの登録ペイロードの一部として一意の ID ([Secure.AndroidId](/dotnet/api/android.provider.settings.secure.androidid?view=xamarin-android-sdk-9) を使用) が提供されます。
 
-1. *PushNotificationFirebaseMessagingService.cs* という名前の別の**空のクラス**を **Services** フォルダーに追加してから、次の実装を追加します。
+1. *PushNotificationFirebaseMessagingService.cs* という名前の別の **空のクラス** を **Services** フォルダーに追加してから、次の実装を追加します。
 
     ```csharp
     using Android.App;
@@ -252,7 +252,7 @@ ms.locfileid: "91493270"
     ```
 
     > [!NOTE]
-    > **Activity** の **LaunchMode** は **SingleTop**に設定されているので、**Intent** は、**OnCreate** メソッドではなく **OnNewIntent** メソッドによって既存の **Activity** インスタンスに送信されます。そのため、**OnCreate** メソッドと **OnNewIntent** メソッドの両方で、到着する意図を処理する必要があります。
+    > **Activity** の **LaunchMode** は **SingleTop** に設定されているので、**Intent** は、**OnCreate** メソッドではなく **OnNewIntent** メソッドによって既存の **Activity** インスタンスに送信されます。そのため、**OnCreate** メソッドと **OnNewIntent** メソッドの両方で、到着する意図を処理する必要があります。
 
 1. `base.OnCreate` の呼び出しの直後に `Bootstrap.Begin` を呼び出すように **OnCreate** メソッドを更新して、**IDeviceInstallationService** のプラットフォーム固有の実装を渡します。
 

@@ -7,12 +7,12 @@ ms.topic: tutorial
 ms.date: 11/05/2019
 ms.author: judubois
 ms.custom: devx-track-java
-ms.openlocfilehash: 89dc2a40e39a417d33e59b22f28202c61f036c79
-ms.sourcegitcommit: 39f3f69e3be39e30df28421a30747f6711c37a7b
+ms.openlocfilehash: 88dc420b594a50f3a82462552427c2d838e3a2ce
+ms.sourcegitcommit: 84f64dec74b4b041b8830a4e7489e22f0e943440
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90831488"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97864281"
 ---
 # <a name="tutorial-getting-started-with-monitoring-and-logging-using-logzio-for-java-apps-running-on-azure"></a>チュートリアル:Azure で実行される Java アプリ用の Logz.io を使用した監視とログ記録の概要
 
@@ -173,7 +173,7 @@ Connected. Tailing...
 
 定義されたリソース グループにアクセスして、デプロイされたリソースを確認できます。
 
-Azure Blob Storage にデータをバックアップするように logzio-azure-serverless を構成する方法については、「[Ship Azure activity logs](https://docs.logz.io/shipping/log-sources/azure-activity-logs.html)」を参照してください。
+Azure Blob Storage にデータをバックアップするように logzio-azure-serverless を構成する方法については、「[Ship Azure activity logs](https://docs.logz.io/shipping/log-sources/azure-diagnostic-logs.html)」を参照してください。
 
 ### <a name="stream-azure-logs-and-metrics-to-logzio"></a>Azure のログとメトリックを Logz.io にストリーム配信する
 
@@ -185,7 +185,7 @@ Azure Blob Storage にデータをバックアップするように logzio-azure
 
     ![[診断設定] パネル](media/java-get-started-with-logzio/diagnostics-settings.png)
 
-3. 診断設定の**名前**を付けます。
+3. 診断設定の **名前** を付けます。
 
 4. **[イベントハブへのストリーム]** を選択し、 **[構成]** を選択して **[イベント ハブの選択]** パネルを開きます。
 

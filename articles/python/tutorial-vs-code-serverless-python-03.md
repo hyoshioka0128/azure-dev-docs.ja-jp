@@ -3,13 +3,13 @@ title: 手順 3:VS Code でサーバーレス Azure Functions の Python コー�
 description: チュートリアルの手順 3、Azure Functions が提供するテンプレートのサーバーレス Python コードを理解する。
 ms.topic: conceptual
 ms.date: 11/30/2020
-ms.custom: devx-track-python, seo-python-october2019, contperfq2
-ms.openlocfilehash: 2b6eb9d541f21ed569c19cf5696e2ee8385e2b3c
-ms.sourcegitcommit: 0cda024089784b92c1db3a4506c1dccd6bfe6339
+ms.custom: devx-track-python, seo-python-october2019, contperf-fy21q2
+ms.openlocfilehash: 8d202aacb8848f17e15641340d126c65999d1c09
+ms.sourcegitcommit: 4f9ce09cbf9663203c56f5b12ecbf70ea68090ed
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96759279"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97911312"
 ---
 # <a name="3-examine-the-python-code-files-in-visual-studio-code"></a>3:Visual Studio Code で Python コード ファイルを調べる
 

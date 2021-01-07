@@ -4,12 +4,12 @@ description: すべてのコードを含む、メイン アプリの実装の概
 ms.date: 08/24/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: e2a43f7e204ba3f077beea7cc878076111f71313
-ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
+ms.openlocfilehash: 62514474e2eb4517669029058526a39d3a4f3442
+ms.sourcegitcommit: 075f39972e390e79ed09a3fcfdbfc776727e08fc
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91764736"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97952434"
 ---
 # <a name="part-4-example-main-application-implementation"></a>パート 4:メイン アプリケーションの実装例
 
@@ -17,9 +17,9 @@ ms.locfileid: "91764736"
 
 このシナリオのメイン アプリは、Azure App Service にデプロイされた簡単な Flask アプリです。 このアプリには、 */api/v1/getcode* という名前のパブリック API エンドポイントが用意されています。これにより、アプリで他の目的のコードが生成されます (たとえば、人間のユーザー向けの 2 要素認証など)。
 
-動作中のエンドポイントを確認するには、ブラウザーで [https://msdocs-main-app-example.azurewebsites.net/api/v1/getcode](https://msdocs-main-app-example.azurewebsites.net/api/v1/getcode) にアクセスするか、curl を使用して要求を行います。
+動作中のエンドポイントを確認するには、ブラウザーで [https://msdocs-example-main-app.azurewebsites.net/api/v1/getcode](https://msdocs-example-main-app.azurewebsites.net/api/v1/getcode) にアクセスするか、curl を使用して要求を行います。
 
-メイン アプリには、API エンドポイントへのリンクを表示する単純なホーム ページも用意されています。 アプリのこの部分は [https://msdocs-main-app-example.azurewebsites.net](https://msdocs-main-app-example.azurewebsites.net) で確認できます。
+メイン アプリには、API エンドポイントへのリンクを表示する単純なホーム ページも用意されています。 アプリのこの部分は [https://msdocs-example-main-app.azurewebsites.net](https://msdocs-example-main-app.azurewebsites.net) で確認できます。
 
 サンプルのプロビジョニング スクリプトでは次の手順が実行されます。
 

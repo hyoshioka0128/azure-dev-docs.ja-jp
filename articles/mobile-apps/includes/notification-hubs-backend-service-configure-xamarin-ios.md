@@ -4,38 +4,38 @@ ms.author: miparker
 ms.date: 07/27/2020
 ms.service: mobile-services
 ms.topic: include
-ms.openlocfilehash: 7be758e9f1116f933fbb415e6cff7a1c73ffee9f
-ms.sourcegitcommit: e97cb81a245ce7dcabeac3260abc3db7c30edd79
+ms.openlocfilehash: 4dba0dcf6fe960b80e445f865644997669ce9b36
+ms.sourcegitcommit: 84f64dec74b4b041b8830a4e7489e22f0e943440
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91493271"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97865970"
 ---
 ### <a name="configure-infoplist-and-entitlementsplist"></a>Info.plist と Entitlements.plist を構成する
 
-1. **Visual Studio** >  **[ユーザー設定...]**  >  **[発行]**  >  **[Apple Developer Accounts] (Apple Developer アカウント)** で、お使いの **Apple Developer アカウント**にサインインしていること、および適切な*証明書*と*プロビジョニング プロファイル*がダウンロードされていることを確認します。 これらのアセットは、前もっての手順の一部として作成しておく必要があります。
+1. **Visual Studio** >  **[ユーザー設定...]**  >  **[発行]**  >  **[Apple Developer Accounts] (Apple Developer アカウント)** で、お使いの **Apple Developer アカウント** にサインインしていること、および適切な *証明書* と *プロビジョニング プロファイル* がダウンロードされていることを確認します。 これらのアセットは、前もっての手順の一部として作成しておく必要があります。
 
 1. **PushDemo.iOS** で **Info.plist** を開き、**BundleIdentifier** が、[Apple Developer ポータル](https://developer.apple.com)の対応するプロビジョニング プロファイルで使用されていた値と一致していることを確認します。 **BundleIdentifier** は、``com.<organization>.PushDemo`` という形式でした。
 
 1. 同じファイルで、**Minimum system version** を **13.0** に設定します。
 
     > [!NOTE]
-    > このチュートリアルでは、**iOS 13.0 以降**が実行されているデバイスのみがサポートされていますが、より前のバージョンを実行しているデバイスをサポートするように拡張できます。
+    > このチュートリアルでは、**iOS 13.0 以降** が実行されているデバイスのみがサポートされていますが、より前のバージョンを実行しているデバイスをサポートするように拡張できます。
 
-1. **PushDemo.iOS** の**プロジェクト オプション**を開きます (プロジェクトをダブルクリックします)。
+1. **PushDemo.iOS** の **プロジェクト オプション** を開きます (プロジェクトをダブルクリックします)。
 
 1. **[Project Options] (プロジェクト オプション)** の **[ビルド] > [iOS Bundle Signing] (iOS バンドル署名)** で、 **[チーム]** の下にある開発者アカウントが選択されていることを確認します。 次に、[Automatically manage signing] (署名を自動管理する) が選択されていて、署名証明書とプロビジョニング プロファイルが自動的に選択されていることを確認します。
 
     > [!NOTE]
-    > *署名証明書*と*プロビジョニング プロファイル*が自動的に選択されていない場合は、 **[Manual Provisioning] (手動プロビジョニング)** を選択してから **[Bundle Signing Options] (バンドル署名オプション)** をクリックします。 **[Signing Identity] (署名 ID)** には *[チーム]* が選択されていて、 **[デバッグ]** 構成と **[リリース]** 構成の両方で**プロビジョニング プロファイル**には *PushDemo* 固有のプロビジョニング プロファイルが選択されていることを確認します。そうすることで、両方の場合に **[プラットフォーム]** には **[iPhone]** が選択されるようにします。
+    > *署名証明書* と *プロビジョニング プロファイル* が自動的に選択されていない場合は、 **[Manual Provisioning] (手動プロビジョニング)** を選択してから **[Bundle Signing Options] (バンドル署名オプション)** をクリックします。 **[Signing Identity] (署名 ID)** には *[チーム]* が選択されていて、 **[デバッグ]** 構成と **[リリース]** 構成の両方で **プロビジョニング プロファイル** には *PushDemo* 固有のプロビジョニング プロファイルが選択されていることを確認します。そうすることで、両方の場合に **[プラットフォーム]** には **[iPhone]** が選択されるようにします。
 
 1. **[PushDemo.iOS]** で **Entitlements.plist** を開き、 **[権利]** タブで表示したときに **[プッシュ通知を有効にする]** チェック ボックスがオンになっていることを確認します。次に、 **[ソース]** タブで表示したときに **[APS Environment] (APS 環境)** の設定が **[開発]** に設定されていることを確認します。
 
 ### <a name="handle-push-notifications-for-ios"></a>iOS 用のプッシュ通知を処理する
 
-1. **Control** キーを押しながら **[PushDemo.iOS]** プロジェクトを**クリック**し、 **[追加]** メニューから **[新しいフォルダー]** を選択します。次に、 **[フォルダー名]** として「*Services*」を使用して **[追加]** をクリックします。
+1. **Control** キーを押しながら **[PushDemo.iOS]** プロジェクトを **クリック** し、 **[追加]** メニューから **[新しいフォルダー]** を選択します。次に、 **[フォルダー名]** として「*Services*」を使用して **[追加]** をクリックします。
 
-1. **Control** +  キーを押しながら **Services** フォルダーを**クリック**し、 **[追加]** メニューから **[新しいファイル...]** を選択します。
+1. **Control** +  キーを押しながら **Services** フォルダーを **クリック** し、 **[追加]** メニューから **[新しいファイル...]** を選択します。
 
 1. **[全般]**  >  **[空のクラス]** と選択し、 **[名前]** には「*DeviceInstallationService.cs*」と入力します。次に **[新規]** をクリックして以下の実装を追加します。
 
@@ -65,7 +65,7 @@ ms.locfileid: "91493271"
                 if (!NotificationsSupported)
                     throw new Exception(GetNotificationsSupportError());
 
-                if (string.isNullOrWhitespace(Token))
+                if (string.IsNullOrWhitespace(Token))
                     throw new Exception("Unable to resolve token for APNS");
 
                 var installation = new DeviceInstallation
@@ -98,7 +98,7 @@ ms.locfileid: "91493271"
     > [!NOTE]
     > このクラスでは、一意の ID ([UIDevice.IdentifierForVendor](/dotnet/api/uikit.uidevice.identifierforvendor?view=xamarin-ios-sdk-12) 値を使用) と通知ハブの登録ペイロードが提供されます。
 
-1. **PushDemo.iOS** プロジェクトに *Extensions* という名前の新しいフォルダーを追加してから、以下の実装を使用してそのフォルダーに *NSDataExtensions.cs* という名前の**空のクラス**を追加します。
+1. **PushDemo.iOS** プロジェクトに *Extensions* という名前の新しいフォルダーを追加してから、以下の実装を使用してそのフォルダーに *NSDataExtensions.cs* という名前の **空のクラス** を追加します。
 
     ```csharp
     using System.Text;

@@ -4,12 +4,12 @@ description: Azure Functions を使用したサードパーティ API の実装�
 ms.date: 08/24/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 7c0098988265fef5b6b0f5e4a654f54c9bed4594
-ms.sourcegitcommit: 29b161c450479e5d264473482d31e8d3bf29c7c0
+ms.openlocfilehash: ce6fbefc52c36bcd5e002cf1e6c8ca7ca4814062
+ms.sourcegitcommit: 075f39972e390e79ed09a3fcfdbfc776727e08fc
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91764501"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97952444"
 ---
 # <a name="part-3-example-third-party-api-implementation"></a>パート 3: サードパーティ API の実装例
 
@@ -17,7 +17,7 @@ ms.locfileid: "91764501"
 
 このサンプル シナリオでは、メイン アプリのパブリック エンドポイントは、アクセス キーによって保護されたサードパーティ API を使用しています。 このセクションでは、Azure Functions を使用したサードパーティ API の実装について説明しますが、API は他の方法で実装し、別のクラウド サーバーや Web ホストにデプロイすることもできます。 唯一の重要な点は、エンドポイントが、すべてのクライアント要求に含まれている必要がある特定のアクセス キーによって保護されていることです。 この API を呼び出すすべてのアプリは、そのキーを安全に管理する必要があります。
 
-デモの目的で、この API はエンドポイント `https://msdocs-api-example.azurewebsites.net/api/RandomNumber` にデプロイされています。 ただし、この API を呼び出すには、`?code=` URL パラメーター、または HTTP ヘッダーの `'x-functions-key'` プロパティのいずれかにアクセス キー `d0c5atM1cr0s0ft` を指定する必要があります。 たとえば、ブラウザーまたは curl で次の URL を試してみてください: [https://msdocs-api-example.azurewebsites.net/api/RandomNumber?code=d0c5atM1cr0s0ft](https://msdocs-api-example.azurewebsites.net/api/RandomNumber?code=d0c5atM1cr0s0ft)。
+デモの目的で、この API はエンドポイント `https://msdocs-example-api.azurewebsites.net/api/RandomNumber` にデプロイされています。 ただし、この API を呼び出すには、`?code=` URL パラメーター、または HTTP ヘッダーの `'x-functions-key'` プロパティのいずれかにアクセス キー `d0c5atM1cr0s0ft` を指定する必要があります。 たとえば、ブラウザーまたは curl で次の URL を試してみてください: [https://msdocs-example-api.azurewebsites.net/api/RandomNumber?code=d0c5atM1cr0s0ft](https://msdocs-example-api.azurewebsites.net/api/RandomNumber?code=d0c5atM1cr0s0ft)。
 
 アクセス キーが有効な場合、エンドポイントは、単一のプロパティ "value" を含む JSON 応答を返します。この値は、1 から 999 の範囲の数値です (`{"value": 959}` など)。
 

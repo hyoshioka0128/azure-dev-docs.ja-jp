@@ -12,12 +12,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: identity
 ms.custom: devx-track-java
-ms.openlocfilehash: aa2d60f969895acbcb56f74e909993ceb9b0d7d5
-ms.sourcegitcommit: 5c7f5fef798413b1a304cc9ee31c8518b73f27eb
+ms.openlocfilehash: 55b5926ade03280419d03d317df04f5d984ec46b
+ms.sourcegitcommit: 4f9ce09cbf9663203c56f5b12ecbf70ea68090ed
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93066303"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97911452"
 ---
 # <a name="tutorial-secure-a-java-web-app-using-the-spring-boot-starter-for-azure-active-directory-b2c"></a>チュートリアル:Azure Active Directory B2C 用の Spring Boot Starter を使用して Java Web アプリをセキュリティで保護する
 
@@ -53,8 +53,6 @@ ms.locfileid: "93066303"
 
    ![プロジェクトを生成するための値を入力する](media/configure-spring-boot-starter-java-app-with-azure-active-directory-b2c-oidc/fill-in-the-values-to-generate-the-project.png)
 
-    > [!NOTE]
-    > Spring Initializr では、既定のバージョンとして Java 11 が使用されます。 このトピックで説明されている Spring Boot Starter を使用するには、代わりに Java 8 を選択する必要があります。
 
 
 3. **[プロジェクトの生成]** を選択してから、ローカル コンピューター上のパスにプロジェクトをダウンロードします。 ダウンロードしたファイルを、プロジェクトに基づいて名前が付けられたディレクトリに移動し、そのファイルを解凍します。 ファイルのレイアウトは以下のようになるはずです。`yourProject` の代わりに、 **[グループ]** に入力した値が示されます。
@@ -240,7 +238,7 @@ Azure AD B2C インスタンスといくつかのユーザー フローを作成
 
 7. *application.yml* ファイルを保存して閉じます。
 
-8. *src/main/java/<yourGroupId>/<yourGroupId>* に *controller* という名前のフォルダーを作成し、`<yourGroupId>` を、 **[グループ]** で入力した値に置き換えます。
+8. *src/main/java/\<yourGroupId\>/\<yourGroupId\>* に *controller* という名前のフォルダーを作成し、`<yourGroupId>` を、 **[グループ]** で入力した値に置き換えます。
 
 9. *controller* フォルダーに "*java*" という名前の新しい Java ファイルを作成し、テキスト エディターで開きます。
 
@@ -292,7 +290,7 @@ Azure AD B2C インスタンスといくつかのユーザー フローを作成
 
     コントローラー内のすべてのメソッドで `initializeModel()` が呼び出され、そのメソッドで `model.addAllAttributes(user.getAttributes());` が呼び出されるため、*src/main/resources/templates* 内の任意の HTML ページから、`${name}`、`${grant_type}`、`${auth_time}` など、それらの属性のいずれかにアクセスできます。 `user.getAttributes()` から返される値は、実際には認証用の `id_token` の要求です。 使用可能な要求の完全な一覧については、「[Microsoft ID プラットフォームの ID トークン](/azure/active-directory/develop/id-tokens#payload-claims)」を参照してください。
 
-11. *src/main/java/<yourGroupId>/<yourGroupId>* に *security* という名前のフォルダーを作成し、`yourGroupId` を、 **[グループ]** で入力した値に置き換えます。
+11. *src/main/java/\<yourGroupId\>/\<yourGroupId\>* に *security* という名前のフォルダーを作成し、`yourGroupId` を、 **[グループ]** で入力した値に置き換えます。
 
 12. *security* フォルダーに "*WebSecurityConfiguration.java*" という名前の新しい Java ファイルを作成し、テキスト エディターで開きます。
 

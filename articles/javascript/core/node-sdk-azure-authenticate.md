@@ -2,18 +2,18 @@
 title: Node.js 用 Azure 管理モジュールを使った認証
 description: Node.js 用 Azure 管理モジュールへの認証にサービス プリンシパルを使う方法について説明します。
 ms.topic: how-to
-ms.date: 10/19/2020
+ms.date: 01/04/2021
 ms.custom: devx-track-js
-ms.openlocfilehash: 58acb71741f7e3b381e492b9ac3c06d6a94c331b
-ms.sourcegitcommit: c1ef7aa8ed2e88e98b190e42cffde52cf301958d
+ms.openlocfilehash: 413357533d5ddf8e41bc2e33d929074df4f2ac12
+ms.sourcegitcommit: 84f64dec74b4b041b8830a4e7489e22f0e943440
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97034533"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97864258"
 ---
 # <a name="authenticate-with-the-azure-management-modules-for-javascript"></a>JavaScript 用 Azure 管理モジュールを使用した認証
 
-すべての [SDK クライアント ライブラリ](../azure-sdk-library-package-index.md)は、インスタンスが生成される際に、`credentials` オブジェクトを介して認証を行う必要があります。 必要な資格情報を認証したり作成したりするには、複数の方法があります。
+すべての [SDK クライアント ライブラリ](../azure-sdk-library-package-index.md)は、`credentials` オブジェクトを介して認証を行う必要があります。 必要な資格情報を認証したり作成したりするには、複数の方法があります。
 
 認証は、すべてのソフトウェアやサービスと同様に、長年にわたって改善されています。 自分のサービスがどの認証ライブラリを使用しているかを知っておくことが重要です。 
 
@@ -49,19 +49,22 @@ const blobServiceClient = new BlobServiceClient(
 );
 ```
 
+上記の JavaScript コード例では、Azure ID ライブラリを使用して既定の Azure 資格情報を作成し、この資格情報を使用して Azure Storage リソースにアクセスする方法を示しています。
+
 ## <a name="azure-ms-rest--libraries"></a>Azure ms-rest-* ライブラリ
-`@azure` スコープの[クライアント ライブラリ](../azure-sdk-library-package-index.md#modern-javascripttypescript-libraries)では、サービスを使用するためにトークンが必要です。 トークンを取得するには、資格情報を返す Azure SDK クライアント認証方法を使用します。 
+最新の `@azure` スコープの[クライアント ライブラリ](../azure-sdk-library-package-index.md#modern-javascripttypescript-libraries)では、サービスを使用するためにトークンが必要です。 トークンを取得するには、資格情報を返す Azure SDK クライアント認証方法を使用します。 
 
 ```javascript
 const msRestNodeAuth = require("@azure/ms-rest-nodeauth");
 msRestNodeAuth.interactiveLogin().then((credential) => {
-}).catch((err) => {
     // service code goes here
+}).catch((err) => {
+    // error code goes here
     console.error(err);
 });
 ```
 
-この資格情報は、次のコード サンプルで使用されている Storage サービスなど、特定の Azure サービス クライアント ライブラリに渡します。 クライアント ライブラリは資格情報を受け取って、トークンを生成します。 サービスは、トークンを使用して要求を検証します。 
+上記の JavaScript コード例では、最新の Azure 認証ライブラリを使用して対話型ログインを行い、資格情報を取得する方法を示しています。
 
 ```javascript
 // service code - this is an example only and not best practices for code flow
@@ -73,6 +76,8 @@ billingManagementClient.enrollmentAccounts.list().then((enrollmentList) => {
 })
 ```
 
+上記の JavaScript コード例では、次のコード サンプルで使用されている Storage サービスなど、特定の Azure サービス クライアント ライブラリにその資格情報を渡す方法を示しています。 クライアント ライブラリは資格情報を受け取って、トークンを生成します。 サービスでは、トークンを使用して、要求に対するサービス レベルの認証が検証されます。 
+
 クライアント ライブラリはトークンを管理し、トークンを更新するタイミングを認識します。 コード ベースを使用する開発者は、これを管理する必要がありません。
 
 ## <a name="older-azure-sdk-client-authentication"></a>古い Azure SDK クライアント認証 
@@ -80,8 +85,10 @@ billingManagementClient.enrollmentAccounts.list().then((enrollmentList) => {
 古い Azure SDK クライアントは最終的に、上記で使用した最新式の認証に移行します。 その移行まで、古いクライアント ライブラリでは、異なる認証クライアントが使用されます。または、リソース キーなどの完全に別のメカニズムを備えた認証が使用される可能性があります。 
 
 古いクライアント ライブラリを使用して最適な結果を得るためには: 
-* 各 npm パッケージは、その正確なクライアント ライブラリの認証を表示します。 
-* 現在のコードで '@azure/ms を使用している場合
+* 各 npm パッケージは、その正確なクライアント ライブラリの認証を表示します。  
+* 現在のコードで、最新の `@azure/ms-*` ライブラリと以前の認証ライブラリが同じコード ベースで使用されている場合は、次のようになります。
+    * サービスでは、以前の azure 以外のスコープが指定されたライブラリが最新のものであることを確認します。 この点については、サービスのドキュメントを参照してください。 
+    * 最新の認証ライブラリと以前の認証ライブラリを引き続き使用する必要がある場合は、資格情報の有効期限を指定し、以前のライブラリを更新してコード ベースのアプリケーション ロジックを一致させる必要があります。 
 
 ## <a name="authentication-with-azure-services-while-developing"></a>開発中の Azure サービスでの認証
 

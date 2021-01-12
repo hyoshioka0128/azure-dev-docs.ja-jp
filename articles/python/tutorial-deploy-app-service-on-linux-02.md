@@ -4,12 +4,12 @@ description: チュートリアルの手順 2、アプリケーションの設�
 ms.topic: conceptual
 ms.date: 11/20/2020
 ms.custom: devx-track-python, seo-python-october2019
-ms.openlocfilehash: 7197f8afc28bd62e7247c3955c888199ee69c509
-ms.sourcegitcommit: 09b4a2dbe13601fdf16fcc4082a5075b46ad3459
+ms.openlocfilehash: 78efb3fdfa7d7d4ac8699726c2be6b17d27ea875
+ms.sourcegitcommit: 4f9ce09cbf9663203c56f5b12ecbf70ea68090ed
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96559196"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97911392"
 ---
 # <a name="2-prepare-your-app-for-deployment-to-azure-app-service"></a>2:Azure App Service にデプロイするためにアプリを準備する
 
@@ -57,7 +57,7 @@ ms.locfileid: "96559196"
         return "Hello Flask, on Azure App Service for Linux"
     ```
 
-1. *requirements.txt* という名前のファイルを作成し、内容を次のようにします。
+1. 同じフォルダーに *requirements.txt* という名前のファイルを作成し、内容を次のようにします。
 
     ```text
     Flask
@@ -65,21 +65,33 @@ ms.locfileid: "96559196"
 
 1. メニュー コマンド **Terminal** > **New Terminal** を使用してターミナルを開きます。
 
-1. ターミナルで、`.venv` という名前の仮想環境を作成してアクティブ化します。 
+1. ターミナルで、*hello.py* を含むフォルダーに移動します。 残りのすべてのターミナル コマンドは、このフォルダーで実行されます。
 
-    # <a name="macoslinux"></a>[macOS/Linux](#tab/linux)
+1. `.venv` という名前の仮想環境を作成してアクティブにします。
+
+    # <a name="cmd"></a>[cmd](#tab/cmd)
+
+    ```cmd
+    :: Assumes Windows
+    py -3 -m venv .venv
+    .venv\scripts\activate
+    ```
+
+    # <a name="powershell"></a>[PowerShell](#tab/powershell)
+
+    ```ps
+    # Assumes Windows
+    py -3 -m venv .venv
+    .venv\scripts\activate
+    ```
+
+    # <a name="bash"></a>[bash](#tab/bash)
 
     ```bash
+    # Assumes macOS/Linux
     sudo apt-get install python3-venv    # If needed
     python3 -m venv .venv
     source .venv/bin/activate
-    ```
-
-    # <a name="windows"></a>[Windows](#tab/windows)
-
-    ```cmd
-    py -3 -m venv .venv
-    .venv\scripts\activate
     ```
 
     ---

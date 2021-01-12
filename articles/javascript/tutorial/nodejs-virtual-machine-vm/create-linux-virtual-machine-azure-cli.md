@@ -2,14 +2,14 @@
 title: Linux 仮想マシンの作成
 description: Azure CLI を使用して、仮想マシンを作成および構成します。 このチュートリアルのこの時点で、ターミナル ウィンドウを開いて、仮想マシンを作成するサブスクリプションで Azure CLI を使用して Azure クラウドにサインインしている必要があります。
 ms.topic: tutorial
-ms.date: 11/13/2020
+ms.date: 01/05/2021
 ms.custom: devx-track-js
-ms.openlocfilehash: d2da4cac2a93ad953ada9cd98de679abba034908
-ms.sourcegitcommit: a2a51e0c6530eb5794a2fe667cf4c9a60b2a7470
+ms.openlocfilehash: a618c9584775a7c384f05ef01a563943c48f2b3a
+ms.sourcegitcommit: 075f39972e390e79ed09a3fcfdbfc776727e08fc
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94625031"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97952504"
 ---
 # <a name="3-create-linux-virtual-machine-using-azure-cli"></a>3.Azure CLI を使用して Linux 仮想マシンを作成する
 
@@ -33,30 +33,34 @@ Azure CLI のすべての手順は、Azure CLI の 1 つのインスタンスか
 
 ## <a name="create-a-virtual-machine-resource"></a>仮想マシンのリソースを作成する 
 
-1. ターミナルで [Azure CLI コマンド](/cli/azure/vm?view=azure-cli-latest#az_vm_create)を入力して、Linux 仮想マシンの Azure リソースを作成します。 このコマンドでは、cloud-init ファイルから VM が作成され、SSH キーが生成されます。 コマンドを実行すると、キーが格納されている場所が表示されます。 
+ターミナルで [Azure CLI コマンド](/cli/azure/vm?view=azure-cli-latest#az_vm_create)を入力して、Linux 仮想マシンの Azure リソースを作成します。 このコマンドでは、cloud-init ファイルから VM が作成され、SSH キーが生成されます。 コマンドを実行すると、キーが格納されている場所が表示されます。 
 
-    ```azurecli
-    az vm create \
-      --resource-group rg-demo-vm-eastus \
-      --name demo-vm \
-      --location eastus \
-      --image UbuntuLTS \
-      --admin-username azureuser \
-      --generate-ssh-keys \
-      --custom-data cloud-init-github.txt
-    ```
+```azurecli
+az vm create \
+  --resource-group rg-demo-vm-eastus \
+  --name demo-vm \
+  --location eastus \
+  --image UbuntuLTS \
+  --admin-username azureuser \
+  --generate-ssh-keys \
+  --custom-data cloud-init-github.txt
+```
 
-    この処理は数分かかることがあります。 この処理が完了すると、Azure CLI によって、新しいリソースに関する情報が返されます。 `publicIpAddress` 値を控えておきます。ブラウザーで Web アプリを表示し、VM に接続するために必要です。 
+この処理は数分かかることがあります。 この処理が完了すると、Azure CLI によって、新しいリソースに関する情報が返されます。 `publicIpAddress` 値を控えておきます。ブラウザーで Web アプリを表示し、VM に接続するために必要です。 
      
 
-1. 仮想マシンを最初に作成したときに、開いているポートは "_ありません_"。 次の [Azure CLI コマンド](/cli/azure/vm?view=azure-cli-latest#az_vm_open_port)を使用してポート 80 を開き、Web アプリが一般公開されるようにします。
+## <a name="open-port-for-virtual-machine"></a>仮想マシンのポートを開く
 
-    ```azurecli
-    az vm open-port \
-      --port 80 \
-      --resource-group rg-demo-vm-eastus \
-      --name demo-vm
-    ```
+仮想マシンを最初に作成したときに、開いているポートは "_ありません_"。 次の [Azure CLI コマンド](/cli/azure/vm?view=azure-cli-latest#az_vm_open_port)を使用してポート 80 を開き、Web アプリが一般公開されるようにします。
+
+```azurecli
+az vm open-port \
+  --port 80 \
+  --resource-group rg-demo-vm-eastus \
+  --name demo-vm
+```
+
+## <a name="browse-to-web-site"></a>Web サイトの参照
 
 1. Web ブラウザーでパブリック IP アドレスを使用して、仮想マシンが使用可能で実行されていることを確認します。 `publicIpAddress` の値を使用するように URL を変更します。
 

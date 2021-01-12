@@ -4,18 +4,20 @@ description: このチュートリアルでは、MongoDB ネイティブ API を
 ms.topic: tutorial
 ms.date: 12/03/2020
 ms.custom: scenarios:getting-started, languages:JavaScript, devx-track-javascript
-ms.openlocfilehash: 1ddbe6a463f877e86a0c46da1ffb17c6a3094c0a
-ms.sourcegitcommit: c8330128d5d6a71859933a890ecdf047cb950996
+ms.openlocfilehash: 6c295c305f2882c4a97a34ffa288738112ee9600
+ms.sourcegitcommit: 4f9ce09cbf9663203c56f5b12ecbf70ea68090ed
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97522400"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97911502"
 ---
 # <a name="deploy-expressjs-mongodb-app-to-app-service-from-visual-studio-code"></a>Visual Studio Code から App Service に Express.js MongoDB アプリをデプロイする
 
 MongoDB に接続する Express.js アプリケーションを、(Linux 上で) Azure App Service および CosmosDB にデプロイします。 
 
 プログラミング作業は完了しており、このチュートリアルでは、Azure 拡張機能を使用して Visual Studio Code 内部からローカルおよびリモートの Azure 環境を正常に使用することに焦点を当てています。
+
+* **[サンプル コード](https://github.com/Azure-Samples/js-e2e-express-mongo)**
 
 ## <a name="top-tasks"></a>上位のタスク
 

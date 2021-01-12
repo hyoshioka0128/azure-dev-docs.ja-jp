@@ -2,14 +2,14 @@
 title: Azure と JavaScript を使用した開発について学習する
 description: Microsoft Learn プラットフォームを使用して、JavaScript を使用した Azure の理解を深める
 ms.topic: reference
-ms.date: 12/16/2020
+ms.date: 01/05/2021
 ms.custom: devx-track-js
-ms.openlocfilehash: b126894943bf409439b965a631d07029281438f7
-ms.sourcegitcommit: 1dfcc022a3098b1a1505e9458eada35f527ef070
+ms.openlocfilehash: 3b37f31d9df4c152874f4c913fbc59a369636640
+ms.sourcegitcommit: 075f39972e390e79ed09a3fcfdbfc776727e08fc
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97636537"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97952474"
 ---
 # <a name="learn-to-develop-with-azure-and-javascript"></a>Azure と JavaScript を使用した開発について学習する 
 
@@ -23,6 +23,13 @@ Microsoft Learn プラットフォームまたは Microsoft ラーニング パ�
 * [Node.js と Express を使用して Web API を構築する](/learn/modules/build-web-api-nodejs-express/) 
 * [Node.js アプリでファイルとディレクトリを操作する](/learn/modules/nodejs-files/)
 * [組み込みのデバッガーと Visual Studio Code デバッガーを使用して Node.js アプリを対話形式でデバッグする](/learn/modules/debug-nodejs/)
+
+## <a name="getting-started"></a>作業の開始
+
+* [初心者向け JavaScript](https://techcommunity.microsoft.com/t5/apps-on-azure/learn-javascript-with-this-series-of-videos-for-beginners/ba-p/1764635)
+* [初心者向け Web 開発](https://github.com/microsoft/Web-Dev-For-Beginners)
+* [Babylon.js を使用した 3D アプリ](https://techcommunity.microsoft.com/t5/apps-on-azure/a-first-introduction-to-building-3d-applications-with-javascript/ba-p/1877650)
+* [初心者向け Node.js](https://techcommunity.microsoft.com/t5/apps-on-azure/learn-node-js-with-this-series-of-short-videos-for-beginners/ba-p/1771830)
 
 ## <a name="javascript-on-azure"></a>Azure 上の JavaScript
 

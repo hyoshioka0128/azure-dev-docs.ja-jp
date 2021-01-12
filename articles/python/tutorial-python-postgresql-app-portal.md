@@ -3,14 +3,14 @@ title: チュートリアル:Azure portal を使用して PostgreSQL で Django 
 description: Azure で Web アプリと PostgreSQL データベースをプロビジョニングし、GitHub からアプリ コードをデプロイします。
 ms.devlang: python
 ms.topic: tutorial
-ms.date: 11/02/2020
+ms.date: 01/04/2021
 ms.custom: devx-track-python
-ms.openlocfilehash: 503a899150edc3f8dc22d7e0361a4888590ab61c
-ms.sourcegitcommit: 10d4133c8abb3e7473dcdf6418ebadd3e08275f7
+ms.openlocfilehash: 65f8558aa81e839b3701669a0274419cd2143e49
+ms.sourcegitcommit: 4f9ce09cbf9663203c56f5b12ecbf70ea68090ed
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93284534"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97911462"
 ---
 # <a name="tutorial-deploy-a-django-web-app-with-postgresql-using-the-azure-portal"></a>チュートリアル:Azure portal を使用して PostgreSQL で Django Web アプリをデプロイする
 
@@ -35,9 +35,9 @@ Azure portal を使用して、データ ドリブンの Python [Django](https:/
 
 このリポジトリのフォークを作成すると、後の手順で変更を行ったり、コードを再デプロイしたりすることができます。
 
-**(省略可能) サンプルについて:** djangoapp サンプルには、データ ドリブンの Django 投票アプリが含まれます。これを、Django ドキュメントの「 [はじめての Django アプリ作成](https://docs.djangoproject.com/en/2.1/intro/tutorial01/)」に従って取得します。 また、このサンプルは、[Django デプロイ チェックリスト](https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/)を使用して変更され、Azure App Service などの運用環境で実行されます。 (これらの変更は運用環境に対して行われ、Azure に固有ではありません)。
+**(省略可能) サンプルについて:** djangoapp サンプルには、データ ドリブンの Django 投票アプリが含まれます。これを、Django ドキュメントの「[はじめての Django アプリ作成](https://docs.djangoproject.com/en/2.1/intro/tutorial01/)」に従って取得します。 また、このサンプルは、[Django デプロイ チェックリスト](https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/)を使用して変更され、Azure App Service などの運用環境で実行されます。 (これらの変更は運用環境に対して行われ、Azure に固有ではありません)。
 
-- 運用環境の設定は、 *azuresite/production.py* ファイルにあります。 開発の詳細は *azuresite/settings.py* にあります。
+- 運用環境の設定は、*azuresite/production.py* ファイルにあります。 開発の詳細は *azuresite/settings.py* にあります。
 - `WEBSITE_HOSTNAME` 環境変数を設定すると、アプリで運用環境の設定が使用されます。 この変数は、Azure App Service によって Web アプリの URL (`msdocs-django.azurewebsites.net` など) に自動的に設定され ます。
 
 [問題がある場合は、お知らせください。](https://aka.ms/DjangoPortalTutorialHelp)
@@ -48,7 +48,7 @@ Azure portal を使用して、データ ドリブンの Python [Django](https:/
 
 1. **[リソースの作成]** を選択すると、 **[新規]** ページが開きます。
 
-1. **[Web アプリ]** を検索して選択します。
+1. **[Web アプリ]** を検索して選択し、 **[作成]** を選択します。
 
 1. **[Web アプリの作成]** ページで、次の情報を入力します。
 
@@ -75,7 +75,7 @@ Azure portal を使用して、データ ドリブンの Python [Django](https:/
 
 1. **[リソースの作成]** を選択すると、 **[新規]** ページが開きます。
 
-1. **[Azure Database for PostgreSQL]** を検索して選択します。
+1. **[Azure Database for PostgreSQL]** を検索して選択し、 **[作成]** を選択します。
 
 1. 次のページの **[単一サーバー]** で **[作成]** を選択します。
 
@@ -148,9 +148,9 @@ Azure portal を使用して、データ ドリブンの Python [Django](https:/
 
     | 設定名 | 値 |
     | --- | --- |
-    | DBHOST | 前のセクションのデータベース サーバーの名前。つまり、サーバーの URL で `.postgres.database.azure.com` の前にある `<server-name>` 部分です。 ( *azuresite/production.py* 内のコードを実行すると、完全な URL が自動的に作成されます。) |
+    | DBHOST | 前のセクションのデータベース サーバーの名前。つまり、サーバーの URL で `.postgres.database.azure.com` の前にある `<server-name>` 部分です。 (*azuresite/production.py* 内のコードを実行すると、完全な URL が自動的に作成されます。) |
     | DBNAME | `pollsdb` |
-    | DBUSER | データベースをプロビジョニングしたときに使用した管理者のユーザー名。 (サンプル コードでは、`@<server-name>` の部分が自動的に追加されます。 *azuresite/production.py* をご覧ください。) |
+    | DBUSER | データベースをプロビジョニングしたときに使用した管理者のユーザー名。 (サンプル コードでは、`@<server-name>` の部分が自動的に追加されます。*azuresite/production.py* をご覧ください。) |
     | DBPASS | 前に作成した管理者パスワード。 |
 
     前述のように、ユーザー名またはパスワードには `$` 文字を使用しないでください。この文字は、Python アプリをホストする Linux コンテナーの環境変数内でエスケープされるためです。
@@ -169,6 +169,8 @@ Azure portal を使用して、データ ドリブンの Python [Django](https:/
 1. Web アプリのブラウザー ウィンドウまたはタブで、(左側の **[デプロイ]** の下の) **[デプロイ センター]** を選択します。
 
 1. **[ソース管理]** のステップで、 **[GitHub]** を選択し、必要に応じて **[承認]** を選択します。 次に、サインイン プロンプトに従うか、 **[続行]** を選択して、現在の GitHub ログインを使用します。
+
+    認証が成功したというポップアップ ウィンドウが表示されたが、ポータルには [認可] ボタンがまだ表示されている場合は、ページを更新すると、[GitHub] ボックスに GitHub ログインが表示されます。 もう一度 [GitHub] ボックスを選択し、 **[続行]** を選択します。
 
 1. **[ビルド プロバイダー]** ステップで、 **[App Service のビルド サービス]** を選択し、 **[続行]** を選択します。
 
@@ -195,19 +197,13 @@ Azure portal を使用して、データ ドリブンの Python [Django](https:/
 1. コンソールで、Web アプリのフォルダーに移動します。
 
     ```bash
-    cd site/wwwroot
+    cd $APP_PATH
     ```
 
-1. 次のコマンドを実行して、コンテナーの仮想環境をアクティブにします。
+1. 仮想環境をアクティブにする
 
     ```bash
     source /antenv/bin/activate
-    ```
-
-1. Python パッケージをインストールする:
-
-    ```bash
-    pip install -r requirements.txt
     ```
 
 1. データベースの移行を実行します。
@@ -216,13 +212,15 @@ Azure portal を使用して、データ ドリブンの Python [Django](https:/
     python manage.py migrate
     ```
 
+    データベースへの接続に関するエラーが発生した場合は、「[データベースに接続する](#connect-the-database)」で作成したアプリケーション設定の値を確認してください。
+
 1. アプリの管理者ログインを作成します。
 
     ```bash
     python manage.py createsuperuser
    ```
 
-    `createsuperuser` コマンドを実行すると、Web アプリ内で使用される、Django スーパーユーザー (または管理者) の資格情報を入力するように求められます。 このチュートリアルでは、既定のユーザー名である `root` を使用し、 **Enter** キーを押してメール アドレスを空白のままにして、パスワードとして `Pollsdb1` を入力します。
+    `createsuperuser` コマンドを実行すると、Web アプリ内で使用される、Django スーパーユーザー (または管理者) の資格情報を入力するように求められます。 このチュートリアルでは、既定のユーザー名である `root` を使用し、**Enter** キーを押してメール アドレスを空白のままにして、パスワードとして `Pollsdb1` を入力します。
 
 [問題がある場合は、お知らせください。](https://aka.ms/DjangoPortalTutorialHelp)
 
@@ -232,9 +230,9 @@ Azure portal を使用して、データ ドリブンの Python [Django](https:/
 
 1. Web アプリのブラウザー ウィンドウまたはタブで、 **[概要]** ページに戻り、Web アプリの **URL** (`http://<app-name>.azurewebsites.net` 形式) を選択します。
 
-1. データベース内に特定の投票がまだないため、アプリには "No polls are available" (投票は利用できません) というメッセージが表示されます。
+1. データベース内に特定の投票がまだないため、アプリには "Polls app (投票アプリ)" および "No polls are available (投票は利用できません)" というメッセージが表示されます。
 
-1. `http://<app-name>.azurewebsites.net/admin` ([Django Administration]\(Django 管理\) ページ) に移動し、前のセクションのスーパーユーザーの資格情報 (`root` と `Pollsdb1`) を使用してサインインします。
+1. `http://<app-name>.azurewebsites.net/admin` ([Django Administration]\(Django 管理\) ページ) に移動し、前のセクションの Django スーパーユーザーの資格情報 (`root` と `Pollsdb1`) を使用してサインインします。
 
 1. **[Polls]\(投票\)** で、 **[Questions]\(質問\)** の横の **[Add]\(追加\)** を選択し、いくつかの選択肢がある投票の質問を作成します。
 
@@ -252,7 +250,7 @@ Azure portal を使用して、データ ドリブンの Python [Django](https:/
 
 1. 「[Django データベースの移行を実行する](#run-django-database-migrations)」の説明に従って、SSH 経由で再度 Web アプリに接続します。
 
-1. `cd site/wwwroot` を使用してアプリ フォルダーに移動します。
+1. `cd $APP_PATH` を使用してアプリ フォルダーに移動します。
 
 1. `source /antenv/bin/activate` を使用して仮想環境をアクティブにします。
 

@@ -2,14 +2,14 @@
 title: 仮想マシンに SSH 接続する
 description: SSH を使用して Linux 仮想マシンに接続します。  最新の Mac、Windows、または Linux オペレーティング システムを使用している場合は、ターミナル ベースのクライアント SSH が既にインストールされているはずです。
 ms.topic: tutorial
-ms.date: 11/13/2020
+ms.date: 01/05/2021
 ms.custom: devx-track-js
-ms.openlocfilehash: 7c496a907b6cbac894e92d0ecccdf32411a370ab
-ms.sourcegitcommit: ed749b136f0d6b876fd5866ba4a151c73af5b71f
+ms.openlocfilehash: c4b9577c93e37c28145abe8e976a93cd6ff39197
+ms.sourcegitcommit: 075f39972e390e79ed09a3fcfdbfc776727e08fc
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94674722"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97952494"
 ---
 # <a name="4-connect-to-linux-virtual-machine-using-ssh"></a>4.SSH を使用して Linux 仮想マシンに接続する
 
@@ -51,11 +51,15 @@ ms.locfileid: "94674722"
     -rw-r--r--   1 root root   697 Nov 11 20:23 readme.md
     ```
 
-1. [Application Insights 用の Azure SDK クライアント ライブラリ](https://www.npmjs.com/package/applicationinsights)をインストールします。
+## <a name="install-monitoring-sdk"></a>Monitoring SDK のインストール
 
-    ```bash
-    sudo npm install --save applicationinsights
-    ```
+[Application Insights 用の Azure SDK クライアント ライブラリ](https://www.npmjs.com/package/applicationinsights)をインストールします。
+
+```bash
+sudo npm install --save applicationinsights
+```
+
+## <a name="add-monitoring-instrumentation-key"></a>監視インストルメンテーション キーの追加
 
 1. [Nano](https://www.nano-editor.org/dist/latest/nano.html#Editor-Basics) エディターを使用して `package.json` ファイルを変更します。
 

@@ -4,18 +4,18 @@ description: このチュートリアルで示されている Azure Active Direc
 ms.topic: tutorial
 ms.date: 12/01/2020
 ms.custom: devx-track-js, "azure-sdk-javascript-@azure/msal-browser-2.7.0"
-ms.openlocfilehash: e6d91f1654b14d7b83c7ae2fa2c0a313914314b2
-ms.sourcegitcommit: 525c4b41d85aae9c3026a070b07e00c2241ea716
+ms.openlocfilehash: 0128d773a2bbc79b22b3ce3424e7133942053597
+ms.sourcegitcommit: 4f9ce09cbf9663203c56f5b12ecbf70ea68090ed
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97393891"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97911492"
 ---
 # <a name="add-microsoft-login-button-to-a-single-page-application-for-authentication"></a>認証用のシングルページ アプリケーションに Microsoft ログイン ボタンを追加する
 
 この TypeScript チュートリアルで示されている Azure 認証はログインとログアウトのボタンであり、それによってユーザーのアカウントへのアクセスが提供されます。 シングルページ アプリケーション (SPA) でのユーザーの操作を管理するために、Azure クライアント側 SDK (`@azure/msal-browser`) を使用してアプリケーションを開発します。
 
-* [ソース コード](https://github.com/Azure-Samples/js-e2e-client-azure-login-button)
+* [サンプル コード](https://github.com/Azure-Samples/js-e2e-client-azure-login-button)
 
 ## <a name="application-architecture-and-functionality"></a>アプリケーションのアーキテクチャと機能
 
@@ -39,7 +39,7 @@ ms.locfileid: "97393891"
 
 ## <a name="2-keep-value-for-environment-variable"></a>2.環境変数の値を保持する
 
-アプリ クライアント ID 値をコピーする場所を確保します。 
+アプリ登録のクライアント ID 値をコピーする場所 (テキスト ファイルなど) を確保します。 このクライアント ID は、次のセクションの手順 5 で取得します。 この値は、Web アプリの環境変数として使用されます。  
 
 ## <a name="3-create-app-registration-for-authentication"></a>3.認証用のアプリ登録を作成する
 
@@ -67,17 +67,17 @@ ms.locfileid: "97393891"
    npx create-react-app tutorial-demo-login-button --template typescript
    ```
 
-1. 新しいディレクトリに移動し、`@azure/msal-browser` パッケージをインストールします。
+1. 新しいディレクトリに移動し、`@azure/msal-browser` 認証パッケージをインストールします。
 
    ```bash
    cd tutorial-demo-login-button && npm install @azure/msal-browser
    ```
 
-1. ルート レベル ファイルに `.env` を作成し、次の行を追加します。
+1. ルート レベルに `.env` ファイルを作成し、次の行を追加します。
 
     :::code language="env" source="~/../js-e2e-client-azure-login-button/.env"  :::
 
-    `.env` ファイルは、create-react-app フレームワークの一部として読み取られます。
+    `.env` ファイルは、create-react-app フレームワークの一部として読み取られます。 このファイルには、ローカル開発用のクライアント ID を格納できます。 
 
 1. アプリケーション (クライアント) ID を 2 番目の値にコピーします。
 

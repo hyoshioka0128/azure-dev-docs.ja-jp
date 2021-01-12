@@ -15,7 +15,6 @@
       items:
         - name: Azure Container Instances でのスケーリング
           href: azure-container-instances-as-jenkins-build-agent.md
-          maintainContext: true
         - name: Azure VM エージェントでのスケーリング
           href: scale-deployments-using-vm-agents.md
     - name: CI/CD の実装
@@ -28,27 +27,20 @@
           items:
             - name: Kubernetes への CI/CD
               href: deploy-from-github-to-aks.md
-              maintainContext: true
-            - name: 青/緑パターンを使用した AKS へのデプロイ
-              href: deploy-to-aks-using-blue-green-deployment-pattern.md
         - name: App Service
           items:
             - name: パイプライン ジョブでの Azure リソースの作成
               href: deploy-to-azure-app-service-using-azure-cli.md
         - name: Azure DevOps での Jenkins の使用
           href: deploy-to-linux-vm-using-azure-devops-services.md
-          maintainContext: true
         - name: Azure Functions へのデプロイ
           href: deploy-to-azure-functions.md
         - name: Azure Storage に発行する
           href: azure-storage-blobs-as-build-artifact-repository.md
-          maintainContext: true
         - name: Linux VM への CI/CD
           href: pipeline-with-github-and-docker.md
-          maintainContext: true
         - name: Service Fabric への CI/CD
           href: deploy-to-service-fabric-cluster.md
-          maintainContext: true
 - name: サンプル
   items:
     - name: サンプルのジョブとスクリプト

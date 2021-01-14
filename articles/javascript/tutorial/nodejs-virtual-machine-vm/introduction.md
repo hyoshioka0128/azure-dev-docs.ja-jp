@@ -4,16 +4,18 @@ description: GitHub リポジトリの Express.js ベースのアプリのクロ
 ms.topic: tutorial
 ms.date: 11/13/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 674bf37acda9fcd9f6df7b84602600ad65ada3d9
-ms.sourcegitcommit: c8330128d5d6a71859933a890ecdf047cb950996
+ms.openlocfilehash: c68a8442862eb03291f80609bb9767fb1c9b1b6b
+ms.sourcegitcommit: ed31f841fa9680335658df6708f107e170d47ff0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97522120"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97974549"
 ---
 # <a name="1-create-linux-virtual-machine-with-expressjs-app-using-azure-cli"></a>1.Azure CLI を使用して、Express.js アプリ用の Linux 仮想マシンを作成する
 
 このチュートリアルでは、Express.js アプリ用の Linux 仮想マシン (VM) を作成します。 この VM は、cloud-init 構成ファイルで構成され、NGINX と Express.js アプリの GitHub リポジトリが含まれています。 VM が実行されたら、SSH を使用して VM に接続し、トレースのログ記録を含めるように Web アプリを変更して、公開された Express.js サーバー アプリを Web ブラウザーで表示できます。
+
+* [**サンプル コード**](https://github.com/Azure-Samples/js-e2e-vm)
 
 このチュートリアルに含まれるタスクは次のとおりです。
 

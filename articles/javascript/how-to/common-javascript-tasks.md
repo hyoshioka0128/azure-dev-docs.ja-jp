@@ -2,14 +2,14 @@
 title: JavaScript 開発者向けの Azure の主要タスク
 description: 現在のタスクの例を参照してください。
 ms.topic: reference
-ms.date: 01/05/2021
+ms.date: 01/06/2021
 ms.custom: devx-track-js
-ms.openlocfilehash: 2f19a660a60e91601dc31b829bb8fbc82f04b37d
-ms.sourcegitcommit: 075f39972e390e79ed09a3fcfdbfc776727e08fc
+ms.openlocfilehash: 4c17b95cb5acc9f04227c8ccc9ea91d6d8aa1829
+ms.sourcegitcommit: ed31f841fa9680335658df6708f107e170d47ff0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97952484"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97974569"
 ---
 # <a name="common-top-tasks-for-javascript-developers"></a>JavaScript 開発者向けの一般的な主要タスク
 
@@ -197,10 +197,13 @@ ms.locfileid: "97952484"
 
 |Name | 説明|
 |--|--|
-|静的 Webアプリを構築して Azure にデプロイする|GitHub アクションを使用して、ローカル環境で React/TypeScript クライアント アプリケーションを構築し、Azure Static Web アプリにデプロイします。<br>[チュートリアル](../tutorial/static-web-app/introduction.md) - [サンプル コード](https://github.com/Azure-Samples/js-e2e-client-cognitive-services)|
-|ファイルを Azure Storage BLOB にアップロードする|このサンプル プロジェクトは、Azure Storage BLOB にアップロードするファイルを選択するための HTML フォームを使用した、TypeScript React (create-react-app) フレームワーク クライアント アプリです。<br>[チュートリアル](../tutorial/browser-file-upload-azure-storage-blob.md) - [サンプル コード](https://github.com/Azure-Samples/js-e2e-browser-file-upload-storage-blob)|
-|クライアント アプリケーションにログイン ボタンを追加する|このチュートリアルで構築する SPA は、次のタスクを行う React アプリ (create-react-app) です。<br>* Office 365 や Outlook.com など、Microsoft がサポートするログインを使用してログインする<br>* アプリケーションからログオフする<br>[チュートリアル](../tutorial/single-page-application-azure-login-button-sdk-msal.md) - [サンプル コード](https://github.com/Azure-Samples/js-e2e-client-azure-login-button)|
-|App Service にデプロイされた CosmosDB (MongoDB)/Express.js アプリ|このチュートリアルでは、拡張機能を使用して VSCode でプロジェクトをローカルに読み込んで実行する方法と、App Service でコードをリモートで実行する方法について説明します。 このチュートリアルでは、Mongo API 用に CosmosDB リソースを作成し、接続情報を取得して、クラウド データベースに接続するように App Service 構成で設定します。<br>[チュートリアル](../tutorial/deploy-nodejs-mongodb-app-service-from-visual-studio-code.md#get-cosmosdb-connection-string) - [サンプル コード](https://github.com/Azure-Samples/js-e2e-express-mongo)|
+|Cognitive Services を使用する React アプリ|GitHub アクションを使用して、ローカル環境で React/TypeScript クライアント アプリケーションを構築し、Azure Static Web アプリにデプロイします。<br>[チュートリアル](../tutorial/static-web-app/introduction.md) - [サンプル コード](https://github.com/Azure-Samples/js-e2e-client-cognitive-services)|
+|ファイルを Azure Storage Blob にアップロードする React アプリ|このサンプル プロジェクトは、Azure Storage BLOB にアップロードするファイルを選択するための HTML フォームを使用した、TypeScript React (create-react-app) フレームワーク クライアント アプリです。<br>[チュートリアル](../tutorial/browser-file-upload-azure-storage-blob.md) - [サンプル コード](https://github.com/Azure-Samples/js-e2e-browser-file-upload-storage-blob)|
+|ログイン ボタンを使用する React アプリ|このチュートリアルで構築する SPA は、次のタスクを行う React アプリ (create-react-app) です。<br>* Office 365 や Outlook.com など、Microsoft がサポートするログインを使用してログインする<br>* アプリケーションからログオフする<br>[チュートリアル](../tutorial/single-page-application-azure-login-button-sdk-msal.md) - [サンプル コード](https://github.com/Azure-Samples/js-e2e-client-azure-login-button)|
+|MongoDB データベースを使用する Express js アプリ|このチュートリアルでは、拡張機能を使用して VSCode でプロジェクトをローカルに読み込んで実行する方法と、App Service でコードをリモートで実行する方法について説明します。 このチュートリアルでは、Mongo API 用に CosmosDB リソースを作成し、接続情報を取得して、クラウド データベースに接続するように App Service 構成で設定します。<br>[チュートリアル](../tutorial/deploy-nodejs-mongodb-app-service-from-visual-studio-code.md) - [サンプル コード](https://github.com/Azure-Samples/js-e2e-express-mongo)|
+|cloud-init ファイルを使用して VM にデプロイされる Express js アプリ|Express.js アプリ用の Linux 仮想マシン (VM) を作成します。 この VM は、cloud-init 構成ファイルで構成され、NGINX と Express.js アプリの GitHub リポジトリが含まれています。 VM が実行されたら、SSH を使用して VM に接続し、トレースのログ記録を含めるように Web アプリを変更して、公開された Express.js サーバー アプリを Web ブラウザーで表示できます。<br>[チュートリアル](../tutorial/nodejs-virtual-machine-vm/introduction.md) - [サンプル コード](https://github.com/Azure-Samples/js-e2e-express-mongo)|
+
+ご自身の特定のユース ケースをサポートするその他のサンプルを見つけるには、[Azure サンプル ブラウザー](https://docs.microsoft.com/samples/browse/?languages=javascript%2Cnodejs%2Ctypescript)を使用してください。 
 
 ## <a name="next-steps"></a>次のステップ
 

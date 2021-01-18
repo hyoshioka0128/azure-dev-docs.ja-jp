@@ -4,12 +4,12 @@ description: チュートリアル パート 6、Azure CLI で変更を加えて
 ms.topic: tutorial
 ms.date: 09/24/2019
 ms.custom: devx-track-js, devx-track-azurecli
-ms.openlocfilehash: ddd03bb06d1b6b91626e4db979f0a0ca8ea7f124
-ms.sourcegitcommit: 1dfcc022a3098b1a1505e9458eada35f527ef070
+ms.openlocfilehash: 1c80c76759d22195fc7268d4b072a7a25c3a1745
+ms.sourcegitcommit: 75a1f26aaff48a89631805df4b4a0c006de6a271
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97658406"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98128175"
 ---
 # <a name="part-6-make-changes-and-redeploy"></a>ハート 6 変更を加えて再デプロイする
 
@@ -17,9 +17,9 @@ ms.locfileid: "97658406"
 
 この手順では、アプリ コードに変更を加えてローカル Git リポジトリにコミットした後、Azure にプッシュしてサイトを再デプロイします。
 
-1. `myExpressApp` フォルダーで *views/index.pug* ファイルを開き、5 行目のメッセージを `p Welcome to Azure!` に変更します。
+1. `myExpressApp` フォルダーで、*src/server.js* ファイルを開き、メッセージ `Welcome to Azure!` を変更します。
 
-    ![index.pug ファイルの編集](../../media/azure-cli/editpugfile.png)
+    ![src/server js ファイルを編集する](../../media/azure-cli/edit-server-file.png)
 
 1. ファイルを保存します。
 
@@ -52,7 +52,7 @@ ms.locfileid: "97658406"
     remote: Handling node.js deployment.
     remote: Creating app_offline.htm
     remote: KuduSync.NET from: 'D:\home\site\repository' to: 'D:\home\site\wwwroot'
-    remote: Copying file: 'views\index.pug'
+    remote: Copying file: 'src\server.js'
     remote: Deleting app_offline.htm
     remote: Using start-up script bin/www from package.json.
     remote: Generated web.config.

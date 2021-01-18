@@ -2,14 +2,14 @@
 title: Web アプリのホスティング - 構成設定
 description: Web アプリの一般的な構成を設定する方法について説明します。
 ms.topic: conceptual
-ms.date: 12/08/2020
+ms.date: 01/11/2021
 ms.custom: devx-track-js
-ms.openlocfilehash: 29c79317d5ccd2f65db6c23e28a852164c74b743
-ms.sourcegitcommit: 525c4b41d85aae9c3026a070b07e00c2241ea716
+ms.openlocfilehash: c31d77f6b4dd61bd45bd84b6cfe1e5d14cadb586
+ms.sourcegitcommit: a7b77d07ec6e181c2d40c00ff6e5ef3866980172
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97394045"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98069078"
 ---
 # <a name="hosting-web-apps-on-azure"></a>Azure での Web アプリのホスティング
 
@@ -65,6 +65,61 @@ Static Web Apps などの一部のサービスでは、比較的一意なサブ�
 ## <a name="configure-port-forwarding"></a>ポート転送の構成
 
 アプリのポート番号が既定のポート `8080` でない場合は、[それをマップする](/azure/app-service/configure-language-nodejs?pivots=platform-windows#get-port-number)必要があります。 これにより、App Service は正しいポートに要求を転送できます。 
+
+## <a name="configure-browser-for-cors-to-connect-with-server"></a>サーバーと接続するために CORS に関してブラウザーを構成する
+
+独自のサーバーに接続する必要があり、クライアントによるローカルでの実行とデバッグ中に CORS セキュリティを無視する必要がある場合、解決策として、Visual Studio Code デバッグ ファイル `launch.json` でこの設定を構成し、セキュリティを無効にするための設定をブラウザーに渡すことをお勧めします。 
+
+このファイルはデバッグ セッションの起動に確実に使用されるため、ソース管理にチェックインすると安心です。 
+
+### <a name="configure-edge-browser-to-disable-cors-for-debugging"></a>デバッグで CORS を無効にするように Edge ブラウザーを構成する
+
+次の `launch.json` ファイルでは、デバッグ セッションで CORS セキュリティをオフにする (`--disable-web-security`) ように **Edge ブラウザー** の設定を構成します。 
+
+```json
+{
+    // Debug client, with requests to server, w/o 
+    // changes to client or server
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch Edge against localhost",
+            "request": "launch",
+            "type": "pwa-msedge",
+            "url": "http://localhost:3000",
+            "webRoot": "${workspaceFolder}",
+            "runtimeArgs": [
+                "--disable-web-security"
+            ],
+        },
+    ]
+}
+```
+
+### <a name="configure-chrome-browser-to-disable-cors-for-debugging"></a>デバッグで CORS を無効にするように Chrome ブラウザーを構成する
+
+次の `launch.json` ファイルでは、デバッグ セッションで CORS セキュリティをオフにする (`--disable-web-security`) ように **Chrome ブラウザー** の設定を構成します。 
+
+```json
+{
+    // Debug client, with requests to server, w/o 
+    // changes to client or server
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "pwa-chrome",
+            "request": "launch",
+            "name": "Launch Chrome against localhost",
+            "url": "http://localhost:3000",
+            "webRoot": "${workspaceFolder}",
+            "runtimeArgs": [
+                "--disable-web-security"
+            ],
+        }
+    ]
+}
+```
+
 
 ## <a name="configure-certificates"></a>証明書の構成
 

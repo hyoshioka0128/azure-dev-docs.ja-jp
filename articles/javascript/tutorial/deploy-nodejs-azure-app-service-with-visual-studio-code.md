@@ -2,14 +2,14 @@
 title: Visual Studio Code から Azure App Service に Node.js アプリをデプロイする
 description: Visual Studio Code App Service 拡張機能を使用して Azure App Service に Express.js Node.js アプリケーションをデプロイします。
 ms.topic: tutorial
-ms.date: 12/09/2020
+ms.date: 01/11/2021
 ms.custom: devx-track-js
-ms.openlocfilehash: 9b6b91cffa50c3c1a2beb3dc2c800db20877b9af
-ms.sourcegitcommit: f723980ade4cbc13548a5d8ac3f3fa681b8a2dbd
+ms.openlocfilehash: 2c019cc9ae13b81ecde934faee6d7d7a9fadf07a
+ms.sourcegitcommit: 657f43a5048cd17b080b40b5090d575c8d7f5eaf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97601033"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98173252"
 ---
 # <a name="deploy-nodejs-to-azure-app-service-using-visual-studio-code"></a>Visual Studio Code を使用して Node.js を Azure App Service にデプロイする
 
@@ -42,41 +42,11 @@ Git と Azure App Service 拡張機能を使用して、Node.js アプリを Azu
 
 ## <a name="3-create-a-local-expressjs-app"></a>3. ローカル環境で Express.js アプリを作成する
 
-Express.js アプリケーション ジェネレーターを使用して Nodo.js アプリを作成します。 
-
-1. ターミナルまたはコマンド プロンプトで、アプリ フォルダーを作成する場所に移動します。
-
-1. 次のコマンドを使用して、Express ジェネレーターを使って、*expressApp1* という名前の新しい Express アプリを作成します。 (`--view pug --git` パラメーターは、[pug](https://pugjs.org/api/getting-started.html) テンプレート エンジン (旧称 Jade) を使用することと、 *.gitignore* ファイルを作成することをジェネレーターに指示します。)
-
-    ```bash
-    npx express-generator expressApp1 -–git --view pug 
-    ```
-
-1. アプリ フォルダーに移動します。
-
-    ```bash
-    cd expressApp1
-    ```
-
-1. アプリケーションの依存関係をインストールします。
-
-    ```bash
-    npm install
-    ```
+[!INCLUDE [Create a local Express.js app](../includes/create-node-app.md)]
 
 ## <a name="4-run-your-local-expressjs-app"></a>4. ローカル環境で Express.js アプリを実行する
 
-1. サーバーを起動します。
-
-    ```bash
-    npm start
-    ```
-
-1. ブラウザーを開き、`http://localhost:3000` を参照して、アプリをテストします。 サイトは次のように表示されます。
-
-    ![Express アプリケーションの実行](../media/deploy-azure/express.png)
-
-1. ターミナルで **Ctrl**+**C** を押してサーバーを停止します。
+[!INCLUDE [Run your local Express.js app](../includes/run-node-app.md)]
 
 ## <a name="5-initialize-git-in-visual-studio-code-for-current-app"></a>5. Visual Studio Code で Git を現在のアプリ用に初期化する
 
@@ -169,7 +139,11 @@ Express.js アプリケーション ジェネレーターを使用して Nodo.js
 
 1. ブラウザーで数回、Web ページを最新の情報に更新して追加のログ出力を確認します。
 
-## <a name="8-clean-up-resources"></a>8.リソースをクリーンアップする
+## <a name="8-make-changes-and-redeploy"></a>8.変更を加えて再デプロイする
+
+いくつか変更を行って、App Service 拡張機能を使用してアプリを[再デプロイ](../how-to/deploy-web-app.md#deploy-or-redeploy-to-app-service-with-visual-studio-code)します。 
+
+## <a name="9-clean-up-resources"></a>9.リソースをクリーンアップする
 
 リソースをクリーンアップする必要があるときは、Visual Studio Code の App Service 拡張機能で App Service を右クリックし、 **[削除]** を選択します。
 

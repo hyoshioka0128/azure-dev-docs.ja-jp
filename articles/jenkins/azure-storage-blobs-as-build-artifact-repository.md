@@ -3,14 +3,14 @@ title: チュートリアル - ビルド成果物に Azure Storage を使用す�
 description: Jenkins 継続的インテグレーション ソリューションで作成されるビルド アーティファクトのリポジトリとして Azure BLOB サービスを使用する方法について説明します。
 keywords: jenkins, azure, devops, ストレージ, cicd, ビルド成果物
 ms.topic: article
-ms.date: 11/19/2020
-ms.custom: devx-track-jenkins
-ms.openlocfilehash: 22ce5c0ee00af64bd5bf8dc43f0df1ad1b5e2400
-ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
+ms.date: 01/12/2021
+ms.custom: devx-track-jenkins, devx-track-azurecli
+ms.openlocfilehash: 31c86da8f861e4295967007cb1b885325feb93dc
+ms.sourcegitcommit: 75a1f26aaff48a89631805df4b4a0c006de6a271
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "96035400"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98128159"
 ---
 # <a name="tutorial-use-azure-storage-for-build-artifacts"></a>チュートリアル:ビルド成果物に Azure Storage を使用する
 
@@ -18,144 +18,149 @@ ms.locfileid: "96035400"
 
 この記事では、Jenkins 継続的インテグレーション (CI) ソリューションで作成されるビルド アーティファクトのリポジトリとして、またはビルド プロセスで使用されるダウンロード可能なファイルのソースとして BLOB ストレージを使用する方法について説明します。 このソリューションが有用になるシナリオの 1 つは、アジャイル開発環境で (Java などの言語を使って) コーディングをしており、継続的インテグレーションに基づいてビルドを実行するとき、ビルド アーティファクト用のリポジトリが必要な場合です。このリポジトリがあれば、ビルド アーティファクトを他の組織のメンバーや顧客と共有したり、そのアーカイブを保存したりできます。 もう 1 つのシナリオとしては、ビルド ジョブ自体にその他のファイルが必要になる場合、たとえば、ビルドの入力で依存関係のダウンロードが必要になる場合などが考えられます。
 
-このチュートリアルでは、Microsoft が公開している Jenkins CI 用の Azure Storage プラグインを使用します。
-
-## <a name="jenkins-overview"></a>Jenkins の概要
-
-Jenkins を使用すると、開発者がコードの変更を簡単に統合し、ビルドを自動的に生成できるため、ソフトウェア プロジェクトの継続的インテグレーションを実現できます。 このパターンは摩擦を減らし、チームの生産性を向上させます。 ビルドはバージョン管理され、ビルド アーティファクトを個別のリポジトリにアップロードできます。 この記事では、Azure Blob Storage をビルド アーティファクトのリポジトリとして使用する方法について説明します。 また、Azure Blob Storage から依存関係をダウンロードする方法も説明します。
-
-Jenkins の詳細については、「 [Meet Jenkins (Jenkins について)](https://wiki.jenkins-ci.org/display/JENKINS/Meet+Jenkins)」を参照してください。
-
-## <a name="benefits-of-using-the-blob-service"></a>Blob service を使用するメリット
-
-Blob service を使用してアジャイル開発のビルド アーティファクトをホストするメリットには、次の点が挙げられます。
-
-* ビルド アーティファクトの高可用性またはダウンロード可能な依存関係を実現。
-* Jenkins CI ソリューションでビルド アーティファクトをアップロードする際のパフォーマンスを改善。
-* 顧客およびパートナーがビルド アーティファクトをダウンロードする際のパフォーマンスを改善。
-* 匿名アクセス、有効期限ベースの Shared Access Signature によるアクセス、プライベート アクセスなどから選んでユーザー アクセス ポリシーを制御。
-
 ## <a name="prerequisites"></a>前提条件
 
-- **Azure サブスクリプション**:Azure サブスクリプションをお持ちでない場合は、開始する前に[無料の Azure アカウント](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio)を作成してください。
+- **Azure サブスクリプション**:Azure サブスクリプションをお持ちでない場合は、開始する前に [無料の Azure アカウント](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio)を作成してください。
 - **Jenkins サーバー**: Jenkins サーバーがインストールされていない場合は、[Azure に Jenkins サーバーを作成します](./configure-on-linux-vm.md)。
+- **Azure CLI**:Azure CLI (バージョン 2.0.67 以上) を Jenkins サーバーにインストールします。
 - **Azure ストレージ アカウント**:まだストレージ アカウントがない場合は、[ストレージ アカウントを作成します](/azure/storage/common/storage-account-create)。
 
-## <a name="configure-your-environment"></a>環境を構成する
+## <a name="add-azure-credential-needed-to-execute-azure-cli"></a>Azure CLI を実行するために必要な Azure の資格情報を追加する
 
-1. Jenkins CI ソリューションがない場合には、次の方法によって Jenkins CI ソリューションを実行できます。
-  
-  1. Java が有効なコンピューターで、<https://jenkins-ci.org> から jenkins.war をダウンロードします。
-  2. コマンド プロンプトを開いて jenkins.war が格納されているフォルダーに移動し、次のコマンドを実行します。
-     
-      `java -jar jenkins.war`
+1. Jenkins ポータルに移動します。
 
-  3. `http://localhost:8080/` を参照して、Jenkins ダッシュボードを開きます。 Jenkins ダッシュボードを使用して、Azure Storage プラグインをインストールおよび構成します。
-     
-## <a name="how-to-use-the-blob-service-with-jenkins-ci"></a>Jenkins CI で Blob service を使用する方法
+1. メニューから、 **[Manage Jenkins]\(Jenkins の管理\)** を選択します。
 
-Jenkins で Blob service を使用するには、Azure Storage プラグインをインストールし、そのプラグインを構成してストレージ アカウントを使用するようにしたうえで、ビルド後にビルド アーティファクトをストレージ アカウントにアップロードするアクションを作成する必要があります。 以降のセクションでは、ここに挙げた手順について説明します。
+1. **[資格情報の管理]** を選択します。
 
-## <a name="how-to-install-the-azure-storage-plugin"></a>Azure Storage プラグインのインストール方法
+1. **グローバル** ドメインを選択します。
 
-1. Jenkins ダッシュボードで、 **[Manage Jenkins]\(Jenkins の管理\)** を選択します。
-2. **[Manage Jenkins]\(Jenkins の管理\)** ページで、 **[Manage Plugins]\(プラグインの管理\)** を選択します。
-3. **[Available]\(利用可能\)** タブをクリックします。
-4. **[Artifact Uploaders (アーティファクト アップローダー)]** セクションで、 **[Microsoft Azure Storage plugin (Microsoft Azure Storage プラグイン)]** をオンにします。
-5. **[Install without restart]\(再起動しないでインストール\)** または **[Download now and install after restart]\(今すぐダウンロードし、再起動後にインストール\)** を選択します。
-6. Jenkins を再起動します。
+1. **[Add Credentials]\(資格情報の追加\)** を選択します。
 
-## <a name="how-to-configure-the-azure-storage-plugin-to-use-your-storage-account"></a>Azure Storage プラグインを構成してストレージ アカウントを使用する方法
+1. 必須フィールドに以下のとおり入力します。
 
-1. Jenkins ダッシュボードで、 **[Manage Jenkins]\(Jenkins の管理\)** を選択します。
-2. **[Manage Jenkins]\(Jenkins の管理\)** ページで **[Configure System]\(システムの構成\)** を選択します。
-3. **[Microsoft Azure Storage Account Configuration]** セクションで、次の操作を行います。
-   1. [Azure portal](https://portal.azure.com) で取得したストレージ アカウント名を入力します。
-   2. 同様に、[Azure portal](https://portal.azure.com) で取得したストレージ アカウント キーを入力します。
-   3. グローバル Azure クラウドを使用している場合は、 **[Blob Service Endpoint URL]\(BLOB service エンドポイント URL\)** の既定値を使用します。 これとは異なる Azure クラウドを使用している場合には、[Azure portal](https://portal.azure.com) でストレージ アカウント用に指定されたエンドポイントを使用します。 
-   4. **[Validate storage credentials]\(ストレージの資格情報を検証する\)** を選択してストレージ アカウントを検証します。 
-   5. (省略可能) Jenkins CI で利用できるストレージ アカウントを追加する場合には、 **[Add more Storage Accounts]\(新しいストレージ アカウントを追加する\)** を選択します。
-   6. **[Save]\(保存\)** を選択して設定を保存します。
+    - **種類**: **[Username with password]\(ユーザー名とパスワード\)** を選択します。
+    - **[ユーザー名]** : サービス プリンシパルの `appId` を指定します。
+    - **パスワード**:サービス プリンシパルの`password` を指定します。
+    - **[ID]** :`azuresp` などの、資格情報の識別子を指定します。
+    - **[説明]** :必要に応じて、環境を表すわかりやすい説明を含めます。
 
-## <a name="how-to-create-a-post-build-action-that-uploads-your-build-artifacts-to-your-storage-account"></a>ビルド後にビルド アーティファクトをストレージ アカウントにアップロードするアクションの作成方法
+1. **[OK]** を選択して資格情報を作成します。
 
-説明のため、ストレージ アカウントにファイルをアップロードするためのビルド後のアクションを追加する前に、複数のファイルを作成するジョブを作成する必要があります。
+## <a name="create-a-pipeline-job-to-upload-build-artifacts"></a>パイプライン ジョブを作成してビルド成果物をアップロードする
 
-1. Jenkins ダッシュボードで **[New Item]\(新しい項目\)** を選択します。
-2. ジョブの名前を **MyJob** に設定し、 **[Build a free-style software project]\(フリースタイル ソフトウェア プロジェクトをビルドする\)** を選択して、 **[OK]** を選択します。
-3. ジョブ構成の **[Build]\(ビルド\)** セクションで、 **[Add build step]\(ビルド ステップを追加する\)** を選択し、 **[Execute Windows batch command]\(Windows のバッチ コマンドを実行する\)** を選択します。
-4. **[Command]** で次のコマンドを使用します。
+次の手順では、パイプライン ジョブの作成について順番に説明します。 パイプライン ジョブでは、Azure CLI を使用して複数のファイルを作成し、それらのファイルをお使いのストレージ アカウントにアップロードします。
 
-    ```   
-    md text
-    cd text
-    echo Hello Azure Storage from Jenkins > hello.txt
-    date /t > date.txt
-    time /t >> date.txt
-    ```
+1. Jenkins ダッシュボードから **[New Item]\(新しい項目\)** を選択します。
 
-5. ジョブ構成の **[Post-build Actions]\(ビルド後のアクション\)** セクションで、 **[Add post-build action]\(ビルド後のアクションを追加する\)** を選択し、 **[Upload artifacts to Microsoft Azure Blob storage]\(Azure Blob Storage にアーティファクトをアップロードする\)** を選択します。
-6. **[Storage Account Name]** では、使用するストレージ アカウントを選択します。
-7. **[Container name]** では、コンテナー名を指定します(コンテナーは、ビルド アーティファクトをアップロードする時点で存在していなければ、自動で作成されます)。 (コンテナーは、ビルド アーティファクトをアップロードする時点で存在していなければ、作成されます。)環境変数を使用することもできます。この例では、コンテナー名に「`${JOB_NAME}`」と入力します。
-   
-    > [!TIP]
-    > **[Execute Windows batch command (Windows バッチ コマンドの実行)]** にスクリプトを入力した **[Command (コマンド)]** セクションの下には、Jenkins が認識できる環境変数へのリンクがあります。 環境変数の名前および説明を確認するには、リンクを選択します。 **BUILD_URL** など、特殊文字が含まれる環境変数は、コンテナー名および共通仮想パスに使用できません。
+1. ジョブに **myjob** という名前を指定し、 **[Pipeline]\(パイプライン\)** を選択してから **[OK]** を選択します。
+
+1. ジョブ構成の **[Pipeline]\(パイプライン\)** セクションで、 **[Pipeline script]\(パイプライン スクリプト\)** を選択し、以下を **[スクリプト]** に貼り付けます。 プレースホルダーは、お使いの環境に合った適切な値になるように編集してください。
+
+    ```groovy
+    pipeline {
+      agent any
+      environment {
+        AZURE_SUBSCRIPTION_ID='99999999-9999-9999-9999-999999999999'
+        AZURE_TENANT_ID='99999999-9999-9999-9999-999999999999'
+        AZURE_STORAGE_ACCOUNT='myStorageAccount'
+      }
+      stages {
+        stage('Build') {
+          steps {
+            sh 'rm -rf *'
+            sh 'mkdir text'
+            sh 'echo Hello Azure Storage from Jenkins > ./text/hello.txt'
+            sh 'date > ./text/date.txt'
+          }
     
-8. この例では、 **[Make new container public by default]\(新しいコンテナーを既定でパブリックにする\)** を選択します。 (プライベート コンテナーを使用する場合は、Shared Access Signature を作成してアクセスを許可する必要があります。ただし、これについてはこの記事では扱いません。 Shared Access Signature の詳細については、「[Shared Access Signatures (SAS) の使用](/azure/storage/common/storage-sas-overview)」を参照してください。)
-9. (省略可能) ビルド アーティファクトをアップロードする前にコンテナーの内容をクリアする場合、 **[Clean container before uploading]\(アップロードの前にコンテナーをクリーンアップする\)** をオンにします (コンテナーの内容をクリアしない場合は、これをオフのままにします)。
-10. **[List of Artifacts to upload]\(アップロードするアーティファクトのリスト\)** には、「`text/*.txt`」と入力します。
-11. このチュートリアルでは、 **[Common virtual path for uploaded artifacts]\(アップロードされたアーティファクトの共通仮想パス\)** に「`${BUILD\_ID}/${BUILD\_NUMBER}`」と入力します。
-12. **[Save]\(保存\)** を選択して設定を保存します。
-13. Jenkins ダッシュボードで、 **[Build Now]\(今すぐビルド\)** を選択して **MyJob** を実行します。 コンソール出力でステータスを確認します。 ビルド後のアクションによってビルド アーティファクトのアップロードが開始されると、コンソール出力に Azure Storage に関するステータス メッセージが表示されます。
-14. ジョブが正常に完了すると、パブリック BLOB を開いてビルド アーティファクトを確認できます。
+          post {
+            success {
+              withCredentials([usernamePassword(credentialsId: 'azuresp', 
+                              passwordVariable: 'AZURE_CLIENT_SECRET', 
+                              usernameVariable: 'AZURE_CLIENT_ID')]) {
+                sh '''
+                  echo $container_name
+                  # Login to Azure with ServicePrincipal
+                  az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID
+                  # Set default subscription
+                  az account set --subscription $AZURE_SUBSCRIPTION_ID
+                  # Execute upload to Azure
+                  az storage container create --account-name $AZURE_STORAGE_ACCOUNT --name $JOB_NAME --auth-mode login
+                  az storage blob upload-batch --destination ${JOB_NAME} --source ./text --auth-mode login
+                  # Logout from Azure
+                  az logout
+                '''
+              }
+            }
+          }
+        }
+      }
+    }
+    ```
+    
+1. **[Build Now]\(今すぐビルド\)** を選択し、**myjob** を実行します。
+
+1. コンソール出力でステータスを確認します。 ビルド後のアクションによってビルド成果物がアップロードされると、Azure Storage のステータス メッセージがコンソールに書き込まれます。
+
+1. 次のようなエラーが発生した場合は、コンテナー レベルでアクセス権を付与する必要があることを意味します。`ValidationError: You do not have the required permissions needed to perform this operation.` このエラー メッセージが表示された場合は、次の記事を参照して解決してください。
+
+    - [Azure CLI で BLOB データへのアクセスの承認方法を選択する - Azure Storage](/azure/storage/blobs/authorize-data-operations-cli)
+    - [Azure portal を使用してデータへのアクセスのための Azure ロールを割り当てる - Azure Storage](/azure/storage/common/storage-auth-aad-rbac-portal)
+
+1. ジョブが正常に完了したら、パブリック BLOB を開いてビルド成果物を確認します。
+
     1. [Azure portal](https://portal.azure.com) にサインインします。
-    2. **[ストレージ]** を選択します。
-    3. Jenkins に使用したストレージ アカウント名を選択します。
-    4. **[コンテナー]** を選択します。
-    5. **myjob** という名前のコンテナーを選択します。これは、Jenkins ジョブを作成したときに割り当てたジョブ名を小文字にしたものです。 Azure Storage では、コンテナー名と BLOB 名は小文字です (大文字と小文字は区別されます)。 **myjob** という名前のコンテナーの BLOB の一覧に、**hello.txt** と **date.txt** があります。 そのどちらかの URL をコピーして、ブラウザーで開きます。 このテキスト ファイルがビルド アーティファクトとしてアップロードされていることがわかります。
+    1. **[ストレージ]** を選択します。
+    1. Jenkins に使用したストレージ アカウント名を選択します。
+    1. **[コンテナー]** を選択します。
+    1. BLOB の一覧で、**myjob** という名前のコンテナーを選択します。
+    1. **hello.txt** と **date.txt** という 2 つのファイルが表示されます。
+    1. そのどちらかの項目の URL をコピーして、ブラウザーに貼り付けます。 
+    1. このテキスト ファイルがビルド アーティファクトとしてアップロードされていることがわかります。
+    
+    **注**:
 
-アーティファクトを Azure BLOB ストレージにアップロードするビルド後のアクションは、ジョブごとに 1 つのみ作成できます。 **[List of Artifacts to upload]\(アップロードするアーティファクトのリスト\)** でセミコロンを区切り記号として使用することで、アーティファクトを Azure Blob Storage にアップロードするビルド後のアクションの 1 つに、(ワイルドカードを含む) 複数のファイルとファイル パスを指定できます。 たとえば、Jenkins ビルドによってワークスペースの **build** フォルダーに JAR ファイルと TXT ファイルが生成され、これら両方のファイルを Azure Blob Storage にアップロードする場合、 **[List of Artifacts to upload]\(アップロードするアーティファクトのリスト\)** オプションには「`build/\*.jar;build/\*.txt`」という値を使います。 また、2 重コロンの構文を使用すると、BLOB 名で使用するパスを指定できます。 たとえば、JAR ファイルのアップロードに BLOB パス内の **binaries** を使用し、TXT ファイルのアップロードに BLOB パス内の **notices** を使用する場合、 **[List of Artifacts to upload]\(アップロードするアーティファクトのリスト\)** オプションには「`build/\*.jar::binaries;build/\*.txt::notices`」という値を使います。
+    - Azure Storage では、コンテナー名と BLOB 名は小文字です (大文字と小文字は区別されます)。
 
-## <a name="how-to-create-a-build-step-that-downloads-from-azure-blob-storage"></a>Azure BLOB ストレージからのダウンロードを実行するビルド手順の作成方法
+## <a name="create-a-pipeline-job-to-download-from-azure-blob-storage"></a>Azure Blob Storage からダウンロードするためのパイプライン ジョブを作成する
 
-次の手順では、Azure Blob Storage から項目をダウンロードするビルド手順を構成する方法を示します。これは、項目をビルドに含める場合に便利です。 このパターンを使用する例は、Azure Blob Storage に保存する JAR です。
+次の手順では、項目を Azure Blob Storage からダウンロードするようにパイプライン ジョブを構成する方法を示します。
 
-1. ジョブ構成の **[Build]\(ビルド\)** セクションで **[Add build step]\(ビルド ステップを追加する\)** を選択し、 **[Download from Azure Blob storage]\(Azure Blob Storage からダウンロードする\)** を選択します。
-2. **[Storage Account Name]** では、使用するストレージ アカウントを選択します。
-3. **[Container name]** では、ダウンロードする BLOB が格納されているコンテナーの名前を指定します。 環境変数を使用できます。
-4. **[Blob name]** には BLOB 名を指定します。 環境変数を使用できます。 また、アスタリスクを使用して、BLOB 名の先頭文字 (複数可) の後にワイルドカードを指定できます。 たとえば「**project\\** _」と入力すると、名前が _*project** で始まる BLOB がすべて指定されます。
-5. [省略可能] **[Download path]** では、Jenkins を実行しているコンピューター上のパスを指定します。 Azure BLOB ストレージのファイルはこのパスにダウンロードされます。 環境変数も使用できます ( **[Download path]** に値を入力しないと、Azure Blob Storage のファイルは、ジョブのワークスペースにダウンロードされます。)
+1. ジョブ構成の **[Pipeline]\(パイプライン\)** セクションで、 **[Pipeline script]\(パイプライン スクリプト\)** を選択し、以下を **[スクリプト]** に貼り付けます。 プレースホルダーは、お使いの環境に合った適切な値になるように編集してください。
 
-Azure BLOB ストレージからダウンロードする項目が他にもある場合は、追加のビルド手順を作成できます。
-
-目的の BLOB が正常にダウンロードされていることを確かめるには、ビルドを実行した後に、ビルド履歴のコンソール出力またはダウンロード先を確認します。  
-
-## <a name="components-used-by-the-blob-service"></a>Blob service が使用するコンポーネント
-
-このセクションでは、Blob service コンポーネントの概要を説明します。
-
-* **[ストレージ アカウント]** : Azure のストレージにアクセスする場合には必ず、ストレージ アカウントを使用します。 ストレージ アカウントは、BLOB にアクセスするための最高レベルの名前空間です。 アカウントに格納できるコンテナーの数は、コンテナーの合計サイズが 100 TB (テラバイト) 未満である限り無制限です。
-* **コンテナー**:コンテナーには、一連の BLOB をグループ化するコンテナーが用意されています。 すべての BLOB は 1 つのコンテナーに存在する必要があります。 アカウントには、無制限の数のコンテナーを含めることができます。 コンテナーには、BLOB を無制限に格納できます。
-* **BLOB**:任意の種類とサイズのファイルです。 Azure Storage に格納できる BLOB には、ブロック BLOB とページ BLOB の 2 種類があります。 ほとんどのファイルはブロック BLOB です。 1 つのブロック BLOB には、最大で 200 GB までのデータを格納できます。 このチュートリアルでは、 ブロック BLOB を使用します。 もう 1 つの種類の BLOB であるページ BLOB には、最大 1 TB までのデータを格納できます。ファイルのバイト数の範囲が頻繁に変更される場合には、こちらの方が効率的です。 BLOB の詳細については、「[ブロック BLOB、追加 BLOB、ページ BLOB について](/rest/api/storageservices/Understanding-Block-Blobs--Append-Blobs--and-Page-Blobs)」をご覧ください。
-* **URL の形式**:BLOB は、次の URL 形式を使用してアドレス指定できます。
-  
-    `http://storageaccount.blob.core.windows.net/container_name/blob_name`
-  
-**注**:
-
-- 上の形式は、グローバル Azure クラウドに適用されます。 これとは異なる Azure クラウドを使用している場合は、[Azure portal](https://portal.azure.com) 内のエンドポイントを使用して URL エンドポイントを指定します。
-- プレースホルダー `storageaccount` はストレージ アカウントの名前を表します。
-- プレースホルダー `container_name` はコンテナーの名前を表します。
-- プレースホルダー `blob_name` は BLOB の名前を表します。
-- コンテナー名に複数のパスを含めることができます。 これらのパスはスラッシュで区切られます。 
-- このチュートリアルで使用するコンテナー名の例は **MyJob** です。
-- 共通仮想パスは **${BUILD\_ID}/${BUILD\_NUMBER}** として定義されています。 この値を指定すると、BLOB の URL は次の形式になります。
-  
-    `http://example.blob.core.windows.net/myjob/2014-04-14_23-57-00/1/hello.txt`
-
-## <a name="troubleshooting-the-jenkins-plugin"></a>Jenkins プラグインのトラブルシューティング
-
-Jenkins プラグインでバグが発生した場合は、[Jenkins JIRA](https://issues.jenkins-ci.org/) で特定のコンポーネントについて問題を報告してください。
+    ```groovy
+    pipeline {
+      agent any
+      environment {
+        AZURE_SUBSCRIPTION_ID='99999999-9999-9999-9999-999999999999'
+        AZURE_TENANT_ID='99999999-9999-9999-9999-999999999999'
+        AZURE_STORAGE_ACCOUNT='myStorageAccount'
+      }
+      stages {
+        stage('Build') {
+          steps {
+            withCredentials([usernamePassword(credentialsId: 'azuresp', 
+                            passwordVariable: 'AZURE_CLIENT_SECRET', 
+                            usernameVariable: 'AZURE_CLIENT_ID')]) {
+              sh '''
+                # Login to Azure with ServicePrincipal
+                az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID
+                # Set default subscription
+                az account set --subscription $AZURE_SUBSCRIPTION_ID
+                # Execute upload to Azure
+                az storage blob download --account-name $AZURE_STORAGE_ACCOUNT --container-name myjob --name hello.txt --file ${WORKSPACE}/hello.txt --auth-mode login
+                # Logout from Azure
+                az logout
+              '''   
+            }
+          }
+        }
+      }
+    }
+    ```
+    
+1. ビルドを実行した後、ビルド履歴コンソールの出力を確認します。 または、ダウンロード先を調べて、想定した BLOB が正常にダウンロードされたかどうかを確認することもできます。  
 
 ## <a name="next-steps"></a>次のステップ
 

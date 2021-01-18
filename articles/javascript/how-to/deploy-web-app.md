@@ -2,14 +2,14 @@
 title: JavaScript アプリを Azure にデプロイする
 description: ホスティング オプションとデプロイ シナリオには、Azure 用のサービスとツールがいくつか含まれています。 アプリを発行し、Azure でサービスを提供します。
 ms.topic: how-to
-ms.date: 12/09/2020
+ms.date: 01/12/2021
 ms.custom: seo-javascript-september2019, seo-javascript-october2019, devx-track-js, contperf-fy21q2
-ms.openlocfilehash: e2020d90260af4fbab8d6a37ef475eddb7754b90
-ms.sourcegitcommit: 1dfcc022a3098b1a1505e9458eada35f527ef070
+ms.openlocfilehash: c1ca1f3dcf99ce96c52eec7ebccee9860608b273
+ms.sourcegitcommit: 657f43a5048cd17b080b40b5090d575c8d7f5eaf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97636527"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98173212"
 ---
 # <a name="deploy-and-host-your-nodejs-apps-on-azure"></a>Azure で Node.js アプリをデプロイしてホストする
 
@@ -67,6 +67,14 @@ Azure クラウドにファイルを移動する一般的な方法は次のと�
 * [cURL](/azure/app-service/deploy-zip#with-curl)
 * [SSH](/azure/app-service/configure-linux-open-ssh-session)
 
+最初のデプロイ時に使用しなかったメソッドであっても、[提供されている任意のメソッド](#deploy-your-web-app-to-azure)を使用して、App Service に再デプロイできます。 メソッドを切り替える場合は、再デプロイ前に構成を行うことができます。 
+
+### <a name="deploy-or-redeploy-to-app-service-with-visual-studio-code"></a>Visual Studio Code を使用して App Service にデプロイまたは再デプロイする
+
+Visual Studio Code を使用して App Service アプリをデプロイまたは再デプロイするには、App Service 拡張機能のサービスの一覧から App Service を右クリックし、 **[Web アプリにデプロイ]** を選択します。 
+
+:::image type="content" source="../media/azure-app-service-vscode-extensions/deploy-or-redeploy-app-service.png" alt-text="Visual Studio Code を使用して App Service にデプロイまたは再デプロイする":::
+
 ## <a name="verify-your-deployment-with-your-http-endpoint"></a>HTTP エンドポイントでデプロイを確認する
 
 デプロイを確認するには、HTTP エンドポイントにアクセスします。 HTTP エンドポイントは、 **[概要]** ページですべてのサービスに表示されます。 
@@ -80,3 +88,4 @@ Azure portal のサービスの [概要] ページで HTTP エンドポイント
 ## <a name="next-steps"></a>次のステップ
 
 * [コンテナーを使用したデプロイ](deploy-containers.md)
+* [Visual Studio Code を使用したその他のデプロイ チュートリアル](https://code.visualstudio.com/docs/azure/deployment)

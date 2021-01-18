@@ -1,107 +1,119 @@
 ---
 title: チュートリアル - Azure Container Instances を Jenkins ビルド エージェントとして使用する
-description: Azure Container Instances でビルド ジョブをオンデマンドで実行するように Jenkins サーバーを構成する方法について説明します
+description: Azure Container Instances でビルド ジョブを実行するように Jenkins サーバーを構成する方法について説明します
 keywords: jenkins, azure, devops, container instances, ビルド エージェント
 ms.topic: article
-ms.date: 08/31/2018
-ms.custom: devx-track-jenkins
-ms.openlocfilehash: 20e8180ab0ac721366c2071fdfaa0882f913f945
-ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
+ms.date: 01/08/2021
+ms.custom: devx-track-jenkins,devx-track-azurecli
+ms.openlocfilehash: 678f1e19895f43e519bccaea4cdc9d796f91da91
+ms.sourcegitcommit: 347bfa3b6c34579c567d1324efc63c1d6672a75b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "96035440"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98109215"
 ---
 # <a name="tutorial-use-azure-container-instances-as-a-jenkins-build-agent"></a>チュートリアル:Azure Container Instances を Jenkins ビルド エージェントとして使用する
 
 [!INCLUDE [jenkins-integration-with-azure.md](includes/jenkins-integration-with-azure.md)]
 
-Azure Container Instances (ACI) は、コンテナー化ワークロードを実行するためのバースト対応のオンデマンド分離環境を提供します。 これらの特性により、ACI は大規模な環境で Jenkins ビルド ジョブを実行するための優れたプラットフォームを作成します。 この記事では、ビルド ターゲットとして ACI で事前に構成されている Jenkins サーバーの展開と使用の手順について説明します。
+Azure Container Instances (ACI) は、コンテナー化ワークロードを実行するためのバースト対応のオンデマンド分離環境を提供します。 これらの特性により、ACI は大規模な環境で Jenkins ビルド ジョブを実行するための優れたプラットフォームを作成します。 この記事では、ACI をデプロイし、Jenkins コントローラー用の永続的なビルド エージェントとして追加する方法について説明します。
 
 Azure Container Instances の詳細については、「[Azure Container Instances について](/azure/container-instances/container-instances-overview)」を参照してください。
 
-## <a name="deploy-a-jenkins-server"></a>Jenkins サーバーを展開する
+## <a name="prerequisites"></a>前提条件
 
-1. Azure Portal で **[リソースの作成]** を選択し、**Jenkins** を検索します。 **Microsoft** が発行している Jenkins を選択し、 **[作成]** を選択します。
+- **Azure サブスクリプション**:Azure サブスクリプションをお持ちでない場合は、開始する前に [無料の Azure アカウント](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio)を作成してください。
+- **Jenkins サーバー**: Jenkins サーバーがインストールされていない場合は、[Azure に Jenkins サーバーを作成します](./configure-on-linux-vm.md)。
 
-2. **[基本]** フォームに次の情報を入力した後、 **[OK]** を選びます。
+## <a name="prepare-the-jenkins-controller"></a>Jenkins コントローラーを準備する
 
-   - **Name**:Jenkins デプロイの名前を入力します。
-   - **ユーザー名**:Jenkins 仮想マシンの管理ユーザーの名前を入力します。
-   - **[認証の種類]** : 認証には SSH 公開キーをお勧めします。 このオプションを選んだ場合は、Jenkins 仮想マシンへのログインに使う SSH 公開キーを貼り付けます。
-   - **サブスクリプション**:Azure サブスクリプションを選択します。
-   - **[リソース グループ]** :リソース グループを作成するか、既存のリソース グループを選択します。
-   - **[場所]** :Jenkins サーバーの場所を選びます。
+1. Jenkins ポータルに移動します。
 
-   ![Jenkins ポータル展開の基本設定](./media/azure-container-instances-as-jenkins-build-agent/jenkins-portal-01.png)
+1. メニューから、 **[Manage Jenkins]\(Jenkins の管理\)** を選択します。
 
-3. **[追加設定]** フォームに、次の項目を入力します。
+1. **[System Configuration]\(システム構成\)** の **[Configure System]\(システムの構成\)** を選択します。
 
-   - **Size**:Jenkins 仮想マシンの適切なサイズ オプションを選びます。
-   - **VM ディスクの種類**: Jenkins サーバーの **HDD** (ハード ディスク ドライブ) または **SSD** (ソリッドステート ドライブ) を指定します。
-   - **仮想ネットワーク**:既定の設定を変更する場合、矢印を選びます。
-   - **サブネット**:矢印を選び、情報を確認して、 **[OK]** を選びます。
-   - **[パブリック IP アドレス]** : 矢印を選んでパブリック IP アドレスにカスタムの名前を付け、SKU を構成して、割り当て方法を設定します。
-   - **[ドメイン名ラベル]** : 値を指定して Jenkins 仮想マシンの完全修飾 URL を作成します。
-   - **[Jenkins のリリースの種類]** : 次のオプションから必要なリリースの種類を選択します。( **[LTS]** 、 **[Weekly build]\(週次ビルド\)** 、または **[Azure Verified]\(Azure 確認済み\)** )。
+1. **Jenkins URL** が、Jenkins インストール環境の HTTP アドレス (`http://<your_host>.<your_domain>:8080/`) に設定されていることを確認します。
 
-   ![Jenkins ポータル展開の追加設定](./media/azure-container-instances-as-jenkins-build-agent/jenkins-portal-02.png)
+1. メニューから、 **[Manage Jenkins]\(Jenkins の管理\)** を選択します。
 
-4. サービス プリンシパル統合では、 **[Auto(MSI)]\(自動 (MSI)\)** を選んで、[Azure リソースのマネージド ID](/azure/active-directory/managed-identities-azure-resources/overview) が Jenkins インスタンスの認証 ID を自動的に作成するようにします。 独自のサービス プリンシパル資格情報を提供するには **[手動]** を選びます。
+1. **[セキュリティ]** で、 **[Configure Global Security]\(グローバル セキュリティの構成\)** を選択します。
 
-5. クラウド エージェントは、Jenkins ビルド ジョブのクラウドベース プラットフォームを構成します。 この記事では、 **[ACI]** を選びます。 ACI クラウド エージェントでは、各 Jenkins ビルド ジョブはコンテナー インスタンス内で実行されます。
+1. **[エージェント]** で、**固定** ポートを指定し、環境に適したポート番号を入力します。
 
-   ![Jenkins ポータル展開のクラウド統合の設定](./media/azure-container-instances-as-jenkins-build-agent/jenkins-portal-03.png)
+    構成の例:![TCP ポートの構成](./media/azure-container-instances-as-jenkins-build-agent/agent-port.png)
 
-6. 統合の設定が完了したら、 **[OK]** を選び、検証の概要でもう一度 **[OK]** を選びます。 **[使用条件]** の概要で **[作成]** を選びます。 Jenkins サーバーのデプロイには数分かかります。
+1. **[保存]** を選択します。
 
-## <a name="configure-jenkins"></a>Jenkins を構成する
+## <a name="create-jenkins-work-agent"></a>Jenkins 作業エージェントを作成する
 
-1. Azure portal で、Jenkins リソース グループを参照し、Jenkins 仮想マシンを選んで、DNS 名をメモします。
+1. Jenkins ポータルに移動します。
 
-   ![Jenkins 仮想マシンについての詳細での DNS 名](./media/azure-container-instances-as-jenkins-build-agent/jenkins-portal-fqdn.png)
+1. メニューから、 **[Manage Jenkins]\(Jenkins の管理\)** を選択します。
 
-2. Jenkins VM の DNS 名を参照し、返される SSH 文字列をコピーします。
+1. **[System Configuration]\(システム構成\)** で、 **[Manage Nodes and Clouds]\(ノードとクラウドの管理\)** を選択します。
 
-   ![SSH 文字列を使用した Jenkins のログイン手順](./media/azure-container-instances-as-jenkins-build-agent/jenkins-portal-04.png)
+1. メニューから **[New Node]\(新しいノード\)** を選択します。
 
-3. 開発システム上でターミナル セッションを開き、前の手順の SSH 文字列を貼り付けます。 Jenkins サーバーを展開するときに指定したユーザー名で `username` を更新します。
+1. **[Node Name]\(ノード名\)** の値を入力します。
 
-4. セッションが接続された後、次のコマンドを実行して、初期管理者パスワードを取得します。
+1. **[Permanent Agent]\(永続的なエージェント\)** を選択します。
 
-   ```bash
-   sudo cat /var/lib/jenkins/secrets/initialAdminPassword
-   ```
+1. **[OK]** を選択します。
 
-5. SSH セッションとトンネルを実行したままにして、ブラウザーで `http://localhost:8080` に移動します。 ボックスに初期管理者パスワードを貼り付けて、 **[続行]** を選びます。
+1. **リモート ルート ディレクトリ** の値を入力します。 たとえば、`/home/jenkins/work` のように指定します。
 
-   ![管理者パスワード入力ボックスが表ｊしあれた "Jenkins ロック解除" 画面](./media/azure-container-instances-as-jenkins-build-agent/jenkins-portal-05.png)
+1. 必要に応じて、ラベルを入力します。 ラベルは、複数のエージェントを 1 つの論理グループとしてグループ化するために使用します。 ラベルの例として、Linux エージェントをグループ化する `linux` があります。
 
-6. **[Install suggested plugins]\(推奨されるプラグインのインストール\)** を選択し、推奨されるすべての Jenkins プラグインをインストールします。
+1. **[Launch method]\(起動方法\)** を **[Launch agent by connecting to the master]\(マスターに接続してエージェントを起動する\)** に設定します。
 
-   !["推奨されるプラグインのインストール" が選択された "Jenkins カスタマイズ" 画面](./media/azure-container-instances-as-jenkins-build-agent/jenkins-portal-06.png)
+1. すべての必須フィールドが指定または入力されていることを確認します。
 
-7. 管理者ユーザー アカウントを作成します。 このアカウントは、Jenkins インスタンスへのログインと操作に使われます。
+    ![Jenkins エージェントの構成例](./media/azure-container-instances-as-jenkins-build-agent/agent-config.png)
 
-   ![資格情報が入力された "初期管理者ユーザー作成" 画面](./media/azure-container-instances-as-jenkins-build-agent/jenkins-portal-07.png)
+1. **[保存]** を選択します。
 
-8. **[Save and Finish]\(保存して終了\)** を選び、 **[Start using Jenkins]\(Jenkins の使用を開始\)** を選んで構成を完了します。
+1. エージェントの状態ページに、`JENKINS_SECRET` と `AGENT_NAME` が表示されます。 次のスクリーン ショットは、値を識別する方法を示しています。 Azure Container Instance を作成するときは両方の値が必要です。
 
-Jenkins が構成され、コードのビルドとデプロイの準備が完了します。 この例では、単純な Java アプリケーションを使用して、Azure Container Instances 上での Jenkins のビルドを示します。
+    ![ビルド エージェントのシークレットは、それが正常に作成されると表示されます。](./media/azure-container-instances-as-jenkins-build-agent/jenkins-secret.png)
+
+## <a name="create-azure-container-instance-with-cli"></a>CLI を使用して Azure Container Instance を作成する
+
+1. [az group create](/cli/azure/group?#az_group_create) を使用して Azure リソース グループを作成します。
+
+      ```azurecli
+      az group create --name my-resourcegroup --location westus
+      ```
+
+1. [az container create](https://docs.microsoft.com/cli/azure/container#az_container_create) を使用して、Azure Container Instance を作成します。 プレースホルダーは、作業エージェントの作成時に取得した値に置き換えます。
+
+    ```azurecli
+    az container create \
+      --name my-dock \
+      --resource-group my-resourcegroup \
+      --ip-address Public --image jenkins/inbound-agent:latest \
+      --os-type linux \
+      --ports 80 \
+      --command-line "jenkins-agent -url http://jenkinsserver:port <JENKINS_SECRET> <AGENT_NAME>"
+    ```
+
+    コンテナーは、起動すると自動的に Jenkins コントローラー サーバーに接続されます。
+
+    ![エージェントが正常に起動しました](./media/azure-container-instances-as-jenkins-build-agent/agent-start.png)
 
 ## <a name="create-a-build-job"></a>ビルド ジョブを作成する
 
 Jenkins のビルド ジョブが作成され、Azure コンテナー インスタンス上で Jenkins のビルドをデモできるようになりました。
 
-1. **[新しい項目]** を選択し、ビルド プロジェクトに **aci-demo** などの名前を付け、 **[Freestyle project]\(Freestyle プロジェクト\)** を選択し、 **[OK]** を選択します。
+1. **[新しい項目]** を選択し、ビルド プロジェクトに **aci-demo** などの名前を付け、**[Freestyle project]\(Freestyle プロジェクト\)** を選択し、**[OK]** を選択します。
 
    ![ビルド ジョブの名前のボックスと、プロジェクトの種類の一覧](./media/azure-container-instances-as-jenkins-build-agent/jenkins-new-job.png)
 
-2. **[全般]** で、 **[Restrict where this project can be run]\(このプロジェクトを実行できる場所を制限する\)** が選択されていることを確認します。 ラベル式に「**linux**」と入力します。 この構成により、このビルド ジョブが ACI クラウド上で実行されます。
+2. **[全般]** で、**[Restrict where this project can be run]\(このプロジェクトを実行できる場所を制限する\)** が選択されていることを確認します。 ラベル式に「**linux**」と入力します。 この構成により、このビルド ジョブが ACI クラウド上で実行されます。
 
    ![構成の詳細画表示された [全般] タブ](./media/azure-container-instances-as-jenkins-build-agent/jenkins-job-01.png)
 
-3. **[ビルド]** で **[ビルド ステップの追加]** を選択し、 **[シェルの実行]** を選択します。 コマンドとして `echo "aci-demo"` を入力します。
+3. **[ビルド]** で **[ビルド ステップの追加]** を選択し、**[シェルの実行]** を選択します。 コマンドとして `echo "aci-demo"` を入力します。
 
    ![ビルド ステップが選ばれた [ビルド] タブ](./media/azure-container-instances-as-jenkins-build-agent/jenkins-job-02.png)
 
@@ -126,10 +138,6 @@ Jenkins のビルド ジョブが作成され、Azure コンテナー インス�
 4. すべてのビルド ジョブが完了すると、コンテナー インスタンスは削除されます。
 
    ![コンテナー インスタンスが削除されたリソース グループ](./media/azure-container-instances-as-jenkins-build-agent/jenkins-aci-none.png)
-
-## <a name="troubleshooting-the-jenkins-plugin"></a>Jenkins プラグインのトラブルシューティング
-
-Jenkins プラグインでバグが発生した場合は、[Jenkins JIRA](https://issues.jenkins-ci.org/) で特定のコンポーネントについて問題を報告してください。
 
 ## <a name="next-steps"></a>次のステップ
 

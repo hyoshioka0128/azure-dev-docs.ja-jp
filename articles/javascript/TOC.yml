@@ -160,8 +160,8 @@
     - name: 学習する
       href: learn-azure-javascript.md
     - name: サンプル
-      href: 'https://docs.microsoft.com/samples/browse/?languages=javascript%2Cnodejs%2Ctypescript'
+      href: /samples/browse/?languages=javascript%2cnodejs%2ctypescript
     - name: npm パッケージ
       href: azure-sdk-library-package-index.md
     - name: npm パッケージのドキュメント
-      href: /javascript/api/overview/azure/?view=azure-node-latest
+      href: /javascript/api/overview/azure/

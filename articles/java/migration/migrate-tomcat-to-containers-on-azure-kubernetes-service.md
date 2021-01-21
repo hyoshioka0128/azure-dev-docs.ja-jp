@@ -6,12 +6,12 @@ ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 1/20/2020
 ms.custom: devx-track-java, devx-track-azurecli
-ms.openlocfilehash: 7311aba602ec2fd482d11e2a8a37751f0d742eae
-ms.sourcegitcommit: dc74b60217abce66fe6cc93923e869e63ac86a8f
+ms.openlocfilehash: 329f7f5413f813944b45658a4c5cc8da2936fc4a
+ms.sourcegitcommit: 0eb25e1fdafcd64118843748dc061f60e7e48332
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94872873"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98626047"
 ---
 # <a name="migrate-tomcat-applications-to-containers-on-azure-kubernetes-service"></a>Azure Kubernetes Service のコンテナーに Tomcat アプリケーションを移行する
 
@@ -111,7 +111,7 @@ Tomcat の組み込みの [PersistentManager](https://tomcat.apache.org/tomcat-9
 
 コンテナーレジストリと、サービス プリンシパルがレジストリの閲覧者ロールを持つ Azure Kubernetes クラスターを作成します。 クラスターのネットワーク要件に応じて、[適切なネットワーク モデル](/azure/aks/operator-best-practices-network#choose-the-appropriate-network-model)を選択してください。
 
-```bash
+```azurecli
 az group create -g $resourceGroup -l eastus
 az acr create -g $resourceGroup -n $acrName --sku Standard
 az aks create -g $resourceGroup -n $aksName --attach-acr $acrName --network-plugin azure
@@ -169,7 +169,7 @@ AKS で [Tomcat クラスタリング](https://tomcat.apache.org/tomcat-9.0-doc/
 
 AKS で使用するためにイメージをビルドして Azure Container Registry (ACR) にアップロードする最も簡単な方法は、`az acr build` コマンドを使用することです。 このコマンドでは、コンピューターに Docker をインストールする必要はありません。 たとえば、上記の Dockerfile とアプリケーション パッケージ *petclinic.war* が現在のディレクトリにある場合は、次の 1 つの手順で ACR でコンテナー イメージをビルドできます。
 
-```bash
+```azurecli
 az acr build -t "${acrName}.azurecr.io/petclinic:{{.Run.ID}}" -r $acrName --build-arg APP_FILE=petclinic.war --build-arg=prod.server.xml .
 ```
 

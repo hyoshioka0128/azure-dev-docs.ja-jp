@@ -5,12 +5,12 @@ keywords: Jenkins, Azure, DevOps, Java, Azure Functions
 ms.topic: tutorial
 ms.date: 01/11/2021
 ms.custom: devx-track-jenkins,devx-track-cli
-ms.openlocfilehash: 51807b1a3038d17278a6015d387b84e68aac71f5
-ms.sourcegitcommit: 347bfa3b6c34579c567d1324efc63c1d6672a75b
+ms.openlocfilehash: b2c616dd6d0a2a659a25527072358e8f1095e414
+ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98109032"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98561058"
 ---
 # <a name="tutorial-deploy-to-azure-functions-using-jenkins"></a>チュートリアル:Jenkins を使用して Azure Functions にデプロイする
 
@@ -78,7 +78,7 @@ Java ランタイム スタックを備えた Java 関数を作成するには�
     sudo apt-get install azure-functions-core-tools-3
     ```
 
-1. Jenkins で Azure リソースに対する認証とアクセスを行うには、Azure サービス プリンシパルが必要です。 詳細な手順については、[Azure App Service へのデプロイ](./deploy-from-github-to-azure-app-service.md)に関する記事を参照してください。
+1. Jenkins で Azure リソースに対する認証とアクセスを行うには、Azure サービス プリンシパルが必要です。 詳細な手順については、[Azure App Service へのデプロイ](./deploy-to-azure-app-service-using-azure-cli.md)に関する記事を参照してください。
 
 1. [資格情報プラグイン](https://plugins.jenkins.io/credentials/)がインストールされていることを確認します。
 

@@ -6,17 +6,17 @@ ms.author: moala
 ms.topic: reference
 ms.service: azure
 ms.date: 10/27/2020
-ms.openlocfilehash: 3c232df9a471000016501d86be9485db11ac525a
-ms.sourcegitcommit: 2540e91f7b6aa077158e25a0b718737abff904d4
+ms.openlocfilehash: a137a57fad5878fbff5a72fe507a40778736c01a
+ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94447141"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98561728"
 ---
 # <a name="manage-azure-policies-with-github"></a>GitHub を使用して Azure ポリシーを管理する
 
 GitHub からコードとして Azure ポリシーを管理する方法については、次の記事をご覧ください。
 
-- [ Azure から Azure のポリシーをエクスポートする](https://docs.microsoft.com/azure/governance/policy/how-to/export-resources)   
-- [GitHub からコードとして Azure ポリシーを管理する](https://docs.microsoft.com/azure/governance/policy/tutorials/policy-as-code-github)
-- [Azure のコンプライアンス スキャンをトリガーする](https://docs.microsoft.com/azure/governance/policy/how-to/get-compliance-data#on-demand-evaluation-scan)  
+- [ Azure から Azure のポリシーをエクスポートする](/azure/governance/policy/how-to/export-resources)   
+- [GitHub からコードとして Azure ポリシーを管理する](/azure/governance/policy/tutorials/policy-as-code-github)
+- [Azure のコンプライアンス スキャンをトリガーする](/azure/governance/policy/how-to/get-compliance-data#on-demand-evaluation-scan)

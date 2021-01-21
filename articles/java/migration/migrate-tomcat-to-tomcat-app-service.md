@@ -6,12 +6,12 @@ ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 1/20/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: 7a8de3191551be1557b68cab55b6d91afcf41feb
-ms.sourcegitcommit: 4036ac08edd7fc6edf8d11527444061b0e4531ef
+ms.openlocfilehash: e109d8f32e6ffbf42f155f0292a292bff237d6bf
+ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89062001"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98561768"
 ---
 # <a name="migrate-tomcat-applications-to-tomcat-on-azure-app-service"></a>Tomcat アプリケーションを Azure App Service 上の Tomcat に 移行する
 
@@ -162,7 +162,7 @@ App Service プランでは、Tomcat サーバーにデプロイされている 
 Maven プラグインを使用できない場合は、次のような他のメカニズムを使用して Web アプリをプロビジョニングする必要があります。
 
 * [Azure Portal](https://portal.azure.com/#create/Microsoft.WebSite)
-* [Azure CLI](/cli/azure/webapp?view=azure-cli-latest#az-webapp-create)
+* [Azure CLI](/cli/azure/webapp#az-webapp-create)
 * [Azure PowerShell](/powershell/module/az.websites/new-azwebapp)
 
 Web アプリが作成されたら、[利用可能なデプロイ メカニズム](/azure/app-service/deploy-zip)のいずれかを使用してアプリケーションをデプロイします。
@@ -216,6 +216,6 @@ Web アプリが作成されたら、[利用可能なデプロイ メカニズ�
 
 * ダウンタイムなしで信頼性の高いデプロイを行うには、[デプロイ スロットの使用](/azure/app-service/deploy-staging-slots)を検討してください。
 
-* DevOps の戦略を設計し、実装します。 信頼性を維持しながら開発速度を向上させるには、[Azure Pipelines を使用してデプロイとテストを自動化する](/azure/devops/pipelines/ecosystems/java-webapp)ことを検討してください。 デプロイ スロットを使用する場合は、[スロットへのデプロイと後続のスロット スワップを自動化](/azure/devops/pipelines/targets/webapp?view=azure-devops&tabs=yaml#deploy-to-a-slot)できます。
+* DevOps の戦略を設計し、実装します。 信頼性を維持しながら開発速度を向上させるには、[Azure Pipelines を使用してデプロイとテストを自動化する](/azure/devops/pipelines/ecosystems/java-webapp)ことを検討してください。 デプロイ スロットを使用する場合は、[スロットへのデプロイと後続のスロット スワップを自動化](/azure/devops/pipelines/targets/webapp?tabs=yaml#deploy-to-a-slot)できます。
 
 * 事業継続とディザスター リカバリー戦略を設計し、実装します。 ミッション クリティカルなアプリケーションの場合は、[複数リージョン デプロイのアーキテクチャ](/azure/architecture/reference-architectures/app-service-web-app/multi-region)を検討してください。

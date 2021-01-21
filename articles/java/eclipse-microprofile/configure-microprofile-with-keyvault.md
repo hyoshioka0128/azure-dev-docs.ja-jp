@@ -11,12 +11,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: devx-track-java, devx-track-azurecli
-ms.openlocfilehash: 82b37db48c1ae0013972ae2c1522eac7c149fd1e
-ms.sourcegitcommit: dc74b60217abce66fe6cc93923e869e63ac86a8f
+ms.openlocfilehash: a2f39a13012a2ec1422ddf1f620ddd3e8f6e482d
+ms.sourcegitcommit: 0eb25e1fdafcd64118843748dc061f60e7e48332
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94872813"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98625943"
 ---
 # <a name="configure-microprofile-with-azure-key-vault"></a>Azure Key Vault を使用した MicroProfile の構成
 
@@ -55,7 +55,7 @@ Azure CLI を使用して Azure Key Vault リソースを作成し、1 つのシ
 
 1. まず、Azure サービス プリンシパルを作成しましょう。 これにより、Key Vault へのアクセスに必要なクライアント ID とキーが提供されます。
 
-```bash
+```azurecli
 az login
 az account set --subscription <subscription_id>
 
@@ -78,7 +78,7 @@ az ad sp create-for-rbac --name <service_principal_name>
 
 サービス プリンシパルを作成したので、次は必要に応じてリソース グループを作成します (作成済みの場合、この手順はスキップできます)。 リソース グループの場所を取得するために、`az account list-locations` を呼び出し、そのリストの `name` 値を使用して、リソース グループの作成先を指定できることに注意してください。
 
-```bash
+```azurecli
 # For this tutorial, the author chose to use `westus`
 # and `jg-test` for the resource group name.
 az group create -l <resource_group_location> -n <resource_group_name>
@@ -86,7 +86,7 @@ az group create -l <resource_group_location> -n <resource_group_name>
 
 ここで、Azure Key Vault リソースを作成します。 Key Vault 名は、後でキー コンテナーを参照するときに使用する名前です。したがって、覚えやすいものを選択してください。
 
-```bash
+```azurecli
 az keyvault create --name <your_keyvault_name>            \
                    --resource-group <your_resource_group> \
                    --location <location>                  \
@@ -98,7 +98,7 @@ az keyvault create --name <your_keyvault_name>            \
 
 また、Key Vault シークレットにアクセスできるように、前に作成したサービス プリンシパルに適切なアクセス許可を付与する必要もあります。 appID 値は、サービス プリンシパルを作成した上記の場所の `appId` 値です (つまり、`5292398e-XXXX-40ce-XXXX-d49fXXXX9e79`。ただし、ターミナル出力の値を使用)。
 
-```bash
+```azurecli
 az keyvault set-policy --name <your_keyvault_name>   \
                        --secret-permission get list  \
                        --spn <your_sp_appId_created_in_step1>
@@ -106,7 +106,7 @@ az keyvault set-policy --name <your_keyvault_name>   \
 
 これでシークレットを Key Vault にプッシュできます。 キー名 `demo-key` を使用して、そのキーの値を `demo-value` に設定します。
 
-```bash
+```azurecli
 az keyvault secret set --name demo-key      \
                        --value demo-value   \
                        --vault-name <your_keyvault_name>  

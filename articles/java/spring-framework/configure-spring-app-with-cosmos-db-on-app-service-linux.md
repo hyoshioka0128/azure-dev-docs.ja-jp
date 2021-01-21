@@ -7,12 +7,12 @@ ms.date: 10/06/2020
 ms.service: cosmos-db
 ms.topic: article
 ms.custom: devx-track-java, devx-track-azurecli
-ms.openlocfilehash: d3343940cd35767aa6887244d8ae9d7cca221646
-ms.sourcegitcommit: 723441eda0eb4ff893123201a9e029b7becf5ecc
+ms.openlocfilehash: d07447301dc721d8fd9179e0830f49143387e819
+ms.sourcegitcommit: 0eb25e1fdafcd64118843748dc061f60e7e48332
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91846523"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98626039"
 ---
 # <a name="how-to-use-spring-and-cosmos-db-with-app-service-on-linux"></a>App Service on Linux で Spring と Cosmos DB を使用する方法
 
@@ -29,7 +29,7 @@ ms.locfileid: "91846523"
 この記事の手順に従うには、次の前提条件が必要です。
 
 - Java Web アプリをクラウドにデプロイするには、Azure サブスクリプションが必要です。 Azure サブスクリプションをまだお持ちでない場合は、[MSDN サブスクライバーの特典](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/)を有効にするか、[Azure の無料アカウント](https://azure.microsoft.com/pricing/free-trial/)にサインアップできます。
-- [Azure CLI 2.0](/cli/azure/install-azure-cli?view=azure-cli-latest)
+- [Azure CLI 2.0](/cli/azure/install-azure-cli)
 - [Java 8 JDK](../fundamentals/java-jdk-install.md)
 - [Maven 3](http://maven.apache.org/)
 
@@ -39,12 +39,14 @@ ms.locfileid: "91846523"
 1. Spring Todo アプリを複製し、 **.prep** フォルダーの内容をコピーしてプロジェクトを初期化します。
 
     bash の場合:
+
     ```bash
     git clone --recurse-submodules https://github.com/Azure-Samples/e2e-java-experience-in-app-service-linux-part-2.git
     yes | cp -rf .prep/* .
     ```
 
     Windows の場合:
+
     ```cmd
     git clone --recurse-submodules https://github.com/Azure-Samples/e2e-java-experience-in-app-service-linux-part-2.git
     cd e2e-java-experience-in-app-service-linux-part-2
@@ -63,19 +65,19 @@ ms.locfileid: "91846523"
 
 1. Azure CLI にログインし、サブスクリプション ID を設定します。
 
-    ```bash
+    ```azurecli
     az login
     ```
 
 2. 必要に応じて、サブスクリプション ID を設定します。
 
-    ```bash
+    ```azurecli
     az account set -s <your-subscription-id>
     ```
 
 3. Azure リソース グループを作成し、後で使用するためにそのリソース グループの名前をメモします。
 
-    ```bash
+    ```azurecli
     az group create -n <your-azure-group-name> \
     -l <your-resource-group-region>
     ```
@@ -83,7 +85,7 @@ ms.locfileid: "91846523"
 4. Cosmos DB を作成し、タイプとして GlobalDocumentDB を指定します。
 Cosmos DB の名前には小文字のみを使用する必要があります。 必ず応答内の `documentEndpoint` フィールドをメモしてください。 これは後で必要になります。
 
-    ```bash
+    ```azurecli
     az cosmosdb create --kind GlobalDocumentDB \
         -g <your-azure-group-name> \
         -n <your-azure-COSMOS-DB-name-in-lower-case-letters>
@@ -91,7 +93,7 @@ Cosmos DB の名前には小文字のみを使用する必要があります。 
 
 5. Azure Cosmos DB キーを取得し、後で使用するために `primaryMasterKey` 値を記録します。
 
-    ```bash
+    ```azurecli
     az cosmosdb keys list -g <your-azure-group-name> -n <your-azure-COSMOSDB-name>
     ```
 
@@ -113,6 +115,7 @@ export REGION=<put-your-REGION-here>
 ```
 
 Windows (コマンド プロンプト) の場合:
+
 ```cmd
 set COSMOSDB_URI=<put-your-COSMOS-DB-documentEndpoint-URI-here>
 set COSMOSDB_KEY=<put-your-COSMOS-DB-primaryMasterKey-here>
@@ -240,14 +243,14 @@ bash-3.2$ mvn azure-webapp:deploy
 
 1. Linux の Azure App Service にデプロイされた Java Web アプリのログを構成します。
 
-    ```bash
+    ```azurecli
     az webapp log config --name ${WEBAPP_NAME} \
      --resource-group ${RESOURCEGROUP_NAME} \
      --web-server-logging filesystem
     ```
 2. ローカル マシンから Java Web アプリのリモート ログ ストリームを開きます。
 
-    ```bash
+    ```azurecli
     az webapp log tail --name ${WEBAPP_NAME} \
      --resource-group ${RESOURCEGROUP_NAME}
      ```
@@ -294,7 +297,7 @@ bash-3.2$ az webapp log tail --name ${WEBAPP_NAME}  --resource-group ${RESOURCEG
 
 1. Azure CLI を使用して Java Web アプリをスケールアウトします。
 
-    ```bash
+    ```azurecli
     az appservice plan update --number-of-workers 2 \
       --name ${WEBAPP_PLAN_NAME} \
       --resource-group ${RESOURCEGROUP_NAME}

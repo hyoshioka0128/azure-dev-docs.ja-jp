@@ -4,12 +4,12 @@ description: このチュートリアルで示されている Azure Active Direc
 ms.topic: tutorial
 ms.date: 12/01/2020
 ms.custom: devx-track-js, "azure-sdk-javascript-@azure/msal-browser-2.7.0"
-ms.openlocfilehash: 0128d773a2bbc79b22b3ce3424e7133942053597
-ms.sourcegitcommit: 4f9ce09cbf9663203c56f5b12ecbf70ea68090ed
+ms.openlocfilehash: ffbc8ea2824f7bbfaef3a3ae3579537633f9455b
+ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97911492"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98561658"
 ---
 # <a name="add-microsoft-login-button-to-a-single-page-application-for-authentication"></a>認証用のシングルページ アプリケーションに Microsoft ログイン ボタンを追加する
 
@@ -157,5 +157,5 @@ ms.locfileid: "97911492"
 
 ユーザー承認は Azure によって提供するか、Azure を使用せずに承認を開発するか、または承認、ロール、アプリ機能のカスタム エクスペリエンスのために、この 2 つを組み合わせることもできます。 
 
-* [MSAL ライブラリ](https://docs.microsoft.com/azure/active-directory/develop/msal-overview)を引き続き使用してユーザー プロファイルを取得し、サイレント サインオンを提供する
-* [Microsoft Graph](https://docs.microsoft.com/graph/overview) を追加して、電子メールと予定表の予定を含む Microsoft 365 のユーザー アカウントにアクセスする
+* [MSAL ライブラリ](/azure/active-directory/develop/msal-overview)を引き続き使用してユーザー プロファイルを取得し、サイレント サインオンを提供する
+* [Microsoft Graph](/graph/overview) を追加して、電子メールと予定表の予定を含む Microsoft 365 のユーザー アカウントにアクセスする

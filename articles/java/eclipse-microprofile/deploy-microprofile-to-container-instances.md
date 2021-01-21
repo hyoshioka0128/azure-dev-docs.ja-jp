@@ -11,12 +11,12 @@ ms.tgt_pltfrm: multiple
 ms.topic: article
 ms.workload: web
 ms.custom: devx-track-java, devx-track-azurecli
-ms.openlocfilehash: 72bb601c87e66c6ad95d046154fa6f6db4e5169d
-ms.sourcegitcommit: dc74b60217abce66fe6cc93923e869e63ac86a8f
+ms.openlocfilehash: 4aa168ddb38937ee8aeba0269c9dc3e50484717f
+ms.sourcegitcommit: 0eb25e1fdafcd64118843748dc061f60e7e48332
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94872833"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98626031"
 ---
 # <a name="deploy-a-microprofile-application-to-the-cloud-with-docker-and-azure"></a>Docker と Azure を使用して MicroProfile アプリケーションをクラウドにデプロイする
 
@@ -81,15 +81,15 @@ Hello, Azure!
 
 #### <a name="set-up-azure-cli"></a>Azure CLI をセットアップする
 
-Azure のサブスクリプションを所有していること、[Azure CLI がインストールされている](/cli/azure/install-azure-cli?view=azure-cli-latest)こと、およびお使いのアカウントにご自身が認証されていることを確認します。
+Azure のサブスクリプションを所有していること、[Azure CLI がインストールされている](/cli/azure/install-azure-cli)こと、およびお使いのアカウントにご自身が認証されていることを確認します。
 
-```bash
+```azurecli
 az login
 ```
 
 #### <a name="create-a-resource-group"></a>リソース グループを作成します
 
-```bash
+```azurecli
 export ARG=microprofileRG
 export ADCL=eastus
 az group create --name $ARG --location $ADCL
@@ -99,7 +99,7 @@ az group create --name $ARG --location $ADCL
 
 このコマンドによって、ランダムな数値を持つ基本的な名前を使用して、(うまくいけば) グローバルに一意のコンテナー レジストリが作成されます。
 
-```bash
+```azurecli
 export RANDINT=`date +"%m%d%y$RANDOM"`
 export ACR=mydockerrepo$RANDINT
 az acr create --name $ACR -g $ARG --sku Basic --admin-enabled
@@ -116,7 +116,7 @@ Docker 自体を使用して Docker イメージをローカルで簡単にビ�
 
 これらの理由により、[Azure Container Registry Build] 機能を使用してイメージをビルドします。
 
-```bash
+```azurecli
 export IMG_NAME="mympapp:latest"
 az acr build -r $ACR -t $IMG_NAME -g $ARG .
 ...
@@ -128,7 +128,7 @@ Build ID: aa1 was successful after 1m2.674577892s
 
 ACR でイメージを使用できるようになったので、次はコンテナー インスタンスを ACI にプッシュしてインスタンス化してみましょう。 ただし、最初に、ACR に認証できることを確認する必要があります。
 
-```bash
+```azurecli
 export ACR_REPO=`az acr show --name $ACR -g $ARG --query loginServer -o tsv`
 export ACR_PASS=`az acr credential show --name $ACR -g $ARG --query "passwords[0].value" -o tsv`
 export ACI_INSTANCE=myapp`date +"%m%d%y$RANDOM"`

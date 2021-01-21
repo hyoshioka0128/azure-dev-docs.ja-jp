@@ -4,12 +4,12 @@ description: Azure CLI を使用して、仮想マシンを作成および構成
 ms.topic: tutorial
 ms.date: 01/05/2021
 ms.custom: devx-track-js
-ms.openlocfilehash: a618c9584775a7c384f05ef01a563943c48f2b3a
-ms.sourcegitcommit: 075f39972e390e79ed09a3fcfdbfc776727e08fc
+ms.openlocfilehash: baed6874a89a8291e3a1b03c45db43565428ff20
+ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97952504"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98561668"
 ---
 # <a name="3-create-linux-virtual-machine-using-azure-cli"></a>3.Azure CLI を使用して Linux 仮想マシンを作成する
 
@@ -33,7 +33,7 @@ Azure CLI のすべての手順は、Azure CLI の 1 つのインスタンスか
 
 ## <a name="create-a-virtual-machine-resource"></a>仮想マシンのリソースを作成する 
 
-ターミナルで [Azure CLI コマンド](/cli/azure/vm?view=azure-cli-latest#az_vm_create)を入力して、Linux 仮想マシンの Azure リソースを作成します。 このコマンドでは、cloud-init ファイルから VM が作成され、SSH キーが生成されます。 コマンドを実行すると、キーが格納されている場所が表示されます。 
+ターミナルで [Azure CLI コマンド](/cli/azure/vm#az_vm_create)を入力して、Linux 仮想マシンの Azure リソースを作成します。 このコマンドでは、cloud-init ファイルから VM が作成され、SSH キーが生成されます。 コマンドを実行すると、キーが格納されている場所が表示されます。 
 
 ```azurecli
 az vm create \
@@ -51,7 +51,7 @@ az vm create \
 
 ## <a name="open-port-for-virtual-machine"></a>仮想マシンのポートを開く
 
-仮想マシンを最初に作成したときに、開いているポートは "_ありません_"。 次の [Azure CLI コマンド](/cli/azure/vm?view=azure-cli-latest#az_vm_open_port)を使用してポート 80 を開き、Web アプリが一般公開されるようにします。
+仮想マシンを最初に作成したときに、開いているポートは "_ありません_"。 次の [Azure CLI コマンド](/cli/azure/vm#az_vm_open_port)を使用してポート 80 を開き、Web アプリが一般公開されるようにします。
 
 ```azurecli
 az vm open-port \

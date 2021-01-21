@@ -7,12 +7,12 @@ ms.topic: reference
 ms.service: azure
 ms.date: 11/17/2020
 ms.custom: github-actions-azure, devx-track-azurecli
-ms.openlocfilehash: 5462d7ca3618869232296a9a6739ebe5adcefdb1
-ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
+ms.openlocfilehash: d835fb755a2acecba3e7ad173ef9d6c036d59546
+ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94983631"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98561748"
 ---
 # <a name="use-github-actions-to-connect-to-azure"></a>GitHub Actions を使用して Azure に接続する
 
@@ -42,7 +42,7 @@ login アクションを設定したら、Azure CLI または Azure PowerShell �
         --identifier-uris http://localhost/$appName
     ```
 
-1. Azure portal でアプリ用の[新しいサービス プリンシパルを作成します](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest&preserve-view=true)。 
+1. Azure portal でアプリ用の[新しいサービス プリンシパルを作成します](/cli/azure/create-an-azure-service-principal-azure-cli)。 
 
     ```azurecli-interactive
         az ad sp create-for-rbac --name "myApp" --role contributor \

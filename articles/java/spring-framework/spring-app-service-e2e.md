@@ -7,12 +7,12 @@ ms.date: 11/12/2019
 ms.service: app-service
 ms.topic: article
 ms.custom: devx-track-java, devx-track-azurecli
-ms.openlocfilehash: 24b023469e4557a62a83f35a3fe6475daed1b3b0
-ms.sourcegitcommit: 0d2ea78f18430c845a32e0d2311427ab81033465
+ms.openlocfilehash: 7ed013fd5856c446d6836183fcbc8f1e9cc01d88
+ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2020
-ms.locfileid: "97754158"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98561158"
 ---
 # <a name="deploy-a-spring-app-to-app-service-with-mysql"></a>MySQL を使用して Spring アプリを App Service にデプロイする
 
@@ -268,7 +268,7 @@ set DOLLAR=$
 ```
 ---
 
-次に、データベース サーバーを作成して初期化します。 初期構成には [az mysql up](/cli/azure/ext/db-up/mysql?view=azure-cli-latest#ext-db-up-az-mysql-up) を使用します。 次に、[az mysql server configuration set](/cli/azure/mysql/server/configuration?view=azure-cli-latest#az-mysql-server-configuration-set) を使用して接続タイムアウトを増やし、サーバーのタイムゾーンを設定します。
+次に、データベース サーバーを作成して初期化します。 初期構成には [az mysql up](/cli/azure/ext/db-up/mysql#ext-db-up-az-mysql-up) を使用します。 次に、[az mysql server configuration set](/cli/azure/mysql/server/configuration#az-mysql-server-configuration-set) を使用して接続タイムアウトを増やし、サーバーのタイムゾーンを設定します。
 
 # <a name="bash"></a>[bash](#tab/bash)
 
@@ -569,6 +569,6 @@ az group delete --name %RESOURCEGROUP_NAME%
 > [!div class="nextstepaction"]
 > [Azure App Service 向けの Linux Java アプリを構成する](/azure/app-service/containers/configure-language-java)
 > [!div class="nextstepaction"]
-> [Azure Pipelines を使用した Java Web アプリのビルドとデプロイ](/azure/devops/pipelines/ecosystems/java-webapp?view=azure-devops&tabs=java-tomcat)
+> [Azure Pipelines を使用した Java Web アプリのビルドとデプロイ](/azure/devops/pipelines/ecosystems/java-webapp?tabs=java-tomcat)
 > [!div class="nextstepaction"]
 > [Jenkins プラグインを使用した Azure App Service へのデプロイ](/azure/jenkins/deploy-jenkins-app-service-plugin)

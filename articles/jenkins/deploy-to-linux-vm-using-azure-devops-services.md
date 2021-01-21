@@ -5,12 +5,12 @@ keywords: jenkins, azure, devops, 仮想マシン, cicd, azure devops services
 ms.topic: tutorial
 ms.date: 07/31/2018
 ms.custom: devx-track-jenkins
-ms.openlocfilehash: e1c5c9b06cff7419ac98b08553d143c7449746b8
-ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
+ms.openlocfilehash: 66890b5284179f3417295f477b8dc576258c2367
+ms.sourcegitcommit: 0eb25e1fdafcd64118843748dc061f60e7e48332
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94983651"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98626015"
 ---
 # <a name="tutorial-deploy-to-linux-virtual-machine-using-jenkins-and-azure-devops-services"></a>チュートリアル:Jenkins と Azure DevOps Services を使用して Linux 仮想マシンにデプロイする
 
@@ -30,12 +30,10 @@ Linux 仮想マシン (VM) を含む[配置グループ](/azure/devops/pipelines
 > * Azure Pipelines のリリース パイプラインを作成する。
 > * 手動デプロイおよび CI によってトリガーされるデプロイを実行する。
 
-## <a name="before-you-begin"></a>開始する前に
+## <a name="prerequisites"></a>前提条件
 
-* Jenkins サーバーにアクセスする必要があります。 Jenkins サーバーをまだ作成していない場合は、[Azure 仮想マシンへの Jenkins マスターの作成](/azure/jenkins/install-jenkins-solution-template)に関するページをご覧ください。 
-
-* Azure DevOps Services 組織 (**https://{yourorganization}.visualstudio.com**) にサインインします。 
-  [無料の Azure DevOps Services 組織](https://go.microsoft.com/fwlink/?LinkId=307137&clcid=0x409&wt.mc_id=o~msft~vscom~home-vsts-hero~27308&campaign=o~msft~vscom~home-vsts-hero~27308)を取得できます。
+- **Azure サブスクリプション**:Azure サブスクリプションをお持ちでない場合は、開始する前に [無料の Azure アカウント](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio)を作成してください。
+- **Jenkins サーバー**: Jenkins サーバーがインストールされていない場合は、[Azure に Jenkins サーバーを作成します](./configure-on-linux-vm.md)。
 
   > [!NOTE]
   > 詳細については、[Azure DevOps Services への接続](/azure/devops/organizations/projects/connect-to-projects)に関する記事をご覧ください。

@@ -4,12 +4,12 @@ description: すべての Azure リソース用の Azure リソース グルー�
 ms.topic: tutorial
 ms.date: 11/13/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: b401953c0e1c972efa0f5d90817f461b858cf04b
-ms.sourcegitcommit: a2a51e0c6530eb5794a2fe667cf4c9a60b2a7470
+ms.openlocfilehash: 0b1b634756a5188cbd9233274205005f62b25026
+ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94625041"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98561048"
 ---
 # <a name="2-create-application-insights-resource-for-web-pages"></a>2.Web ページ用の Application Insights リソースを作成する
 
@@ -19,7 +19,7 @@ ms.locfileid: "94625041"
 
 このチュートリアルにはいくつかの Azure リソースが含まれています。 リソース グループを作成することにより、リソースを見つけやすくなり、完了時に削除しやすくなります。
 
-1. ターミナルまたは bash シェルで、[Azure リソース グループを作成する Azure CLI コマンドを入力](/cli/azure/group?view=azure-cli-latest#az_group_create)して、`rg-demo-vm-eastus` という名前を指定します。
+1. ターミナルまたは bash シェルで、[Azure リソース グループを作成する Azure CLI コマンドを入力](/cli/azure/group#az_group_create)して、`rg-demo-vm-eastus` という名前を指定します。
 
     ```azurecli
     az group create \
@@ -35,7 +35,7 @@ ms.locfileid: "94625041"
     az extension add -n application-insights
     ```
 
-1. 次のコマンドを使用して、[監視リソースを作成します](/cli/azure/ext/application-insights/monitor/app-insights/component?view=azure-cli-latest#ext_application_insights_az_monitor_app_insights_component_create)。
+1. 次のコマンドを使用して、[監視リソースを作成します](/cli/azure/ext/application-insights/monitor/app-insights/component#ext_application_insights_az_monitor_app_insights_component_create)。
 
 
     ```azurecli

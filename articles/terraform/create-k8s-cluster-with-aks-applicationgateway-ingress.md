@@ -5,12 +5,12 @@ keywords: Azure DevOps Terraform アプリケーション ゲートウェイ イ
 ms.topic: how-to
 ms.date: 10/30/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: fe4f7b06388a7a26f61067e4a67e6b310e2a1958
-ms.sourcegitcommit: e1175aa94709b14b283645986a34a385999fb3f7
+ms.openlocfilehash: 1613145e4b72cf2e30ab95e8e85b72ed19c38c80
+ms.sourcegitcommit: 0eb25e1fdafcd64118843748dc061f60e7e48332
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93192554"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98626023"
 ---
 # <a name="create-an-application-gateway-ingress-controller-in-azure-kubernetes-service"></a>Azure Kubernetes Service で Application Gateway イングレス コントローラーを作成する
 
@@ -31,13 +31,13 @@ ms.locfileid: "93192554"
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
 
-- **Terraform の構成** : [Terraform および Azure へのアクセスの構成](get-started-cloud-shell.md)に関する記事の指示に従ってください
+- **Terraform の構成**:[Terraform および Azure へのアクセスの構成](get-started-cloud-shell.md)に関する記事の指示に従ってください
 
-- **Azure リソース グループ** :デモに使用する Azure リソース グループがない場合は、 [Azure リソース グループを作成してください](/azure/azure-resource-manager/manage-resource-groups-portal#create-resource-groups)。 リソース グループの名前と場所がデモで使用されるため、それらの値をメモしてください。
+- **Azure リソース グループ**:デモに使用する Azure リソース グループがない場合は、[Azure リソース グループを作成してください](/azure/azure-resource-manager/manage-resource-groups-portal#create-resource-groups)。 リソース グループの名前と場所がデモで使用されるため、それらの値をメモしてください。
 
-- **Azure サービス プリンシパル** :「 [Azure CLI で Azure サービス プリンシパルを作成する](/cli/azure/create-an-azure-service-principal-azure-cli)」の「 **サービス プリンシパルを作成する** 」セクションの指示に従ってください。 `appId`、`displayName`、`password` の各値をメモします。
+- **Azure サービス プリンシパル**:「[Azure CLI で Azure サービス プリンシパルを作成する](/cli/azure/create-an-azure-service-principal-azure-cli)」の「**サービス プリンシパルを作成する**」セクションの指示に従ってください。 `appId`、`displayName`、`password` の各値をメモします。
 
-- **サービス プリンシパル オブジェクト ID を取得する** :Cloud Shell で次のコマンドを実行します。`az ad sp list --display-name <displayName>`
+- **サービス プリンシパル オブジェクト ID を取得する**:Cloud Shell で次のコマンドを実行します。`az ad sp list --display-name <displayName>`
 
 ## <a name="create-the-directory-structure"></a>ディレクトリ構造を作成する
 
@@ -466,6 +466,10 @@ Azure プロバイダーを宣言する Terraform 構成ファイルを作成し
         dns_service_ip     = var.aks_dns_service_ip
         docker_bridge_cidr = var.aks_docker_bridge_cidr
         service_cidr       = var.aks_service_cidr
+      }
+
+      role_based_access_control {
+        enabled = var.aks_enable_rbac
       }
 
       depends_on = [azurerm_virtual_network.test, azurerm_application_gateway.network]

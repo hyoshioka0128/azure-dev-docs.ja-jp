@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.service: azure
 ms.date: 10/30/2020
 ms.custom: github-actions-azure
-ms.openlocfilehash: c952410231ae57b0d127e1b6fb05e03f88403640
-ms.sourcegitcommit: 0d2ea78f18430c845a32e0d2311427ab81033465
+ms.openlocfilehash: b5b3192d1d65515dc3741be80bbab018f9cf5f09
+ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/23/2020
-ms.locfileid: "97754068"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98561738"
 ---
 # <a name="what-is-github-actions-for-azure"></a>Azure 向けの GitHub Actions とは
 
@@ -47,7 +47,7 @@ Azure Pipelines と GitHub Actions はどちらも、ソフトウェア開発ワ
 
 ## <a name="how-do-i-connect-github-actions-and-azure"></a>GitHub Actions と Azure の接続方法
 
-アクションに応じて、サービス プリンシパルまたは発行プロファイルを使用して、GitHub から Azure に接続します。 [Azure login](https://github.com/marketplace/actions/azure-login) アクションを使用するたびに、サービス プリンシパルを使用します。 [Azure App Service アクション](https://github.com/marketplace/actions/azure-webapp)は、発行プロファイルまたはサービス プリンシパルの使用をサポートしています。 サービス プリンシパルの詳細については、「[Azure Active Directory のアプリケーション オブジェクトとサービス プリンシパル オブジェクト](https://docs.microsoft.com/azure/active-directory/develop/app-objects-and-service-principals#service-principal-object)」を参照してください。  
+アクションに応じて、サービス プリンシパルまたは発行プロファイルを使用して、GitHub から Azure に接続します。 [Azure login](https://github.com/marketplace/actions/azure-login) アクションを使用するたびに、サービス プリンシパルを使用します。 [Azure App Service アクション](https://github.com/marketplace/actions/azure-webapp)は、発行プロファイルまたはサービス プリンシパルの使用をサポートしています。 サービス プリンシパルの詳細については、「[Azure Active Directory のアプリケーション オブジェクトとサービス プリンシパル オブジェクト](/azure/active-directory/develop/app-objects-and-service-principals#service-principal-object)」を参照してください。  
 
 Azure login アクションは、[Azure CLI](https://github.com/marketplace/actions/azure-cli-action) と [Azure PowerShell](https://github.com/marketplace/actions/azure-powershell-action) のアクションの両方と組み合わせて使用できます。 Azure login アクションは、Azure 向けのその他のほとんどの GitHub Actions ([Web アプリへのデプロイ](https://github.com/marketplace/actions/azure-webapp)、[キー コンテナー シークレットへのアクセス](https://github.com/marketplace/actions/azure-key-vault-get-secrets)など) でも機能します。
 
@@ -91,7 +91,7 @@ Azure login アクションは、[Azure CLI](https://github.com/marketplace/acti
 ## <a name="next-steps"></a>次の手順
 
 > [!div class="nextstepaction"]
-> [ラーニング パス、GitHub Actions を使用したワークフローの自動化](https://docs.microsoft.com/learn/modules/github-actions-automate-tasks/)
+> [ラーニング パス、GitHub Actions を使用したワークフローの自動化](/learn/modules/github-actions-automate-tasks/)
 
 > [!div class="nextstepaction"]
 > [学習ラボ、Azure を使用した継続的デリバリー](https://lab.github.com/githubtraining/github-actions:-continuous-delivery-with-azure)

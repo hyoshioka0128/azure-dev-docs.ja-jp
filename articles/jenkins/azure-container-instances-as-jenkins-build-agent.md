@@ -5,12 +5,12 @@ keywords: jenkins, azure, devops, container instances, ビルド エージェン
 ms.topic: article
 ms.date: 01/08/2021
 ms.custom: devx-track-jenkins,devx-track-azurecli
-ms.openlocfilehash: 678f1e19895f43e519bccaea4cdc9d796f91da91
-ms.sourcegitcommit: 347bfa3b6c34579c567d1324efc63c1d6672a75b
+ms.openlocfilehash: 7633d88897d76f4ed75fa1d7d6c5b0c620db4919
+ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98109215"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98561598"
 ---
 # <a name="tutorial-use-azure-container-instances-as-a-jenkins-build-agent"></a>チュートリアル:Azure Container Instances を Jenkins ビルド エージェントとして使用する
 
@@ -85,7 +85,7 @@ Azure Container Instances の詳細については、「[Azure Container Instanc
       az group create --name my-resourcegroup --location westus
       ```
 
-1. [az container create](https://docs.microsoft.com/cli/azure/container#az_container_create) を使用して、Azure Container Instance を作成します。 プレースホルダーは、作業エージェントの作成時に取得した値に置き換えます。
+1. [az container create](/cli/azure/container#az_container_create) を使用して、Azure Container Instance を作成します。 プレースホルダーは、作業エージェントの作成時に取得した値に置き換えます。
 
     ```azurecli
     az container create \

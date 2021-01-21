@@ -5,12 +5,12 @@ keywords: jenkins, azure, devops, cicd, linux, service fabric, クラスター
 ms.topic: tutorial
 ms.date: 07/31/2018
 ms.custom: devx-track-jenkins
-ms.openlocfilehash: 012a827870d648b7a50e1685b5fab8b2730eb548
-ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
+ms.openlocfilehash: a995ba92202955628f39b2c26fe7a158c470d971
+ms.sourcegitcommit: 0eb25e1fdafcd64118843748dc061f60e7e48332
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94983981"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98626007"
 ---
 # <a name="tutorial-deploy-to-a-service-fabric-cluster"></a>チュートリアル:Service Fabric クラスターへのデプロイ
 
@@ -303,7 +303,7 @@ Jenkins をセットアップした後は、次のセクション、「[Jenkins 
 1. **[Service Fabric Cluster Configuration (Service Fabric クラスター構成)]** に戻って、 **[Azure Credentials (Azure 資格情報)]** に新しい資格情報が選択されていることを確認します。 
 1. **[リソース グループ]** ドロップダウンで、アプリケーションをデプロイするクラスターのリソース グループを選択します。
 1. **[Service Fabric]** ドロップダウンで、アプリケーションをデプロイするクラスターを選択します。
-1. **[Client Key (クライアント キー)]** と **[Client Cert (クライアント証明書)]** には、Jenkins コンテナー内 PEM ファイルの位置を入力します。 たとえば、「 `/var/jenkins_home/clustercert.pem` 」のように指定します。 
+1. **[Client Key (クライアント キー)]** と **[Client Cert (クライアント証明書)]** には、Jenkins コンテナー内 PEM ファイルの位置を入力します。 たとえば、「 `/var/jenkins_home/clustercert.pem` 」のように指定します。
 1. **[Application Configuration (アプリケーションの構成)]** で、 **[アプリケーション名]** 、 **[アプリケーションの種類]** 、および **[Path to Application Manifest (アプリケーション マニフェストへのパス)]** (相対) の各フィールドを設定します。
     ![Service Fabric の Jenkins のビルド後のアクション - Azure 資格情報の構成](./media/deploy-to-service-fabric-cluster/post-build-credentials.png)
 1. **[Verify Configuration]** をクリックします。 検証が正常に行われたら、 **[保存]** をクリックします。 これで Jenkins ジョブ パイプラインが完全に構成されました。 [次のステップ](#next-steps)に進んで、デプロイをテストしてください。

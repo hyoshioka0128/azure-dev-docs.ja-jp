@@ -4,12 +4,12 @@ description: チュートリアル パート 4、Azure CLI で Web サイトを�
 ms.topic: tutorial
 ms.date: 12/14/2020
 ms.custom: devx-track-js, devx-track-azurecli
-ms.openlocfilehash: 7dc0369615f58e8677b479b28c2223d3fa865b19
-ms.sourcegitcommit: 1dfcc022a3098b1a1505e9458eada35f527ef070
+ms.openlocfilehash: 368597fb10397f7e7ba8feb82b29d031c292dab0
+ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97658411"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98561008"
 ---
 # <a name="deploy-the-app-to-app-service"></a>アプリを App Service にデプロイする
 
@@ -31,7 +31,7 @@ ms.locfileid: "97658411"
     az webapp deployment user set --user-name <username> --password <password>
     ```
 
-1. 次のコマンドを実行し、アプリ コードのプッシュ先である [Git エンドポイントを Azure CLI で取得](/cli/azure/webapp/deployment/source?view=azure-cli-latest&preserve-view=false)します。`<your_app_name>` は、前のステップで App Service を作成するときに使用した名前に置き換えてください。
+1. 次のコマンドを実行し、アプリ コードのプッシュ先である [Git エンドポイントを Azure CLI で取得](/cli/azure/webapp/deployment/source)します。`<your_app_name>` は、前のステップで App Service を作成するときに使用した名前に置き換えてください。
 
     ```azurecli
     az webapp deployment source config-local-git --name <your_app_name>

@@ -6,12 +6,12 @@ ms.author: yebronsh
 ms.topic: conceptual
 ms.date: 01/22/2019
 ms.custom: devx-track-java
-ms.openlocfilehash: a8e9f883e76f3c79a9b5470c18907276d9262d03
-ms.sourcegitcommit: bfaeacc2fb68f861a9403585d744e51a8f99829c
+ms.openlocfilehash: 047b4a07c56e29d51ae4234bd2aefcb1936d8059
+ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90682152"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98561778"
 ---
 # <a name="migrate-spring-boot-applications-to-azure-app-service"></a>Spring Boot アプリケーションを Azure App Service に移行する
 
@@ -120,7 +120,7 @@ spring.jms.servicebus.idle-timeout=10000
 Maven プラグインを使用できない場合は、次のような他のメカニズムを使用して Web アプリをプロビジョニングする必要があります。
 
 * [Azure Portal](https://portal.azure.com/#create/Microsoft.WebSite)
-* [Azure CLI](/cli/azure/webapp?view=azure-cli-latest#az-webapp-create)
+* [Azure CLI](/cli/azure/webapp#az-webapp-create)
 * [Azure PowerShell](/powershell/module/az.websites/new-azwebapp)
 
 Web アプリが作成されたら、[利用可能なデプロイ メカニズム](/azure/app-service/deploy-ftp)のいずれかを使用してアプリケーションをデプロイします。 可能であれば、アプリケーションを */home/site/wwwroot/app.jar* にアップロードします。 JAR の名前を *app.jar* に変更したくない場合は、JAR を実行するコマンドが含まれるシェル スクリプトをアップロードできます。 その後、ポータルの構成セクションで [[スタートアップ ファイル]](/azure/app-service/containers/app-service-linux-faq#built-in-images) テキストボックスにこのスクリプトの完全なパスを貼り付けます。 スタートアップ スクリプトは、配置先のディレクトリからは実行されません。 そのため、スタートアップ スクリプトでファイルを参照するには、常に絶対パスを使用します (例: `java -jar /home/myapp/myapp.jar`)。
@@ -164,10 +164,10 @@ Web アプリが作成されたら、[利用可能なデプロイ メカニズ�
 
 * ファイル ストレージ用に */home* ディレクトリを使用することを選択した場合は、[それを Azure Storage に置き換える](/azure/app-service/configure-connect-to-azure-storage)ことを検討してください。
 
-* 接続文字列、SSL キー、およびその他の機密情報が含まれている */home* ディレクトリ内に構成がある場合、可能であれば、[Azure Key Vault](/azure/app-service/app-service-key-vault-references) または[アプリケーション設定を使用するパラメーター インジェクション](/azure/app-service/configure-common#configure-app-settings)、あるいはその両方を使用することを検討してください。
+* 接続文字列、SSL キー、およびその他の機密情報が含まれている */home* ディレクトリ内に構成がある場合、可能であれば、[Azure Key Vault](/azure/app-service/app-service-key-vault-references) または [アプリケーション設定を使用するパラメーター インジェクション](/azure/app-service/configure-common#configure-app-settings)、あるいはその両方を使用することを検討してください。
 
 * ダウンタイムなしで信頼性の高いデプロイを行うには、[デプロイ スロットの使用](/azure/app-service/deploy-staging-slots)を検討してください。
 
-* DevOps の戦略を設計し、実装します。 信頼性を維持しながら開発速度を向上させるには、[Azure Pipelines を使用してデプロイとテストを自動化する](/azure/devops/pipelines/ecosystems/java-webapp)ことを検討してください。 デプロイ スロットを使用する場合は、[スロットへのデプロイと後続のスロット スワップを自動化](/azure/devops/pipelines/targets/webapp?view=azure-devops&tabs=yaml#deploy-to-a-slot)できます。
+* DevOps の戦略を設計し、実装します。 信頼性を維持しながら開発速度を向上させるには、[Azure Pipelines を使用してデプロイとテストを自動化する](/azure/devops/pipelines/ecosystems/java-webapp)ことを検討してください。 デプロイ スロットを使用する場合は、[スロットへのデプロイと後続のスロット スワップを自動化](/azure/devops/pipelines/targets/webapp?tabs=yaml#deploy-to-a-slot)できます。
 
 * 事業継続とディザスター リカバリー戦略を設計し、実装します。 ミッション クリティカルなアプリケーションの場合は、[複数リージョン デプロイのアーキテクチャ](/azure/architecture/reference-architectures/app-service-web-app/multi-region)を検討してください。

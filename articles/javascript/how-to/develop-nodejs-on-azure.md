@@ -4,12 +4,12 @@ description: Node.js アプリの作成、コンテナー化、Azure へのデ�
 ms.topic: how-to
 ms.date: 06/25/2017
 ms.custom: seo-javascript-september2019, seo-javascript-october2019, devx-track-js, devx-track-azurecli
-ms.openlocfilehash: de07137ca6fd21aaf3d5dfe33bf6d599a745555d
-ms.sourcegitcommit: ae2fa266a36958c04625bb0ab212e6f2db98e026
+ms.openlocfilehash: e549ef0cf5baaf003788a55bf2549e9c3f2fbe5c
+ms.sourcegitcommit: 0eb25e1fdafcd64118843748dc061f60e7e48332
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96857820"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98626055"
 ---
 # <a name="develop-and-deploy-a-containerized-nodejs-app-with-visual-studio-code-and-azure"></a>コンテナー化された Node.js アプリを Visual Studio Code と Azure を使用して開発してデプロイする
 
@@ -325,21 +325,21 @@ Docker でコンテナー化したアプリを作成して DockerHub にプッ�
 
 1. リソース グループを作成します。これは、Azure リソースを体系化するための "*名前空間*" または "*ディレクトリ*" と考えることができます。 グループの名前は `-n` オプションで指定します。任意の名前を使用できます。
 
-    ```shell
+    ```azurecli
     az group create -n nina-demo -l westus
     ```
 
     `-l` オプションは、リソース グループの場所を示します。 プレビュー段階では、Linux における App Service のサポートが一部のリージョンに限られます。 したがって、ご利用のリージョンが米国西部以外の場合に、他にどのリージョンが利用できるかを調べるには、CLI で `az appservice list-locations --linux-workers-enabled` を実行して、選択可能なデータセンターを確認してください。
 
-1. 今後 CLI でコマンドを呼び出すときに毎回明示的にリソース グループを指定しなくて済むよう、新たに作成したリソース グループを既定のリソース グループとして設定します。
+1. 各 Azure CLI 呼び出しでリソース グループを明示的に指定することなく CLI を継続して使用できるようにするために、新たに作成したリソース グループを既定のリソース グループとして設定します。
 
-   ```shell
+   ```azurecli
    az configure -d group=nina-demo
    ```
 
 1. App Service "*プラン*" を作成します。アプリのデプロイ先となるベースの仮想マシンの作成とスケーリングは、このプランによって管理されます。 この場合も、`n` オプションには任意の値を指定してください。
 
-    ```shell
+    ```azurecli
     az appservice plan create -n nina-demo-plan --is-linux
     ```
 
@@ -347,7 +347,7 @@ Docker でコンテナー化したアプリを作成して DockerHub にプッ�
 
 1. App Service Web アプリを作成します。これは、先ほど作成したプランとリソース グループ内で実行される実際の To Do アプリに相当します。 Web アプリとプランはそれぞれ、プロセス (またはコンテナー) とそれらが実行される仮想マシン (またはコンテナー ホスト) と同義と考えることができます。 さらに、Web アプリを作成する過程で、DockerHub に公開した Docker イメージを使うための構成を、その Web アプリに対して行う必要があります。
 
-    ```shell
+    ```azurecli
     az webapp create -n nina-demo-app -p nina-demo-plan -i lostintangent/node
     ```
 
@@ -356,13 +356,13 @@ Docker でコンテナー化したアプリを作成して DockerHub にプッ�
 
 1. Web アプリを既定の Web インスタンスとして設定します。
 
-    ```shell
+    ```azurecli
     az configure -d web=nina-demo-app
     ```
 
 1. アプリを起動して、デプロイしたコンテナーを表示します。コンテナーには、`*.azurewebsites.net` という URL でアクセスできます。
 
-    ```shell
+    ```azurecli
     az webapp browse
     ```
 
@@ -378,20 +378,20 @@ MongoDB サーバー (またはレプリカ セット) を構成し、そのイ�
 
 1. Visual Studio Code ターミナルで次のコマンドを実行して、MongoDB 互換の Cosmos DB サービス インスタンスを作成します。 **<NAME** プレースホルダーを、グローバルに一意の値に置き換えます (この名前は、Cosmos DB がデータベースのサーバー URL を生成するときに使用されます)。
 
-   ```shell
+   ```azurecli
    COSMOSDB_NAME=<NAME>
    az cosmosdb create -n $COSMOSDB_NAME --kind MongoDB
    ```
 
 1. このインスタンスの MongoDB 接続文字列を取得します。
 
-   ```shell
+   ```bash
    MONGODB_URL=$(az cosmosdb list-connection-strings -n $COSMOSDB_NAME -otsv --query "connectionStrings[0].connectionString")
    ```
 
 1. ローカルで実行されている (実際には存在しない) MongoDB サーバーに接続を試みるのではなく、新しくプロビジョニングした Cosmos DB インスタンスが接続先となるように、Web アプリの **MONGODB_URL** 環境変数を更新します。
 
-    ```shell
+    ```azurecli
     az webapp config appsettings set --settings MONGODB_URL=$MONGODB_URL
     ```
 
@@ -409,7 +409,7 @@ DockerHub は、コンテナー イメージを配布する手段としてきわ
 
 カスタム レジストリをプロビジョニングするには、次のコマンドを実行します。 **<NAME** プレースホルダーを、グローバルに一意の値に置き換えます。指定した値は、ACR がレジストリのログイン サーバー URL を生成するときに使用されます。
 
-```shell
+```azurecli
 ACR_NAME=<NAME>
 az acr create -n $ACR_NAME -l westus --admin-enabled
 ```
@@ -419,31 +419,31 @@ az acr create -n $ACR_NAME -l westus --admin-enabled
 
 `az acr create` コマンドは、Docker CLI を使ってログインするときに使用するログイン サーバー URL を (`LOGIN SERVER` 列に) 表示します (例: `ninademo.azurecr.io`)。 また、このコマンドを実行すると、管理者の認証に使用するための資格情報が生成されます。 それらの資格情報を取得するには、次のコマンドを実行し、表示されたユーザー名とパスワードをメモしてください。
 
-```shell
+```azurecli
 az acr credential show -n $ACR_NAME
 ```
 
 レジストリには、前の手順で取得した資格情報と、個々に割り当てられたログイン サーバーを使い、標準的な Docker CLI ワークフローでログインすることができます。
 
-```shell
+```console
 docker login <LOGIN_SERVER> -u <USERNAME> -p <PASSWORD>
 ```
 
 Docker コンテナーにタグ付けし、プライベート レジストリに関連付けられていることを示すには、次のコマンドを使用します。`lostintangent/node` には、実際のコンテナー イメージに付けた名前を指定してください。
 
-```shell
+```console
 docker tag lostintangent/node <LOGIN_SERVER>/lostintangent/node
 ```
 
 最後に、タグ付けしたイメージをプライベート Docker レジストリにプッシュします。
 
-```shell
+```console
 docker push <LOGIN_SERVER>/lostintangent/node
 ```
 
 これでコンテナーが独自のプライベート レジストリに格納されました。また Docker CLI は、DockerHub を使用していたときと同じように利用することができます。 プライベート レジストリからプルするよう App Service Web アプリに命令するには、次のコマンドを実行するだけです。
 
-```shell
+```azurecli
 az appservice web config container set \
     -r <LOGIN_SERVER> \
     -c <LOGIN_SERVER>/lostintangent/node \
@@ -459,7 +459,7 @@ az appservice web config container set \
 
 テスト目的であれば、`*.azurewebsites.net` という URL でまったく問題ありませんが、いずれはカスタム ドメイン名を Web アプリに追加することが必要になると考えられます。 レジストラーからドメイン名を取得したら、Web アプリの外部 IP (実際にはロード バランサー) を指す `A` レコードをそこに追加する必要があります。 この IP は、次のコマンドを実行することで取得できます。
 
-```shell
+```azurecli
 az webapp config hostname get-external-ip
 ```
 
@@ -467,7 +467,7 @@ az webapp config hostname get-external-ip
 
 これらのレコードが作成されて DNS の変更が反映されたら、そのカスタム ドメインを Azure に登録して、受信トラフィックを正しく予測できるようにしてください。
 
-```shell
+```azurecli
 az webapp config hostname add --hostname <DOMAIN>
 ```
 
@@ -480,7 +480,7 @@ az webapp config hostname add --hostname <DOMAIN>
 
 将来的に Web アプリの利用者が増えてくると、割り当て済みのリソース (CPU と RAM) では、運用上の需要やトラフィックの増大に追い付かなくなる可能性があります。 先ほど作成した App Service プラン (**B1**) で利用できるのは 1 CPU コアと 1.75 GB の RAM であり、これはたやすく過負荷状態になる可能性があります。 **B2** プランではその 2 倍の RAM と CPU が利用できるため、アプリでいずれかが不足し始めたら、次のコマンドを実行することで、基になる仮想マシンをスケールアップすることができます。
 
-```shell
+```azurecli
 az appservice plan update -n nina-demo-plan --sku B2
 ```
 
@@ -491,7 +491,7 @@ az appservice plan update -n nina-demo-plan --sku B2
 
 また、仮想マシンの仕様をスケールアップする以外にも、Web アプリがステートレスであれば、基になる仮想マシン インスタンスを増やすことによる "*スケールアウト*" を行うこともできます。 先ほど作成した App Service プランには仮想マシンが 1 つ (*worker*) しか含まれていないので、結局のところ、その 1 つのインスタンスで利用できるリソースの上限が、全受信トラフィックの限界となります。 仮想マシン インスタンスをもう 1 つ追加する必要がある場合も、先ほどと同じコマンドを使用できます。ただし、SKU をスケールアップするのではなく、worker 仮想マシンの数をスケールアウトします。
 
-```shell
+```azurecli
 az appservice plan update -n nina-demo-plan --number-of-workers 2
 ```
 
@@ -506,7 +506,7 @@ Web アプリはステートレスにすることをお勧めします。機能�
 
 使用しない Azure リソースに対して料金が請求されないように、Visual Studio Code ターミナルで次のコマンドを実行して、このチュートリアルでプロビジョニングしたリソースをすべて削除します。
 
-```shell
+```azurecli
 az group delete
 ```
 

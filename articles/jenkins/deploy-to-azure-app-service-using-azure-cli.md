@@ -5,12 +5,12 @@ keywords: Jenkins, Azure, 開発, App Service, CLI
 ms.topic: tutorial
 ms.date: 01/06/2021
 ms.custom: devx-track-jenkins, devx-track-azurecli
-ms.openlocfilehash: cac490a111120e7b390e26d020c5a6ad00fdd667
-ms.sourcegitcommit: 347bfa3b6c34579c567d1324efc63c1d6672a75b
+ms.openlocfilehash: 1f73da29b6b1bff2abf92383d672afd5af92abe4
+ms.sourcegitcommit: 0eb25e1fdafcd64118843748dc061f60e7e48332
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98109065"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98625999"
 ---
 # <a name="tutorial-deploy-to-azure-app-service-with-jenkins-and-the-azure-cli"></a>チュートリアル:Jenkins と Azure CLI を使用して Azure App Service にデプロイする
 
@@ -35,11 +35,11 @@ Java Web アプリを Azure にデプロイするには、[Jenkins パイプラ�
 
 ## <a name="configure-jenkins"></a>Jenkins を構成する
 
-次の手順は、必要な Java JDK と Maven を Jenkins マスターにインストールする方法を示しています。
+次の手順は、必要な Java JDK と Maven を Jenkins コントローラーにインストールする方法を示しています。
 
-1. SSH を使用して Jenkins マスターにサインインします。
+1. SSH を使用して Jenkins コントローラーにサインインします。
 
-1. [apt-get リポジトリから Azul Zulu JDK をダウンロードしてインストールする](/azure/developer/java/fundamentals/java-jdk-install#download-and-install-the-azul-zulu-jdks-from-an-apt-get-repository):
+1. [apt-get リポジトリから Azul Zulu JDK をダウンロードしてインストールする](../java/fundamentals/java-jdk-install.md#download-and-install-the-azul-zulu-jdks-from-an-apt-get-repository):
 
     ```bash
     sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 0xB1998361219BD9C9

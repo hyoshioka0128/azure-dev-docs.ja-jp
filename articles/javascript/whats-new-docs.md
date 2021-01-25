@@ -3,12 +3,12 @@ title: JavaScript ドキュメントの新着情報
 description: デベロッパー センターの JavaScript ドキュメントの新着情報
 ms.topic: conceptual
 ms.date: 01/05/2021
-ms.openlocfilehash: 507c52491784a508535ae07f4a9b2755fa68cc1b
-ms.sourcegitcommit: 075f39972e390e79ed09a3fcfdbfc776727e08fc
+ms.openlocfilehash: 71f4db11833d0c5346ee6204c94ecd943bb4f126
+ms.sourcegitcommit: 0eb25e1fdafcd64118843748dc061f60e7e48332
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97952454"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98625903"
 ---
 # <a name="javascript-docs-whats-new"></a>JavaScript ドキュメント:新機能
 
@@ -21,7 +21,7 @@ JavaScript および TypeScript 開発者向けの新規および更新された
 |名前|Notes|
 |---------------------------------------|--|
 |[**初心者向け**](learn-azure-javascript.md#getting-started)|JavaScript、Node.js、Web 開発、および JavaScript 開発者にとって重要なその他の領域の使用を開始するためのさまざまなオンライン資料のコレクションです。|
-|[JavaScript 開発者向けの一般的な主要タスク](how-to/common-javascript-tasks.md)|現在のタスクの例を参照してください。|
+|[JavaScript 開発者向けの主要タスク](how-to/common-javascript-tasks.md)|現在のタスクの例を参照してください。|
 
 ## <a name="2020-december"></a>2020 年 12 月
 
@@ -42,9 +42,9 @@ JavaScript および TypeScript 開発者向けの新規および更新された
 
 |名前|
 |---------------------------------------|
-|静的 Web アプリ、JavaScript、CodeTour:バスケットボールの統計を使用して、Visual Studio Code でゲーム プレイを最適化する (SPACE JAM にインスパイアされています):新しいレガシ - [Learn](https://docs.microsoft.com/learn/paths/optimize-basketball-games-with-machine-learning/)|
-|HTML、CSS、JavaScript を使用して簡単な Web サイトを構築する - [Learn](https://docs.microsoft.com/learn/modules/build-simple-website/)|
-|Visual Studio Code を使用して、Azure Functions と Node.js を備えたサーバーレス API で JavaScript と Vue.js ダッシュボードを構築します。 - [Learn](https://docs.microsoft.com/learn/modules/build-api-azure-functions)|
+|静的 Web アプリ、JavaScript、CodeTour:バスケットボールの統計を使用して、Visual Studio Code でゲーム プレイを最適化する (SPACE JAM にインスパイアされています):新しいレガシ - [Learn](/learn/paths/optimize-basketball-games-with-machine-learning/)|
+|HTML、CSS、JavaScript を使用して簡単な Web サイトを構築する - [Learn](/learn/modules/build-simple-website/)|
+|Visual Studio Code を使用して、Azure Functions と Node.js を備えたサーバーレス API で JavaScript と Vue.js ダッシュボードを構築します。 - [Learn](/learn/modules/build-api-azure-functions)|
 
 ## <a name="2020-november"></a>2020 年 11 月
 

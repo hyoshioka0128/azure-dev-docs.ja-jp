@@ -5,19 +5,19 @@ keywords: Ansible, Azure, DevOps, ソリューション テンプレート, 仮�
 ms.topic: quickstart
 ms.date: 04/30/2019
 ms.custom: devx-track-ansible
-ms.openlocfilehash: cae15f8a69151b7692edde3c8fb36a9818a0e305
-ms.sourcegitcommit: 2f832baf90c208a8a69e66badef5f126d23bbaaf
+ms.openlocfilehash: 1cad21fb3cebe9675032fa399aefb7ca329d9733
+ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88725186"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98561758"
 ---
 # <a name="quickstart-deploy-the-ansible-solution-template-for-azure-to-centos"></a>クイック スタート:Azure 用の Ansible ソリューション テンプレートを CentOS にデプロイする
 
 Azure 用の Ansible ソリューション テンプレートは、Azure と連携するよう構成された Ansible と一連のツールと共に、CentOS 仮想マシン上の Ansible インスタンスを構成するように設計されています。 ツールには次のものが含まれます。
 
 - **Azure 用 Ansible モジュール** - [Azure 用 Ansible モジュール](./module-version-matrix.md)は、お客様が Azure 上のインフラストラクチャを作成および管理できるようにする一連のモジュールです。 既定では、これらのモジュールの最新バージョンがデプロイされます。 ただし、ソリューションテンプレートのデプロイ プロセスの間、お客様の環境に適したバージョン番号を指定できます。
-- **Azure コマンド ライン インターフェイス (CLI) 2.0** - [Azure CLI 2.0](/cli/azure/?view=azure-cli-latest) は、Azure リソースを管理するためのクロスプラットフォーム コマンド ライン エクスペリエンスです。 
+- **Azure コマンド ライン インターフェイス (CLI) 2.0** - [Azure CLI 2.0](/cli/azure/) は、Azure リソースを管理するためのクロスプラットフォーム コマンド ライン エクスペリエンスです。 
 - **Azure リソースのマネージド ID** - [Azure リソースのマネージド ID](/azure/active-directory/managed-identities-azure-resources/overview) 機能では、クラウド アプリケーションの資格情報を安全に保つという課題に対処できます。
 
 ## <a name="prerequisites"></a>前提条件
@@ -69,7 +69,7 @@ Azure 用の Ansible ソリューション テンプレートは、Azure と連�
 
 1. **[OK]** を選択します。
 
-1. **[概要]** ページが表示されます。検証プロセスが示されるほか、Ansible デプロイに関して指定された条件が一覧表示されます。 タブの下部にあるリンクでは、サポートされている Azure の言語とプラットフォームで使用するために**テンプレートとパラメーターをダウンロード**できます。 
+1. **[概要]** ページが表示されます。検証プロセスが示されるほか、Ansible デプロイに関して指定された条件が一覧表示されます。 タブの下部にあるリンクでは、サポートされている Azure の言語とプラットフォームで使用するために **テンプレートとパラメーターをダウンロード** できます。 
 
      ![Ansible の [概要] タブを示す Azure portal タブ](./media/solution-template-deploy/portal-ansible-setup-tab-4.png)
 
@@ -79,7 +79,7 @@ Azure 用の Ansible ソリューション テンプレートは、Azure と連�
 
 1. ポータル ページの上部にある **[通知]** アイコンを選択して、Ansible のデプロイを追跡します。 デプロイが完了したら、 **[リソース グループに移動]** を選択します。 
 
-     ![Ansible の [概要] タブを示す Azure portal タブ](./media/solution-template-deploy/portal-ansible-setup-complete.png)
+     ![Ansible デプロイのための Azure portal 通知](./media/solution-template-deploy/portal-ansible-setup-complete.png)
 
 1. リソース グループのページで、お客様の Ansible ホストの IP アドレスを取得してサインインし、Ansible を使用して Azure リソースを管理します。
 

@@ -4,12 +4,12 @@ description: Azure Toolkit for IntelliJ を使用して、HTTP によってト�
 ms.topic: quickstart
 ms.date: 03/26/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: d796d6974d9591ae9df79d37c48f47d7e1cb5a72
-ms.sourcegitcommit: 5541f993c01ce356e1b0eaa8f95aea9051c3c21e
+ms.openlocfilehash: 8276b7de4425cb4eb5630116c59803118d3002b0
+ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93278467"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98561788"
 ---
 # <a name="quickstart-create-an-azure-functions-project-using-intellij-idea"></a>クイック スタート:IntelliJ IDEA を使用して Azure Functions プロジェクトを作成する
 
@@ -27,7 +27,7 @@ ms.locfileid: "93278467"
 
 ## <a name="installation-and-sign-in"></a>インストールとサインイン
 
-1. IntelliJ IDEA の [設定/環境設定] ダイアログ (Ctrl+Alt+S) で、 **[プラグイン]** を選択します。 次に、 **Marketplace** で **Azure Toolkit for IntelliJ** を見つけ、 **[インストール]** をクリックします。 インストール後、 **[再起動]** をクリックしてプラグインをアクティブにします。 
+1. IntelliJ IDEA の [設定/環境設定] ダイアログ (Ctrl+Alt+S) で、 **[プラグイン]** を選択します。 次に、**Marketplace** で **Azure Toolkit for IntelliJ** を見つけ、 **[インストール]** をクリックします。 インストール後、 **[再起動]** をクリックしてプラグインをアクティブにします。 
 
    ![Marketplace の Azure Toolkit for IntelliJ プラグイン][marketplace]
 
@@ -35,7 +35,7 @@ ms.locfileid: "93278467"
 
    ![IntelliJ Azure サインイン コマンド][I01]
 
-3. **[Azure サインイン]** ウィンドウで、 **[Device Login]\(デバイスのログイン\)** を選択し、次に **[サインイン]** をクリックします ( [他のサインイン オプション](sign-in-instructions.md))。
+3. **[Azure サインイン]** ウィンドウで、 **[Device Login]\(デバイスのログイン\)** を選択し、次に **[サインイン]** をクリックします ([他のサインイン オプション](sign-in-instructions.md))。
 
    ![[デバイスのログイン] が選択されている [Azure サインイン] ウィンドウ][I02]
 
@@ -75,7 +75,7 @@ ms.locfileid: "93278467"
 
     ![関数のローカル実行のテスト結果](media/quickstart-functions/local-run-functions-test.png)
 
-1. ログは IDEA にも出力されます。ここで、" *停止* " ボタンをクリックして関数を停止します。
+1. ログは IDEA にも出力されます。ここで、"*停止*" ボタンをクリックして関数を停止します。
 
     ![関数のローカル実行のテスト ログ](media/quickstart-functions/local-run-functions-log.png)
 
@@ -85,7 +85,7 @@ ms.locfileid: "93278467"
 
     ![関数をローカルでデバッグするボタン](media/quickstart-functions/local-debug-functions-button.png)
 
-1. ファイル `src/main/java/org/example/functions/HttpTriggerFunction.java` の行 *20* をクリックしてブレークポイントを追加し、エンドポイント `http://localhost:7071/api/HttpTrigger-Java?name=Azure` に再度アクセスすると、ブレークポイントにヒットします。これにより、" *ステップ実行* "、" *ウォッチ* "、" *評価* "など、より多くのデバッグ機能を試すことができます。 停止ボタンをクリックしてデバッグ セッションを停止します。
+1. ファイル `src/main/java/org/example/functions/HttpTriggerFunction.java` の行 *20* をクリックしてブレークポイントを追加し、エンドポイント `http://localhost:7071/api/HttpTrigger-Java?name=Azure` に再度アクセスすると、ブレークポイントにヒットします。これにより、"*ステップ実行*"、"*ウォッチ*"、"*評価*"など、より多くのデバッグ機能を試すことができます。 停止ボタンをクリックしてデバッグ セッションを停止します。
 
     ![関数のローカル デバッグの中断](media/quickstart-functions/local-debug-functions-break.png)
 
@@ -111,7 +111,7 @@ ms.locfileid: "93278467"
 
 ## <a name="manage-azure-functions-from-idea"></a>IDEA から Azure Functions を管理する
 
-1. IDEA の " *Azure 用エクスプローラー* " を使用して関数を管理できます。 *[Function App]\(関数アプリ\)* をクリックすると、ここにすべての関数が表示されます。
+1. IDEA の "*Azure 用エクスプローラー*" を使用して関数を管理できます。 *[Function App]\(関数アプリ\)* をクリックすると、ここにすべての関数が表示されます。
 
     ![エクスプローラーでの関数の表示](media/quickstart-functions/explorer-view-functions.png)
 
@@ -121,7 +121,7 @@ ms.locfileid: "93278467"
 
 1. 関数 *HttpTrigger-Java* を右クリックし、 *[Trigger Function]\(関数のトリガー\)* を選択します。トリガー URL でブラウザーが開きます。
 
-    ![Azure への関数のデプロイの実行](media/quickstart-functions/explorer-trigger-functions.png)
+    ![トリガー URL が表示されているブラウザーのアドレス バー](media/quickstart-functions/explorer-trigger-functions.png)
 
 ## <a name="add-more-functions-to-the-project"></a>プロジェクトに関数を追加する
 
@@ -129,7 +129,7 @@ ms.locfileid: "93278467"
 
     ![プロジェクト エントリへの関数の追加](media/quickstart-functions/add-functions-entry.png)
 
-1. 関数クラスの作成ウィザードで、クラス名に「 *HttpTest* 」を入力し、 *[HttpTrigger]* を選択し、 *[OK]* をクリックして作成します。この方法で、新しい関数を必要なだけ作成できます。
+1. 関数クラスの作成ウィザードで、クラス名に「*HttpTest*」を入力し、 *[HttpTrigger]* を選択し、 *[OK]* をクリックして作成します。この方法で、新しい関数を必要なだけ作成できます。
 
     ![プロジェクトへの関数の追加でのトリガーの選択](media/quickstart-functions/add-functions-trigger.png)
     
@@ -139,7 +139,7 @@ ms.locfileid: "93278467"
 
 1. Azure Explorer での Azure Functions の削除
       
-      ![プロジェクトへの関数の追加でのトリガーの選択](media/quickstart-functions/delete-function.png)
+      ![Azure Explorer での関数の削除](media/quickstart-functions/delete-function.png)
       
 
 ## <a name="next-steps"></a>次のステップ

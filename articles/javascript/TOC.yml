@@ -139,7 +139,7 @@
       items:
         - name: アプリの構成
           href: how-to/configure-web-app-settings.md
-        - name: 一般的な JavaScript タスク
+        - name: JavaScript 開発者向けのタスク
           href: how-to/common-javascript-tasks.md
         - name: VS Code を使用したエンド ツー エンドの Node.js
           href: how-to/develop-nodejs-on-azure.md

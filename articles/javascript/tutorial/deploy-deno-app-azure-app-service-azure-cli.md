@@ -4,12 +4,12 @@ description: このチュートリアルでは、Azure CLI を使用して、Den
 ms.topic: tutorial
 ms.date: 10/13/2020
 ms.custom: scenarios:getting-started, languages:JavaScript, devx-track-javascript
-ms.openlocfilehash: 16cb388a9a61b0141f04364dc1489607565156a3
-ms.sourcegitcommit: c8330128d5d6a71859933a890ecdf047cb950996
+ms.openlocfilehash: f1f8c93954d2e4cbb8f5bd525a518aae03ec9667
+ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97522389"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98561076"
 ---
 # <a name="deploy-deno-apps-to-azure-app-service-from-the-azure-cli"></a>Azure CLI から Azure App Service に Deno アプリをデプロイする
 
@@ -95,7 +95,7 @@ Azure CLI を使用して Azure に Deno アプリをデプロイします。
 
     この AppService では、Deno コードを実行するための基本機能を提供する `anthonychu/azure-webapps-deno:1.0.2` Docker イメージを実行します。 この処理は、完了するまでに数秒かかる場合があります。
 
-## <a name="5-configure-the-azure-app-service-webapp"></a>5.Azure App Service の Web アプリを構成する
+## <a name="5-configure-app-service-deno-container"></a>5.App Service の Deno コンテナーを構成する
 
 1. 実験用の Deno イメージ名に対する Docker コンテナー イメージを取得する場所を Web アプリに指示します。
 
@@ -158,6 +158,6 @@ az group delete deno-quickstart
 
 各項目の詳細情報
 * [アプリの設定を構成する方法について確認する](../how-to/configure-web-app-settings.md)
-* Visual Studio Code 拡張機能を使用して [App Service にデプロイする](../tutorial-vscode-azure-app-service-node-01.md)
+* Visual Studio Code 拡張機能を使用して [App Service にデプロイする](./deploy-nodejs-azure-app-service-with-visual-studio-code.md)
 * [仮想マシンにデプロイする](./nodejs-virtual-machine-vm/introduction.md)
 * [カスタム ハンドラー](/azure/azure-functions/functions-custom-handlers)として [Deno 関数をデプロイする](https://github.com/anthonychu/azure-functions-deno-worker)

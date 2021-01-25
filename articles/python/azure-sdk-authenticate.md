@@ -1,15 +1,15 @@
 ---
 title: Azure サービスを使用して Python アプリケーションを認証する方法
 description: Azure ライブラリを使用して、Azure サービスで Python アプリを認証するために必要な資格情報オブジェクトを取得する方法
-ms.date: 11/12/2020
+ms.date: 01/19/2021
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 7c609c7e218be1fd5e7c259a5aa7c5bec3e507d2
-ms.sourcegitcommit: 6514a061ba5b8003ce29d67c81a9f0795c3e3e09
+ms.openlocfilehash: 51b7a074bef81999f17f3a5fa51d243e64a33f3c
+ms.sourcegitcommit: 0eb25e1fdafcd64118843748dc061f60e7e48332
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94601364"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98625967"
 ---
 # <a name="how-to-authenticate-and-authorize-python-apps-on-azure"></a>Azure で Python アプリを認証および認可する方法
 
@@ -34,7 +34,7 @@ Azure では、アプリ ID は **サービス プリンシパル** によって
 
 ### <a name="identity-when-running-the-app-on-azure"></a>Azure でアプリを実行しているときの ID
 
-クラウド (たとえば、運用環境) で実行している場合、アプリでは、**システムによって割り当てられたマネージド ID** が使用されるのが最も一般的です。 [マネージド ID](/azure/active-directory/managed-identities-azure-resources/overview) では、リソースのロールとアクセス許可を割り当てるときにアプリの名前を使用します。 Azure は、基になるサービス プリンシパルを自動的に管理し、他の Azure リソースで自動的にアプリを認証します。 そのため、サービス プリンシパルを直接処理する必要はありません。 さらに、アプリ コードでは、Azure リソースのアクセス トークン、シークレット、または接続文字列を処理する必要はありません。そのため、このような情報が漏洩したり侵害されたりするリスクが軽減されます。
+クラウド (たとえば、運用環境) で実行している場合、アプリでは、**システムによって割り当てられたマネージド ID** (以前は "MSI" と呼ばれていました) が使用されるのが最も一般的です。 [マネージド ID](/azure/active-directory/managed-identities-azure-resources/overview) では、リソースのロールとアクセス許可を割り当てるときにアプリの名前を使用します。 Azure は、基になるサービス プリンシパルを自動的に管理し、他の Azure リソースで自動的にアプリを認証します。 そのため、サービス プリンシパルを直接処理する必要はありません。 さらに、アプリ コードでは、Azure リソースのアクセス トークン、シークレット、または接続文字列を処理する必要はありません。そのため、このような情報が漏洩したり侵害されたりするリスクが軽減されます。
 
 マネージド ID の構成は、アプリをホストするために使用するサービスによって異なります。 各サービスの手順へのリンクについては、[マネージド ID をサポートするサービス](/azure/active-directory/managed-identities-azure-resources/services-support-managed-identities)に関する記事を参照してください。 たとえば、Azure App Service にデプロイされた Web アプリの場合、マネージド ID を有効にするには、Azure portal の **[ID]**  >  **[システム割り当て済み]** オプションを使用するか、Azure CLI で `az webapp identity assign` コマンドを使用します。
 
@@ -79,7 +79,7 @@ vault_url = os.environ["KEY_VAULT_URL"]
 
 
 # Acquire a credential object for the app identity. When running in the cloud,
-# DefaultAzureCredential uses the app's managed identity or user-assigned service principal.
+# DefaultAzureCredential uses the app's managed identity (MSI) or user-assigned service principal.
 # When run locally, DefaultAzureCredential relies on environment variables named
 # AZURE_CLIENT_ID, AZURE_CLIENT_SECRET, and AZURE_TENANT_ID.
 
@@ -116,7 +116,9 @@ SDK [`SecretClient`](/python/api/azure-keyvault-secrets/azure.keyvault.secrets.s
 
 ## <a name="authenticate-with-defaultazurecredential"></a>DefaultAzureCredential を使用して認証する
 
-ほとんどのアプリケーションでは、[`azure-identity`](/python/api/azure-identity/azure.identity) ライブラリの [`DefaultAzureCredential`](/python/api/azure-identity/azure.identity.defaultazurecredential) クラスには、最も単純で推奨される認証方法が用意されています。 `DefaultAzureCredential` は、クラウドでは自動的にアプリのマネージド ID を使用し、ローカルで実行しているときには自動的に環境変数からローカル サービス プリンシパルを読み込みます。
+ほとんどのアプリケーションでは、[`azure-identity`](/python/api/azure-identity/azure.identity) ライブラリの [`DefaultAzureCredential`](/python/api/azure-identity/azure.identity.defaultazurecredential) クラスには、最も単純で推奨される認証方法が用意されています。
+
+`DefaultAzureCredential` は、クラウドでは自動的にアプリのマネージド ID (MSI) を使用し、ローカルで実行しているときには自動的に環境変数からローカル サービス プリンシパルを読み込みます (「[Azure 用のローカル Python 開発環境を構成する - 認証を構成する](configure-local-development-environment.md#configure-authentication)」を参照してください)。
 
 ```python
 import os
@@ -138,7 +140,7 @@ retrieved_secret = secret_client.get_secret("secret-name-01")
 
 前述のコードでは、Azure Key Vault にアクセスするときに `DefaultAzureCredential` が使用されています。この場合、Key Vault の URL は `KEY_VAULT_URL` という名前の環境変数で提供されています。 このコードでは明らかに、一般的なライブラリの使用パターン (資格情報オブジェクトを取得し、Azure リソースの適切なクライアント オブジェクトを作成した後、そのクライアント オブジェクトを使用してそのリソースに対して操作を実行する) が実装されています。 ここでも、認証と認可はこの最後のステップで初めて実行されます。
 
-コードを Azure にデプロイして実行すると、`DefaultAzureCredential` はシステムによって割り当てられたマネージド ID を自動的に使用します。これは、そのホストとなるあらゆるサービス内のアプリに対して有効にできます。 Azure Storage や Azure Key Vault などの特定のリソースに対するアクセス許可は、Azure portal または Azure CLI を使用してその ID に割り当てられます。 これらのケースでは、Azure によって管理されるこのマネージド ID によって最大限のセキュリティが確保されます。明示的なサービス プリンシパルをコード内で一切扱う必要がないためです。
+コードを Azure にデプロイして実行すると、`DefaultAzureCredential` はシステムによって割り当てられたマネージド ID (MSI) を自動的に使用します。これは、そのホストとなるあらゆるサービス内のアプリに対して有効にできます。 Azure Storage や Azure Key Vault などの特定のリソースに対するアクセス許可は、Azure portal または Azure CLI を使用してその ID に割り当てられます。 これらのケースでは、Azure によって管理されるこのマネージド ID によって最大限のセキュリティが確保されます。明示的なサービス プリンシパルをコード内で一切扱う必要がないためです。
 
 コードをローカルで実行した場合は、`AZURE_TENANT_ID`、`AZURE_CLIENT_ID`、`AZURE_CLIENT_SECRET` という名前の各環境変数によって表されるサービス プリンシパルが `DefaultAzureCredential` によって自動的に使用されます。 その後、クライアント オブジェクトは、API エンドポイントを呼び出すときに、これらの値を (安全に) HTTP 要求ヘッダーに含めます。 ローカルまたはクラウドで実行するときに、コードの変更は必要ありません。 サービス プリンシパルの作成と環境変数の設定について詳しくは、「[Azure 用のローカル Python 開発環境を構成する - 認証を構成する](configure-local-development-environment.md#configure-authentication)」を参照してください。
 

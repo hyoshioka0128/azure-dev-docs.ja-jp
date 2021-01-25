@@ -4,14 +4,14 @@ description: 現在のタスクの例を参照してください。
 ms.topic: reference
 ms.date: 01/06/2021
 ms.custom: devx-track-js
-ms.openlocfilehash: 4c17b95cb5acc9f04227c8ccc9ea91d6d8aa1829
-ms.sourcegitcommit: ed31f841fa9680335658df6708f107e170d47ff0
+ms.openlocfilehash: 3a4c319d5258fccd1c1153591ccefddf87098343
+ms.sourcegitcommit: 0eb25e1fdafcd64118843748dc061f60e7e48332
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97974569"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98625975"
 ---
-# <a name="common-top-tasks-for-javascript-developers"></a>JavaScript 開発者向けの一般的な主要タスク
+# <a name="top-tasks-for-javascript-developers"></a>JavaScript 開発者向けの主要タスク
 
 現在のタスクの例を参照してください。 タスクが見つからない場合は、タスクを要求するフィードバックを残しておきます。 
 
@@ -87,11 +87,8 @@ ms.locfileid: "97974569"
 |ローカル環境で Express.js アプリを作成する|[Bash](../tutorial/deploy-nodejs-azure-app-service-with-visual-studio-code.md?tabs=bash#3-create-a-local-expressjs-app)|
 |アプリ リソースの作成 - Express.js アプリのデプロイ、ログのストリーミングを含む|[Visual Studio Code 拡張機能](../tutorial/deploy-nodejs-mongodb-app-service-from-visual-studio-code.md#create-web-app-resource-and-deploy-expressjs-app)|
 |アプリ リソースの作成 - Express.js アプリのデプロイ、アプリ設定の構成、npm インストールの実行、デプロイされた Web サイトの参照を含む|[Visual Studio Code 拡張機能](../tutorial/deploy-nodejs-azure-app-service-with-visual-studio-code.md?tabs=bash#6-create-app-service-resource-in-visual-studio-code)|
-|アプリ リソース計画を作成する|[Azure CLI](../tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-03.md#create-app-service-plan)|
 |アプリ リソースを作成する|[Azure CLI](../tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-03.md)|
-|デプロイの構成|[Azure CLI](../tutorial/deploy-deno-app-azure-app-service-azure-cli.md#5-configure-the-azure-app-service-webapp)
-|アプリをデプロイする|[Azure CLI](../tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-04.md)|
-|ブラウザーでアプリを表示する|[Azure CLI](../tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-03.md#browse-web-app)|
+|アプリの作成、デプロイ、ブラウザー アプリ、ログの表示|[Azure CLI](../tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-03.md)|
 |アプリ リソースを削除する|[Visual Studio Code 拡張機能](../tutorial/deploy-nodejs-mongodb-app-service-from-visual-studio-code.md#clean-up-resources)<br>[Azure CLI](../tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-07.md)|
 |リモート ログをストリーミングする|[Visual Studio Code 拡張機能](../tutorial/deploy-nodejs-azure-app-service-with-visual-studio-code.md?tabs=bash#7-stream-remote-service-logs-in-visual-studio-code)<br>[Azure CLI](../tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-05.md)|
 
@@ -203,7 +200,7 @@ ms.locfileid: "97974569"
 |MongoDB データベースを使用する Express js アプリ|このチュートリアルでは、拡張機能を使用して VSCode でプロジェクトをローカルに読み込んで実行する方法と、App Service でコードをリモートで実行する方法について説明します。 このチュートリアルでは、Mongo API 用に CosmosDB リソースを作成し、接続情報を取得して、クラウド データベースに接続するように App Service 構成で設定します。<br>[チュートリアル](../tutorial/deploy-nodejs-mongodb-app-service-from-visual-studio-code.md) - [サンプル コード](https://github.com/Azure-Samples/js-e2e-express-mongo)|
 |cloud-init ファイルを使用して VM にデプロイされる Express js アプリ|Express.js アプリ用の Linux 仮想マシン (VM) を作成します。 この VM は、cloud-init 構成ファイルで構成され、NGINX と Express.js アプリの GitHub リポジトリが含まれています。 VM が実行されたら、SSH を使用して VM に接続し、トレースのログ記録を含めるように Web アプリを変更して、公開された Express.js サーバー アプリを Web ブラウザーで表示できます。<br>[チュートリアル](../tutorial/nodejs-virtual-machine-vm/introduction.md) - [サンプル コード](https://github.com/Azure-Samples/js-e2e-express-mongo)|
 
-ご自身の特定のユース ケースをサポートするその他のサンプルを見つけるには、[Azure サンプル ブラウザー](https://docs.microsoft.com/samples/browse/?languages=javascript%2Cnodejs%2Ctypescript)を使用してください。 
+ご自身の特定のユース ケースをサポートするその他のサンプルを見つけるには、[Azure サンプル ブラウザー](/samples/browse/?languages=javascript%2cnodejs%2ctypescript)を使用してください。 
 
 ## <a name="next-steps"></a>次のステップ
 

@@ -5,12 +5,12 @@ keywords: Jenkins, Azure, DevOps, Azure Spring Cloud, Azure CLI
 ms.topic: tutorial
 ms.date: 11/10/2020
 ms.custom: devx-track-jenkins,devx-track-azurecli
-ms.openlocfilehash: e0b98f31ac7f7b079f655c4cb795fe7b38af4508
-ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
+ms.openlocfilehash: ef078589506af95fc05bfd7a85f48757f3cb0242
+ms.sourcegitcommit: 0eb25e1fdafcd64118843748dc061f60e7e48332
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94983971"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98625991"
 ---
 # <a name="tutorial-deploy-apps-to-azure-spring-cloud-using-jenkins-and-the-azure-cli"></a>チュートリアル:Jenkins と Azure CLI を使用して Azure Spring Cloud にアプリをデプロイする
 
@@ -129,7 +129,7 @@ ms.locfileid: "94983971"
 
 ### <a name="add-your-azure-service-principal-credential-in-jenkins-credential-store"></a>Azure サービス プリンシパルの資格情報を Jenkins 資格情報ストアに追加する
 
-1. Azure にデプロイするには、Azure サービス プリンシパルが必要です。 詳細については、Azure App Service へのデプロイに関するチュートリアルの「[サービス プリンシパルの作成](deploy-from-github-to-azure-app-service.md#create-service-principal)」セクションを参照してください。 `az ad sp create-for-rbac` からの出力は次のようになります。
+1. Azure にデプロイするには、Azure サービス プリンシパルが必要です。 詳細については、Azure App Service へのデプロイに関するチュートリアルの「[サービス プリンシパルの作成](./deploy-to-azure-app-service-using-azure-cli.md#add-azure-service-principal-to-a-jenkins-credential)」セクションを参照してください。 `az ad sp create-for-rbac` からの出力は次のようになります。
 
     ```
     {
@@ -161,7 +161,7 @@ ms.locfileid: "94983971"
 
 サンプル パイプラインでは、Maven を使用してビルドし、Az CLI を使用してサービス インスタンスにデプロイします。 Jenkins のインストール時に、*jenkins* という名前の管理者アカウントが作成されます。 ユーザー *jenkins* に spring-cloud 拡張機能を実行するアクセス許可があることを確認します。
 
-1. SSH 経由で Jenkins マスターに接続します。
+1. SSH 経由で Jenkins コントローラーに接続します。
 
 1. Maven をインストールします。
 

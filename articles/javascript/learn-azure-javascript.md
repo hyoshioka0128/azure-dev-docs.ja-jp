@@ -2,14 +2,14 @@
 title: Azure と JavaScript を使用した開発について学習する
 description: Microsoft Learn プラットフォームを使用して、JavaScript を使用した Azure の理解を深める
 ms.topic: reference
-ms.date: 01/05/2021
+ms.date: 01/14/2021
 ms.custom: devx-track-js
-ms.openlocfilehash: 3b37f31d9df4c152874f4c913fbc59a369636640
-ms.sourcegitcommit: 075f39972e390e79ed09a3fcfdbfc776727e08fc
+ms.openlocfilehash: 7fd0fd26b1b0133faf8cf21bd7b29afdbd37f5aa
+ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97952474"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98561678"
 ---
 # <a name="learn-to-develop-with-azure-and-javascript"></a>Azure と JavaScript を使用した開発について学習する 
 
@@ -24,10 +24,15 @@ Microsoft Learn プラットフォームまたは Microsoft ラーニング パ�
 * [Node.js アプリでファイルとディレクトリを操作する](/learn/modules/nodejs-files/)
 * [組み込みのデバッガーと Visual Studio Code デバッガーを使用して Node.js アプリを対話形式でデバッグする](/learn/modules/debug-nodejs/)
 
+## <a name="typescript"></a>TypeScript
+
+* [プレイグラウンド](https://www.typescriptlang.org/play)
+
 ## <a name="getting-started"></a>作業の開始
 
 * [初心者向け JavaScript](https://techcommunity.microsoft.com/t5/apps-on-azure/learn-javascript-with-this-series-of-videos-for-beginners/ba-p/1764635)
 * [初心者向け Web 開発](https://github.com/microsoft/Web-Dev-For-Beginners)
+* [React - プレビュー](https://github.com/geektrainer/learn-react)
 * [Babylon.js を使用した 3D アプリ](https://techcommunity.microsoft.com/t5/apps-on-azure/a-first-introduction-to-building-3d-applications-with-javascript/ba-p/1877650)
 * [初心者向け Node.js](https://techcommunity.microsoft.com/t5/apps-on-azure/learn-node-js-with-this-series-of-short-videos-for-beginners/ba-p/1771830)
 
@@ -37,16 +42,16 @@ Microsoft Learn プラットフォームまたは Microsoft ラーニング パ�
 
 ### <a name="static-web-apps"></a>静的 Web アプリ
 
-* [静的 Web アプリ、JavaScript、CodeTour:バスケットボールの統計を使用して、Visual Studio Code でゲーム プレイを最適化する (SPACE JAM にインスパイアされています):新しいレガシ](https://docs.microsoft.com/learn/paths/optimize-basketball-games-with-machine-learning/)
+* [静的 Web アプリ、JavaScript、CodeTour:バスケットボールの統計を使用して、Visual Studio Code でゲーム プレイを最適化する (SPACE JAM にインスパイアされています):新しいレガシ](/learn/paths/optimize-basketball-games-with-machine-learning/)
 * [Azure Static Web Apps を使用して Angular、React、Svelte、または Vue の JavaScript アプリを発行する](/learn/modules/publish-app-service-static-web-app-api/)
 * [Gatsby と Azure Static Web Apps で静的 Web アプリを作成して発行する](/learn/modules/create-deploy-static-webapp-gatsby-app-service/)
-* [HTML、CSS、および JavaScript を使用してシンプルな Web サイトを構築する](https://docs.microsoft.com/learn/modules/build-simple-website/)
+* [HTML、CSS、および JavaScript を使用してシンプルな Web サイトを構築する](/learn/modules/build-simple-website/)
 
 ### <a name="serverless-apis"></a>サーバーレス API
 
 * [Azure Functions を使用してサーバーレス API をビルドする](/learn/modules/build-api-azure-functions/)
 * [Azure Functions で Node.js と Express API をサーバーレス API にリファクターする](/learn/modules/shift-nodejs-express-apis-serverless/)
-* [Visual Studio Code を使用して、Azure Functions と Node.js を備えたサーバーレス API で JavaScript と Vue.js ダッシュボードを構築します。](https://docs.microsoft.com/learn/modules/build-api-azure-functions)
+* [Visual Studio Code を使用して、Azure Functions と Node.js を備えたサーバーレス API で JavaScript と Vue.js ダッシュボードを構築します。](/learn/modules/build-api-azure-functions)
 
 ### <a name="devops-cicd"></a>DevOps (CI/CD)
 

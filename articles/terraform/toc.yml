@@ -21,6 +21,10 @@
       items:
         - name: Terraform および Azure プロバイダーのデプロイ スロット
           href: provision-infrastructure-using-azure-deployment-slots.md
+    - name: ネットワーク
+      items:
+        - name: Azure Network Watcher を構成する
+          href: create-network-watcher-nsg-flow-logs.md
     - name: Containers
       items:
         - name: AKS を使用して Kubernetes クラスターを作成する

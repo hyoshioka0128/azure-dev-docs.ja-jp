@@ -73,6 +73,8 @@
           items:
             - name: Express.js と VS Code
               href: tutorial/deploy-nodejs-azure-app-service-with-visual-studio-code.md
+            - name: Cognitive Services を使用してテキストを音声に変換する
+              href: tutorial/convert-text-to-speech-cognitive-services.md
             - name: Express.js と MongoDB (Cosmos) データベース
               href: tutorial/deploy-nodejs-mongodb-app-service-from-visual-studio-code.md
             - name: Azure CLI での作成と Git でのデプロイ

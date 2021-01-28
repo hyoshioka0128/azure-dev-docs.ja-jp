@@ -4,12 +4,12 @@ description: Python アプリでの機械学習に関する Azure ドキュメ�
 ms.date: 05/28/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 6f36d3059f616a3b149113108f8dfd922abcf57e
-ms.sourcegitcommit: a5a47f96602996f2867ac1405f9ea18daed23a23
+ms.openlocfilehash: 960ab460eb12641f61f071d53f2ead1a811472fb
+ms.sourcegitcommit: 3d906f265b748fbc0a070fce252098675674c8d9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88200593"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98699640"
 ---
 # <a name="machine-learning-for-python-apps-on-azure"></a>Azure の Python アプリでの機械学習
 
@@ -21,5 +21,5 @@ ms.locfileid: "88200593"
 - [ML モデルを自動トレーニングする](/azure/machine-learning/tutorial-auto-train-models)
 - [Azure Machine Learning Python クライアント ライブラリを使って Python のデータ セットにアクセスする](/azure/machine-learning/team-data-science-process/python-data-access)
 - [Python で自動 ML の実験を構成する](/azure/machine-learning/how-to-configure-auto-train)
-- [Azure DevOps を使用してデータ パイプラインをデプロイする](/azure/devops/pipelines/apps/cd/azure/cicd-data-overview?view=azure-devops)
+- [Azure DevOps を使用してデータ パイプラインをデプロイする](/azure/devops/pipelines/apps/cd/azure/cicd-data-overview)
 - [Azure Machine Learning SDK で機械学習パイプラインを作成して管理する](/azure/machine-learning/how-to-create-your-first-pipeline)

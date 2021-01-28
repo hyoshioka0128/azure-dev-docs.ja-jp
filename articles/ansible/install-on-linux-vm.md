@@ -5,12 +5,12 @@ keywords: Ansible, Azure, DevOps, Bash, CloudShell, プレイブック, Azure CL
 ms.topic: quickstart
 ms.date: 09/30/2020
 ms.custom: devx-track-ansible, devx-track-azurecli
-ms.openlocfilehash: b01cf6925f19ae6dc561358546f9ee3b945cad4f
-ms.sourcegitcommit: 5c7f5fef798413b1a304cc9ee31c8518b73f27eb
+ms.openlocfilehash: a16e9affb6153d1defea2f5233a62f78d3b85ae8
+ms.sourcegitcommit: 8eb1c379b2bbc2acdd82fc9d24d8ed948e5a6847
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93066251"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98811131"
 ---
 # <a name="quickstart-configure-ansible-using-azure-cli"></a>クイック スタート:Azure CLI を使用した Ansible の構成
 
@@ -30,7 +30,7 @@ ms.locfileid: "93066251"
 
 [!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../includes/open-source-devops-prereqs-azure-subscription.md)]
 [!INCLUDE [open-source-devops-prereqs-create-sp.md](../includes/open-source-devops-prereqs-create-service-principal.md)]
-- **Linux または Linux 仮想マシンへのアクセス** - Linux マシンを所有していない場合は、 [Linux 仮想マシン](/azure/virtual-network/quick-create-cli)を作成してください。
+- **Linux または Linux 仮想マシンへのアクセス** - Linux マシンを所有していない場合は、[Linux 仮想マシン](/azure/virtual-network/quick-create-cli)を作成してください。
 
 ## <a name="create-an-ssh-key-pair"></a>SSH キー ペアの作成
 
@@ -38,14 +38,14 @@ Linux VM に接続する場合、パスワード認証またはキーベース�
 
 キーベースの認証では、次の 2 つのキーがあります。
 
-- **公開キー** : 公開キーは、(この記事のように) VM 上などのホストに格納されます。
-- **秘密キー** : 秘密キーを使用すると、ホストに安全に接続できます。 秘密キーは事実上パスワードであり、そのように保護する必要があります。
+- **公開キー**: 公開キーは、(この記事のように) VM 上などのホストに格納されます。
+- **秘密キー**: 秘密キーを使用すると、ホストに安全に接続できます。 秘密キーは事実上パスワードであり、そのように保護する必要があります。
         
 次の手順では、SSH キーの組を作成する方法について説明します。
 
 1. [Azure portal](https://portal.azure.com) にサインインします。
 
-1. [Azure Cloud Shell](/azure/cloud-shell/overview) を開き、 **Bash** に切り替えます (まだ行っていない場合)。
+1. [Azure Cloud Shell](/azure/cloud-shell/overview) を開き、**Bash** に切り替えます (まだ行っていない場合)。
 
 1. [ssh-keygen](https://www.ssh.com/ssh/keygen/) を使用して SSH キーを作成します。
 
@@ -53,7 +53,7 @@ Linux VM に接続する場合、パスワード認証またはキーベース�
     ssh-keygen -m PEM -t rsa -b 2048 -C "azureuser@azure" -f ~/.ssh/ansible_rsa -N ""
     ```
 
-    **注** :
+    **注**:
 
     - `ssh-keygen` コマンドは、生成されたキー ファイルの場所を表示します。 このディレクトリ名は、仮想マシンを作成するときに必要になります。
     - 公開キーは `ansible_rsa.pub` に格納され、秘密キーは `ansible_rsa` に格納されます。
@@ -83,7 +83,7 @@ Linux VM に接続する場合、パスワード認証またはキーベース�
     az vm list -d -o table --query "[?name=='QuickstartAnsible-vm']"
     ```
 
-    **注** :
+    **注**:
 
     - `az vm list` コマンドからの出力には、SSH 経由で仮想マシンに接続するために使用されるパブリック IP アドレスが含まれます。
 
@@ -132,7 +132,7 @@ Ansible Tower または Jenkins を使っている場合は、サービス プ�
 
 このセクションでは、Ansible に資格情報を提供するためのローカル資格情報ファイルを作成します。
 
-Ansible の資格情報の定義について詳しくは、「[Providing Credentials to Azure Modules (Azure モジュールに資格情報を提供する)](https://docs.ansible.com/ansible/guide_azure.html#providing-credentials-to-azure-modules)」をご覧ください。
+Ansible の資格情報の定義について詳しくは、「[Providing Credentials to Azure Modules (Azure モジュールに資格情報を提供する)](https://docs.ansible.com/ansible/latest/scenario_guides/guide_azure.html)」をご覧ください。
 
 1. ホスト仮想マシンに正常に接続したら、`credentials` という名前のファイルを作成して開きます。
 

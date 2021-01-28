@@ -7,11 +7,12 @@ ms.service: mobile-services
 ms.topic: article
 ms.date: 06/08/2020
 ms.author: masoucou
-ms.openlocfilehash: 19b83e0dcc161c87e5a70eb6f8d4bbac29858c7b
-ms.sourcegitcommit: f02ff55cef47581303a217cf1d310879cd722237
+ms.openlocfilehash: 82ce8246b916549d2207a10d96de89ad26cde49c
+ms.sourcegitcommit: 3d906f265b748fbc0a070fce252098675674c8d9
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84632464"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98699890"
 ---
 # <a name="automate-the-lifecycle-of-your-apps-with-continuous-build-and-integration"></a>継続的なビルドとインテグレーションによってアプリのライフサイクルを自動化する
 
@@ -67,8 +68,8 @@ Visual Studio App Center サービスの追加機能により、ご利用のワ�
 
 ### <a name="azure-pipelines-references"></a>Azure Pipelines の参考資料
 
-- [Azure Pipelines での作業の開始に関するガイド](/azure/devops/pipelines/get-started/pipelines-get-started?view=azure-devops)
+- [Azure Pipelines での作業の開始に関するガイド](/azure/devops/pipelines/get-started/pipelines-get-started)
 - [Azure DevOps を使用して作業を開始する](https://app.vsaex.visualstudio.com/signup/)
-- [クイック スタート](/azure/devops/pipelines/create-first-pipeline?view=azure-devops&tabs=tfs-2018-2)
+- [クイック スタート](/azure/devops/pipelines/create-first-pipeline?tabs=tfs-2018-2)
 
 自分のアプリケーション ビルドに適したサービスの選択を楽にするには、[App Center Build と Azure Pipelines](/appcenter/build/choose-between-services) の比較に関する記事に従ってください。

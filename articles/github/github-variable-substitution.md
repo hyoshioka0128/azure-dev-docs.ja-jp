@@ -5,22 +5,22 @@ author: juliakm
 ms.author: jukullam
 ms.topic: conceptual
 ms.service: azure
-ms.date: 11/18/2020
+ms.date: 01/25/2021
 ms.custom: github-actions-azure
-ms.openlocfilehash: 0e3f3b11980c987ef4f7a288380b9517ad88d777
-ms.sourcegitcommit: 418e446e6ada5d50df283401df4f6b6370a356b9
+ms.openlocfilehash: e2a82fbcbe48269339dc672d46aca4cc3601ae12
+ms.sourcegitcommit: 6fbf9e489b194586887a2c11152044be5b3a2b99
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96120548"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98759501"
 ---
 # <a name="use-variable-substitution-with-github-actions"></a>GitHub Actions の variable substitution を使用する
 
 [variable substitution アクション](https://github.com/marketplace/actions/variable-substitution)を使用して、XML、JSON、および YAML ベースの構成およびパラメーターのファイル内の値を置換する方法について説明します。
 
-variable substitution を使用すると、ワークフローの実行中にリポジトリ内のファイルに [GitHub シークレット](https://docs.github.com/en/free-pro-team@latest/actions/reference/encrypted-secrets)を含む値を挿入できます。 たとえば、ワークフローの実行中に、API ログインとパスワードを JSON ファイルに挿入できます。
+variable substitution を使用すると、ワークフローの実行中にリポジトリ内のファイルに [GitHub シークレット](https://docs.github.com/en/actions/reference/encrypted-secrets)を含む値を挿入できます。 たとえば、ワークフローの実行中に、API ログインとパスワードを JSON ファイルに挿入できます。
 
-variable substitution は、オブジェクト階層で事前に定義されているキーに対してのみ機能します。 variable substitution を使用して新しいキーを作成することはできません。 また、ワークフロー内の[環境変数](https://docs.github.com/en/free-pro-team@latest/actions/reference/environment-variables)として定義されている変数や、既に使用可能なシステム変数のみを置換に使用できます。
+variable substitution は、オブジェクト階層で事前に定義されているキーに対してのみ機能します。 variable substitution を使用して新しいキーを作成することはできません。 また、ワークフロー内の[環境変数](https://docs.github.com/en/actions/reference/environment-variables)として定義されている変数や、既に使用可能なシステム変数のみを置換に使用できます。
 
 ## <a name="prerequisites"></a>前提条件
 

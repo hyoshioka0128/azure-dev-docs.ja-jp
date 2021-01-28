@@ -5,12 +5,12 @@ keywords: Ansible, Azure, DevOps, 概要, クラウド プロビジョニング,
 ms.topic: overview
 ms.date: 08/13/2020
 ms.custom: devx-track-ansible
-ms.openlocfilehash: 9eb90921a0d44e138c331eb716700feb85e8aa9d
-ms.sourcegitcommit: 717e32b68fc5f4c986f16b2790f4211967c0524b
+ms.openlocfilehash: 9943dd0dbdd1b352d245bc471538e1a05d464c99
+ms.sourcegitcommit: 8eb1c379b2bbc2acdd82fc9d24d8ed948e5a6847
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91586103"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98811099"
 ---
 # <a name="using-ansible-with-azure"></a>Azure での Ansible の使用
 
@@ -38,7 +38,7 @@ Ansible を使用すると、[Azure Functions](https://azure.microsoft.com//serv
 
 ## <a name="manage-deployments-with-dynamic-inventory"></a>動的インベントリによるデプロイの管理
 
-Ansible では、[動的インベントリ](https://docs.ansible.com/ansible/intro_dynamic_inventory.html)機能を使用して、Azure リソースからインベントリをプルすることができます。 既存の Azure デプロイにタグを付け、タグを付けたデプロイを Ansible で管理することができます。
+Ansible では、[動的インベントリ](https://docs.ansible.com/ansible/latest/user_guide/intro_dynamic_inventory.html)機能を使用して、Azure リソースからインベントリをプルすることができます。 既存の Azure デプロイにタグを付け、タグを付けたデプロイを Ansible で管理することができます。
 
 ## <a name="additional-azure-marketplace-options"></a>その他の Azure Marketplace オプション
 

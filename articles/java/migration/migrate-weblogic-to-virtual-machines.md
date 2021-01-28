@@ -6,12 +6,12 @@ ms.author: edburns
 ms.topic: conceptual
 ms.date: 1/27/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: 3b6d9847cc72f246587a36b74173521736a6cc9a
-ms.sourcegitcommit: b923aee828cd4b309ef92fe1f8d8b3092b2ffc5a
+ms.openlocfilehash: 58ed07c18fdb8492cf7f2c19883f3cf0288d9cc1
+ms.sourcegitcommit: 3d906f265b748fbc0a070fce252098675674c8d9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88052263"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98699980"
 ---
 # <a name="migrate-weblogic-server-applications-to-azure-virtual-machines"></a>WebLogic Server のアプリケーションを Azure Virtual Machines に移行する
 
@@ -159,7 +159,7 @@ CI/CD パイプラインまたは手動デプロイ システムからのアク�
 
 * Azure Storage を使用して、仮想マシンにマウントされた静的コンテンツを提供します。 詳細については、[仮想マシンでのデータ ディスクのアタッチまたはデタッチ](/azure/lab-services/devtest-lab-attach-detach-data-disk)に関する記事を参照してください。
 
-* Azure DevOps を使用して、移行した WebLogic クラスターにアプリケーションをデプロイします。 詳細については、[Azure DevOps の使用開始に関するドキュメント](/azure/devops/get-started/?view=azure-devops)を参照してください。
+* Azure DevOps を使用して、移行した WebLogic クラスターにアプリケーションをデプロイします。 詳細については、[Azure DevOps の使用開始に関するドキュメント](/azure/devops/get-started)を参照してください。
 
 * Azure Application Gateway と共に WebLogic Server をデプロイした場合 (「[チュートリアル: ロード バランサーとして Azure Application Gateway を使用して Azure に WebLogic Server クラスターを移行する](migrate-weblogic-with-app-gateway.md)」の手順に従います)、Application Gateway で追加の構成を行うことができます。  詳細については、「[Application Gateway 構成の概要](/azure/application-gateway/configuration-overview)」を参照してください。
 

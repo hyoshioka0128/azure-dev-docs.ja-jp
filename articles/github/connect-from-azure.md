@@ -7,12 +7,12 @@ ms.topic: reference
 ms.service: azure
 ms.date: 11/17/2020
 ms.custom: github-actions-azure, devx-track-azurecli
-ms.openlocfilehash: d835fb755a2acecba3e7ad173ef9d6c036d59546
-ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
+ms.openlocfilehash: 6310254e450c7e0fc648459ddad2c08b1bba555b
+ms.sourcegitcommit: 6fbf9e489b194586887a2c11152044be5b3a2b99
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/18/2021
-ms.locfileid: "98561748"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98759517"
 ---
 # <a name="use-github-actions-to-connect-to-azure"></a>GitHub Actions を使用して Azure に接続する
 
@@ -80,7 +80,7 @@ login アクションを設定したら、Azure CLI または Azure PowerShell �
 
 Azure で認証するには、サービス プリンシパル シークレットと [Azure Login アクション](https://github.com/Azure/login)を使用します。
 
-このワークフローでは、`secrets.AZURE_CREDENTIALS` に格納されているサービス プリンシパルの詳細を使用して、Azure login アクションを使って認証を行います。 次に、Azure CLI アクションを実行します。 ワークフロー ファイルで GitHub シークレットを参照する方法の詳細については、GitHub Docs の「[ワークフローでの暗号化されたシークレットの使用](https://docs.github.com/en/free-pro-team@latest/actions/reference/encrypted-secrets#using-encrypted-secrets-in-a-workflow)」をご覧ください。
+このワークフローでは、`secrets.AZURE_CREDENTIALS` に格納されているサービス プリンシパルの詳細を使用して、Azure login アクションを使って認証を行います。 次に、Azure CLI アクションを実行します。 ワークフロー ファイルで GitHub シークレットを参照する方法の詳細については、GitHub Docs の「[ワークフローでの暗号化されたシークレットの使用](https://docs.github.com/en/actions/reference/encrypted-secrets#using-encrypted-secrets-in-a-workflow)」をご覧ください。
 
 動作する Azure ログイン ステップを作成したら、[Azure PowerShell](https://github.com/Azure/PowerShell) または[ Azure CLI](https://github.com/Azure/CLI) のアクションを使用できます。 [Azure Webapp のデプロイ](https://github.com/Azure/webapps-deploy)や [Azure Functions](https://github.com/Azure/functions-action) など、その他の Azure Actions を使用することもできます。
 

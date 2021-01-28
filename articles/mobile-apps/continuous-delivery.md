@@ -7,11 +7,12 @@ ms.service: mobile-services
 ms.topic: article
 ms.date: 06/08/2020
 ms.author: masoucou
-ms.openlocfilehash: 96ca72ffb239b7baa48c06f09afe08a2653e3e0b
-ms.sourcegitcommit: f02ff55cef47581303a217cf1d310879cd722237
+ms.openlocfilehash: 6cb18fed3db2ad46c96b7ff20684727aa2e35064
+ms.sourcegitcommit: 3d906f265b748fbc0a070fce252098675674c8d9
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84632374"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98699770"
 ---
 # <a name="automate-the-deployment-and-release-of-your-mobile-applications-with-continuous-delivery-services"></a>継続的デリバリー サービスを使用してモバイル アプリケーションのデプロイとリリースを自動化する
 
@@ -62,7 +63,7 @@ ms.locfileid: "84632374"
 
 #### <a name="azure-pipelines-references"></a>Azure Pipelines の参考資料
 
-- [Azure Pipelines での作業の開始に関するガイド](/azure/devops/pipelines/get-started/pipelines-get-started?view=azure-devops)
+- [Azure Pipelines での作業の開始に関するガイド](/azure/devops/pipelines/get-started/pipelines-get-started)
 - [Azure DevOps を使用して作業を開始する](https://app.vsaex.visualstudio.com/signup/)
   
 ## <a name="distribute-your-application-directly-to-app-stores"></a>アプリケーションをアプリ ストアに直接配布する

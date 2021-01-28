@@ -7,20 +7,20 @@ ms.topic: conceptual
 ms.service: azure
 ms.date: 10/30/2020
 ms.custom: github-actions-azure
-ms.openlocfilehash: b5b3192d1d65515dc3741be80bbab018f9cf5f09
-ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
+ms.openlocfilehash: 7309bd16cdecf8b148b89eb40649864590b552a6
+ms.sourcegitcommit: 8eb1c379b2bbc2acdd82fc9d24d8ed948e5a6847
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/18/2021
-ms.locfileid: "98561738"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98811093"
 ---
 # <a name="what-is-github-actions-for-azure"></a>Azure 向けの GitHub Actions とは
 
-[GitHub Actions](https://help.github.com/articles/about-github-actions) は、GitHub 内からソフトウェア開発ワークフローを自動化するのに役立ちます。 コードを保存する場所と同じ場所にワークフローをデプロイし、プル要求や問題に対して共同作業を行うことができます。
+[GitHub Actions](https://docs.github.com/en/free-pro-team@latest/actions) は、GitHub 内からソフトウェア開発ワークフローを自動化するのに役立ちます。 コードを保存する場所と同じ場所にワークフローをデプロイし、プル要求や問題に対して共同作業を行うことができます。
 
-GitHub Actions の[ワークフロー](https://help.github.com/articles/about-github-actions#workflow)とは、お使いの GitHub リポジトリで設定する自動化されたプロセスです。 ワークフローを使用すると、任意のプロジェクトを GitHub でビルド、テスト、パッケージ化、リリース、またはデプロイできます。
+GitHub Actions の[ワークフロー](https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions/introduction-to-github-actions)とは、お使いの GitHub リポジトリで設定する自動化されたプロセスです。 ワークフローを使用すると、任意のプロジェクトを GitHub でビルド、テスト、パッケージ化、リリース、またはデプロイできます。
 
-各ワークフローは、特定のイベント (プル要求など) が発生した後に実行される個々の[アクション](https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions/introduction-to-github-actions)で構成されます。  個々のアクションは、ソフトウェア開発タスクを自動化する、パッケージ化されたスクリプトです。
+各ワークフローは、特定のイベント (プル要求など) が発生した後に実行される個々の[アクション](https://docs.github.com/en/actions/learn-github-actions/introduction-to-github-actions)で構成されます。  個々のアクションは、ソフトウェア開発タスクを自動化する、パッケージ化されたスクリプトです。
 
 Azure 向けの GitHub Actions を使用すると、ビルド、テスト、パッケージ化、リリース、および Azure へのデプロイを行うために設定可能なワークフローをリポジトリ内に作成できます。 Azure 向けの GitHub Actions では、Azure App Service、Azure Functions、Azure Key Vault などの Azure サービスがサポートされています。
 
@@ -32,11 +32,11 @@ GitHub Actions を使用した継続的デリバリーの詳細については�
 
 ## <a name="why-should-i-use-github-actions-for-azure"></a>Azure 向けの GitHub Actions を使用する理由
 
-Azure 向けの GitHub Actions は、Microsoft によって開発されたものであり、Azure で使用するように設計されています。 Azure 向けのすべての GitHub Actions は、[GitHub Marketplace](https://github.com/marketplace?query=Azure&type=actions) で確認できます。 アクションをワークフローに組み込む方法の詳細については、「[アクションの検索とカスタマイズ](https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions/finding-and-customizing-actions)」をご覧ください。
+Azure 向けの GitHub Actions は、Microsoft によって開発されたものであり、Azure で使用するように設計されています。 Azure 向けのすべての GitHub Actions は、[GitHub Marketplace](https://github.com/marketplace?query=Azure&type=actions) で確認できます。 アクションをワークフローに組み込む方法の詳細については、「[アクションの検索とカスタマイズ](https://docs.github.com/en/actions/learn-github-actions/finding-and-customizing-actions)」をご覧ください。
 
 ## <a name="what-is-the-difference-between-github-actions-and-azure-pipelines"></a>GitHub Actions と Azure Pipelines の違いは何ですか
 
-Azure Pipelines と GitHub Actions はどちらも、ソフトウェア開発ワークフローの自動化に役立ちます。 これらのサービスの違いと、Azure Pipelines から GitHub Actions への移行方法に関する[詳細情報](https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions/migrating-from-azure-pipelines-to-github-actions)をご覧ください。
+Azure Pipelines と GitHub Actions はどちらも、ソフトウェア開発ワークフローの自動化に役立ちます。 これらのサービスの違いと、Azure Pipelines から GitHub Actions への移行方法に関する[詳細情報](https://docs.github.com/en/actions/learn-github-actions/migrating-from-azure-pipelines-to-github-actions)をご覧ください。
 
 ## <a name="what-do-i-need-to-use-github-actions-for-azure"></a>Azure 向けの GitHub Actions を使用するには何が必要ですか
 
@@ -53,7 +53,7 @@ Azure login アクションは、[Azure CLI](https://github.com/marketplace/acti
 
 ## <a name="what-is-included-in-a-github-actions-workflow"></a>GitHub Actions ワークフローに含まれる内容
 
-ワークフローは、1 つ以上のジョブで構成されます。 ジョブ内には、個々のアクションで構成されるステップがあります。 GitHub Actions の概念の詳細については、「[GitHub Actions の概要](https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions/introduction-to-github-actions)」をご覧ください。  
+ワークフローは、1 つ以上のジョブで構成されます。 ジョブ内には、個々のアクションで構成されるステップがあります。 GitHub Actions の概念の詳細については、「[GitHub Actions の概要](https://docs.github.com/en/actions/learn-github-actions/introduction-to-github-actions)」をご覧ください。  
 
 ## <a name="where-can-i-see-complete-workflow-examples"></a>完成したワークフローの例はどこで確認できますか
 

@@ -4,12 +4,12 @@ description: Python アプリで使用されるその他のサービスに関す
 ms.date: 05/28/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 1a58973b0e51f488c0b8afbbbe473cbbfc088c24
-ms.sourcegitcommit: 980efe813d1f86e7e00929a0a3e1de83514ad7eb
+ms.openlocfilehash: 6ecbd510195fea9f4e4c4dfb09abdfb385bd55d2
+ms.sourcegitcommit: 3d906f265b748fbc0a070fce252098675674c8d9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87982874"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98699630"
 ---
 # <a name="other-services-for-python-apps-on-azure"></a>Azure での Python アプリ用のその他のサービス
 
@@ -22,7 +22,7 @@ ms.locfileid: "87982874"
 
 - **DevOps**:
   - [Azure DevOps Starter を使用して Python 用の CI/CD パイプラインを作成する](/azure/devops-project/azure-devops-project-python)
-  - [Python アプリをビルドする](/azure/devops/pipelines/ecosystems/python?view=azure-devops)
+  - [Python アプリをビルドする](/azure/devops/pipelines/ecosystems/python)
 
 - **地理的マッピング**:
   - [チュートリアル:Azure Notebooks を使用して電気自動車のルートを案内する](/azure/azure-maps/tutorial-ev-routing)

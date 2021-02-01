@@ -143,6 +143,8 @@
           href: how-to/configure-web-app-settings.md
         - name: JavaScript 開発者向けのタスク
           href: how-to/common-javascript-tasks.md
+        - name: 変更のために GitHub リポジトリをクローンする
+          href: how-to/with-visual-studio-code/clone-github-repository.md
         - name: VS Code を使用したエンド ツー エンドの Node.js
           href: how-to/develop-nodejs-on-azure.md
         - name: Web アプリをデプロイする

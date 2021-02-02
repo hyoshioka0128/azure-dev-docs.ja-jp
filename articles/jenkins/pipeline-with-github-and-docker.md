@@ -5,12 +5,12 @@ keywords: Jenkins, Azure, DevOps, パイプライン, CICD, Docker
 ms.topic: tutorial
 ms.date: 03/27/2017
 ms.custom: devx-track-jenkins, devx-track-azurecli
-ms.openlocfilehash: debcd94b885813a8f1a1640d4eb46e75b36c4d6c
-ms.sourcegitcommit: 4dac39849ba2e48034ecc91ef578d11aab796e58
+ms.openlocfilehash: 10bc92098b565ce2e4c9395c661716279e397659
+ms.sourcegitcommit: 3d906f265b748fbc0a070fce252098675674c8d9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "96035460"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98699720"
 ---
 # <a name="tutorial-create-a-jenkins-pipeline-using-github-and-docker"></a>チュートリアル:GitHub と Docker を使用して Jenkins パイプラインを作成する
 
@@ -125,7 +125,7 @@ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 
 Web ブラウザーを開いて､`http://<publicIps>:8080` に移動します｡ 次のようにして Jenkins の初期設定を行います｡
 
-- **[Select plugins to install]** を選択します。
+- **[Select plug-ins to install]\(インストールするプラグインの選択\)** を選択します。
 - 上部のテキスト ボックスで *GitHub* を検索します。 *GitHub* のチェック ボックスをオンにし、 **[Install]\(インストール\)** を選択します
 - 最初の管理者ユーザーを作成します。 **admin** などのユーザー名を入力し、独自の安全なパスワードを入力します。 最後に、フル ネームとメール アドレスを入力します。
 - **[Save and Finish]\(保存して終了する\)** を選択します

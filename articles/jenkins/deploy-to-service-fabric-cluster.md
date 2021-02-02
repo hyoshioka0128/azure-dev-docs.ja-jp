@@ -5,12 +5,12 @@ keywords: jenkins, azure, devops, cicd, linux, service fabric, クラスター
 ms.topic: tutorial
 ms.date: 07/31/2018
 ms.custom: devx-track-jenkins
-ms.openlocfilehash: a995ba92202955628f39b2c26fe7a158c470d971
-ms.sourcegitcommit: 0eb25e1fdafcd64118843748dc061f60e7e48332
+ms.openlocfilehash: 91e4602184ab1351c935a083841e045f9b764308
+ms.sourcegitcommit: 3d906f265b748fbc0a070fce252098675674c8d9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98626007"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98699930"
 ---
 # <a name="tutorial-deploy-to-a-service-fabric-cluster"></a>チュートリアル:Service Fabric クラスターへのデプロイ
 
@@ -20,7 +20,7 @@ ms.locfileid: "98626007"
 1. その後、次のいずれかのセクションの手順に従って、Jenkins をセットアップします。
    * [Service Fabric クラスター内での Jenkins のセットアップ](#set-up-jenkins-inside-a-service-fabric-cluster)、 
    * [Service Fabric クラスター外での Jenkins のセットアップ](#set-up-jenkins-outside-a-service-fabric-cluster)、または
-   * [既存の Jenkins 環境への Service Fabric プラグインのインストール](#install-service-fabric-plugin-in-an-existing-jenkins-environment)。
+   * [既存の Jenkins 環境への Service Fabric プラグインのインストール](#install-service-fabric-plug-in-in-an-existing-jenkins-environment)。
 1. Jenkins を設定したら、「[Jenkins ジョブの作成と構成](#create-and-configure-a-jenkins-job)」の手順に従って、アプリケーションに変更が加えられたときに Jenkins をトリガーするように GitHub をセットアップしたり、GitHub から変更をプルしてアプリケーションをビルドするビルド ステップを使用して Jenkins ジョブ パイプラインを構成したりします。 
 1. 最後に、アプリケーションを Service Fabric クラスターにデプロイするように、Jenkins ジョブのビルド後のステップを構成します。 アプリケーションをクラスターにデプロイするように Jenkins を構成する方法は 2 つあります。    
    * 開発およびテスト環境では、「[クラスター管理エンドポイントを使用してデプロイを構成する](#configure-deployment-using-cluster-management-endpoint)」に従ってください。 この方法は、デプロイの最も簡単なセットアップ方法です。
@@ -32,7 +32,7 @@ ms.locfileid: "98626007"
 - この記事では、アプリケーションのビルドとデプロイのために GitHub にある *Service Fabric Getting Started Sample* ([https://github.com/Azure-Samples/service-fabric-java-getting-started](https://github.com/Azure-Samples/service-fabric-java-getting-started)) を使用します。 このリポジトリをフォークして従うことも、手順を一部変更して独自の GitHub プロジェクトを使用することもできます。
 
 
-## <a name="install-service-fabric-plugin-in-an-existing-jenkins-environment"></a>既存の Jenkins 環境への Service Fabric プラグインのインストール
+## <a name="install-service-fabric-plug-in-in-an-existing-jenkins-environment"></a>既存の Jenkins 環境への Service Fabric プラグインのインストール
 
 Service Fabric プラグインを既存の Jenkins 環境に追加する場合は、次の手順を実行する必要があります。
 
@@ -139,7 +139,7 @@ Jenkins は、Service Fabric クラスター内外でセットアップできま
    ```sh
    cat PATH_TO_INITIAL_ADMIN_PASSWORD # This displays the password value
    ```
-1. Jenkins の最初のページで、[Select plugins to install (インストールするプラグインの選択)] オプションを選択し、 **[None (なし)]** チェックボックスを選択して、[Install (インストール)] をクリックします。
+1. Jenkins の最初のページで、[Select plug-in to install]\(インストールするプラグインの選択\) オプションを選択し、 **[None]\(なし\)** チェックボックスを選択して、[Install]\(インストール\) をクリックします。
 1. ユーザーを作成するか、管理者として続行します。
 
 Jenkins をセットアップした後は、「[Jenkins ジョブの作成と構成](#create-and-configure-a-jenkins-job)」に進んでください。  
@@ -157,7 +157,7 @@ Jenkins は、Service Fabric クラスターの内部か外部でセットアッ
     wget -qO- https://get.docker.io/ | sh
     ```
 
-1. Service Fabric Jenkins コンテナー イメージを取得します`docker pull rapatchi/jenkins:latest`。 このイメージは、プリインストールされた Service Fabric Jenkins プラグインから取得されます。
+1. Service Fabric Jenkins コンテナー イメージを取得します`docker pull rapatchi/jenkins:latest`。 このイメージには Service Fabric Jenkins プラグインがプレインストールされています。
 1. コンテナー イメージを実行します。`docker run -itd -p 8080:8080 rapatchi/jenkins:latest`
 1. コンテナー イメージ インスタンスの ID を取得します。 `docker ps –a` コマンドを使用して、すべての Docker コンテナーの一覧を取得できます。
 1. 次の手順を使用して Jenkins ポータルにサインインします。
@@ -202,7 +202,7 @@ Jenkins をセットアップした後は、次のセクション、「[Jenkins 
 
    1. GitHub リポジトリのページで **[Settings (設定)]**  >  **[Integrations and Services (統合とサービス)]** の順に移動します。
 
-   1. **[Add Service (サービスの追加)]** を選択して「**Jenkins**」と入力し、 **[Jenkins-GitHub plugin (Jenkins-GitHub プラグイン)]** を選択します。
+   1. **[Add Service]\(サービスの追加\)** を選択して「**Jenkins**」と入力し、 **[Jenkins-GitHub plug-in]\(Jenkins-GitHub プラグイン\)** を選択します。
 
    1. Jenkins webhook の URL を入力します (既定では、`http://<PublicIPorFQDN>:8081/github-webhook/` です)。 **[Add service (サービスの追加)] または [Update service (サービスの更新)]** をクリックします。
 
@@ -308,9 +308,9 @@ Jenkins をセットアップした後は、次のセクション、「[Jenkins 
     ![Service Fabric の Jenkins のビルド後のアクション - Azure 資格情報の構成](./media/deploy-to-service-fabric-cluster/post-build-credentials.png)
 1. **[Verify Configuration]** をクリックします。 検証が正常に行われたら、 **[保存]** をクリックします。 これで Jenkins ジョブ パイプラインが完全に構成されました。 [次のステップ](#next-steps)に進んで、デプロイをテストしてください。
 
-## <a name="troubleshooting-the-jenkins-plugin"></a>Jenkins プラグインのトラブルシューティング
+## <a name="troubleshooting-the-jenkins-plug-in"></a>Jenkins プラグインのトラブルシューティング
 
-Jenkins プラグインでバグが発生した場合は、[Jenkins JIRA](https://issues.jenkins-ci.org/) で特定のコンポーネントについて問題を報告してください。
+Jenkins プラグインでバグが発生した場合は、[Jenkins JIRA](https://issues.jenkins-ci.org/) で特定のコンポーネントについてイシューを登録してください。
 
 ## <a name="ideas-to-try"></a>試してみましょう
 

@@ -192,7 +192,7 @@ SAS トークンとストレージ アカウント名を `src/azure-storage-blob
 
 create-react-app でのそのアプリ作成の一部として、`src/App.tsx` TypeScript ファイルが提供されています。 このファイルは、[ファイルの選択] ボタンと [アップロード] ボタン、およびその機能を提供するためのサポート コードを提供するように変更されています。 
 
-Azure BLOB ストレージ コードに接続するコードは強調表示されています。 `uploadFileToBlob` を呼び出すと、コンテナー内のすべての BLOB (ファイル) がフラット リストとして返されます。 そのリストは、`DisplayImagesFromContainer` 関数を使用して表示されます。
+Azure Blob Storage コードに接続するコードは強調表示されています。 `uploadFileToBlob` を呼び出すと、コンテナー内のすべての BLOB (ファイル) がフラット リストとして返されます。 そのリストは、`DisplayImagesFromContainer` 関数を使用して表示されます。
 
 :::code language="typescript" source="~/../js-e2e-browser-file-upload-storage-blob/src/App.tsx" highlight="3,28":::
 

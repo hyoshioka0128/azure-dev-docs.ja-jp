@@ -5,12 +5,12 @@ keywords: jenkins, azure, devops, aks, azure kubernetes service, github
 ms.topic: article
 ms.date: 10/29/2019
 ms.custom: devx-track-jenkins, devx-track-azurecli
-ms.openlocfilehash: 51b0531946d4fde0e9141744e62bab35a3e1a734
-ms.sourcegitcommit: e1175aa94709b14b283645986a34a385999fb3f7
+ms.openlocfilehash: 137f7cf050c9d31adc9e56a70fbb98e29342e142
+ms.sourcegitcommit: 3d906f265b748fbc0a070fce252098675674c8d9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93192504"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98699970"
 ---
 # <a name="tutorial-deploy-from-github-to-azure-kubernetes-service-using-jenkins"></a>チュートリアル:Jenkins を使用して GitHub から Azure Kubernetes Service にデプロイする
 
@@ -81,7 +81,7 @@ redis                        latest     a1b99da73d05        7 days ago          
 tiangolo/uwsgi-nginx-flask   flask      788ca94b2313        9 months ago        694MB
 ```
 
-*azure-vote-front* コンテナー イメージを ACR にプッシュする前に、 [az acr list](/cli/azure/acr#az-acr-list) コマンドを使用して ACR ログイン サーバーを取得します。 次の例では、 *myResourceGroup* という名前のリソース グループでレジストリの ACR ログイン サーバー アドレスを取得します。
+*azure-vote-front* コンテナー イメージを ACR にプッシュする前に、[az acr list](/cli/azure/acr#az-acr-list) コマンドを使用して ACR ログイン サーバーを取得します。 次の例では、*myResourceGroup* という名前のリソース グループでレジストリの ACR ログイン サーバー アドレスを取得します。
 
 ```azurecli
 az acr list --resource-group myResourceGroup --query "[].{acrLoginServer:loginServer}" --output table
@@ -93,7 +93,7 @@ az acr list --resource-group myResourceGroup --query "[].{acrLoginServer:loginSe
 docker tag azure-vote-front <acrLoginServer>/azure-vote-front:v1
 ```
 
-最後に、 *azure-vote-front* イメージを ACR レジストリにプッシュします。 ここでも、`<acrLoginServer>` を `myacrregistry.azurecr.io` などの独自の ACR レジストリのログイン サーバー名と置き換えます。
+最後に、*azure-vote-front* イメージを ACR レジストリにプッシュします。 ここでも、`<acrLoginServer>` を `myacrregistry.azurecr.io` などの独自の ACR レジストリのログイン サーバー名と置き換えます。
 
 ```console
 docker push <acrLoginServer>/azure-vote-front:v1
@@ -115,7 +115,7 @@ containers:
 kubectl apply -f azure-vote-all-in-one-redis.yaml
 ```
 
-アプリケーションをインターネットに公開するための Kubernetes ロード バランサー サービスが作成されます。 このプロセスには数分かかることがあります。 ロード バランサーのデプロイの進行状況を監視するには、[kubectl get service](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#get) コマンドを使用し、`--watch` 引数を指定します。 *EXTERNAL-IP* アドレスが " *保留中* " から " *IP アドレス* " に変わったら、`Control + C` を使用して kubectl ウォッチ プロセスを停止します。
+アプリケーションをインターネットに公開するための Kubernetes ロード バランサー サービスが作成されます。 このプロセスには数分かかることがあります。 ロード バランサーのデプロイの進行状況を監視するには、[kubectl get service](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#get) コマンドを使用し、`--watch` 引数を指定します。 *EXTERNAL-IP* アドレスが "*保留中*" から "*IP アドレス*" に変わったら、`Control + C` を使用して kubectl ウォッチ プロセスを停止します。
 
 ```console
 $ kubectl get service azure-vote-front --watch
@@ -153,7 +153,7 @@ Enter the following to Unlock Jenkins:
 
 表示される URL への Web ブラウザーを開き、ロックの解除キーを入力します。 画面上の指示に従って、Jenkins 構成を完了します。
 
-- **[Install suggested plugins]\(推奨されるプラグインのインストール\)** を選択します
+- **[Install suggested plug-ins]\(推奨されるプラグインのインストール\)** を選択します
 - 最初の管理者ユーザーを作成します。 *azureuser* などのユーザー名を入力し、独自の安全なパスワードを入力します。 最後に、フル ネームとメール アドレスを入力します。
 - **[Save and Finish]\(保存して終了する\)** を選択します
 - Jenkins が準備ができたら、 **[Start using Jenkins]\(Jenkins の使用を開始する\)** を選択します
@@ -228,8 +228,8 @@ Jenkins ポータルの左側に戻り、 **[Credentials]\(資格情報\)**  >  
 Jenkins ポータルのホーム ページから左側の **[新しい項目]** を選択します。
 
 1. ジョブ名として *azure-vote* を入力します。 **Freestyle プロジェクト** を選択し､ **[OK]** をクリックします
-1. **[General]\(一般\)** セクションで **[GitHub project]\(GitHub プロジェクト\)** を選択し、フォークしたリポジトリの URL (例: *https:\//github.com/\<your-github-account\>/azure-voting-app-redis* ) を入力します
-1. **[Source code management]\(ソース コードの管理\)** セクションで **[Git]** を選択し、フォークしたリポジトリの *.git* の URL (例: *https:\//github.com/\<your-github-account\>/azure-voting-app-redis.git* ) を入力します
+1. **[General]\(一般\)** セクションで **[GitHub project]\(GitHub プロジェクト\)** を選択し、フォークしたリポジトリの URL (例: *https:\//github.com/\<your-github-account\>/azure-voting-app-redis*) を入力します
+1. **[Source code management]\(ソース コードの管理\)** セクションで **[Git]** を選択し、フォークしたリポジトリの *.git* の URL (例: *https:\//github.com/\<your-github-account\>/azure-voting-app-redis.git*) を入力します
 
 1. **[Build Triggers]** セクションから **GitHub hook trigger for GITscm polling** を選択します
 1. **[Build Environment]\(ビルド環境\)** で、 **[Use secret texts or files]\(シークレット テキストまたはファイルを使用する\)** を選びます
@@ -293,7 +293,7 @@ Docker イメージ レイヤーが Jenkins サーバーにプルダウンされ
 1. この新しいコンテナー イメージが Azure Container Registry にプッシュされます。
 1. Azure Kubernetes Service のレジストリにデプロイされたアプリケーションは、Azure Container Registry レジストリからの最新コンテナー イメージで更新されます。
 
-開発マシンで、複製されたアプリケーションをコード エディターで開きます。 */azure-vote/azure-vote* ディレクトリで、 **config_file.cfg** という名前のファイルを開きます。 次の例に示すように、このファイルの投票値を cats と dogs 以外のものに更新します。
+開発マシンで、複製されたアプリケーションをコード エディターで開きます。 */azure-vote/azure-vote* ディレクトリで、**config_file.cfg** という名前のファイルを開きます。 次の例に示すように、このファイルの投票値を cats と dogs 以外のものに更新します。
 
 ```
 # UI Configurations

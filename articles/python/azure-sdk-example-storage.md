@@ -4,12 +4,12 @@ description: Azure SDK for Python ライブラリを使用して、Azure Storage
 ms.date: 10/05/2020
 ms.topic: conceptual
 ms.custom: devx-track-python, devx-track-azurecli
-ms.openlocfilehash: f3b27dd0a09bbf17c5797e3a5c0be9bc7d48b416
-ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
+ms.openlocfilehash: 56d40c013456cb56e38970afb9d72933b5fa1f26
+ms.sourcegitcommit: 6fbf9e489b194586887a2c11152044be5b3a2b99
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92689020"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98759400"
 ---
 # <a name="example-provision-azure-storage-using-the-azure-libraries-for-python"></a>例:Python 用 Azure ライブラリを使用して Azure Storage をプロビジョニングする
 
@@ -45,7 +45,7 @@ ms.locfileid: "92689020"
 
 このセクションでは、Python コードからストレージ リソースをプロビジョニングする方法について説明します。 必要に応じて、Azure portal や[同等の Azure CLI コマンド](#for-reference-equivalent-azure-cli-commands)を使用してリソースをプロビジョニングすることもできます。
 
-次のコードを使用して、 *provision_blob.py* という名前の Python ファイルを作成します。 詳細はコメントで説明しています。
+次のコードを使用して、*provision_blob.py* という名前の Python ファイルを作成します。 詳細はコメントで説明しています。
 
 ```python
 import os, random
@@ -243,3 +243,5 @@ az group delete -n PythonAzureExample-Storage-rg  --no-wait
 - [例:Web アプリをプロビジョニングしてコードをデプロイする](azure-sdk-example-web-app.md)
 - [例:データベースをプロビジョニングしてクエリを実行する](azure-sdk-example-database.md)
 - [例:仮想マシンをプロビジョニングする](azure-sdk-example-virtual-machines.md)
+- [仮想マシンで Azure Managed Disks を使用する](azure-sdk-samples-managed-disks.md)
+- [Azure SDK for Python に関する簡単なアンケートに回答する](https://microsoft.qualtrics.com/jfe/form/SV_bNFX0HECjzPWMiG?Q_CHL=docs)

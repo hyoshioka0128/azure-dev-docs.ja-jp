@@ -5,12 +5,12 @@ keywords: jenkins, azure, devops, ストレージ, cicd, ビルド成果物
 ms.topic: article
 ms.date: 01/12/2021
 ms.custom: devx-track-jenkins, devx-track-azurecli
-ms.openlocfilehash: 31c86da8f861e4295967007cb1b885325feb93dc
-ms.sourcegitcommit: 75a1f26aaff48a89631805df4b4a0c006de6a271
+ms.openlocfilehash: 0f7f9bd8ca7997064745a5be431e17f4e3d3fc13
+ms.sourcegitcommit: 6fbf9e489b194586887a2c11152044be5b3a2b99
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98128159"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98759526"
 ---
 # <a name="tutorial-use-azure-storage-for-build-artifacts"></a>チュートリアル:ビルド成果物に Azure Storage を使用する
 
@@ -123,9 +123,9 @@ ms.locfileid: "98128159"
 
     - Azure Storage では、コンテナー名と BLOB 名は小文字です (大文字と小文字は区別されます)。
 
-## <a name="create-a-pipeline-job-to-download-from-azure-blob-storage"></a>Azure Blob Storage からダウンロードするためのパイプライン ジョブを作成する
+## <a name="create-a-pipeline-job-to-download-from-azure-blob-storage"></a>Azure BLOB ストレージからダウンロードするためのパイプライン ジョブを作成する
 
-次の手順では、項目を Azure Blob Storage からダウンロードするようにパイプライン ジョブを構成する方法を示します。
+次の手順では、項目を Azure BLOB ストレージからダウンロードするようにパイプライン ジョブを構成する方法を示します。
 
 1. ジョブ構成の **[Pipeline]\(パイプライン\)** セクションで、 **[Pipeline script]\(パイプライン スクリプト\)** を選択し、以下を **[スクリプト]** に貼り付けます。 プレースホルダーは、お使いの環境に合った適切な値になるように編集してください。
 

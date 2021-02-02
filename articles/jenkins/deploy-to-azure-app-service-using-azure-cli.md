@@ -5,12 +5,12 @@ keywords: Jenkins, Azure, 開発, App Service, CLI
 ms.topic: tutorial
 ms.date: 01/06/2021
 ms.custom: devx-track-jenkins, devx-track-azurecli
-ms.openlocfilehash: 1f73da29b6b1bff2abf92383d672afd5af92abe4
-ms.sourcegitcommit: 0eb25e1fdafcd64118843748dc061f60e7e48332
+ms.openlocfilehash: cc73127ad780b42a6dd82058052a9749f86f3f3c
+ms.sourcegitcommit: 3d906f265b748fbc0a070fce252098675674c8d9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98625999"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98699960"
 ---
 # <a name="tutorial-deploy-to-azure-app-service-with-jenkins-and-the-azure-cli"></a>チュートリアル:Jenkins と Azure CLI を使用して Azure App Service にデプロイする
 
@@ -58,9 +58,9 @@ Java Web アプリを Azure にデプロイするには、[Jenkins パイプラ�
 
 次の手順は、Azure 資格情報を指定する方法を示しています。
 
-1. [Credentials プラグイン](https://plugins.jenkins.io/credentials/)がインストールされていることを確認します。
+1. [資格情報プラグイン](https://plugins.jenkins.io/credentials/)がインストールされていることを確認します。
 
-1. Jenkins ダッシュボードで、 **[Credentials]\(資格情報\) -> [System]\(システム\)** を選択します。 
+1. Jenkins ダッシュボードで、 **[Credentials]\(資格情報\) -> [System]\(システム\)** を選択します。
 
 1. **[Global credentials(unrestricted)]\(グローバル資格情報 (制限なし)\)** を選択します。
 

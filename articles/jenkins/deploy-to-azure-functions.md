@@ -5,12 +5,12 @@ keywords: Jenkins, Azure, DevOps, Java, Azure Functions
 ms.topic: tutorial
 ms.date: 01/11/2021
 ms.custom: devx-track-jenkins,devx-track-cli
-ms.openlocfilehash: b2c616dd6d0a2a659a25527072358e8f1095e414
-ms.sourcegitcommit: 593d177cfb5f56f236ea59389e43a984da30f104
+ms.openlocfilehash: 5e246b21f44de9ccb9b876827b44d01f456e60fd
+ms.sourcegitcommit: 3d906f265b748fbc0a070fce252098675674c8d9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/18/2021
-ms.locfileid: "98561058"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98699950"
 ---
 # <a name="tutorial-deploy-to-azure-functions-using-jenkins"></a>チュートリアル:Jenkins を使用して Azure Functions にデプロイする
 
@@ -84,7 +84,7 @@ Java ランタイム スタックを備えた Java 関数を作成するには�
 
     1. メニューから、 **[Manage Jenkins]\(Jenkins の管理\)** を選択します。
 
-    1. **[System Configuration]\(システム構成\)** で、 **[Manage Plugins]\(プラグインの管理\)** を選択します。
+    1. **[System Configuration]\(システム構成\)** で、 **[Manage plug-in]\(プラグインの管理\)** を選択します。
 
     1. **[インストール済み]** タブを選択します。
 

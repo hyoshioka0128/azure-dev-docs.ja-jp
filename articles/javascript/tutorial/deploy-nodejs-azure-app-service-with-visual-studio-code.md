@@ -2,14 +2,14 @@
 title: Visual Studio Code から Azure App Service に Node.js アプリをデプロイする
 description: Visual Studio Code App Service 拡張機能を使用して Azure App Service に Express.js Node.js アプリケーションをデプロイします。
 ms.topic: tutorial
-ms.date: 01/11/2021
+ms.date: 01/20/2021
 ms.custom: devx-track-js
-ms.openlocfilehash: 2c019cc9ae13b81ecde934faee6d7d7a9fadf07a
-ms.sourcegitcommit: 657f43a5048cd17b080b40b5090d575c8d7f5eaf
+ms.openlocfilehash: 8f6ab806262bee9684cc2c37d05aa1f21695c806
+ms.sourcegitcommit: 681ea211dc8e1809dd299b5cd64eebd974c073d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98173252"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98658777"
 ---
 # <a name="deploy-nodejs-to-azure-app-service-using-visual-studio-code"></a>Visual Studio Code を使用して Node.js を Azure App Service にデプロイする
 
@@ -141,7 +141,12 @@ Git と Azure App Service 拡張機能を使用して、Node.js アプリを Azu
 
 ## <a name="8-make-changes-and-redeploy"></a>8.変更を加えて再デプロイする
 
-いくつか変更を行って、App Service 拡張機能を使用してアプリを[再デプロイ](../how-to/deploy-web-app.md#deploy-or-redeploy-to-app-service-with-visual-studio-code)します。 
+1. アプリに小さな変更を加えます。 `Welcome to Express` を `Welcome to Express with Visual Studio Code` に変更します。 
+
+1. App Service 拡張機能のアプリ サービスの一覧から、使用するアプリ サービスを右クリックし、 **[Web アプリにデプロイ...]** を選択します。 
+
+    :::image type="content" source="../media/deploy-azure/deploy-or-redeploy-app-service.png" alt-text="Visual Studio Code を使用して App Service にデプロイまたは再デプロイする":::
+
 
 ## <a name="9-clean-up-resources"></a>9.リソースをクリーンアップする
 

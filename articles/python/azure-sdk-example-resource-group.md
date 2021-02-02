@@ -3,13 +3,13 @@ title: Python 用 Azure ライブラリを使用してリソース グループ�
 description: Azure SDK for Python のリソース管理ライブラリを使用して、Python コードからリソース グループを作成します。
 ms.date: 11/12/2020
 ms.topic: conceptual
-ms.custom: devx-track-python, devx-track-azurecli
-ms.openlocfilehash: 65c78e480336f689096ccbd9f75420febf732f20
-ms.sourcegitcommit: dc74b60217abce66fe6cc93923e869e63ac86a8f
+ms.custom: devx-track-python
+ms.openlocfilehash: 3bda14cd52f55d25e3669662765aa8f27c3dc939
+ms.sourcegitcommit: 6fbf9e489b194586887a2c11152044be5b3a2b99
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94872843"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98759433"
 ---
 # <a name="example-use-the-azure-libraries-to-provision-a-resource-group"></a>例:Azure ライブラリを使用してリソース グループをプロビジョニングする
 
@@ -148,3 +148,5 @@ az group create -n PythonAzureExample-rg -l centralus
 - [例:Web アプリをプロビジョニングしてコードをデプロイする](azure-sdk-example-web-app.md)
 - [例:データベースをプロビジョニングしてクエリを実行する](azure-sdk-example-database.md)
 - [例:仮想マシンをプロビジョニングする](azure-sdk-example-virtual-machines.md)
+- [仮想マシンで Azure Managed Disks を使用する](azure-sdk-samples-managed-disks.md)
+- [Azure SDK for Python に関する簡単なアンケートに回答する](https://microsoft.qualtrics.com/jfe/form/SV_bNFX0HECjzPWMiG?Q_CHL=docs)

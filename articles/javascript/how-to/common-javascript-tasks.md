@@ -2,14 +2,14 @@
 title: JavaScript 開発者向けの Azure の主要タスク
 description: 現在のタスクの例を参照してください。
 ms.topic: reference
-ms.date: 01/06/2021
+ms.date: 01/20/2021
 ms.custom: devx-track-js
-ms.openlocfilehash: 3a4c319d5258fccd1c1153591ccefddf87098343
-ms.sourcegitcommit: 0eb25e1fdafcd64118843748dc061f60e7e48332
+ms.openlocfilehash: 2d7a3091529adb530af76069d9f70880a68e40d3
+ms.sourcegitcommit: 681ea211dc8e1809dd299b5cd64eebd974c073d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 01/21/2021
-ms.locfileid: "98625975"
+ms.locfileid: "98658769"
 ---
 # <a name="top-tasks-for-javascript-developers"></a>JavaScript 開発者向けの主要タスク
 
@@ -90,6 +90,7 @@ ms.locfileid: "98625975"
 |アプリ リソースを作成する|[Azure CLI](../tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-03.md)|
 |アプリの作成、デプロイ、ブラウザー アプリ、ログの表示|[Azure CLI](../tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-03.md)|
 |アプリ リソースを削除する|[Visual Studio Code 拡張機能](../tutorial/deploy-nodejs-mongodb-app-service-from-visual-studio-code.md#clean-up-resources)<br>[Azure CLI](../tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-07.md)|
+|アプリをデプロイまたは再デプロイする|[Visual Studio Code 拡張機能](deploy-web-app.md#deploy-or-redeploy-to-app-service-with-visual-studio-code)|
 |リモート ログをストリーミングする|[Visual Studio Code 拡張機能](../tutorial/deploy-nodejs-azure-app-service-with-visual-studio-code.md?tabs=bash#7-stream-remote-service-logs-in-visual-studio-code)<br>[Azure CLI](../tutorial/tutorial-vscode-azure-cli-node/tutorial-vscode-azure-cli-node-05.md)|
 
 ## <a name="cognitive-services"></a>Cognitive Services

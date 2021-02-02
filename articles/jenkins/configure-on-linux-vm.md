@@ -5,12 +5,12 @@ keywords: Jenkins, Azure, DevOps, ポータル, Linux, 仮想マシン
 ms.topic: quickstart
 ms.date: 08/21/2020
 ms.custom: devx-track-jenkins, devx-track-azurecli
-ms.openlocfilehash: 6fc5eafbec8917b517b38d7a02c3149512675ac9
-ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
+ms.openlocfilehash: 3ec8c309bfb88d1735bc523dca54bf71195f5c26
+ms.sourcegitcommit: 3d906f265b748fbc0a070fce252098675674c8d9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92689129"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98699900"
 ---
 # <a name="quickstart-configure-jenkins-using-azure-cli"></a>クイック スタート:Azure CLI を使用して Jenkins を構成する
 
@@ -39,7 +39,7 @@ Jenkins の構成で問題が発生した場合は、[Cloudbees Jenkins のイ�
 
 1. [Azure portal](https://portal.azure.com) にサインインします。
 
-1. [Azure Cloud Shell](/azure/cloud-shell/overview) を開き、 **Bash** に切り替えます (まだ行っていない場合)。
+1. [Azure Cloud Shell](/azure/cloud-shell/overview) を開き、**Bash** に切り替えます (まだ行っていない場合)。
 
 1. `cloud-init-jenkins.txt` という名前でファイルを作成します。
 
@@ -109,7 +109,7 @@ Jenkins の構成で問題が発生した場合は、[Cloudbees Jenkins のイ�
     --output tsv
     ```
 
-    **注** :
+    **注**:
 
     - `--query` パラメーターにより、出力が仮想マシンのパブリック IP アドレスに限定されます。
 
@@ -119,7 +119,7 @@ Jenkins の構成で問題が発生した場合は、[Cloudbees Jenkins のイ�
     ssh azureuser@<ip_address>
     ```
 
-    **注** :
+    **注**:
 
     - 接続が成功すると、Cloud Shell プロンプトにユーザー名と仮想マシン名 (`azureuser@QuickstartJenkins-vm`) が含まれます。
 
@@ -141,7 +141,7 @@ Jenkins の構成で問題が発生した場合は、[Cloudbees Jenkins のイ�
 
     ![Jenkins のロックを解除するための初期ページ](./media/configure-on-linux-vm/unlock-jenkins.png)
 
-1. **[Select plugins to install]\(インストールするプラグインの選択\)** を選択します。
+1. **[Select plug-in to install]\(インストールするプラグインの選択\)** を選択します。
 
     ![選択したプラグインをインストールするオプションを選択する](./media/configure-on-linux-vm/select-plugins.png)
 
@@ -183,7 +183,7 @@ Jenkins の構成で問題が発生した場合は、[Cloudbees Jenkins のイ�
 
     ![Gradle スクリプト オプションを選択する](./media/configure-on-linux-vm/invoke-gradle-script-option.png)
 
-1. **[Use Gradle Wrapper]\(Gradle ラッパーの使用\)** を選択して、 **[Wrapper location]\(ラッパーの場所\)** に「`complete`」、 **[タスク]** に「`build`」と入力します。
+1. **[Use Gradle Wrapper]\(Gradle ラッパーの使用\)** を選択して、**[Wrapper location]\(ラッパーの場所\)** に「`complete`」、**[タスク]** に「`build`」と入力します。
 
     ![Gradle スクリプトのオプション](./media/configure-on-linux-vm/gradle-script-options.png)
 

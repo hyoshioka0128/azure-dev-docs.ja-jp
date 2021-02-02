@@ -4,12 +4,12 @@ description: Azure SDK for Python のリソース管理ライブラリを使用�
 ms.date: 10/12/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 06395891ea1b8294f9eaafe7dad40bf7a335e965
-ms.sourcegitcommit: f460914ac5843eb7392869a08e3a80af68ab227b
+ms.openlocfilehash: 2867ea550ce233594d30b3de2be744d20a1e96de
+ms.sourcegitcommit: 6fbf9e489b194586887a2c11152044be5b3a2b99
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "92010670"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98759597"
 ---
 # <a name="example-use-the-azure-libraries-to-list-resource-groups-and-resources"></a>例:Azure ライブラリを使用してリソース グループとリソースを一覧表示する
 
@@ -160,3 +160,5 @@ az resource list --resource group myResourceGroup --location centralus
 - [例:Web アプリをプロビジョニングしてコードをデプロイする](azure-sdk-example-web-app.md)
 - [例:データベースをプロビジョニングしてクエリを実行する](azure-sdk-example-database.md)
 - [例:仮想マシンをプロビジョニングする](azure-sdk-example-virtual-machines.md)
+- [仮想マシンで Azure Managed Disks を使用する](azure-sdk-samples-managed-disks.md)
+- [Azure SDK for Python に関する簡単なアンケートに回答する](https://microsoft.qualtrics.com/jfe/form/SV_bNFX0HECjzPWMiG?Q_CHL=docs)

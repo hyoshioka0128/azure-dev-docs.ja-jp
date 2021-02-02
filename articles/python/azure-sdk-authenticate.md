@@ -4,12 +4,12 @@ description: Azure ライブラリを使用して、Azure サービスで Python
 ms.date: 01/19/2021
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 51b7a074bef81999f17f3a5fa51d243e64a33f3c
-ms.sourcegitcommit: 0eb25e1fdafcd64118843748dc061f60e7e48332
+ms.openlocfilehash: 19a69cf0379dd290893724db6527ebd30b5bab63
+ms.sourcegitcommit: 6fbf9e489b194586887a2c11152044be5b3a2b99
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98625967"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98759462"
 ---
 # <a name="how-to-authenticate-and-authorize-python-apps-on-azure"></a>Azure で Python アプリを認証および認可する方法
 
@@ -470,3 +470,5 @@ print(subscription.subscription_id)
 - [例:Web アプリをプロビジョニングしてコードをデプロイする](azure-sdk-example-web-app.md)
 - [例:MySQL データベースをプロビジョニングして使用する](azure-sdk-example-database.md)
 - [例:仮想マシンをプロビジョニングする](azure-sdk-example-virtual-machines.md)
+- [仮想マシンで Azure Managed Disks を使用する](azure-sdk-samples-managed-disks.md)
+- [Azure SDK for Python に関する簡単なアンケートを完了する](https://microsoft.qualtrics.com/jfe/form/SV_bNFX0HECjzPWMiG?Q_CHL=docs)

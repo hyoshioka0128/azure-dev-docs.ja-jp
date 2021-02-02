@@ -4,12 +4,12 @@ description: Azure SDK を使用して、マネージド ディスクの作成�
 ms.topic: conceptual
 ms.date: 11/18/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: fe2378bcb836dbfc52ad1d5d3e88f048d6ef117e
-ms.sourcegitcommit: b70a38d46616f5e519d5b9c1a1eaf3fe0ecb9605
+ms.openlocfilehash: b8d45f3d4b5ccd2c8a1c2850d496b9f68625ef46
+ms.sourcegitcommit: 6fbf9e489b194586887a2c11152044be5b3a2b99
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94932416"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98759323"
 ---
 # <a name="use-azure-managed-disks-with-the-azure-libraries-sdk-for-python"></a>Python 用 Azure ライブラリ (SDK) を使用した Azure Managed Disks の使用
 
@@ -308,4 +308,10 @@ snapshot = async_snapshot_creation.result()
 
 ## <a name="see-also"></a>関連項目
 
-- [例 - 仮想マシンのプロビジョニング](azure-sdk-example-virtual-machines.md)
+- [例:仮想マシンをプロビジョニングする](azure-sdk-example-virtual-machines.md)
+- [例:リソース グループをプロビジョニングする](azure-sdk-example-resource-group.md)
+- [例:サブスクリプション内のリソース グループを一覧表示する](azure-sdk-example-list-resource-groups.md)
+- [例:Azure Storage をプロビジョニングする](azure-sdk-example-storage.md)
+- [例:Azure Storage を使用する](azure-sdk-example-storage-use.md)
+- [例:MySQL データベースをプロビジョニングして使用する](azure-sdk-example-database.md)
+- [Azure SDK for Python に関する簡単なアンケートを完了する](https://microsoft.qualtrics.com/jfe/form/SV_bNFX0HECjzPWMiG?Q_CHL=docs)

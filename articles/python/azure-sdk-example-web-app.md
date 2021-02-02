@@ -4,12 +4,12 @@ description: Python 用 Azure SDK ライブラリ内の管理ライブラリを�
 ms.date: 10/05/2020
 ms.topic: conceptual
 ms.custom: devx-track-python, devx-track-azurecli
-ms.openlocfilehash: ac678bef07fb660ca3ad094d56455e3b85db9f19
-ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
+ms.openlocfilehash: f2ef6a9cd7f424b0c3a84d45a2f3ae860aa9fc04
+ms.sourcegitcommit: 6fbf9e489b194586887a2c11152044be5b3a2b99
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92688988"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98759343"
 ---
 # <a name="example-use-the-azure-libraries-to-provision-and-deploy-a-web-app"></a>例:Azure ライブラリを使用して Web アプリをプロビジョニングしてデプロイする
 
@@ -65,7 +65,7 @@ REPO_URL=<url_of_your_fork>
 
 ## <a name="4-write-code-to-provision-and-deploy-a-web-app"></a>4:Web アプリのプロビジョニングとデプロイを行うコードを作成する
 
-次のコードを使用して、 *provision_deploy_webapp.py* という名前の Python ファイルを作成します。 詳細はコメントで説明しています。
+次のコードを使用して、*provision_deploy_webapp.py* という名前の Python ファイルを作成します。 詳細はコメントで説明しています。
 
 ```python
 import random, os
@@ -254,3 +254,5 @@ az webapp create -n PythonAzureExample-WebApp-12345 --plan PythonAzureExample-We
 - [例:Azure Storage を使用する](azure-sdk-example-storage-use.md)
 - [例:MySQL データベースをプロビジョニングして使用する](azure-sdk-example-database.md)
 - [例:仮想マシンをプロビジョニングする](azure-sdk-example-virtual-machines.md)
+- [仮想マシンで Azure Managed Disks を使用する](azure-sdk-samples-managed-disks.md)
+- [Azure SDK for Python に関する簡単なアンケートに回答する](https://microsoft.qualtrics.com/jfe/form/SV_bNFX0HECjzPWMiG?Q_CHL=docs)

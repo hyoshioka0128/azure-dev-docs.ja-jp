@@ -4,12 +4,12 @@ description: Python 用 Azure SDK ライブラリの管理ライブラリを使�
 ms.date: 10/05/2020
 ms.topic: conceptual
 ms.custom: devx-track-python, devx-track-azurecli
-ms.openlocfilehash: 873b854ac2702ac62484a8ed37a5367084eb4b00
-ms.sourcegitcommit: 1ddcb0f24d2ae3d1f813ec0f4369865a1c6ef322
+ms.openlocfilehash: 2e63ec96c8e98e5d74f3ccadfadbdf8fd5b71e8a
+ms.sourcegitcommit: 6fbf9e489b194586887a2c11152044be5b3a2b99
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92689015"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98759366"
 ---
 # <a name="example-use-the-azure-libraries-to-provision-a-database"></a>例:Azure ライブラリを使用してデータベースをプロビジョニングする
 
@@ -46,11 +46,11 @@ pip install -r requirements.txt
 ```
 
 > [!NOTE]
-> Windows では、mysql ライブラリを 32 ビットの Python ライブラリにインストールしようとすると、 *mysql.h* ファイルに関するエラーが生成されます。 この場合は、64 ビット バージョンの Python をインストールして、もう一度やり直してください。
+> Windows では、mysql ライブラリを 32 ビットの Python ライブラリにインストールしようとすると、*mysql.h* ファイルに関するエラーが生成されます。 この場合は、64 ビット バージョンの Python をインストールして、もう一度やり直してください。
 
 ## <a name="3-write-code-to-provision-the-database"></a>3:データベースをプロビジョニングするコードを記述する
 
-次のコードを使用して、 *provision_db.py* という名前の Python ファイルを作成します。 詳細はコメントで説明しています。
+次のコードを使用して、*provision_db.py* という名前の Python ファイルを作成します。 詳細はコメントで説明しています。
 
 ```python
 import random, os
@@ -279,5 +279,7 @@ az mysql db create -g PythonAzureExample-DB-rg --server PythonAzureExample-MySQL
 - [例:サブスクリプション内のリソース グループを一覧表示する](azure-sdk-example-list-resource-groups.md)
 - [例:Azure Storage をプロビジョニングする](azure-sdk-example-storage.md)
 - [例:Azure Storage を使用する](azure-sdk-example-storage-use.md)
-- [例:仮想マシンをプロビジョニングする](azure-sdk-example-virtual-machines.md)
 - [例:Web アプリをプロビジョニングしてデプロイする](azure-sdk-example-web-app.md)
+- [例:仮想マシンをプロビジョニングする](azure-sdk-example-virtual-machines.md)
+- [仮想マシンで Azure Managed Disks を使用する](azure-sdk-samples-managed-disks.md)
+- [Azure SDK for Python に関する簡単なアンケートを完了する](https://microsoft.qualtrics.com/jfe/form/SV_bNFX0HECjzPWMiG?Q_CHL=docs)

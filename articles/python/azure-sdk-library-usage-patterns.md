@@ -4,12 +4,12 @@ description: Python 用 Azure SDK ライブラリでの一般的な使用パタ�
 ms.date: 11/12/2020
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 6f1a2c07bbda4ebe409722d2381e046ee45f7902
-ms.sourcegitcommit: 6514a061ba5b8003ce29d67c81a9f0795c3e3e09
+ms.openlocfilehash: 28c2013245765d6829e46f564f7a7a3c74cb996d
+ms.sourcegitcommit: 6fbf9e489b194586887a2c11152044be5b3a2b99
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94601394"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98759533"
 ---
 # <a name="azure-libraries-for-python-usage-patterns"></a>Python 用 Azure ライブラリの使用パターン
 
@@ -84,7 +84,7 @@ web_app_result = poller.result()
 
 これらの引数は、「[Python」の「新しいライブラリ](https://azure.github.io/azure-sdk/releases/latest/#python)」に一覧表示されているライブラリに適用されます。
 
-| 名前                       | Type | Default     | 説明 |
+| 名前                       | 種類 | Default     | 説明 |
 | ---                        | ---  | ---         | ---         |
 | logging_enable             | [bool] | False       | ログ記録を有効にします。 詳細については、[Azure ライブラリでのログ記録](azure-sdk-logging.md)に関するページを参照してください。 |
 | proxies                    | dict | {}          | プロキシ サーバーの URL。 詳細については、[プロキシの構成方法](azure-sdk-configure-proxy.md)に関するページを参照してください。 |
@@ -98,7 +98,7 @@ web_app_result = poller.result()
 
 ### <a name="arguments-for-non-core-libraries"></a>非コア ライブラリの引数
 
-| 名前               | Type | Default | 説明 |
+| 名前               | 種類 | Default | 説明 |
 | ---                | ---  | ---     | ---         |
 | 確認             | [bool] | True    | SSL 証明書を確認します。 |
 | cert               | str  | なし    | クライアント側で確認するためのローカル証明書へのパス。 |
@@ -197,12 +197,13 @@ JSON の形式が正しくない場合は、通常、"DeserializationError: Unab
 
 ## <a name="next-steps"></a>次のステップ
 
-Python 用 Azure ライブラリを使用するための一般的なパターンを理解したところで、次のスタンドアロンの例を参照して、特定の管理とクライアント ライブラリのシナリオを検討します。
+Python 用 Azure ライブラリを使用するための一般的なパターンを理解できたので、以下に挙げるそれぞれ独立した例を参照して、管理とクライアント ライブラリの具体的なシナリオを検討します。 これらの例は連続的でも相互依存的でもないため、任意の順序で試すことができます。
 
 - [例:リソース グループを作成する](azure-sdk-example-resource-group.md)
 - [例:Azure Storage を使用する](azure-sdk-example-storage.md)
 - [例:Web アプリをプロビジョニングしてコードをデプロイする](azure-sdk-example-web-app.md)
 - [例:データベースをプロビジョニングしてクエリを実行する](azure-sdk-example-database.md)
 - [例:仮想マシンをプロビジョニングする](azure-sdk-example-virtual-machines.md)
+- [仮想マシンで Azure Managed Disks を使用する](azure-sdk-samples-managed-disks.md)
 
-これらの例は連続的でも相互依存的でもないため、任意の順序で試すことができます。
+- [Azure SDK for Python に関する簡単なアンケートを完了する](https://microsoft.qualtrics.com/jfe/form/SV_bNFX0HECjzPWMiG?Q_CHL=docs)

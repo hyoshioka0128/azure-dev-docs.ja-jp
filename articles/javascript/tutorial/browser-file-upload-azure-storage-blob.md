@@ -4,12 +4,12 @@ description: React/TypeScript アプリを使用して、ファイルを Azure S
 ms.topic: tutorial
 ms.date: 12/17/2020
 ms.custom: scenarios:getting-started, languages:JavaScript, devx-track-javascript, azure-sdk-storage-blob-typescript-version-12.2.1
-ms.openlocfilehash: 1f66ba54aa6cfccdda96a51bb610350a10fb7eef
-ms.sourcegitcommit: 1c508f5ba73a12e4baeacc88ad9a8359301acb50
+ms.openlocfilehash: 19fc63272ff579ca0bb04802b04a7d44e9114ba4
+ms.sourcegitcommit: 6fbf9e489b194586887a2c11152044be5b3a2b99
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97689534"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98759562"
 ---
 # <a name="upload-an-image-to-an-azure-storage-blob"></a>イメージを Azure Storage Blob にアップロードする
 
@@ -192,7 +192,7 @@ SAS トークンとストレージ アカウント名を `src/azure-storage-blob
 
 create-react-app でのそのアプリ作成の一部として、`src/App.tsx` TypeScript ファイルが提供されています。 このファイルは、[ファイルの選択] ボタンと [アップロード] ボタン、およびその機能を提供するためのサポート コードを提供するように変更されています。 
 
-Azure BLOB ストレージ コードに接続するコードは強調表示されています。 `uploadFileToBlob` を呼び出すと、コンテナー内のすべての BLOB (ファイル) がフラット リストとして返されます。 そのリストは、`DisplayImagesFromContainer` 関数を使用して表示されます。
+Azure Blob Storage コードに接続するコードは強調表示されています。 `uploadFileToBlob` を呼び出すと、コンテナー内のすべての BLOB (ファイル) がフラット リストとして返されます。 そのリストは、`DisplayImagesFromContainer` 関数を使用して表示されます。
 
 :::code language="typescript" source="~/../js-e2e-browser-file-upload-storage-blob/src/App.tsx" highlight="3,28":::
 

@@ -3,6 +3,8 @@
   items:
     - name: ドキュメントの最新情報
       href: whats-new-docs.md
+    - name: デベロッパー アドボケイトの最新情報
+      href: whats-new-developer-advocacy.md
     - name: JavaScript を使用した Azure の概要
       items:
         - name: JavaScript 開発者向けの Azure とは
@@ -143,10 +145,22 @@
           href: how-to/configure-web-app-settings.md
         - name: JavaScript 開発者向けのタスク
           href: how-to/common-javascript-tasks.md
-        - name: 変更のために GitHub リポジトリをクローンする
-          href: how-to/with-visual-studio-code/clone-github-repository.md
-        - name: VS Code を使用したエンド ツー エンドの Node.js
-          href: how-to/develop-nodejs-on-azure.md
+        - name: Visual Studio Code の場合
+          items:
+            - name: ローカル プロジェクトをインストールおよびデバッグする
+              href: how-to/with-visual-studio-code/install-run-debug-nodejs.md
+            - name: 変更のために GitHub リポジトリをクローンする
+              href: how-to/with-visual-studio-code/clone-github-repository.md
+            - name: ローカル プロジェクトからコンテナーを作成する
+              href: how-to/with-visual-studio-code/containerize-local-project.md
+        - name: Azure CLI の場合
+          items:
+            - name: コンテナー レジストリを作成および使用する
+              href: how-to/with-azure-cli/create-container-registry-resource.md
+            - name: Web アプリのドメイン名を構成する
+              href: how-to/with-azure-cli/configure-app-service-custom-domain-name.md
+            - name: MongoDB 用 Cosmos DB リソースを使用する
+              href: how-to/with-azure-cli/create-mongodb-cosmosdb.md
         - name: Web アプリをデプロイする
           href: how-to/deploy-web-app.md
         - name: コンテナーをデプロイする

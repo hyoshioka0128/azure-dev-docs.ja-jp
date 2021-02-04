@@ -4,12 +4,12 @@ description: Visual Studio Code、Azure SDK ライブラリ、ライブラリ認
 ms.date: 01/04/2021
 ms.topic: conceptual
 ms.custom: devx-track-python, devx-track-azurecli
-ms.openlocfilehash: fcad7c614ae27c8b1b3ccf081d85292549cfcee3
-ms.sourcegitcommit: 4f9ce09cbf9663203c56f5b12ecbf70ea68090ed
+ms.openlocfilehash: 184996eca52c096602863beb1c73ae4337695829
+ms.sourcegitcommit: 3843092e47691fbd32452c93d51f894a0cab31db
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97911472"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99069079"
 ---
 # <a name="configure-your-local-python-dev-environment-for-azure"></a>Azure 用のローカル Python 開発環境を構成する
 
@@ -53,7 +53,7 @@ ms.locfileid: "97911472"
 
 | 名前またはインストーラー | 説明 |
 | --- | --- |
-| [VS Code 用の Docker 拡張機能](https://marketplace.visualstudio.com/items?itemName=ms-python.python) | VS Code に Docker のサポートを追加します。これは、普段からコンテナーを使用しているユーザーには便利です。 |
+| [VS Code 用の Docker 拡張機能](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker) | VS Code に Docker のサポートを追加します。これは、普段からコンテナーを使用しているユーザーには便利です。 |
 
 ### <a name="verify-components"></a>コンポーネントを確認する
 
@@ -136,7 +136,7 @@ Azure CLI では通常、セッション間のサインインが維持されま�
 
 #### <a name="what-the-create-for-rbac-command-does"></a>create-for-rbac コマンドの機能
 
-`az ad create-for-rbac` コマンドは、"ロールベースの認証" (RBAC) のサービス プリンシパルを作成します。 (サービス プリンシパルの詳細については、「[Azure で Python アプリを認証および認可する方法](azure-sdk-authenticate.md)」を参照してください。)
+`az ad sp create-for-rbac` コマンドは、"ロールベースの認証" (RBAC) のサービス プリンシパルを作成します。 (サービス プリンシパルの詳細については、「[Azure で Python アプリを認証および認可する方法](azure-sdk-authenticate.md)」を参照してください。)
 
 - `ad` は Azure Active Directory を意味します。`sp` は "サービス プリンシパル" を意味し、`create-for-rbac` は Azure の主要な承認形式である "ロールベースのアクセス制御用に作成する" ことを意味します。 [az ad sp create-rbac](/cli/azure/ad/sp#az-ad-sp-create-for-rbac) のコマンド リファレンスを参照してください。
 

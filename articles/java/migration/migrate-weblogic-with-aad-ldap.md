@@ -5,12 +5,12 @@ author: edburns
 ms.author: edburns
 ms.topic: tutorial
 ms.date: 08/10/2020
-ms.openlocfilehash: 277f34fecfd976135077243252bc31aace11dd61
-ms.sourcegitcommit: 4dd392ea864be52421d0239e59198bc44b0a5a16
+ms.openlocfilehash: f97d9d57b85550c1e28f58fb24a27a4da4205266
+ms.sourcegitcommit: 3f8aa923e4626b31cc533584fe3b66940d384351
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91365015"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99224726"
 ---
 # <a name="end-user-authorization-and-authentication-for-migrating-java-apps-on-weblogic-server-to-azure"></a>WebLogic Server 上の Java アプリを Azure に移行するためのエンドユーザーの認可と認証
 
@@ -112,12 +112,12 @@ Java EE 開発者は、ワークロードを Azure に移行しているとき�
    >
 「[外部アクセスのための DNS ゾーンを構成する](/azure/active-directory-domain-services/tutorial-configure-ldaps#configure-dns-zone-for-external-access)」セクションで、 **[Secure LDAP 外部 IP アドレス]** の値を書き留めます。  これは後で使用します。
 
-**Secure LDAP 外部 IP アドレス**の値が簡単にわからない場合は、これらの手順に従って IP アドレスを取得します。
+**Secure LDAP 外部 IP アドレス** の値が簡単にわからない場合は、これらの手順に従って IP アドレスを取得します。
 
 1. ポータルで、Azure AD Domain Services リソースを含むリソース グループを見つけます。
 1. 次に示すように、リソースの一覧から Azure AD Domain Services リソースのパブリック IP リソースを選択します。  パブリック IP は、`aads` で始まる可能性が高いです。
    :::image type="content" source="media/migrate-weblogic-with-aad-ldap/alternate-secure-ip-address-technique.png" alt-text="パブリック IP を選択する方法を示すブラウザー。":::
-1. パブリック IP は、**IP アドレス**というラベルの横に表示されます。
+1. パブリック IP は、**IP アドレス** というラベルの横に表示されます。
 
 このガイドで指示されるまで、「[リソースをクリーンアップする](/azure/active-directory-domain-services/tutorial-configure-ldaps#clean-up-resources)」の手順を実行しないでください。
 
@@ -198,7 +198,7 @@ az resource update --ids $AADDS_ID --set properties.domainSecuritySettings.tlsV1
 
 ### <a name="lock-down-and-secure-ldap-access-over-the-internet"></a>インターネット経由での LDAP アクセスのロック ダウンとセキュリティ保護
 
-前の手順でセキュリティで保護された LDAP を立ち上げているときに、ネットワーク セキュリティ グループの `AllowLDAPS` 規則においてソースを **[すべて]** として設定しました。  これで WLS 管理サーバーがデプロイされて LDAP に接続されたので、Azure portal を使用してパブリック IP アドレスを取得します。  「[インターネット経由での Secure LDAP アクセスをロック ダウンする](/azure/active-directory-domain-services/tutorial-configure-ldaps?branch=pr-en-us-778#lock-down-secure-ldap-access-over-the-internet)」に再度アクセスして、 **[すべて]** を、WLS 管理サーバーの特定の IP アドレスに変更します。
+前の手順でセキュリティで保護された LDAP を立ち上げているときに、ネットワーク セキュリティ グループの `AllowLDAPS` 規則においてソースを **[すべて]** として設定しました。  これで WLS 管理サーバーがデプロイされて LDAP に接続されたので、Azure portal を使用してパブリック IP アドレスを取得します。  「[インターネット経由での Secure LDAP アクセスをロック ダウンする](/azure/active-directory-domain-services/tutorial-configure-ldaps#lock-down-secure-ldap-access-over-the-internet)」に再度アクセスして、 **[すべて]** を、WLS 管理サーバーの特定の IP アドレスに変更します。
 
 ## <a name="clean-up-resources"></a>リソースをクリーンアップする
 

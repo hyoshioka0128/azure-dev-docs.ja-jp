@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: fe73a2c6b6f18a5e85d342f8fed7ed547b272be9
-ms.sourcegitcommit: cbcde17e91e7262a596d813243fd713ce5e97d06
+ms.openlocfilehash: 9731f0504dd654b5fdb617b7b82cbd1afc4e2414
+ms.sourcegitcommit: 71847ee0a1fee3f3320503629d9a8c82319a1f6a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93406666"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99528450"
 ---
 | サンプル  | 説明 |
 |---|---|
@@ -16,8 +16,6 @@ ms.locfileid: "93406666"
 | [複数のリージョンに対して同時に仮想マシンを作成する][5] | 複数の Azure リージョンにわたって一連の仮想マシンを作成し、負荷分散します。 |
 | **ネットワークの仮想マシン** || 
 | [仮想ネットワークを管理する][6] | 2 つのサブネットがある仮想ネットワークを設定し、これらに対するインターネット アクセスを制限します。 |
-| **スケール セットの作成** ||
-| [ロード バランサーを使って仮想マシン スケール セットを作成する][7] | VM スケール セットを作成してロード バランサーを設定し、スケール セットの VM への SSH 接続文字列を取得します。 |
 
 [1]: ../index.yml
 [2]: https://github.com/Azure-Samples/managed-disk-java-create-virtual-machine-using-custom-image/
@@ -25,4 +23,3 @@ ms.locfileid: "93406666"
 [4]: https://github.com/Azure-Samples/compute-java-manage-virtual-machines-in-parallel/
 [5]: ../index.yml
 [6]: ../index.yml
-[7]: ../java-sdk-manage-vm-scalesets.md

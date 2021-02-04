@@ -1,15 +1,15 @@
 ---
 title: Python 用 Azure ライブラリを使用してリソース グループとリソースを一覧表示する
 description: Azure SDK for Python のリソース管理ライブラリを使用して、リソース グループと特定のグループ内のリソースを一覧表示します。
-ms.date: 10/12/2020
+ms.date: 01/28/2021
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 2867ea550ce233594d30b3de2be744d20a1e96de
-ms.sourcegitcommit: 6fbf9e489b194586887a2c11152044be5b3a2b99
+ms.openlocfilehash: c44698fb7fee0e7f736c51fbf11f664b8642e946
+ms.sourcegitcommit: 3843092e47691fbd32452c93d51f894a0cab31db
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98759597"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99069099"
 ---
 # <a name="example-use-the-azure-libraries-to-list-resource-groups-and-resources"></a>例:Azure ライブラリを使用してリソース グループとリソースを一覧表示する
 
@@ -17,7 +17,7 @@ ms.locfileid: "98759597"
 
 - Azure サブスクリプションに含まれているすべてのリソース グループを一覧表示する。
 - 特定のリソース グループ内のリソースを一覧表示する。
- 
+
 特に記載のない限り、この記事で使用されているコマンドはいずれも、Linux と macOS の bash および Windows のコマンド シェルで同じように動作します。
 
 [同等の Azure CLI コマンド](#for-reference-equivalent-azure-cli-commands)については、この記事の後半で説明します。
@@ -33,8 +33,8 @@ ms.locfileid: "98759597"
 *requirements.txt* という名前のファイルを作成し、内容を次のようにします。
 
 ```text
-azure-mgmt-resource
-azure-identity
+azure-mgmt-resource>=1.15.0
+azure-identity>=1.5.0
 ```
 
 仮想環境をアクティブ化し、ターミナルまたはコマンド プロンプトで要件をインストールします。

@@ -1,15 +1,15 @@
 ---
 title: Python 用 Azure ライブラリを使用してリソース グループをプロビジョニングする
 description: Azure SDK for Python のリソース管理ライブラリを使用して、Python コードからリソース グループを作成します。
-ms.date: 11/12/2020
+ms.date: 01/28/2021
 ms.topic: conceptual
 ms.custom: devx-track-python
-ms.openlocfilehash: 3bda14cd52f55d25e3669662765aa8f27c3dc939
-ms.sourcegitcommit: 6fbf9e489b194586887a2c11152044be5b3a2b99
+ms.openlocfilehash: 37e912e9fed6edabc966034a6411e7786875bf3f
+ms.sourcegitcommit: 3843092e47691fbd32452c93d51f894a0cab31db
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98759433"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "99069089"
 ---
 # <a name="example-use-the-azure-libraries-to-provision-a-resource-group"></a>例:Azure ライブラリを使用してリソース グループをプロビジョニングする
 
@@ -28,8 +28,8 @@ ms.locfileid: "98759433"
 *requirements.txt* という名前のファイルを作成し、内容を次のようにします。
 
 ```text
-azure-mgmt-resource
-azure-identity
+azure-mgmt-resource>=1.15.0
+azure-identity>=1.5.0
 ```
 
 仮想環境をアクティブ化し、ターミナルまたはコマンド プロンプトで要件をインストールします。

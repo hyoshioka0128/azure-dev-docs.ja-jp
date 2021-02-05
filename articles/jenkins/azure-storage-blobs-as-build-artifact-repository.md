@@ -123,9 +123,9 @@ ms.locfileid: "98759526"
 
     - Azure Storage では、コンテナー名と BLOB 名は小文字です (大文字と小文字は区別されます)。
 
-## <a name="create-a-pipeline-job-to-download-from-azure-blob-storage"></a>Azure BLOB ストレージからダウンロードするためのパイプライン ジョブを作成する
+## <a name="create-a-pipeline-job-to-download-from-azure-blob-storage"></a>Azure Blob Storage からダウンロードするためのパイプライン ジョブを作成する
 
-次の手順では、項目を Azure BLOB ストレージからダウンロードするようにパイプライン ジョブを構成する方法を示します。
+次の手順では、項目を Azure Blob Storage からダウンロードするようにパイプライン ジョブを構成する方法を示します。
 
 1. ジョブ構成の **[Pipeline]\(パイプライン\)** セクションで、 **[Pipeline script]\(パイプライン スクリプト\)** を選択し、以下を **[スクリプト]** に貼り付けます。 プレースホルダーは、お使いの環境に合った適切な値になるように編集してください。
 
